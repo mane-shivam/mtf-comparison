@@ -1,7 +1,7 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-10-28T08:57:01Z",
-"count": 1709,
+"fetchedAt": "2026-10-28T10:05:54Z",
+"count": 1710,
 "rows": [
 {
 "symbol": "ASHIANA",
@@ -1967,7 +1967,7 @@
 "symbol": "CEMPRO",
 "name": "Cemindia Projects Limited",
 "exchange": "NSE",
-"lev": 2.62,
+"lev": 2.61,
 "maxExposureCr": 2.0
 },
 {
@@ -3353,7 +3353,7 @@
 "symbol": "NYKAA",
 "name": "Fsn E Commerce Ventures Limited",
 "exchange": "NSE",
-"lev": 4.54,
+"lev": 4.53,
 "maxExposureCr": 50.0
 },
 {
@@ -4403,7 +4403,7 @@
 "symbol": "HINDCOPPER",
 "name": "Hindustan Copper Limited",
 "exchange": "NSE",
-"lev": 2.65,
+"lev": 2.66,
 "maxExposureCr": 5.0
 },
 {
@@ -6304,13 +6304,6 @@
 "maxExposureCr": 1.0
 },
 {
-"symbol": "LICNETFGSC",
-"name": "Licnamc - Licnmfet(Fresh Mtf Buying Is Not Allowed)",
-"exchange": "NSE",
-"lev": 5.0,
-"maxExposureCr": 1.0
-},
-{
 "symbol": "LICNETFN50",
 "name": "Licnamc-Licnfengp",
 "exchange": "NSE",
@@ -6349,7 +6342,7 @@
 "symbol": "LLOYDSENT",
 "name": "Lloyds Enterprises Ltd",
 "exchange": "NSE",
-"lev": 2.59,
+"lev": 2.58,
 "maxExposureCr": 2.0
 },
 {
@@ -6370,7 +6363,7 @@
 "symbol": "LTFOODS",
 "name": "Lt Foods Limited",
 "exchange": "NSE",
-"lev": 3.03,
+"lev": 3.04,
 "maxExposureCr": 5.0
 },
 {
@@ -6503,14 +6496,14 @@
 "symbol": "M&MFIN",
 "name": "Mahindra & Mahindra Financial Services Limited",
 "exchange": "NSE",
-"lev": 3.06,
+"lev": 3.09,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "M&M",
 "name": "Mahindra & Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.7,
+"lev": 4.69,
 "maxExposureCr": 50.0
 },
 {
@@ -10294,6 +10287,13 @@
 "maxExposureCr": 1.0
 },
 {
+"symbol": "SUPRIYA",
+"name": "Supriya Lifescience Limited",
+"exchange": "NSE",
+"lev": 2.68,
+"maxExposureCr": 5.0
+},
+{
 "symbol": "SURAJEST",
 "name": "Suraj Estate Developers Ltd",
 "exchange": "NSE",
@@ -10311,7 +10311,7 @@
 "symbol": "SURYAROSNI",
 "name": "Surya Roshni Limited",
 "exchange": "NSE",
-"lev": 2.96,
+"lev": 2.94,
 "maxExposureCr": 5.0
 },
 {
@@ -10346,7 +10346,7 @@
 "symbol": "SWANCORP",
 "name": "Swan Corp Limited",
 "exchange": "NSE",
-"lev": 2.97,
+"lev": 2.98,
 "maxExposureCr": 5.0
 },
 {
@@ -10367,7 +10367,7 @@
 "symbol": "SWIGGY",
 "name": "Swiggy Limited",
 "exchange": "NSE",
-"lev": 3.51,
+"lev": 3.52,
 "maxExposureCr": 25.0
 },
 {
@@ -11127,6 +11127,13 @@
 "maxExposureCr": 1.0
 },
 {
+"symbol": "UJJIVANSFB",
+"name": "Ujjivan Small Finance Bank Limited",
+"exchange": "NSE",
+"lev": 3.33,
+"maxExposureCr": 10.0
+},
+{
 "symbol": "ULTRAMAR",
 "name": "Ultramarine & Pigments Ltd",
 "exchange": "NSE",
@@ -11193,14 +11200,14 @@
 "symbol": "UNITDSPR",
 "name": "United Spirits Limited",
 "exchange": "NSE",
-"lev": 4.92,
+"lev": 4.91,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "UNIVCABLES",
 "name": "Universal Cables Limited",
 "exchange": "NSE",
-"lev": 2.41,
+"lev": 2.42,
 "maxExposureCr": 1.0
 },
 {
@@ -11228,7 +11235,7 @@
 "symbol": "URBANCO",
 "name": "Urban Company Limited",
 "exchange": "NSE",
-"lev": 2.91,
+"lev": 2.89,
 "maxExposureCr": 10.0
 },
 {
