@@ -1,0 +1,724 @@
+{
+ "data": [
+  {
+   "scrip_id": "100",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "AMARA RAJA ENERGY MOB LTD",
+   "margin_perc": 30.17,
+   "margin_x": 3.3,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "ARE&M",
+   "isin": "INE885A01032",
+   "pml_id": "1000001461",
+   "mini_mtf": {
+    "margin_perc": 31.0,
+    "margin_x": 3.2,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "1008",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "FACT LTD",
+   "margin_perc": 35.58,
+   "margin_x": 2.8,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "FACT",
+   "isin": "INE188A01015",
+   "pml_id": "1000001111",
+   "mini_mtf": {
+    "margin_perc": 35.58,
+    "margin_x": 2.8,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10099",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "GODREJ CONSUMER PRODUCTS",
+   "margin_perc": 21.08,
+   "margin_x": 4.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "GODREJCP",
+   "isin": "INE102D01028",
+   "pml_id": "1000004892",
+   "mini_mtf": {
+    "margin_perc": 22.0,
+    "margin_x": 4.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "1011",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SCHAEFFLER INDIA LIMITED",
+   "margin_perc": 29.65,
+   "margin_x": 3.4,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "SCHAEFFLER",
+   "isin": "INE513A01022",
+   "pml_id": "1000007462",
+   "mini_mtf": {
+    "margin_perc": 33.33,
+    "margin_x": 3.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10176",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SBI-ETF NIFTY 50",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "SETFNIF50",
+   "isin": "INF200KA1FS1",
+   "pml_id": "3000000254",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10217",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "ADANI ENERGY SOLUTION LTD",
+   "margin_perc": 28.35,
+   "margin_x": 3.5,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "ADANIENSOL",
+   "isin": "INE931S01010",
+   "pml_id": "1000003159",
+   "mini_mtf": {
+    "margin_perc": 29.0,
+    "margin_x": 3.4,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10227",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "MANORAMA INDUSTRIES LTD",
+   "margin_perc": 37.25,
+   "margin_x": 2.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "MANORAMA",
+   "isin": "INE00VM01036",
+   "pml_id": "1000008818",
+   "mini_mtf": {
+    "margin_perc": 37.25,
+    "margin_x": 2.7,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "1023",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "FEDERAL BANK LTD",
+   "margin_perc": 21.37,
+   "margin_x": 4.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "FEDERALBNK",
+   "isin": "INE171A01029",
+   "pml_id": "1000004333",
+   "mini_mtf": {
+    "margin_perc": 21.37,
+    "margin_x": 4.7,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10238",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "CONFIDENCE PETRO IND LTD.",
+   "margin_perc": 41.59,
+   "margin_x": 2.4,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "CONFIPET",
+   "isin": "INE552D01024",
+   "pml_id": "1000003601",
+   "mini_mtf": {
+    "margin_perc": 42.0,
+    "margin_x": 2.4,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10243",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SYNGENE INTERNATIONAL LTD",
+   "margin_perc": 30.51,
+   "margin_x": 3.3,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "SYNGENE",
+   "isin": "INE398R01022",
+   "pml_id": "1000002822",
+   "mini_mtf": {
+    "margin_perc": 33.33,
+    "margin_x": 3.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10277",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "NGL FINE CHEM LIMITED",
+   "margin_perc": 41.36,
+   "margin_x": 2.4,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "NGLFINE",
+   "isin": "INE887E01022",
+   "pml_id": "1000007686",
+   "mini_mtf": {
+    "margin_perc": 41.36,
+    "margin_x": 2.4,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10285",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "AYM SYNTEX LIMITED",
+   "margin_perc": 37.21,
+   "margin_x": 2.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "AYMSYNTEX",
+   "isin": "INE193B01039",
+   "pml_id": "1000004167",
+   "mini_mtf": {
+    "margin_perc": 40.0,
+    "margin_x": 2.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10310",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "AURUM PROPTECH LIMITED",
+   "margin_perc": 33.16,
+   "margin_x": 3.0,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "AURUM",
+   "isin": "INE898S01029",
+   "pml_id": "1000005022",
+   "mini_mtf": {
+    "margin_perc": 33.33,
+    "margin_x": 3.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "1038",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "FINOLEX CABLES LTD",
+   "margin_perc": 36.37,
+   "margin_x": 2.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "FINCABLES",
+   "isin": "INE235A01022",
+   "pml_id": "1000000884",
+   "mini_mtf": {
+    "margin_perc": 37.0,
+    "margin_x": 2.7,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10397",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "JAIN IRRIGATION SYSTEMS",
+   "margin_perc": 57.32,
+   "margin_x": 1.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "JISLJALEQS",
+   "isin": "INE175A01038",
+   "pml_id": "1000005519",
+   "mini_mtf": {
+    "margin_perc": 57.32,
+    "margin_x": 1.7,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "104",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SHARE IND. SECURITIES LTD",
+   "margin_perc": 40.75,
+   "margin_x": 2.5,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "SHAREINDIA",
+   "isin": "INE932X01026",
+   "pml_id": "1000009066",
+   "mini_mtf": {
+    "margin_perc": 40.75,
+    "margin_x": 2.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "1041",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "FINOLEX INDUSTRIES LTD",
+   "margin_perc": 30.29,
+   "margin_x": 3.3,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "FINPIPE",
+   "isin": "INE183A01024",
+   "pml_id": "1000000815",
+   "mini_mtf": {
+    "margin_perc": 33.33,
+    "margin_x": 3.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10417",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "DYNAMIC CABLES LIMITED",
+   "margin_perc": 47.87,
+   "margin_x": 2.1,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "DYCL",
+   "isin": "INE600Y01019",
+   "pml_id": "1000007711",
+   "mini_mtf": {
+    "margin_perc": 47.87,
+    "margin_x": 2.1,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10440",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "LUPIN LIMITED",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "LUPIN",
+   "isin": "INE326A01037",
+   "pml_id": "1000000251",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10447",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "UNITED SPIRITS LIMITED",
+   "margin_perc": 20.84,
+   "margin_x": 4.8,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "UNITDSPR",
+   "isin": "INE854D01024",
+   "pml_id": "1000002906",
+   "mini_mtf": {
+    "margin_perc": 21.0,
+    "margin_x": 4.8,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10453",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SATIN CREDIT NET LTD",
+   "margin_perc": 32.25,
+   "margin_x": 3.1,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "SATIN",
+   "isin": "INE836B01017",
+   "pml_id": "1000005399",
+   "mini_mtf": {
+    "margin_perc": 33.33,
+    "margin_x": 3.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10457",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "ARVIND SMARTSPACES LTD",
+   "margin_perc": 32.78,
+   "margin_x": 3.1,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "ARVSMART",
+   "isin": "INE034S01021",
+   "pml_id": "1000000271",
+   "mini_mtf": {
+    "margin_perc": 40.0,
+    "margin_x": 2.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10473",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "POWER MECH PROJECTS LTD.",
+   "margin_perc": 33.25,
+   "margin_x": 3.0,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "POWERMECH",
+   "isin": "INE211R01019",
+   "pml_id": "1000001309",
+   "mini_mtf": {
+    "margin_perc": 33.33,
+    "margin_x": 3.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10485",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "RAM RATNA WIRES LIMITED",
+   "margin_perc": 36.04,
+   "margin_x": 2.8,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "RAMRAT",
+   "isin": "INE207E01023",
+   "pml_id": "1000007715",
+   "mini_mtf": {
+    "margin_perc": 36.04,
+    "margin_x": 2.8,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10508",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "MOTILALAMC - MOHEALTH",
+   "margin_perc": 26.5,
+   "margin_x": 3.8,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "MOHEALTH",
+   "isin": "INF247L01BB1",
+   "pml_id": "3000000663",
+   "mini_mtf": {
+    "margin_perc": 40.0,
+    "margin_x": 2.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10511",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "UTIAMC-NIFTYBETA",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "NIFTYBETA",
+   "isin": "INF789F1AZC0",
+   "pml_id": "3000000729",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10515",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "UTIAMC-SENSEXBETA",
+   "margin_perc": 100.0,
+   "margin_x": 1.0,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "SENSEXBETA",
+   "isin": "INF789FB1X58",
+   "pml_id": "3000000360",
+   "mini_mtf": null
+  },
+  {
+   "scrip_id": "1053",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "UFLEX LIMITED",
+   "margin_perc": 34.3,
+   "margin_x": 2.9,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "UFLEX",
+   "isin": "INE516A01017",
+   "pml_id": "1000005292",
+   "mini_mtf": {
+    "margin_perc": 35.0,
+    "margin_x": 2.9,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10530",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SHARDA MOTOR INDS LTD",
+   "margin_perc": 34.04,
+   "margin_x": 2.9,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "SHARDAMOTR",
+   "isin": "INE597I01028",
+   "pml_id": "1000004188",
+   "mini_mtf": {
+    "margin_perc": 34.04,
+    "margin_x": 2.9,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10557",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "NAVKAR CORPORATION LTD.",
+   "margin_perc": 53.02,
+   "margin_x": 1.9,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "NAVKARCORP",
+   "isin": "INE278M01019",
+   "pml_id": "1000002213",
+   "mini_mtf": {
+    "margin_perc": 53.02,
+    "margin_x": 1.9,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10576",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "NIP IND ETF NIFTY BEES",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "NIFTYBEES",
+   "isin": "INF204KB14I2",
+   "pml_id": "3000000032",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10577",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "KRBL LIMITED",
+   "margin_perc": 33.98,
+   "margin_x": 2.9,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "KRBL",
+   "isin": "INE001B01026",
+   "pml_id": "1000001598",
+   "mini_mtf": {
+    "margin_perc": 34.0,
+    "margin_x": 2.9,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10578",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "MPS LIMITED",
+   "margin_perc": 100.0,
+   "margin_x": 1.0,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "MPSLTD",
+   "isin": "INE943D01017",
+   "pml_id": "1000000978",
+   "mini_mtf": {
+    "margin_perc": 100.0,
+    "margin_x": 1.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10579",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "MARKSANS PHARMA LIMITED",
+   "margin_perc": 36.9,
+   "margin_x": 2.7,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "MARKSANS",
+   "isin": "INE750C01026",
+   "pml_id": "1000005610",
+   "mini_mtf": {
+    "margin_perc": 37.0,
+    "margin_x": 2.7,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10580",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "TRANSPORT CORPN OF INDIA",
+   "margin_perc": 29.38,
+   "margin_x": 3.4,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "TCI",
+   "isin": "INE688A01022",
+   "pml_id": "1000003884",
+   "mini_mtf": {
+    "margin_perc": 40.0,
+    "margin_x": 2.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10585",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "ICICIPRAMC - ICICIMOM30",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "MOM30IETF",
+   "isin": "INF109KC17C7",
+   "pml_id": "3000000664",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10588",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "SHRE PUSH CHEM & FERT LTD",
+   "margin_perc": 39.14,
+   "margin_x": 2.6,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "SHREEPUSHK",
+   "isin": "INE712K01011",
+   "pml_id": "1000003187",
+   "mini_mtf": {
+    "margin_perc": 40.0,
+    "margin_x": 2.5,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10599",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "GUJARAT ENERGY LIMITED",
+   "margin_perc": 35.92,
+   "margin_x": 2.8,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "GUJENERGY",
+   "isin": "INE844O01030",
+   "pml_id": "1000002089",
+   "mini_mtf": {
+    "margin_perc": 35.92,
+    "margin_x": 2.8,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10604",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "BHARTI AIRTEL LIMITED",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ES",
+   "symbol": "BHARTIARTL",
+   "isin": "INE397D01024",
+   "pml_id": "1000001413",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  },
+  {
+   "scrip_id": "10619",
+   "segment": "E",
+   "exchange": "NSE",
+   "scrip_name": "HDFCAMC - HDFCNEXT50",
+   "margin_perc": 20.0,
+   "margin_x": 5.0,
+   "status": "ENABLED",
+   "instrument_type": "ETF",
+   "symbol": "HDFCNEXT50",
+   "isin": "INF179KC1HS2",
+   "pml_id": "3000000735",
+   "mini_mtf": {
+    "margin_perc": 20.0,
+    "margin_x": 5.0,
+    "status": "ENABLED"
+   }
+  }
+ ],
+ "meta": {
+  "status": "OK",
+  "display_message": "SUCCESS"
+ }
+}

@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-10-28T09:13:59Z",
+  "brokers": {
+    "kotak": {
+      "fetchedAt": "2026-10-28T08:57:01Z",
+      "count": 1709,
+      "status": "ok",
+      "error": null,
+      "matched": 1709
+    },
+    "paytm": {
+      "fetchedAt": "2026-10-28T08:54:58Z",
+      "count": 1534,
+      "status": "ok",
+      "error": null,
+      "matched": 1534
+    },
+    "rupeezy": {
+      "fetchedAt": "2026-10-28T08:55:19Z",
+      "count": 2198,
+      "status": "ok",
+      "error": null,
+      "matched": 2198
+    }
+  },
+  "total": 2203,
+  "unmatched": 0
+}

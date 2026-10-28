@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Compare MTF leverage at Kotak Neo, Paytm Money and Rupeezy for any NSE stock." />
+    <title>MTF Compare</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000'/%3E%3Cpath d='M8 22V10l8 8 8-8v12' fill='none' stroke='%2300C48C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <h1>MTF Compare</h1>
+          <div class="status" id="status" aria-live="polite"></div>
+        </div>
+        <button class="btn btn-refresh" id="refresh" type="button">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 5v6h-6" /></svg>
+          <span>Refresh</span>
+        </button>
+      </header>
+
+      <div class="search-wrap">
+        <label class="search">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+          <input id="q" type="search" placeholder="Search a stock or ETF" autocomplete="off" spellcheck="false" aria-label="Search stocks" />
+          <kbd>/</kbd>
+        </label>
+      </div>
+
+      <section class="summary" id="summary" aria-label="Broker summary"></section>
+
+      <main>
+        <div class="toolbar" id="toolbar">
+          <div class="seg" role="tablist" aria-label="View">
+            <button role="tab" data-view="pinned" aria-selected="true">Pinned <span class="count" id="pin-count"></span></button>
+            <button role="tab" data-view="all" aria-selected="false">All stocks</button>
+          </div>
+          <div class="toolbar-right">
+            <div class="chips" id="chips" aria-label="Filter by best broker"></div>
+            <label class="select">
+              <span class="sr-only">Sort</span>
+              <select id="sort">
+                <option value="az">A to Z</option>
+                <option value="lev">Top leverage</option>
+                <option value="gap">Biggest gap</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="list-head" id="list-head" aria-hidden="true">
+          <span>Stock</span><span>Kotak Neo</span><span>Paytm Money</span><span>Rupeezy</span><span>Best</span><span></span>
+        </div>
+        <div class="list" id="list" role="list"></div>
+        <div class="list-foot" id="list-foot"></div>
+      </main>
+
+      <footer class="footer" id="footer"></footer>
+    </div>
+
+    <dialog class="sheet" id="sheet"></dialog>
+    <div class="popover" id="popover" hidden></div>
+    <div class="toast" id="toast" role="status" hidden></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

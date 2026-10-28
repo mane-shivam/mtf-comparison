@@ -1,0 +1,53 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, ccr-2e7041e0-nemrxd]
+    paths-ignore: ["data/**", "public/data/**"]  # data commits deploy via refresh.yml
+  workflow_dispatch:
+  workflow_call:  # refresh.yml calls this after committing new data
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}  # latest commit, including data refresh.yml just pushed
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_REFRESH_MODE: github
+          VITE_GITHUB_REPO: ${{ github.repository }}
+          VITE_GITHUB_REF: ${{ github.ref_name }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

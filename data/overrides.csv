@@ -1,0 +1,5 @@
+broker,name,symbol
+# Map a broker's company name to an NSE symbol when automatic matching gets it wrong.
+# broker is optional (kotak, paytm or rupeezy); leave it blank to apply to all three.
+# Leave symbol blank to drop a row on purpose. Example:
+# rupeezy,Some Company Ltd,SOMECO
