@@ -1,7 +1,7 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-10-28T10:05:54Z",
-"count": 1710,
+"fetchedAt": "2026-10-28T12:57:32Z",
+"count": 1711,
 "rows": [
 {
 "symbol": "ASHIANA",
@@ -6304,6 +6304,13 @@
 "maxExposureCr": 1.0
 },
 {
+"symbol": "LICNETFGSC",
+"name": "Licnamc - Licnmfet(Fresh Mtf Buying Is Not Allowed)",
+"exchange": "NSE",
+"lev": 5.0,
+"maxExposureCr": 1.0
+},
+{
 "symbol": "LICNETFN50",
 "name": "Licnamc-Licnfengp",
 "exchange": "NSE",
@@ -6342,7 +6349,7 @@
 "symbol": "LLOYDSENT",
 "name": "Lloyds Enterprises Ltd",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.59,
 "maxExposureCr": 2.0
 },
 {
@@ -6363,7 +6370,7 @@
 "symbol": "LTFOODS",
 "name": "Lt Foods Limited",
 "exchange": "NSE",
-"lev": 3.04,
+"lev": 3.03,
 "maxExposureCr": 5.0
 },
 {
@@ -6496,14 +6503,14 @@
 "symbol": "M&MFIN",
 "name": "Mahindra & Mahindra Financial Services Limited",
 "exchange": "NSE",
-"lev": 3.09,
+"lev": 3.06,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "M&M",
 "name": "Mahindra & Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.69,
+"lev": 4.7,
 "maxExposureCr": 50.0
 },
 {

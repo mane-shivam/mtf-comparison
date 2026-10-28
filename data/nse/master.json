@@ -17848,5 +17848,11 @@
 "name": "Nifty Pharma",
 "isin": "INF109K1A716",
 "type": "etf"
+},
+{
+"symbol": "SBIDEFETF",
+"name": "BSE India Defence",
+"isin": "INF200KB1CJ6",
+"type": "etf"
 }
 ]
