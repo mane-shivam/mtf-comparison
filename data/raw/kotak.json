@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-10-29T19:46:28Z",
+"fetchedAt": "2026-10-29T21:57:55Z",
 "count": 1711,
 "rows": [
 {
@@ -7609,7 +7609,7 @@
 "symbol": "ITBEES",
 "name": "Nipindetfit",
 "exchange": "NSE",
-"lev": 3.65,
+"lev": 3.66,
 "maxExposureCr": 1.0
 },
 {
@@ -7658,7 +7658,7 @@
 "symbol": "NAM-INDIA",
 "name": "Nippon Life India Asset Management Limited",
 "exchange": "NSE",
-"lev": 3.84,
+"lev": 3.83,
 "maxExposureCr": 25.0
 },
 {
@@ -7728,7 +7728,7 @@
 "symbol": "NSLNISP",
 "name": "Nmdc Steel Limited",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.97,
 "maxExposureCr": 5.0
 },
 {
@@ -7742,7 +7742,7 @@
 "symbol": "NORTHARC",
 "name": "Northern Arc Capital Ltd",
 "exchange": "NSE",
-"lev": 3.01,
+"lev": 3.02,
 "maxExposureCr": 5.0
 },
 {
