@@ -15792,7 +15792,7 @@
 "type": "etf"
 },
 {
-"symbol": "SETFGOLD",
+"symbol": "SBIGOLD",
 "name": "Gold",
 "isin": "INF200KA16D8",
 "type": "etf"
@@ -15936,13 +15936,13 @@
 "type": "etf"
 },
 {
-"symbol": "SETFNIFBK",
+"symbol": "SBIBANKNIF",
 "name": "Nifty Bank",
 "isin": "INF200KA1580",
 "type": "etf"
 },
 {
-"symbol": "SETFNN50",
+"symbol": "SBINEXT50",
 "name": "Nifty Next 50",
 "isin": "INF200KA1598",
 "type": "etf"
@@ -15954,7 +15954,7 @@
 "type": "etf"
 },
 {
-"symbol": "SETFNIF50",
+"symbol": "SBINIFTY50",
 "name": "Nifty 50",
 "isin": "INF200KA1FS1",
 "type": "etf"
@@ -16008,7 +16008,7 @@
 "type": "etf"
 },
 {
-"symbol": "SETF10GILT",
+"symbol": "SBI10YGILT",
 "name": "Nifty 10 yr Benchmark G-Sec Index",
 "isin": "INF200KA1JT1",
 "type": "etf"
@@ -16092,7 +16092,7 @@
 "type": "etf"
 },
 {
-"symbol": "SBIETFQLTY",
+"symbol": "SBIQUALITY",
 "name": "Nifty 200 Quality 30 Index",
 "isin": "INF200KA1WX6",
 "type": "etf"
@@ -16200,13 +16200,13 @@
 "type": "etf"
 },
 {
-"symbol": "SBIETFIT",
+"symbol": "SBIIT",
 "name": "Nifty IT Index",
 "isin": "INF200KA1S14",
 "type": "etf"
 },
 {
-"symbol": "SBIETFPB",
+"symbol": "SBIPVTBNK",
 "name": "Nifty Private Bank Index",
 "isin": "INF200KA1S22",
 "type": "etf"
@@ -16272,7 +16272,7 @@
 "type": "etf"
 },
 {
-"symbol": "SBIETFCON",
+"symbol": "SBICONS",
 "name": "Nifty India Consumption Index",
 "isin": "INF200KA1X17",
 "type": "etf"
@@ -16944,7 +16944,7 @@
 "type": "etf"
 },
 {
-"symbol": "SBINEQWETF",
+"symbol": "SBIEQLWT50",
 "name": "Nifty50 Equal Weight",
 "isin": "INF200KB1282",
 "type": "etf"
@@ -17148,7 +17148,7 @@
 "type": "etf"
 },
 {
-"symbol": "SBIBPB",
+"symbol": "SBIPSUBNK",
 "name": "BSE PSU Bank Index TRI",
 "isin": "INF200KB1712",
 "type": "etf"
@@ -17628,7 +17628,7 @@
 "type": "etf"
 },
 {
-"symbol": "SBINMID150",
+"symbol": "SBIMID150",
 "name": "Nifty Midcap 150 Index",
 "isin": "INF200KB1AK8",
 "type": "etf"
