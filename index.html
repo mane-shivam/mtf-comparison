@@ -25,11 +25,15 @@
       </header>
 
       <div class="search-wrap">
-        <label class="search">
+        <div class="search">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-          <input id="q" type="search" placeholder="Search a stock or ETF" autocomplete="off" spellcheck="false" aria-label="Search stocks" />
+          <input id="q" type="search" placeholder="Search stocks" autocomplete="off" spellcheck="false" aria-label="Search" />
           <kbd>/</kbd>
-        </label>
+          <div class="type-seg" role="group" aria-label="Show">
+            <button type="button" data-type="equity" aria-pressed="true">Stocks</button>
+            <button type="button" data-type="etf" aria-pressed="false">ETFs</button>
+          </div>
+        </div>
       </div>
 
       <section class="summary" id="summary" aria-label="Broker summary"></section>
@@ -38,7 +42,7 @@
         <div class="toolbar" id="toolbar">
           <div class="seg" role="tablist" aria-label="View">
             <button role="tab" data-view="pinned" aria-selected="true">Pinned <span class="count" id="pin-count"></span></button>
-            <button role="tab" data-view="all" aria-selected="false">All stocks</button>
+            <button role="tab" data-view="all" aria-selected="false">All</button>
           </div>
           <div class="toolbar-right">
             <div class="chips" id="chips" aria-label="Filter by best broker"></div>

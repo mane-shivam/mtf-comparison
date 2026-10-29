@@ -92,6 +92,7 @@ const state = {
   view: 'pinned' as 'pinned' | 'all',
   sort: 'az' as 'az' | 'lev' | 'gap',
   filter: null as BrokerKey | null,
+  type: 'equity' as 'equity' | 'etf', // search and the All list show one kind at a time; stocks by default
   query: '',
   limit: PAGE,
   refreshing: false,
@@ -145,7 +146,9 @@ function togglePin(sym: string) {
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
-const fmtLev = (n: number) => `${Number(n.toFixed(2))}×`;
+// Multipliers are shown, and compared for "best", to one decimal: 4.23 → 4.2, 5.89 → 5.9.
+const round1 = (n: number) => Math.round((n + Number.EPSILON) * 10) / 10;
+const fmtLev = (n: number) => `${round1(n)}×`;
 const fmtNum = (n: number) => n.toLocaleString('en-IN');
 const isFunded = (c: Cell | null): c is Cell => !!c && c.lev > 1;
 
@@ -186,7 +189,13 @@ async function loadData() {
 }
 
 function setData(stocks: Stock[], meta: Meta) {
-  for (const s of stocks) s.name = titleCase(s.name);
+  for (const s of stocks) {
+    s.name = titleCase(s.name);
+    // Re-derive the winner at display precision, so 4.27 vs 4.25 (both 4.3×) is a tie, not a win.
+    const levs = BROKERS.filter((b) => isFunded(s[b])).map((b) => round1(s[b]!.lev));
+    s.bestLev = levs.length ? Math.max(...levs) : null;
+    s.best = BROKERS.filter((b) => isFunded(s[b]) && round1(s[b]!.lev) === s.bestLev);
+  }
   state.stocks = stocks;
   state.bySymbol = new Map(stocks.map((s) => [s.symbol, s]));
   state.meta = meta;
@@ -196,12 +205,13 @@ function setData(stocks: Stock[], meta: Meta) {
 
 /* ---------- search & sort ---------- */
 
-function search(q: string): Stock[] {
+function search(q: string, type = state.type): Stock[] {
   const query = q.trim().toUpperCase();
   if (!query) return [];
   const words = query.split(/\s+/);
   const scored: [number, Stock][] = [];
   for (const s of state.stocks) {
+    if (s.type !== type) continue;
     const name = s.name.toUpperCase();
     let score = -1;
     if (s.symbol === query) score = 100;
@@ -243,10 +253,11 @@ const ICON = {
   down: '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 8 1 2h8z"/></svg>',
 };
 
-function changeMark(delta: number): string {
-  if (!delta) return '';
-  const up = delta > 0;
-  return `<span class="chg ${up ? 'up' : 'down'}" title="${up ? '+' : ''}${Number(delta.toFixed(2))}× since yesterday">${up ? ICON.up : ICON.down}</span>`;
+function changeMark(lev: number, delta: number): string {
+  const move = round1(lev) - round1(lev - delta);
+  if (!delta || !round1(move)) return ''; // too small to show at one decimal
+  const up = move > 0;
+  return `<span class="chg ${up ? 'up' : 'down'}" title="${up ? '+' : ''}${round1(move)}× since yesterday">${up ? ICON.up : ICON.down}</span>`;
 }
 
 function levCell(s: Stock, b: BrokerKey): string {
@@ -258,7 +269,7 @@ function levCell(s: Stock, b: BrokerKey): string {
   else if (!isFunded(c)) inner = '<span class="nf">Not funded</span>';
   else inner = `<span class="lev">${fmtLev(c.lev)}</span>${win ? '<span class="tag">Best</span>' : ''}`;
   const cls = `${best ? ' is-best' : ''}${win ? ' is-win' : ''}${c && !isFunded(c) ? ' is-nf' : ''}`;
-  return `<div class="cell${cls}" data-broker="${BROKER_SHORT[b]}">${inner}${c ? changeMark(s.change?.[b] ?? 0) : ''}</div>`;
+  return `<div class="cell${cls}" data-broker="${BROKER_SHORT[b]}">${inner}${c ? changeMark(c.lev, s.change?.[b] ?? 0) : ''}</div>`;
 }
 
 function rowHTML(s: Stock): string {
@@ -319,7 +330,12 @@ function renderChips() {
 
 function emptyState(): string {
   if (state.query) {
-    return `<div class="empty"><p class="empty-title">No match for “${esc(state.query)}”</p><p>None of the three brokers lists it for MTF, or it trades under another symbol.</p></div>`;
+    const other = state.type === 'etf' ? 'equity' : 'etf';
+    const n = search(state.query, other).length;
+    const hint = n
+      ? `<div class="chips"><button class="chip" data-type="${other}">Show ${n === 50 ? '50+' : n} ${other === 'etf' ? 'ETF' : 'stock'} match${n === 1 ? '' : 'es'}</button></div>`
+      : '';
+    return `<div class="empty"><p class="empty-title">No ${state.type === 'etf' ? 'ETF' : 'stock'} matches “${esc(state.query)}”</p><p>None of the three brokers lists it for MTF, or it trades under another symbol.</p>${hint}</div>`;
   }
   if (state.view === 'pinned' && !state.pins.length) {
     return `<div class="empty"><p class="empty-title">Nothing pinned yet</p><p>Search a stock and tap the star, or add several at once.</p>
@@ -333,7 +349,7 @@ function renderList() {
   let list: Stock[];
   if (searching) list = search(state.query);
   else if (state.view === 'pinned') list = sorted(state.pins.map((p) => state.bySymbol.get(p) ?? stubStock(p)));
-  else list = sorted(state.stocks);
+  else list = sorted(state.stocks.filter((s) => s.type === state.type));
 
   // Pins no broker funds are shown as empty rows; fetch their names once.
   if (!searching && state.view === 'pinned' && !state.symbols && state.pins.some((p) => !state.bySymbol.has(p))) {
@@ -403,6 +419,16 @@ function renderAll() {
   render();
 }
 
+function setType(type: 'equity' | 'etf') {
+  state.type = type;
+  state.limit = PAGE;
+  document.querySelectorAll<HTMLButtonElement>('.type-seg [data-type]').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.type === type));
+  });
+  $<HTMLInputElement>('#q').placeholder = type === 'etf' ? 'Search ETFs' : 'Search stocks';
+  renderList();
+}
+
 /* ---------- detail sheet ---------- */
 
 async function openSheet(sym: string) {
@@ -463,8 +489,8 @@ function renderHistory(sym: string) {
       const cells = series.map((snap, i) => {
         const v = snap?.[bi] ?? null;
         const prev = i > 0 ? (series[i - 1]?.[bi] ?? null) : null;
-        const cls = prev != null && v != null && v !== prev ? (v > prev ? 'up' : 'down') : '';
-        return `<td class="${cls}">${v == null ? '—' : v > 1 ? Number(v.toFixed(2)) : '<span class="nf">×</span>'}</td>`;
+        const cls = prev != null && v != null && round1(v) !== round1(prev) ? (round1(v) > round1(prev) ? 'up' : 'down') : '';
+        return `<td class="${cls}">${v == null ? '—' : v > 1 ? round1(v) : '<span class="nf">×</span>'}</td>`;
       });
       return `<tr><th>${BROKER_SHORT[b]}</th>${cells.join('')}</tr>`;
     })
@@ -826,6 +852,9 @@ async function pollForUpdate() {
 
 function bind() {
   const q = $<HTMLInputElement>('#q');
+  $('.search').addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('button')) q.focus();
+  });
   q.addEventListener('input', () => {
     state.query = q.value;
     renderList();
@@ -904,6 +933,11 @@ function bind() {
       state.view = view.dataset.view as 'pinned' | 'all';
       state.limit = PAGE;
       render();
+      return;
+    }
+    const typeBtn = t.closest<HTMLElement>('[data-type]');
+    if (typeBtn) {
+      setType(typeBtn.dataset.type as 'equity' | 'etf');
       return;
     }
     const chip = t.closest<HTMLElement>('[data-filter]');
