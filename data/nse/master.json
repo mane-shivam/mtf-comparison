@@ -1128,6 +1128,12 @@
 "type": "equity"
 },
 {
+"symbol": "ARHAM",
+"name": "Arham Technologies Limited",
+"isin": "INE0L2Y01011",
+"type": "equity"
+},
+{
 "symbol": "ARIES",
 "name": "Aries Agro Limited",
 "isin": "INE298I01015",
@@ -6399,6 +6405,12 @@
 "symbol": "INDTERRAIN",
 "name": "Indian Terrain Fashions Limited",
 "isin": "INE611L01021",
+"type": "equity"
+},
+{
+"symbol": "INDTONER",
+"name": "Indian Toners & Developers Limited",
+"isin": "INE826B01026",
 "type": "equity"
 },
 {
