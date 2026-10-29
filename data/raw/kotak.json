@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-10-29T11:04:41Z",
+"fetchedAt": "2026-10-29T17:05:40Z",
 "count": 1711,
 "rows": [
 {
@@ -700,7 +700,7 @@
 "symbol": "APLAPOLLO",
 "name": "Apl Apollo Tubes Limited",
 "exchange": "NSE",
-"lev": 4.42,
+"lev": 4.43,
 "maxExposureCr": 50.0
 },
 {
@@ -735,7 +735,7 @@
 "symbol": "APTUS",
 "name": "Aptus Value Housing Finance India Limited",
 "exchange": "NSE",
-"lev": 3.29,
+"lev": 3.28,
 "maxExposureCr": 5.0
 },
 {
@@ -812,7 +812,7 @@
 "symbol": "ARVINDFASN",
 "name": "Arvind Fashions Limited",
 "exchange": "NSE",
-"lev": 3.15,
+"lev": 3.14,
 "maxExposureCr": 5.0
 },
 {
@@ -840,7 +840,7 @@
 "symbol": "ASHAPURMIN",
 "name": "Ashapura Minechem Limited",
 "exchange": "NSE",
-"lev": 2.56,
+"lev": 2.55,
 "maxExposureCr": 5.0
 },
 {
