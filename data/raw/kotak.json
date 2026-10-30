@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-10-30T11:01:31Z",
+"fetchedAt": "2026-10-30T16:51:25Z",
 "count": 1711,
 "rows": [
 {
@@ -1911,7 +1911,7 @@
 "symbol": "CARTRADE",
 "name": "Cartrade Tech Limited",
 "exchange": "NSE",
-"lev": 2.49,
+"lev": 2.48,
 "maxExposureCr": 5.0
 },
 {
@@ -1960,7 +1960,7 @@
 "symbol": "CELLO",
 "name": "Cello World Ltd",
 "exchange": "NSE",
-"lev": 3.16,
+"lev": 3.15,
 "maxExposureCr": 5.0
 },
 {
@@ -2023,7 +2023,7 @@
 "symbol": "ABREL",
 "name": "Century Textiles & Industries Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 3.0,
 "maxExposureCr": 10.0
 },
 {
@@ -2079,7 +2079,7 @@
 "symbol": "CHENNPETRO",
 "name": "Chennai Petroleum Corporation Limited",
 "exchange": "NSE",
-"lev": 2.53,
+"lev": 2.54,
 "maxExposureCr": 10.0
 },
 {
@@ -2093,14 +2093,14 @@
 "symbol": "CHOLAHLDNG",
 "name": "Cholamandalam Financial Holdings Limited",
 "exchange": "NSE",
-"lev": 3.17,
+"lev": 3.16,
 "maxExposureCr": 10.0
 },
 {
 "symbol": "CHOLAFIN",
 "name": "Cholamandalam Investment And Finance Company Limited",
 "exchange": "NSE",
-"lev": 4.17,
+"lev": 4.16,
 "maxExposureCr": 50.0
 },
 {
@@ -9492,7 +9492,7 @@
 "symbol": "SENORES",
 "name": "Senores Pharmaceuticals Ltd",
 "exchange": "NSE",
-"lev": 2.91,
+"lev": 2.88,
 "maxExposureCr": 5.0
 },
 {
@@ -9548,7 +9548,7 @@
 "symbol": "SHAILY",
 "name": "Shaily Engineering Plastics Ltd",
 "exchange": "NSE",
-"lev": 2.69,
+"lev": 2.7,
 "maxExposureCr": 2.0
 },
 {
@@ -10514,21 +10514,21 @@
 "symbol": "TCS",
 "name": "Tata Consultancy Services Limited",
 "exchange": "NSE",
-"lev": 4.56,
+"lev": 4.57,
 "maxExposureCr": 75.0
 },
 {
 "symbol": "TATACONSUM",
 "name": "Tata Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.99,
+"lev": 4.98,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TATAELXSI",
 "name": "Tata Elxsi Limited",
 "exchange": "NSE",
-"lev": 4.25,
+"lev": 4.26,
 "maxExposureCr": 50.0
 },
 {
@@ -10542,7 +10542,7 @@
 "symbol": "TMCV",
 "name": "Tata Motors Limited",
 "exchange": "NSE",
-"lev": 3.35,
+"lev": 3.36,
 "maxExposureCr": 50.0
 },
 {
@@ -10563,7 +10563,7 @@
 "symbol": "TATASTEEL",
 "name": "Tata Steel Limited",
 "exchange": "NSE",
-"lev": 4.8,
+"lev": 4.81,
 "maxExposureCr": 50.0
 },
 {
@@ -10612,7 +10612,7 @@
 "symbol": "TATVA",
 "name": "Tatva Chintan Pharma Chem Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.56,
+"lev": 2.57,
 "maxExposureCr": 2.0
 },
 {
@@ -10640,7 +10640,7 @@
 "symbol": "TDPOWERSYS",
 "name": "Td Power Systems Limited",
 "exchange": "NSE",
-"lev": 2.47,
+"lev": 2.48,
 "maxExposureCr": 5.0
 },
 {
@@ -10654,7 +10654,7 @@
 "symbol": "TECHM",
 "name": "Tech Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.51,
+"lev": 4.52,
 "maxExposureCr": 50.0
 },
 {
@@ -10759,7 +10759,7 @@
 "symbol": "FEDERALBNK",
 "name": "The Federal Bank  Limited",
 "exchange": "NSE",
-"lev": 4.88,
+"lev": 4.89,
 "maxExposureCr": 50.0
 },
 {
@@ -10780,7 +10780,7 @@
 "symbol": "INDHOTEL",
 "name": "The Indian Hotels Company Limited",
 "exchange": "NSE",
-"lev": 4.73,
+"lev": 4.74,
 "maxExposureCr": 50.0
 },
 {
@@ -10829,7 +10829,7 @@
 "symbol": "SOUTHBANK",
 "name": "The South Indian Bank Limited",
 "exchange": "NSE",
-"lev": 3.04,
+"lev": 3.03,
 "maxExposureCr": 10.0
 },
 {
@@ -10857,14 +10857,14 @@
 "symbol": "THERMAX",
 "name": "Thermax Limited",
 "exchange": "NSE",
-"lev": 3.1,
+"lev": 3.11,
 "maxExposureCr": 5.0
 },
 {
 "symbol": "TIRUMALCHM",
 "name": "Thirumalai Chemicals Limited",
 "exchange": "NSE",
-"lev": 2.8,
+"lev": 2.81,
 "maxExposureCr": 2.0
 },
 {
@@ -10920,7 +10920,7 @@
 "symbol": "TIPSMUSIC",
 "name": "Tips Music Limited",
 "exchange": "NSE",
-"lev": 2.91,
+"lev": 2.92,
 "maxExposureCr": 5.0
 },
 {
