@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-10-31T10:35:06Z",
+"fetchedAt": "2026-10-31T15:54:23Z",
 "count": 2207,
 "rows": [
 {
@@ -19165,18 +19165,18 @@
 "ownPct": 89.29
 },
 {
-"symbol": "GANESHBE",
-"name": "GANESH BENZOPLAST LIMITED",
-"isin": "INE388A01029",
+"symbol": "RMDRIP",
+"name": "R M DRIP & SPRINK SYS LTD",
+"isin": "INE219Y01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
 "ownPct": 100.0
 },
 {
-"symbol": "RMDRIP",
-"name": "R M DRIP & SPRINK SYS LTD",
-"isin": "INE219Y01026",
+"symbol": "GANESHBE",
+"name": "GANESH BENZOPLAST LIMITED",
+"isin": "INE388A01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
