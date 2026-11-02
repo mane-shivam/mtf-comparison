@@ -1,7 +1,7 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-02T20:31:49Z",
-"count": 1711,
+"fetchedAt": "2026-11-02T22:51:47Z",
+"count": 1685,
 "rows": [
 {
 "symbol": "ASHIANA",
@@ -4802,7 +4802,7 @@
 "symbol": "IDBI",
 "name": "Idbi Bank Limited",
 "exchange": "NSE",
-"lev": 2.73,
+"lev": 2.72,
 "maxExposureCr": 10.0
 },
 {
@@ -4823,7 +4823,7 @@
 "symbol": "IFCI",
 "name": "Ifci Limited",
 "exchange": "NSE",
-"lev": 2.44,
+"lev": 2.45,
 "maxExposureCr": 5.0
 },
 {
@@ -7774,169 +7774,8 @@
 "maxExposureCr": 75.0
 },
 {
-"symbol": "NUCLEUS",
-"name": "Nucleus Software Exports Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "NUVAMA",
-"name": "Nuvama Wealth Management Limited",
-"exchange": "NSE",
-"lev": 2.99,
-"maxExposureCr": 5.0
-},
-{
-"symbol": "NUVOCO",
-"name": "Nuvoco Vistas Corporation Limited",
-"exchange": "NSE",
-"lev": 2.86,
-"maxExposureCr": 2.0
-},
-{
-"symbol": "OBEROIRLTY",
-"name": "Oberoi Realty Limited",
-"exchange": "NSE",
-"lev": 4.0,
-"maxExposureCr": 25.0
-},
-{
-"symbol": "ONGC",
-"name": "Oil & Natural Gas Corporation Limited",
-"exchange": "NSE",
-"lev": 5.0,
-"maxExposureCr": 75.0
-},
-{
-"symbol": "OIL",
-"name": "Oil India Limited",
-"exchange": "NSE",
-"lev": 4.0,
-"maxExposureCr": 25.0
-},
-{
-"symbol": "OLAELEC",
-"name": "Ola Electric Mobility Limited",
-"exchange": "NSE",
-"lev": 2.35,
-"maxExposureCr": 1.0
-},
-{
-"symbol": "OLECTRA",
-"name": "Olectra Greentech Limited",
-"exchange": "NSE",
-"lev": 2.88,
-"maxExposureCr": 10.0
-},
-{
-"symbol": "OMINFRAL",
-"name": "Om Infra Ltd",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "OMAXE",
-"name": "Omaxe Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "OMNI",
-"name": "Omnitech Engineering Limited(Fresh Mtf Buying Is Not Allowed)",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "PAYTM",
-"name": "One 97 Communications Limited",
-"exchange": "NSE",
-"lev": 3.33,
-"maxExposureCr": 10.0
-},
-{
-"symbol": "MOBIKWIK",
-"name": "One Mobikwik Systems Ltd",
-"exchange": "NSE",
-"lev": 2.59,
-"maxExposureCr": 2.0
-},
-{
-"symbol": "ONEPOINT",
-"name": "One Point One Solutions Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "KISSHT",
-"name": "Onemi Technology Solutions Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "ONESOURCE",
-"name": "Onesource Specialty Pharma Ltd",
-"exchange": "NSE",
-"lev": 2.93,
-"maxExposureCr": 5.0
-},
-{
-"symbol": "OPTIEMUS",
-"name": "Optiemus Infracom Ltd(Fresh Mtf Buying Is Not Allowed)",
-"exchange": "NSE",
-"lev": 2.33,
-"maxExposureCr": 1.0
-},
-{
-"symbol": "OFSS",
-"name": "Oracle Financial Services Software Limited",
-"exchange": "NSE",
-"lev": 4.15,
-"maxExposureCr": 50.0
-},
-{
-"symbol": "ORCHPHARMA",
-"name": "Orchid Pharma Ltd",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "ORICONENT",
-"name": "Oricon Enterprises Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "ORIENTCEM",
-"name": "Orient Cement Limited",
-"exchange": "NSE",
-"lev": 2.5,
-"maxExposureCr": 1.0
-},
-{
-"symbol": "ORIENTELEC",
-"name": "Orient Electric Limited",
-"exchange": "NSE",
-"lev": 2.5,
-"maxExposureCr": 1.0
-},
-{
 "symbol": "GREENPOWER",
 "name": "Orient Green Power Co Ltd",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "ORIENTPPR",
-"name": "Orient Paper & Industries Limited",
 "exchange": "NSE",
 "lev": 1.0,
 "maxExposureCr": 0.1
@@ -7949,32 +7788,11 @@
 "maxExposureCr": 1.0
 },
 {
-"symbol": "OAL",
-"name": "Oriental Aromatics Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "ORIENTHOT",
-"name": "Oriental Hotels Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
 "symbol": "ORKLAINDIA",
 "name": "Orkla India Limited",
 "exchange": "NSE",
 "lev": 2.86,
 "maxExposureCr": 2.0
-},
-{
-"symbol": "OSWALGREEN",
-"name": "Oswal Greentech Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
 },
 {
 "symbol": "OSWALPUMPS",
@@ -8012,27 +7830,6 @@
 "maxExposureCr": 1.0
 },
 {
-"symbol": "PAKKA",
-"name": "Pakka Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "PANACEABIO",
-"name": "Panacea Biotec Ltd",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "PANAMAPET",
-"name": "Panama Petrochem Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
 "symbol": "PARADEEP",
 "name": "Paradeep Phosphates Limited",
 "exchange": "NSE",
@@ -8045,13 +7842,6 @@
 "exchange": "NSE",
 "lev": 2.69,
 "maxExposureCr": 5.0
-},
-{
-"symbol": "PARACABLES",
-"name": "Paramount Communications Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
 },
 {
 "symbol": "PARAS",
@@ -8068,13 +7858,6 @@
 "maxExposureCr": 2.0
 },
 {
-"symbol": "PASHUPATI",
-"name": "Pashupati Cotspin Ltd",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
 "symbol": "PATANJALI",
 "name": "Patanjali Foods Limited",
 "exchange": "NSE",
@@ -8087,20 +7870,6 @@
 "exchange": "NSE",
 "lev": 2.5,
 "maxExposureCr": 1.0
-},
-{
-"symbol": "PATELRMART",
-"name": "Patel Retail Limited",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
-"symbol": "PAUSHAKLTD",
-"name": "Paushak Ltd",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
 },
 {
 "symbol": "POLICYBZR",
@@ -8201,13 +7970,6 @@
 "maxExposureCr": 50.0
 },
 {
-"symbol": "PILANIINVS",
-"name": "Pilani Investment And Industries Corporation Limited(Fresh Mtf Buying Is Not Allowed)",
-"exchange": "NSE",
-"lev": 1.0,
-"maxExposureCr": 0.1
-},
-{
 "symbol": "PINELABS",
 "name": "Pine Labs Limited",
 "exchange": "NSE",
@@ -8220,6 +7982,62 @@
 "exchange": "NSE",
 "lev": 3.48,
 "maxExposureCr": 25.0
+},
+{
+"symbol": "PAKKA",
+"name": "Pakka Limited",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PANACEABIO",
+"name": "Panacea Biotec Ltd",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PANAMAPET",
+"name": "Panama Petrochem Limited",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PARACABLES",
+"name": "Paramount Communications Limited",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PASHUPATI",
+"name": "Pashupati Cotspin Ltd",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PATELRMART",
+"name": "Patel Retail Limited",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PAUSHAKLTD",
+"name": "Paushak Ltd",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "PILANIINVS",
+"name": "Pilani Investment And Industries Corporation Limited(Fresh Mtf Buying Is Not Allowed)",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
 },
 {
 "symbol": "PPLPHARMA",
