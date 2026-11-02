@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-01T19:03:59Z",
+"fetchedAt": "2026-11-02T12:50:16Z",
 "count": 2207,
 "rows": [
 {
@@ -1723,18 +1723,18 @@
 "ownPct": 20.04
 },
 {
-"symbol": "ANANDRATHI",
-"name": "ANAND RATHI WEALTH LTD",
-"isin": "INE463V01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.97,
-"ownPct": 20.12
-},
-{
 "symbol": "ABSLMSCIN",
 "name": "Aditya Birla Sun Life MSCI India ETF",
 "isin": "INF209KC1662",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.98,
+"ownPct": 20.08
+},
+{
+"symbol": "ANANDRATHI",
+"name": "ANAND RATHI WEALTH LTD",
+"isin": "INE463V01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.97,
@@ -1768,15 +1768,6 @@
 "ownPct": 20.24
 },
 {
-"symbol": "ZYDUSLIFE",
-"name": "ZYDUS LIFESCIENCES LTD",
-"isin": "INE010B01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.92,
-"ownPct": 20.33
-},
-{
 "symbol": "JSWSTEEL",
 "name": "JSW STEEL LIMITED",
 "isin": "INE019A01038",
@@ -1784,6 +1775,15 @@
 "type": "equity",
 "lev": 4.9,
 "ownPct": 20.41
+},
+{
+"symbol": "ZYDUSLIFE",
+"name": "ZYDUS LIFESCIENCES LTD",
+"isin": "INE010B01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.89,
+"ownPct": 20.45
 },
 {
 "symbol": "FEDERALBNK",
@@ -1849,6 +1849,15 @@
 "ownPct": 20.79
 },
 {
+"symbol": "UNITDSPR",
+"name": "UNITED SPIRITS LIMITED",
+"isin": "INE854D01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.81,
+"ownPct": 20.79
+},
+{
 "symbol": "ICICIGI",
 "name": "ICICI LOMBARD GIC LIMITED",
 "isin": "INE765G01017",
@@ -1856,15 +1865,6 @@
 "type": "equity",
 "lev": 4.81,
 "ownPct": 20.79
-},
-{
-"symbol": "UNITDSPR",
-"name": "UNITED SPIRITS LIMITED",
-"isin": "INE854D01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.8,
-"ownPct": 20.83
 },
 {
 "symbol": "COLPAL",
@@ -1899,8 +1899,8 @@
 "isin": "INE0J1Y01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.77,
-"ownPct": 20.96
+"lev": 4.76,
+"ownPct": 21.01
 },
 {
 "symbol": "NHPC",
@@ -1926,8 +1926,8 @@
 "isin": "INE102D01028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.74,
-"ownPct": 21.1
+"lev": 4.75,
+"ownPct": 21.05
 },
 {
 "symbol": "INDHOTEL",
@@ -1957,15 +1957,6 @@
 "ownPct": 21.14
 },
 {
-"symbol": "WIPRO",
-"name": "WIPRO LTD",
-"isin": "INE075A01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.71,
-"ownPct": 21.23
-},
-{
 "symbol": "M&M",
 "name": "MAHINDRA & MAHINDRA LTD",
 "isin": "INE101A01026",
@@ -1975,13 +1966,22 @@
 "ownPct": 21.23
 },
 {
+"symbol": "WIPRO",
+"name": "WIPRO LTD",
+"isin": "INE075A01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.7,
+"ownPct": 21.28
+},
+{
 "symbol": "TVSMOTOR",
 "name": "TVS MOTOR COMPANY  LTD",
 "isin": "INE494B01023",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.7,
-"ownPct": 21.28
+"lev": 4.69,
+"ownPct": 21.32
 },
 {
 "symbol": "HYUNDAI",
@@ -1991,15 +1991,6 @@
 "type": "equity",
 "lev": 4.68,
 "ownPct": 21.37
-},
-{
-"symbol": "FORTIS",
-"name": "FORTIS HEALTHCARE LTD",
-"isin": "INE061F01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.64,
-"ownPct": 21.55
 },
 {
 "symbol": "BOSCHLTD",
@@ -2029,13 +2020,22 @@
 "ownPct": 21.6
 },
 {
+"symbol": "FORTIS",
+"name": "FORTIS HEALTHCARE LTD",
+"isin": "INE061F01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.63,
+"ownPct": 21.6
+},
+{
 "symbol": "SBICARD",
 "name": "SBI CARDS & PAY SER LTD",
 "isin": "INE018E01016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.62,
-"ownPct": 21.65
+"lev": 4.61,
+"ownPct": 21.69
 },
 {
 "symbol": "PNB",
@@ -2050,15 +2050,6 @@
 "symbol": "JIOFIN",
 "name": "JIO FIN SERVICES LTD",
 "isin": "INE758E01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.59,
-"ownPct": 21.79
-},
-{
-"symbol": "INDUSTOWER",
-"name": "INDUS TOWERS LIMITED",
-"isin": "INE121J01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.59,
@@ -2081,6 +2072,15 @@
 "type": "equity",
 "lev": 4.59,
 "ownPct": 21.79
+},
+{
+"symbol": "INDUSTOWER",
+"name": "INDUS TOWERS LIMITED",
+"isin": "INE121J01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.58,
+"ownPct": 21.83
 },
 {
 "symbol": "PETRONET",
@@ -2110,9 +2110,9 @@
 "ownPct": 21.88
 },
 {
-"symbol": "LICHSGFIN",
-"name": "LIC HOUSING FINANCE LTD",
-"isin": "INE115A01026",
+"symbol": "BPCL",
+"name": "BHARAT PETROLEUM CORP  LT",
+"isin": "INE029A01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.56,
@@ -2128,13 +2128,22 @@
 "ownPct": 21.98
 },
 {
-"symbol": "BPCL",
-"name": "BHARAT PETROLEUM CORP  LT",
-"isin": "INE029A01011",
+"symbol": "LICHSGFIN",
+"name": "LIC HOUSING FINANCE LTD",
+"isin": "INE115A01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.55,
 "ownPct": 21.98
+},
+{
+"symbol": "CONCOR",
+"name": "CONTAINER CORP OF IND LTD",
+"isin": "INE111A01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.53,
+"ownPct": 22.08
 },
 {
 "symbol": "CUMMINSIND",
@@ -2167,15 +2176,6 @@
 "symbol": "NYKAA",
 "name": "FSN E COMMERCE VENTURES",
 "isin": "INE388Y01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.52,
-"ownPct": 22.12
-},
-{
-"symbol": "CONCOR",
-"name": "CONTAINER CORP OF IND LTD",
-"isin": "INE111A01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.52,
@@ -2254,6 +2254,15 @@
 "ownPct": 22.32
 },
 {
+"symbol": "HCLTECH",
+"name": "HCL TECHNOLOGIES LTD",
+"isin": "INE860A01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.48,
+"ownPct": 22.32
+},
+{
 "symbol": "PIIND",
 "name": "PI INDUSTRIES LTD",
 "isin": "INE603J01030",
@@ -2261,15 +2270,6 @@
 "type": "equity",
 "lev": 4.48,
 "ownPct": 22.32
-},
-{
-"symbol": "HCLTECH",
-"name": "HCL TECHNOLOGIES LTD",
-"isin": "INE860A01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.47,
-"ownPct": 22.37
 },
 {
 "symbol": "CANBK",
@@ -2389,22 +2389,13 @@
 "ownPct": 22.83
 },
 {
-"symbol": "VBL",
-"name": "VARUN BEVERAGES LIMITED",
-"isin": "INE200M01039",
+"symbol": "COROMANDEL",
+"name": "COROMANDEL INTERNTL. LTD",
+"isin": "INE169A01031",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.36,
-"ownPct": 22.94
-},
-{
-"symbol": "PATANJALI",
-"name": "PATANJALI FOODS LIMITED",
-"isin": "INE619A01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.36,
-"ownPct": 22.94
+"lev": 4.37,
+"ownPct": 22.88
 },
 {
 "symbol": "AUBANK",
@@ -2425,13 +2416,13 @@
 "ownPct": 22.94
 },
 {
-"symbol": "COROMANDEL",
-"name": "COROMANDEL INTERNTL. LTD",
-"isin": "INE169A01031",
+"symbol": "VBL",
+"name": "VARUN BEVERAGES LIMITED",
+"isin": "INE200M01039",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.36,
-"ownPct": 22.94
+"lev": 4.35,
+"ownPct": 22.99
 },
 {
 "symbol": "RECLTD",
@@ -2452,13 +2443,13 @@
 "ownPct": 22.99
 },
 {
-"symbol": "360ONE",
-"name": "360 ONE WAM LIMITED",
-"isin": "INE466L01038",
+"symbol": "PATANJALI",
+"name": "PATANJALI FOODS LIMITED",
+"isin": "INE619A01035",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.35,
-"ownPct": 22.99
+"lev": 4.34,
+"ownPct": 23.04
 },
 {
 "symbol": "INDIANB",
@@ -2470,18 +2461,27 @@
 "ownPct": 23.04
 },
 {
-"symbol": "DELHIVERY",
-"name": "DELHIVERY LIMITED",
-"isin": "INE148O01028",
+"symbol": "360ONE",
+"name": "360 ONE WAM LIMITED",
+"isin": "INE466L01038",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.34,
+"ownPct": 23.04
+},
+{
+"symbol": "ADANIPORTS",
+"name": "ADANI PORT & SEZ LTD",
+"isin": "INE742F01042",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.33,
 "ownPct": 23.09
 },
 {
-"symbol": "ADANIPORTS",
-"name": "ADANI PORT & SEZ LTD",
-"isin": "INE742F01042",
+"symbol": "DELHIVERY",
+"name": "DELHIVERY LIMITED",
+"isin": "INE148O01028",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.32,
@@ -2502,8 +2502,8 @@
 "isin": "INE646L01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.31,
-"ownPct": 23.2
+"lev": 4.3,
+"ownPct": 23.26
 },
 {
 "symbol": "OIL",
@@ -2513,33 +2513,6 @@
 "type": "equity",
 "lev": 4.29,
 "ownPct": 23.31
-},
-{
-"symbol": "LAURUSLABS",
-"name": "LAURUS LABS LIMITED",
-"isin": "INE947Q01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.28,
-"ownPct": 23.36
-},
-{
-"symbol": "CAMS",
-"name": "COMPUTER AGE MNGT SER LTD",
-"isin": "INE596I01020",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.28,
-"ownPct": 23.36
-},
-{
-"symbol": "RADICO",
-"name": "RADICO KHAITAN LTD",
-"isin": "INE944F01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.28,
-"ownPct": 23.36
 },
 {
 "symbol": "ABB",
@@ -2560,18 +2533,27 @@
 "ownPct": 23.42
 },
 {
-"symbol": "VOLTAS",
-"name": "VOLTAS LTD",
-"isin": "INE226A01021",
+"symbol": "RADICO",
+"name": "RADICO KHAITAN LTD",
+"isin": "INE944F01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.27,
+"ownPct": 23.42
+},
+{
+"symbol": "CAMS",
+"name": "COMPUTER AGE MNGT SER LTD",
+"isin": "INE596I01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.26,
 "ownPct": 23.47
 },
 {
-"symbol": "LTM",
-"name": "LTM LIMITED",
-"isin": "INE214T01019",
+"symbol": "VOLTAS",
+"name": "VOLTAS LTD",
+"isin": "INE226A01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.26,
@@ -2587,6 +2569,24 @@
 "ownPct": 23.47
 },
 {
+"symbol": "LAURUSLABS",
+"name": "LAURUS LABS LIMITED",
+"isin": "INE947Q01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.25,
+"ownPct": 23.53
+},
+{
+"symbol": "LTM",
+"name": "LTM LIMITED",
+"isin": "INE214T01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.25,
+"ownPct": 23.53
+},
+{
 "symbol": "SIEMENS",
 "name": "SIEMENS LTD",
 "isin": "INE003A01024",
@@ -2596,6 +2596,15 @@
 "ownPct": 23.53
 },
 {
+"symbol": "ABCAPITAL",
+"name": "ADITYA BIRLA CAPITAL LTD.",
+"isin": "INE674K01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.24,
+"ownPct": 23.58
+},
+{
 "symbol": "INDUSINDBK",
 "name": "INDUSIND BANK LIMITED",
 "isin": "INE095A01012",
@@ -2603,15 +2612,6 @@
 "type": "equity",
 "lev": 4.24,
 "ownPct": 23.58
-},
-{
-"symbol": "ABCAPITAL",
-"name": "ADITYA BIRLA CAPITAL LTD.",
-"isin": "INE674K01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.23,
-"ownPct": 23.64
 },
 {
 "symbol": "JUBLFOOD",
@@ -2632,15 +2632,6 @@
 "ownPct": 23.7
 },
 {
-"symbol": "UPL",
-"name": "UPL LIMITED",
-"isin": "INE628A01036",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.21,
-"ownPct": 23.75
-},
-{
 "symbol": "UNOMINDA",
 "name": "UNO MINDA LIMITED",
 "isin": "INE405E01023",
@@ -2650,18 +2641,18 @@
 "ownPct": 23.75
 },
 {
-"symbol": "UNIONBANK",
-"name": "UNION BANK OF INDIA",
-"isin": "INE692A01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.19,
-"ownPct": 23.87
-},
-{
 "symbol": "CDSL",
 "name": "CENTRAL DEPO SER (I) LTD",
 "isin": "INE736A01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.2,
+"ownPct": 23.81
+},
+{
+"symbol": "UNIONBANK",
+"name": "UNION BANK OF INDIA",
+"isin": "INE692A01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.19,
@@ -2677,13 +2668,22 @@
 "ownPct": 23.92
 },
 {
+"symbol": "UPL",
+"name": "UPL LIMITED",
+"isin": "INE628A01036",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.18,
+"ownPct": 23.92
+},
+{
 "symbol": "CHOLAFIN",
 "name": "CHOLAMANDALAM IN & FIN CO",
 "isin": "INE121A01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.17,
-"ownPct": 23.98
+"lev": 4.16,
+"ownPct": 24.04
 },
 {
 "symbol": "MOTHERSON",
@@ -2691,8 +2691,8 @@
 "isin": "INE775A01035",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.16,
-"ownPct": 24.04
+"lev": 4.15,
+"ownPct": 24.1
 },
 {
 "symbol": "IREDA",
@@ -2754,17 +2754,8 @@
 "isin": "INE472A01039",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.09,
-"ownPct": 24.45
-},
-{
-"symbol": "NAVINFLUOR",
-"name": "NAVIN FLUORINE INT. LTD",
-"isin": "INE048G01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.09,
-"ownPct": 24.45
+"lev": 4.1,
+"ownPct": 24.39
 },
 {
 "symbol": "SAGILITY",
@@ -2779,15 +2770,6 @@
 "symbol": "RBLBANK",
 "name": "RBL BANK LIMITED",
 "isin": "INE976G01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.08,
-"ownPct": 24.51
-},
-{
-"symbol": "PNBHOUSING",
-"name": "PNB HOUSING FIN LTD.",
-"isin": "INE572E01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.08,
@@ -2830,9 +2812,27 @@
 "ownPct": 24.57
 },
 {
+"symbol": "NAVINFLUOR",
+"name": "NAVIN FLUORINE INT. LTD",
+"isin": "INE048G01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.07,
+"ownPct": 24.57
+},
+{
 "symbol": "YESBANK",
 "name": "YES BANK LIMITED",
 "isin": "INE528G01035",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.06,
+"ownPct": 24.63
+},
+{
+"symbol": "PNBHOUSING",
+"name": "PNB HOUSING FIN LTD.",
+"isin": "INE572E01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.06,
@@ -2844,8 +2844,8 @@
 "isin": "INE262H01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.06,
-"ownPct": 24.63
+"lev": 4.05,
+"ownPct": 24.69
 },
 {
 "symbol": "MUTHOOTFIN",
@@ -2866,6 +2866,15 @@
 "ownPct": 24.75
 },
 {
+"symbol": "ENRIN",
+"name": "SIEMENS ENERGY INDIA LTD",
+"isin": "INE1NPP01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 4.03,
+"ownPct": 24.81
+},
+{
 "symbol": "VEDL",
 "name": "VEDANTA LIMITED",
 "isin": "INE205A01025",
@@ -2878,15 +2887,6 @@
 "symbol": "PRESTIGE",
 "name": "PRESTIGE ESTATE LTD",
 "isin": "INE811K01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 4.02,
-"ownPct": 24.88
-},
-{
-"symbol": "ENRIN",
-"name": "SIEMENS ENERGY INDIA LTD",
-"isin": "INE1NPP01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.02,
@@ -2916,8 +2916,8 @@
 "isin": "INE522D01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.01,
-"ownPct": 24.94
+"lev": 4.0,
+"ownPct": 25.0
 },
 {
 "symbol": "IEX",
@@ -2925,8 +2925,8 @@
 "isin": "INE022Q01020",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.0,
-"ownPct": 25.0
+"lev": 3.99,
+"ownPct": 25.06
 },
 {
 "symbol": "GODREJPROP",
@@ -2934,22 +2934,22 @@
 "isin": "INE484J01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.0,
-"ownPct": 25.0
+"lev": 3.99,
+"ownPct": 25.06
 },
 {
-"symbol": "NBCC",
-"name": "NBCC (INDIA) LIMITED",
-"isin": "INE095N01031",
+"symbol": "TRENT",
+"name": "TRENT LTD",
+"isin": "INE849A01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.95,
 "ownPct": 25.32
 },
 {
-"symbol": "TRENT",
-"name": "TRENT LTD",
-"isin": "INE849A01020",
+"symbol": "NBCC",
+"name": "NBCC (INDIA) LIMITED",
+"isin": "INE095N01031",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.94,
@@ -2983,13 +2983,13 @@
 "ownPct": 25.64
 },
 {
-"symbol": "RVNL",
-"name": "RAIL VIKAS NIGAM LIMITED",
-"isin": "INE415G01027",
+"symbol": "SUZLON",
+"name": "SUZLON ENERGY LIMITED",
+"isin": "INE040H01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.88,
-"ownPct": 25.77
+"lev": 3.89,
+"ownPct": 25.71
 },
 {
 "symbol": "CUB",
@@ -3001,9 +3001,9 @@
 "ownPct": 25.77
 },
 {
-"symbol": "SUZLON",
-"name": "SUZLON ENERGY LIMITED",
-"isin": "INE040H01021",
+"symbol": "RVNL",
+"name": "RAIL VIKAS NIGAM LIMITED",
+"isin": "INE415G01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.87,
@@ -3019,15 +3019,6 @@
 "ownPct": 25.84
 },
 {
-"symbol": "COFORGE",
-"name": "COFORGE LIMITED",
-"isin": "INE591G01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.85,
-"ownPct": 25.97
-},
-{
 "symbol": "NAM-INDIA",
 "name": "NIPPON L I A M LTD",
 "isin": "INE298J01013",
@@ -3035,6 +3026,15 @@
 "type": "equity",
 "lev": 3.85,
 "ownPct": 25.97
+},
+{
+"symbol": "COFORGE",
+"name": "COFORGE LIMITED",
+"isin": "INE591G01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.84,
+"ownPct": 26.04
 },
 {
 "symbol": "ADANIENT",
@@ -3055,6 +3055,15 @@
 "ownPct": 26.11
 },
 {
+"symbol": "KFINTECH",
+"name": "KFIN TECHNOLOGIES LIMITED",
+"isin": "INE138Y01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.83,
+"ownPct": 26.11
+},
+{
 "symbol": "BDL",
 "name": "BHARAT DYNAMICS LIMITED",
 "isin": "INE171Z01026",
@@ -3062,15 +3071,6 @@
 "type": "equity",
 "lev": 3.83,
 "ownPct": 26.11
-},
-{
-"symbol": "KFINTECH",
-"name": "KFIN TECHNOLOGIES LIMITED",
-"isin": "INE138Y01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.82,
-"ownPct": 26.18
 },
 {
 "symbol": "MCX",
@@ -3089,15 +3089,6 @@
 "type": "equity",
 "lev": 3.8,
 "ownPct": 26.32
-},
-{
-"symbol": "UJJIVANSFB",
-"name": "UJJIVAN SMALL FINANC BANK",
-"isin": "INE551W01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.78,
-"ownPct": 26.46
 },
 {
 "symbol": "MASPTOP50",
@@ -4315,6 +4306,15 @@
 "ownPct": 26.53
 },
 {
+"symbol": "UJJIVANSFB",
+"name": "UJJIVAN SMALL FINANC BANK",
+"isin": "INE551W01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.76,
+"ownPct": 26.6
+},
+{
 "symbol": "BAJAJHFL",
 "name": "BAJAJ HOUSING FINANCE LTD",
 "isin": "INE377Y01014",
@@ -4522,15 +4522,6 @@
 "ownPct": 27.1
 },
 {
-"symbol": "COCHINSHIP",
-"name": "COCHIN SHIPYARD LIMITED",
-"isin": "INE704P01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.68,
-"ownPct": 27.17
-},
-{
 "symbol": "KNACK",
 "name": "KNACK PACKAGING LIMITED",
 "isin": "INE17QZ01016",
@@ -4552,6 +4543,15 @@
 "symbol": "MODEFENCE",
 "name": "Motilal Oswal Nifty India Defence ETF",
 "isin": "INF247L01DJ0",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.67,
+"ownPct": 27.25
+},
+{
+"symbol": "COCHINSHIP",
+"name": "COCHIN SHIPYARD LIMITED",
+"isin": "INE704P01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.67,
@@ -4657,27 +4657,9 @@
 "ownPct": 27.4
 },
 {
-"symbol": "ITBETA",
-"name": "UTI Nifty IT ETF",
-"isin": "INF789F1AZD8",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.65,
-"ownPct": 27.4
-},
-{
 "symbol": "GOLDCASE",
 "name": "Zerodha Gold ETF",
 "isin": "INF0R8F01042",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.64,
-"ownPct": 27.47
-},
-{
-"symbol": "ANGELONE",
-"name": "ANGEL ONE LIMITED",
-"isin": "INE732I01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.64,
@@ -4711,6 +4693,15 @@
 "ownPct": 27.47
 },
 {
+"symbol": "JLHL",
+"name": "JUPITER LIFE LINE HOSP L",
+"isin": "INE682M01020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.64,
+"ownPct": 27.47
+},
+{
 "symbol": "PFIZER",
 "name": "PFIZER LTD",
 "isin": "INE182A01018",
@@ -4720,9 +4711,27 @@
 "ownPct": 27.47
 },
 {
+"symbol": "ITBETA",
+"name": "UTI Nifty IT ETF",
+"isin": "INF789F1AZD8",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.64,
+"ownPct": 27.47
+},
+{
 "symbol": "TATAGOLD",
 "name": "Tata Gold Exchange Traded Fund",
 "isin": "INF277KA1976",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.63,
+"ownPct": 27.55
+},
+{
+"symbol": "ANGELONE",
+"name": "ANGEL ONE LIMITED",
+"isin": "INE732I01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.63,
@@ -4759,15 +4768,6 @@
 "symbol": "TECH",
 "name": "Aditya Birla Sun Life Nifty IT ETF",
 "isin": "INF209KB11D8",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.63,
-"ownPct": 27.55
-},
-{
-"symbol": "JLHL",
-"name": "JUPITER LIFE LINE HOSP L",
-"isin": "INE682M01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.63,
@@ -4828,15 +4828,6 @@
 "ownPct": 27.62
 },
 {
-"symbol": "AMBER",
-"name": "AMBER ENTERPRISES (I) LTD",
-"isin": "INE371P01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.62,
-"ownPct": 27.62
-},
-{
 "symbol": "VSTIND",
 "name": "VST INDUSTRIES LTD",
 "isin": "INE710A01016",
@@ -4864,18 +4855,9 @@
 "ownPct": 27.7
 },
 {
-"symbol": "TEMPSENS",
-"name": "TEMPSENS INST (INDIA) LTD",
-"isin": "INE1KZI01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.61,
-"ownPct": 27.7
-},
-{
-"symbol": "SAIPARENT",
-"name": "SAI PARENTERALS LIMITED",
-"isin": "INE0H9F01037",
+"symbol": "AMBER",
+"name": "AMBER ENTERPRISES (I) LTD",
+"isin": "INE371P01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.61,
@@ -4918,9 +4900,27 @@
 "ownPct": 27.78
 },
 {
+"symbol": "VINATIORGA",
+"name": "VINATI ORGANICS LTD",
+"isin": "INE410B01037",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.6,
+"ownPct": 27.78
+},
+{
 "symbol": "INDIAMART",
 "name": "INDIAMART INTERMESH LTD",
 "isin": "INE933S01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.6,
+"ownPct": 27.78
+},
+{
+"symbol": "SAIPARENT",
+"name": "SAI PARENTERALS LIMITED",
+"isin": "INE0H9F01037",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.6,
@@ -4936,6 +4936,15 @@
 "ownPct": 27.78
 },
 {
+"symbol": "TEMPSENS",
+"name": "TEMPSENS INST (INDIA) LTD",
+"isin": "INE1KZI01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.59,
+"ownPct": 27.86
+},
+{
 "symbol": "ANTHEM",
 "name": "ANTHEM BIOSCIENCES LTD",
 "isin": "INE0CZ201020",
@@ -4945,18 +4954,18 @@
 "ownPct": 27.86
 },
 {
-"symbol": "BLEL",
-"name": "BEHARI LAL ENGINEERING L",
-"isin": "INE1EEM01017",
+"symbol": "RAINBOW",
+"name": "RAINBOW CHILDRENS MED LTD",
+"isin": "INE961O01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.59,
 "ownPct": 27.86
 },
 {
-"symbol": "RAINBOW",
-"name": "RAINBOW CHILDRENS MED LTD",
-"isin": "INE961O01016",
+"symbol": "STUDDS",
+"name": "STUDDS ACCESSORIES LTD",
+"isin": "INE00Q601028",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.59,
@@ -4990,15 +4999,6 @@
 "ownPct": 27.93
 },
 {
-"symbol": "STUDDS",
-"name": "STUDDS ACCESSORIES LTD",
-"isin": "INE00Q601028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.58,
-"ownPct": 27.93
-},
-{
 "symbol": "TRAVELFOOD",
 "name": "TRAVEL FOOD SERVICES LTD",
 "isin": "INE103V01028",
@@ -5017,18 +5017,18 @@
 "ownPct": 28.01
 },
 {
-"symbol": "VINATIORGA",
-"name": "VINATI ORGANICS LTD",
-"isin": "INE410B01037",
+"symbol": "CMLL",
+"name": "CALIBER MINING AND LOG L",
+"isin": "INE11XY01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.57,
 "ownPct": 28.01
 },
 {
-"symbol": "CMLL",
-"name": "CALIBER MINING AND LOG L",
-"isin": "INE11XY01018",
+"symbol": "BLEL",
+"name": "BEHARI LAL ENGINEERING L",
+"isin": "INE1EEM01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.57,
@@ -5047,15 +5047,6 @@
 "symbol": "GOLD360",
 "name": "360 ONE Gold ETF",
 "isin": "INF579M01BB5",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.57,
-"ownPct": 28.01
-},
-{
-"symbol": "PGHL",
-"name": "PROCTER & GAMBLE HEALTH L",
-"isin": "INE199A01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.57,
@@ -5116,18 +5107,27 @@
 "ownPct": 28.09
 },
 {
-"symbol": "SUNDRMFAST",
-"name": "SUNDRAM FASTENERS LTD",
-"isin": "INE387A01021",
+"symbol": "PGHL",
+"name": "PROCTER & GAMBLE HEALTH L",
+"isin": "INE199A01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.56,
+"ownPct": 28.09
+},
+{
+"symbol": "AFSL",
+"name": "ABANS FINANCIAL SRVCS LTD",
+"isin": "INE00ZE01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.55,
 "ownPct": 28.17
 },
 {
-"symbol": "AFSL",
-"name": "ABANS FINANCIAL SRVCS LTD",
-"isin": "INE00ZE01026",
+"symbol": "KOVAI",
+"name": "KOVAI MEDICAL CENTER & HO",
+"isin": "INE177F01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.55,
@@ -5141,15 +5141,6 @@
 "type": "equity",
 "lev": 3.55,
 "ownPct": 28.17
-},
-{
-"symbol": "INOXWIND",
-"name": "INOX WIND LIMITED",
-"isin": "INE066P01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.54,
-"ownPct": 28.25
 },
 {
 "symbol": "VGUARD",
@@ -5179,9 +5170,9 @@
 "ownPct": 28.25
 },
 {
-"symbol": "KOVAI",
-"name": "KOVAI MEDICAL CENTER & HO",
-"isin": "INE177F01017",
+"symbol": "SUNDRMFAST",
+"name": "SUNDRAM FASTENERS LTD",
+"isin": "INE387A01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.54,
@@ -5213,6 +5204,24 @@
 "type": "equity",
 "lev": 3.53,
 "ownPct": 28.33
+},
+{
+"symbol": "INOXWIND",
+"name": "INOX WIND LIMITED",
+"isin": "INE066P01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.52,
+"ownPct": 28.41
+},
+{
+"symbol": "AJANTPHARM",
+"name": "AJANTA PHARMA LIMITED",
+"isin": "INE031B01049",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.52,
+"ownPct": 28.41
 },
 {
 "symbol": "NIVABUPA",
@@ -5251,15 +5260,6 @@
 "ownPct": 28.41
 },
 {
-"symbol": "SRTL",
-"name": "SHREE RAM TWISTEX LIMITED",
-"isin": "INE19GK01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.52,
-"ownPct": 28.41
-},
-{
 "symbol": "SWIGGY",
 "name": "SWIGGY LIMITED",
 "isin": "INE00H001014",
@@ -5272,15 +5272,6 @@
 "symbol": "LENSKART",
 "name": "LENSKART SOLUTIONS LTD",
 "isin": "INE956O01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.51,
-"ownPct": 28.49
-},
-{
-"symbol": "AJANTPHARM",
-"name": "AJANTA PHARMA LIMITED",
-"isin": "INE031B01049",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.51,
@@ -5350,9 +5341,9 @@
 "ownPct": 28.49
 },
 {
-"symbol": "AIAENG",
-"name": "AIA ENGINEERING LIMITED",
-"isin": "INE212H01026",
+"symbol": "SRTL",
+"name": "SHREE RAM TWISTEX LIMITED",
+"isin": "INE19GK01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.51,
@@ -5386,6 +5377,15 @@
 "ownPct": 28.57
 },
 {
+"symbol": "AIAENG",
+"name": "AIA ENGINEERING LIMITED",
+"isin": "INE212H01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.5,
+"ownPct": 28.57
+},
+{
 "symbol": "AXITA",
 "name": "AXITA COTTON LIMITED",
 "isin": "INE02EZ01022",
@@ -5404,18 +5404,18 @@
 "ownPct": 28.65
 },
 {
-"symbol": "HNDFDS",
-"name": "HINDUSTAN FOODS LIMITED",
-"isin": "INE254N01026",
+"symbol": "SWARAJENG",
+"name": "SWARAJ ENGINES LTD",
+"isin": "INE277A01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.49,
 "ownPct": 28.65
 },
 {
-"symbol": "SWARAJENG",
-"name": "SWARAJ ENGINES LTD",
-"isin": "INE277A01016",
+"symbol": "3MINDIA",
+"name": "3M INDIA LIMITED",
+"isin": "INE470A01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.49,
@@ -5485,6 +5485,15 @@
 "ownPct": 28.74
 },
 {
+"symbol": "SANOFICONR",
+"name": "SANOFI CONS HEALTHC IND L",
+"isin": "INE0UOS01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.48,
+"ownPct": 28.74
+},
+{
 "symbol": "TEAMLEASE",
 "name": "TEAMLEASE SERVICES LTD.",
 "isin": "INE985S01024",
@@ -5494,36 +5503,9 @@
 "ownPct": 28.74
 },
 {
-"symbol": "GRINFRA",
-"name": "G R INFRAPROJECTS LIMITED",
-"isin": "INE201P01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.48,
-"ownPct": 28.74
-},
-{
-"symbol": "3MINDIA",
-"name": "3M INDIA LIMITED",
-"isin": "INE470A01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.48,
-"ownPct": 28.74
-},
-{
-"symbol": "IMPAL",
-"name": "IND MOTOR PART & ACC LTD",
-"isin": "INE547E01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.48,
-"ownPct": 28.74
-},
-{
-"symbol": "DISAQ",
-"name": "DISA INDIA LTD.",
-"isin": "INE131C01011",
+"symbol": "HNDFDS",
+"name": "HINDUSTAN FOODS LIMITED",
+"isin": "INE254N01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.48,
@@ -5557,15 +5539,6 @@
 "ownPct": 28.82
 },
 {
-"symbol": "POWERINDIA",
-"name": "HITACHI ENERGY INDIA LTD",
-"isin": "INE07Y701011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.47,
-"ownPct": 28.82
-},
-{
 "symbol": "KANSAINER",
 "name": "KANSAI NEROLAC PAINTS LTD",
 "isin": "INE531A01024",
@@ -5584,9 +5557,45 @@
 "ownPct": 28.82
 },
 {
+"symbol": "SCHAEFFLER",
+"name": "SCHAEFFLER INDIA LIMITED",
+"isin": "INE513A01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.47,
+"ownPct": 28.82
+},
+{
+"symbol": "GRINFRA",
+"name": "G R INFRAPROJECTS LIMITED",
+"isin": "INE201P01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.47,
+"ownPct": 28.82
+},
+{
 "symbol": "CRISIL",
 "name": "CRISIL LTD",
 "isin": "INE007A01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.47,
+"ownPct": 28.82
+},
+{
+"symbol": "IMPAL",
+"name": "IND MOTOR PART & ACC LTD",
+"isin": "INE547E01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.47,
+"ownPct": 28.82
+},
+{
+"symbol": "DISAQ",
+"name": "DISA INDIA LTD.",
+"isin": "INE131C01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.47,
@@ -5611,36 +5620,9 @@
 "ownPct": 28.9
 },
 {
-"symbol": "SANOFICONR",
-"name": "SANOFI CONS HEALTHC IND L",
-"isin": "INE0UOS01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.46,
-"ownPct": 28.9
-},
-{
-"symbol": "SCHAEFFLER",
-"name": "SCHAEFFLER INDIA LIMITED",
-"isin": "INE513A01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.46,
-"ownPct": 28.9
-},
-{
-"symbol": "VENTIVE",
-"name": "VENTIVE HOSPITALITY LTD",
-"isin": "INE781S01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.46,
-"ownPct": 28.9
-},
-{
-"symbol": "SKFINDUS",
-"name": "SKF IND (INDUSTRIAL) LTD",
-"isin": "INE2J8701016",
+"symbol": "POWERINDIA",
+"name": "HITACHI ENERGY INDIA LTD",
+"isin": "INE07Y701011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.46,
@@ -5683,9 +5665,9 @@
 "ownPct": 28.99
 },
 {
-"symbol": "CSM",
-"name": "CSM TECHNOLOGIES LIMITED",
-"isin": "INE0ZK601013",
+"symbol": "VENTIVE",
+"name": "VENTIVE HOSPITALITY LTD",
+"isin": "INE781S01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.45,
@@ -5695,6 +5677,15 @@
 "symbol": "DOMS",
 "name": "DOMS INDUSTRIES LIMITED",
 "isin": "INE321T01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.45,
+"ownPct": 28.99
+},
+{
+"symbol": "SKFINDUS",
+"name": "SKF IND (INDUSTRIAL) LTD",
+"isin": "INE2J8701016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.45,
@@ -5713,15 +5704,6 @@
 "symbol": "GOLDAXIS",
 "name": "Axis Gold Exchange Traded Fund",
 "isin": "INF846K01W80",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.44,
-"ownPct": 29.07
-},
-{
-"symbol": "GICRE",
-"name": "GENERAL INS CORP OF INDIA",
-"isin": "INE481Y01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.44,
@@ -5771,6 +5753,24 @@
 "type": "equity",
 "lev": 3.44,
 "ownPct": 29.07
+},
+{
+"symbol": "GICRE",
+"name": "GENERAL INS CORP OF INDIA",
+"isin": "INE481Y01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.43,
+"ownPct": 29.15
+},
+{
+"symbol": "CSM",
+"name": "CSM TECHNOLOGIES LIMITED",
+"isin": "INE0ZK601013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.43,
+"ownPct": 29.15
 },
 {
 "symbol": "NH",
@@ -5863,15 +5863,6 @@
 "ownPct": 29.24
 },
 {
-"symbol": "CHAMBLFERT",
-"name": "CHAMBAL FERTILIZERS LTD",
-"isin": "INE085A01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.42,
-"ownPct": 29.24
-},
-{
 "symbol": "GSFC",
 "name": "GUJ STATE FERT & CHEM LTD",
 "isin": "INE026A01025",
@@ -5917,27 +5908,18 @@
 "ownPct": 29.33
 },
 {
+"symbol": "CHAMBLFERT",
+"name": "CHAMBAL FERTILIZERS LTD",
+"isin": "INE085A01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.41,
+"ownPct": 29.33
+},
+{
 "symbol": "INDGN",
 "name": "INDEGENE LIMITED",
 "isin": "INE065X01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.41,
-"ownPct": 29.33
-},
-{
-"symbol": "FINPIPE",
-"name": "FINOLEX INDUSTRIES LTD",
-"isin": "INE183A01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.41,
-"ownPct": 29.33
-},
-{
-"symbol": "EIDPARRY",
-"name": "EID PARRY INDIA LTD",
-"isin": "INE126A01031",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.41,
@@ -5965,15 +5947,6 @@
 "symbol": "MANBA",
 "name": "MANBA FINANCE LIMITED",
 "isin": "INE939X01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.41,
-"ownPct": 29.33
-},
-{
-"symbol": "VRLLOG",
-"name": "VRL LOGISTICS LIMITED",
-"isin": "INE366I01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.41,
@@ -6043,6 +6016,24 @@
 "ownPct": 29.41
 },
 {
+"symbol": "FINPIPE",
+"name": "FINOLEX INDUSTRIES LTD",
+"isin": "INE183A01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.4,
+"ownPct": 29.41
+},
+{
+"symbol": "EIDPARRY",
+"name": "EID PARRY INDIA LTD",
+"isin": "INE126A01031",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.4,
+"ownPct": 29.41
+},
+{
 "symbol": "IPCALAB",
 "name": "IPCA LABORATORIES LTD",
 "isin": "INE571A01038",
@@ -6064,6 +6055,15 @@
 "symbol": "FORCEMOT",
 "name": "FORCE MOTORS LIMITED",
 "isin": "INE451A01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.4,
+"ownPct": 29.41
+},
+{
+"symbol": "VRLLOG",
+"name": "VRL LOGISTICS LIMITED",
+"isin": "INE366I01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
@@ -6115,9 +6115,9 @@
 "ownPct": 29.5
 },
 {
-"symbol": "DALBHARAT",
-"name": "DALMIA BHARAT LIMITED",
-"isin": "INE00R701025",
+"symbol": "GKSL",
+"name": "GUJARAT KIDNEY N SUP SP L",
+"isin": "INE0V0W01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.39,
@@ -6259,18 +6259,9 @@
 "ownPct": 29.59
 },
 {
-"symbol": "GKSL",
-"name": "GUJARAT KIDNEY N SUP SP L",
-"isin": "INE0V0W01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.38,
-"ownPct": 29.59
-},
-{
-"symbol": "ENDURANCE",
-"name": "ENDURANCE TECHNO. LTD.",
-"isin": "INE913H01037",
+"symbol": "MEDPLUS",
+"name": "MEDPLUS HEALTH SERV LTD",
+"isin": "INE804L01022",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.38,
@@ -6280,6 +6271,15 @@
 "symbol": "FINEORG",
 "name": "FINE ORGANIC IND. LTD.",
 "isin": "INE686Y01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.38,
+"ownPct": 29.59
+},
+{
+"symbol": "GLOSTERLTD",
+"name": "GLOSTER LIMITED",
+"isin": "INE350Z01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.38,
@@ -6322,6 +6322,15 @@
 "ownPct": 29.67
 },
 {
+"symbol": "DALBHARAT",
+"name": "DALMIA BHARAT LIMITED",
+"isin": "INE00R701025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.37,
+"ownPct": 29.67
+},
+{
 "symbol": "SHYAMMETL",
 "name": "SHYAM METALICS AND ENGY L",
 "isin": "INE810G01011",
@@ -6331,9 +6340,9 @@
 "ownPct": 29.67
 },
 {
-"symbol": "TVTODAY",
-"name": "TV TODAY NETWORK LTD",
-"isin": "INE038F01029",
+"symbol": "ENDURANCE",
+"name": "ENDURANCE TECHNO. LTD.",
+"isin": "INE913H01037",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.37,
@@ -6343,15 +6352,6 @@
 "symbol": "ERIS",
 "name": "ERIS LIFESCIENCES LIMITED",
 "isin": "INE406M01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.37,
-"ownPct": 29.67
-},
-{
-"symbol": "GLOSTERLTD",
-"name": "GLOSTER LIMITED",
-"isin": "INE350Z01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.37,
@@ -6394,15 +6394,6 @@
 "ownPct": 29.76
 },
 {
-"symbol": "MEDPLUS",
-"name": "MEDPLUS HEALTH SERV LTD",
-"isin": "INE804L01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.36,
-"ownPct": 29.76
-},
-{
 "symbol": "AAVAS",
 "name": "AAVAS FINANCIERS LIMITED",
 "isin": "INE216P01012",
@@ -6424,15 +6415,6 @@
 "symbol": "GOPAL",
 "name": "GOPAL SNACKS LIMITED",
 "isin": "INE0L9R01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.36,
-"ownPct": 29.76
-},
-{
-"symbol": "JKCEMENT",
-"name": "JK CEMENT LIMITED",
-"isin": "INE823G01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.36,
@@ -6475,6 +6457,15 @@
 "ownPct": 29.85
 },
 {
+"symbol": "CEIGALL",
+"name": "CEIGALL INDIA LIMITED",
+"isin": "INE0AG901020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.35,
+"ownPct": 29.85
+},
+{
 "symbol": "CRAMC",
 "name": "CANARA ROBECO AMC LIMITED",
 "isin": "INE218I01013",
@@ -6496,6 +6487,24 @@
 "symbol": "ALLDIGI",
 "name": "ALLDIGI TECH LIMITED",
 "isin": "INE835G01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.35,
+"ownPct": 29.85
+},
+{
+"symbol": "JKCEMENT",
+"name": "JK CEMENT LIMITED",
+"isin": "INE823G01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.35,
+"ownPct": 29.85
+},
+{
+"symbol": "TVTODAY",
+"name": "TV TODAY NETWORK LTD",
+"isin": "INE038F01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.35,
@@ -6565,18 +6574,9 @@
 "ownPct": 29.94
 },
 {
-"symbol": "CEIGALL",
-"name": "CEIGALL INDIA LIMITED",
-"isin": "INE0AG901020",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.34,
-"ownPct": 29.94
-},
-{
-"symbol": "SUPRAJIT",
-"name": "SUPRAJIT ENGINEERING LTD",
-"isin": "INE399C01030",
+"symbol": "WEWORK",
+"name": "WEWORK INDIA MANAGEMENT L",
+"isin": "INE085001019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.34,
@@ -6637,18 +6637,9 @@
 "ownPct": 30.03
 },
 {
-"symbol": "WEWORK",
-"name": "WEWORK INDIA MANAGEMENT L",
-"isin": "INE085001019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.33,
-"ownPct": 30.03
-},
-{
-"symbol": "GULFOILLUB",
-"name": "GULF OIL LUB. IND. LTD.",
-"isin": "INE635Q01029",
+"symbol": "SUPRAJIT",
+"name": "SUPRAJIT ENGINEERING LTD",
+"isin": "INE399C01030",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.33,
@@ -6745,9 +6736,27 @@
 "ownPct": 30.12
 },
 {
+"symbol": "MAHLIFE",
+"name": "MAHINDRA LIFESPACE DEVLTD",
+"isin": "INE813A01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.32,
+"ownPct": 30.12
+},
+{
 "symbol": "ARE&M",
 "name": "AMARA RAJA ENERGY MOB LTD",
 "isin": "INE885A01032",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.32,
+"ownPct": 30.12
+},
+{
+"symbol": "KPIL",
+"name": "KALPATARU PROJECT INT LTD",
+"isin": "INE220B01022",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.32,
@@ -6772,36 +6781,18 @@
 "ownPct": 30.12
 },
 {
-"symbol": "MAHLIFE",
-"name": "MAHINDRA LIFESPACE DEVLTD",
-"isin": "INE813A01018",
+"symbol": "GULFOILLUB",
+"name": "GULF OIL LUB. IND. LTD.",
+"isin": "INE635Q01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.31,
-"ownPct": 30.21
+"lev": 3.32,
+"ownPct": 30.12
 },
 {
 "symbol": "TORNTPOWER",
 "name": "TORRENT POWER LTD",
 "isin": "INE813H01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.31,
-"ownPct": 30.21
-},
-{
-"symbol": "KPIL",
-"name": "KALPATARU PROJECT INT LTD",
-"isin": "INE220B01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.31,
-"ownPct": 30.21
-},
-{
-"symbol": "NEPHROPLUS",
-"name": "NEPHROCARE HEALTH SERV L",
-"isin": "INE428V01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.31,
@@ -6889,18 +6880,18 @@
 "ownPct": 30.3
 },
 {
-"symbol": "REPCOHOME",
-"name": "REPCO HOME FINANCE LTD",
-"isin": "INE612J01015",
+"symbol": "NEPHROPLUS",
+"name": "NEPHROCARE HEALTH SERV L",
+"isin": "INE428V01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.3,
 "ownPct": 30.3
 },
 {
-"symbol": "BASF",
-"name": "BASF INDIA LTD",
-"isin": "INE373A01013",
+"symbol": "REPCOHOME",
+"name": "REPCO HOME FINANCE LTD",
+"isin": "INE612J01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.3,
@@ -6952,6 +6943,15 @@
 "ownPct": 30.4
 },
 {
+"symbol": "BASF",
+"name": "BASF INDIA LTD",
+"isin": "INE373A01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.29,
+"ownPct": 30.4
+},
+{
 "symbol": "INDIGOPNTS",
 "name": "INDIGO PAINTS LIMITED",
 "isin": "INE09VQ01012",
@@ -6988,24 +6988,6 @@
 "ownPct": 30.4
 },
 {
-"symbol": "APTUS",
-"name": "APTUS VALUE HSG FIN I LTD",
-"isin": "INE852O01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.28,
-"ownPct": 30.49
-},
-{
-"symbol": "BAJAJELEC",
-"name": "BAJAJ ELECT.LTD",
-"isin": "INE193E01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.28,
-"ownPct": 30.49
-},
-{
 "symbol": "KSB",
 "name": "KSB LIMITED",
 "isin": "INE999A01023",
@@ -7024,18 +7006,9 @@
 "ownPct": 30.49
 },
 {
-"symbol": "STYRENIX",
-"name": "STYRENIX PERFORMANCE LTD",
-"isin": "INE189B01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.28,
-"ownPct": 30.49
-},
-{
-"symbol": "INGERRAND",
-"name": "INGERSOLL-RAND INDIA LTD",
-"isin": "INE177A01018",
+"symbol": "KALPATARU",
+"name": "KALPATARU LIMITED",
+"isin": "INE227J01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.28,
@@ -7051,18 +7024,9 @@
 "ownPct": 30.58
 },
 {
-"symbol": "MAFANG",
-"name": "MIRAEAMC - MAFANG",
-"isin": "INF769K01HF4",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.27,
-"ownPct": 30.58
-},
-{
-"symbol": "CMPDI",
-"name": "CENTRAL MINE P N D INST L",
-"isin": "INE05HV01027",
+"symbol": "APTUS",
+"name": "APTUS VALUE HSG FIN I LTD",
+"isin": "INE852O01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.27,
@@ -7087,6 +7051,15 @@
 "ownPct": 30.58
 },
 {
+"symbol": "BAJAJELEC",
+"name": "BAJAJ ELECT.LTD",
+"isin": "INE193E01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.27,
+"ownPct": 30.58
+},
+{
 "symbol": "TNPL",
 "name": "TAMILNADU NEWSPRT & PAPER",
 "isin": "INE107A01015",
@@ -7105,9 +7078,18 @@
 "ownPct": 30.58
 },
 {
-"symbol": "KALPATARU",
-"name": "KALPATARU LIMITED",
-"isin": "INE227J01012",
+"symbol": "STYRENIX",
+"name": "STYRENIX PERFORMANCE LTD",
+"isin": "INE189B01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.27,
+"ownPct": 30.58
+},
+{
+"symbol": "INGERRAND",
+"name": "INGERSOLL-RAND INDIA LTD",
+"isin": "INE177A01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.27,
@@ -7123,24 +7105,6 @@
 "ownPct": 30.58
 },
 {
-"symbol": "SUNDROP",
-"name": "SUNDROP BRANDS LIMITED",
-"isin": "INE209A01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.27,
-"ownPct": 30.58
-},
-{
-"symbol": "KTKBANK",
-"name": "KARNATAKA BANK LIMITED",
-"isin": "INE614B01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.26,
-"ownPct": 30.67
-},
-{
 "symbol": "ALIVUS",
 "name": "ALIVUS LIFE SCIENCES LTD",
 "isin": "INE03Q201024",
@@ -7150,18 +7114,18 @@
 "ownPct": 30.67
 },
 {
-"symbol": "RALLIS",
-"name": "RALLIS INDIA LTD",
-"isin": "INE613A01020",
+"symbol": "MAFANG",
+"name": "MIRAEAMC - MAFANG",
+"isin": "INF769K01HF4",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.26,
 "ownPct": 30.67
 },
 {
-"symbol": "CLEAN",
-"name": "CLEAN SCIENCE & TECH LTD",
-"isin": "INE227W01023",
+"symbol": "CMPDI",
+"name": "CENTRAL MINE P N D INST L",
+"isin": "INE05HV01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.26,
@@ -7222,15 +7186,6 @@
 "ownPct": 30.67
 },
 {
-"symbol": "SCHAND",
-"name": "S CHAND AND COMPANY LTD",
-"isin": "INE807K01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.26,
-"ownPct": 30.67
-},
-{
 "symbol": "SAGCEM",
 "name": "SAGAR CEMENTS LIMITED",
 "isin": "INE229C01021",
@@ -7240,18 +7195,27 @@
 "ownPct": 30.67
 },
 {
-"symbol": "INSECTICID",
-"name": "INSECTICIDES (I) LTD",
-"isin": "INE070I01018",
+"symbol": "SUNDROP",
+"name": "SUNDROP BRANDS LIMITED",
+"isin": "INE209A01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.26,
 "ownPct": 30.67
 },
 {
-"symbol": "TTKHLTCARE",
-"name": "TTK HEALTHCARE LIMITED",
-"isin": "INE910C01018",
+"symbol": "KTKBANK",
+"name": "KARNATAKA BANK LIMITED",
+"isin": "INE614B01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.25,
+"ownPct": 30.77
+},
+{
+"symbol": "RALLIS",
+"name": "RALLIS INDIA LTD",
+"isin": "INE613A01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.25,
@@ -7267,6 +7231,15 @@
 "ownPct": 30.77
 },
 {
+"symbol": "CLEAN",
+"name": "CLEAN SCIENCE & TECH LTD",
+"isin": "INE227W01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.25,
+"ownPct": 30.77
+},
+{
 "symbol": "MINDACORP",
 "name": "MINDA CORPORATION LTD",
 "isin": "INE842C01021",
@@ -7276,9 +7249,9 @@
 "ownPct": 30.77
 },
 {
-"symbol": "ANDHRAPAP",
-"name": "ANDHRA PAPER LIMITED",
-"isin": "INE435A01051",
+"symbol": "INSECTICID",
+"name": "INSECTICIDES (I) LTD",
+"isin": "INE070I01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.25,
@@ -7312,9 +7285,27 @@
 "ownPct": 30.86
 },
 {
+"symbol": "ANDHRAPAP",
+"name": "ANDHRA PAPER LIMITED",
+"isin": "INE435A01051",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.24,
+"ownPct": 30.86
+},
+{
 "symbol": "HCG",
 "name": "HEALTHCARE GLOB. ENT. LTD",
 "isin": "INE075I01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.24,
+"ownPct": 30.86
+},
+{
+"symbol": "SCHAND",
+"name": "S CHAND AND COMPANY LTD",
+"isin": "INE807K01035",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.24,
@@ -7393,24 +7384,6 @@
 "ownPct": 30.96
 },
 {
-"symbol": "SAILIFE",
-"name": "SAI LIFE SCIENCES LIMITED",
-"isin": "INE570L01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.22,
-"ownPct": 31.06
-},
-{
-"symbol": "HTEL",
-"name": "HY-TECH ENGINEERS LIMITED",
-"isin": "INE0LEG01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.22,
-"ownPct": 31.06
-},
-{
 "symbol": "PNGJL",
 "name": "P N GADGIL JEWELLERS LTD",
 "isin": "INE953R01016",
@@ -7474,15 +7447,6 @@
 "ownPct": 31.15
 },
 {
-"symbol": "JSWINFRA",
-"name": "JSW INFRASTRUCTURE LTD",
-"isin": "INE880J01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.21,
-"ownPct": 31.15
-},
-{
 "symbol": "PTC",
 "name": "PTC INDIA LIMITED",
 "isin": "INE877F01012",
@@ -7492,9 +7456,27 @@
 "ownPct": 31.15
 },
 {
+"symbol": "SAILIFE",
+"name": "SAI LIFE SCIENCES LIMITED",
+"isin": "INE570L01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.21,
+"ownPct": 31.15
+},
+{
 "symbol": "EPL",
 "name": "EPL LIMITED",
 "isin": "INE255A01020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.21,
+"ownPct": 31.15
+},
+{
+"symbol": "HTEL",
+"name": "HY-TECH ENGINEERS LIMITED",
+"isin": "INE0LEG01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.21,
@@ -7531,15 +7513,6 @@
 "symbol": "VTL",
 "name": "VARDHMAN TEXTILES LIMITED",
 "isin": "INE825A01020",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.21,
-"ownPct": 31.15
-},
-{
-"symbol": "AFFLE",
-"name": "AFFLE 3I LIMITED",
-"isin": "INE00WC01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.21,
@@ -7627,6 +7600,24 @@
 "ownPct": 31.15
 },
 {
+"symbol": "DHANUKA",
+"name": "DHANUKA AGRITECH LTD",
+"isin": "INE435G01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.2,
+"ownPct": 31.25
+},
+{
+"symbol": "JSWINFRA",
+"name": "JSW INFRASTRUCTURE LTD",
+"isin": "INE880J01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.2,
+"ownPct": 31.25
+},
+{
 "symbol": "BELRISE",
 "name": "BELRISE INDUSTRIES LTD",
 "isin": "INE894V01022",
@@ -7654,9 +7645,9 @@
 "ownPct": 31.25
 },
 {
-"symbol": "TRUALT",
-"name": "TRUALT BIOENERGY LIMITED",
-"isin": "INE0MWH01014",
+"symbol": "AFFLE",
+"name": "AFFLE 3I LIMITED",
+"isin": "INE00WC01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.2,
@@ -7708,24 +7699,6 @@
 "ownPct": 31.25
 },
 {
-"symbol": "ACI",
-"name": "ARCHEAN CHEMICAL IND LTD",
-"isin": "INE128X01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.19,
-"ownPct": 31.35
-},
-{
-"symbol": "HEXAGON",
-"name": "HEXAGON NUTRITION LIMITED",
-"isin": "INE0JUI01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.19,
-"ownPct": 31.35
-},
-{
 "symbol": "GESHIP",
 "name": "THE GE SHPG.LTD",
 "isin": "INE017A01032",
@@ -7753,9 +7726,27 @@
 "ownPct": 31.35
 },
 {
+"symbol": "TRUALT",
+"name": "TRUALT BIOENERGY LIMITED",
+"isin": "INE0MWH01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.19,
+"ownPct": 31.35
+},
+{
 "symbol": "TMB",
 "name": "TAMILNAD MERCA BANK LTD",
 "isin": "INE668A01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.19,
+"ownPct": 31.35
+},
+{
+"symbol": "DEN",
+"name": "DEN NETWORKS LTD",
+"isin": "INE947J01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.19,
@@ -7780,24 +7771,6 @@
 "ownPct": 31.35
 },
 {
-"symbol": "DLINKINDIA",
-"name": "D-LINK INDIA LTD",
-"isin": "INE250K01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.19,
-"ownPct": 31.35
-},
-{
-"symbol": "CREST",
-"name": "CREST VENTURES LIMITED",
-"isin": "INE559D01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.19,
-"ownPct": 31.35
-},
-{
 "symbol": "SBC",
 "name": "SBC EXPORTS LIMITED",
 "isin": "INE04AK01028",
@@ -7807,18 +7780,9 @@
 "ownPct": 31.45
 },
 {
-"symbol": "DHANUKA",
-"name": "DHANUKA AGRITECH LTD",
-"isin": "INE435G01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.18,
-"ownPct": 31.45
-},
-{
-"symbol": "DATAPATTNS",
-"name": "DATA PATTERNS INDIA LTD",
-"isin": "INE0IX101010",
+"symbol": "ACI",
+"name": "ARCHEAN CHEMICAL IND LTD",
+"isin": "INE128X01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.18,
@@ -7834,27 +7798,9 @@
 "ownPct": 31.45
 },
 {
-"symbol": "DEN",
-"name": "DEN NETWORKS LTD",
-"isin": "INE947J01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.18,
-"ownPct": 31.45
-},
-{
-"symbol": "POWERICA",
-"name": "POWERICA LIMITED",
-"isin": "INE921L01032",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.18,
-"ownPct": 31.45
-},
-{
-"symbol": "AVL",
-"name": "ADITYA VISION LIMITED",
-"isin": "INE679V01027",
+"symbol": "DLINKINDIA",
+"name": "D-LINK INDIA LTD",
+"isin": "INE250K01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.18,
@@ -7879,6 +7825,15 @@
 "ownPct": 31.45
 },
 {
+"symbol": "VEDPOWER",
+"name": "VEDANTA POWER LIMITED",
+"isin": "INE694L01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
 "symbol": "SYNGENE",
 "name": "SYNGENE INTERNATIONAL LTD",
 "isin": "INE398R01022",
@@ -7888,9 +7843,36 @@
 "ownPct": 31.55
 },
 {
+"symbol": "HEXAGON",
+"name": "HEXAGON NUTRITION LIMITED",
+"isin": "INE0JUI01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
+"symbol": "DATAPATTNS",
+"name": "DATA PATTERNS INDIA LTD",
+"isin": "INE0IX101010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
 "symbol": "NATCOPHARM",
 "name": "NATCO PHARMA LTD.",
 "isin": "INE987B01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
+"symbol": "PRIVISCL",
+"name": "PRIVI SPECIALITY CHE LTD",
+"isin": "INE959A01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.17,
@@ -7924,6 +7906,15 @@
 "ownPct": 31.55
 },
 {
+"symbol": "POWERICA",
+"name": "POWERICA LIMITED",
+"isin": "INE921L01032",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
 "symbol": "VMSTMT",
 "name": "VMS TMT LIMITED",
 "isin": "INE0SJA01013",
@@ -7933,9 +7924,9 @@
 "ownPct": 31.55
 },
 {
-"symbol": "MOMSBELIEF",
-"name": "RAYS OF BELIEF LIMITED",
-"isin": "INE1FCO01014",
+"symbol": "AVL",
+"name": "ADITYA VISION LIMITED",
+"isin": "INE679V01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.17,
@@ -7945,6 +7936,15 @@
 "symbol": "ALANKIT",
 "name": "ALANKIT LIMITED",
 "isin": "INE914E01040",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
+"symbol": "ARSSBL",
+"name": "ANAND RATHI SH N STK BR L",
+"isin": "INE549H01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.17,
@@ -7978,6 +7978,15 @@
 "ownPct": 31.55
 },
 {
+"symbol": "CREST",
+"name": "CREST VENTURES LIMITED",
+"isin": "INE559D01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.17,
+"ownPct": 31.55
+},
+{
 "symbol": "JMA",
 "name": "JULLUNDUR MOT AGENCY LTD",
 "isin": "INE412C01023",
@@ -7985,15 +7994,6 @@
 "type": "equity",
 "lev": 3.17,
 "ownPct": 31.55
-},
-{
-"symbol": "VEDPOWER",
-"name": "VEDANTA POWER LIMITED",
-"isin": "INE694L01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.16,
-"ownPct": 31.65
 },
 {
 "symbol": "HUDCO",
@@ -8014,45 +8014,9 @@
 "ownPct": 31.65
 },
 {
-"symbol": "AARTIDRUGS",
-"name": "AARTI DRUGS LTD.",
-"isin": "INE767A01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.16,
-"ownPct": 31.65
-},
-{
-"symbol": "PRIVISCL",
-"name": "PRIVI SPECIALITY CHE LTD",
-"isin": "INE959A01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.16,
-"ownPct": 31.65
-},
-{
 "symbol": "CHOLAHLDNG",
 "name": "CHOLAMANDALAM FIN HOL LTD",
 "isin": "INE149A01033",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.16,
-"ownPct": 31.65
-},
-{
-"symbol": "ARSSBL",
-"name": "ANAND RATHI SH N STK BR L",
-"isin": "INE549H01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.16,
-"ownPct": 31.65
-},
-{
-"symbol": "EVEREADY",
-"name": "EVEREADY INDS. IND.  LTD.",
-"isin": "INE128A01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.16,
@@ -8068,9 +8032,9 @@
 "ownPct": 31.65
 },
 {
-"symbol": "CELLO",
-"name": "CELLO WORLD LIMITED",
-"isin": "INE0LMW01024",
+"symbol": "AARTIDRUGS",
+"name": "AARTI DRUGS LTD.",
+"isin": "INE767A01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.15,
@@ -8086,15 +8050,6 @@
 "ownPct": 31.75
 },
 {
-"symbol": "TEXINFRA",
-"name": "TEXMACO INFRA & HOLDG LTD",
-"isin": "INE435C01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.15,
-"ownPct": 31.75
-},
-{
 "symbol": "ARVINDFASN",
 "name": "ARVIND FASHIONS LIMITED",
 "isin": "INE955V01021",
@@ -8104,18 +8059,18 @@
 "ownPct": 31.75
 },
 {
-"symbol": "SFL",
-"name": "SHEELA FOAM LIMITED",
-"isin": "INE916U01025",
+"symbol": "SHREDIGCEM",
+"name": "SHREE DIGVIJAY CEM CO LTD",
+"isin": "INE232A01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.15,
 "ownPct": 31.75
 },
 {
-"symbol": "SHREDIGCEM",
-"name": "SHREE DIGVIJAY CEM CO LTD",
-"isin": "INE232A01011",
+"symbol": "EVEREADY",
+"name": "EVEREADY INDS. IND.  LTD.",
+"isin": "INE128A01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.15,
@@ -8134,15 +8089,6 @@
 "symbol": "ETHOSLTD",
 "name": "ETHOS LIMITED",
 "isin": "INE04TZ01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.15,
-"ownPct": 31.75
-},
-{
-"symbol": "THEJO",
-"name": "THEJO ENGINEERING LIMITED",
-"isin": "INE121N01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.15,
@@ -8185,18 +8131,45 @@
 "ownPct": 31.85
 },
 {
-"symbol": "WCIL",
-"name": "WESTERN CARRIERS (IND) L",
-"isin": "INE0CJF01024",
+"symbol": "ARKADE",
+"name": "ARKADE DEVELOPERS LIMITED",
+"isin": "INE0QRL01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.14,
 "ownPct": 31.85
 },
 {
-"symbol": "ARKADE",
-"name": "ARKADE DEVELOPERS LIMITED",
-"isin": "INE0QRL01017",
+"symbol": "CELLO",
+"name": "CELLO WORLD LIMITED",
+"isin": "INE0LMW01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.14,
+"ownPct": 31.85
+},
+{
+"symbol": "TEXINFRA",
+"name": "TEXMACO INFRA & HOLDG LTD",
+"isin": "INE435C01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.14,
+"ownPct": 31.85
+},
+{
+"symbol": "MOMSBELIEF",
+"name": "RAYS OF BELIEF LIMITED",
+"isin": "INE1FCO01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.14,
+"ownPct": 31.85
+},
+{
+"symbol": "SFL",
+"name": "SHEELA FOAM LIMITED",
+"isin": "INE916U01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.14,
@@ -8284,6 +8257,24 @@
 "ownPct": 31.95
 },
 {
+"symbol": "TTKHLTCARE",
+"name": "TTK HEALTHCARE LIMITED",
+"isin": "INE910C01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.13,
+"ownPct": 31.95
+},
+{
+"symbol": "WCIL",
+"name": "WESTERN CARRIERS (IND) L",
+"isin": "INE0CJF01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.13,
+"ownPct": 31.95
+},
+{
 "symbol": "SNOWMAN",
 "name": "SNOWMAN LOGISTICS LTD.",
 "isin": "INE734N01019",
@@ -8329,9 +8320,9 @@
 "ownPct": 31.95
 },
 {
-"symbol": "RUPA",
-"name": "RUPA & COMPANY LTD",
-"isin": "INE895B01021",
+"symbol": "VMART",
+"name": "VMART RETAIL LTD",
+"isin": "INE665J01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.13,
@@ -8347,6 +8338,15 @@
 "ownPct": 31.95
 },
 {
+"symbol": "THEJO",
+"name": "THEJO ENGINEERING LIMITED",
+"isin": "INE121N01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.13,
+"ownPct": 31.95
+},
+{
 "symbol": "VSTL",
 "name": "VIBHOR STEEL TUBES LTD",
 "isin": "INE0QTF01015",
@@ -8356,18 +8356,18 @@
 "ownPct": 31.95
 },
 {
-"symbol": "ALBERTDAVD",
-"name": "ALBERT DAVID LIMITED",
-"isin": "INE155C01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.13,
-"ownPct": 31.95
-},
-{
 "symbol": "INDIACEM",
 "name": "THE INDIA CEMENTS LIMITED",
 "isin": "INE383A01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.12,
+"ownPct": 32.05
+},
+{
+"symbol": "GPIL",
+"name": "GODAWARI POW & ISP LTD",
+"isin": "INE177H01039",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.12,
@@ -8419,15 +8419,6 @@
 "ownPct": 32.05
 },
 {
-"symbol": "SARDAEN",
-"name": "SARDA ENERGY & MIN LTD",
-"isin": "INE385C01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.12,
-"ownPct": 32.05
-},
-{
 "symbol": "ROUTE",
 "name": "ROUTE MOBILE LIMITED",
 "isin": "INE450U01017",
@@ -8437,18 +8428,9 @@
 "ownPct": 32.05
 },
 {
-"symbol": "VISHNU",
-"name": "VISHNU CHEMICALS LIMITED",
-"isin": "INE270I01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.12,
-"ownPct": 32.05
-},
-{
-"symbol": "VMART",
-"name": "VMART RETAIL LTD",
-"isin": "INE665J01013",
+"symbol": "RUPA",
+"name": "RUPA & COMPANY LTD",
+"isin": "INE895B01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.12,
@@ -8464,18 +8446,36 @@
 "ownPct": 32.05
 },
 {
-"symbol": "GPIL",
-"name": "GODAWARI POW & ISP LTD",
-"isin": "INE177H01039",
+"symbol": "ALBERTDAVD",
+"name": "ALBERT DAVID LIMITED",
+"isin": "INE155C01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.12,
+"ownPct": 32.05
+},
+{
+"symbol": "PACEDIGITK",
+"name": "PACE DIGITEK LIMITED",
+"isin": "INE0S3G01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.11,
 "ownPct": 32.15
 },
 {
-"symbol": "PACEDIGITK",
-"name": "PACE DIGITEK LIMITED",
-"isin": "INE0S3G01027",
+"symbol": "SUNTV",
+"name": "SUN TV NETWORK LIMITED",
+"isin": "INE424H01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.11,
+"ownPct": 32.15
+},
+{
+"symbol": "SARDAEN",
+"name": "SARDA ENERGY & MIN LTD",
+"isin": "INE385C01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.11,
@@ -8509,27 +8509,18 @@
 "ownPct": 32.15
 },
 {
-"symbol": "CRAFTSMAN",
-"name": "CRAFTSMAN AUTOMATION LTD",
-"isin": "INE00LO01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.11,
-"ownPct": 32.15
-},
-{
-"symbol": "KOLTEPATIL",
-"name": "KOLTE PATIL DEV. LTD.",
-"isin": "INE094I01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.11,
-"ownPct": 32.15
-},
-{
 "symbol": "THERMAX",
 "name": "THERMAX LTD",
 "isin": "INE152A01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.11,
+"ownPct": 32.15
+},
+{
+"symbol": "VISHNU",
+"name": "VISHNU CHEMICALS LIMITED",
+"isin": "INE270I01022",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.11,
@@ -8554,18 +8545,27 @@
 "ownPct": 32.15
 },
 {
-"symbol": "VLSFINANCE",
-"name": "VLS FINANCE LTD",
-"isin": "INE709A01018",
+"symbol": "DONEAR",
+"name": "DONEAR IND. LIMITED",
+"isin": "INE668D01028",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.11,
 "ownPct": 32.15
 },
 {
-"symbol": "HEALTHX",
-"name": "HEALTH X PLATFORM LIMITED",
-"isin": "INE019J01013",
+"symbol": "TASTYBITE",
+"name": "TASTY BITE EATABLES LTD",
+"isin": "INE488B01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.11,
+"ownPct": 32.15
+},
+{
+"symbol": "VLSFINANCE",
+"name": "VLS FINANCE LTD",
+"isin": "INE709A01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.11,
@@ -8644,15 +8644,6 @@
 "ownPct": 32.26
 },
 {
-"symbol": "SUNTV",
-"name": "SUN TV NETWORK LIMITED",
-"isin": "INE424H01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.1,
-"ownPct": 32.26
-},
-{
 "symbol": "PRICOLLTD",
 "name": "PRICOL LIMITED",
 "isin": "INE726V01018",
@@ -8665,6 +8656,15 @@
 "symbol": "ABSLAMC",
 "name": "ADIT BIRL SUN LIF AMC LTD",
 "isin": "INE404A01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.1,
+"ownPct": 32.26
+},
+{
+"symbol": "KOLTEPATIL",
+"name": "KOLTE PATIL DEV. LTD.",
+"isin": "INE094I01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.1,
@@ -8734,15 +8734,6 @@
 "ownPct": 32.26
 },
 {
-"symbol": "INTLCONV",
-"name": "INTL CONVEYORS LIMITED",
-"isin": "INE575C01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.1,
-"ownPct": 32.26
-},
-{
 "symbol": "CSLFINANCE",
 "name": "CSL FINANCE LIMITED",
 "isin": "INE718F01018",
@@ -8761,36 +8752,18 @@
 "ownPct": 32.26
 },
 {
-"symbol": "DONEAR",
-"name": "DONEAR IND. LIMITED",
-"isin": "INE668D01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.1,
-"ownPct": 32.26
-},
-{
-"symbol": "TASTYBITE",
-"name": "TASTY BITE EATABLES LTD",
-"isin": "INE488B01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.1,
-"ownPct": 32.26
-},
-{
-"symbol": "ROHLTD",
-"name": "ROYAL ORCHID HOTELS LTD",
-"isin": "INE283H01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.1,
-"ownPct": 32.26
-},
-{
 "symbol": "CONTROLPR",
 "name": "CONTROL PRINT LIMITED",
 "isin": "INE663B01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.1,
+"ownPct": 32.26
+},
+{
+"symbol": "HEALTHX",
+"name": "HEALTH X PLATFORM LIMITED",
+"isin": "INE019J01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.1,
@@ -8842,6 +8815,15 @@
 "ownPct": 32.36
 },
 {
+"symbol": "CRAFTSMAN",
+"name": "CRAFTSMAN AUTOMATION LTD",
+"isin": "INE00LO01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.09,
+"ownPct": 32.36
+},
+{
 "symbol": "ZYDUSWELL",
 "name": "ZYDUS WELLNESS LIMITED",
 "isin": "INE768C01028",
@@ -8854,15 +8836,6 @@
 "symbol": "MIIL",
 "name": "MEGHNA INFRACON INFRA L",
 "isin": "INE898Q01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.09,
-"ownPct": 32.36
-},
-{
-"symbol": "KUANTUM",
-"name": "KUANTUM PAPERS LIMITED",
-"isin": "INE529I01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.09,
@@ -8896,6 +8869,15 @@
 "ownPct": 32.36
 },
 {
+"symbol": "INTLCONV",
+"name": "INTL CONVEYORS LIMITED",
+"isin": "INE575C01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.09,
+"ownPct": 32.36
+},
+{
 "symbol": "SEAMECLTD",
 "name": "SEAMEC LIMITED",
 "isin": "INE497B01018",
@@ -8914,18 +8896,18 @@
 "ownPct": 32.36
 },
 {
+"symbol": "ROHLTD",
+"name": "ROYAL ORCHID HOTELS LTD",
+"isin": "INE283H01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.09,
+"ownPct": 32.36
+},
+{
 "symbol": "HATHWAY",
 "name": "HATHWAY CABLE & DATACOM",
 "isin": "INE982F01036",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.08,
-"ownPct": 32.47
-},
-{
-"symbol": "HEXT",
-"name": "HEXAWARE TECHNOLOGIES LTD",
-"isin": "INE093A01041",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.08,
@@ -9013,27 +8995,18 @@
 "ownPct": 32.47
 },
 {
-"symbol": "CARBORUNIV",
-"name": "CARBORUNDUM UNIVERSAL LTD",
-"isin": "INE120A01034",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.08,
-"ownPct": 32.47
-},
-{
-"symbol": "VARROC",
-"name": "VARROC ENGINEERING LTD.",
-"isin": "INE665L01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.08,
-"ownPct": 32.47
-},
-{
 "symbol": "UFO",
 "name": "UFO MOVIEZ INDIA LTD.",
 "isin": "INE527H01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.08,
+"ownPct": 32.47
+},
+{
+"symbol": "KUANTUM",
+"name": "KUANTUM PAPERS LIMITED",
+"isin": "INE529I01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.08,
@@ -9076,6 +9049,15 @@
 "ownPct": 32.47
 },
 {
+"symbol": "MEIL",
+"name": "MANGAL ELECTRICAL IND L",
+"isin": "INE0PKD01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.08,
+"ownPct": 32.47
+},
+{
 "symbol": "VIDHIING",
 "name": "VIDHI SPCLTY F INGRDNTS L",
 "isin": "INE632C01026",
@@ -9094,15 +9076,6 @@
 "ownPct": 32.47
 },
 {
-"symbol": "SHADOWFAX",
-"name": "SHADOWFAX TECHNOLOGIES L",
-"isin": "INE12UN01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.07,
-"ownPct": 32.57
-},
-{
 "symbol": "M&MFIN",
 "name": "M&M FIN. SERVICES LTD",
 "isin": "INE774D01024",
@@ -9115,6 +9088,15 @@
 "symbol": "IGIL",
 "name": "INTL GEMOLOGICAL INST LTD",
 "isin": "INE0Q9301021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.07,
+"ownPct": 32.57
+},
+{
+"symbol": "HEXT",
+"name": "HEXAWARE TECHNOLOGIES LTD",
+"isin": "INE093A01041",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.07,
@@ -9157,9 +9139,36 @@
 "ownPct": 32.57
 },
 {
+"symbol": "CARBORUNIV",
+"name": "CARBORUNDUM UNIVERSAL LTD",
+"isin": "INE120A01034",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.07,
+"ownPct": 32.57
+},
+{
 "symbol": "RHIM",
 "name": "RHI MAGNESITA INDIA LTD",
 "isin": "INE743M01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.07,
+"ownPct": 32.57
+},
+{
+"symbol": "OMFREIGHT",
+"name": "OM FREIGHT FORWARDERS LTD",
+"isin": "INE1BZC01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.07,
+"ownPct": 32.57
+},
+{
+"symbol": "VARROC",
+"name": "VARROC ENGINEERING LTD.",
+"isin": "INE665L01035",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.07,
@@ -9184,36 +9193,36 @@
 "ownPct": 32.57
 },
 {
-"symbol": "MEIL",
-"name": "MANGAL ELECTRICAL IND L",
-"isin": "INE0PKD01011",
+"symbol": "VARDHACRLC",
+"name": "VARDHAMAN ACRYLICS LTD",
+"isin": "INE116G01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.07,
 "ownPct": 32.57
 },
 {
-"symbol": "JSWHL",
-"name": "JSW HOLDINGS LIMITED",
-"isin": "INE824G01012",
+"symbol": "EXCELINDUS",
+"name": "EXCEL INDUSTRIES LTD",
+"isin": "INE369A01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.07,
 "ownPct": 32.57
 },
 {
-"symbol": "VIKASLIFE",
-"name": "VIKAS LIFECARE LIMITED",
-"isin": "INE161L01027",
+"symbol": "EQUITASBNK",
+"name": "EQUITAS SMALL FIN BNK LTD",
+"isin": "INE063P01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.06,
 "ownPct": 32.68
 },
 {
-"symbol": "HAPPSTMNDS",
-"name": "HAPPIEST MINDS TECHNO LTD",
-"isin": "INE419U01012",
+"symbol": "VIKASLIFE",
+"name": "VIKAS LIFECARE LIMITED",
+"isin": "INE161L01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.06,
@@ -9247,15 +9256,6 @@
 "ownPct": 32.68
 },
 {
-"symbol": "PDSL",
-"name": "PDS LIMITED",
-"isin": "INE111Q01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.06,
-"ownPct": 32.68
-},
-{
 "symbol": "BMWVENTLTD",
 "name": "BMW VENTURES LIMITED",
 "isin": "INE965W01036",
@@ -9268,33 +9268,6 @@
 "symbol": "JTEKTINDIA",
 "name": "JTEKT INDIA LIMITED",
 "isin": "INE643A01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.06,
-"ownPct": 32.68
-},
-{
-"symbol": "PLASTIBLEN",
-"name": "PLASTIBLENDS INDIA LTD",
-"isin": "INE083C01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.06,
-"ownPct": 32.68
-},
-{
-"symbol": "BORANA",
-"name": "BORANA WEAVES LIMITED",
-"isin": "INE16SF01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.06,
-"ownPct": 32.68
-},
-{
-"symbol": "VARDHACRLC",
-"name": "VARDHAMAN ACRYLICS LTD",
-"isin": "INE116G01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.06,
@@ -9319,31 +9292,13 @@
 "ownPct": 32.68
 },
 {
-"symbol": "EXCELINDUS",
-"name": "EXCEL INDUSTRIES LTD",
-"isin": "INE369A01029",
+"symbol": "JSWHL",
+"name": "JSW HOLDINGS LIMITED",
+"isin": "INE824G01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.06,
 "ownPct": 32.68
-},
-{
-"symbol": "POONAWALLA",
-"name": "POONAWALLA FINCORP LTD",
-"isin": "INE511C01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.05,
-"ownPct": 32.79
-},
-{
-"symbol": "RKFORGE",
-"name": "RAMKRISHNA FORGINGS LTD",
-"isin": "INE399G01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.05,
-"ownPct": 32.79
 },
 {
 "symbol": "KEC",
@@ -9358,6 +9313,24 @@
 "symbol": "NLCINDIA",
 "name": "NLC INDIA LIMITED",
 "isin": "INE589A01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.05,
+"ownPct": 32.79
+},
+{
+"symbol": "JUBLINGREA",
+"name": "JUBILANT INGREVIA LIMITED",
+"isin": "INE0BY001018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.05,
+"ownPct": 32.79
+},
+{
+"symbol": "HAPPSTMNDS",
+"name": "HAPPIEST MINDS TECHNO LTD",
+"isin": "INE419U01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.05,
@@ -9400,15 +9373,6 @@
 "ownPct": 32.79
 },
 {
-"symbol": "GANESHCP",
-"name": "GANESH CONSUMER PRODUCT L",
-"isin": "INE652V01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.05,
-"ownPct": 32.79
-},
-{
 "symbol": "PRINCEPIPE",
 "name": "PRINCE PIPES FITTINGS LTD",
 "isin": "INE689W01016",
@@ -9427,9 +9391,9 @@
 "ownPct": 32.79
 },
 {
-"symbol": "QUESS",
-"name": "QUESS CORP LIMITED",
-"isin": "INE615P01015",
+"symbol": "PDSL",
+"name": "PDS LIMITED",
+"isin": "INE111Q01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.05,
@@ -9457,6 +9421,24 @@
 "symbol": "GUJALKALI",
 "name": "GUJARAT ALKALIES & CHEM",
 "isin": "INE186A01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.05,
+"ownPct": 32.79
+},
+{
+"symbol": "PLASTIBLEN",
+"name": "PLASTIBLENDS INDIA LTD",
+"isin": "INE083C01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.05,
+"ownPct": 32.79
+},
+{
+"symbol": "BORANA",
+"name": "BORANA WEAVES LIMITED",
+"isin": "INE16SF01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.05,
@@ -9508,9 +9490,18 @@
 "ownPct": 32.89
 },
 {
-"symbol": "JUBLINGREA",
-"name": "JUBILANT INGREVIA LIMITED",
-"isin": "INE0BY001018",
+"symbol": "SHADOWFAX",
+"name": "SHADOWFAX TECHNOLOGIES L",
+"isin": "INE12UN01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.04,
+"ownPct": 32.89
+},
+{
+"symbol": "RKFORGE",
+"name": "RAMKRISHNA FORGINGS LTD",
+"isin": "INE399G01023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.04,
@@ -9553,6 +9544,24 @@
 "ownPct": 32.89
 },
 {
+"symbol": "GANESHCP",
+"name": "GANESH CONSUMER PRODUCT L",
+"isin": "INE652V01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.04,
+"ownPct": 32.89
+},
+{
+"symbol": "QUESS",
+"name": "QUESS CORP LIMITED",
+"isin": "INE615P01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.04,
+"ownPct": 32.89
+},
+{
 "symbol": "STYLAMIND",
 "name": "STYLAM INDUSTRIES LIMITED",
 "isin": "INE239C01020",
@@ -9560,6 +9569,15 @@
 "type": "equity",
 "lev": 3.04,
 "ownPct": 32.89
+},
+{
+"symbol": "POONAWALLA",
+"name": "POONAWALLA FINCORP LTD",
+"isin": "INE511C01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.03,
+"ownPct": 33.0
 },
 {
 "symbol": "VIKASECO",
@@ -9571,36 +9589,9 @@
 "ownPct": 33.0
 },
 {
-"symbol": "PRAJIND",
-"name": "PRAJ INDUSTRIES LTD",
-"isin": "INE074A01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.03,
-"ownPct": 33.0
-},
-{
 "symbol": "TATACHEM",
 "name": "TATA CHEMICALS LTD",
 "isin": "INE092A01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.03,
-"ownPct": 33.0
-},
-{
-"symbol": "GLOBUSSPR",
-"name": "GLOBUS SPIRITS LTD",
-"isin": "INE615I01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.03,
-"ownPct": 33.0
-},
-{
-"symbol": "GAEL",
-"name": "GUJARAT AMBUJA EXPORTS LT",
-"isin": "INE036B01030",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.03,
@@ -9637,15 +9628,6 @@
 "symbol": "MAHLOG",
 "name": "MAHINDRA LOGISTIC LIMITED",
 "isin": "INE766P01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.03,
-"ownPct": 33.0
-},
-{
-"symbol": "OMFREIGHT",
-"name": "OM FREIGHT FORWARDERS LTD",
-"isin": "INE1BZC01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.03,
@@ -9760,15 +9742,6 @@
 "ownPct": 33.0
 },
 {
-"symbol": "EQUITASBNK",
-"name": "EQUITAS SMALL FIN BNK LTD",
-"isin": "INE063P01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.02,
-"ownPct": 33.11
-},
-{
 "symbol": "VIKRAMSOLR",
 "name": "VIKRAM SOLAR LIMITED",
 "isin": "INE078V01014",
@@ -9778,9 +9751,27 @@
 "ownPct": 33.11
 },
 {
+"symbol": "PRAJIND",
+"name": "PRAJ INDUSTRIES LTD",
+"isin": "INE074A01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.02,
+"ownPct": 33.11
+},
+{
 "symbol": "TNPETRO",
 "name": "TAMILNADU PETROPRODUCTS L",
 "isin": "INE148A01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.02,
+"ownPct": 33.11
+},
+{
+"symbol": "GAEL",
+"name": "GUJARAT AMBUJA EXPORTS LT",
+"isin": "INE036B01030",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.02,
@@ -9814,6 +9805,15 @@
 "ownPct": 33.11
 },
 {
+"symbol": "SPLPETRO",
+"name": "SUPREME PETROCHEM LIMITED",
+"isin": "INE663A01033",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.02,
+"ownPct": 33.11
+},
+{
 "symbol": "NILKAMAL",
 "name": "NILKAMAL LIMITED",
 "isin": "INE310A01015",
@@ -9832,15 +9832,6 @@
 "ownPct": 33.11
 },
 {
-"symbol": "INNOVISION",
-"name": "INNOVISION LIMITED",
-"isin": "INE0ADB01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.02,
-"ownPct": 33.11
-},
-{
 "symbol": "STYL",
 "name": "SESHAASAI TECHNOLOGIES L",
 "isin": "INE04VU01023",
@@ -9850,18 +9841,27 @@
 "ownPct": 33.11
 },
 {
-"symbol": "GREENPANEL",
-"name": "GREENPANEL INDUSTRIES LTD",
-"isin": "INE08ZM01014",
+"symbol": "MAYURUNIQ",
+"name": "MAYUR UNIQUOTERS LTD",
+"isin": "INE040D01038",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.02,
 "ownPct": 33.11
 },
 {
-"symbol": "BOSCH-HCIL",
-"name": "BOSCH HOME COMFRT IND LTD",
-"isin": "INE782A01015",
+"symbol": "SJS",
+"name": "SJS ENTERPRISES LIMITED",
+"isin": "INE284S01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.02,
+"ownPct": 33.11
+},
+{
+"symbol": "GREENPANEL",
+"name": "GREENPANEL INDUSTRIES LTD",
+"isin": "INE08ZM01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.02,
@@ -9895,15 +9895,6 @@
 "ownPct": 33.22
 },
 {
-"symbol": "ARVIND",
-"name": "ARVIND LIMITED",
-"isin": "INE034A01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.01,
-"ownPct": 33.22
-},
-{
 "symbol": "TIMETECHNO",
 "name": "TIME TECHNOPLAST LTD.",
 "isin": "INE508G01029",
@@ -9931,15 +9922,6 @@
 "ownPct": 33.22
 },
 {
-"symbol": "GEOJITFSL",
-"name": "GEOJIT FINANCIAL SER L",
-"isin": "INE007B01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.01,
-"ownPct": 33.22
-},
-{
 "symbol": "WESTLIFE",
 "name": "WESTLIFE FOODWORLD LTD",
 "isin": "INE274F01020",
@@ -9958,27 +9940,9 @@
 "ownPct": 33.22
 },
 {
-"symbol": "SPLPETRO",
-"name": "SUPREME PETROCHEM LIMITED",
-"isin": "INE663A01033",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.01,
-"ownPct": 33.22
-},
-{
-"symbol": "MAYURUNIQ",
-"name": "MAYUR UNIQUOTERS LTD",
-"isin": "INE040D01038",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.01,
-"ownPct": 33.22
-},
-{
-"symbol": "SJS",
-"name": "SJS ENTERPRISES LIMITED",
-"isin": "INE284S01014",
+"symbol": "NITINSPIN",
+"name": "NITIN SPINNERS LIMITED",
+"isin": "INE229H01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.01,
@@ -9988,15 +9952,6 @@
 "symbol": "ORIENTPPR",
 "name": "ORIENT PAPER AND INDS LTD",
 "isin": "INE592A01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.01,
-"ownPct": 33.22
-},
-{
-"symbol": "PONNIERODE",
-"name": "PONNIE SUGARS (ERODE) LTD",
-"isin": "INE838E01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.01,
@@ -10030,9 +9985,9 @@
 "ownPct": 33.22
 },
 {
-"symbol": "MAMATA",
-"name": "MAMATA MACHINERY LIMITED",
-"isin": "INE0TO701015",
+"symbol": "BOSCH-HCIL",
+"name": "BOSCH HOME COMFRT IND LTD",
+"isin": "INE782A01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.01,
@@ -10075,15 +10030,6 @@
 "ownPct": 33.22
 },
 {
-"symbol": "SUNCLAY",
-"name": "SUNDARAM CLAYTON LIMITED",
-"isin": "INE0Q3R01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.01,
-"ownPct": 33.22
-},
-{
 "symbol": "RBA",
 "name": "RESTAURANT BRAND ASIA LTD",
 "isin": "INE07T201019",
@@ -10111,9 +10057,18 @@
 "ownPct": 33.33
 },
 {
-"symbol": "KRBL",
-"name": "KRBL LIMITED",
-"isin": "INE001B01026",
+"symbol": "TITAGARH",
+"name": "TITAGARH RAIL SYSTEMS LTD",
+"isin": "INE615H01020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.0,
+"ownPct": 33.33
+},
+{
+"symbol": "ARVIND",
+"name": "ARVIND LIMITED",
+"isin": "INE034A01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
@@ -10129,9 +10084,9 @@
 "ownPct": 33.33
 },
 {
-"symbol": "MARKOLINES",
-"name": "MARKOLINES PAVEMENT TEC L",
-"isin": "INE0FW001016",
+"symbol": "GEOJITFSL",
+"name": "GEOJIT FINANCIAL SER L",
+"isin": "INE007B01023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
@@ -10147,15 +10102,6 @@
 "ownPct": 33.33
 },
 {
-"symbol": "NITINSPIN",
-"name": "NITIN SPINNERS LIMITED",
-"isin": "INE229H01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.0,
-"ownPct": 33.33
-},
-{
 "symbol": "NAVA",
 "name": "NAVA LIMITED",
 "isin": "INE725A01030",
@@ -10165,9 +10111,27 @@
 "ownPct": 33.33
 },
 {
+"symbol": "PONNIERODE",
+"name": "PONNIE SUGARS (ERODE) LTD",
+"isin": "INE838E01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.0,
+"ownPct": 33.33
+},
+{
 "symbol": "GLOTTIS",
 "name": "GLOTTIS LIMITED",
 "isin": "INE0TQE01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.0,
+"ownPct": 33.33
+},
+{
+"symbol": "MAMATA",
+"name": "MAMATA MACHINERY LIMITED",
+"isin": "INE0TO701015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
@@ -10192,18 +10156,18 @@
 "ownPct": 33.33
 },
 {
-"symbol": "RKSWAMY",
-"name": "R K SWAMY LIMITED",
-"isin": "INE0NQ801033",
+"symbol": "MUTHOOTCAP",
+"name": "MUTHOOT CAP SERV LTD",
+"isin": "INE296G01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
 "ownPct": 33.33
 },
 {
-"symbol": "MUTHOOTCAP",
-"name": "MUTHOOT CAP SERV LTD",
-"isin": "INE296G01013",
+"symbol": "SUNCLAY",
+"name": "SUNDARAM CLAYTON LIMITED",
+"isin": "INE0Q3R01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
@@ -10219,9 +10183,9 @@
 "ownPct": 33.33
 },
 {
-"symbol": "TITAGARH",
-"name": "TITAGARH RAIL SYSTEMS LTD",
-"isin": "INE615H01020",
+"symbol": "STAR",
+"name": "STRIDES PHARMA SCI LTD",
+"isin": "INE939A01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.99,
@@ -10246,9 +10210,36 @@
 "ownPct": 33.44
 },
 {
-"symbol": "SANSTAR",
-"name": "SANSTAR LIMITED",
-"isin": "INE08NE01025",
+"symbol": "GLOBUSSPR",
+"name": "GLOBUS SPIRITS LTD",
+"isin": "INE615I01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.99,
+"ownPct": 33.44
+},
+{
+"symbol": "NUVAMA",
+"name": "NUVAMA WEALTH MANAGE LTD",
+"isin": "INE531F01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.99,
+"ownPct": 33.44
+},
+{
+"symbol": "KRBL",
+"name": "KRBL LIMITED",
+"isin": "INE001B01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.99,
+"ownPct": 33.44
+},
+{
+"symbol": "MARKOLINES",
+"name": "MARKOLINES PAVEMENT TEC L",
+"isin": "INE0FW001016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.99,
@@ -10282,15 +10273,6 @@
 "ownPct": 33.44
 },
 {
-"symbol": "PITTIENG",
-"name": "PITTI ENGINEERING LIMITED",
-"isin": "INE450D01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.99,
-"ownPct": 33.44
-},
-{
 "symbol": "ICEMAKE",
 "name": "ICE MAKE REFRIGERAT LTD",
 "isin": "INE520Y01019",
@@ -10318,6 +10300,15 @@
 "ownPct": 33.44
 },
 {
+"symbol": "RKSWAMY",
+"name": "R K SWAMY LIMITED",
+"isin": "INE0NQ801033",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.99,
+"ownPct": 33.44
+},
+{
 "symbol": "KRYSTAL",
 "name": "KRYSTAL INTEGRATED SER L",
 "isin": "INE0QN801017",
@@ -10327,36 +10318,9 @@
 "ownPct": 33.44
 },
 {
-"symbol": "PPLPHARMA",
-"name": "PIRAMAL PHARMA LIMITED",
-"isin": "INE0DK501011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.98,
-"ownPct": 33.56
-},
-{
-"symbol": "GREENPOWER",
-"name": "ORIENT GREEN POWER CO LTD",
-"isin": "INE999K01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.98,
-"ownPct": 33.56
-},
-{
 "symbol": "NSLNISP",
 "name": "NMDC STEEL LIMITED",
 "isin": "INE0NNS01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.98,
-"ownPct": 33.56
-},
-{
-"symbol": "STAR",
-"name": "STRIDES PHARMA SCI LTD",
-"isin": "INE939A01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.98,
@@ -10393,15 +10357,6 @@
 "symbol": "IIFLCAPS",
 "name": "IIFL CAPITAL SERVICES LTD",
 "isin": "INE489L01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.98,
-"ownPct": 33.56
-},
-{
-"symbol": "SWANCORP",
-"name": "SWAN CORP LIMITED",
-"isin": "INE665A01038",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.98,
@@ -10453,15 +10408,6 @@
 "ownPct": 33.56
 },
 {
-"symbol": "NUVAMA",
-"name": "NUVAMA WEALTH MANAGE LTD",
-"isin": "INE531F01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.98,
-"ownPct": 33.56
-},
-{
 "symbol": "TRIVENI",
 "name": "TRIVENI ENGG. & INDS. LTD",
 "isin": "INE256C01024",
@@ -10474,6 +10420,15 @@
 "symbol": "ABDL",
 "name": "ALLIED BLEND N DISTILS L",
 "isin": "INE552Z01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.98,
+"ownPct": 33.56
+},
+{
+"symbol": "SANSTAR",
+"name": "SANSTAR LIMITED",
+"isin": "INE08NE01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.98,
@@ -10501,6 +10456,15 @@
 "symbol": "TGVSL",
 "name": "T G V SRAAC LTD.",
 "isin": "INE284B01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.98,
+"ownPct": 33.56
+},
+{
+"symbol": "PITTIENG",
+"name": "PITTI ENGINEERING LIMITED",
+"isin": "INE450D01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.98,
@@ -10561,9 +10525,9 @@
 "ownPct": 33.56
 },
 {
-"symbol": "BSOFT",
-"name": "BIRLASOFT LIMITED",
-"isin": "INE836A01035",
+"symbol": "PPLPHARMA",
+"name": "PIRAMAL PHARMA LIMITED",
+"isin": "INE0DK501011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.97,
@@ -10579,9 +10543,27 @@
 "ownPct": 33.67
 },
 {
+"symbol": "SWANCORP",
+"name": "SWAN CORP LIMITED",
+"isin": "INE665A01038",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.97,
+"ownPct": 33.67
+},
+{
 "symbol": "TRITURBINE",
 "name": "TRIVENI TURBINE LIMITED",
 "isin": "INE152M01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.97,
+"ownPct": 33.67
+},
+{
+"symbol": "ANUHPHR",
+"name": "ANUH PHARMA LIMITED",
+"isin": "INE489G01022",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.97,
@@ -10597,9 +10579,27 @@
 "ownPct": 33.67
 },
 {
+"symbol": "INNOVISION",
+"name": "INNOVISION LIMITED",
+"isin": "INE0ADB01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.97,
+"ownPct": 33.67
+},
+{
 "symbol": "NILAINFRA",
 "name": "NILA INFRASTRUCTURES LTD",
 "isin": "INE937C01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.97,
+"ownPct": 33.67
+},
+{
+"symbol": "INDRAMEDCO",
+"name": "INDRAPRASTHA MEDICAL CORP",
+"isin": "INE681B01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.97,
@@ -10633,9 +10633,9 @@
 "ownPct": 33.67
 },
 {
-"symbol": "FMGOETZE",
-"name": "FEDERAL-MOGUL GOETZE (IND",
-"isin": "INE529A01010",
+"symbol": "ISGEC",
+"name": "ISGEC HEAVY ENG LTD",
+"isin": "INE858B01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.97,
@@ -10660,15 +10660,6 @@
 "ownPct": 33.67
 },
 {
-"symbol": "BUTTERFLY",
-"name": "BTRFLY GANDHI APPL LTD",
-"isin": "INE295F01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.97,
-"ownPct": 33.67
-},
-{
 "symbol": "PUNJABCHEM",
 "name": "PUNJAB CHEM & CROP PROT L",
 "isin": "INE277B01014",
@@ -10681,6 +10672,15 @@
 "symbol": "KWIL",
 "name": "KWALITY WALL'S (INDIA) L",
 "isin": "INE2KCE01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.96,
+"ownPct": 33.78
+},
+{
+"symbol": "BSOFT",
+"name": "BIRLASOFT LIMITED",
+"isin": "INE836A01035",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.96,
@@ -10705,27 +10705,18 @@
 "ownPct": 33.78
 },
 {
-"symbol": "FIVESTAR",
-"name": "FIVE-STAR BUS FIN LTD",
-"isin": "INE128S01021",
+"symbol": "INVENTURE",
+"name": "INVENTURE GRO & SEC LTD",
+"isin": "INE878H01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.96,
 "ownPct": 33.78
 },
 {
-"symbol": "ANUHPHR",
-"name": "ANUH PHARMA LIMITED",
-"isin": "INE489G01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.96,
-"ownPct": 33.78
-},
-{
-"symbol": "LATENTVIEW",
-"name": "LATENT VIEW ANALYTICS LTD",
-"isin": "INE0I7C01011",
+"symbol": "PNBGILTS",
+"name": "PNB GILTS LIMITED",
+"isin": "INE859A01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.96,
@@ -10768,15 +10759,6 @@
 "ownPct": 33.78
 },
 {
-"symbol": "INDRAMEDCO",
-"name": "INDRAPRASTHA MEDICAL CORP",
-"isin": "INE681B01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.96,
-"ownPct": 33.78
-},
-{
 "symbol": "ITI",
 "name": "ITI LTD",
 "isin": "INE248A01017",
@@ -10795,27 +10777,18 @@
 "ownPct": 33.78
 },
 {
+"symbol": "FMGOETZE",
+"name": "FEDERAL-MOGUL GOETZE (IND",
+"isin": "INE529A01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.96,
+"ownPct": 33.78
+},
+{
 "symbol": "AMANTA",
 "name": "AMANTA HEALTHCARE LIMITED",
 "isin": "INE084K01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.96,
-"ownPct": 33.78
-},
-{
-"symbol": "PVSL",
-"name": "POPULAR VEHICLES N SER L",
-"isin": "INE772T01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.96,
-"ownPct": 33.78
-},
-{
-"symbol": "ISGEC",
-"name": "ISGEC HEAVY ENG LTD",
-"isin": "INE858B01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.96,
@@ -10858,6 +10831,15 @@
 "ownPct": 33.78
 },
 {
+"symbol": "BUTTERFLY",
+"name": "BTRFLY GANDHI APPL LTD",
+"isin": "INE295F01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.96,
+"ownPct": 33.78
+},
+{
 "symbol": "HARRMALAYA",
 "name": "HARRISON MALAYALAM LTD",
 "isin": "INE544A01019",
@@ -10876,9 +10858,9 @@
 "ownPct": 33.78
 },
 {
-"symbol": "INVENTURE",
-"name": "INVENTURE GRO & SEC LTD",
-"isin": "INE878H01024",
+"symbol": "GREENPOWER",
+"name": "ORIENT GREEN POWER CO LTD",
+"isin": "INE999K01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.95,
@@ -10894,18 +10876,18 @@
 "ownPct": 33.9
 },
 {
-"symbol": "PNBGILTS",
-"name": "PNB GILTS LIMITED",
-"isin": "INE859A01011",
+"symbol": "FIVESTAR",
+"name": "FIVE-STAR BUS FIN LTD",
+"isin": "INE128S01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.95,
 "ownPct": 33.9
 },
 {
-"symbol": "RAYMONDLSL",
-"name": "RAYMOND LIFESTYLE LIMITED",
-"isin": "INE02ID01020",
+"symbol": "LATENTVIEW",
+"name": "LATENT VIEW ANALYTICS LTD",
+"isin": "INE0I7C01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.95,
@@ -10966,18 +10948,18 @@
 "ownPct": 33.9
 },
 {
-"symbol": "SHIVACEM",
-"name": "SHIVA CEMENT LTD.",
-"isin": "INE555C01029",
+"symbol": "POLYMED",
+"name": "POLY MEDICURE LIMITED",
+"isin": "INE205C01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.95,
 "ownPct": 33.9
 },
 {
-"symbol": "POLYMED",
-"name": "POLY MEDICURE LIMITED",
-"isin": "INE205C01021",
+"symbol": "PVSL",
+"name": "POPULAR VEHICLES N SER L",
+"isin": "INE772T01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.95,
@@ -11056,18 +11038,18 @@
 "ownPct": 33.9
 },
 {
-"symbol": "NETWORK18",
-"name": "NETWORK18 MEDIA & INV LTD",
-"isin": "INE870H01013",
+"symbol": "VOGL",
+"name": "VEDANTA OIL AND GAS LTD",
+"isin": "INE704J01044",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.94,
 "ownPct": 34.01
 },
 {
-"symbol": "INTELLECT",
-"name": "INTELLECT DESIGN ARENA",
-"isin": "INE306R01017",
+"symbol": "NETWORK18",
+"name": "NETWORK18 MEDIA & INV LTD",
+"isin": "INE870H01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.94,
@@ -11083,15 +11065,6 @@
 "ownPct": 34.01
 },
 {
-"symbol": "BALRAMCHIN",
-"name": "BALRAMPUR CHINI MILLS LTD",
-"isin": "INE119A01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.94,
-"ownPct": 34.01
-},
-{
 "symbol": "RAILTEL",
 "name": "RAILTEL CORP OF IND LTD",
 "isin": "INE0DD101019",
@@ -11101,9 +11074,9 @@
 "ownPct": 34.01
 },
 {
-"symbol": "IGCL",
-"name": "INDOGULF CROPSCIENCES LTD",
-"isin": "INE05J901018",
+"symbol": "RAYMONDLSL",
+"name": "RAYMOND LIFESTYLE LIMITED",
+"isin": "INE02ID01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.94,
@@ -11119,36 +11092,9 @@
 "ownPct": 34.01
 },
 {
-"symbol": "JUSTDIAL",
-"name": "JUSTDIAL LTD.",
-"isin": "INE599M01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.94,
-"ownPct": 34.01
-},
-{
-"symbol": "SUDEEPPHRM",
-"name": "SUDEEP PHARMA LIMITED",
-"isin": "INE0QPI01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.94,
-"ownPct": 34.01
-},
-{
-"symbol": "SUDARSCHEM",
-"name": "SUDARSHAN CHEMICAL INDS L",
-"isin": "INE659A01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.94,
-"ownPct": 34.01
-},
-{
-"symbol": "APCOTEXIND",
-"name": "APCOTEX INDUSTRIES LIMITE",
-"isin": "INE116A01032",
+"symbol": "SHIVACEM",
+"name": "SHIVA CEMENT LTD.",
+"isin": "INE555C01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.94,
@@ -11191,6 +11137,15 @@
 "ownPct": 34.01
 },
 {
+"symbol": "VETO",
+"name": "VETO SWITCHGEAR CABLE LTD",
+"isin": "INE918N01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.94,
+"ownPct": 34.01
+},
+{
 "symbol": "PTCIL",
 "name": "PTC INDUSTRIES LIMITED",
 "isin": "INE596F01018",
@@ -11212,15 +11167,6 @@
 "symbol": "RATNAMANI",
 "name": "RATNAMANI MET & TUB LTD.",
 "isin": "INE703B01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.94,
-"ownPct": 34.01
-},
-{
-"symbol": "HINDCOMPOS",
-"name": "HINDUSTAN COMPOSITES LTD.",
-"isin": "INE310C01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.94,
@@ -11272,6 +11218,15 @@
 "ownPct": 34.13
 },
 {
+"symbol": "BALRAMCHIN",
+"name": "BALRAMPUR CHINI MILLS LTD",
+"isin": "INE119A01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
 "symbol": "SAREGAMA",
 "name": "SAREGAMA INDIA LIMITED",
 "isin": "INE979A01025",
@@ -11299,6 +11254,42 @@
 "ownPct": 34.13
 },
 {
+"symbol": "INA",
+"name": "INSOLATION ENERGY LIMITED",
+"isin": "INE0LGX01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
+"symbol": "IGCL",
+"name": "INDOGULF CROPSCIENCES LTD",
+"isin": "INE05J901018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
+"symbol": "JUSTDIAL",
+"name": "JUSTDIAL LTD.",
+"isin": "INE599M01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
+"symbol": "SUDEEPPHRM",
+"name": "SUDEEP PHARMA LIMITED",
+"isin": "INE0QPI01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
 "symbol": "TRANSRAILL",
 "name": "TRANSRAIL LIGHTING LTD",
 "isin": "INE454P01035",
@@ -11311,6 +11302,15 @@
 "symbol": "BCLIND",
 "name": "BCL INDUSTRIES LIMITED",
 "isin": "INE412G01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
+"symbol": "SUDARSCHEM",
+"name": "SUDARSHAN CHEMICAL INDS L",
+"isin": "INE659A01023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.93,
@@ -11353,18 +11353,18 @@
 "ownPct": 34.13
 },
 {
-"symbol": "BOROSCI",
-"name": "BOROSIL SCIENTIFIC LTD",
-"isin": "INE02L001032",
+"symbol": "APCOTEXIND",
+"name": "APCOTEX INDUSTRIES LIMITE",
+"isin": "INE116A01032",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.93,
 "ownPct": 34.13
 },
 {
-"symbol": "VETO",
-"name": "VETO SWITCHGEAR CABLE LTD",
-"isin": "INE918N01018",
+"symbol": "BOROSCI",
+"name": "BOROSIL SCIENTIFIC LTD",
+"isin": "INE02L001032",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.93,
@@ -11383,6 +11383,15 @@
 "symbol": "HERANBA",
 "name": "HERANBA INDUSTRIES LTD",
 "isin": "INE694N01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.93,
+"ownPct": 34.13
+},
+{
+"symbol": "HINDCOMPOS",
+"name": "HINDUSTAN COMPOSITES LTD.",
+"isin": "INE310C01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.93,
@@ -11416,15 +11425,6 @@
 "ownPct": 34.25
 },
 {
-"symbol": "FIRSTCRY",
-"name": "BRAINBEES SOLUTIONS LTD",
-"isin": "INE02RE01045",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.92,
-"ownPct": 34.25
-},
-{
 "symbol": "RRKABEL",
 "name": "R R KABEL LIMITED",
 "isin": "INE777K01022",
@@ -11443,36 +11443,9 @@
 "ownPct": 34.25
 },
 {
-"symbol": "INA",
-"name": "INSOLATION ENERGY LIMITED",
-"isin": "INE0LGX01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.92,
-"ownPct": 34.25
-},
-{
 "symbol": "TIPSMUSIC",
 "name": "TIPS MUSIC LIMITED",
 "isin": "INE716B01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.92,
-"ownPct": 34.25
-},
-{
-"symbol": "GHCLTEXTIL",
-"name": "GHCL TEXTILES LIMITED",
-"isin": "INE0PA801013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.92,
-"ownPct": 34.25
-},
-{
-"symbol": "HLVLTD",
-"name": "HLV LIMITED",
-"isin": "INE102A01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.92,
@@ -11491,15 +11464,6 @@
 "symbol": "WHIRLPOOL",
 "name": "WHIRLPOOL OF INDIA LTD",
 "isin": "INE716A01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.92,
-"ownPct": 34.25
-},
-{
-"symbol": "PSPPROJECT",
-"name": "PSP PROJECTS LIMITED",
-"isin": "INE488V01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.92,
@@ -11632,6 +11596,15 @@
 "ownPct": 34.36
 },
 {
+"symbol": "FIRSTCRY",
+"name": "BRAINBEES SOLUTIONS LTD",
+"isin": "INE02RE01045",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.91,
+"ownPct": 34.36
+},
+{
 "symbol": "MOLBIO",
 "name": "MOLBIO DIAGNOSTICS LTD",
 "isin": "INE869T01028",
@@ -11659,9 +11632,27 @@
 "ownPct": 34.36
 },
 {
+"symbol": "GHCLTEXTIL",
+"name": "GHCL TEXTILES LIMITED",
+"isin": "INE0PA801013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.91,
+"ownPct": 34.36
+},
+{
 "symbol": "KIRLPNU",
 "name": "KIRLOSKAR PNEUMATIC COM L",
 "isin": "INE811A01038",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.91,
+"ownPct": 34.36
+},
+{
+"symbol": "HLVLTD",
+"name": "HLV LIMITED",
+"isin": "INE102A01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.91,
@@ -11680,6 +11671,15 @@
 "symbol": "MUKANDLTD",
 "name": "MUKAND LTD.",
 "isin": "INE304A01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.91,
+"ownPct": 34.36
+},
+{
+"symbol": "PSPPROJECT",
+"name": "PSP PROJECTS LIMITED",
+"isin": "INE488V01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.91,
@@ -11749,24 +11749,6 @@
 "ownPct": 34.36
 },
 {
-"symbol": "VOGL",
-"name": "VEDANTA OIL AND GAS LTD",
-"isin": "INE704J01044",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.9,
-"ownPct": 34.48
-},
-{
-"symbol": "URBANCO",
-"name": "URBAN COMPANY LIMITED",
-"isin": "INE0CAZ01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.9,
-"ownPct": 34.48
-},
-{
 "symbol": "CCAVENUE",
 "name": "AVENUESAI LIMITED",
 "isin": "INE483S01038",
@@ -11785,18 +11767,18 @@
 "ownPct": 34.48
 },
 {
-"symbol": "GOKULAGRO",
-"name": "GOKUL AGRO RESOURCES LTD",
-"isin": "INE314T01033",
+"symbol": "TARC",
+"name": "TARC LIMITED",
+"isin": "INE0EK901012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.9,
 "ownPct": 34.48
 },
 {
-"symbol": "UNIECOM",
-"name": "UNICOMMERCE ESOLUTIONS L",
-"isin": "INE00U401027",
+"symbol": "GOKULAGRO",
+"name": "GOKUL AGRO RESOURCES LTD",
+"isin": "INE314T01033",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.9,
@@ -11839,15 +11821,6 @@
 "ownPct": 34.48
 },
 {
-"symbol": "EPIGRAL",
-"name": "EPIGRAL LIMITED",
-"isin": "INE071N01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.9,
-"ownPct": 34.48
-},
-{
 "symbol": "MAFATIND",
 "name": "MAFATLAL INDUSTRIES LTD.",
 "isin": "INE270B01035",
@@ -11884,6 +11857,24 @@
 "ownPct": 34.48
 },
 {
+"symbol": "URBANCO",
+"name": "URBAN COMPANY LIMITED",
+"isin": "INE0CAZ01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.89,
+"ownPct": 34.6
+},
+{
+"symbol": "THYROCARE",
+"name": "THYROCARE TECH LTD",
+"isin": "INE594H01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.89,
+"ownPct": 34.6
+},
+{
 "symbol": "IRCON",
 "name": "IRCON INTERNATIONAL LTD",
 "isin": "INE962Y01021",
@@ -11911,15 +11902,6 @@
 "ownPct": 34.6
 },
 {
-"symbol": "AEGISVOPAK",
-"name": "AEGIS VOPAK TERMINALS LTD",
-"isin": "INE0INX01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.89,
-"ownPct": 34.6
-},
-{
 "symbol": "DHAMPURSUG",
 "name": "DHAMPUR SUGAR MILLS LTD.",
 "isin": "INE041A01016",
@@ -11938,15 +11920,6 @@
 "ownPct": 34.6
 },
 {
-"symbol": "MUTHOOTMF",
-"name": "MUTHOOT MICROFIN LIMITED",
-"isin": "INE046W01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.89,
-"ownPct": 34.6
-},
-{
 "symbol": "EXCELSOFT",
 "name": "EXCELSOFT TECHNOLOGIES L",
 "isin": "INE606N01019",
@@ -11956,9 +11929,9 @@
 "ownPct": 34.6
 },
 {
-"symbol": "TARC",
-"name": "TARC LIMITED",
-"isin": "INE0EK901012",
+"symbol": "UNIECOM",
+"name": "UNICOMMERCE ESOLUTIONS L",
+"isin": "INE00U401027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.89,
@@ -11974,18 +11947,9 @@
 "ownPct": 34.6
 },
 {
-"symbol": "JARO",
-"name": "JARO INS OF TEC MG N RE L",
-"isin": "INE00YJ01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.89,
-"ownPct": 34.6
-},
-{
-"symbol": "SAKHTISUG",
-"name": "SAKTHI SUGARS LTD",
-"isin": "INE623A01011",
+"symbol": "EPIGRAL",
+"name": "EPIGRAL LIMITED",
+"isin": "INE071N01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.89,
@@ -12037,36 +12001,27 @@
 "ownPct": 34.6
 },
 {
-"symbol": "SGIL",
-"name": "SYNERGY GREEN IND. LTD",
-"isin": "INE00QT01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.89,
-"ownPct": 34.6
-},
-{
-"symbol": "NOCIL",
-"name": "NOCIL LIMITED",
-"isin": "INE163A01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.88,
-"ownPct": 34.72
-},
-{
-"symbol": "IIFL",
-"name": "IIFL FINANCE LIMITED",
-"isin": "INE530B01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.88,
-"ownPct": 34.72
-},
-{
 "symbol": "JAMNAAUTO",
 "name": "JAMNA AUTO IND LTD",
 "isin": "INE039C01032",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
+"symbol": "GKENERGY",
+"name": "GK ENERGY LIMITED",
+"isin": "INE1AG301022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
+"symbol": "MUTHOOTMF",
+"name": "MUTHOOT MICROFIN LIMITED",
+"isin": "INE046W01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.88,
@@ -12109,9 +12064,36 @@
 "ownPct": 34.72
 },
 {
+"symbol": "JARO",
+"name": "JARO INS OF TEC MG N RE L",
+"isin": "INE00YJ01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
 "symbol": "TRACXN",
 "name": "TRACXN TECHNOLOGIES LTD",
 "isin": "INE0HMF01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
+"symbol": "SAKHTISUG",
+"name": "SAKTHI SUGARS LTD",
+"isin": "INE623A01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
+"symbol": "ATULAUTO",
+"name": "ATUL AUTO LIMITED",
+"isin": "INE951D01028",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.88,
@@ -12154,6 +12136,15 @@
 "ownPct": 34.72
 },
 {
+"symbol": "MAXESTATES",
+"name": "MAX ESTATES LIMITED",
+"isin": "INE03EI01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
 "symbol": "FACT",
 "name": "FACT LTD",
 "isin": "INE188A01015",
@@ -12166,6 +12157,15 @@
 "symbol": "CLSEL",
 "name": "CHAMAN LAL SETIA EXP LTD",
 "isin": "INE419D01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.88,
+"ownPct": 34.72
+},
+{
+"symbol": "SGIL",
+"name": "SYNERGY GREEN IND. LTD",
+"isin": "INE00QT01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.88,
@@ -12199,18 +12199,18 @@
 "ownPct": 34.72
 },
 {
-"symbol": "THYROCARE",
-"name": "THYROCARE TECH LTD",
-"isin": "INE594H01019",
+"symbol": "NOCIL",
+"name": "NOCIL LIMITED",
+"isin": "INE163A01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.87,
 "ownPct": 34.84
 },
 {
-"symbol": "GKENERGY",
-"name": "GK ENERGY LIMITED",
-"isin": "INE1AG301022",
+"symbol": "AEGISVOPAK",
+"name": "AEGIS VOPAK TERMINALS LTD",
+"isin": "INE0INX01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.87,
@@ -12220,15 +12220,6 @@
 "symbol": "PRAKASH",
 "name": "PRAKASH INDUSTRIES LTD",
 "isin": "INE603A01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.87,
-"ownPct": 34.84
-},
-{
-"symbol": "SHRINGARMS",
-"name": "SHRINGAR HOU OF MANGALS L",
-"isin": "INE1B3L01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.87,
@@ -12262,24 +12253,6 @@
 "ownPct": 34.84
 },
 {
-"symbol": "ATULAUTO",
-"name": "ATUL AUTO LIMITED",
-"isin": "INE951D01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.87,
-"ownPct": 34.84
-},
-{
-"symbol": "JASH",
-"name": "JASH ENGINEERING LIMITED",
-"isin": "INE039O01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.87,
-"ownPct": 34.84
-},
-{
 "symbol": "SANDHAR",
 "name": "SANDHAR TECHNOLOGIES LTD",
 "isin": "INE278H01035",
@@ -12292,15 +12265,6 @@
 "symbol": "CONCORDBIO",
 "name": "CONCORD BIOTECH LIMITED",
 "isin": "INE338H01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.87,
-"ownPct": 34.84
-},
-{
-"symbol": "MAXESTATES",
-"name": "MAX ESTATES LIMITED",
-"isin": "INE03EI01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.87,
@@ -12343,15 +12307,6 @@
 "ownPct": 34.84
 },
 {
-"symbol": "MIDWESTLTD",
-"name": "MIDWEST LIMITED",
-"isin": "INE0XAD01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.87,
-"ownPct": 34.84
-},
-{
 "symbol": "SAHYADRI",
 "name": "SAHYADRI INDUSTRIES LTD",
 "isin": "INE280H01015",
@@ -12379,6 +12334,15 @@
 "ownPct": 34.97
 },
 {
+"symbol": "IIFL",
+"name": "IIFL FINANCE LIMITED",
+"isin": "INE530B01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.86,
+"ownPct": 34.97
+},
+{
 "symbol": "NIITMTS",
 "name": "NIIT LEARNING SYSTEMS LTD",
 "isin": "INE342G01023",
@@ -12388,18 +12352,9 @@
 "ownPct": 34.97
 },
 {
-"symbol": "BLS",
-"name": "BLS INTL SERVS LTD",
-"isin": "INE153T01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.86,
-"ownPct": 34.97
-},
-{
-"symbol": "VINCOFE",
-"name": "VINTAGE COFFEE N BVRGS L",
-"isin": "INE498Q01014",
+"symbol": "EMAMIPAP",
+"name": "EMAMI PAPER MILLS LIMITED",
+"isin": "INE830C01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.86,
@@ -12415,18 +12370,9 @@
 "ownPct": 34.97
 },
 {
-"symbol": "DEEPAKFERT",
-"name": "DEEPAK FERTILIZERS & PETR",
-"isin": "INE501A01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.86,
-"ownPct": 34.97
-},
-{
-"symbol": "KMSUGAR",
-"name": "K M SUGAR MILLS LTD",
-"isin": "INE157H01023",
+"symbol": "SHRINGARMS",
+"name": "SHRINGAR HOU OF MANGALS L",
+"isin": "INE1B3L01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.86,
@@ -12445,6 +12391,15 @@
 "symbol": "AJOONI",
 "name": "AJOONI BIOTECH LIMITED",
 "isin": "INE820Y01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.86,
+"ownPct": 34.97
+},
+{
+"symbol": "JASH",
+"name": "JASH ENGINEERING LIMITED",
+"isin": "INE039O01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.86,
@@ -12496,9 +12451,9 @@
 "ownPct": 34.97
 },
 {
-"symbol": "SRHHYPOLTD",
-"name": "SREE RAYALSEEMA HHP LTD.",
-"isin": "INE917H01012",
+"symbol": "MIDWESTLTD",
+"name": "MIDWEST LIMITED",
+"isin": "INE0XAD01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.86,
@@ -12517,6 +12472,15 @@
 "symbol": "PINELABS",
 "name": "PINE LABS LIMITED",
 "isin": "INE15B701018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.85,
+"ownPct": 35.09
+},
+{
+"symbol": "PARADEEP",
+"name": "PARADEEP PHOSPHATES LTD",
+"isin": "INE088F01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.85,
@@ -12553,6 +12517,33 @@
 "symbol": "ROLEXRINGS",
 "name": "ROLEX RINGS LIMITED",
 "isin": "INE645S01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.85,
+"ownPct": 35.09
+},
+{
+"symbol": "BLS",
+"name": "BLS INTL SERVS LTD",
+"isin": "INE153T01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.85,
+"ownPct": 35.09
+},
+{
+"symbol": "VINCOFE",
+"name": "VINTAGE COFFEE N BVRGS L",
+"isin": "INE498Q01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.85,
+"ownPct": 35.09
+},
+{
+"symbol": "KMSUGAR",
+"name": "K M SUGAR MILLS LTD",
+"isin": "INE157H01023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.85,
@@ -12604,24 +12595,6 @@
 "ownPct": 35.09
 },
 {
-"symbol": "GYFTR",
-"name": "GYFTR LIMITED",
-"isin": "INE724A01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.85,
-"ownPct": 35.09
-},
-{
-"symbol": "BBL",
-"name": "BHARAT BIJLEE LTD",
-"isin": "INE464A01036",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.85,
-"ownPct": 35.09
-},
-{
 "symbol": "ADVENTHTL",
 "name": "ADVENT HOTELS INTERNATI L",
 "isin": "INE28GN01010",
@@ -12640,18 +12613,18 @@
 "ownPct": 35.09
 },
 {
+"symbol": "SRHHYPOLTD",
+"name": "SREE RAYALSEEMA HHP LTD.",
+"isin": "INE917H01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.85,
+"ownPct": 35.09
+},
+{
 "symbol": "VIYASH",
 "name": "VIYASH SCIENTIFIC LIMITED",
 "isin": "INE807F01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.84,
-"ownPct": 35.21
-},
-{
-"symbol": "EMAMIPAP",
-"name": "EMAMI PAPER MILLS LIMITED",
-"isin": "INE830C01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
@@ -12670,6 +12643,15 @@
 "symbol": "AYE",
 "name": "AYE FINANCE LIMITED",
 "isin": "INE501X01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.84,
+"ownPct": 35.21
+},
+{
+"symbol": "DEEPAKFERT",
+"name": "DEEPAK FERTILIZERS & PETR",
+"isin": "INE501A01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
@@ -12721,6 +12703,15 @@
 "ownPct": 35.21
 },
 {
+"symbol": "GYFTR",
+"name": "GYFTR LIMITED",
+"isin": "INE724A01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.84,
+"ownPct": 35.21
+},
+{
 "symbol": "CARYSIL",
 "name": "CARYSIL LIMITED",
 "isin": "INE482D01024",
@@ -12730,9 +12721,9 @@
 "ownPct": 35.21
 },
 {
-"symbol": "WINDMACHIN",
-"name": "WINDSOR MACHINES LIMITED",
-"isin": "INE052A01021",
+"symbol": "BBL",
+"name": "BHARAT BIJLEE LTD",
+"isin": "INE464A01036",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
@@ -12751,15 +12742,6 @@
 "symbol": "NOVAAGRI",
 "name": "NOVA AGRITECH LIMITED",
 "isin": "INE02H701025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.84,
-"ownPct": 35.21
-},
-{
-"symbol": "INDNIPPON",
-"name": "INDIA NIPPON ELECT  LTD",
-"isin": "INE092B01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
@@ -12787,15 +12769,6 @@
 "symbol": "TRITONV",
 "name": "TRITON VALVES LTD.",
 "isin": "INE440G01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.84,
-"ownPct": 35.21
-},
-{
-"symbol": "NITTAGELA",
-"name": "NITTA GELATIN INDIA LTD.",
-"isin": "INE265B01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
@@ -12883,18 +12856,9 @@
 "ownPct": 35.34
 },
 {
-"symbol": "SRM",
-"name": "SRM CONTRACTORS LIMITED",
-"isin": "INE0R6Z01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.83,
-"ownPct": 35.34
-},
-{
-"symbol": "SUDARCOLOR",
-"name": "SUDARSHAN COLORNT IND LTD",
-"isin": "INE492A01029",
+"symbol": "WINDMACHIN",
+"name": "WINDSOR MACHINES LIMITED",
+"isin": "INE052A01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.83,
@@ -12904,6 +12868,15 @@
 "symbol": "LAXMIDENTL",
 "name": "LAXMI DENTAL LIMITED",
 "isin": "INE0WO601020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.83,
+"ownPct": 35.34
+},
+{
+"symbol": "INDNIPPON",
+"name": "INDIA NIPPON ELECT  LTD",
+"isin": "INE092B01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.83,
@@ -12955,6 +12928,15 @@
 "ownPct": 35.34
 },
 {
+"symbol": "NITTAGELA",
+"name": "NITTA GELATIN INDIA LTD.",
+"isin": "INE265B01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.83,
+"ownPct": 35.34
+},
+{
 "symbol": "UMIYA-MRO",
 "name": "UMIYA BUILDCON LIMITED",
 "isin": "INE398B01018",
@@ -12962,15 +12944,6 @@
 "type": "equity",
 "lev": 2.83,
 "ownPct": 35.34
-},
-{
-"symbol": "PARADEEP",
-"name": "PARADEEP PHOSPHATES LTD",
-"isin": "INE088F01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.82,
-"ownPct": 35.46
 },
 {
 "symbol": "VAIBHAVGBL",
@@ -12994,15 +12967,6 @@
 "symbol": "MMTC",
 "name": "MMTC LIMITED",
 "isin": "INE123F01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.82,
-"ownPct": 35.46
-},
-{
-"symbol": "NILASPACES",
-"name": "NILA SPACES LIMITED",
-"isin": "INE00S901012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.82,
@@ -13036,18 +13000,27 @@
 "ownPct": 35.46
 },
 {
-"symbol": "WPIL",
-"name": "W P I L LTD.",
-"isin": "INE765D01022",
+"symbol": "SHANKARA",
+"name": "SHANKARA BLDG PRODUCT LTD",
+"isin": "INE274V01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.82,
 "ownPct": 35.46
 },
 {
-"symbol": "SILVERBND",
-"name": "Bandhan Silver ETF",
-"isin": "INF194KB1KI9",
+"symbol": "SRM",
+"name": "SRM CONTRACTORS LIMITED",
+"isin": "INE0R6Z01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.82,
+"ownPct": 35.46
+},
+{
+"symbol": "SUDARCOLOR",
+"name": "SUDARSHAN COLORNT IND LTD",
+"isin": "INE492A01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.82,
@@ -13072,27 +13045,9 @@
 "ownPct": 35.46
 },
 {
-"symbol": "ZFSTEERING",
-"name": "Z F STEERING GEAR (I) LTD",
-"isin": "INE116C01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.82,
-"ownPct": 35.46
-},
-{
 "symbol": "STCINDIA",
 "name": "THE STATE TRADING CORPN",
 "isin": "INE655A01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.82,
-"ownPct": 35.46
-},
-{
-"symbol": "GRPLTD",
-"name": "GRP LIMITED",
-"isin": "INE137I01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.82,
@@ -13120,6 +13075,15 @@
 "symbol": "ENGINERSIN",
 "name": "ENGINEERS INDIA LTD",
 "isin": "INE510A01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.81,
+"ownPct": 35.59
+},
+{
+"symbol": "INTELLECT",
+"name": "INTELLECT DESIGN ARENA",
+"isin": "INE306R01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.81,
@@ -13162,15 +13126,6 @@
 "ownPct": 35.59
 },
 {
-"symbol": "SENCO",
-"name": "SENCO GOLD LIMITED",
-"isin": "INE602W01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.81,
-"ownPct": 35.59
-},
-{
 "symbol": "TEMBO",
 "name": "TEMBO GLOBAL IND LTD",
 "isin": "INE869Y01028",
@@ -13180,27 +13135,9 @@
 "ownPct": 35.59
 },
 {
-"symbol": "THOMASCOOK",
-"name": "THOMAS COOK (INDIA) LTD",
-"isin": "INE332A01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.81,
-"ownPct": 35.59
-},
-{
-"symbol": "PLATIND",
-"name": "PLATINUM INDUSTRIES LTD",
-"isin": "INE0PT501018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.81,
-"ownPct": 35.59
-},
-{
-"symbol": "IMAGICAA",
-"name": "IMAGICAAWORLD ENT LTD",
-"isin": "INE172N01012",
+"symbol": "NILASPACES",
+"name": "NILA SPACES LIMITED",
+"isin": "INE00S901012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.81,
@@ -13210,15 +13147,6 @@
 "symbol": "AZAD",
 "name": "AZAD ENGINEERING LIMITED",
 "isin": "INE02IJ01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.81,
-"ownPct": 35.59
-},
-{
-"symbol": "RPTECH",
-"name": "RASHI PERIPHERALS LIMITED",
-"isin": "INE0J1F01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.81,
@@ -13252,9 +13180,9 @@
 "ownPct": 35.59
 },
 {
-"symbol": "SHANKARA",
-"name": "SHANKARA BLDG PRODUCT LTD",
-"isin": "INE274V01019",
+"symbol": "WPIL",
+"name": "W P I L LTD.",
+"isin": "INE765D01022",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.81,
@@ -13306,18 +13234,18 @@
 "ownPct": 35.59
 },
 {
-"symbol": "MOSILVER",
-"name": "Motilal Oswal Silver ETF",
-"isin": "INF247L01FZ1",
+"symbol": "SILVERBND",
+"name": "Bandhan Silver ETF",
+"isin": "INF194KB1KI9",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.81,
 "ownPct": 35.59
 },
 {
-"symbol": "HPAL",
-"name": "HP ADHESIVES LIMITED",
-"isin": "INE0GSL01024",
+"symbol": "MOSILVER",
+"name": "Motilal Oswal Silver ETF",
+"isin": "INF247L01FZ1",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.81,
@@ -13405,18 +13333,18 @@
 "ownPct": 35.71
 },
 {
-"symbol": "SKIPPER",
-"name": "SKIPPER LIMITED",
-"isin": "INE439E01022",
+"symbol": "KRISHANA",
+"name": "KRISHANA PHOSCHEM LIMITED",
+"isin": "INE506W01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
 "ownPct": 35.71
 },
 {
-"symbol": "KRISHANA",
-"name": "KRISHANA PHOSCHEM LIMITED",
-"isin": "INE506W01020",
+"symbol": "SENCO",
+"name": "SENCO GOLD LIMITED",
+"isin": "INE602W01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
@@ -13441,6 +13369,33 @@
 "ownPct": 35.71
 },
 {
+"symbol": "THOMASCOOK",
+"name": "THOMAS COOK (INDIA) LTD",
+"isin": "INE332A01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.8,
+"ownPct": 35.71
+},
+{
+"symbol": "PLATIND",
+"name": "PLATINUM INDUSTRIES LTD",
+"isin": "INE0PT501018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.8,
+"ownPct": 35.71
+},
+{
+"symbol": "IMAGICAA",
+"name": "IMAGICAAWORLD ENT LTD",
+"isin": "INE172N01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.8,
+"ownPct": 35.71
+},
+{
 "symbol": "SGFIN",
 "name": "SG FINSERVE LIMITED",
 "isin": "INE618R01015",
@@ -13453,6 +13408,15 @@
 "symbol": "PCBL",
 "name": "PCBL CHEMICAL LIMITED",
 "isin": "INE602A01031",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.8,
+"ownPct": 35.71
+},
+{
+"symbol": "RPTECH",
+"name": "RASHI PERIPHERALS LIMITED",
+"isin": "INE0J1F01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
@@ -13495,15 +13459,6 @@
 "ownPct": 35.71
 },
 {
-"symbol": "SAURASHCEM",
-"name": "SAURASHTRA CEMENT LIMITED",
-"isin": "INE626A01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.8,
-"ownPct": 35.71
-},
-{
 "symbol": "SALZERELEC",
 "name": "SALZER ELECTRONICS LTD",
 "isin": "INE457F01013",
@@ -13531,9 +13486,27 @@
 "ownPct": 35.71
 },
 {
+"symbol": "ZFSTEERING",
+"name": "Z F STEERING GEAR (I) LTD",
+"isin": "INE116C01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.8,
+"ownPct": 35.71
+},
+{
 "symbol": "NDRAUTO",
 "name": "NDR AUTO COMPONENTS LTD",
 "isin": "INE07OG01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.8,
+"ownPct": 35.71
+},
+{
+"symbol": "GRPLTD",
+"name": "GRP LIMITED",
+"isin": "INE137I01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
@@ -13547,6 +13520,15 @@
 "type": "equity",
 "lev": 2.8,
 "ownPct": 35.71
+},
+{
+"symbol": "SKIPPER",
+"name": "SKIPPER LIMITED",
+"isin": "INE439E01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.79,
+"ownPct": 35.84
 },
 {
 "symbol": "SCI",
@@ -13585,6 +13567,15 @@
 "ownPct": 35.84
 },
 {
+"symbol": "SAURASHCEM",
+"name": "SAURASHTRA CEMENT LIMITED",
+"isin": "INE626A01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.79,
+"ownPct": 35.84
+},
+{
 "symbol": "AGI",
 "name": "AGI GREENPAC LIMITED",
 "isin": "INE415A01038",
@@ -13606,6 +13597,15 @@
 "symbol": "STEELCAS",
 "name": "STEELCAST LIMITED",
 "isin": "INE124E01038",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.79,
+"ownPct": 35.84
+},
+{
+"symbol": "HPAL",
+"name": "HP ADHESIVES LIMITED",
+"isin": "INE0GSL01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.79,
@@ -13666,36 +13666,9 @@
 "ownPct": 35.97
 },
 {
-"symbol": "COHANCE",
-"name": "COHANCE LIFESCIENCES LTD",
-"isin": "INE03QK01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.78,
-"ownPct": 35.97
-},
-{
-"symbol": "GAUDIUMIVF",
-"name": "GAUDIUM IVF N WOMEN H L",
-"isin": "INE0P8B01020",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.78,
-"ownPct": 35.97
-},
-{
 "symbol": "BLUEJET",
 "name": "BLUE JET HEALTHCARE LTD",
 "isin": "INE0KBH01020",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.78,
-"ownPct": 35.97
-},
-{
-"symbol": "DBOL",
-"name": "DHAMPUR BIO ORGANICS LTD",
-"isin": "INE0I3401014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.78,
@@ -13714,6 +13687,15 @@
 "symbol": "KMCSHIL",
 "name": "K M C SPECIALITY HOSP I L",
 "isin": "INE879K01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.78,
+"ownPct": 35.97
+},
+{
+"symbol": "TARACHAND",
+"name": "TARA CHAND INFRA SOLN LTD",
+"isin": "INE555Z01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.78,
@@ -13741,15 +13723,6 @@
 "symbol": "IGARASHI",
 "name": "IGARASHI MOTORS INDIA LTD",
 "isin": "INE188B01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.78,
-"ownPct": 35.97
-},
-{
-"symbol": "RPSGVENT",
-"name": "RPSG VENTURES LIMITED",
-"isin": "INE425Y01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.78,
@@ -13801,6 +13774,24 @@
 "ownPct": 36.1
 },
 {
+"symbol": "GMDCLTD",
+"name": "GUJARAT MINERAL DEV CORP",
+"isin": "INE131A01031",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.77,
+"ownPct": 36.1
+},
+{
+"symbol": "COHANCE",
+"name": "COHANCE LIFESCIENCES LTD",
+"isin": "INE03QK01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.77,
+"ownPct": 36.1
+},
+{
 "symbol": "POLICYBZR",
 "name": "PB FINTECH LIMITED",
 "isin": "INE417T01026",
@@ -13822,15 +13813,6 @@
 "symbol": "KPIGREEN",
 "name": "KPI GREEN ENERGY LIMITED",
 "isin": "INE542W01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.77,
-"ownPct": 36.1
-},
-{
-"symbol": "FUSION",
-"name": "FUSION FINANCE LIMITED",
-"isin": "INE139R01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.77,
@@ -13864,18 +13846,18 @@
 "ownPct": 36.1
 },
 {
-"symbol": "SHK",
-"name": "S H KELKAR AND CO. LTD.",
-"isin": "INE500L01026",
+"symbol": "GAUDIUMIVF",
+"name": "GAUDIUM IVF N WOMEN H L",
+"isin": "INE0P8B01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.77,
 "ownPct": 36.1
 },
 {
-"symbol": "TARACHAND",
-"name": "TARA CHAND INFRA SOLN LTD",
-"isin": "INE555Z01020",
+"symbol": "DBOL",
+"name": "DHAMPUR BIO ORGANICS LTD",
+"isin": "INE0I3401014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.77,
@@ -13900,6 +13882,15 @@
 "ownPct": 36.1
 },
 {
+"symbol": "DIVGIITTS",
+"name": "DIVGI TORQTRANSFER SYST L",
+"isin": "INE753U01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.77,
+"ownPct": 36.1
+},
+{
 "symbol": "BAJAJHCARE",
 "name": "BAJAJ HEALTHCARE LIMITED",
 "isin": "INE411U01027",
@@ -13918,6 +13909,15 @@
 "ownPct": 36.1
 },
 {
+"symbol": "LUXIND",
+"name": "LUX INDUSTRIES LIMITED",
+"isin": "INE150G01020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.77,
+"ownPct": 36.1
+},
+{
 "symbol": "SURAJEST",
 "name": "SURAJ ESTATE DEVELOPERS L",
 "isin": "INE843S01025",
@@ -13927,9 +13927,27 @@
 "ownPct": 36.1
 },
 {
+"symbol": "RPSGVENT",
+"name": "RPSG VENTURES LIMITED",
+"isin": "INE425Y01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.77,
+"ownPct": 36.1
+},
+{
 "symbol": "UNIDT",
 "name": "UNITED DRILLING TOOLS LTD",
 "isin": "INE961D01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.77,
+"ownPct": 36.1
+},
+{
+"symbol": "INVPRECQ",
+"name": "INVESTMENT & PREC CAST L",
+"isin": "INE155E01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.77,
@@ -13948,15 +13966,6 @@
 "symbol": "PASHUPATI",
 "name": "PASHUPATI COTSPIN LIMITED",
 "isin": "INE124Y01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.76,
-"ownPct": 36.23
-},
-{
-"symbol": "GMDCLTD",
-"name": "GUJARAT MINERAL DEV CORP",
-"isin": "INE131A01031",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.76,
@@ -13990,15 +13999,6 @@
 "ownPct": 36.23
 },
 {
-"symbol": "V2RETAIL",
-"name": "V2 RETAIL LIMITED",
-"isin": "INE945H01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.76,
-"ownPct": 36.23
-},
-{
 "symbol": "KOTYARK",
 "name": "KOTYARK INDUSTRIES LTD",
 "isin": "INE0J0B01017",
@@ -14008,9 +14008,9 @@
 "ownPct": 36.23
 },
 {
-"symbol": "HEGAM",
-"name": "HEG ADVANCED MATERIAL LTD",
-"isin": "INE545A01024",
+"symbol": "FUSION",
+"name": "FUSION FINANCE LIMITED",
+"isin": "INE139R01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.76,
@@ -14044,6 +14044,15 @@
 "ownPct": 36.23
 },
 {
+"symbol": "SHK",
+"name": "S H KELKAR AND CO. LTD.",
+"isin": "INE500L01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.76,
+"ownPct": 36.23
+},
+{
 "symbol": "FINCABLES",
 "name": "FINOLEX CABLES LTD",
 "isin": "INE235A01022",
@@ -14062,24 +14071,6 @@
 "ownPct": 36.23
 },
 {
-"symbol": "AZADIND",
-"name": "AZAD INDIA MOBILITY LTD.",
-"isin": "INE566M01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.76,
-"ownPct": 36.23
-},
-{
-"symbol": "RPGLIFE",
-"name": "RPG LIFE SCIENCES LTD",
-"isin": "INE105J01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.76,
-"ownPct": 36.23
-},
-{
 "symbol": "HPL",
 "name": "HPL ELECTRIC & POWER LTD",
 "isin": "INE495S01016",
@@ -14089,27 +14080,9 @@
 "ownPct": 36.23
 },
 {
-"symbol": "DIVGIITTS",
-"name": "DIVGI TORQTRANSFER SYST L",
-"isin": "INE753U01022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.76,
-"ownPct": 36.23
-},
-{
 "symbol": "MAANALU",
 "name": "MAAN ALUMINIUM LIMITED",
 "isin": "INE215I01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.76,
-"ownPct": 36.23
-},
-{
-"symbol": "LUXIND",
-"name": "LUX INDUSTRIES LIMITED",
-"isin": "INE150G01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.76,
@@ -14161,6 +14134,15 @@
 "ownPct": 36.36
 },
 {
+"symbol": "PNCINFRA",
+"name": "PNC INFRATECH LTD.",
+"isin": "INE195J01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.75,
+"ownPct": 36.36
+},
+{
 "symbol": "ANANTRAJ",
 "name": "ANANT RAJ LIMITED",
 "isin": "INE242C01024",
@@ -14179,9 +14161,27 @@
 "ownPct": 36.36
 },
 {
+"symbol": "V2RETAIL",
+"name": "V2 RETAIL LIMITED",
+"isin": "INE945H01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.75,
+"ownPct": 36.36
+},
+{
 "symbol": "KELLTONTEC",
 "name": "KELLTON TECH SOL LTD",
 "isin": "INE164B01030",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.75,
+"ownPct": 36.36
+},
+{
+"symbol": "HEGAM",
+"name": "HEG ADVANCED MATERIAL LTD",
+"isin": "INE545A01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.75,
@@ -14395,15 +14395,6 @@
 "ownPct": 36.5
 },
 {
-"symbol": "KPEL",
-"name": "K.P. ENERGY LIMITED",
-"isin": "INE127T01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.74,
-"ownPct": 36.5
-},
-{
 "symbol": "ATL",
 "name": "ALLCARGO TERMINALS LTD",
 "isin": "INE0NN701020",
@@ -14449,6 +14440,15 @@
 "ownPct": 36.5
 },
 {
+"symbol": "HINDWAREAP",
+"name": "HINDWARE HME INOVATON LTD",
+"isin": "INE05AN01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.74,
+"ownPct": 36.5
+},
+{
 "symbol": "ORIENTBELL",
 "name": "ORIENT BELL LIMITED",
 "isin": "INE607D01018",
@@ -14461,15 +14461,6 @@
 "symbol": "JINDALPHOT",
 "name": "JINDAL PHOTO LIMITED",
 "isin": "INE796G01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.74,
-"ownPct": 36.5
-},
-{
-"symbol": "INVPRECQ",
-"name": "INVESTMENT & PREC CAST L",
-"isin": "INE155E01016",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.74,
@@ -14521,6 +14512,15 @@
 "ownPct": 36.5
 },
 {
+"symbol": "GREAVESCOT",
+"name": "GREAVES COTTON LTD.",
+"isin": "INE224A01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.73,
+"ownPct": 36.63
+},
+{
 "symbol": "IDBI",
 "name": "IDBI BANK LIMITED",
 "isin": "INE008A01015",
@@ -14533,15 +14533,6 @@
 "symbol": "SILVERADD",
 "name": "DSP Silver ETF",
 "isin": "INF740KA1ZQ0",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.73,
-"ownPct": 36.63
-},
-{
-"symbol": "PNCINFRA",
-"name": "PNC INFRATECH LTD.",
-"isin": "INE195J01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.73,
@@ -14575,15 +14566,6 @@
 "ownPct": 36.63
 },
 {
-"symbol": "KRISHNADEF",
-"name": "KRISHNA DEF AND ALD IND L",
-"isin": "INE0J5601015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.73,
-"ownPct": 36.63
-},
-{
 "symbol": "GOCOLORS",
 "name": "GO FASHION INDIA LTD",
 "isin": "INE0BJS01011",
@@ -14596,6 +14578,15 @@
 "symbol": "ELLEN",
 "name": "ELLENBARRIE INDUS GASES L",
 "isin": "INE236E01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.73,
+"ownPct": 36.63
+},
+{
+"symbol": "KPEL",
+"name": "K.P. ENERGY LIMITED",
+"isin": "INE127T01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.73,
@@ -14629,18 +14620,18 @@
 "ownPct": 36.63
 },
 {
-"symbol": "ZOTA",
-"name": "ZOTA HEALTH CARE LIMITED",
-"isin": "INE358U01012",
+"symbol": "ORCHPHARMA",
+"name": "ORCHID PHARMA LIMITED",
+"isin": "INE191A01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.73,
 "ownPct": 36.63
 },
 {
-"symbol": "HINDWAREAP",
-"name": "HINDWARE HME INOVATON LTD",
-"isin": "INE05AN01011",
+"symbol": "ZOTA",
+"name": "ZOTA HEALTH CARE LIMITED",
+"isin": "INE358U01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.73,
@@ -14683,15 +14674,6 @@
 "ownPct": 36.63
 },
 {
-"symbol": "GREAVESCOT",
-"name": "GREAVES COTTON LTD.",
-"isin": "INE224A01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.72,
-"ownPct": 36.76
-},
-{
 "symbol": "SBISILVER",
 "name": "SBI Silver ETF",
 "isin": "INF200KB1217",
@@ -14731,6 +14713,33 @@
 "symbol": "GRMOVER",
 "name": "GRM OVERSEAS LIMITED",
 "isin": "INE192H01020",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.72,
+"ownPct": 36.76
+},
+{
+"symbol": "HBLENGINE",
+"name": "HBL ENGINEERING LTD",
+"isin": "INE292B01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.72,
+"ownPct": 36.76
+},
+{
+"symbol": "KRISHNADEF",
+"name": "KRISHNA DEF AND ALD IND L",
+"isin": "INE0J5601015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.72,
+"ownPct": 36.76
+},
+{
+"symbol": "KIRLOSENG",
+"name": "KIRLOSKAR OIL ENG LTD",
+"isin": "INE146L01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.72,
@@ -14791,9 +14800,9 @@
 "ownPct": 36.76
 },
 {
-"symbol": "UNIMECH",
-"name": "UNIMECH AEROSPACE N MFG L",
-"isin": "INE0U3I01011",
+"symbol": "RPGLIFE",
+"name": "RPG LIFE SCIENCES LTD",
+"isin": "INE105J01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.72,
@@ -14803,15 +14812,6 @@
 "symbol": "VENUSPIPES",
 "name": "VENUS PIPES & TUBES LTD",
 "isin": "INE0JA001018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.72,
-"ownPct": 36.76
-},
-{
-"symbol": "ORCHPHARMA",
-"name": "ORCHID PHARMA LIMITED",
-"isin": "INE191A01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.72,
@@ -14830,24 +14830,6 @@
 "symbol": "TCPLPACK",
 "name": "TCPL PACKAGING LIMITED",
 "isin": "INE822C01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.72,
-"ownPct": 36.76
-},
-{
-"symbol": "GLOBALVECT",
-"name": "GLOBAL VEC HELICORP LTD",
-"isin": "INE792H01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.72,
-"ownPct": 36.76
-},
-{
-"symbol": "EVERESTIND",
-"name": "EVEREST INDUSTRIES LTD",
-"isin": "INE295A01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.72,
@@ -14881,15 +14863,6 @@
 "ownPct": 36.76
 },
 {
-"symbol": "TEXRAIL",
-"name": "TEXMACO RAIL & ENG. LTD.",
-"isin": "INE621L01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
 "symbol": "SALASAR",
 "name": "SALASAR TECHNO ENGG. LTD.",
 "isin": "INE170V01027",
@@ -14899,45 +14872,9 @@
 "ownPct": 36.9
 },
 {
-"symbol": "HBLENGINE",
-"name": "HBL ENGINEERING LTD",
-"isin": "INE292B01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
-"symbol": "KIRLOSENG",
-"name": "KIRLOSKAR OIL ENG LTD",
-"isin": "INE146L01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
-"symbol": "AARTIPHARM",
-"name": "AARTI PHARMALABS LIMITED",
-"isin": "INE0LRU01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
 "symbol": "MTNL",
 "name": "MAHANAGAR TELEPHONE NIGAM",
 "isin": "INE153A01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
-"symbol": "ANNAPURNA",
-"name": "ANNAPURNA SWADISHT LTD",
-"isin": "INE0MGM01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.71,
@@ -14962,27 +14899,9 @@
 "ownPct": 36.9
 },
 {
-"symbol": "APOLLOPIPE",
-"name": "APOLLO PIPES LIMITED",
-"isin": "INE126J01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
 "symbol": "AVANTIFEED",
 "name": "AVANTI FEEDS LIMITED",
 "isin": "INE871C01038",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.71,
-"ownPct": 36.9
-},
-{
-"symbol": "AURIONPRO",
-"name": "AURIONPRO SOLN LTD",
-"isin": "INE132H01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.71,
@@ -15007,6 +14926,15 @@
 "ownPct": 36.9
 },
 {
+"symbol": "UNIMECH",
+"name": "UNIMECH AEROSPACE N MFG L",
+"isin": "INE0U3I01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.71,
+"ownPct": 36.9
+},
+{
 "symbol": "DIFFNKG",
 "name": "DIFFUSION ENGINEERS LTD",
 "isin": "INE184O01015",
@@ -15019,6 +14947,15 @@
 "symbol": "RAMAPHO",
 "name": "RAMA PHOSPHATES LIMITED",
 "isin": "INE809A01032",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.71,
+"ownPct": 36.9
+},
+{
+"symbol": "EVERESTIND",
+"name": "EVEREST INDUSTRIES LTD",
+"isin": "INE295A01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.71,
@@ -15043,9 +14980,18 @@
 "ownPct": 37.04
 },
 {
-"symbol": "EPACK",
-"name": "EPACK DURABLE LIMITED",
-"isin": "INE0G5901015",
+"symbol": "TEXRAIL",
+"name": "TEXMACO RAIL & ENG. LTD.",
+"isin": "INE621L01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.7,
+"ownPct": 37.04
+},
+{
+"symbol": "AYMSYNTEX",
+"name": "AYM SYNTEX LIMITED",
+"isin": "INE193B01039",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
@@ -15064,6 +15010,15 @@
 "symbol": "ACUTAAS",
 "name": "ACUTAAS CHEMICALS LIMITED",
 "isin": "INE00FF01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.7,
+"ownPct": 37.04
+},
+{
+"symbol": "AARTIPHARM",
+"name": "AARTI PHARMALABS LIMITED",
+"isin": "INE0LRU01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
@@ -15106,6 +15061,15 @@
 "ownPct": 37.04
 },
 {
+"symbol": "APOLLOPIPE",
+"name": "APOLLO PIPES LIMITED",
+"isin": "INE126J01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.7,
+"ownPct": 37.04
+},
+{
 "symbol": "PNGSREVA",
 "name": "PNGS REVA DIAMOND JEWEL L",
 "isin": "INE1RDG01013",
@@ -15118,6 +15082,15 @@
 "symbol": "DEEPINDS",
 "name": "DEEP INDUSTRIES LIMITED",
 "isin": "INE0FHS01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.7,
+"ownPct": 37.04
+},
+{
+"symbol": "AURIONPRO",
+"name": "AURIONPRO SOLN LTD",
+"isin": "INE132H01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
@@ -15178,6 +15151,15 @@
 "ownPct": 37.04
 },
 {
+"symbol": "GLOBALVECT",
+"name": "GLOBAL VEC HELICORP LTD",
+"isin": "INE792H01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.7,
+"ownPct": 37.04
+},
+{
 "symbol": "STEL",
 "name": "STEL HOLDINGS LIMITED",
 "isin": "INE577L01016",
@@ -15190,24 +15172,6 @@
 "symbol": "TATSILV",
 "name": "Tata Silver Exchange Traded Fund",
 "isin": "INF277KA1984",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.69,
-"ownPct": 37.17
-},
-{
-"symbol": "FSL",
-"name": "FIRSTSOURCE SOLU. LTD.",
-"isin": "INE684F01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.69,
-"ownPct": 37.17
-},
-{
-"symbol": "AYMSYNTEX",
-"name": "AYM SYNTEX LIMITED",
-"isin": "INE193B01039",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.69,
@@ -15277,6 +15241,15 @@
 "ownPct": 37.17
 },
 {
+"symbol": "AZADIND",
+"name": "AZAD INDIA MOBILITY LTD.",
+"isin": "INE566M01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.69,
+"ownPct": 37.17
+},
+{
 "symbol": "SCHNEIDER",
 "name": "SCHNEIDER ELECTRIC INFRA",
 "isin": "INE839M01018",
@@ -15298,15 +15271,6 @@
 "symbol": "PROZONER",
 "name": "PROZONE REALTY LIMITED",
 "isin": "INE195N01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.69,
-"ownPct": 37.17
-},
-{
-"symbol": "CIFL",
-"name": "CAPITAL INDIA FINANCE LTD",
-"isin": "INE345H01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.69,
@@ -15340,15 +15304,6 @@
 "ownPct": 37.17
 },
 {
-"symbol": "IVP",
-"name": "IVP LTD",
-"isin": "INE043C01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.69,
-"ownPct": 37.17
-},
-{
 "symbol": "REPRO",
 "name": "REPRO INDIA LIMITED",
 "isin": "INE461B01014",
@@ -15367,9 +15322,36 @@
 "ownPct": 37.17
 },
 {
+"symbol": "RPOWER",
+"name": "RELIANCE POWER LTD.",
+"isin": "INE614G01033",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.68,
+"ownPct": 37.31
+},
+{
+"symbol": "FSL",
+"name": "FIRSTSOURCE SOLU. LTD.",
+"isin": "INE684F01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.68,
+"ownPct": 37.31
+},
+{
 "symbol": "GROWWSLVR",
 "name": "Groww Silver ETF",
 "isin": "INF666M01OF4",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.68,
+"ownPct": 37.31
+},
+{
+"symbol": "EPACK",
+"name": "EPACK DURABLE LIMITED",
+"isin": "INE0G5901015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.68,
@@ -15394,15 +15376,6 @@
 "ownPct": 37.31
 },
 {
-"symbol": "MANALIPETC",
-"name": "MANALI PETROCHEMICALS LT",
-"isin": "INE201A01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.68,
-"ownPct": 37.31
-},
-{
 "symbol": "EBGNG",
 "name": "GNG ELECTRONICS LIMITED",
 "isin": "INE18JU01028",
@@ -15415,15 +15388,6 @@
 "symbol": "JINDALSAW",
 "name": "JINDAL SAW LIMITED",
 "isin": "INE324A01032",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.68,
-"ownPct": 37.31
-},
-{
-"symbol": "BBOX",
-"name": "BLACK BOX LIMITED",
-"isin": "INE676A01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.68,
@@ -15466,24 +15430,6 @@
 "ownPct": 37.31
 },
 {
-"symbol": "KECL",
-"name": "KIRLOSKAR ELECTRIC CO LTD",
-"isin": "INE134B01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.68,
-"ownPct": 37.31
-},
-{
-"symbol": "NELCO",
-"name": "NELCO LTD",
-"isin": "INE045B01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.68,
-"ownPct": 37.31
-},
-{
 "symbol": "BONDADA",
 "name": "BONDADA ENGINEERING LTD",
 "isin": "INE0Q8P01029",
@@ -15502,9 +15448,18 @@
 "ownPct": 37.31
 },
 {
-"symbol": "RPOWER",
-"name": "RELIANCE POWER LTD.",
-"isin": "INE614G01033",
+"symbol": "IVP",
+"name": "IVP LTD",
+"isin": "INE043C01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.68,
+"ownPct": 37.31
+},
+{
+"symbol": "EASEMYTRIP",
+"name": "EASY TRIP PLANNERS LTD",
+"isin": "INE07O001026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.67,
@@ -15523,6 +15478,24 @@
 "symbol": "HINDCOPPER",
 "name": "HINDUSTAN COPPER LTD",
 "isin": "INE531E01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.67,
+"ownPct": 37.45
+},
+{
+"symbol": "MANALIPETC",
+"name": "MANALI PETROCHEMICALS LT",
+"isin": "INE201A01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.67,
+"ownPct": 37.45
+},
+{
+"symbol": "BBOX",
+"name": "BLACK BOX LIMITED",
+"isin": "INE676A01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.67,
@@ -15556,9 +15529,36 @@
 "ownPct": 37.45
 },
 {
+"symbol": "SPMLINFRA",
+"name": "SPML INFRA LIMITED",
+"isin": "INE937A01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.67,
+"ownPct": 37.45
+},
+{
 "symbol": "SAKSOFT",
 "name": "SAKSOFT LIMITED",
 "isin": "INE667G01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.67,
+"ownPct": 37.45
+},
+{
+"symbol": "KECL",
+"name": "KIRLOSKAR ELECTRIC CO LTD",
+"isin": "INE134B01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.67,
+"ownPct": 37.45
+},
+{
+"symbol": "NELCO",
+"name": "NELCO LTD",
+"isin": "INE045B01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.67,
@@ -15583,6 +15583,15 @@
 "ownPct": 37.45
 },
 {
+"symbol": "CIFL",
+"name": "CAPITAL INDIA FINANCE LTD",
+"isin": "INE345H01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.67,
+"ownPct": 37.45
+},
+{
 "symbol": "UNICHEMLAB",
 "name": "UNICHEM LABORATORIES LTD",
 "isin": "INE351A01035",
@@ -15601,18 +15610,18 @@
 "ownPct": 37.45
 },
 {
-"symbol": "EASEMYTRIP",
-"name": "EASY TRIP PLANNERS LTD",
-"isin": "INE07O001026",
+"symbol": "EMIL",
+"name": "ELECTRONICS MART IND LTD",
+"isin": "INE02YR01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.66,
 "ownPct": 37.59
 },
 {
-"symbol": "EMIL",
-"name": "ELECTRONICS MART IND LTD",
-"isin": "INE02YR01019",
+"symbol": "POCL",
+"name": "PONDY OXIDES & CHEM LTD",
+"isin": "INE063E01061",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.66,
@@ -15646,15 +15655,6 @@
 "ownPct": 37.59
 },
 {
-"symbol": "SPMLINFRA",
-"name": "SPML INFRA LIMITED",
-"isin": "INE937A01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.66,
-"ownPct": 37.59
-},
-{
 "symbol": "INDOSTAR",
 "name": "INDOSTAR CAPITAL FIN LTD",
 "isin": "INE896L01010",
@@ -15673,18 +15673,18 @@
 "ownPct": 37.59
 },
 {
-"symbol": "MINDTECK",
-"name": "MINDTECK (INDIA) LIMITED",
-"isin": "INE110B01017",
+"symbol": "TEXMOPIPES",
+"name": "TEXMO PIPE & PRODUCTS LTD",
+"isin": "INE141K01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.66,
 "ownPct": 37.59
 },
 {
-"symbol": "TEXMOPIPES",
-"name": "TEXMO PIPE & PRODUCTS LTD",
-"isin": "INE141K01013",
+"symbol": "NILE",
+"name": "NILE LTD.",
+"isin": "INE445D01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.66,
@@ -15709,15 +15709,6 @@
 "ownPct": 37.74
 },
 {
-"symbol": "POCL",
-"name": "PONDY OXIDES & CHEM LTD",
-"isin": "INE063E01061",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.65,
-"ownPct": 37.74
-},
-{
 "symbol": "SHARDACROP",
 "name": "SHARDA CROPCHEM LTD.",
 "isin": "INE221J01015",
@@ -15730,6 +15721,15 @@
 "symbol": "ZEEMEDIA",
 "name": "ZEE MEDIA CORPORATION LTD",
 "isin": "INE966H01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.65,
+"ownPct": 37.74
+},
+{
+"symbol": "GNRL",
+"name": "GUJARAT NATURAL RES L",
+"isin": "INE207H01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.65,
@@ -15781,27 +15781,18 @@
 "ownPct": 37.74
 },
 {
-"symbol": "SIGNPOST",
-"name": "SIGNPOST INDIA LIMITED",
-"isin": "INE0KGZ01021",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.65,
-"ownPct": 37.74
-},
-{
-"symbol": "WSI",
-"name": "W.S.INDUSTRIES (I) LTD.",
-"isin": "INE100D01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.65,
-"ownPct": 37.74
-},
-{
 "symbol": "XPROINDIA",
 "name": "XPRO INDIA LIMITED",
 "isin": "INE445C01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.65,
+"ownPct": 37.74
+},
+{
+"symbol": "MINDTECK",
+"name": "MINDTECK (INDIA) LIMITED",
+"isin": "INE110B01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.65,
@@ -15826,9 +15817,9 @@
 "ownPct": 37.74
 },
 {
-"symbol": "NILE",
-"name": "NILE LTD.",
-"isin": "INE445D01013",
+"symbol": "JUBLCPL",
+"name": "JUBILANT AGRI N CON PRO L",
+"isin": "INE03CC01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.65,
@@ -15862,9 +15853,9 @@
 "ownPct": 37.88
 },
 {
-"symbol": "NITCO",
-"name": "NITCO LIMITED",
-"isin": "INE858F01012",
+"symbol": "SMSPHARMA",
+"name": "SMS PHARMACEUTICALS LTD.",
+"isin": "INE812G01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.64,
@@ -15880,27 +15871,9 @@
 "ownPct": 37.88
 },
 {
-"symbol": "HUHTAMAKI",
-"name": "HUHTAMAKI INDIA LIMITED",
-"isin": "INE275B01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.64,
-"ownPct": 37.88
-},
-{
 "symbol": "WOCKPHARMA",
 "name": "WOCKHARDT LIMITED",
 "isin": "INE049B01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.64,
-"ownPct": 37.88
-},
-{
-"symbol": "GNRL",
-"name": "GUJARAT NATURAL RES L",
-"isin": "INE207H01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.64,
@@ -15925,6 +15898,15 @@
 "ownPct": 37.88
 },
 {
+"symbol": "SIGNPOST",
+"name": "SIGNPOST INDIA LIMITED",
+"isin": "INE0KGZ01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.64,
+"ownPct": 37.88
+},
+{
 "symbol": "INDOCO",
 "name": "INDOCO REMEDIES LTD.",
 "isin": "INE873D01024",
@@ -15934,9 +15916,9 @@
 "ownPct": 37.88
 },
 {
-"symbol": "POKARNA",
-"name": "POKARNA LIMITED",
-"isin": "INE637C01025",
+"symbol": "WSI",
+"name": "W.S.INDUSTRIES (I) LTD.",
+"isin": "INE100D01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.64,
@@ -15952,15 +15934,6 @@
 "ownPct": 37.88
 },
 {
-"symbol": "JUBLCPL",
-"name": "JUBILANT AGRI N CON PRO L",
-"isin": "INE03CC01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.64,
-"ownPct": 37.88
-},
-{
 "symbol": "BELLACASA",
 "name": "BELLA CASA FASH AND RET L",
 "isin": "INE344T01014",
@@ -15970,18 +15943,18 @@
 "ownPct": 37.88
 },
 {
-"symbol": "SMSPHARMA",
-"name": "SMS PHARMACEUTICALS LTD.",
-"isin": "INE812G01025",
+"symbol": "FEDDERSHOL",
+"name": "FEDDERS HOLDING LTD.",
+"isin": "INE417D01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.63,
 "ownPct": 38.02
 },
 {
-"symbol": "FEDDERSHOL",
-"name": "FEDDERS HOLDING LTD.",
-"isin": "INE417D01020",
+"symbol": "NITCO",
+"name": "NITCO LIMITED",
+"isin": "INE858F01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.63,
@@ -16000,6 +15973,15 @@
 "symbol": "PROTEAN",
 "name": "PROTEAN EGOV TECHNO LTD",
 "isin": "INE004A01022",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.63,
+"ownPct": 38.02
+},
+{
+"symbol": "ANNAPURNA",
+"name": "ANNAPURNA SWADISHT LTD",
+"isin": "INE0MGM01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.63,
@@ -16096,9 +16078,9 @@
 "ownPct": 38.02
 },
 {
-"symbol": "DCMSIL",
-"name": "DCM SHRIRAM INTERNATNL L",
-"isin": "INE0OU201013",
+"symbol": "POKARNA",
+"name": "POKARNA LIMITED",
+"isin": "INE637C01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.63,
@@ -16121,24 +16103,6 @@
 "type": "equity",
 "lev": 2.63,
 "ownPct": 38.02
-},
-{
-"symbol": "IFGLEXPOR",
-"name": "IFGL REFRACTORIES LIMITED",
-"isin": "INE133Y01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.63,
-"ownPct": 38.02
-},
-{
-"symbol": "SPORTKING",
-"name": "SPORTKING INDIA LIMITED",
-"isin": "INE885H01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.62,
-"ownPct": 38.17
 },
 {
 "symbol": "RUSHIL",
@@ -16186,6 +16150,15 @@
 "ownPct": 38.17
 },
 {
+"symbol": "EMSLIMITED",
+"name": "EMS LIMITED",
+"isin": "INE0OV601013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.62,
+"ownPct": 38.17
+},
+{
 "symbol": "EXXARO",
 "name": "EXXARO TILES LIMITED",
 "isin": "INE0GFE01026",
@@ -16198,6 +16171,15 @@
 "symbol": "TARSONS",
 "name": "TARSONS PRODUCTS LIMITED",
 "isin": "INE144Z01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.62,
+"ownPct": 38.17
+},
+{
+"symbol": "DCMSIL",
+"name": "DCM SHRIRAM INTERNATNL L",
+"isin": "INE0OU201013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.62,
@@ -16222,31 +16204,13 @@
 "ownPct": 38.17
 },
 {
-"symbol": "NOVARTIND",
-"name": "NOVARTIS INDIA LIMITED",
-"isin": "INE234A01025",
+"symbol": "IFGLEXPOR",
+"name": "IFGL REFRACTORIES LIMITED",
+"isin": "INE133Y01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.62,
 "ownPct": 38.17
-},
-{
-"symbol": "MAZDA",
-"name": "MAZDA LIMITED",
-"isin": "INE885E01042",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.62,
-"ownPct": 38.17
-},
-{
-"symbol": "IXIGO",
-"name": "LE TRAVENUES TECHNOLOGY L",
-"isin": "INE0HV901016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.61,
-"ownPct": 38.31
 },
 {
 "symbol": "VIMTALABS",
@@ -16285,9 +16249,9 @@
 "ownPct": 38.31
 },
 {
-"symbol": "EMSLIMITED",
-"name": "EMS LIMITED",
-"isin": "INE0OV601013",
+"symbol": "MAZDA",
+"name": "MAZDA LIMITED",
+"isin": "INE885E01042",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.61,
@@ -16357,6 +16321,24 @@
 "ownPct": 38.46
 },
 {
+"symbol": "IXIGO",
+"name": "LE TRAVENUES TECHNOLOGY L",
+"isin": "INE0HV901016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.6,
+"ownPct": 38.46
+},
+{
+"symbol": "HUHTAMAKI",
+"name": "HUHTAMAKI INDIA LIMITED",
+"isin": "INE275B01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.6,
+"ownPct": 38.46
+},
+{
 "symbol": "PANAMAPET",
 "name": "PANAMA PETROCHEM LTD",
 "isin": "INE305C01029",
@@ -16402,9 +16384,9 @@
 "ownPct": 38.46
 },
 {
-"symbol": "PRAVEG",
-"name": "PRAVEG LTD.",
-"isin": "INE722B01019",
+"symbol": "PIGL",
+"name": "POWER INSTRUMENT (G) LTD",
+"isin": "INE557Z01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.6,
@@ -16420,9 +16402,9 @@
 "ownPct": 38.46
 },
 {
-"symbol": "PERMAGN",
-"name": "PERMANENT MAGNETS LTD.",
-"isin": "INE418E01018",
+"symbol": "NOVARTIND",
+"name": "NOVARTIS INDIA LIMITED",
+"isin": "INE234A01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.6,
@@ -16432,24 +16414,6 @@
 "symbol": "SIGMA",
 "name": "SIGMA SOLVE LIMITED",
 "isin": "INE0A0S01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.6,
-"ownPct": 38.46
-},
-{
-"symbol": "KIOCL",
-"name": "KIOCL LIMITED",
-"isin": "INE880L01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.6,
-"ownPct": 38.46
-},
-{
-"symbol": "ECORECO",
-"name": "ECO RECYCLING LTD.",
-"isin": "INE316A01038",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.6,
@@ -16483,15 +16447,6 @@
 "ownPct": 38.61
 },
 {
-"symbol": "KROSS",
-"name": "KROSS LIMITED",
-"isin": "INE0O6601022",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.59,
-"ownPct": 38.61
-},
-{
 "symbol": "HARDWYN",
 "name": "HARDWYN INDIA LIMITED",
 "isin": "INE626Z01029",
@@ -16504,6 +16459,15 @@
 "symbol": "MOBIKWIK",
 "name": "ONE MOBIKWIK SYSTEMS LTD",
 "isin": "INE0HLU01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.59,
+"ownPct": 38.61
+},
+{
+"symbol": "SDBL",
+"name": "SOM DIST & BREW LTD",
+"isin": "INE480C01038",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.59,
@@ -16531,15 +16495,6 @@
 "symbol": "MVGJL",
 "name": "MANOJ VAIBHAV GEM N JEW L",
 "isin": "INE0KNT01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.59,
-"ownPct": 38.61
-},
-{
-"symbol": "SHREEPUSHK",
-"name": "SHRE PUSH CHEM & FERT LTD",
-"isin": "INE712K01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.59,
@@ -16582,9 +16537,18 @@
 "ownPct": 38.61
 },
 {
-"symbol": "PIGL",
-"name": "POWER INSTRUMENT (G) LTD",
-"isin": "INE557Z01018",
+"symbol": "PRAVEG",
+"name": "PRAVEG LTD.",
+"isin": "INE722B01019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.59,
+"ownPct": 38.61
+},
+{
+"symbol": "PERMAGN",
+"name": "PERMANENT MAGNETS LTD.",
+"isin": "INE418E01018",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.59,
@@ -16600,9 +16564,27 @@
 "ownPct": 38.61
 },
 {
+"symbol": "KIOCL",
+"name": "KIOCL LIMITED",
+"isin": "INE880L01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.59,
+"ownPct": 38.61
+},
+{
 "symbol": "LINC",
 "name": "LINC LIMITED",
 "isin": "INE802B01027",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.59,
+"ownPct": 38.61
+},
+{
+"symbol": "ECORECO",
+"name": "ECO RECYCLING LTD.",
+"isin": "INE316A01038",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.59,
@@ -16627,18 +16609,18 @@
 "ownPct": 38.76
 },
 {
-"symbol": "SDBL",
-"name": "SOM DIST & BREW LTD",
-"isin": "INE480C01038",
+"symbol": "KROSS",
+"name": "KROSS LIMITED",
+"isin": "INE0O6601022",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.58,
 "ownPct": 38.76
 },
 {
-"symbol": "AEGISLOG",
-"name": "AEGIS LOGISTICS LIMITED",
-"isin": "INE208C01025",
+"symbol": "COMSYN",
+"name": "COMMERCIAL SYN BAGS LTD",
+"isin": "INE073V01015",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.58,
@@ -16666,6 +16648,15 @@
 "symbol": "LANCER",
 "name": "LANCER CONTAINER LINES L",
 "isin": "INE359U01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.58,
+"ownPct": 38.76
+},
+{
+"symbol": "SHREEPUSHK",
+"name": "SHRE PUSH CHEM & FERT LTD",
+"isin": "INE712K01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.58,
@@ -16708,6 +16699,15 @@
 "ownPct": 38.76
 },
 {
+"symbol": "SPORTKING",
+"name": "SPORTKING INDIA LIMITED",
+"isin": "INE885H01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.57,
+"ownPct": 38.91
+},
+{
 "symbol": "SANGHVIMOV",
 "name": "SANGHVI MOVERS LTD",
 "isin": "INE989A01032",
@@ -16717,27 +16717,9 @@
 "ownPct": 38.91
 },
 {
-"symbol": "INOXGREEN",
-"name": "INOX GREEN ENERGY SER LTD",
-"isin": "INE510W01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.57,
-"ownPct": 38.91
-},
-{
-"symbol": "COMSYN",
-"name": "COMMERCIAL SYN BAGS LTD",
-"isin": "INE073V01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.57,
-"ownPct": 38.91
-},
-{
-"symbol": "DMCC",
-"name": "DMCC SPECIALITY CHEMICALS",
-"isin": "INE505A01010",
+"symbol": "AEGISLOG",
+"name": "AEGIS LOGISTICS LIMITED",
+"isin": "INE208C01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.57,
@@ -16747,33 +16729,6 @@
 "symbol": "BALUFORGE",
 "name": "BALU FORGE INDUSTRIES LTD",
 "isin": "INE011E01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.57,
-"ownPct": 38.91
-},
-{
-"symbol": "ORIENTTECH",
-"name": "ORIENT TECHNOLOGIES LTD",
-"isin": "INE0PPK01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.57,
-"ownPct": 38.91
-},
-{
-"symbol": "ORIRAIL",
-"name": "ORIENTAL RAIL INFRA L",
-"isin": "INE457G01029",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.57,
-"ownPct": 38.91
-},
-{
-"symbol": "SEIL",
-"name": "SHANTI EDU INITIATIVES L",
-"isin": "INE440T01028",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.57,
@@ -16805,15 +16760,6 @@
 "type": "equity",
 "lev": 2.57,
 "ownPct": 38.91
-},
-{
-"symbol": "JISLJALEQS",
-"name": "JAIN IRRIGATION SYSTEMS",
-"isin": "INE175A01038",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.56,
-"ownPct": 39.06
 },
 {
 "symbol": "MONEYVIEW",
@@ -16873,6 +16819,15 @@
 "symbol": "PRANAV",
 "name": "PRANAV CONSTRUCTIONS LTD",
 "isin": "INE0H4201019",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.56,
+"ownPct": 39.06
+},
+{
+"symbol": "INOXGREEN",
+"name": "INOX GREEN ENERGY SER LTD",
+"isin": "INE510W01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.56,
@@ -17077,9 +17032,27 @@
 "ownPct": 39.06
 },
 {
+"symbol": "ORIENTTECH",
+"name": "ORIENT TECHNOLOGIES LTD",
+"isin": "INE0PPK01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.56,
+"ownPct": 39.06
+},
+{
 "symbol": "LCCPROJECT",
 "name": "LCC PROJECTS LIMITED",
 "isin": "INE1FPN01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.56,
+"ownPct": 39.06
+},
+{
+"symbol": "ORIRAIL",
+"name": "ORIENTAL RAIL INFRA L",
+"isin": "INE457G01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.56,
@@ -17098,6 +17071,15 @@
 "symbol": "PRASOLCHEM",
 "name": "PRASOL CHEMICALS LIMITED",
 "isin": "INE455U01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.56,
+"ownPct": 39.06
+},
+{
+"symbol": "SEIL",
+"name": "SHANTI EDU INITIATIVES L",
+"isin": "INE440T01028",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.56,
@@ -17257,9 +17239,9 @@
 "ownPct": 39.06
 },
 {
-"symbol": "AVANCE",
-"name": "AVANCE TECHNOLOGIES LTD.",
-"isin": "INE758A01072",
+"symbol": "JISLJALEQS",
+"name": "JAIN IRRIGATION SYSTEMS",
+"isin": "INE175A01038",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.55,
@@ -17269,15 +17251,6 @@
 "symbol": "LLOYDSENGG",
 "name": "LLOYDS ENGG WORK LIMITED",
 "isin": "INE093R01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.55,
-"ownPct": 39.22
-},
-{
-"symbol": "PARAS",
-"name": "PARAS DEF AND SPCE TECH L",
-"isin": "INE045601023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.55,
@@ -17296,15 +17269,6 @@
 "symbol": "63MOONS",
 "name": "63 MOONS TECHNOLOGIES LTD",
 "isin": "INE111B01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.55,
-"ownPct": 39.22
-},
-{
-"symbol": "AUTOIND",
-"name": "AUTOLINE INDUSTRIES LTD",
-"isin": "INE718H01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.55,
@@ -17338,6 +17302,15 @@
 "ownPct": 39.22
 },
 {
+"symbol": "QUICKHEAL",
+"name": "QUICK HEAL TECH LTD",
+"isin": "INE306L01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.54,
+"ownPct": 39.37
+},
+{
 "symbol": "UNITECH",
 "name": "UNITECH LTD",
 "isin": "INE694A01020",
@@ -17350,6 +17323,15 @@
 "symbol": "IOLCP",
 "name": "IOL CHEM AND PHARMA LTD",
 "isin": "INE485C01029",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.54,
+"ownPct": 39.37
+},
+{
+"symbol": "PARAS",
+"name": "PARAS DEF AND SPCE TECH L",
+"isin": "INE045601023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.54,
@@ -17410,18 +17392,18 @@
 "ownPct": 39.37
 },
 {
-"symbol": "ADSL",
-"name": "ALLIED DIGITAL SERV. LTD",
-"isin": "INE102I01027",
+"symbol": "AUTOIND",
+"name": "AUTOLINE INDUSTRIES LTD",
+"isin": "INE718H01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.54,
 "ownPct": 39.37
 },
 {
-"symbol": "SSDL",
-"name": "SARASWATI SAREE DEPOT LTD",
-"isin": "INE0PQ101010",
+"symbol": "ADSL",
+"name": "ALLIED DIGITAL SERV. LTD",
+"isin": "INE102I01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.54,
@@ -17500,15 +17482,6 @@
 "ownPct": 39.37
 },
 {
-"symbol": "QUICKHEAL",
-"name": "QUICK HEAL TECH LTD",
-"isin": "INE306L01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.53,
-"ownPct": 39.53
-},
-{
 "symbol": "HUBTOWN",
 "name": "HUBTOWN LIMITED",
 "isin": "INE703H01016",
@@ -17581,9 +17554,9 @@
 "ownPct": 39.53
 },
 {
-"symbol": "COASTCORP",
-"name": "COASTAL CORPORATION LTD",
-"isin": "INE377E01024",
+"symbol": "SSDL",
+"name": "SARASWATI SAREE DEPOT LTD",
+"isin": "INE0PQ101010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.53,
@@ -17647,6 +17620,15 @@
 "symbol": "TIMEX",
 "name": "TIMEX GROUP INDIA LTD.",
 "isin": "INE064A01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.52,
+"ownPct": 39.68
+},
+{
+"symbol": "COASTCORP",
+"name": "COASTAL CORPORATION LTD",
+"isin": "INE377E01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.52,
@@ -17761,6 +17743,15 @@
 "ownPct": 39.84
 },
 {
+"symbol": "PPAP",
+"name": "PPAP AUTOMOTIVE LIMITED",
+"isin": "INE095I01015",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.51,
+"ownPct": 39.84
+},
+{
 "symbol": "SIGACHI",
 "name": "SIGACHI INDUSTRIES LTD",
 "isin": "INE0D0K01022",
@@ -17770,9 +17761,9 @@
 "ownPct": 40.0
 },
 {
-"symbol": "MARINE",
-"name": "MARINE ELECTRICAL (I) LTD",
-"isin": "INE01JE01028",
+"symbol": "DMCC",
+"name": "DMCC SPECIALITY CHEMICALS",
+"isin": "INE505A01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
@@ -17797,24 +17788,6 @@
 "ownPct": 40.0
 },
 {
-"symbol": "PPAP",
-"name": "PPAP AUTOMOTIVE LIMITED",
-"isin": "INE095I01015",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.5,
-"ownPct": 40.0
-},
-{
-"symbol": "CARTRADE",
-"name": "CARTRADE TECH LIMITED",
-"isin": "INE290S01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.49,
-"ownPct": 40.16
-},
-{
 "symbol": "OMNI",
 "name": "OMNITECH ENGINEERING LTD",
 "isin": "INE0UH301010",
@@ -17824,9 +17797,18 @@
 "ownPct": 40.16
 },
 {
-"symbol": "NARMADA",
-"name": "NARMADA AGROBASE LIMITED",
-"isin": "INE117Z01029",
+"symbol": "MARINE",
+"name": "MARINE ELECTRICAL (I) LTD",
+"isin": "INE01JE01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.49,
+"ownPct": 40.16
+},
+{
+"symbol": "AERONEU",
+"name": "AEROFLEX NEU LIMITED",
+"isin": "INE035801013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.49,
@@ -17896,9 +17878,9 @@
 "ownPct": 40.16
 },
 {
-"symbol": "MARSONS",
-"name": "MARSONS LIMITED",
-"isin": "INE415B01044",
+"symbol": "AVANCE",
+"name": "AVANCE TECHNOLOGIES LTD.",
+"isin": "INE758A01072",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.48,
@@ -17923,18 +17905,18 @@
 "ownPct": 40.32
 },
 {
-"symbol": "TARIL",
-"name": "TRANS & RECTI. LTD",
-"isin": "INE763I01026",
+"symbol": "TDPOWERSYS",
+"name": "TD POWER SYSTEMS LTD.",
+"isin": "INE419M01035",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.48,
 "ownPct": 40.32
 },
 {
-"symbol": "TDPOWERSYS",
-"name": "TD POWER SYSTEMS LTD.",
-"isin": "INE419M01035",
+"symbol": "CARTRADE",
+"name": "CARTRADE TECH LIMITED",
+"isin": "INE290S01011",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.48,
@@ -17959,9 +17941,9 @@
 "ownPct": 40.32
 },
 {
-"symbol": "AERONEU",
-"name": "AEROFLEX NEU LIMITED",
-"isin": "INE035801013",
+"symbol": "NARMADA",
+"name": "NARMADA AGROBASE LIMITED",
+"isin": "INE117Z01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.48,
@@ -17980,15 +17962,6 @@
 "symbol": "GALLANTT",
 "name": "GALLANTT ISPAT LIMITED",
 "isin": "INE297H01019",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.48,
-"ownPct": 40.32
-},
-{
-"symbol": "TCC",
-"name": "TCC CONCEPT LIMITED",
-"isin": "INE887D01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.48,
@@ -18022,6 +17995,15 @@
 "ownPct": 40.32
 },
 {
+"symbol": "MARSONS",
+"name": "MARSONS LIMITED",
+"isin": "INE415B01044",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.47,
+"ownPct": 40.49
+},
+{
 "symbol": "JYOTISTRUC",
 "name": "JYOTI STRUCTURES LTD",
 "isin": "INE197A01024",
@@ -18031,18 +18013,18 @@
 "ownPct": 40.49
 },
 {
-"symbol": "TAKE",
-"name": "TAKE LIMITED",
-"isin": "INE142I01023",
+"symbol": "TARIL",
+"name": "TRANS & RECTI. LTD",
+"isin": "INE763I01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.47,
 "ownPct": 40.49
 },
 {
-"symbol": "CAMLINFINE",
-"name": "CAMLIN FINE SCIENCES LTD",
-"isin": "INE052I01032",
+"symbol": "IDEAFORGE",
+"name": "IDEAFORGE TECHNO LTD",
+"isin": "INE349Y01013",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.47,
@@ -18061,6 +18043,24 @@
 "symbol": "JAYBARMARU",
 "name": "JAY BHARAT MARUTI LTD",
 "isin": "INE571B01036",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.47,
+"ownPct": 40.49
+},
+{
+"symbol": "DJML",
+"name": "DJ MEDIAPRINT & LOG LTD",
+"isin": "INE0B1K01014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.47,
+"ownPct": 40.49
+},
+{
+"symbol": "TCC",
+"name": "TCC CONCEPT LIMITED",
+"isin": "INE887D01024",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.47,
@@ -18148,9 +18148,18 @@
 "ownPct": 40.65
 },
 {
-"symbol": "IDEAFORGE",
-"name": "IDEAFORGE TECHNO LTD",
-"isin": "INE349Y01013",
+"symbol": "TAKE",
+"name": "TAKE LIMITED",
+"isin": "INE142I01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.46,
+"ownPct": 40.65
+},
+{
+"symbol": "CAMLINFINE",
+"name": "CAMLIN FINE SCIENCES LTD",
+"isin": "INE052I01032",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.46,
@@ -18169,15 +18178,6 @@
 "symbol": "SKMEGGPROD",
 "name": "SKM EGG PROD EXPORT(I) LT",
 "isin": "INE411D01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.46,
-"ownPct": 40.65
-},
-{
-"symbol": "DJML",
-"name": "DJ MEDIAPRINT & LOG LTD",
-"isin": "INE0B1K01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.46,
@@ -18238,15 +18238,6 @@
 "ownPct": 40.65
 },
 {
-"symbol": "IFCI",
-"name": "IFCI LTD",
-"isin": "INE039A01010",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.45,
-"ownPct": 40.82
-},
-{
 "symbol": "BLUSPRING",
 "name": "BLUSPRING ENTERPRISES LTD",
 "isin": "INE0U4101014",
@@ -18286,6 +18277,15 @@
 "symbol": "EMPOWER",
 "name": "EMPOWER INDIA LTD.",
 "isin": "INE507F01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.44,
+"ownPct": 40.98
+},
+{
+"symbol": "IFCI",
+"name": "IFCI LTD",
+"isin": "INE039A01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.44,
@@ -18373,6 +18373,15 @@
 "ownPct": 40.98
 },
 {
+"symbol": "SUBEXLTD",
+"name": "SUBEX LTD",
+"isin": "INE754A01055",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.43,
+"ownPct": 41.15
+},
+{
 "symbol": "INDIAGLYCO",
 "name": "INDIA GLYCOLS LTD",
 "isin": "INE560A01023",
@@ -18418,15 +18427,6 @@
 "ownPct": 41.15
 },
 {
-"symbol": "LOKESHMACH",
-"name": "LOKESH MACHINES LTD",
-"isin": "INE397H01017",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.43,
-"ownPct": 41.15
-},
-{
 "symbol": "VINDHYATEL",
 "name": "VINDHYA TELELINKS LTD",
 "isin": "INE707A01012",
@@ -18434,24 +18434,6 @@
 "type": "equity",
 "lev": 2.43,
 "ownPct": 41.15
-},
-{
-"symbol": "ELECTHERM",
-"name": "ELECTROTHERM (I) LTD.",
-"isin": "INE822G01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.43,
-"ownPct": 41.15
-},
-{
-"symbol": "SUBEXLTD",
-"name": "SUBEX LTD",
-"isin": "INE754A01055",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.42,
-"ownPct": 41.32
 },
 {
 "symbol": "FINOPB",
@@ -18472,6 +18454,15 @@
 "ownPct": 41.32
 },
 {
+"symbol": "LOKESHMACH",
+"name": "LOKESH MACHINES LTD",
+"isin": "INE397H01017",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.42,
+"ownPct": 41.32
+},
+{
 "symbol": "KPL",
 "name": "KWALITY PHARMACEUTICALS L",
 "isin": "INE552U01010",
@@ -18481,18 +18472,18 @@
 "ownPct": 41.32
 },
 {
+"symbol": "ELECTHERM",
+"name": "ELECTROTHERM (I) LTD.",
+"isin": "INE822G01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.42,
+"ownPct": 41.32
+},
+{
 "symbol": "SHUKRAPHAR",
 "name": "SHUKRA PHARMACEUTICALS L",
 "isin": "INE551C01044",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.41,
-"ownPct": 41.49
-},
-{
-"symbol": "FCL",
-"name": "FINEOTEX CHEMICAL LIMITED",
-"isin": "INE045J01034",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.41,
@@ -18517,18 +18508,27 @@
 "ownPct": 41.49
 },
 {
-"symbol": "UNIVCABLES",
-"name": "UNIVERSAL CABLES LTD",
-"isin": "INE279A01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.41,
-"ownPct": 41.49
-},
-{
 "symbol": "PCJEWELLER",
 "name": "PC JEWELLER LTD",
 "isin": "INE785M01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.4,
+"ownPct": 41.67
+},
+{
+"symbol": "FCL",
+"name": "FINEOTEX CHEMICAL LIMITED",
+"isin": "INE045J01034",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.4,
+"ownPct": 41.67
+},
+{
+"symbol": "UNIVCABLES",
+"name": "UNIVERSAL CABLES LTD",
+"isin": "INE279A01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
@@ -18542,15 +18542,6 @@
 "type": "equity",
 "lev": 2.4,
 "ownPct": 41.67
-},
-{
-"symbol": "CONFIPET",
-"name": "CONFIDENCE PETRO IND LTD.",
-"isin": "INE552D01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.39,
-"ownPct": 41.84
 },
 {
 "symbol": "EXICOM",
@@ -18580,27 +18571,18 @@
 "ownPct": 41.84
 },
 {
+"symbol": "CONFIPET",
+"name": "CONFIDENCE PETRO IND LTD.",
+"isin": "INE552D01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.38,
+"ownPct": 42.02
+},
+{
 "symbol": "BCG",
 "name": "BRIGHTCOM GROUP LIMITED",
 "isin": "INE425B01027",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.38,
-"ownPct": 42.02
-},
-{
-"symbol": "PARACABLES",
-"name": "PARAMOUNT COMM LTD",
-"isin": "INE074B01023",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.38,
-"ownPct": 42.02
-},
-{
-"symbol": "ASTEC",
-"name": "ASTEC LIFESCIENCES LTD",
-"isin": "INE563J01010",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.38,
@@ -18616,9 +18598,9 @@
 "ownPct": 42.02
 },
 {
-"symbol": "IBULLSLTD",
-"name": "INDIABULLS LIMITED",
-"isin": "INE126M01010",
+"symbol": "PARACABLES",
+"name": "PARAMOUNT COMM LTD",
+"isin": "INE074B01023",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.37,
@@ -18643,6 +18625,15 @@
 "ownPct": 42.19
 },
 {
+"symbol": "ASTEC",
+"name": "ASTEC LIFESCIENCES LTD",
+"isin": "INE563J01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.37,
+"ownPct": 42.19
+},
+{
 "symbol": "HLEGLAS",
 "name": "HLE GLASCOAT LIMITED",
 "isin": "INE461D01028",
@@ -18659,6 +18650,15 @@
 "type": "equity",
 "lev": 2.37,
 "ownPct": 42.19
+},
+{
+"symbol": "IBULLSLTD",
+"name": "INDIABULLS LIMITED",
+"isin": "INE126M01010",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.36,
+"ownPct": 42.37
 },
 {
 "symbol": "AARTECH",
@@ -18697,15 +18697,6 @@
 "ownPct": 42.55
 },
 {
-"symbol": "OMAXAUTO",
-"name": "OMAX AUTOS LTD",
-"isin": "INE090B01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.34,
-"ownPct": 42.74
-},
-{
 "symbol": "KERNEX",
 "name": "KERNEX MICROSYS(I) LTD",
 "isin": "INE202H01019",
@@ -18713,6 +18704,15 @@
 "type": "equity",
 "lev": 2.34,
 "ownPct": 42.74
+},
+{
+"symbol": "OMAXAUTO",
+"name": "OMAX AUTOS LTD",
+"isin": "INE090B01011",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.33,
+"ownPct": 42.92
 },
 {
 "symbol": "SMLMAH",
@@ -18810,8 +18810,8 @@
 "isin": "INE482J01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.21,
-"ownPct": 45.25
+"lev": 2.2,
+"ownPct": 45.45
 },
 {
 "symbol": "AMAL",
@@ -18853,15 +18853,6 @@
 "symbol": "AFCONS",
 "name": "AFCONS INFRASTRUCTURE LTD",
 "isin": "INE101I01011",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.04,
-"ownPct": 49.02
-},
-{
-"symbol": "GENESYS",
-"name": "GENESYS INTL CORPN LTD",
-"isin": "INE727B01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.04,
@@ -18938,6 +18929,15 @@
 "type": "equity",
 "lev": 2.04,
 "ownPct": 49.02
+},
+{
+"symbol": "GENESYS",
+"name": "GENESYS INTL CORPN LTD",
+"isin": "INE727B01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.03,
+"ownPct": 49.26
 },
 {
 "symbol": "DOLPHIN",
@@ -19165,18 +19165,18 @@
 "ownPct": 89.29
 },
 {
-"symbol": "RMDRIP",
-"name": "R M DRIP & SPRINK SYS LTD",
-"isin": "INE219Y01026",
+"symbol": "GANESHBE",
+"name": "GANESH BENZOPLAST LIMITED",
+"isin": "INE388A01029",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
 "ownPct": 100.0
 },
 {
-"symbol": "GANESHBE",
-"name": "GANESH BENZOPLAST LIMITED",
-"isin": "INE388A01029",
+"symbol": "RMDRIP",
+"name": "R M DRIP & SPRINK SYS LTD",
+"isin": "INE219Y01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,

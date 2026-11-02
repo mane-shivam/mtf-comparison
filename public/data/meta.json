@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-01T19:03:59Z",
+  "generatedAt": "2026-11-02T12:50:16Z",
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-01T19:03:36Z",
-      "count": 1711,
+      "fetchedAt": "2026-11-02T12:49:53Z",
+      "count": 1651,
       "status": "ok",
       "error": null,
-      "matched": 1711
+      "matched": 1651
     },
     "paytm": {
-      "fetchedAt": "2026-11-01T19:03:37Z",
+      "fetchedAt": "2026-11-02T12:49:54Z",
       "count": 1515,
       "status": "ok",
       "error": null,
       "matched": 1515
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-01T19:03:59Z",
+      "fetchedAt": "2026-11-02T12:50:16Z",
       "count": 2207,
       "status": "ok",
       "error": null,
