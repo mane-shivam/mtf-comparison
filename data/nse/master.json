@@ -17884,5 +17884,11 @@
 "name": "BSE India Defence",
 "isin": "INF200KB1CJ6",
 "type": "etf"
+},
+{
+"symbol": "BANKCASE",
+"name": "BSE Top 10 Banks",
+"isin": "INF0R8F01265",
+"type": "etf"
 }
 ]

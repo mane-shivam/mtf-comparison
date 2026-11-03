@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-11-02T22:52:11Z",
+  "generatedAt": "2026-11-03T12:16:34Z",
   "brokers": {
     "kotak": {
       "fetchedAt": "2026-11-02T22:51:47Z",
       "count": 1685,
-      "status": "ok",
-      "error": null,
+      "status": "stale",
+      "error": "MTF table not found on Kotak page",
       "matched": 1685
     },
     "paytm": {
-      "fetchedAt": "2026-11-02T22:51:48Z",
-      "count": 1515,
+      "fetchedAt": "2026-11-03T12:16:11Z",
+      "count": 1510,
       "status": "ok",
       "error": null,
-      "matched": 1515
+      "matched": 1510
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-02T22:52:11Z",
-      "count": 2207,
+      "fetchedAt": "2026-11-03T12:16:34Z",
+      "count": 2213,
       "status": "ok",
       "error": null,
-      "matched": 2207
+      "matched": 2213
     }
   },
-  "total": 2225,
+  "total": 2234,
   "unmatched": 0
 }
