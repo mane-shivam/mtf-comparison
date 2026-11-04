@@ -4212,6 +4212,12 @@
 "type": "equity"
 },
 {
+"symbol": "ENNATURE",
+"name": "Ennature Bio Pharma Limited",
+"isin": "INE2WCT01016",
+"type": "equity"
+},
+{
 "symbol": "ENRIN",
 "name": "Siemens Energy India Limited",
 "isin": "INE1NPP01017",
@@ -4353,6 +4359,12 @@
 "symbol": "EVERESTIND",
 "name": "Everest Industries Limited",
 "isin": "INE295A01018",
+"type": "equity"
+},
+{
+"symbol": "EVONILE",
+"name": "Evonile Pharma Limited",
+"isin": "INE234A01025",
 "type": "equity"
 },
 {
@@ -6153,6 +6165,12 @@
 "symbol": "IGL",
 "name": "Indraprastha Gas Limited",
 "isin": "INE203G01027",
+"type": "equity"
+},
+{
+"symbol": "IGLSPIRITS",
+"name": "IGL Spirits Limited",
+"isin": "INE2W6901017",
 "type": "equity"
 },
 {
@@ -8730,6 +8748,12 @@
 "type": "equity"
 },
 {
+"symbol": "MELSTAR",
+"name": "Melstar Information Technologies Limited",
+"isin": "INE817A01050",
+"type": "equity"
+},
+{
 "symbol": "MENNPIS",
 "name": "Menon Pistons Limited",
 "isin": "INE650G01029",
@@ -8883,6 +8907,12 @@
 "symbol": "MKEXIM",
 "name": "M.K. Exim (India) Limited",
 "isin": "INE227F01010",
+"type": "equity"
+},
+{
+"symbol": "MKJEWELS",
+"name": "M. K. Sons Fine Jewels Limited",
+"isin": "INE2IXO01012",
 "type": "equity"
 },
 {
@@ -9729,12 +9759,6 @@
 "symbol": "NOVAAGRI",
 "name": "Nova Agritech Limited",
 "isin": "INE02H701025",
-"type": "equity"
-},
-{
-"symbol": "NOVARTIND",
-"name": "Novartis India Limited",
-"isin": "INE234A01025",
 "type": "equity"
 },
 {
