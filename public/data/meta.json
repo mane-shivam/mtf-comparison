@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-11-04T18:15:52Z",
+  "generatedAt": "2026-11-04T20:55:12Z",
   "surveillance": {
-    "fetchedAt": "2026-11-04T18:15:52Z",
+    "fetchedAt": "2026-11-04T20:55:12Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 268,
-        "fetchedAt": "2026-11-04T18:15:52Z",
+        "fetchedAt": "2026-11-04T20:55:12Z",
         "error": null
       }
     }
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-04T18:15:26Z",
+      "fetchedAt": "2026-11-04T20:54:46Z",
       "count": 1711,
       "status": "ok",
       "error": null,
       "matched": 1711
     },
     "paytm": {
-      "fetchedAt": "2026-11-04T18:15:26Z",
+      "fetchedAt": "2026-11-04T20:54:47Z",
       "count": 1516,
       "status": "ok",
       "error": null,
       "matched": 1516
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-04T18:15:50Z",
+      "fetchedAt": "2026-11-04T20:55:09Z",
       "count": 2212,
       "status": "ok",
       "error": null,
