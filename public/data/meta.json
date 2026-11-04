@@ -1,39 +1,39 @@
 {
-  "generatedAt": "2026-11-04T13:06:42Z",
+  "generatedAt": "2026-11-04T13:25:38Z",
   "surveillance": {
-    "fetchedAt": "2026-11-04T13:05:06Z",
+    "fetchedAt": "2026-11-04T13:25:38Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 268,
-        "fetchedAt": "2026-11-04T13:05:04Z",
+        "fetchedAt": "2026-11-04T13:25:38Z",
         "error": null
       },
       "BSE": {
-        "status": "ok",
+        "status": "stale",
         "count": 960,
         "fetchedAt": "2026-11-04T13:05:06Z",
-        "error": null
+        "error": "405 Client Error: Not Allowed for url: https://trendlyne.com/equity/asm-dashboard/active-stocks/"
       }
     }
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-04T12:28:44Z",
-      "count": 1710,
+      "fetchedAt": "2026-11-04T13:25:12Z",
+      "count": 1711,
       "status": "ok",
       "error": null,
-      "matched": 1710
+      "matched": 1711
     },
     "paytm": {
-      "fetchedAt": "2026-11-04T12:28:44Z",
+      "fetchedAt": "2026-11-04T13:25:13Z",
       "count": 1516,
       "status": "ok",
       "error": null,
       "matched": 1516
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-04T12:29:07Z",
+      "fetchedAt": "2026-11-04T13:25:36Z",
       "count": 2212,
       "status": "ok",
       "error": null,
