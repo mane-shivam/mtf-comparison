@@ -121,6 +121,33 @@ def previous_snapshot(today: str) -> dict:
     return load_json(files[-1], {}) if files else {}
 
 
+def build_surveillance(matcher: "Matcher") -> tuple[dict, dict]:
+    """Group NSE/BSE ASM and GSM entries by NSE symbol; the same measure on both exchanges is one flag."""
+    raw = load_json(RAW / "surveillance.json", None)
+    if not raw:
+        return {}, {}
+    grouped: dict[str, dict[tuple, dict]] = {}
+    for e in raw.get("entries", []):
+        sym = e["symbol"]
+        if sym not in matcher.by_symbol and e.get("name"):
+            # A BSE code that isn't an NSE symbol: match the company name instead.
+            sym = matcher.by_name.get(normalise(e["name"]), sym)
+        k = (e["list"], e.get("term"), e["stage"])
+        f = grouped.setdefault(sym, {}).setdefault(k, {
+            "ex": [], "list": e["list"], "term": e.get("term"), "stage": e["stage"],
+            "since": e.get("since"), "exact": bool(e.get("exact")), "desc": ""})
+        if e["ex"] not in f["ex"]:
+            f["ex"].append(e["ex"])
+        if e["ex"] == "NSE" and e.get("desc"):
+            f["desc"] = e["desc"]
+        # Prefer an exchange-published date, and the earliest of those.
+        if e.get("since") and (not f["since"] or (e.get("exact"), ) > (f["exact"], ) or
+                               (bool(e.get("exact")) == f["exact"] and e["since"] < f["since"])):
+            f["since"], f["exact"] = e["since"], bool(e.get("exact"))
+    out = {sym: sorted(v.values(), key=lambda f: (f["list"], f["term"] or "", f["stage"])) for sym, v in sorted(grouped.items())}
+    return out, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
+
+
 def main() -> None:
     now = datetime.now(timezone.utc).replace(microsecond=0)
     today = now.astimezone(IST).date().isoformat()
@@ -190,8 +217,11 @@ def main() -> None:
     history = {"brokers": BROKERS, "dates": [p.stem for p in recent],
                "rows": {sym: [sn.get(sym) for sn in snaps] for sym in snapshot}}
 
+    surveillance, surv_meta = build_surveillance(matcher)
+
     meta = {
         "generatedAt": now.isoformat().replace("+00:00", "Z"),
+        "surveillance": surv_meta,
         "brokers": meta_brokers,
         "total": len(rows),
         "unmatched": len(unmatched),
@@ -202,6 +232,7 @@ def main() -> None:
     (OUT / "unmatched.json").write_text(json.dumps(unmatched, indent=1, ensure_ascii=False) + "\n")
     (OUT / "history.json").write_text(json.dumps(history, separators=(",", ":")) + "\n")
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
+    (OUT / "surveillance.json").write_text(json.dumps(surveillance, separators=(",", ":")) + "\n")
     # Every NSE symbol, so the site can pin a stock no broker funds yet.
     listed = sorted({m["symbol"]: m["name"] for m in master}.items())
     (OUT / "symbols.json").write_text(json.dumps(listed, separators=(",", ":"), ensure_ascii=False) + "\n")

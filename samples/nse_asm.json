@@ -1,0 +1,340 @@
+{
+"longterm": {
+"data": [
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "A2Z Infra Engineering Limited",
+"isin": "INE619I01012",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "A2ZINFRA",
+"srno": 1
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "AAA Technologies Limited",
+"isin": "INE0D0U01013",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AAATECH",
+"srno": 2
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Aaa Technologies Limited",
+"isin": "INE0D0U01013",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AAATECH",
+"srno": 3
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Aarey Drugs & Pharmaceuticals Limited",
+"isin": "INE198H01019",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AAREYDRUGS",
+"srno": 4
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Aastha Spintex Limited",
+"isin": "INE2FMX01012",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AASTHA",
+"srno": 5
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Artemis Electricals and Projects Limited",
+"isin": "INE757T01025",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AEPL",
+"srno": 6
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Anlon Healthcare Limited",
+"isin": "INE0Y8W01025",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AHCL",
+"srno": 7
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Aimtron Electronics Limited",
+"isin": "INE0RUV01018",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AIMTRON",
+"srno": 8
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Akg Exim Limited",
+"isin": "INE00Y801016",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "AKG",
+"srno": 9
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Allcargo Logistics Limited",
+"isin": "INE418H01029",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "ALLCARGO",
+"srno": 10
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Alpine Texworld Limited",
+"isin": "INE1JCQ01037",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "ALPINETEX",
+"srno": 11
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Antelopus Selan Energy Limited",
+"isin": "INE818A01017",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "ANTELOPUS",
+"srno": 12
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Arvee Laboratories (India) Limited",
+"isin": "INE006Z01016",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "ARVEE",
+"srno": 13
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Ashima Limited",
+"isin": "INE440A01010",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "ASHIMASYN",
+"srno": 14
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Assam Entrade Limited",
+"isin": "INE165G01010",
+"series": null,
+"survCode": "LTASM - I (13)",
+"survDesc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"symbol": "ASSAMENT",
+"srno": 15
+}
+]
+},
+"shortterm": {
+"data": [
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Acutaas Chemicals Limited",
+"isin": "INE00FF01025",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "ACUTAAS",
+"srno": 1
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Agi Infra Limited",
+"isin": "INE976R01033",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "AGIIL",
+"srno": 2
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Armour Security (India) Limited",
+"isin": "INE0TZX01019",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "ARMOUR",
+"srno": 3
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Ather Energy Limited",
+"isin": "INE0LEZ01016",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "ATHERENERG",
+"srno": 4
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Augmont Enterprises Limited",
+"isin": "INE16W401027",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "AUGMONT",
+"srno": 5
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "AVRO INDIA LIMITED",
+"isin": "INE652Z01025",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "AVROIND",
+"srno": 6
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Borosil Limited",
+"isin": "INE02PY01013",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "BOROLTD",
+"srno": 7
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Credent Connect N Care Limited",
+"isin": "INE1KPX01025",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "CREDENT",
+"srno": 8
+},
+{
+"asmSurvIndicator": "Stage II",
+"asmTime": "04-Nov-2026",
+"companyName": "Dhariwalcorp Limited",
+"isin": "INE0YRN01025",
+"series": null,
+"survCode": "STASM - II (12)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage II",
+"symbol": "DHARIWAL",
+"srno": 9
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Durlax Top Surface Limited",
+"isin": "INE0OUW01013",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "DURLAX",
+"srno": 10
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "eMudhra Limited",
+"isin": "INE01QM01018",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "EMUDHRA",
+"srno": 11
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Eventions Limited",
+"isin": "INE20M201019",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "EVENTIONS",
+"srno": 12
+},
+{
+"asmSurvIndicator": "Stage II",
+"asmTime": "04-Nov-2026",
+"companyName": "Fascinate Textiles Limited",
+"isin": "INE1Q2D01019",
+"series": null,
+"survCode": "STASM - II (12)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage II",
+"symbol": "FASCINATE",
+"srno": 13
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Flywings Simulator Training Centre Limited",
+"isin": "INE0SQZ01015",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "FWSTC",
+"srno": 14
+},
+{
+"asmSurvIndicator": "Stage I",
+"asmTime": "04-Nov-2026",
+"companyName": "Giriraj Civil Developers Limited",
+"isin": "INE614Z01017",
+"series": null,
+"survCode": "STASM - I (11)",
+"survDesc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"symbol": "GIRIRAJ",
+"srno": 15
+}
+]
+}
+}

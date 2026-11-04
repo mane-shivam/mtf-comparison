@@ -1159,12 +1159,60 @@ td.down {
   stroke-linecap: round;
 }
 
-.row.is-stub {
-  cursor: default;
-}
-
 .row.is-stub .sym {
   color: var(--muted);
+}
+
+.flag {
+  flex: none;
+  padding: 1px 6px;
+  border: 1px solid rgba(245, 165, 36, 0.45);
+  border-radius: 5px;
+  background: rgba(245, 165, 36, 0.1);
+  color: var(--warn);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.flag.severe {
+  border-color: rgba(255, 90, 95, 0.45);
+  background: rgba(255, 90, 95, 0.1);
+  color: var(--down);
+}
+
+.sym {
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.sym.big .flag {
+  font-size: 12px;
+}
+
+.s-list {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.s-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  font-size: 14px;
+}
+
+.s-row:first-child {
+  border-top: 0;
+}
+
+.s-row .flag {
+  margin-top: 2px;
 }
 
 .chip-solo {
@@ -1559,4 +1607,11 @@ td.down {
 
 [hidden] {
   display: none !important;
+}
+
+.d-lev .none,
+.d-lev .nf {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
 }

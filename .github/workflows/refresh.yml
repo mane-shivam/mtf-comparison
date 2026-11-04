@@ -46,6 +46,10 @@ jobs:
         run: python scrapers/rupeezy.py
         continue-on-error: true
 
+      - name: NSE / BSE surveillance (ASM, GSM)
+        run: python scrapers/surveillance.py
+        continue-on-error: true
+
       - name: Merge
         run: python merge.py
 

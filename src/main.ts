@@ -29,9 +29,27 @@ interface BrokerMeta {
   error: string | null;
 }
 
+interface SurvFlag {
+  ex: string[]; // 'NSE', 'BSE'
+  list: 'ASM' | 'GSM';
+  term: 'short' | 'long' | null;
+  stage: string;
+  since: string | null; // YYYY-MM-DD
+  exact: boolean; // false: first day this site saw it, not the exchange's date
+  desc: string;
+}
+
+interface SurvSource {
+  status: 'ok' | 'stale' | 'failed';
+  count?: number;
+  fetchedAt?: string | null;
+  error?: string | null;
+}
+
 interface Meta {
   generatedAt: string;
   brokers: Record<BrokerKey, BrokerMeta>;
+  surveillance?: { fetchedAt: string | null; sources: Record<string, SurvSource> };
   total: number;
   unmatched: number;
 }
@@ -98,6 +116,7 @@ const state = {
   limit: PAGE,
   refreshing: false,
   symbols: null as Map<string, string> | null, // every NSE symbol → name, loaded on demand
+  surv: {} as Record<string, SurvFlag[]>, // NSE/BSE ASM and GSM flags by symbol
 };
 
 async function loadSymbols(): Promise<Map<string, string>> {
@@ -354,6 +373,39 @@ async function getJSON<T>(path: string): Promise<T> {
 async function loadData() {
   const [stocks, meta] = await Promise.all([getJSON<Stock[]>('/data/mtf.json'), getJSON<Meta>('/data/meta.json')]);
   setData(stocks, meta);
+  // Surveillance flags are extra: the page works without them.
+  getJSON<Record<string, SurvFlag[]>>('data/surveillance.json')
+    .then((surv) => {
+      state.surv = surv;
+      render();
+    })
+    .catch(() => {});
+}
+
+/* ---------- surveillance flags ---------- */
+
+const survLabel = (f: SurvFlag) => (f.list === 'GSM' ? `GSM ${f.stage}` : `${f.term === 'short' ? 'ST' : 'LT'}-ASM ${f.stage}`);
+const survName = (f: SurvFlag) => (f.list === 'GSM' ? 'Graded surveillance (GSM)' : `${f.term === 'short' ? 'Short-term' : 'Long-term'} ASM`);
+// Stage I / 0 is the mildest step; anything later is drawn in red.
+const survSevere = (f: SurvFlag) => !['I', '0'].includes(f.stage);
+
+function fmtDate(iso: string | null): string {
+  if (!iso) return '—';
+  const d = new Date(`${iso}T00:00:00`);
+  return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function survSince(f: SurvFlag): string {
+  return f.exact ? `added ${fmtDate(f.since)}` : `on list since at least ${fmtDate(f.since)}`;
+}
+
+function flagsHTML(sym: string): string {
+  return (state.surv[sym] ?? [])
+    .map((f) => {
+      const title = `${f.ex.join(' + ')} · ${survName(f)} · Stage ${f.stage} · ${survSince(f)}`;
+      return `<span class="flag${survSevere(f) ? ' severe' : ''}" title="${esc(title)}">${esc(survLabel(f))}</span>`;
+    })
+    .join('');
 }
 
 function setData(stocks: Stock[], meta: Meta) {
@@ -452,7 +504,7 @@ function rowHTML(s: Stock): string {
     : `<span class="none">${s.stub ? 'Not on MTF lists' : 'No funding'}</span>`;
   return `<div class="row${s.stub ? ' is-stub' : ''}" role="listitem" data-sym="${esc(s.symbol)}" tabindex="0">
     <div class="stock">
-      <div class="sym">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}</div>
+      <div class="sym">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}${flagsHTML(s.symbol)}</div>
       <div class="name">${esc(s.name)}</div>
     </div>
     ${BROKERS.map((b) => levCell(s, b)).join('')}
@@ -548,6 +600,18 @@ function renderList() {
   $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
 }
 
+function survSourcesHTML(m: Meta): string {
+  const src = m.surveillance?.sources;
+  if (!src) return '';
+  const link = { NSE: 'https://www.nseindia.com/reports/asm', BSE: 'https://trendlyne.com/equity/asm-dashboard/active-stocks/' } as Record<string, string>;
+  return Object.entries(src)
+    .map(
+      ([ex, i]) =>
+        `<li><a href="${link[ex] ?? '#'}" target="_blank" rel="noopener">${ex} ASM / GSM</a><span class="muted">${i.status === 'ok' ? '' : `${i.status} · `}${fmtNum(i.count ?? 0)} rows · fetched ${fmtTime(i.fetchedAt ?? null)}</span></li>`,
+    )
+    .join('');
+}
+
 function renderFooter() {
   const m = state.meta;
   if (!m) return;
@@ -559,7 +623,7 @@ function renderFooter() {
     <div class="foot-grid">
       <div>
         <h2>Sources</h2>
-        <ul class="sources">${fetches}</ul>
+        <ul class="sources">${fetches}${survSourcesHTML(m)}</ul>
       </div>
       <div>
         <h2>Pins</h2>
@@ -606,8 +670,24 @@ function setType(type: 'equity' | 'etf') {
 
 /* ---------- detail sheet ---------- */
 
+function survSectionHTML(sym: string): string {
+  const flags = state.surv[sym];
+  if (!flags?.length) return '';
+  const rows = flags
+    .map(
+      (f) => `<div class="s-row">
+        <span class="flag${survSevere(f) ? ' severe' : ''}">${esc(survLabel(f))}</span>
+        <div class="s-main"><div>${survName(f)} · Stage ${esc(f.stage)} <span class="muted">· ${f.ex.join(' + ')}</span></div>
+        <div class="muted small">${survSince(f)}${f.desc && f.list === 'GSM' ? ` · ${esc(f.desc)}` : ''}</div></div>
+      </div>`,
+    )
+    .join('');
+  return `<h3>Surveillance</h3><div class="s-list">${rows}</div>`;
+}
+
 async function openSheet(sym: string) {
-  const s = state.bySymbol.get(sym);
+  // Pinned stocks no broker funds still open, mainly to show their ASM/GSM status.
+  const s = state.bySymbol.get(sym) ?? (state.pins.includes(sym) ? stubStock(sym) : null);
   if (!s) return;
   const sheet = $<HTMLDialogElement>('#sheet');
   const pinned = state.pins.includes(sym);
@@ -626,7 +706,7 @@ async function openSheet(sym: string) {
     <div class="sheet-inner">
       <div class="sheet-head">
         <div>
-          <div class="sym big">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}</div>
+          <div class="sym big">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}${flagsHTML(s.symbol)}</div>
           <div class="name">${esc(s.name)}</div>
         </div>
         <div class="sheet-actions">
@@ -635,6 +715,7 @@ async function openSheet(sym: string) {
         </div>
       </div>
       <div class="d-list">${rows}</div>
+      ${survSectionHTML(sym)}
       <h3>Last 7 days</h3>
       <div class="history" id="history"><p class="muted small">Loading…</p></div>
       <p class="muted small">Kotak's own-funds share is 1 ÷ leverage. Kotak does not publish it separately.</p>

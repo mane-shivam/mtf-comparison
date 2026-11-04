@@ -1,5 +1,22 @@
 {
-  "generatedAt": "2026-11-04T12:29:07Z",
+  "generatedAt": "2026-11-04T13:06:42Z",
+  "surveillance": {
+    "fetchedAt": "2026-11-04T13:05:06Z",
+    "sources": {
+      "NSE": {
+        "status": "ok",
+        "count": 268,
+        "fetchedAt": "2026-11-04T13:05:04Z",
+        "error": null
+      },
+      "BSE": {
+        "status": "ok",
+        "count": 960,
+        "fetchedAt": "2026-11-04T13:05:06Z",
+        "error": null
+      }
+    }
+  },
   "brokers": {
     "kotak": {
       "fetchedAt": "2026-11-04T12:28:44Z",
