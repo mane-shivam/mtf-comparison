@@ -1,268 +1,1066 @@
 {
-"A2ZINFRA|ASM|long|I": "2026-11-04",
-"AAATECH|ASM|long|I": "2026-11-04",
-"AAREYDRUGS|ASM|long|I": "2026-11-04",
-"AASTHA|ASM|long|I": "2026-11-04",
-"ACUTAAS|ASM|short|I": "2026-11-04",
-"AEPL|ASM|long|I": "2026-11-04",
-"AGIIL|ASM|short|I": "2026-11-04",
-"AGSTRA|GSM|None|0": "2026-11-04",
-"AHCL|ASM|long|I": "2026-11-04",
-"AIMTRON|ASM|long|I": "2026-11-04",
-"AKG|ASM|long|I": "2026-11-04",
-"ALLCARGO|ASM|long|I": "2026-11-04",
-"ALPINETEX|ASM|long|I": "2026-11-04",
-"ANKITMETAL|GSM|None|0": "2026-11-04",
-"ANTELOPUS|ASM|long|I": "2026-11-04",
-"AQYLON|GSM|None|0": "2026-11-04",
-"ARMOUR|ASM|short|I": "2026-11-04",
-"ARVEE|ASM|long|I": "2026-11-04",
-"ASHIMASYN|ASM|long|I": "2026-11-04",
-"ASIANTNE|GSM|None|0": "2026-11-04",
-"ASIL|GSM|None|VI": "2026-11-04",
-"ASSAMENT|ASM|long|I": "2026-11-04",
-"ATALREAL|ASM|long|I": "2026-11-04",
-"ATHERENERG|ASM|short|I": "2026-11-04",
-"ATNINTER|GSM|None|VI": "2026-11-04",
-"AUGMONT|ASM|short|I": "2026-11-04",
-"AVADHSUGAR|ASM|long|I": "2026-11-04",
-"AVALON|ASM|long|I": "2026-11-04",
-"AVATAR|ASM|long|I": "2026-11-04",
-"AVROIND|ASM|short|I": "2026-11-04",
-"BALKRISHNA|GSM|None|0": "2026-11-04",
-"BETA|ASM|long|I": "2026-11-04",
-"BHAGERIA|ASM|long|I": "2026-11-04",
-"BILVYAPAR|GSM|None|0": "2026-11-04",
-"BIRLACABLE|ASM|long|I": "2026-11-04",
-"BLAL|GSM|None|0": "2026-11-04",
-"BLISSGVS|ASM|long|IV": "2026-11-04",
-"BLUECHIP|GSM|None|II": "2026-11-04",
-"BLUECOAST|GSM|None|0": "2026-11-04",
-"BLUESTONE|ASM|long|I": "2026-11-04",
-"BNAGROCHEM|ASM|long|I": "2026-11-04",
-"BODALCHEM|ASM|long|IV": "2026-11-04",
-"BOROLTD|ASM|short|I": "2026-11-04",
-"CBAZAAR|GSM|None|I": "2026-11-04",
-"CELEBRITY|GSM|None|0": "2026-11-04",
-"CLCIND|GSM|None|IV": "2026-11-04",
-"CMICABLES|GSM|None|0": "2026-11-04",
-"CNL|ASM|long|I": "2026-11-04",
-"COMPINFO|GSM|None|0": "2026-11-04",
-"CREDENT|ASM|short|I": "2026-11-04",
-"CUPID|ASM|long|I": "2026-11-04",
-"CURAA|GSM|None|0": "2026-11-04",
-"CYIENTDLM|ASM|long|I": "2026-11-04",
-"DAVANGERE|ASM|long|I": "2026-11-04",
-"DCMFINSERV|GSM|None|0": "2026-11-04",
-"DEVX|ASM|long|I": "2026-11-04",
-"DHARIWAL|ASM|short|II": "2026-11-04",
-"DHTL|ASM|long|I": "2026-11-04",
-"DIGJAMLMTD|GSM|None|II": "2026-11-04",
-"DNAMEDIA|GSM|None|0": "2026-11-04",
-"DURLAX|ASM|short|I": "2026-11-04",
-"EDUCOMP|GSM|None|0": "2026-11-04",
-"ELITECON|ASM|long|I": "2026-11-04",
-"EMAMIREAL|GSM|None|0": "2026-11-04",
-"EMUDHRA|ASM|short|I": "2026-11-04",
-"EQUIPPP|GSM|None|0": "2026-11-04",
-"ESDS|ASM|long|I": "2026-11-04",
-"EUROTEXIND|GSM|None|0": "2026-11-04",
-"EVENTIONS|ASM|short|I": "2026-11-04",
-"FASCINATE|ASM|short|II": "2026-11-04",
-"FELDVR|GSM|None|0": "2026-11-04",
-"FEL|GSM|None|0": "2026-11-04",
-"FILATEX|ASM|long|I": "2026-11-04",
-"FLEXITUFF|GSM|None|0": "2026-11-04",
-"FLFL|GSM|None|0": "2026-11-04",
-"FWSTC|ASM|short|I": "2026-11-04",
-"GANGAFORGE|ASM|long|I": "2026-11-04",
-"GAYAHWS|GSM|None|0": "2026-11-04",
-"GAYAPROJ|ASM|long|I": "2026-11-04",
-"GCSL|ASM|long|I": "2026-11-04",
-"GENSOL|GSM|None|0": "2026-11-04",
-"GIRIRAJ|ASM|short|I": "2026-11-04",
-"GLFL|GSM|None|0": "2026-11-04",
-"GLOBALE|GSM|None|0": "2026-11-04",
-"GOACARBON|ASM|long|I": "2026-11-04",
-"GOLDENTOBC|GSM|None|0": "2026-11-04",
-"GOLDKART|ASM|long|I": "2026-11-04",
-"GREENCHEF|ASM|long|I": "2026-11-04",
-"GTECJAINX|GSM|None|0": "2026-11-04",
-"GVKPIL|GSM|None|0": "2026-11-04",
-"HAVISHA|ASM|long|I": "2026-11-04",
-"HCL-INSYS|GSM|None|0": "2026-11-04",
-"HEROMOTORS|ASM|short|I": "2026-11-04",
-"HFCL|ASM|long|IV": "2026-11-04",
-"HIGREEN|ASM|long|I": "2026-11-04",
-"HMT|GSM|None|0": "2026-11-04",
-"HUBTOWN|ASM|short|I": "2026-11-04",
-"IL&FSTRANS|GSM|None|0": "2026-11-04",
-"INDIFRA|GSM|None|0": "2026-11-04",
-"INDORAMA|ASM|long|I": "2026-11-04",
-"INDOTHAI|ASM|long|I": "2026-11-04",
-"INDOUS|ASM|short|I": "2026-11-04",
-"INDSWFTLAB|ASM|long|I": "2026-11-04",
-"INFOMEDIA|GSM|None|0": "2026-11-04",
-"INNOVISION|ASM|short|I": "2026-11-04",
-"IPRINGLTD|ASM|long|I": "2026-11-04",
-"IVC|ASM|long|I": "2026-11-04",
-"JALAN|GSM|None|0": "2026-11-04",
-"JAYSREETEA|ASM|long|I": "2026-11-04",
-"JINDWORLD|ASM|long|I": "2026-11-04",
-"JKIPL|ASM|long|I": "2026-11-04",
-"KABRAEXTRU|ASM|long|IV": "2026-11-04",
-"KAMANWALA|ASM|long|I": "2026-11-04",
-"KAPSTON|ASM|long|I": "2026-11-04",
-"KDL|ASM|short|II": "2026-11-04",
-"KEEPLEARN|GSM|None|0": "2026-11-04",
-"KHFM|ASM|short|I": "2026-11-04",
-"KKJEWELS|ASM|short|I": "2026-11-04",
-"KREBSBIO|ASM|long|I": "2026-11-04",
-"LAKPRE|GSM|None|0": "2026-11-04",
-"LGHL|ASM|long|I": "2026-11-04",
-"MACPOWER|ASM|long|I": "2026-11-04",
-"MAHAPEXLTD|ASM|long|I": "2026-11-04",
-"MAHICKRA|ASM|short|I": "2026-11-04",
-"MAITREYA|ASM|long|I": "2026-11-04",
-"MANGALAM|ASM|long|I": "2026-11-04",
-"MANILAM|ASM|long|I": "2026-11-04",
-"MANINDS|ASM|long|I": "2026-11-04",
-"MARSONS|ASM|short|I": "2026-11-04",
-"MCCHRLS-B|GSM|None|0": "2026-11-04",
-"MEDICO|ASM|long|I": "2026-11-04",
-"MENONBE|ASM|long|I": "2026-11-04",
-"MEP|GSM|None|0": "2026-11-04",
-"MILKYMIST|ASM|long|IV": "2026-11-04",
-"MMWL|ASM|short|I": "2026-11-04",
-"MODISONLTD|ASM|long|IV": "2026-11-04",
-"MORARJEE|GSM|None|II": "2026-11-04",
-"MOREPENLAB|ASM|long|IV": "2026-11-04",
-"MOS|ASM|short|I": "2026-11-04",
-"MOXSH|ASM|long|I": "2026-11-04",
-"MTARTECH|ASM|long|II": "2026-11-04",
-"MTEDUCARE|GSM|None|0": "2026-11-04",
-"MYMUDRA|ASM|short|I": "2026-11-04",
-"NAGAFERT|GSM|None|0": "2026-11-04",
-"NAMOEWASTE|ASM|long|I": "2026-11-04",
-"NATIONSTD|ASM|long|I": "2026-11-04",
-"NECLIFE|ASM|long|I": "2026-11-04",
-"NEXTMEDIA|GSM|None|0": "2026-11-04",
-"NICCOPAR|ASM|long|I": "2026-11-04",
-"NIMBSPROJ|ASM|long|I": "2026-11-04",
-"NINSYS|ASM|long|I": "2026-11-04",
-"OCCLLTD|ASM|short|I": "2026-11-04",
-"ONEPOINT|ASM|short|I": "2026-11-04",
-"ONIXSOLAR|ASM|long|I": "2026-11-04",
-"OPTIEMUS|ASM|long|I": "2026-11-04",
-"ORTEL|GSM|None|III": "2026-11-04",
-"ORTINGLOBE|GSM|None|0": "2026-11-04",
-"PAISALO|ASM|long|I": "2026-11-04",
-"PARASPETRO|ASM|long|I": "2026-11-04",
-"PASHUPATI|ASM|long|I": "2026-11-04",
-"PAUSHAKLTD|ASM|short|I": "2026-11-04",
-"PEARLPOLY|ASM|long|I": "2026-11-04",
-"PERFECT|GSM|None|0": "2026-11-04",
-"PHOENXINTL|ASM|short|I": "2026-11-04",
-"POLYSIL|ASM|long|I": "2026-11-04",
-"PRAENG|ASM|long|I": "2026-11-04",
-"PRAKASHSTL|GSM|None|0": "2026-11-04",
-"PREMIERPOL|ASM|long|I": "2026-11-04",
-"PREMIER|GSM|None|0": "2026-11-04",
-"PVP|ASM|long|I": "2026-11-04",
-"QUICKTOUCH|ASM|long|I": "2026-11-04",
-"QUINTEGRA|GSM|None|0": "2026-11-04",
-"RADAAN|GSM|None|0": "2026-11-04",
-"RAJSREESUG|ASM|long|I": "2026-11-04",
-"RAJVIR|GSM|None|0": "2026-11-04",
-"RAMBHAJO|ASM|long|I": "2026-11-04",
-"RANASUG|ASM|long|I": "2026-11-04",
-"RAYMOND|ASM|long|I": "2026-11-04",
-"REGENCERAM|GSM|None|0": "2026-11-04",
-"REPL|ASM|long|I": "2026-11-04",
-"RHETAN|ASM|long|I": "2026-11-04",
-"RHFL|GSM|None|0": "2026-11-04",
-"RKFAL|ASM|short|I": "2026-11-04",
-"RPEL|ASM|long|I": "2026-11-04",
-"RUBICON|ASM|long|I": "2026-11-04",
-"RUBYMILLS|ASM|long|I": "2026-11-04",
-"SAHASRA|ASM|long|I": "2026-11-04",
-"SAKAR|ASM|long|I": "2026-11-04",
-"SAKUMA|ASM|short|I": "2026-11-04",
-"SALSTEEL|ASM|long|I": "2026-11-04",
-"SAMBANDAM|ASM|long|I": "2026-11-04",
-"SANSERA|ASM|long|I": "2026-11-04",
-"SANWARIA|GSM|None|0": "2026-11-04",
-"SBCL|ASM|long|I": "2026-11-04",
-"SECMARK|ASM|long|I": "2026-11-04",
-"SECURKLOUD|GSM|None|0": "2026-11-04",
-"SHANTIGOLD|ASM|long|I": "2026-11-04",
-"SHANTI|GSM|None|0": "2026-11-04",
-"SHILPAMED|ASM|long|I": "2026-11-04",
-"SHIVAMAUTO|ASM|long|I": "2026-11-04",
-"SHREEJISPG|ASM|long|I": "2026-11-04",
-"SHREEPUSHK|ASM|short|I": "2026-11-04",
-"SHRENIK|GSM|None|0": "2026-11-04",
-"SHYAMTEL|GSM|None|0": "2026-11-04",
-"SIEL|ASM|long|I": "2026-11-04",
-"SIGMAADV|ASM|long|IV": "2026-11-04",
-"SILKFLEX|ASM|short|I": "2026-11-04",
-"SKYGOLD|ASM|long|I": "2026-11-04",
-"SMCGLOBAL|ASM|short|I": "2026-11-04",
-"SMT|ASM|short|I": "2026-11-04",
-"SOTAC|ASM|short|I": "2026-11-04",
-"SPCL|ASM|short|I": "2026-11-04",
-"SPENCERS|ASM|short|II": "2026-11-04",
-"SRGHFL|ASM|long|I": "2026-11-04",
-"SSWL|ASM|long|I": "2026-11-04",
-"STLNETWORK|ASM|long|I": "2026-11-04",
-"STLTECH|ASM|long|IV": "2026-11-04",
-"SUMEETINDS|ASM|long|I": "2026-11-04",
-"SUPREMEENG|GSM|None|0": "2026-11-04",
-"SUPREMEPWR|ASM|short|I": "2026-11-04",
-"SUYOG|ASM|short|I": "2026-11-04",
-"SVGLOBAL|ASM|long|I": "2026-11-04",
-"TARAPUR|GSM|None|0": "2026-11-04",
-"TBZ|ASM|long|IV": "2026-11-04",
-"TCIFINANCE|GSM|None|0": "2026-11-04",
-"TEAMTECH|ASM|short|I": "2026-11-04",
-"TECILCHEM|GSM|None|0": "2026-11-04",
-"TERASOFT|ASM|short|I": "2026-11-04",
-"TFCILTD|ASM|long|I": "2026-11-04",
-"TICL|ASM|long|II": "2026-11-04",
-"TIJARIA|GSM|None|0": "2026-11-04",
-"TIRUPATI|ASM|long|I": "2026-11-04",
-"TNTELE|GSM|None|0": "2026-11-04",
-"TOYAMSL|ASM|long|I": "2026-11-04",
-"TTML|ASM|short|I": "2026-11-04",
-"TURTLEMINT|ASM|long|I": "2026-11-04",
-"TVVISION|GSM|None|0": "2026-11-04",
-"UFBL|ASM|long|IV": "2026-11-04",
-"UNIVAFOODS|GSM|None|IV": "2026-11-04",
-"UTSSAV|ASM|short|II": "2026-11-04",
-"UTTAMSUGAR|ASM|short|I": "2026-11-04",
-"VALUE360|ASM|short|I": "2026-11-04",
-"VASA|GSM|None|0": "2026-11-04",
-"VEEKAYEM|ASM|short|I": "2026-11-04",
-"VENUSREM|ASM|long|IV": "2026-11-04",
-"VGL|ASM|long|I": "2026-11-04",
-"VISAMAN|ASM|short|I": "2026-11-04",
-"VISHWARAJ|ASM|long|I": "2026-11-04",
-"VISUINTL|GSM|None|VI": "2026-11-04",
-"VIVIDEL|ASM|long|II": "2026-11-04",
-"VIVIDHA|GSM|None|0": "2026-11-04",
-"VMARCIND|ASM|long|I": "2026-11-04",
-"VNL|ASM|short|I": "2026-11-04",
-"VOLERCAR|ASM|long|I": "2026-11-04",
-"VPRPL|ASM|long|I": "2026-11-04",
-"VSCL|ASM|long|I": "2026-11-04",
-"WELCORP|ASM|long|I": "2026-11-04",
-"WELINV|ASM|short|I": "2026-11-04",
-"WEL|ASM|long|I": "2026-11-04",
-"WHEELS|ASM|long|I": "2026-11-04",
-"WINNY|GSM|None|0": "2026-11-04",
-"XTRANET|ASM|long|I": "2026-11-04",
-"YAAP|ASM|short|I": "2026-11-04",
-"YASHO|ASM|long|I": "2026-11-04",
-"YUDIZ|ASM|long|I": "2026-11-04",
-"ZENITHEXPO|ASM|long|I": "2026-11-04"
+"A2ZINFRA|ASM|long|I": {
+"exact": true,
+"since": "2026-08-10"
+},
+"AAATECH|ASM|long|I": {
+"exact": true,
+"since": "2026-10-16"
+},
+"AAREYDRUGS|ASM|long|I": {
+"exact": true,
+"since": "2026-09-23"
+},
+"AASTHA|ASM|long|I": {
+"exact": true,
+"since": "2026-10-12"
+},
+"ACUTAAS|ASM|short|I": {
+"exact": true,
+"since": "2026-11-02"
+},
+"AEPL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-07"
+},
+"AGIIL|ASM|short|I": {
+"exact": true,
+"since": "2026-11-03"
+},
+"AGSTRA|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"AHCL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-25"
+},
+"AIMTRON|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"AKG|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"ALLCARGO|ASM|long|I": {
+"exact": true,
+"since": "2026-08-31"
+},
+"ALPINETEX|ASM|long|I": {
+"exact": true,
+"since": "2026-10-14"
+},
+"ANKITMETAL|GSM|None|0": {
+"exact": true,
+"since": "2026-10-09"
+},
+"ANTELOPUS|ASM|long|I": {
+"exact": true,
+"since": "2026-09-10"
+},
+"AQYLON|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"ARMOUR|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"ARVEE|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"ASHIMASYN|ASM|long|I": {
+"exact": true,
+"since": "2026-08-07"
+},
+"ASIANTNE|GSM|None|0": {
+"exact": true,
+"since": "2026-09-11"
+},
+"ASIL|GSM|None|VI": {
+"exact": true,
+"since": "2019-06-06"
+},
+"ASSAMENT|ASM|long|I": {
+"exact": true,
+"since": "2026-08-18"
+},
+"ATALREAL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-15"
+},
+"ATHERENERG|ASM|short|I": {
+"exact": true,
+"since": "2026-11-02"
+},
+"ATNINTER|GSM|None|VI": {
+"exact": true,
+"since": "2020-09-10"
+},
+"AUGMONT|ASM|short|I": {
+"exact": true,
+"since": "2026-10-05"
+},
+"AVADHSUGAR|ASM|long|I": {
+"exact": true,
+"since": "2026-10-08"
+},
+"AVALON|ASM|long|I": {
+"exact": true,
+"since": "2026-09-21"
+},
+"AVATAR|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"AVROIND|ASM|short|I": {
+"exact": true,
+"since": "2026-10-30"
+},
+"BALKRISHNA|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"BETA|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"BHAGERIA|ASM|long|I": {
+"exact": true,
+"since": "2026-10-01"
+},
+"BILVYAPAR|GSM|None|0": {
+"exact": true,
+"since": "2025-09-19"
+},
+"BIRLACABLE|ASM|long|I": {
+"exact": true,
+"since": "2026-10-01"
+},
+"BLAL|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"BLISSGVS|ASM|long|IV": {
+"exact": true,
+"since": "2026-06-30"
+},
+"BLUECHIP|GSM|None|II": {
+"exact": true,
+"since": "2026-10-09"
+},
+"BLUECOAST|GSM|None|0": {
+"exact": true,
+"since": "2025-12-12"
+},
+"BLUESTONE|ASM|long|I": {
+"exact": true,
+"since": "2026-08-13"
+},
+"BNAGROCHEM|ASM|long|I": {
+"exact": true,
+"since": "2026-10-30"
+},
+"BODALCHEM|ASM|long|IV": {
+"exact": true,
+"since": "2026-09-24"
+},
+"BOROLTD|ASM|short|I": {
+"exact": true,
+"since": "2026-11-03"
+},
+"CBAZAAR|GSM|None|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"CELEBRITY|GSM|None|0": {
+"exact": true,
+"since": "2025-12-12"
+},
+"CLCIND|GSM|None|IV": {
+"exact": true,
+"since": "2026-10-13"
+},
+"CMICABLES|GSM|None|0": {
+"exact": true,
+"since": "2023-06-23"
+},
+"CNL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-01"
+},
+"COMPINFO|GSM|None|0": {
+"exact": true,
+"since": "2024-12-13"
+},
+"CREDENT|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"CUPID|ASM|long|I": {
+"exact": true,
+"since": "2025-09-03"
+},
+"CURAA|GSM|None|0": {
+"exact": true,
+"since": "2025-06-27"
+},
+"CYIENTDLM|ASM|long|I": {
+"exact": true,
+"since": "2026-09-02"
+},
+"DAVANGERE|ASM|long|I": {
+"exact": true,
+"since": "2026-10-12"
+},
+"DCMFINSERV|GSM|None|0": {
+"exact": true,
+"since": "2022-11-11"
+},
+"DEVX|ASM|long|I": {
+"exact": true,
+"since": "2026-10-13"
+},
+"DHARIWAL|ASM|short|II": {
+"exact": false,
+"since": "2026-11-04"
+},
+"DHTL|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"DIGJAMLMTD|GSM|None|II": {
+"exact": true,
+"since": "2026-09-15"
+},
+"DNAMEDIA|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"DURLAX|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"EDUCOMP|GSM|None|0": {
+"exact": true,
+"since": "2020-08-07"
+},
+"ELITECON|ASM|long|I": {
+"exact": true,
+"since": "2026-07-15"
+},
+"EMAMIREAL|GSM|None|0": {
+"exact": true,
+"since": "2025-10-10"
+},
+"EMUDHRA|ASM|short|I": {
+"exact": true,
+"since": "2026-10-23"
+},
+"EQUIPPP|GSM|None|0": {
+"exact": true,
+"since": "2021-12-17"
+},
+"ESDS|ASM|long|I": {
+"exact": true,
+"since": "2026-09-16"
+},
+"EUROTEXIND|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"EVENTIONS|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"FASCINATE|ASM|short|II": {
+"exact": false,
+"since": "2026-11-04"
+},
+"FELDVR|GSM|None|0": {
+"exact": true,
+"since": "2024-12-13"
+},
+"FEL|GSM|None|0": {
+"exact": true,
+"since": "2024-12-13"
+},
+"FILATEX|ASM|long|I": {
+"exact": true,
+"since": "2026-08-19"
+},
+"FLEXITUFF|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"FLFL|GSM|None|0": {
+"exact": true,
+"since": "2024-06-28"
+},
+"FWSTC|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"GANGAFORGE|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"GAYAHWS|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"GAYAPROJ|ASM|long|I": {
+"exact": true,
+"since": "2026-08-31"
+},
+"GCSL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-23"
+},
+"GENSOL|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"GIRIRAJ|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"GLFL|GSM|None|0": {
+"exact": true,
+"since": "2026-04-17"
+},
+"GLOBALE|GSM|None|0": {
+"exact": true,
+"since": "2026-08-07"
+},
+"GOACARBON|ASM|long|I": {
+"exact": true,
+"since": "2026-09-10"
+},
+"GOLDENTOBC|GSM|None|0": {
+"exact": true,
+"since": "2022-09-16"
+},
+"GOLDKART|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"GREENCHEF|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"GTECJAINX|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"GVKPIL|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"HAVISHA|ASM|long|I": {
+"exact": true,
+"since": "2026-08-11"
+},
+"HCL-INSYS|GSM|None|0": {
+"exact": true,
+"since": "2024-04-05"
+},
+"HEROMOTORS|ASM|short|I": {
+"exact": true,
+"since": "2026-10-16"
+},
+"HFCL|ASM|long|IV": {
+"exact": true,
+"since": "2026-08-31"
+},
+"HIGREEN|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"HMT|GSM|None|0": {
+"exact": true,
+"since": "2026-09-11"
+},
+"HUBTOWN|ASM|short|I": {
+"exact": true,
+"since": "2026-11-02"
+},
+"IL&FSTRANS|GSM|None|0": {
+"exact": true,
+"since": "2022-03-15"
+},
+"INDIFRA|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"INDORAMA|ASM|long|I": {
+"exact": true,
+"since": "2026-09-23"
+},
+"INDOTHAI|ASM|long|I": {
+"exact": true,
+"since": "2026-10-16"
+},
+"INDOUS|ASM|short|I": {
+"exact": true,
+"since": "2026-10-29"
+},
+"INDSWFTLAB|ASM|long|I": {
+"exact": true,
+"since": "2026-08-12"
+},
+"INFOMEDIA|GSM|None|0": {
+"exact": true,
+"since": "2025-12-09"
+},
+"INNOVISION|ASM|short|I": {
+"exact": true,
+"since": "2026-11-03"
+},
+"IPRINGLTD|ASM|long|I": {
+"exact": true,
+"since": "2026-09-02"
+},
+"IVC|ASM|long|I": {
+"exact": true,
+"since": "2026-09-08"
+},
+"JALAN|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"JAYSREETEA|ASM|long|I": {
+"exact": true,
+"since": "2026-08-24"
+},
+"JINDWORLD|ASM|long|I": {
+"exact": true,
+"since": "2026-09-07"
+},
+"JKIPL|ASM|long|I": {
+"exact": true,
+"since": "2026-10-15"
+},
+"KABRAEXTRU|ASM|long|IV": {
+"exact": true,
+"since": "2026-09-28"
+},
+"KAMANWALA|ASM|long|I": {
+"exact": true,
+"since": "2026-08-20"
+},
+"KAPSTON|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"KDL|ASM|short|II": {
+"exact": false,
+"since": "2026-11-04"
+},
+"KEEPLEARN|GSM|None|0": {
+"exact": true,
+"since": "2023-03-17"
+},
+"KHFM|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"KKJEWELS|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"KREBSBIO|ASM|long|I": {
+"exact": true,
+"since": "2026-10-05"
+},
+"LAKPRE|GSM|None|0": {
+"exact": true,
+"since": "2019-06-28"
+},
+"LGHL|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MACPOWER|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MAHAPEXLTD|ASM|long|I": {
+"exact": true,
+"since": "2026-08-13"
+},
+"MAHICKRA|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MAITREYA|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MANGALAM|ASM|long|I": {
+"exact": true,
+"since": "2026-09-11"
+},
+"MANILAM|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MANINDS|ASM|long|I": {
+"exact": true,
+"since": "2026-09-28"
+},
+"MARSONS|ASM|short|I": {
+"exact": true,
+"since": "2026-11-03"
+},
+"MCCHRLS-B|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"MEDICO|ASM|long|I": {
+"exact": true,
+"since": "2026-10-26"
+},
+"MENONBE|ASM|long|I": {
+"exact": true,
+"since": "2026-09-28"
+},
+"MEP|GSM|None|0": {
+"exact": true,
+"since": "2024-03-18"
+},
+"MILKYMIST|ASM|long|IV": {
+"exact": true,
+"since": "2026-09-23"
+},
+"MMWL|ASM|short|I": {
+"exact": true,
+"since": "2026-10-08"
+},
+"MODISONLTD|ASM|long|IV": {
+"exact": true,
+"since": "2026-09-08"
+},
+"MORARJEE|GSM|None|II": {
+"exact": true,
+"since": "2026-10-09"
+},
+"MOREPENLAB|ASM|long|IV": {
+"exact": true,
+"since": "2026-10-08"
+},
+"MOS|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MOXSH|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"MTARTECH|ASM|long|II": {
+"exact": true,
+"since": "2026-10-30"
+},
+"MTEDUCARE|GSM|None|0": {
+"exact": true,
+"since": "2026-08-07"
+},
+"MYMUDRA|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"NAGAFERT|GSM|None|0": {
+"exact": true,
+"since": "2025-09-19"
+},
+"NAMOEWASTE|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"NATIONSTD|ASM|long|I": {
+"exact": true,
+"since": "2026-07-10"
+},
+"NECLIFE|ASM|long|I": {
+"exact": true,
+"since": "2026-08-28"
+},
+"NEXTMEDIA|GSM|None|0": {
+"exact": true,
+"since": "2026-10-09"
+},
+"NICCOPAR|ASM|long|I": {
+"exact": true,
+"since": "2026-08-28"
+},
+"NIMBSPROJ|ASM|long|I": {
+"exact": true,
+"since": "2026-10-06"
+},
+"NINSYS|ASM|long|I": {
+"exact": true,
+"since": "2026-10-23"
+},
+"OCCLLTD|ASM|short|I": {
+"exact": true,
+"since": "2026-10-12"
+},
+"ONEPOINT|ASM|short|I": {
+"exact": true,
+"since": "2026-10-13"
+},
+"ONIXSOLAR|ASM|long|I": {
+"exact": true,
+"since": "2026-09-11"
+},
+"OPTIEMUS|ASM|long|I": {
+"exact": true,
+"since": "2026-10-07"
+},
+"ORTEL|GSM|None|III": {
+"exact": true,
+"since": "2026-10-13"
+},
+"ORTINGLOBE|GSM|None|0": {
+"exact": true,
+"since": "2024-02-09"
+},
+"PAISALO|ASM|long|I": {
+"exact": true,
+"since": "2026-09-23"
+},
+"PARASPETRO|ASM|long|I": {
+"exact": true,
+"since": "2026-08-06"
+},
+"PASHUPATI|ASM|long|I": {
+"exact": true,
+"since": "2026-10-29"
+},
+"PAUSHAKLTD|ASM|short|I": {
+"exact": true,
+"since": "2026-10-27"
+},
+"PEARLPOLY|ASM|long|I": {
+"exact": true,
+"since": "2026-09-24"
+},
+"PERFECT|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"PHOENXINTL|ASM|short|I": {
+"exact": true,
+"since": "2026-11-02"
+},
+"POLYSIL|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"PRAENG|ASM|long|I": {
+"exact": true,
+"since": "2026-09-04"
+},
+"PRAKASHSTL|GSM|None|0": {
+"exact": true,
+"since": "2025-06-27"
+},
+"PREMIERPOL|ASM|long|I": {
+"exact": true,
+"since": "2026-10-13"
+},
+"PREMIER|GSM|None|0": {
+"exact": true,
+"since": "2022-06-24"
+},
+"PVP|ASM|long|I": {
+"exact": true,
+"since": "2026-08-28"
+},
+"QUICKTOUCH|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"QUINTEGRA|GSM|None|0": {
+"exact": true,
+"since": "2024-08-09"
+},
+"RADAAN|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"RAJSREESUG|ASM|long|I": {
+"exact": true,
+"since": "2026-08-21"
+},
+"RAJVIR|GSM|None|0": {
+"exact": true,
+"since": "2021-03-19"
+},
+"RAMBHAJO|ASM|long|I": {
+"exact": true,
+"since": "2026-10-29"
+},
+"RANASUG|ASM|long|I": {
+"exact": true,
+"since": "2026-08-21"
+},
+"RAYMOND|ASM|long|I": {
+"exact": true,
+"since": "2026-09-23"
+},
+"REGENCERAM|GSM|None|0": {
+"exact": true,
+"since": "2025-12-12"
+},
+"REPL|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"RHETAN|ASM|long|I": {
+"exact": true,
+"since": "2026-10-28"
+},
+"RHFL|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"RKFAL|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"RPEL|ASM|long|I": {
+"exact": true,
+"since": "2026-08-28"
+},
+"RUBICON|ASM|long|I": {
+"exact": true,
+"since": "2026-08-18"
+},
+"RUBYMILLS|ASM|long|I": {
+"exact": true,
+"since": "2026-10-15"
+},
+"SAHASRA|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SAKAR|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SAKUMA|ASM|short|I": {
+"exact": true,
+"since": "2026-10-30"
+},
+"SALSTEEL|ASM|long|I": {
+"exact": true,
+"since": "2026-08-21"
+},
+"SAMBANDAM|ASM|long|I": {
+"exact": true,
+"since": "2026-08-24"
+},
+"SANSERA|ASM|long|I": {
+"exact": true,
+"since": "2026-08-17"
+},
+"SANWARIA|GSM|None|0": {
+"exact": true,
+"since": "2026-03-18"
+},
+"SBCL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-07"
+},
+"SECMARK|ASM|long|I": {
+"exact": true,
+"since": "2026-09-01"
+},
+"SECURKLOUD|GSM|None|0": {
+"exact": true,
+"since": "2025-12-12"
+},
+"SHANTIGOLD|ASM|long|I": {
+"exact": true,
+"since": "2026-10-19"
+},
+"SHANTI|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SHILPAMED|ASM|long|I": {
+"exact": true,
+"since": "2026-08-25"
+},
+"SHIVAMAUTO|ASM|long|I": {
+"exact": true,
+"since": "2026-09-21"
+},
+"SHREEJISPG|ASM|long|I": {
+"exact": true,
+"since": "2026-09-10"
+},
+"SHREEPUSHK|ASM|short|I": {
+"exact": true,
+"since": "2026-11-02"
+},
+"SHRENIK|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SHYAMTEL|GSM|None|0": {
+"exact": true,
+"since": "2022-09-13"
+},
+"SIEL|ASM|long|I": {
+"exact": true,
+"since": "2026-08-20"
+},
+"SIGMAADV|ASM|long|IV": {
+"exact": true,
+"since": "2026-08-25"
+},
+"SILKFLEX|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SKYGOLD|ASM|long|I": {
+"exact": true,
+"since": "2026-08-14"
+},
+"SMCGLOBAL|ASM|short|I": {
+"exact": true,
+"since": "2026-10-06"
+},
+"SMT|ASM|short|I": {
+"exact": true,
+"since": "2026-10-28"
+},
+"SOTAC|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SPCL|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SPENCERS|ASM|short|II": {
+"exact": true,
+"since": "2026-10-30"
+},
+"SRGHFL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-17"
+},
+"SSWL|ASM|long|I": {
+"exact": true,
+"since": "2026-10-27"
+},
+"STLNETWORK|ASM|long|I": {
+"exact": true,
+"since": "2026-09-28"
+},
+"STLTECH|ASM|long|IV": {
+"exact": true,
+"since": "2026-05-11"
+},
+"SUMEETINDS|ASM|long|I": {
+"exact": true,
+"since": "2026-10-09"
+},
+"SUPREMEENG|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SUPREMEPWR|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"SUYOG|ASM|short|I": {
+"exact": true,
+"since": "2026-10-28"
+},
+"SVGLOBAL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-07"
+},
+"TARAPUR|GSM|None|0": {
+"exact": true,
+"since": "2026-05-08"
+},
+"TBZ|ASM|long|IV": {
+"exact": true,
+"since": "2026-09-18"
+},
+"TCIFINANCE|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"TEAMTECH|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"TECILCHEM|GSM|None|0": {
+"exact": true,
+"since": "2025-07-14"
+},
+"TERASOFT|ASM|short|I": {
+"exact": true,
+"since": "2026-10-30"
+},
+"TFCILTD|ASM|long|I": {
+"exact": true,
+"since": "2026-11-03"
+},
+"TICL|ASM|long|II": {
+"exact": true,
+"since": "2026-10-23"
+},
+"TIJARIA|GSM|None|0": {
+"exact": true,
+"since": "2022-04-08"
+},
+"TIRUPATI|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"TNTELE|GSM|None|0": {
+"exact": true,
+"since": "2025-12-09"
+},
+"TOYAMSL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-23"
+},
+"TTML|ASM|short|I": {
+"exact": true,
+"since": "2026-10-28"
+},
+"TURTLEMINT|ASM|long|I": {
+"exact": true,
+"since": "2026-10-22"
+},
+"TVVISION|GSM|None|0": {
+"exact": true,
+"since": "2026-06-25"
+},
+"UFBL|ASM|long|IV": {
+"exact": true,
+"since": "2026-08-07"
+},
+"UNIVAFOODS|GSM|None|IV": {
+"exact": true,
+"since": "2026-09-16"
+},
+"UTSSAV|ASM|short|II": {
+"exact": false,
+"since": "2026-11-04"
+},
+"UTTAMSUGAR|ASM|short|I": {
+"exact": true,
+"since": "2026-10-14"
+},
+"VALUE360|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VASA|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VEEKAYEM|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VENUSREM|ASM|long|IV": {
+"exact": true,
+"since": "2026-11-03"
+},
+"VGL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-24"
+},
+"VISAMAN|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VISHWARAJ|ASM|long|I": {
+"exact": true,
+"since": "2026-08-25"
+},
+"VISUINTL|GSM|None|VI": {
+"exact": true,
+"since": "2019-06-06"
+},
+"VIVIDEL|ASM|long|II": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VIVIDHA|GSM|None|0": {
+"exact": true,
+"since": "2024-06-28"
+},
+"VMARCIND|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VNL|ASM|short|I": {
+"exact": true,
+"since": "2026-10-26"
+},
+"VOLERCAR|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"VPRPL|ASM|long|I": {
+"exact": true,
+"since": "2026-08-11"
+},
+"VSCL|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"WELCORP|ASM|long|I": {
+"exact": true,
+"since": "2026-08-24"
+},
+"WELINV|ASM|short|I": {
+"exact": true,
+"since": "2026-10-30"
+},
+"WEL|ASM|long|I": {
+"exact": true,
+"since": "2026-09-09"
+},
+"WHEELS|ASM|long|I": {
+"exact": true,
+"since": "2026-09-10"
+},
+"WINNY|GSM|None|0": {
+"exact": false,
+"since": "2026-11-04"
+},
+"XTRANET|ASM|long|I": {
+"exact": true,
+"since": "2026-10-01"
+},
+"YAAP|ASM|short|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"YASHO|ASM|long|I": {
+"exact": true,
+"since": "2026-08-14"
+},
+"YUDIZ|ASM|long|I": {
+"exact": false,
+"since": "2026-11-04"
+},
+"ZENITHEXPO|ASM|long|I": {
+"exact": true,
+"since": "2026-08-12"
+}
 }

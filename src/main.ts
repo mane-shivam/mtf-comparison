@@ -603,7 +603,7 @@ function renderList() {
 function survSourcesHTML(m: Meta): string {
   const src = m.surveillance?.sources;
   if (!src) return '';
-  const link = { NSE: 'https://www.nseindia.com/reports/asm', BSE: 'https://trendlyne.com/equity/asm-dashboard/active-stocks/' } as Record<string, string>;
+  const link = { NSE: 'https://www.nseindia.com/reports/asm' } as Record<string, string>;
   return Object.entries(src)
     .map(
       ([ex, i]) =>

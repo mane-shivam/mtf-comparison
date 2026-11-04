@@ -1,13 +1,15 @@
-"""NSE and BSE surveillance lists (ASM short/long term, GSM) with stage and entry date.
+"""NSE surveillance lists (ASM short/long term, GSM) with stage and the date each entry was added.
 
-NSE: www.nseindia.com/api/reportASM and /api/reportGSM (needs the cookies the report page sets).
-     NSE gives no entry date, so the date comes from the matching BSE entry when the same stock is
-     on the same list at the same stage (the exchanges decide ASM jointly), else from the first day
-     this scraper saw it (data/surveillance_seen.json).
-BSE: Trendlyne's ASM dashboard (BSE ASM + GSM with entry dates), since BSE's own page is an app
-     with no simple endpoint.
+Source: www.nseindia.com/api/reportASM and /api/reportGSM (needs the cookies the report page sets).
+BSE's own lists and Trendlyne both refuse requests from cloud servers, and ASM/GSM is decided jointly
+by the exchanges, so every MTF-eligible stock BSE flags is on NSE's list too.
 
-Writes data/raw/surveillance.json. If one exchange fails, its previous entries are kept.
+NSE publishes no entry date. data/surveillance_seen.json keeps one per measure and stage:
+- entries already listed when tracking began were dated from BSE's published entry dates (via
+  Trendlyne) where they matched, otherwise they are marked as "on the list since at least" that day;
+- anything that appears later is dated by the refresh that first sees it (three runs a day).
+
+Writes data/raw/surveillance.json. If NSE fails, the previous entries are kept and marked stale.
 """
 
 from __future__ import annotations
@@ -17,8 +19,6 @@ import re
 import sys
 from datetime import datetime, timedelta, timezone
 
-from bs4 import BeautifulSoup
-
 if __package__ in (None, ""):
     sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent.parent))
 from scrapers.common import RAW_DIR, ROOT, PoliteSession, now_iso
@@ -26,10 +26,10 @@ from scrapers.common import RAW_DIR, ROOT, PoliteSession, now_iso
 NSE_PAGE = "https://www.nseindia.com/reports/asm"
 NSE_ASM = "https://www.nseindia.com/api/reportASM"
 NSE_GSM = "https://www.nseindia.com/api/reportGSM"
-TRENDLYNE = "https://trendlyne.com/equity/asm-dashboard/active-stocks/"
 OUT = RAW_DIR / "surveillance.json"
 SEEN = ROOT / "data" / "surveillance_seen.json"
 IST = timezone(timedelta(hours=5, minutes=30))
+TRACKING_STARTED = "2026-11-04"  # entries first seen on this day may be older than that
 
 
 def stage_of(text: str) -> str:
@@ -61,79 +61,50 @@ def parse_nse_gsm(payload: list) -> list[dict]:
     return out
 
 
-def parse_trendlyne(html: str) -> list[dict]:
-    soup = BeautifulSoup(html, "html.parser")
-    table = next((t for t in soup.find_all("table") if "Entry Date" in t.get_text()), None)
-    if table is None:
-        raise ValueError("ASM table not found on Trendlyne page")
-    out = []
-    for tr in table.find_all("tr")[1:]:
-        tds = tr.find_all("td")
-        if len(tds) < 6:
-            continue
-        name = tds[0].get("data-export") or tds[0].get_text(" ", strip=True)
-        code, exch, kind, stage, date = (td.get_text(" ", strip=True) for td in tds[1:6])
-        kind_l = kind.lower()
-        try:
-            since = datetime.strptime(date, "%d %b %Y").date().isoformat()
-        except ValueError:
-            since = None
-        out.append({"symbol": code.strip().upper(), "name": name, "ex": exch.strip().upper() or "BSE",
-                    "list": "GSM" if "gsm" in kind_l else "ASM",
-                    "term": "short" if "short" in kind_l else "long" if "long" in kind_l else None,
-                    "stage": stage_of(stage), "since": since, "exact": since is not None, "desc": kind})
-    return out
+def key(e: dict) -> str:
+    return "|".join(str(x) for x in (e["symbol"], e["list"], e["term"], e["stage"]))
 
 
-def key(e: dict) -> tuple:
-    return (e["symbol"], e["list"], e["term"], e["stage"])
+def date_entries(entries: list[dict], seen: dict, today: str) -> dict:
+    """Attach since/exact to each entry; return the seen-store for the entries still listed."""
+    live = {}
+    for e in entries:
+        k = key(e)
+        rec = seen.get(k)
+        if isinstance(rec, str):  # older format: just the date
+            rec = {"since": rec, "exact": rec > TRACKING_STARTED}
+        if rec is None:
+            rec = {"since": today, "exact": today > TRACKING_STARTED}
+        live[k] = rec
+        e.update(rec)
+    return live
 
 
 def main() -> int:
     today = datetime.now(IST).date().isoformat()
     prev = json.loads(OUT.read_text()) if OUT.exists() else {"entries": [], "sources": {}}
-    sources, entries = {}, []
-
     try:
         s = PoliteSession(referer=NSE_PAGE)
         s.s.headers["Accept"] = "application/json, text/plain, */*"
         s.get(NSE_PAGE)  # sets the cookies the API checks
-        nse = parse_nse_asm(s.get(NSE_ASM).json()) + parse_nse_gsm(s.get(NSE_GSM).json())
-        if not nse:
+        entries = parse_nse_asm(s.get(NSE_ASM).json()) + parse_nse_gsm(s.get(NSE_GSM).json())
+        if not entries:
             raise RuntimeError("NSE returned no rows")
-        sources["NSE"] = {"status": "ok", "count": len(nse), "fetchedAt": now_iso(), "error": None}
+        source = {"status": "ok", "count": len(entries), "fetchedAt": now_iso(), "error": None}
     except Exception as e:  # noqa: BLE001
-        print(f"[surveillance] NSE failed: {e}")
-        nse = [x for x in prev["entries"] if x["ex"] == "NSE"]
-        sources["NSE"] = {**prev["sources"].get("NSE", {}), "status": "stale" if nse else "failed", "error": str(e)[:300]}
+        print(f"[surveillance] NSE failed, keeping previous list: {e}")
+        old = prev.get("sources", {}).get("NSE", {})
+        prev_nse = [x for x in prev.get("entries", []) if x.get("ex") == "NSE"]
+        OUT.write_text(json.dumps({**prev, "sources": {"NSE": {**old, "status": "stale" if prev_nse else "failed",
+                                                                "error": str(e)[:300]}}}, indent=0) + "\n")
+        return 1
 
-    try:
-        bse = parse_trendlyne(PoliteSession(referer="https://trendlyne.com/").get(TRENDLYNE).text)
-        if not bse:
-            raise RuntimeError("Trendlyne returned no rows")
-        sources["BSE"] = {"status": "ok", "count": len(bse), "fetchedAt": now_iso(), "error": None}
-    except Exception as e:  # noqa: BLE001
-        print(f"[surveillance] BSE (Trendlyne) failed: {e}")
-        bse = [x for x in prev["entries"] if x["ex"] == "BSE"]
-        sources["BSE"] = {**prev["sources"].get("BSE", {}), "status": "stale" if bse else "failed", "error": str(e)[:300]}
-
-    # Entry dates for NSE rows: the BSE date for the same measure and stage, else first seen here.
     seen = json.loads(SEEN.read_text()) if SEEN.exists() else {}
-    bse_dates = {key(b): b["since"] for b in bse if b.get("since")}
-    live_seen = {}
-    for e in nse:
-        k = "|".join(str(x) for x in key(e))
-        live_seen[k] = seen.get(k, today)
-        if key(e) in bse_dates:
-            e.update(since=bse_dates[key(e)], exact=True)
-        else:
-            e.update(since=live_seen[k], exact=False)
-    entries = nse + bse
-
-    SEEN.write_text(json.dumps(live_seen, indent=0, sort_keys=True) + "\n")
-    OUT.write_text(json.dumps({"fetchedAt": now_iso(), "sources": sources, "entries": entries}, indent=0) + "\n")
-    print(f"[surveillance] NSE {len(nse)} ({sum(e['exact'] for e in nse)} with exchange dates), BSE {len(bse)}")
-    return 0 if any(v["status"] == "ok" for v in sources.values()) else 1
+    SEEN.write_text(json.dumps(date_entries(entries, seen, today), indent=0, sort_keys=True) + "\n")
+    OUT.write_text(json.dumps({"fetchedAt": source["fetchedAt"], "sources": {"NSE": source}, "entries": entries},
+                              indent=0) + "\n")
+    print(f"[surveillance] NSE {len(entries)} entries ({sum(e['exact'] for e in entries)} with an added date)")
+    return 0
 
 
 if __name__ == "__main__":

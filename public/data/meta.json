@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-11-04T13:25:38Z",
+  "generatedAt": "2026-11-04T14:50:11Z",
   "surveillance": {
-    "fetchedAt": "2026-11-04T13:25:38Z",
+    "fetchedAt": "2026-11-04T14:50:11Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 268,
-        "fetchedAt": "2026-11-04T13:25:38Z",
+        "fetchedAt": "2026-11-04T14:50:11Z",
         "error": null
-      },
-      "BSE": {
-        "status": "stale",
-        "count": 960,
-        "fetchedAt": "2026-11-04T13:05:06Z",
-        "error": "405 Client Error: Not Allowed for url: https://trendlyne.com/equity/asm-dashboard/active-stocks/"
       }
     }
   },
