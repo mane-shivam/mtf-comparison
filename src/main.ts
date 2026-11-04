@@ -92,6 +92,7 @@ const state = {
   view: 'pinned' as 'pinned' | 'all',
   sort: 'az' as 'az' | 'lev' | 'gap',
   filter: null as BrokerKey | null,
+  solo: false, // only stocks where one broker is best on its own
   type: 'equity' as 'equity' | 'etf', // search and the All list show one kind at a time; stocks by default
   query: '',
   limit: PAGE,
@@ -131,6 +132,172 @@ function store<T>(key: string, value?: T): T | null {
 
 function savePins() {
   store(PIN_KEY, state.pins);
+  store(DIRTY_KEY, true);
+  scheduleSync();
+}
+
+/* ---------- pin sync ----------
+   The watchlist lives in data/pins.json in the repo, so every device sees the same list.
+   Anyone can read it; saving needs the GitHub token (Contents: read and write) kept in this browser.
+   Edits are kept locally first and marked dirty; a push that loses a race re-applies this
+   device's adds and removes on top of the newer list instead of overwriting it. */
+
+const PINS_FILE = 'data/pins.json';
+const DIRTY_KEY = 'mtf.pinsDirty';
+const BASE_KEY = 'mtf.pinsBase';
+const SYNC_ON = !!GH_REPO;
+
+type SyncStatus = 'off' | 'syncing' | 'synced' | 'local' | 'error';
+const sync = { status: 'off' as SyncStatus, sha: null as string | null, at: 0, timer: 0, busy: false };
+
+const pinsUrl = () => `https://api.github.com/repos/${GH_REPO}/contents/${PINS_FILE}`;
+
+function ghHeaders(): Record<string, string> {
+  const token = store<string>(GH_TOKEN_KEY);
+  return {
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+  };
+}
+
+const b64decode = (s: string) => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), (c) => c.charCodeAt(0)));
+const b64encode = (s: string) => btoa(String.fromCharCode(...new TextEncoder().encode(s)));
+
+async function fetchRemotePins(): Promise<{ pins: string[]; sha: string | null } | null> {
+  try {
+    const r = await fetch(`${pinsUrl()}?ref=${encodeURIComponent(GH_REF)}`, { headers: ghHeaders(), cache: 'no-store' });
+    if (r.status === 404) return { pins: [], sha: null };
+    if (r.ok) {
+      const body = await r.json();
+      return { pins: (JSON.parse(b64decode(body.content)).pins as string[]) ?? [], sha: body.sha };
+    }
+  } catch {
+    /* fall through to the CDN copy */
+  }
+  // Unauthenticated API calls are rate limited; the raw file still gives a read-only view.
+  try {
+    const r = await fetch(`https://raw.githubusercontent.com/${GH_REPO}/${GH_REF}/${PINS_FILE}?t=${Date.now()}`, { cache: 'no-store' });
+    if (r.ok) return { pins: (await r.json()).pins ?? [], sha: null };
+  } catch {
+    /* offline */
+  }
+  return null;
+}
+
+// Re-apply this device's unsynced adds and removes (relative to the last list it saw) onto `remote`.
+function rebasePins(remote: string[]): string[] {
+  const base = new Set(store<string[]>(BASE_KEY) ?? remote);
+  const local = new Set(state.pins);
+  const removed = new Set([...base].filter((p) => !local.has(p)));
+  const added = state.pins.filter((p) => !base.has(p));
+  return [...new Set([...remote.filter((p) => !removed.has(p)), ...added])];
+}
+
+async function pullPins(): Promise<void> {
+  if (!SYNC_ON) return;
+  const remote = await fetchRemotePins();
+  if (!remote) return setSync(store(DIRTY_KEY) ? 'local' : 'error');
+  if (remote.sha) sync.sha = remote.sha;
+  if (store<boolean>(DIRTY_KEY)) {
+    state.pins = rebasePins(remote.pins);
+    store(PIN_KEY, state.pins);
+    store(BASE_KEY, remote.pins);
+    render();
+    return void pushPins();
+  }
+  state.pins = remote.pins;
+  store(PIN_KEY, state.pins);
+  store(BASE_KEY, remote.pins);
+  sync.at = Date.now();
+  setSync('synced');
+  render();
+}
+
+function scheduleSync() {
+  if (!SYNC_ON) return;
+  clearTimeout(sync.timer);
+  sync.timer = window.setTimeout(pushPins, 1200);
+}
+
+async function pushPins(retry = true): Promise<void> {
+  if (!SYNC_ON || sync.busy) return;
+  if (!store<string>(GH_TOKEN_KEY)) return setSync('local');
+  sync.busy = true;
+  setSync('syncing');
+  try {
+    if (!sync.sha) {
+      const remote = await fetchRemotePins();
+      if (remote?.sha) sync.sha = remote.sha;
+      if (remote) state.pins = rebasePins(remote.pins);
+    }
+    const pins = state.pins.slice();
+    const content = b64encode(`${JSON.stringify({ pins }, null, 1)}\n`);
+    const r = await fetch(pinsUrl(), {
+      method: 'PUT',
+      headers: { ...ghHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: `pins: ${pins.length} stocks`,
+        content,
+        branch: GH_REF,
+        ...(sync.sha ? { sha: sync.sha } : {}),
+        committer: { name: 'mtf-bot', email: 'mtf-bot@users.noreply.github.com' },
+      }),
+    });
+    if ((r.status === 409 || r.status === 422) && retry) {
+      // Another device saved first: take its list, re-apply ours, try once more.
+      sync.sha = null;
+      sync.busy = false;
+      return pushPins(false);
+    }
+    if (r.status === 401 || r.status === 403) {
+      setSync('local');
+      toast('Your GitHub token can’t save pins. Add “Contents: Read and write” to it.');
+      return;
+    }
+    if (!r.ok) throw new Error(String(r.status));
+    sync.sha = (await r.json()).content?.sha ?? null;
+    store(BASE_KEY, pins);
+    // Only clear dirty if nothing changed while the save was in flight.
+    if (pins.join() === state.pins.join()) store(DIRTY_KEY, false);
+    else scheduleSync();
+    sync.at = Date.now();
+    setSync('synced');
+    render();
+  } catch {
+    setSync('error');
+  } finally {
+    sync.busy = false;
+  }
+}
+
+function setSync(status: SyncStatus) {
+  sync.status = status;
+  const el = document.getElementById('sync');
+  if (el) el.outerHTML = syncHTML();
+}
+
+function syncHTML(): string {
+  if (!SYNC_ON) return '<p class="muted small" id="sync">Pins are saved in this browser.</p>';
+  const msg: Record<SyncStatus, string> = {
+    off: 'Loading pins…',
+    syncing: 'Saving…',
+    synced: 'Synced across your devices',
+    local: 'Saved on this device only.',
+    error: 'Couldn’t reach GitHub. Changes are kept here and will sync later.',
+  };
+  const action = sync.status === 'local' ? ' <button class="link-btn" data-connect>Connect GitHub to sync</button>' : '';
+  return `<p class="sync ${sync.status}" id="sync"><span class="dot ${sync.status === 'synced' ? 'ok' : sync.status === 'syncing' || sync.status === 'off' ? '' : 'stale'}"></span>${msg[sync.status]}${action}</p>`;
+}
+
+function connectGitHub() {
+  const token = prompt(
+    'GitHub token (fine-grained, this repo only, with Actions and Contents: Read and write). It is saved only in this browser.',
+  )?.trim();
+  if (!token) return;
+  store(GH_TOKEN_KEY, token);
+  store(DIRTY_KEY, true);
+  pullPins();
 }
 
 function togglePin(sym: string) {
@@ -149,6 +316,7 @@ const esc = (s: string) =>
 // Multipliers are shown, and compared for "best", to one decimal: 4.23 → 4.2, 5.89 → 5.9.
 const round1 = (n: number) => Math.round((n + Number.EPSILON) * 10) / 10;
 const fmtLev = (n: number) => `${round1(n)}×`;
+const TIE_GAP = 0.2;
 const fmtNum = (n: number) => n.toLocaleString('en-IN');
 const isFunded = (c: Cell | null): c is Cell => !!c && c.lev > 1;
 
@@ -191,10 +359,11 @@ async function loadData() {
 function setData(stocks: Stock[], meta: Meta) {
   for (const s of stocks) {
     s.name = titleCase(s.name);
-    // Re-derive the winner at display precision, so 4.27 vs 4.25 (both 4.3×) is a tie, not a win.
+    // Every broker within TIE_GAP of the top (at display precision) counts as best, so a
+    // broker only "wins" when it beats the others by more than that.
     const levs = BROKERS.filter((b) => isFunded(s[b])).map((b) => round1(s[b]!.lev));
     s.bestLev = levs.length ? Math.max(...levs) : null;
-    s.best = BROKERS.filter((b) => isFunded(s[b]) && round1(s[b]!.lev) === s.bestLev);
+    s.best = BROKERS.filter((b) => isFunded(s[b]) && s.bestLev! - round1(s[b]!.lev) <= TIE_GAP + 1e-9);
   }
   state.stocks = stocks;
   state.bySymbol = new Map(stocks.map((s) => [s.symbol, s]));
@@ -237,7 +406,7 @@ function gap(s: Stock): number {
 const contested = (s: Stock) => BROKERS.some((b) => s[b] && !s.best.includes(b));
 
 function sorted(list: Stock[]): Stock[] {
-  const out = state.filter ? list.filter((s) => s.best.includes(state.filter!)) : list.slice();
+  const out = list.filter((s) => (!state.filter || s.best.includes(state.filter)) && (!state.solo || s.best.length === 1));
   const az = (a: Stock, b: Stock) => a.symbol.localeCompare(b.symbol);
   if (state.sort === 'lev') out.sort((a, b) => (b.bestLev ?? 0) - (a.bestLev ?? 0) || az(a, b));
   else if (state.sort === 'gap') out.sort((a, b) => gap(b) - gap(a) || az(a, b));
@@ -274,7 +443,10 @@ function levCell(s: Stock, b: BrokerKey): string {
 
 function rowHTML(s: Stock): string {
   const pinned = state.pins.includes(s.symbol);
-  const who = !contested(s) ? (s.best.length > 1 ? 'Same everywhere' : `Only ${BROKER_SHORT[s.best[0]]}`) : s.best.map((b) => BROKER_SHORT[b]).join(' · ');
+  const same = s.best.every((b) => round1(s[b]!.lev) === s.bestLev);
+  const who = !contested(s)
+    ? s.best.length > 1 ? (same ? 'Same everywhere' : `All within ${TIE_GAP}×`) : `Only ${BROKER_SHORT[s.best[0]]}`
+    : s.best.map((b) => BROKER_SHORT[b]).join(' · ');
   const best = s.best.length
     ? `<span class="best-lev">${fmtLev(s.bestLev!)}</span><span class="best-who">${who}</span>`
     : `<span class="none">${s.stub ? 'Not on MTF lists' : 'No funding'}</span>`;
@@ -325,7 +497,8 @@ function renderChips() {
   $('#chips').innerHTML = '<span class="chips-label">Best on</span>' + BROKERS.map(
     (b) =>
       `<button class="chip${state.filter === b ? ' on' : ''}" data-filter="${b}" aria-pressed="${state.filter === b}" aria-label="Best on ${BROKER_SHORT[b]}"><span class="chip-pre">Best on </span>${BROKER_SHORT[b]}</button>`,
-  ).join('');
+  ).join('') +
+    `<button class="chip chip-solo${state.solo ? ' on' : ''}" data-solo aria-pressed="${state.solo}">Sole best</button>`;
 }
 
 function emptyState(): string {
@@ -339,9 +512,11 @@ function emptyState(): string {
   }
   if (state.view === 'pinned' && !state.pins.length) {
     return `<div class="empty"><p class="empty-title">Nothing pinned yet</p><p>Search a stock and tap the star, or add several at once.</p>
-      <div class="chips"><button class="chip" data-add>+ Add stocks</button><button class="chip" data-restore>Restore defaults</button></div></div>`;
+      <div class="chips"><button class="chip" data-add>+ Add stocks</button></div></div>`;
   }
-  return `<div class="empty"><p class="empty-title">No stocks here</p><p>No ${state.view === 'pinned' ? 'pinned ' : ''}stock has its best multiplier on ${BROKER_NAME[state.filter!]}.</p></div>`;
+  const where = state.filter ? ` on ${BROKER_NAME[state.filter]}` : '';
+  const what = state.solo ? `is best${where} alone (by more than ${TIE_GAP}×)` : `has its best multiplier${where}`;
+  return `<div class="empty"><p class="empty-title">No stocks here</p><p>No ${state.view === 'pinned' ? 'pinned ' : ''}stock ${what}.</p></div>`;
 }
 
 function renderList() {
@@ -364,7 +539,7 @@ function renderList() {
   const foot: string[] = [];
   if (searching && list.length === 50) foot.push('<p class="muted">Showing the top 50 matches. Keep typing to narrow it down.</p>');
   if (!searching && state.view === 'pinned' && state.pins.length) {
-    foot.push('<button class="btn btn-ghost" data-add>+ Add or edit pinned stocks</button>');
+    foot.push('<button class="btn btn-ghost" data-add>+ Add or edit pinned stocks</button>', syncHTML());
   }
   if (!searching && state.view === 'all' && list.length > shown.length) {
     foot.push(`<button class="btn btn-ghost" id="more">Show more <span class="muted">${fmtNum(shown.length)} of ${fmtNum(list.length)}</span></button>`);
@@ -393,7 +568,7 @@ function renderFooter() {
           <button class="btn btn-ghost" id="export">Export</button>
           <label class="btn btn-ghost">Import<input type="file" id="import" accept="application/json,.json" hidden /></label>
         </div>
-        <p class="muted small">Pins are saved in this browser. Open the pin link on your phone to carry them over.</p>
+        <p class="muted small">${SYNC_ON ? 'Pins are shared by every device through data/pins.json in the repo. Editing them needs your GitHub token on that device.' : 'Pins are saved in this browser. Open the pin link on another device to carry them over.'}</p>
       </div>
     </div>
     ${
@@ -633,7 +808,6 @@ async function openAddSheet() {
       <h3>Current pins <span class="count" id="current-count"></span></h3>
       <div class="pin-chips" id="current-pins"></div>
       <div class="sheet-buttons">
-        <button class="btn btn-ghost" data-restore>Restore defaults</button>
         <button class="btn btn-ghost danger" id="clear-pins">Remove all</button>
       </div>
     </div>`;
@@ -790,7 +964,7 @@ async function refresh() {
     pass =
       prompt(
         github
-          ? 'GitHub token for refresh (fine-grained, Actions: read and write on this repo). It is saved only in this browser.'
+          ? 'GitHub token (fine-grained, this repo only, with Actions and Contents: Read and write). It is saved only in this browser.'
           : 'Refresh passcode',
       )?.trim() || null;
     if (!pass) return;
@@ -911,15 +1085,7 @@ function bind() {
       renderPending();
       return;
     }
-    if (t.closest('[data-restore]')) {
-      if (state.pins.length && !confirm('Replace your pins with the default list?')) return;
-      state.pins = DEFAULT_PINS.slice();
-      savePins();
-      render();
-      renderCurrentPins();
-      toast(`Restored ${state.pins.length} pins`);
-      return;
-    }
+    if (t.closest('[data-connect]')) return connectGitHub();
     if (t.closest('#clear-pins')) {
       if (!confirm(`Remove all ${state.pins.length} pins?`)) return;
       state.pins = [];
@@ -938,6 +1104,12 @@ function bind() {
     const typeBtn = t.closest<HTMLElement>('[data-type]');
     if (typeBtn) {
       setType(typeBtn.dataset.type as 'equity' | 'etf');
+      return;
+    }
+    if (t.closest('[data-solo]')) {
+      state.solo = !state.solo;
+      state.limit = PAGE;
+      render();
       return;
     }
     const chip = t.closest<HTMLElement>('[data-filter]');
@@ -1008,7 +1180,19 @@ async function boot() {
     history.replaceState(null, '', location.pathname);
   } else {
     state.pins = saved ?? DEFAULT_PINS.slice();
+    // First run with sync on a device that already had pins: nothing it added may be lost,
+    // so treat its list as additions on top of the shared one.
+    if (SYNC_ON && saved && store(BASE_KEY) === null && saved.join() !== DEFAULT_PINS.join()) {
+      store(BASE_KEY, []);
+      store(DIRTY_KEY, true);
+    }
   }
+
+  // Pick up edits made on other devices when this tab comes back into view.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && !sync.busy) pullPins();
+  });
+  pullPins();
 
   bind();
   updateRefreshCooldown();

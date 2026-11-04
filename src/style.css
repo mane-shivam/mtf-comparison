@@ -1167,6 +1167,38 @@ td.down {
   color: var(--muted);
 }
 
+.chip-solo {
+  margin-left: 6px;
+}
+
+.sync {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 8px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sync.local,
+.sync.error {
+  color: var(--warn);
+}
+
+.link-btn {
+  min-height: 32px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--best);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ---------- popover & toast ---------- */
 
 .popover {
@@ -1353,6 +1385,18 @@ td.down {
     grid-area: chips;
     flex-wrap: nowrap;
     align-items: center;
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 0 var(--gutter);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .toolbar-right .chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toolbar-right .chip {
+    flex: none;
   }
 
   .chips-label {
