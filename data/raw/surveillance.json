@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-05T07:43:47Z",
+"fetchedAt": "2026-11-05T12:43:34Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 268,
-"fetchedAt": "2026-11-05T07:43:47Z",
+"fetchedAt": "2026-11-05T12:43:34Z",
 "error": null
 }
 },
@@ -76,8 +76,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-05",
-"exact": true
+"exact": true,
+"since": "2026-11-05"
 },
 {
 "symbol": "AHCL",
@@ -1526,8 +1526,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-05",
-"exact": true
+"exact": true,
+"since": "2026-11-05"
 },
 {
 "symbol": "FWSTC",
@@ -1676,8 +1676,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-05",
-"exact": true
+"exact": true,
+"since": "2026-11-05"
 },
 {
 "symbol": "OCCLLTD",
@@ -1686,8 +1686,8 @@
 "term": "short",
 "stage": "II",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage II",
-"since": "2026-11-05",
-"exact": true
+"exact": true,
+"since": "2026-11-05"
 },
 {
 "symbol": "ONEPOINT",
