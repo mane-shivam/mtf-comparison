@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-05T18:17:57Z",
+"fetchedAt": "2026-11-05T21:10:47Z",
 "count": 1711,
 "rows": [
 {
@@ -6594,7 +6594,7 @@
 "symbol": "MANAPPURAM",
 "name": "Manappuram Finance Limited",
 "exchange": "NSE",
-"lev": 4.0,
+"lev": 3.99,
 "maxExposureCr": 25.0
 },
 {
@@ -6650,7 +6650,7 @@
 "symbol": "MANORAMA",
 "name": "Manorama Industries Ltd",
 "exchange": "NSE",
-"lev": 2.76,
+"lev": 2.75,
 "maxExposureCr": 2.0
 },
 {
@@ -6678,7 +6678,7 @@
 "symbol": "MARKSANS",
 "name": "Marksans Pharma Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.77,
 "maxExposureCr": 5.0
 },
 {
@@ -7007,7 +7007,7 @@
 "symbol": "MIDHANI",
 "name": "Mishra Dhatu Nigam Limited",
 "exchange": "NSE",
-"lev": 2.74,
+"lev": 2.75,
 "maxExposureCr": 5.0
 },
 {
@@ -7077,7 +7077,7 @@
 "symbol": "MOSCHIP",
 "name": "Moschip Technologies Ltd",
 "exchange": "NSE",
-"lev": 2.6,
+"lev": 2.61,
 "maxExposureCr": 5.0
 },
 {
@@ -10521,7 +10521,7 @@
 "symbol": "TATACONSUM",
 "name": "Tata Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.95,
+"lev": 4.96,
 "maxExposureCr": 50.0
 },
 {
@@ -10542,7 +10542,7 @@
 "symbol": "TMCV",
 "name": "Tata Motors Limited",
 "exchange": "NSE",
-"lev": 3.36,
+"lev": 3.37,
 "maxExposureCr": 50.0
 },
 {
