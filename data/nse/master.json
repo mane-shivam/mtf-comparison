@@ -1668,6 +1668,12 @@
 "type": "equity"
 },
 {
+"symbol": "BAHETI",
+"name": "Baheti Recycling Industries Limited",
+"isin": "INE029Q01017",
+"type": "equity"
+},
+{
 "symbol": "BAIDFIN",
 "name": "Baid Finserv Limited",
 "isin": "INE020D01022",
@@ -1941,6 +1947,12 @@
 "symbol": "BCPL",
 "name": "BCPL Railway Infrastructure Limited",
 "isin": "INE00SW01015",
+"type": "equity"
+},
+{
+"symbol": "BCSSL",
+"name": "Bombay Coated and Special Steels Limited",
+"isin": "INE0XFY01011",
 "type": "equity"
 },
 {
@@ -2457,6 +2469,12 @@
 "symbol": "BRIGHTBR",
 "name": "Bright Brothers Limited",
 "isin": "INE630D01010",
+"type": "equity"
+},
+{
+"symbol": "BRIGHTOUTD",
+"name": "Bright Outdoor Media Limited",
+"isin": "INE0OMI01019",
 "type": "equity"
 },
 {
@@ -5072,7 +5090,7 @@
 {
 "symbol": "GNRL",
 "name": "Gujarat Natural Resources Limited",
-"isin": "INE207H01018",
+"isin": "INE207H01026",
 "type": "equity"
 },
 {

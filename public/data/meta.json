@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-04T20:55:12Z",
+  "generatedAt": "2026-11-05T07:43:47Z",
   "surveillance": {
-    "fetchedAt": "2026-11-04T20:55:12Z",
+    "fetchedAt": "2026-11-05T07:43:47Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 268,
-        "fetchedAt": "2026-11-04T20:55:12Z",
+        "fetchedAt": "2026-11-05T07:43:47Z",
         "error": null
       }
     }
@@ -15,19 +15,19 @@
     "kotak": {
       "fetchedAt": "2026-11-04T20:54:46Z",
       "count": 1711,
-      "status": "ok",
-      "error": null,
+      "status": "stale",
+      "error": "MTF table not found on Kotak page",
       "matched": 1711
     },
     "paytm": {
-      "fetchedAt": "2026-11-04T20:54:47Z",
-      "count": 1516,
+      "fetchedAt": "2026-11-05T07:43:22Z",
+      "count": 1534,
       "status": "ok",
       "error": null,
-      "matched": 1516
+      "matched": 1534
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-04T20:55:09Z",
+      "fetchedAt": "2026-11-05T07:43:44Z",
       "count": 2212,
       "status": "ok",
       "error": null,

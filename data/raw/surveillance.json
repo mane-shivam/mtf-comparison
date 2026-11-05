@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-04T20:55:12Z",
+"fetchedAt": "2026-11-05T07:43:47Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 268,
-"fetchedAt": "2026-11-04T20:55:12Z",
+"fetchedAt": "2026-11-05T07:43:47Z",
 "error": null
 }
 },
@@ -68,6 +68,16 @@
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
 "exact": true,
 "since": "2026-09-07"
+},
+{
+"symbol": "AGUL",
+"ex": "NSE",
+"list": "ASM",
+"term": "long",
+"stage": "I",
+"desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"since": "2026-11-05",
+"exact": true
 },
 {
 "symbol": "AHCL",
@@ -1514,10 +1524,10 @@
 "ex": "NSE",
 "list": "ASM",
 "term": "short",
-"stage": "II",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage II",
-"exact": false,
-"since": "2026-11-04"
+"stage": "I",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"since": "2026-11-05",
+"exact": true
 },
 {
 "symbol": "FWSTC",
@@ -1660,14 +1670,24 @@
 "since": "2026-11-04"
 },
 {
-"symbol": "OCCLLTD",
+"symbol": "NELCAST",
 "ex": "NSE",
 "list": "ASM",
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-12"
+"since": "2026-11-05",
+"exact": true
+},
+{
+"symbol": "OCCLLTD",
+"ex": "NSE",
+"list": "ASM",
+"term": "short",
+"stage": "II",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage II",
+"since": "2026-11-05",
+"exact": true
 },
 {
 "symbol": "ONEPOINT",
@@ -1678,16 +1698,6 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
 "exact": true,
 "since": "2026-10-13"
-},
-{
-"symbol": "PAUSHAKLTD",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-27"
 },
 {
 "symbol": "PHOENXINTL",
@@ -1771,16 +1781,6 @@
 },
 {
 "symbol": "SOTAC",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": false,
-"since": "2026-11-04"
-},
-{
-"symbol": "SPCL",
 "ex": "NSE",
 "list": "ASM",
 "term": "short",

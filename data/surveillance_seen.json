@@ -31,6 +31,10 @@
 "exact": true,
 "since": "2026-06-25"
 },
+"AGUL|ASM|long|I": {
+"exact": true,
+"since": "2026-11-05"
+},
 "AHCL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-25"
@@ -275,9 +279,9 @@
 "exact": false,
 "since": "2026-11-04"
 },
-"FASCINATE|ASM|short|II": {
-"exact": false,
-"since": "2026-11-04"
+"FASCINATE|ASM|short|I": {
+"exact": true,
+"since": "2026-11-05"
 },
 "FELDVR|GSM|None|0": {
 "exact": true,
@@ -587,6 +591,10 @@
 "exact": true,
 "since": "2026-08-28"
 },
+"NELCAST|ASM|short|I": {
+"exact": true,
+"since": "2026-11-05"
+},
 "NEXTMEDIA|GSM|None|0": {
 "exact": true,
 "since": "2026-10-09"
@@ -603,9 +611,9 @@
 "exact": true,
 "since": "2026-10-23"
 },
-"OCCLLTD|ASM|short|I": {
+"OCCLLTD|ASM|short|II": {
 "exact": true,
-"since": "2026-10-12"
+"since": "2026-11-05"
 },
 "ONEPOINT|ASM|short|I": {
 "exact": true,
@@ -638,10 +646,6 @@
 "PASHUPATI|ASM|long|I": {
 "exact": true,
 "since": "2026-10-29"
-},
-"PAUSHAKLTD|ASM|short|I": {
-"exact": true,
-"since": "2026-10-27"
 },
 "PEARLPOLY|ASM|long|I": {
 "exact": true,
@@ -840,10 +844,6 @@
 "since": "2026-10-28"
 },
 "SOTAC|ASM|short|I": {
-"exact": false,
-"since": "2026-11-04"
-},
-"SPCL|ASM|short|I": {
 "exact": false,
 "since": "2026-11-04"
 },
