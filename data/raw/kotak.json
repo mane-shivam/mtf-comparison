@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-05T12:43:04Z",
+"fetchedAt": "2026-11-05T18:17:57Z",
 "count": 1711,
 "rows": [
 {
@@ -6594,7 +6594,7 @@
 "symbol": "MANAPPURAM",
 "name": "Manappuram Finance Limited",
 "exchange": "NSE",
-"lev": 3.99,
+"lev": 4.0,
 "maxExposureCr": 25.0
 },
 {
@@ -6650,7 +6650,7 @@
 "symbol": "MANORAMA",
 "name": "Manorama Industries Ltd",
 "exchange": "NSE",
-"lev": 2.75,
+"lev": 2.76,
 "maxExposureCr": 2.0
 },
 {
@@ -6678,7 +6678,7 @@
 "symbol": "MARKSANS",
 "name": "Marksans Pharma Limited",
 "exchange": "NSE",
-"lev": 2.77,
+"lev": 2.78,
 "maxExposureCr": 5.0
 },
 {
@@ -7994,7 +7994,7 @@
 "symbol": "PACEDIGITK",
 "name": "Pace Digitek Limited",
 "exchange": "NSE",
-"lev": 3.05,
+"lev": 3.04,
 "maxExposureCr": 5.0
 },
 {
@@ -8036,14 +8036,14 @@
 "symbol": "PARADEEP",
 "name": "Paradeep Phosphates Limited",
 "exchange": "NSE",
-"lev": 2.84,
+"lev": 2.85,
 "maxExposureCr": 10.0
 },
 {
 "symbol": "PARAGMILK",
 "name": "Parag Milk Foods Limited",
 "exchange": "NSE",
-"lev": 2.68,
+"lev": 2.59,
 "maxExposureCr": 5.0
 },
 {
@@ -8120,7 +8120,7 @@
 "symbol": "PCBL",
 "name": "Pcbl Limited",
 "exchange": "NSE",
-"lev": 2.8,
+"lev": 2.81,
 "maxExposureCr": 10.0
 },
 {
@@ -8183,7 +8183,7 @@
 "symbol": "PIIND",
 "name": "Pi Industries Limited",
 "exchange": "NSE",
-"lev": 4.47,
+"lev": 4.48,
 "maxExposureCr": 50.0
 },
 {
@@ -10521,7 +10521,7 @@
 "symbol": "TATACONSUM",
 "name": "Tata Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.96,
+"lev": 4.95,
 "maxExposureCr": 50.0
 },
 {
@@ -10542,7 +10542,7 @@
 "symbol": "TMCV",
 "name": "Tata Motors Limited",
 "exchange": "NSE",
-"lev": 3.37,
+"lev": 3.36,
 "maxExposureCr": 50.0
 },
 {
@@ -11207,14 +11207,14 @@
 "symbol": "UNITDSPR",
 "name": "United Spirits Limited",
 "exchange": "NSE",
-"lev": 4.81,
+"lev": 4.8,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "UNIVCABLES",
 "name": "Universal Cables Limited",
 "exchange": "NSE",
-"lev": 2.41,
+"lev": 2.4,
 "maxExposureCr": 1.0
 },
 {
@@ -11256,7 +11256,7 @@
 "symbol": "USHAMART",
 "name": "Usha Martin Limited",
 "exchange": "NSE",
-"lev": 3.19,
+"lev": 3.17,
 "maxExposureCr": 5.0
 },
 {
