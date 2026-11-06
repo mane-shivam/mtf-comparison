@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-05T21:11:12Z",
+"fetchedAt": "2026-11-06T12:25:49Z",
 "sources": {
 "NSE": {
 "status": "ok",
-"count": 268,
-"fetchedAt": "2026-11-05T21:11:12Z",
+"count": 267,
+"fetchedAt": "2026-11-06T12:25:49Z",
 "error": null
 }
 },
@@ -138,6 +138,16 @@
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
 "exact": true,
 "since": "2026-09-10"
+},
+{
+"symbol": "APRAMEYA",
+"ex": "NSE",
+"list": "ASM",
+"term": "long",
+"stage": "I",
+"desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"since": "2026-11-06",
+"exact": true
 },
 {
 "symbol": "ARVEE",
@@ -284,10 +294,10 @@
 "ex": "NSE",
 "list": "ASM",
 "term": "long",
-"stage": "I",
-"desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"exact": true,
-"since": "2026-09-01"
+"stage": "II",
+"desc": "Long Term Additional Surveillance Measure (LTASM) - Stage II",
+"since": "2026-11-06",
+"exact": true
 },
 {
 "symbol": "CUPID",
@@ -338,6 +348,16 @@
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
 "exact": false,
 "since": "2026-11-04"
+},
+{
+"symbol": "EBGNG",
+"ex": "NSE",
+"list": "ASM",
+"term": "long",
+"stage": "I",
+"desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"since": "2026-11-06",
+"exact": true
 },
 {
 "symbol": "ELITECON",
@@ -1420,16 +1440,6 @@
 "since": "2026-11-03"
 },
 {
-"symbol": "ARMOUR",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": false,
-"since": "2026-11-04"
-},
-{
 "symbol": "ATHERENERG",
 "ex": "NSE",
 "list": "ASM",
@@ -1438,16 +1448,6 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
 "exact": true,
 "since": "2026-11-02"
-},
-{
-"symbol": "AUGMONT",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-05"
 },
 {
 "symbol": "AVROIND",
@@ -1528,16 +1528,6 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
 "exact": true,
 "since": "2026-11-05"
-},
-{
-"symbol": "FWSTC",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": false,
-"since": "2026-11-04"
 },
 {
 "symbol": "GIRIRAJ",
@@ -1640,6 +1630,16 @@
 "since": "2026-11-03"
 },
 {
+"symbol": "MMEL",
+"ex": "NSE",
+"list": "ASM",
+"term": "short",
+"stage": "I",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"since": "2026-11-06",
+"exact": true
+},
+{
 "symbol": "MMWL",
 "ex": "NSE",
 "list": "ASM",
@@ -1690,16 +1690,6 @@
 "since": "2026-11-05"
 },
 {
-"symbol": "ONEPOINT",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-13"
-},
-{
 "symbol": "PHOENXINTL",
 "ex": "NSE",
 "list": "ASM",
@@ -1718,6 +1708,16 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
 "exact": false,
 "since": "2026-11-04"
+},
+{
+"symbol": "SADBHIN",
+"ex": "NSE",
+"list": "ASM",
+"term": "short",
+"stage": "I",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"since": "2026-11-06",
+"exact": true
 },
 {
 "symbol": "SAKUMA",
@@ -1770,16 +1770,6 @@
 "since": "2026-10-06"
 },
 {
-"symbol": "SMT",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-28"
-},
-{
 "symbol": "SOTAC",
 "ex": "NSE",
 "list": "ASM",
@@ -1800,6 +1790,16 @@
 "since": "2026-10-30"
 },
 {
+"symbol": "SUPREMEINF",
+"ex": "NSE",
+"list": "ASM",
+"term": "short",
+"stage": "I",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"since": "2026-11-06",
+"exact": true
+},
+{
 "symbol": "SUPREMEPWR",
 "ex": "NSE",
 "list": "ASM",
@@ -1810,14 +1810,14 @@
 "since": "2026-11-04"
 },
 {
-"symbol": "SUYOG",
+"symbol": "SYNOPTICS",
 "ex": "NSE",
 "list": "ASM",
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-28"
+"since": "2026-11-06",
+"exact": true
 },
 {
 "symbol": "TEAMTECH",
@@ -1838,16 +1838,6 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
 "exact": true,
 "since": "2026-10-30"
-},
-{
-"symbol": "TTML",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-10-28"
 },
 {
 "symbol": "UTSSAV",
@@ -2615,7 +2605,7 @@
 "list": "GSM",
 "term": null,
 "stage": "0",
-"desc": "ESM Stage I and GSM Stage 0",
+"desc": "ESM Stage II and GSM Stage 0",
 "exact": true,
 "since": "2022-04-08"
 },
