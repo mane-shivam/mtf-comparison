@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-06T17:41:53Z",
+"fetchedAt": "2026-11-06T20:30:57Z",
 "count": 1711,
 "rows": [
 {
@@ -2527,7 +2527,7 @@
 "symbol": "DEVYANI",
 "name": "Devyani International Limited",
 "exchange": "NSE",
-"lev": 3.1,
+"lev": 3.06,
 "maxExposureCr": 5.0
 },
 {
@@ -2611,7 +2611,7 @@
 "symbol": "DIVISLAB",
 "name": "Divi'S Laboratories Limited",
 "exchange": "NSE",
-"lev": 4.86,
+"lev": 4.87,
 "maxExposureCr": 50.0
 },
 {
@@ -4494,7 +4494,7 @@
 "symbol": "HONASA",
 "name": "Honasa Consumer Ltd",
 "exchange": "NSE",
-"lev": 3.11,
+"lev": 3.12,
 "maxExposureCr": 5.0
 },
 {
@@ -4550,7 +4550,7 @@
 "symbol": "HYUNDAI",
 "name": "Hyundai Motor India Limited",
 "exchange": "NSE",
-"lev": 4.64,
+"lev": 4.65,
 "maxExposureCr": 50.0
 },
 {
@@ -4585,7 +4585,7 @@
 "symbol": "ICICIAMC",
 "name": "Icici Prudential Asset Management Company Limited",
 "exchange": "NSE",
-"lev": 3.63,
+"lev": 3.64,
 "maxExposureCr": 50.0
 },
 {
@@ -4739,7 +4739,7 @@
 "symbol": "ITIETF",
 "name": "Icicipramc-Icicitech",
 "exchange": "NSE",
-"lev": 3.67,
+"lev": 3.66,
 "maxExposureCr": 1.0
 },
 {
@@ -4809,14 +4809,14 @@
 "symbol": "IDBI",
 "name": "Idbi Bank Limited",
 "exchange": "NSE",
-"lev": 2.73,
+"lev": 2.74,
 "maxExposureCr": 10.0
 },
 {
 "symbol": "IDFCFIRSTB",
 "name": "Idfc First Bank Limited",
 "exchange": "NSE",
-"lev": 4.42,
+"lev": 4.39,
 "maxExposureCr": 50.0
 },
 {
@@ -7147,7 +7147,7 @@
 "symbol": "MOREALTY",
 "name": "Motilalamc - Morealty",
 "exchange": "NSE",
-"lev": 3.6,
+"lev": 3.59,
 "maxExposureCr": 1.0
 },
 {
@@ -7280,7 +7280,7 @@
 "symbol": "MUTHOOTFIN",
 "name": "Muthoot Finance Limited",
 "exchange": "NSE",
-"lev": 3.99,
+"lev": 3.97,
 "maxExposureCr": 50.0
 },
 {
@@ -7315,7 +7315,7 @@
 "symbol": "NH",
 "name": "Narayana Hrudayalaya Ltd.",
 "exchange": "NSE",
-"lev": 3.38,
+"lev": 3.39,
 "maxExposureCr": 25.0
 },
 {
@@ -8939,7 +8939,7 @@
 "symbol": "RBA",
 "name": "Restaurant Brands Asia Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 3.01,
 "maxExposureCr": 5.0
 },
 {
@@ -9051,7 +9051,7 @@
 "symbol": "RUBICON",
 "name": "Rubicon Research Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 3.03,
+"lev": 3.04,
 "maxExposureCr": 5.0
 },
 {
@@ -9093,7 +9093,7 @@
 "symbol": "SJS",
 "name": "S.J.S. Enterprises Limited",
 "exchange": "NSE",
-"lev": 3.02,
+"lev": 3.0,
 "maxExposureCr": 5.0
 },
 {
@@ -9219,7 +9219,7 @@
 "symbol": "SANDUMA",
 "name": "Sandur Manganese & Iron Ores Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.74,
 "maxExposureCr": 5.0
 },
 {
@@ -9233,7 +9233,7 @@
 "symbol": "SANGHVIMOV",
 "name": "Sanghvi Movers Limited",
 "exchange": "NSE",
-"lev": 2.5,
+"lev": 2.46,
 "maxExposureCr": 2.0
 },
 {
@@ -11494,7 +11494,7 @@
 "symbol": "VENUSPIPES",
 "name": "Venus Pipes & Tubes Limited",
 "exchange": "NSE",
-"lev": 2.72,
+"lev": 2.73,
 "maxExposureCr": 2.0
 },
 {
@@ -11536,14 +11536,14 @@
 "symbol": "VIKRAN",
 "name": "Vikran Engineering Limited",
 "exchange": "NSE",
-"lev": 2.8,
+"lev": 2.79,
 "maxExposureCr": 2.0
 },
 {
 "symbol": "VIMTALABS",
 "name": "Vimta Labs Limited",
 "exchange": "NSE",
-"lev": 2.61,
+"lev": 2.62,
 "maxExposureCr": 2.0
 },
 {
@@ -11627,7 +11627,7 @@
 "symbol": "VOLTAS",
 "name": "Voltas Limited",
 "exchange": "NSE",
-"lev": 4.25,
+"lev": 4.28,
 "maxExposureCr": 50.0
 },
 {
@@ -11690,7 +11690,7 @@
 "symbol": "WEBELSOLAR",
 "name": "Websol Energy System Limited",
 "exchange": "NSE",
-"lev": 2.47,
+"lev": 2.48,
 "maxExposureCr": 1.0
 },
 {
