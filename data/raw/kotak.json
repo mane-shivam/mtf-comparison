@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-06T20:30:57Z",
+"fetchedAt": "2026-11-07T11:17:43Z",
 "count": 1711,
 "rows": [
 {
@@ -4494,7 +4494,7 @@
 "symbol": "HONASA",
 "name": "Honasa Consumer Ltd",
 "exchange": "NSE",
-"lev": 3.12,
+"lev": 3.11,
 "maxExposureCr": 5.0
 },
 {
@@ -4550,7 +4550,7 @@
 "symbol": "HYUNDAI",
 "name": "Hyundai Motor India Limited",
 "exchange": "NSE",
-"lev": 4.65,
+"lev": 4.64,
 "maxExposureCr": 50.0
 },
 {
@@ -4585,7 +4585,7 @@
 "symbol": "ICICIAMC",
 "name": "Icici Prudential Asset Management Company Limited",
 "exchange": "NSE",
-"lev": 3.64,
+"lev": 3.63,
 "maxExposureCr": 50.0
 },
 {
@@ -8939,7 +8939,7 @@
 "symbol": "RBA",
 "name": "Restaurant Brands Asia Limited",
 "exchange": "NSE",
-"lev": 3.01,
+"lev": 2.99,
 "maxExposureCr": 5.0
 },
 {
@@ -11627,7 +11627,7 @@
 "symbol": "VOLTAS",
 "name": "Voltas Limited",
 "exchange": "NSE",
-"lev": 4.28,
+"lev": 4.25,
 "maxExposureCr": 50.0
 },
 {
@@ -11690,7 +11690,7 @@
 "symbol": "WEBELSOLAR",
 "name": "Websol Energy System Limited",
 "exchange": "NSE",
-"lev": 2.48,
+"lev": 2.47,
 "maxExposureCr": 1.0
 },
 {
