@@ -830,6 +830,46 @@ function calcSectionHTML(): string {
     </details>`;
 }
 
+const HORIZONS = [7, 30, 90, 180, 365];
+let horizonOpen = false; // keep the panel open while inputs re-render it
+
+// Total cost grows in a straight line with days held (only interest depends on days), so the
+// day the cheaper broker flips is where the two lines cross.
+function horizonHTML(s: Stock, rates: Record<BrokerKey, BrokerRates>, funds: number, move: number): string {
+  const funded = BROKERS.filter((b) => isFunded(s[b]));
+  const at = (b: BrokerKey, d: number) => computeCosts(rates[b], funds, s[b]!.lev, d, move).total;
+  const head = `<tr><th>Hold for</th>${funded.map((b) => `<th>${BROKER_SHORT[b]}</th>`).join('')}</tr>`;
+  const body = HORIZONS.map((d) => {
+    const totals = funded.map((b) => at(b, d));
+    const low = Math.min(...totals);
+    return `<tr${d === 365 ? ' class="strong"' : ''}><th>${d === 365 ? '1 year' : `${d} days`}</th>${totals
+      .map((t) => `<td class="${funded.length > 1 && Math.abs(t - low) < 0.005 ? 'pos' : ''}">${inr(t)}</td>`)
+      .join('')}</tr>`;
+  }).join('');
+
+  let verdict = '';
+  if (funded.length === 2) {
+    const [a, b] = funded;
+    const fixedA = at(a, 0), fixedB = at(b, 0);
+    const dailyA = at(a, 1) - fixedA, dailyB = at(b, 1) - fixedB;
+    const nameA = BROKER_NAME[a], nameB = BROKER_NAME[b];
+    if (Math.abs(dailyA - dailyB) < 1e-9) {
+      verdict = fixedA <= fixedB ? `${nameA} is cheaper for any holding period.` : `${nameB} is cheaper for any holding period.`;
+    } else {
+      const cross = (fixedB - fixedA) / (dailyA - dailyB); // day the totals are equal
+      const [shortB, longB] = fixedA <= fixedB ? [nameA, nameB] : [nameB, nameA];
+      if (cross <= 0) verdict = `${dailyA < dailyB ? nameA : nameB} is cheaper for any holding period.`;
+      else verdict = `<b>${shortB}</b> is cheaper for holds up to <b>${Math.floor(cross)} days</b>; <b>${longB}</b> is cheaper beyond that.`;
+    }
+  }
+  return `<details class="calc-rates calc-horizon"${horizonOpen ? ' open' : ''}>
+      <summary>Short term vs long term <span class="muted small">· up to 1 year</span></summary>
+      ${verdict ? `<p class="horizon-verdict">${verdict}</p>` : ''}
+      <div class="table-scroll"><table class="calc-table">${head}${body}</table></div>
+      <p class="muted small">Total charges for the same funds and price move, held for each period. Brokerage, pledge, DP and taxes are paid once; only interest grows with time.</p>
+    </details>`;
+}
+
 function renderCalc() {
   const out = document.getElementById('calc-out');
   const s = state.sheetSym ? state.bySymbol.get(state.sheetSym) : null;
@@ -873,8 +913,10 @@ function renderCalc() {
   ].join('');
 
   const missing = BROKERS.filter((_, i) => !res[i]).map((b) => BROKER_NAME[b]);
+  const horizon = live.length ? horizonHTML(s, rates, funds, move) : '';
   out.innerHTML = live.length
     ? `<div class="table-scroll"><table class="calc-table">${head}${body}</table></div>
+       ${horizon}
        ${missing.length ? `<p class="muted small">${missing.join(' and ')} does not fund this stock for MTF.</p>` : ''}
        <p class="muted small">One buy order and one sell order on NSE, pledged in one request and sold in one go. Interest is charged on the broker's funds for each calendar day held.</p>`
     : '<p class="muted small">Neither broker funds this stock for MTF.</p>';
@@ -1508,6 +1550,7 @@ function bind() {
     'toggle',
     async (e) => {
       const d = e.target as HTMLDetailsElement;
+      if (d.classList?.contains('calc-horizon')) horizonOpen = d.open;
       if (d.id !== 'unmatched' || !d.open) return;
       try {
         state.unmatched ??= await getJSON<Unmatched[]>('/data/unmatched.json');

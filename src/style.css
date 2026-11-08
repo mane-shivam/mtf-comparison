@@ -1869,3 +1869,23 @@ td.down {
 .e-link:hover {
   text-decoration: underline;
 }
+
+.horizon-verdict {
+  margin: 0 14px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.horizon-verdict b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.calc-horizon .table-scroll {
+  margin-bottom: 4px;
+}
+
+.calc-table tr td.pos,
+.calc-table tr.strong td.pos {
+  color: var(--best);
+}
