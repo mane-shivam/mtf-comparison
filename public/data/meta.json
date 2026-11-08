@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-08T10:14:22Z",
+  "generatedAt": "2026-11-08T11:30:19Z",
   "surveillance": {
-    "fetchedAt": "2026-11-08T10:14:15Z",
+    "fetchedAt": "2026-11-08T11:30:13Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 474,
-        "fetchedAt": "2026-11-08T10:14:15Z",
+        "fetchedAt": "2026-11-08T11:30:13Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-08T10:14:22Z",
+    "fetchedAt": "2026-11-08T11:30:19Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T10:14:15Z",
+        "fetchedAt": "2026-11-08T11:30:14Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T10:14:16Z",
+        "fetchedAt": "2026-11-08T11:30:14Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T10:14:22Z",
+        "fetchedAt": "2026-11-08T11:30:19Z",
         "count": 1228,
         "error": null
       }
@@ -34,14 +34,14 @@
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-08T08:09:05Z",
+      "fetchedAt": "2026-11-08T11:29:47Z",
       "count": 1711,
       "status": "ok",
       "error": null,
       "matched": 1711
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-08T08:09:29Z",
+      "fetchedAt": "2026-11-08T11:30:10Z",
       "count": 2210,
       "status": "ok",
       "error": null,
