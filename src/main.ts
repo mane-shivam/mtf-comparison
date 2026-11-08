@@ -930,7 +930,11 @@ function renderCalc() {
     `<tr class="total"><th>Total charges</th>${res
       .map((r) => cell(r, (x) => `${inr2(x.total)}${cheapest !== null && Math.abs(x.total - cheapest) < 0.005 ? '<span class="tag">Cheaper</span>' : ''}`))
       .join('')}</tr>`,
-    row('Charges as % of your funds', (r) => `${((r.total / funds) * 100).toFixed(2)}%`),
+    row(
+      'Charges as % of your funds',
+      // Second line: everything except MTF interest, i.e. what the trade costs regardless of days held.
+      (r) => `${((r.total / funds) * 100).toFixed(2)}%<span class="sub">(${(((r.total - r.interest) / funds) * 100).toFixed(2)}% excl. interest)</span>`,
+    ),
     row('Break-even price rise', (r) => `≈ ${r.breakEvenPct.toFixed(2)}%`),
     row(`Net P&L if price moves ${move}%`, (r) => `<span class="${r.pnl >= 0 ? 'pos' : 'neg'}">${inr2(r.pnl)} <span class="muted">(${r.roiPct.toFixed(1)}%)</span></span>`, 'strong'),
   ].join('');
