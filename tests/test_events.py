@@ -33,3 +33,23 @@ def test_parse_actions():
     ])
     assert [(e["symbol"], e["title"], e["date"]) for e in out] == [("ITC", "Ex-dividend", "2026-11-12"), ("XYZ", "Split", "2026-11-14")]
     assert out[0]["link"].endswith("symbol=ITC")
+
+
+def test_parse_announcements_keeps_risky_categories_only():
+    rows = [
+        {"symbol": "AAA", "an_dt": "07-Nov-2026 23:28:04", "desc": "Credit Rating", "attchmntText": "AAA rating",
+         "attchmntFile": "https://x/a.pdf"},
+        {"symbol": "BBB", "an_dt": "06-Nov-2026 10:00:00", "desc": "Resignation of Statutory Auditor", "attchmntText": "",
+         "attchmntFile": ""},
+        {"symbol": "CCC", "an_dt": "06-Nov-2026 10:00:00", "desc": "Copy of Newspaper Publication"},
+    ]
+    out = {e["symbol"]: e for e in events.parse_announcements(rows)}
+    assert set(out) == {"AAA", "BBB"}
+    assert out["AAA"]["level"] == "watch" and out["AAA"]["link"] == "https://x/a.pdf" and out["AAA"]["date"] == "2026-11-07"
+    assert out["BBB"]["level"] == "alert" and out["BBB"]["title"] == "Auditor resigned"
+    assert out["BBB"]["link"].endswith("symbol=BBB")
+
+
+def test_parse_sec_list():
+    text = "Symbol,Series,Security Name,Band,Remarks\nAAA,EQ,A,20,-\nBBB,EQ,B,5,-\nCCC,BE,C,2,-\nDDD,SM,D,5,-\nEEE,EQ,E,No Band,-\n"
+    assert events.parse_sec_list(text) == {"BBB": {"band": 5, "series": "EQ"}, "CCC": {"band": 2, "series": "BE"}}

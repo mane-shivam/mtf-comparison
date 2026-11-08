@@ -1,4 +1,12 @@
 {
+"21STCENMGM|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"3IINFOLTD|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "A2ZINFRA|ASM|long|I": {
 "exact": true,
 "since": "2026-08-10"
@@ -7,25 +15,77 @@
 "exact": true,
 "since": "2026-10-16"
 },
+"AARADHYA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "AAREYDRUGS|ASM|long|I": {
 "exact": true,
 "since": "2026-09-23"
+},
+"AARNAV|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"AARTISURF|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "AASTHA|ASM|long|I": {
 "exact": true,
 "since": "2026-10-12"
 },
+"ABINFRA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ABMINTLLTD|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ACCORD|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ACCPL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ACSTECH|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "ACUTAAS|ASM|short|I": {
 "exact": true,
 "since": "2026-11-02"
+},
+"ADDICTIVE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ADISOFT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ADROITINFO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "AEPL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-07"
 },
+"AGASTYAEN|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "AGIIL|ASM|short|I": {
 "exact": true,
 "since": "2026-11-03"
+},
+"AGOL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "AGSTRA|GSM|None|0": {
 "exact": true,
@@ -39,6 +99,10 @@
 "exact": true,
 "since": "2026-09-25"
 },
+"AHLWEST|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "AIMTRON|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
@@ -47,21 +111,69 @@
 "exact": true,
 "since": "2026-11-08"
 },
+"AKANKSHA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "AKG|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"AKI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"AKSHARCHEM|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ALKALI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "ALLCARGO|ASM|long|I": {
 "exact": true,
 "since": "2026-08-31"
 },
+"ALMONDZ|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ALPHAGEO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "ALPINETEX|ASM|long|I": {
 "exact": true,
 "since": "2026-10-14"
 },
+"ALUFLUOR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"AMBALALSA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"AMBANIORGO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"AMDIND|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"AMEYA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "ANKITMETAL|GSM|None|0": {
 "exact": true,
 "since": "2026-10-09"
+},
+"ANMOL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "ANTELOPUS|ASM|long|I": {
 "exact": true,
@@ -71,9 +183,25 @@
 "exact": true,
 "since": "2026-11-06"
 },
+"APSISAERO|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
 "AQYLON|GSM|None|0": {
 "exact": true,
 "since": "2026-06-25"
+},
+"ARABIAN|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ARENTERP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ARIES|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "ARVEE|ASM|long|I": {
 "exact": false,
@@ -103,9 +231,17 @@
 "exact": true,
 "since": "2026-11-02"
 },
+"ATLANTAA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "ATNINTER|GSM|None|VI": {
 "exact": true,
 "since": "2020-09-10"
+},
+"AUROIMPEX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "AVADHSUGAR|ASM|long|I": {
 "exact": true,
@@ -127,17 +263,37 @@
 "exact": true,
 "since": "2026-10-30"
 },
+"BAFNAPH|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
 "BALKRISHNA|GSM|None|0": {
 "exact": true,
 "since": "2026-06-25"
+},
+"BALPHARMA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "BETA|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
 },
+"BHADORA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "BHAGERIA|ASM|long|I": {
 "exact": true,
 "since": "2026-10-01"
+},
+"BHAGYANGR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"BIKEWO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "BILVYAPAR|GSM|None|0": {
 "exact": true,
@@ -146,6 +302,14 @@
 "BIRLACABLE|ASM|long|I": {
 "exact": true,
 "since": "2026-10-01"
+},
+"BIRLAPREC|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"BI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "BLAL|GSM|None|0": {
 "exact": true,
@@ -167,6 +331,14 @@
 "exact": true,
 "since": "2026-08-13"
 },
+"BLUEWATER|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"BMISL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "BNAGROCHEM|ASM|long|I": {
 "exact": true,
 "since": "2026-10-30"
@@ -179,6 +351,26 @@
 "exact": true,
 "since": "2026-11-03"
 },
+"BOSS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"BULKCORP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"BURNPUR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CALSOFT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CAPTRUST|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
 "CBAZAAR|GSM|None|0": {
 "exact": true,
 "since": "2026-11-08"
@@ -187,8 +379,24 @@
 "exact": true,
 "since": "2025-12-12"
 },
+"CFEL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CHAVDA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CKKRETAIL|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
 "CLCIND|GSM|None|III": {
 "exact": true,
+"since": "2026-11-08"
+},
+"CLSL|ESM|None|I": {
+"exact": false,
 "since": "2026-11-08"
 },
 "CMICABLES|GSM|None|0": {
@@ -199,13 +407,41 @@
 "exact": true,
 "since": "2026-11-06"
 },
+"COMFINTE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "COMPINFO|GSM|None|0": {
 "exact": true,
 "since": "2024-12-13"
 },
+"CORDSCABLE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"COREIN|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CPCAP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "CREDENT|ASM|short|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"CRSL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CTE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CUBEXTUB|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
 },
 "CUPID|ASM|long|I": {
 "exact": true,
@@ -215,21 +451,65 @@
 "exact": true,
 "since": "2025-06-27"
 },
+"CURIS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"CYBERMEDIA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "CYIENTDLM|ASM|long|I": {
 "exact": true,
 "since": "2026-09-02"
+},
+"DAICHI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "DAVANGERE|ASM|long|I": {
 "exact": true,
 "since": "2026-10-12"
 },
+"DCG|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "DCMFINSERV|GSM|None|0": {
 "exact": true,
 "since": "2022-11-11"
 },
+"DCMNVL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"DCMSRIND|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"DEEP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"DELAPLEX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"DELPHIFX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "DEVX|ASM|long|I": {
 "exact": true,
 "since": "2026-10-13"
+},
+"DHABRIYA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"DHANSA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "DHARIWAL|ASM|short|II": {
 "exact": false,
@@ -259,6 +539,10 @@
 "exact": true,
 "since": "2020-08-07"
 },
+"EEPL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "ELITECON|ASM|long|I": {
 "exact": true,
 "since": "2026-07-15"
@@ -275,6 +559,10 @@
 "exact": true,
 "since": "2021-12-17"
 },
+"ESCONET|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "ESDS|ASM|long|I": {
 "exact": true,
 "since": "2026-09-16"
@@ -286,6 +574,10 @@
 "EVENTIONS|ASM|short|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"EXCELLENT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "FASCINATE|ASM|short|I": {
 "exact": true,
@@ -311,6 +603,18 @@
 "exact": true,
 "since": "2024-06-28"
 },
+"FONEBOX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"FRESHARA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"FWSTC|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "GANGAFORGE|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
@@ -331,9 +635,17 @@
 "exact": true,
 "since": "2026-06-25"
 },
+"GICL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "GIRIRAJ|ASM|short|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"GJL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "GLFL|GSM|None|0": {
 "exact": true,
@@ -343,6 +655,10 @@
 "exact": true,
 "since": "2026-08-07"
 },
+"GLOBAL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "GOACARBON|ASM|long|I": {
 "exact": true,
 "since": "2026-09-10"
@@ -351,13 +667,41 @@
 "exact": true,
 "since": "2022-09-16"
 },
+"GOLDSTAR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"GOLDTECH|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"GRADIENTE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"GRAVISSHO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "GREENCHEF|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
 },
+"GSLSU|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "GTECJAINX|GSM|None|0": {
 "exact": false,
 "since": "2026-11-04"
+},
+"GUJRAFFIA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"GULFPETRO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "GVKPIL|GSM|None|0": {
 "exact": true,
@@ -383,13 +727,45 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"HILINFRA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"HINDCON|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"HITECHCORP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "HMT|GSM|None|0": {
 "exact": true,
 "since": "2026-09-11"
 },
+"HOACFOODS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"HPTL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "HUBTOWN|ASM|short|I": {
 "exact": true,
 "since": "2026-11-02"
+},
+"ICDSLTD|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"IEML|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"IL&FSENGG|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "IL&FSTRANS|GSM|None|0": {
 "exact": true,
@@ -411,9 +787,21 @@
 "exact": true,
 "since": "2026-08-12"
 },
+"INFINIUM|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"INFOLLION|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "INFOMEDIA|GSM|None|0": {
 "exact": true,
 "since": "2025-12-09"
+},
+"INNOMET|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "INNOVISION|ASM|short|I": {
 "exact": true,
@@ -423,9 +811,17 @@
 "exact": true,
 "since": "2026-09-02"
 },
+"ISFT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "IVC|ASM|long|I": {
 "exact": true,
 "since": "2026-09-08"
+},
+"JAINIK|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "JALAN|GSM|None|0": {
 "exact": false,
@@ -435,6 +831,10 @@
 "exact": true,
 "since": "2026-08-24"
 },
+"JHS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "JINDWORLD|ASM|long|I": {
 "exact": true,
 "since": "2026-09-07"
@@ -443,17 +843,41 @@
 "exact": true,
 "since": "2026-10-15"
 },
+"JSIPL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "KABRAEXTRU|ASM|long|IV": {
 "exact": true,
 "since": "2026-09-28"
+},
+"KALYANIFRG|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "KAMANWALA|ASM|long|I": {
 "exact": true,
 "since": "2026-08-20"
 },
+"KANORICHEM|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "KAPSTON|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"KATARIA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"KAVDEFENCE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"KAYA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "KDL|ASM|short|II": {
 "exact": false,
@@ -471,13 +895,53 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"KLL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"KORE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"KOTARISUG|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "KREBSBIO|ASM|long|I": {
 "exact": true,
 "since": "2026-10-05"
 },
+"KRONOX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"KSHITIJPOL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"KSR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"LADDERUP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "LAKPRE|GSM|None|0": {
 "exact": true,
 "since": "2019-06-28"
+},
+"LANCORHOL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"LANDSMILL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"LEMERITE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "LGHL|ASM|long|I": {
 "exact": false,
@@ -485,6 +949,10 @@
 },
 "LOANFRONT|ASM|short|I": {
 "exact": true,
+"since": "2026-11-08"
+},
+"LYKALABS|ESM|None|II": {
+"exact": false,
 "since": "2026-11-08"
 },
 "MACPOWER|ASM|long|I": {
@@ -499,6 +967,18 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"MAL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"MANAKSTEEL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"MANAV|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "MANGALAM|ASM|long|I": {
 "exact": true,
 "since": "2026-09-11"
@@ -511,17 +991,41 @@
 "exact": true,
 "since": "2026-09-28"
 },
+"MANUGRAPH|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"MARC|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "MARSONS|ASM|short|I": {
 "exact": true,
 "since": "2026-11-03"
+},
+"MAWANASUG|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "MCCHRLS-B|GSM|None|0": {
 "exact": true,
 "since": "2026-06-25"
 },
+"MEDICAMEQ|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "MEDICO|ASM|long|I": {
 "exact": true,
 "since": "2026-10-26"
+},
+"MEGAFLEX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"MENNPIS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "MENONBE|ASM|long|II": {
 "exact": true,
@@ -531,9 +1035,25 @@
 "exact": true,
 "since": "2024-03-18"
 },
+"METALIC|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"MHLXMIRU|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "MILKYMIST|ASM|long|IV": {
 "exact": true,
 "since": "2026-09-23"
+},
+"MILTON|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"MINALIND|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "MMEL|ASM|short|I": {
 "exact": true,
@@ -543,6 +1063,10 @@
 "exact": true,
 "since": "2026-09-08"
 },
+"MOLDTECH|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "MORARJEE|GSM|None|I": {
 "exact": true,
 "since": "2026-11-08"
@@ -550,6 +1074,10 @@
 "MOREPENLAB|ASM|long|IV": {
 "exact": true,
 "since": "2026-10-08"
+},
+"MPDL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "MTARTECH|ASM|long|II": {
 "exact": true,
@@ -559,9 +1087,17 @@
 "exact": true,
 "since": "2026-08-07"
 },
+"MUKKA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "MYMUDRA|ASM|short|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"MYSORPETRO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "NAGAFERT|GSM|None|0": {
 "exact": true,
@@ -595,17 +1131,45 @@
 "exact": true,
 "since": "2026-10-23"
 },
+"NIRAJISPAT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"NRL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"NURECA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "OCCLLTD|ASM|short|II": {
 "exact": true,
 "since": "2026-11-05"
+},
+"ONELIFECAP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "ONIXSOLAR|ASM|long|I": {
 "exact": true,
 "since": "2026-09-11"
 },
+"ONWARDTEC|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "OPTIEMUS|ASM|long|I": {
 "exact": true,
 "since": "2026-10-07"
+},
+"OPTIFIN|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"OPTIVALUE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "ORTEL|GSM|None|II": {
 "exact": true,
@@ -619,13 +1183,33 @@
 "exact": true,
 "since": "2026-09-23"
 },
+"PANACHE|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"PAR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "PASHUPATI|ASM|long|I": {
 "exact": true,
 "since": "2026-10-29"
 },
+"PATILAUTOM|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"PCCL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "PEARLPOLY|ASM|long|I": {
 "exact": true,
 "since": "2026-09-24"
+},
+"PENTAGON|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "PERFECT|GSM|None|0": {
 "exact": false,
@@ -634,6 +1218,10 @@
 "PHOENXINTL|ASM|short|I": {
 "exact": true,
 "since": "2026-11-02"
+},
+"PKTEA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "PRAENG|ASM|long|I": {
 "exact": true,
@@ -651,6 +1239,18 @@
 "exact": true,
 "since": "2022-06-24"
 },
+"PRESSTONIC|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"PRIORITY|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"PRISMX|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "PRIZOR|ASM|long|I": {
 "exact": true,
 "since": "2026-11-08"
@@ -659,17 +1259,41 @@
 "exact": true,
 "since": "2026-08-28"
 },
+"QMSMEDI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"QUADPRO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "QUICKTOUCH|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"QUINTEGRA|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
 },
 "QUINTEGRA|GSM|None|0": {
 "exact": true,
 "since": "2024-08-09"
 },
+"QUINT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "RADAAN|GSM|None|0": {
 "exact": true,
 "since": "2026-06-25"
+},
+"RADHIKAJWE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"RADIOWALLA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "RAJSREESUG|ASM|long|I": {
 "exact": true,
@@ -679,6 +1303,10 @@
 "exact": true,
 "since": "2021-03-19"
 },
+"RAMASTEEL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "RANASUG|ASM|long|I": {
 "exact": true,
 "since": "2026-08-21"
@@ -687,9 +1315,21 @@
 "exact": true,
 "since": "2026-09-23"
 },
+"RBZJEWEL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"REFRACTORY|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "REGENCERAM|GSM|None|0": {
 "exact": true,
 "since": "2025-12-12"
+},
+"RETAIL|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
 },
 "RHETAN|ASM|long|I": {
 "exact": true,
@@ -703,6 +1343,26 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"RNBDENIMS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ROLLT|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"ROXHITECH|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"RPPL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"RTSPOWR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "RUBICON|ASM|long|I": {
 "exact": true,
 "since": "2026-08-18"
@@ -713,6 +1373,14 @@
 },
 "RUSHIL|ASM|short|I": {
 "exact": true,
+"since": "2026-11-08"
+},
+"SAAKSHI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SABAR|ESM|None|I": {
+"exact": false,
 "since": "2026-11-08"
 },
 "SADBHIN|ASM|short|I": {
@@ -751,6 +1419,10 @@
 "exact": true,
 "since": "2026-09-07"
 },
+"SCPL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SECMARK|ASM|long|I": {
 "exact": true,
 "since": "2026-09-01"
@@ -758,6 +1430,10 @@
 "SECURKLOUD|GSM|None|0": {
 "exact": true,
 "since": "2025-12-12"
+},
+"SHAHALLOYS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "SHANTIGOLD|ASM|long|I": {
 "exact": true,
@@ -767,6 +1443,14 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"SHARDUL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SHEKHAWATI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SHILPAMED|ASM|long|I": {
 "exact": true,
 "since": "2026-08-25"
@@ -775,6 +1459,10 @@
 "exact": true,
 "since": "2026-09-21"
 },
+"SHREEDHAR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SHREEJISPG|ASM|long|I": {
 "exact": true,
 "since": "2026-09-10"
@@ -782,6 +1470,10 @@
 "SHREEPUSHK|ASM|short|I": {
 "exact": true,
 "since": "2026-11-02"
+},
+"SHREERAMA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "SHRENIK|GSM|None|0": {
 "exact": false,
@@ -795,13 +1487,25 @@
 "exact": true,
 "since": "2026-08-20"
 },
+"SIGIND|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SIGMAADV|ASM|long|IV": {
 "exact": true,
 "since": "2026-08-25"
 },
+"SIKKO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SILKFLEX|ASM|short|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"SIMCA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "SKYGOLD|ASM|long|I": {
 "exact": true,
@@ -811,13 +1515,37 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"SPCON|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SPECIALITY|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SPENCERS|ASM|short|II": {
 "exact": true,
 "since": "2026-10-30"
 },
+"SPRL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SREEL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SRGHFL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-17"
+},
+"SRIKPRIND|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SSFL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "SSWL|ASM|long|I": {
 "exact": true,
@@ -827,6 +1555,10 @@
 "exact": true,
 "since": "2026-09-28"
 },
+"STLSTRINF|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "STLTECH|ASM|long|IV": {
 "exact": true,
 "since": "2026-05-11"
@@ -834,6 +1566,10 @@
 "SUMEETINDS|ASM|long|I": {
 "exact": true,
 "since": "2026-10-09"
+},
+"SUPREMEENG|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "SUPREMEENG|GSM|None|0": {
 "exact": false,
@@ -847,17 +1583,45 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"SUPTANERY|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SURANI|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "SVGLOBAL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-07"
+},
+"SWARAJ|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"SWARNSAR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "SYNOPTICS|ASM|short|I": {
 "exact": true,
 "since": "2026-11-06"
 },
+"TANKUP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"TARAPUR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "TARAPUR|GSM|None|0": {
 "exact": true,
 "since": "2026-05-08"
+},
+"TAURIAN|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "TBZ|ASM|long|IV": {
 "exact": true,
@@ -887,9 +1651,25 @@
 "exact": true,
 "since": "2026-11-08"
 },
+"TIJARIA|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
 "TIJARIA|GSM|None|0": {
 "exact": true,
 "since": "2022-04-08"
+},
+"TIKONA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"TIRUPATIFL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"TNTELE|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "TNTELE|GSM|None|0": {
 "exact": true,
@@ -899,9 +1679,17 @@
 "exact": true,
 "since": "2026-11-08"
 },
+"TOTAL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "TOYAMSL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-23"
+},
+"TPHQ|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "TURTLEMINT|ASM|long|I": {
 "exact": true,
@@ -911,12 +1699,56 @@
 "exact": true,
 "since": "2026-06-25"
 },
+"UCAL|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"UCL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"UDAYJEW|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "UFBL|ASM|long|IV": {
 "exact": true,
 "since": "2026-08-07"
 },
+"UGARSUGAR|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"UHTL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "UNIVAFOODS|GSM|None|III": {
 "exact": true,
+"since": "2026-11-08"
+},
+"UNIVASTU|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"UNIVPHOTO|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"USHAFIN|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"UTKAL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"UYFINCORP|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"VALIANTLAB|ESM|None|II": {
+"exact": false,
 "since": "2026-11-08"
 },
 "VALUE360|ASM|short|I": {
@@ -927,17 +1759,45 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"VCL|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "VEDPOWER|ASM|short|I": {
 "exact": true,
+"since": "2026-11-08"
+},
+"VELJAN|ESM|None|II": {
+"exact": false,
 "since": "2026-11-08"
 },
 "VENUSREM|ASM|long|IV": {
 "exact": true,
 "since": "2026-11-03"
 },
+"VERANDA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"VERTEXPLUS|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "VGL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-24"
+},
+"VIJIFIN|ESM|None|II": {
+"exact": false,
+"since": "2026-11-08"
+},
+"VIRAT|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
+"VISAKAIND|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "VISAMAN|ASM|short|I": {
 "exact": false,
@@ -959,6 +1819,10 @@
 "exact": true,
 "since": "2024-06-28"
 },
+"VIVO|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "VMARCIND|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
@@ -970,6 +1834,10 @@
 "VPRPL|ASM|long|I": {
 "exact": true,
 "since": "2026-08-11"
+},
+"VTMLTD|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "WELCORP|ASM|long|I": {
 "exact": true,
@@ -991,6 +1859,10 @@
 "exact": false,
 "since": "2026-11-04"
 },
+"WOMANCART|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
+},
 "XTRANET|ASM|long|I": {
 "exact": true,
 "since": "2026-10-01"
@@ -1006,6 +1878,10 @@
 "YUDIZ|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"ZEEMEDIA|ESM|None|I": {
+"exact": false,
+"since": "2026-11-08"
 },
 "ZENITHEXPO|ASM|long|I": {
 "exact": true,

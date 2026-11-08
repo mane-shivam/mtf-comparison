@@ -1,4 +1,4 @@
-"""NSE surveillance lists (ASM short/long term, GSM) with stage and the date each entry was added.
+"""NSE surveillance lists (ASM short/long term, GSM, ESM) with stage and the date each entry was added.
 
 Source: www.nseindia.com/api/reportASM and /api/reportGSM (needs the cookies the report page sets).
 BSE's own lists and Trendlyne both refuse requests from cloud servers, and ASM/GSM is decided jointly
@@ -26,10 +26,12 @@ from scrapers.common import RAW_DIR, ROOT, PoliteSession, now_iso
 NSE_PAGE = "https://www.nseindia.com/reports/asm"
 NSE_ASM = "https://www.nseindia.com/api/reportASM"
 NSE_GSM = "https://www.nseindia.com/api/reportGSM"
+NSE_ESM = "https://www.nseindia.com/api/reportESM"
 OUT = RAW_DIR / "surveillance.json"
 SEEN = ROOT / "data" / "surveillance_seen.json"
 IST = timezone(timedelta(hours=5, minutes=30))
-TRACKING_STARTED = "2026-11-04"  # entries first seen on this day may be older than that
+# Entries first seen on the day a list started being tracked may be older than that day.
+TRACKING_STARTED = {"ASM": "2026-11-04", "GSM": "2026-11-04", "ESM": "2026-11-08"}
 
 
 def stage_of(text: str) -> str:
@@ -61,6 +63,13 @@ def parse_nse_gsm(payload: list) -> list[dict]:
     return out
 
 
+def parse_nse_esm(payload: list) -> list[dict]:
+    """Enhanced Surveillance Measure (smaller companies): stage I or II."""
+    return [{"symbol": r["symbol"].strip().upper(), "ex": "NSE", "list": "ESM", "term": None,
+             "stage": stage_of(r.get("esmSurvIndicator", "")), "desc": r.get("survDesc") or ""}
+            for r in payload or [] if r.get("symbol")]
+
+
 def key(e: dict) -> str:
     return "|".join(str(x) for x in (e["symbol"], e["list"], e["term"], e["stage"]))
 
@@ -71,10 +80,11 @@ def date_entries(entries: list[dict], seen: dict, today: str) -> dict:
     for e in entries:
         k = key(e)
         rec = seen.get(k)
+        start = TRACKING_STARTED.get(e["list"], today)
         if isinstance(rec, str):  # older format: just the date
-            rec = {"since": rec, "exact": rec > TRACKING_STARTED}
-        if rec is None:
-            rec = {"since": today, "exact": today > TRACKING_STARTED}
+            rec = {"since": rec, "exact": rec > start}
+        if rec is None or (rec["since"] == start and rec["exact"]):
+            rec = {"since": rec["since"] if rec else today, "exact": (rec["since"] if rec else today) > start}
         live[k] = rec
         e.update(rec)
     return live
@@ -88,6 +98,10 @@ def main() -> int:
         s.s.headers["Accept"] = "application/json, text/plain, */*"
         s.get(NSE_PAGE)  # sets the cookies the API checks
         entries = parse_nse_asm(s.get(NSE_ASM).json()) + parse_nse_gsm(s.get(NSE_GSM).json())
+        try:
+            entries += parse_nse_esm(s.get(NSE_ESM).json())
+        except Exception as e:  # noqa: BLE001 - ESM is optional; ASM/GSM still count
+            print(f"[surveillance] ESM failed: {e}")
         if not entries:
             raise RuntimeError("NSE returned no rows")
         source = {"status": "ok", "count": len(entries), "fetchedAt": now_iso(), "error": None}

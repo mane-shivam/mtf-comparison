@@ -31,7 +31,7 @@ interface BrokerMeta {
 
 interface SurvFlag {
   ex: string[]; // 'NSE', 'BSE'
-  list: 'ASM' | 'GSM';
+  list: 'ASM' | 'GSM' | 'ESM';
   term: 'short' | 'long' | null;
   stage: string;
   since: string | null; // YYYY-MM-DD
@@ -41,7 +41,8 @@ interface SurvFlag {
 
 interface CoEvent {
   date: string; // YYYY-MM-DD: meeting date, or ex-date for a corporate action
-  kind: 'meeting' | 'action';
+  kind: 'meeting' | 'action' | 'news' | 'broker';
+  level?: 'alert' | 'watch' | 'info'; // news and broker-list changes only
   title: string; // 'Results', 'Results · Dividend', 'Ex-dividend', 'Split', ...
   detail: string;
   link: string; // filing on NSE, or the stock's NSE page
@@ -49,6 +50,7 @@ interface CoEvent {
 
 interface EventsFile {
   ban: { date: string | null; symbols: string[] } | null;
+  bands?: Record<string, { band: number | null; series: string }>;
   events: Record<string, CoEvent[]>;
 }
 
@@ -133,6 +135,7 @@ const state = {
   sheetSym: null as string | null, // stock open in the detail sheet
   events: {} as Record<string, CoEvent[]>, // company events from 3 days ago onwards
   ban: null as { date: string; symbols: Set<string> } | null, // NSE F&O ban list
+  bands: {} as Record<string, { band: number | null; series: string }>, // tight circuits and T2T series
 };
 
 async function loadSymbols(): Promise<Map<string, string>> {
@@ -394,6 +397,7 @@ async function loadData() {
     .then((ev) => {
       state.events = ev.events ?? {};
       state.ban = ev.ban?.date ? { date: ev.ban.date, symbols: new Set(ev.ban.symbols) } : null;
+      state.bands = ev.bands ?? {};
       render();
     })
     .catch(() => {});
@@ -408,8 +412,10 @@ async function loadData() {
 
 /* ---------- surveillance flags ---------- */
 
-const survLabel = (f: SurvFlag) => (f.list === 'GSM' ? `GSM ${f.stage}` : `${f.term === 'short' ? 'ST' : 'LT'}-ASM ${f.stage}`);
-const survName = (f: SurvFlag) => (f.list === 'GSM' ? 'Graded surveillance (GSM)' : `${f.term === 'short' ? 'Short-term' : 'Long-term'} ASM`);
+const survLabel = (f: SurvFlag) =>
+  f.list === 'ASM' ? `${f.term === 'short' ? 'ST' : 'LT'}-ASM ${f.stage}` : `${f.list} ${f.stage}`;
+const survName = (f: SurvFlag) =>
+  f.list === 'GSM' ? 'Graded surveillance (GSM)' : f.list === 'ESM' ? 'Enhanced surveillance (ESM)' : `${f.term === 'short' ? 'Short-term' : 'Long-term'} ASM`;
 // Stage I / 0 is the mildest step; anything later is drawn in red.
 const survSevere = (f: SurvFlag) => !['I', '0'].includes(f.stage);
 
@@ -452,7 +458,25 @@ const shortDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateStrin
 function eventFlagsHTML(sym: string): string {
   const out: string[] = [];
   if (inBan(sym)) out.push(`<span class="flag severe" title="In NSE F&amp;O ban for ${fmtDate(state.ban!.date)}">F&amp;O ban</span>`);
-  const evs = stockEvents(sym);
+  const all = stockEvents(sym);
+  // Most serious flagged news or broker-list change first, then the next scheduled event.
+  for (const level of ['alert', 'watch'] as const) {
+    const hits = all.filter((e) => e.level === level);
+    if (hits.length) {
+      const more = hits.length > 1 ? ` +${hits.length - 1}` : '';
+      const tip = hits.map((e) => `${fmtDate(e.date)}: ${e.title}`).join('\n');
+      out.push(`<span class="flag${level === 'alert' ? ' severe' : ''}" title="${esc(tip)}">${esc(hits[0].title)}${more}</span>`);
+      break;
+    }
+  }
+  const band = state.bands[sym];
+  if (band?.series === 'BE' || band?.series === 'BZ') {
+    out.push(`<span class="flag${band.series === 'BZ' ? ' severe' : ''}" title="Trade-to-trade segment (${band.series}): every trade settles by delivery">T2T</span>`);
+  }
+  if (band?.band && band.band <= 5) {
+    out.push(`<span class="flag${band.band <= 2 ? ' severe' : ''}" title="Price band ${band.band}%: the stock can move at most ${band.band}% in a day">${band.band}% band</span>`);
+  }
+  const evs = all.filter((e) => e.kind === 'meeting' || e.kind === 'action');
   if (evs.length) {
     const today = localISO();
     const next = evs.find((e) => e.date >= today) ?? evs[evs.length - 1];
@@ -682,7 +706,8 @@ function eventSourcesHTML(m: Meta): string {
   if (!src) return '';
   const rows: [string, string, SurvSource | undefined][] = [
     ['NSE F&amp;O ban list', BAN_LINK, src.ban],
-    ['NSE board meetings and corporate actions', 'https://www.nseindia.com/companies-listing/corporate-filings-event-calendar', src.events],
+    ['NSE price bands and T2T series', 'https://nsearchives.nseindia.com/content/equities/sec_list.csv', src.bands],
+    ['NSE board meetings, corporate actions and announcements', 'https://www.nseindia.com/companies-listing/corporate-filings-event-calendar', src.events],
   ];
   return rows
     .filter(([, , i]) => i)
@@ -859,15 +884,31 @@ function renderCalc() {
 
 function eventsSectionHTML(sym: string): string {
   const today = localISO();
+  const levelBadge = (e: CoEvent) =>
+    e.level === 'alert' ? '<span class="flag severe">Serious</span> ' : e.level === 'watch' ? '<span class="flag">Check</span> ' : '';
+  const kindNote = (e: CoEvent) =>
+    e.kind === 'action' ? ' <span class="muted small">· ex-date</span>' : e.kind === 'news' ? ' <span class="muted small">· announcement</span>' : '';
   const rows = stockEvents(sym).map((e) => {
     const when = e.date < today ? 'past' : e.date === today ? 'today' : '';
     return `<div class="e-row">
       <div class="e-date${when ? ` ${when}` : ''}"><span>${shortDate(e.date)}</span>${when === 'today' ? '<span class="tag">Today</span>' : ''}</div>
-      <div class="e-main"><div class="e-title">${esc(e.title)}${e.kind === 'action' ? ' <span class="muted small">· ex-date</span>' : ''}</div>
+      <div class="e-main"><div class="e-title">${levelBadge(e)}${esc(e.title)}${kindNote(e)}</div>
         ${e.detail ? `<div class="muted small">${esc(e.detail)}</div>` : ''}
         <a class="e-link" href="${esc(e.link)}" target="_blank" rel="noopener">Read more ↗</a></div>
     </div>`;
   });
+  const band = state.bands[sym];
+  if (band && (band.series === 'BE' || band.series === 'BZ' || (band.band && band.band <= 10))) {
+    const notes: string[] = [];
+    if (band.band) notes.push(`Price band ${band.band}%: the stock can move at most ${band.band}% in a day, so a leveraged position can get stuck at the circuit.`);
+    if (band.series === 'BE' || band.series === 'BZ') notes.push(`Trade-to-trade (${band.series}): every trade settles by delivery and no intraday netting is allowed${band.series === 'BZ' ? '; BZ also marks companies that have not met listing requirements' : ''}.`);
+    rows.unshift(`<div class="e-row">
+      <div class="e-date"><span>Now</span></div>
+      <div class="e-main"><div class="e-title">${band.series === 'BE' || band.series === 'BZ' ? `<span class="flag${band.series === 'BZ' ? ' severe' : ''}">T2T</span> ` : ''}${band.band ? `<span class="flag${band.band <= 2 ? ' severe' : ''}">${band.band}% band</span>` : ''}</div>
+        <div class="muted small">${notes.join(' ')}</div>
+        <a class="e-link" href="https://nsearchives.nseindia.com/content/equities/sec_list.csv" target="_blank" rel="noopener">Read more ↗</a></div>
+    </div>`);
+  }
   if (inBan(sym)) {
     rows.unshift(`<div class="e-row">
       <div class="e-date"><span>${shortDate(state.ban!.date)}</span></div>
@@ -876,7 +917,7 @@ function eventsSectionHTML(sym: string): string {
         <a class="e-link" href="${BAN_LINK}" target="_blank" rel="noopener">Read more ↗</a></div>
     </div>`);
   }
-  return rows.length ? `<h3>Events</h3><div class="s-list">${rows.join('')}</div>` : '';
+  return rows.length ? `<h3>Alerts and events</h3><div class="s-list">${rows.join('')}</div>` : '';
 }
 
 function survSectionHTML(sym: string): string {

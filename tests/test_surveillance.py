@@ -34,10 +34,15 @@ def test_dates_new_entries_and_bootstrap():
     assert set(live) == {"A|ASM|long|I", "B|GSM|None|0"}
     # first seen on the day tracking began: only "since at least"
     e = [{"symbol": "C", "list": "ASM", "term": "short", "stage": "I"}]
-    surveillance.date_entries(e, {}, surveillance.TRACKING_STARTED)
+    surveillance.date_entries(e, {}, surveillance.TRACKING_STARTED["ASM"])
     assert not e[0]["exact"]
 
 
 def test_stage_of():
     assert surveillance.stage_of("Stage IV") == "IV"
     assert surveillance.stage_of("Stage 0") == "0"
+
+
+def test_nse_esm():
+    rows = surveillance.parse_nse_esm([{"symbol": "3IINFOLTD", "esmSurvIndicator": "Stage II", "survDesc": "ESM II"}])
+    assert rows == [{"symbol": "3IINFOLTD", "ex": "NSE", "list": "ESM", "term": None, "stage": "II", "desc": "ESM II"}]

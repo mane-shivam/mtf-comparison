@@ -1,15 +1,20 @@
 {
-"fetchedAt": "2026-11-08T10:10:25Z",
+"fetchedAt": "2026-11-08T10:14:22Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-08T10:10:22Z",
+"fetchedAt": "2026-11-08T10:14:15Z",
+"error": null
+},
+"bands": {
+"status": "ok",
+"fetchedAt": "2026-11-08T10:14:16Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-08T10:10:25Z",
-"count": 1125,
+"fetchedAt": "2026-11-08T10:14:22Z",
+"count": 1228,
 "error": null
 }
 },
@@ -19,6 +24,2204 @@
 "KAYNES"
 ]
 },
+"bands": {
+"ABAN": {
+"band": 2,
+"series": "BE"
+},
+"ABMINTLLTD": {
+"band": 2,
+"series": "BE"
+},
+"ANKITMETAL": {
+"band": 2,
+"series": "BZ"
+},
+"ANSALAPI": {
+"band": 2,
+"series": "BZ"
+},
+"BAFNAPH": {
+"band": 2,
+"series": "BE"
+},
+"BLUECHIP": {
+"band": 2,
+"series": "EQ"
+},
+"CAPTRUST": {
+"band": 2,
+"series": "BE"
+},
+"CUBEXTUB": {
+"band": 2,
+"series": "BE"
+},
+"DSKULKARNI": {
+"band": 2,
+"series": "BE"
+},
+"FEL": {
+"band": 2,
+"series": "BZ"
+},
+"GVKPIL": {
+"band": 2,
+"series": "BE"
+},
+"ICDSLTD": {
+"band": 2,
+"series": "BE"
+},
+"LYKALABS": {
+"band": 2,
+"series": "BE"
+},
+"MBECL": {
+"band": 2,
+"series": "BE"
+},
+"MEP": {
+"band": 2,
+"series": "BZ"
+},
+"OSIAHYPER": {
+"band": 2,
+"series": "BZ"
+},
+"PANACHE": {
+"band": 2,
+"series": "BE"
+},
+"PARSVNATH": {
+"band": 2,
+"series": "BZ"
+},
+"QUINTEGRA": {
+"band": 2,
+"series": "BE"
+},
+"RAJRILTD": {
+"band": 2,
+"series": "BE"
+},
+"RELINFRA": {
+"band": 2,
+"series": "BE"
+},
+"RETAIL": {
+"band": 2,
+"series": "BE"
+},
+"ROLLT": {
+"band": 2,
+"series": "BE"
+},
+"SANWARIA": {
+"band": 2,
+"series": "BZ"
+},
+"SEYAIND": {
+"band": 2,
+"series": "BE"
+},
+"SIMBHALS": {
+"band": 2,
+"series": "BZ"
+},
+"SITINET": {
+"band": 2,
+"series": "BZ"
+},
+"TIJARIA": {
+"band": 2,
+"series": "BE"
+},
+"UCAL": {
+"band": 2,
+"series": "BE"
+},
+"UNIVPHOTO": {
+"band": 2,
+"series": "BE"
+},
+"VALIANTLAB": {
+"band": 2,
+"series": "BE"
+},
+"VELJAN": {
+"band": 2,
+"series": "BE"
+},
+"VIJIFIN": {
+"band": 2,
+"series": "BE"
+},
+"VIVIMEDLAB": {
+"band": 2,
+"series": "BZ"
+},
+"21STCENMGM": {
+"band": 5,
+"series": "BE"
+},
+"3IINFOLTD": {
+"band": 5,
+"series": "BE"
+},
+"A2ZINFRA": {
+"band": 5,
+"series": "EQ"
+},
+"AAREYDRUGS": {
+"band": 5,
+"series": "EQ"
+},
+"AARNAV": {
+"band": 5,
+"series": "BE"
+},
+"AARTISURF": {
+"band": 5,
+"series": "BE"
+},
+"AASTHA": {
+"band": 5,
+"series": "EQ"
+},
+"ABANSENT": {
+"band": 5,
+"series": "EQ"
+},
+"ABINFRA": {
+"band": 5,
+"series": "BE"
+},
+"ABSLLIQUID": {
+"band": 5,
+"series": "EQ"
+},
+"ACSTECH": {
+"band": 5,
+"series": "BE"
+},
+"ADROITINFO": {
+"band": 5,
+"series": "BE"
+},
+"AFFORDABLE": {
+"band": 5,
+"series": "EQ"
+},
+"AGASTYAEN": {
+"band": 5,
+"series": "BE"
+},
+"AGOL": {
+"band": 5,
+"series": "BE"
+},
+"AGSTRA": {
+"band": 5,
+"series": "BZ"
+},
+"AHCL": {
+"band": 5,
+"series": "EQ"
+},
+"AHLWEST": {
+"band": 5,
+"series": "BE"
+},
+"AKI": {
+"band": 5,
+"series": "BE"
+},
+"AKSHARCHEM": {
+"band": 5,
+"series": "BE"
+},
+"AKSHOPTFBR": {
+"band": 5,
+"series": "BE"
+},
+"ALKALI": {
+"band": 5,
+"series": "BE"
+},
+"ALMONDZ": {
+"band": 5,
+"series": "BE"
+},
+"ALPHAGEO": {
+"band": 5,
+"series": "BE"
+},
+"ALUFLUOR": {
+"band": 5,
+"series": "BE"
+},
+"AMBALALSA": {
+"band": 5,
+"series": "BE"
+},
+"AMDIND": {
+"band": 5,
+"series": "BE"
+},
+"ANMOL": {
+"band": 5,
+"series": "BE"
+},
+"AONELIQUID": {
+"band": 5,
+"series": "EQ"
+},
+"APOORVA": {
+"band": 5,
+"series": "EQ"
+},
+"AQYLON": {
+"band": 5,
+"series": "EQ"
+},
+"ARENTERP": {
+"band": 5,
+"series": "BE"
+},
+"ARIES": {
+"band": 5,
+"series": "BE"
+},
+"ARSHIYA": {
+"band": 5,
+"series": "BZ"
+},
+"ARVEE": {
+"band": 5,
+"series": "EQ"
+},
+"ASAHISONG": {
+"band": 5,
+"series": "EQ"
+},
+"ASHIKAG": {
+"band": 5,
+"series": "EQ"
+},
+"ASSAMENT": {
+"band": 5,
+"series": "EQ"
+},
+"ASTRON": {
+"band": 5,
+"series": "BZ"
+},
+"ATALREAL": {
+"band": 5,
+"series": "EQ"
+},
+"ATLANTAA": {
+"band": 5,
+"series": "BE"
+},
+"AUGMONT": {
+"band": 5,
+"series": "EQ"
+},
+"AVROIND": {
+"band": 5,
+"series": "EQ"
+},
+"BALPHARMA": {
+"band": 5,
+"series": "BE"
+},
+"BANKA": {
+"band": 5,
+"series": "EQ"
+},
+"BCSSL": {
+"band": 5,
+"series": "BE"
+},
+"BGRENERGY": {
+"band": 5,
+"series": "BE"
+},
+"BHAGYANGR": {
+"band": 5,
+"series": "BE"
+},
+"BI": {
+"band": 5,
+"series": "BE"
+},
+"BILVYAPAR": {
+"band": 5,
+"series": "BE"
+},
+"BIRLACABLE": {
+"band": 5,
+"series": "EQ"
+},
+"BIRLAPREC": {
+"band": 5,
+"series": "BE"
+},
+"BLISSGVS": {
+"band": 5,
+"series": "BE"
+},
+"BNAGROCHEM": {
+"band": 5,
+"series": "EQ"
+},
+"BNALTD": {
+"band": 5,
+"series": "EQ"
+},
+"BODALCHEM": {
+"band": 5,
+"series": "BE"
+},
+"BOHRAIND": {
+"band": 5,
+"series": "EQ"
+},
+"BURNPUR": {
+"band": 5,
+"series": "BE"
+},
+"CALSOFT": {
+"band": 5,
+"series": "BE"
+},
+"CASHIETF": {
+"band": 5,
+"series": "EQ"
+},
+"CFEL": {
+"band": 5,
+"series": "BE"
+},
+"COMFINTE": {
+"band": 5,
+"series": "BE"
+},
+"COMPINFO": {
+"band": 5,
+"series": "BZ"
+},
+"CONSOFINVT": {
+"band": 5,
+"series": "EQ"
+},
+"CORDSCABLE": {
+"band": 5,
+"series": "BE"
+},
+"COUNCODOS": {
+"band": 5,
+"series": "EQ"
+},
+"CPCAP": {
+"band": 5,
+"series": "BE"
+},
+"CRESTO": {
+"band": 5,
+"series": "EQ"
+},
+"CRSL": {
+"band": 5,
+"series": "BZ"
+},
+"CTE": {
+"band": 5,
+"series": "BE"
+},
+"CURAA": {
+"band": 5,
+"series": "EQ"
+},
+"CYBERMEDIA": {
+"band": 5,
+"series": "BE"
+},
+"DAICHI": {
+"band": 5,
+"series": "BE"
+},
+"DCMNVL": {
+"band": 5,
+"series": "BE"
+},
+"DCMSRIND": {
+"band": 5,
+"series": "BE"
+},
+"DEEP": {
+"band": 5,
+"series": "BE"
+},
+"DELPHIFX": {
+"band": 5,
+"series": "BE"
+},
+"DHABRIYA": {
+"band": 5,
+"series": "BE"
+},
+"DHARAN": {
+"band": 5,
+"series": "BZ"
+},
+"DIACABS": {
+"band": 5,
+"series": "EQ"
+},
+"DIGJAMLMTD": {
+"band": 5,
+"series": "EQ"
+},
+"DPABHUSHAN": {
+"band": 5,
+"series": "BE"
+},
+"DPSCLTD": {
+"band": 5,
+"series": "BE"
+},
+"DSFCL": {
+"band": 5,
+"series": "EQ"
+},
+"DTIL": {
+"band": 5,
+"series": "EQ"
+},
+"DUCON": {
+"band": 5,
+"series": "EQ"
+},
+"E2E": {
+"band": 5,
+"series": "EQ"
+},
+"EASTSILK": {
+"band": 5,
+"series": "BE"
+},
+"EBIX": {
+"band": 5,
+"series": "EQ"
+},
+"EKI": {
+"band": 5,
+"series": "EQ"
+},
+"ELCIDIN": {
+"band": 5,
+"series": "BE"
+},
+"ELIQUID": {
+"band": 5,
+"series": "EQ"
+},
+"ELITECON": {
+"band": 5,
+"series": "EQ"
+},
+"EMPOWER": {
+"band": 5,
+"series": "EQ"
+},
+"ENNATURE": {
+"band": 5,
+"series": "BE"
+},
+"EQUIPPP": {
+"band": 5,
+"series": "BE"
+},
+"ESAFSFB": {
+"band": 5,
+"series": "EQ"
+},
+"ESDS": {
+"band": 5,
+"series": "EQ"
+},
+"EUROTEXIND": {
+"band": 5,
+"series": "BE"
+},
+"FELDVR": {
+"band": 5,
+"series": "BZ"
+},
+"FLFL": {
+"band": 5,
+"series": "BZ"
+},
+"GANGAFORGE": {
+"band": 5,
+"series": "EQ"
+},
+"GAYAPROJ": {
+"band": 5,
+"series": "EQ"
+},
+"GENSOL": {
+"band": 5,
+"series": "BZ"
+},
+"GFLLIMITED": {
+"band": 5,
+"series": "BE"
+},
+"GICL": {
+"band": 5,
+"series": "BE"
+},
+"GOLDENTOBC": {
+"band": 5,
+"series": "BZ"
+},
+"GOLDTECH": {
+"band": 5,
+"series": "BE"
+},
+"GRADIENTE": {
+"band": 5,
+"series": "BE"
+},
+"GRAVISSHO": {
+"band": 5,
+"series": "BE"
+},
+"GROWWLIQID": {
+"band": 5,
+"series": "EQ"
+},
+"GSLSU": {
+"band": 5,
+"series": "BE"
+},
+"GTECJAINX": {
+"band": 5,
+"series": "BE"
+},
+"GUJRAFFIA": {
+"band": 5,
+"series": "BE"
+},
+"GULFPETRO": {
+"band": 5,
+"series": "BE"
+},
+"GVPTECH": {
+"band": 5,
+"series": "EQ"
+},
+"HAMPTON": {
+"band": 5,
+"series": "BZ"
+},
+"HDFCLIQUID": {
+"band": 5,
+"series": "EQ"
+},
+"HDIL": {
+"band": 5,
+"series": "BZ"
+},
+"HEROMOTORS": {
+"band": 5,
+"series": "EQ"
+},
+"HFCL": {
+"band": 5,
+"series": "BE"
+},
+"HILINFRA": {
+"band": 5,
+"series": "BE"
+},
+"HINDCON": {
+"band": 5,
+"series": "BE"
+},
+"HITECHCORP": {
+"band": 5,
+"series": "BE"
+},
+"HITECHGEAR": {
+"band": 5,
+"series": "BE"
+},
+"HLEGLAS": {
+"band": 5,
+"series": "EQ"
+},
+"HMT": {
+"band": 5,
+"series": "BZ"
+},
+"IGLSPIRITS": {
+"band": 5,
+"series": "BE"
+},
+"IL&FSENGG": {
+"band": 5,
+"series": "BZ"
+},
+"IL&FSTRANS": {
+"band": 5,
+"series": "BZ"
+},
+"INDORAMA": {
+"band": 5,
+"series": "EQ"
+},
+"INDOTHAI": {
+"band": 5,
+"series": "EQ"
+},
+"ISFT": {
+"band": 5,
+"series": "BE"
+},
+"JHS": {
+"band": 5,
+"series": "BE"
+},
+"JSIPL": {
+"band": 5,
+"series": "BE"
+},
+"KABRAEXTRU": {
+"band": 5,
+"series": "BE"
+},
+"KALYANI": {
+"band": 5,
+"series": "BE"
+},
+"KALYANIFRG": {
+"band": 5,
+"series": "BE"
+},
+"KAMAHOLD": {
+"band": 5,
+"series": "BE"
+},
+"KANORICHEM": {
+"band": 5,
+"series": "BE"
+},
+"KAVDEFENCE": {
+"band": 5,
+"series": "BE"
+},
+"KAYA": {
+"band": 5,
+"series": "BE"
+},
+"KCPSUGIND": {
+"band": 5,
+"series": "EQ"
+},
+"KICL": {
+"band": 5,
+"series": "BE"
+},
+"KOTARISUG": {
+"band": 5,
+"series": "BE"
+},
+"KOTIC": {
+"band": 5,
+"series": "EQ"
+},
+"KRIDHANINF": {
+"band": 5,
+"series": "EQ"
+},
+"KRN": {
+"band": 5,
+"series": "EQ"
+},
+"KRONOX": {
+"band": 5,
+"series": "BE"
+},
+"KSHITIJPOL": {
+"band": 5,
+"series": "BE"
+},
+"KSR": {
+"band": 5,
+"series": "BE"
+},
+"LADDERUP": {
+"band": 5,
+"series": "BE"
+},
+"LAKPRE": {
+"band": 5,
+"series": "BZ"
+},
+"LALITHAA": {
+"band": 5,
+"series": "EQ"
+},
+"LANCORHOL": {
+"band": 5,
+"series": "BE"
+},
+"LANDSMILL": {
+"band": 5,
+"series": "BE"
+},
+"LCCINFOTEC": {
+"band": 5,
+"series": "EQ"
+},
+"LEENEE": {
+"band": 5,
+"series": "EQ"
+},
+"LEMERITE": {
+"band": 5,
+"series": "BE"
+},
+"LGHL": {
+"band": 5,
+"series": "BE"
+},
+"LIQGRWBEES": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUID": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUID1": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDADD": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDBEES": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDBETA": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDBETF": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDCASE": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDETF": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDIETF": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDPLUS": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDSBI": {
+"band": 5,
+"series": "EQ"
+},
+"LIQUIDSHRI": {
+"band": 5,
+"series": "EQ"
+},
+"LOTUSDEV": {
+"band": 5,
+"series": "EQ"
+},
+"MAHASTEEL": {
+"band": 5,
+"series": "BE"
+},
+"MAHSCOOTER": {
+"band": 5,
+"series": "BE"
+},
+"MANAKSTEEL": {
+"band": 5,
+"series": "BE"
+},
+"MANUGRAPH": {
+"band": 5,
+"series": "BE"
+},
+"MAWANASUG": {
+"band": 5,
+"series": "BE"
+},
+"MBLINFRA": {
+"band": 5,
+"series": "EQ"
+},
+"MEDICAMEQ": {
+"band": 5,
+"series": "BE"
+},
+"MEDICAPQ": {
+"band": 5,
+"series": "EQ"
+},
+"MELSTAR": {
+"band": 5,
+"series": "BE"
+},
+"MENNPIS": {
+"band": 5,
+"series": "BE"
+},
+"MHLXMIRU": {
+"band": 5,
+"series": "BE"
+},
+"MIDWESTLTD": {
+"band": 5,
+"series": "BE"
+},
+"MILKYMIST": {
+"band": 5,
+"series": "BE"
+},
+"MINALIND": {
+"band": 5,
+"series": "BE"
+},
+"MMWL": {
+"band": 5,
+"series": "BE"
+},
+"MODISONLTD": {
+"band": 5,
+"series": "BE"
+},
+"MOLDTECH": {
+"band": 5,
+"series": "BE"
+},
+"MONEYBOXX": {
+"band": 5,
+"series": "EQ"
+},
+"MORARJEE": {
+"band": 5,
+"series": "BZ"
+},
+"MOREPENLAB": {
+"band": 5,
+"series": "BE"
+},
+"MPDL": {
+"band": 5,
+"series": "BE"
+},
+"MTARTECH": {
+"band": 5,
+"series": "EQ"
+},
+"MTEDUCARE": {
+"band": 5,
+"series": "BE"
+},
+"MUKKA": {
+"band": 5,
+"series": "BE"
+},
+"MVGJL": {
+"band": 5,
+"series": "EQ"
+},
+"MYSORPETRO": {
+"band": 5,
+"series": "BE"
+},
+"NATCAPSUQ": {
+"band": 5,
+"series": "EQ"
+},
+"NATIONSTD": {
+"band": 5,
+"series": "EQ"
+},
+"NECLIFE": {
+"band": 5,
+"series": "EQ"
+},
+"NEUEON": {
+"band": 5,
+"series": "BE"
+},
+"NEXTMEDIA": {
+"band": 5,
+"series": "EQ"
+},
+"NIMBSPROJ": {
+"band": 5,
+"series": "EQ"
+},
+"NINSYS": {
+"band": 5,
+"series": "EQ"
+},
+"NIRAJISPAT": {
+"band": 5,
+"series": "BE"
+},
+"NRL": {
+"band": 5,
+"series": "BE"
+},
+"NSIL": {
+"band": 5,
+"series": "BE"
+},
+"NURECA": {
+"band": 5,
+"series": "BE"
+},
+"OILCOUNTUB": {
+"band": 5,
+"series": "EQ"
+},
+"OMFREIGHT": {
+"band": 5,
+"series": "BE"
+},
+"OMNI": {
+"band": 5,
+"series": "BE"
+},
+"ONELIFECAP": {
+"band": 5,
+"series": "BE"
+},
+"ONIXSOLAR": {
+"band": 5,
+"series": "EQ"
+},
+"ONWARDTEC": {
+"band": 5,
+"series": "BE"
+},
+"ORTEL": {
+"band": 5,
+"series": "BZ"
+},
+"PALREDTEC": {
+"band": 5,
+"series": "EQ"
+},
+"PAR": {
+"band": 5,
+"series": "BE"
+},
+"PARASPETRO": {
+"band": 5,
+"series": "EQ"
+},
+"PEARLPOLY": {
+"band": 5,
+"series": "EQ"
+},
+"PHOENXINTL": {
+"band": 5,
+"series": "EQ"
+},
+"PILANIINVS": {
+"band": 5,
+"series": "BE"
+},
+"PKTEA": {
+"band": 5,
+"series": "BE"
+},
+"PRAXIS": {
+"band": 5,
+"series": "EQ"
+},
+"PREMIER": {
+"band": 5,
+"series": "BE"
+},
+"PRIORITY": {
+"band": 5,
+"series": "BE"
+},
+"PRISMX": {
+"band": 5,
+"series": "BE"
+},
+"PVP": {
+"band": 5,
+"series": "EQ"
+},
+"QMSMEDI": {
+"band": 5,
+"series": "BE"
+},
+"QUINT": {
+"band": 5,
+"series": "BE"
+},
+"RADHIKAJWE": {
+"band": 5,
+"series": "BE"
+},
+"RAJESHEXPO": {
+"band": 5,
+"series": "BZ"
+},
+"RAJTV": {
+"band": 5,
+"series": "EQ"
+},
+"RAMASTEEL": {
+"band": 5,
+"series": "BE"
+},
+"RAMBHAJO": {
+"band": 5,
+"series": "BE"
+},
+"RBZJEWEL": {
+"band": 5,
+"series": "BE"
+},
+"RCOM": {
+"band": 5,
+"series": "BE"
+},
+"REPL": {
+"band": 5,
+"series": "BE"
+},
+"RHETAN": {
+"band": 5,
+"series": "EQ"
+},
+"RHFL": {
+"band": 5,
+"series": "BZ"
+},
+"RKEC": {
+"band": 5,
+"series": "EQ"
+},
+"RMDRIP": {
+"band": 5,
+"series": "EQ"
+},
+"RNBDENIMS": {
+"band": 5,
+"series": "BE"
+},
+"RPPL": {
+"band": 5,
+"series": "BE"
+},
+"RTSPOWR": {
+"band": 5,
+"series": "BE"
+},
+"RUNWALENTR": {
+"band": 5,
+"series": "EQ"
+},
+"SAB": {
+"band": 5,
+"series": "EQ"
+},
+"SADBHIN": {
+"band": 5,
+"series": "EQ"
+},
+"SADHNANIQ": {
+"band": 5,
+"series": "EQ"
+},
+"SALSTEEL": {
+"band": 5,
+"series": "EQ"
+},
+"SAMBANDAM": {
+"band": 5,
+"series": "EQ"
+},
+"SBILIQETF": {
+"band": 5,
+"series": "EQ"
+},
+"SCANSTL": {
+"band": 5,
+"series": "EQ"
+},
+"SCPL": {
+"band": 5,
+"series": "BE"
+},
+"SETCO": {
+"band": 5,
+"series": "EQ"
+},
+"SETL": {
+"band": 5,
+"series": "EQ"
+},
+"SETUINFRA": {
+"band": 5,
+"series": "BZ"
+},
+"SHAHALLOYS": {
+"band": 5,
+"series": "BE"
+},
+"SHANTIGEAR": {
+"band": 5,
+"series": "EQ"
+},
+"SHARDUL": {
+"band": 5,
+"series": "BE"
+},
+"SHEKHAWATI": {
+"band": 5,
+"series": "BE"
+},
+"SHREERAMA": {
+"band": 5,
+"series": "BE"
+},
+"SHRENIK": {
+"band": 5,
+"series": "BZ"
+},
+"SICALLOG": {
+"band": 5,
+"series": "EQ"
+},
+"SIEL": {
+"band": 5,
+"series": "EQ"
+},
+"SIGIND": {
+"band": 5,
+"series": "BE"
+},
+"SIGMAADV": {
+"band": 5,
+"series": "BE"
+},
+"SIKKO": {
+"band": 5,
+"series": "BE"
+},
+"SILINV": {
+"band": 5,
+"series": "BE"
+},
+"SIMPLXREA": {
+"band": 5,
+"series": "EQ"
+},
+"SMLMAH": {
+"band": 5,
+"series": "EQ"
+},
+"SMLT": {
+"band": 5,
+"series": "BE"
+},
+"SONAMLTD": {
+"band": 5,
+"series": "EQ"
+},
+"SPECIALITY": {
+"band": 5,
+"series": "BE"
+},
+"SPECTRUM": {
+"band": 5,
+"series": "EQ"
+},
+"SPENCERS": {
+"band": 5,
+"series": "EQ"
+},
+"SREEL": {
+"band": 5,
+"series": "BE"
+},
+"SRGHFL": {
+"band": 5,
+"series": "EQ"
+},
+"SRIKPRIND": {
+"band": 5,
+"series": "BE"
+},
+"STALLION": {
+"band": 5,
+"series": "EQ"
+},
+"STARTECK": {
+"band": 5,
+"series": "EQ"
+},
+"STLNETWORK": {
+"band": 5,
+"series": "EQ"
+},
+"STLSTRINF": {
+"band": 5,
+"series": "BE"
+},
+"STLTECH": {
+"band": 5,
+"series": "BE"
+},
+"SUMEETINDS": {
+"band": 5,
+"series": "EQ"
+},
+"SUNFLAG": {
+"band": 5,
+"series": "EQ"
+},
+"SUPERSPIN": {
+"band": 5,
+"series": "EQ"
+},
+"SUPREMEENG": {
+"band": 5,
+"series": "BZ"
+},
+"SUPREMEINF": {
+"band": 5,
+"series": "EQ"
+},
+"SUPTANERY": {
+"band": 5,
+"series": "BE"
+},
+"SWANDEF": {
+"band": 5,
+"series": "BE"
+},
+"SWARAJ": {
+"band": 5,
+"series": "BE"
+},
+"SWARNSAR": {
+"band": 5,
+"series": "BE"
+},
+"SWISSMLTRY": {
+"band": 5,
+"series": "EQ"
+},
+"SYSTMTXC": {
+"band": 5,
+"series": "EQ"
+},
+"TAKE": {
+"band": 5,
+"series": "EQ"
+},
+"TARAPUR": {
+"band": 5,
+"series": "BE"
+},
+"TBZ": {
+"band": 5,
+"series": "BE"
+},
+"TECHNVISN": {
+"band": 5,
+"series": "EQ"
+},
+"TERAI": {
+"band": 5,
+"series": "EQ"
+},
+"THACKER": {
+"band": 5,
+"series": "EQ"
+},
+"THAKDEV": {
+"band": 5,
+"series": "EQ"
+},
+"TICL": {
+"band": 5,
+"series": "EQ"
+},
+"TIKONA": {
+"band": 5,
+"series": "BE"
+},
+"TIL": {
+"band": 5,
+"series": "EQ"
+},
+"TIRUPATIFL": {
+"band": 5,
+"series": "BE"
+},
+"TNTELE": {
+"band": 5,
+"series": "BE"
+},
+"TOTAL": {
+"band": 5,
+"series": "BE"
+},
+"TOYAMSL": {
+"band": 5,
+"series": "EQ"
+},
+"TPHQ": {
+"band": 5,
+"series": "BE"
+},
+"TRANSPEK": {
+"band": 5,
+"series": "EQ"
+},
+"TURTLEMINT": {
+"band": 5,
+"series": "EQ"
+},
+"TVSHLTD": {
+"band": 5,
+"series": "BE"
+},
+"TVVISION": {
+"band": 5,
+"series": "BE"
+},
+"UDAYJEW": {
+"band": 5,
+"series": "BE"
+},
+"UFBL": {
+"band": 5,
+"series": "BE"
+},
+"UGARSUGAR": {
+"band": 5,
+"series": "BE"
+},
+"UNIVASTU": {
+"band": 5,
+"series": "BE"
+},
+"UPHOT": {
+"band": 5,
+"series": "EQ"
+},
+"UYFINCORP": {
+"band": 5,
+"series": "BE"
+},
+"VASUPRADA": {
+"band": 5,
+"series": "EQ"
+},
+"VCL": {
+"band": 5,
+"series": "BE"
+},
+"VENUSREM": {
+"band": 5,
+"series": "BE"
+},
+"VERANDA": {
+"band": 5,
+"series": "BE"
+},
+"VHLTD": {
+"band": 5,
+"series": "BE"
+},
+"VIPULLTD": {
+"band": 5,
+"series": "EQ"
+},
+"VIRAT": {
+"band": 5,
+"series": "BE"
+},
+"VIRTUALG": {
+"band": 5,
+"series": "EQ"
+},
+"VISAKAIND": {
+"band": 5,
+"series": "BE"
+},
+"VISL": {
+"band": 5,
+"series": "EQ"
+},
+"VLEGOV": {
+"band": 5,
+"series": "EQ"
+},
+"VNL": {
+"band": 5,
+"series": "EQ"
+},
+"VTMLTD": {
+"band": 5,
+"series": "BE"
+},
+"WAAREEINDO": {
+"band": 5,
+"series": "EQ"
+},
+"WARDINMOBI": {
+"band": 5,
+"series": "BZ"
+},
+"WEBELSOLAR": {
+"band": 5,
+"series": "EQ"
+},
+"WEL": {
+"band": 5,
+"series": "EQ"
+},
+"WILLAMAGOR": {
+"band": 5,
+"series": "BE"
+},
+"XTRANET": {
+"band": 5,
+"series": "EQ"
+},
+"ZEEMEDIA": {
+"band": 5,
+"series": "BE"
+},
+"ZENITHEXPO": {
+"band": 5,
+"series": "EQ"
+},
+"ABDL": {
+"band": 10,
+"series": "EQ"
+},
+"ACCURACY": {
+"band": 10,
+"series": "EQ"
+},
+"ACEVECTOR": {
+"band": 10,
+"series": "EQ"
+},
+"AEGISVOPAK": {
+"band": 10,
+"series": "EQ"
+},
+"AEROPLANE": {
+"band": 10,
+"series": "EQ"
+},
+"AGRITECH": {
+"band": 10,
+"series": "EQ"
+},
+"AJAXENGG": {
+"band": 10,
+"series": "EQ"
+},
+"AKUMS": {
+"band": 10,
+"series": "EQ"
+},
+"ALLCARGO": {
+"band": 10,
+"series": "EQ"
+},
+"AMAL": {
+"band": 10,
+"series": "EQ"
+},
+"ARCIL": {
+"band": 10,
+"series": "EQ"
+},
+"ARCL": {
+"band": 10,
+"series": "EQ"
+},
+"ATLANTAELE": {
+"band": 10,
+"series": "EQ"
+},
+"AUSOMENT": {
+"band": 10,
+"series": "EQ"
+},
+"AVANCE": {
+"band": 10,
+"series": "EQ"
+},
+"AXISCADES": {
+"band": 10,
+"series": "EQ"
+},
+"BAJAJHFL": {
+"band": 10,
+"series": "EQ"
+},
+"BHAGERIA": {
+"band": 10,
+"series": "EQ"
+},
+"BLUECOAST": {
+"band": 10,
+"series": "EQ"
+},
+"BMWVENTLTD": {
+"band": 10,
+"series": "EQ"
+},
+"BONFIG": {
+"band": 10,
+"series": "EQ"
+},
+"BTTL": {
+"band": 10,
+"series": "EQ"
+},
+"CEIGALL": {
+"band": 10,
+"series": "EQ"
+},
+"CEMPRO": {
+"band": 10,
+"series": "EQ"
+},
+"CLEDUCATE": {
+"band": 10,
+"series": "EQ"
+},
+"CMRGREEN": {
+"band": 10,
+"series": "EQ"
+},
+"CNL": {
+"band": 10,
+"series": "EQ"
+},
+"CORDELIA": {
+"band": 10,
+"series": "EQ"
+},
+"CPPLUS": {
+"band": 10,
+"series": "EQ"
+},
+"CRIZAC": {
+"band": 10,
+"series": "EQ"
+},
+"DBREALTY": {
+"band": 10,
+"series": "EQ"
+},
+"DEEDEV": {
+"band": 10,
+"series": "EQ"
+},
+"DHOOTTRANS": {
+"band": 10,
+"series": "EQ"
+},
+"DHRUV": {
+"band": 10,
+"series": "EQ"
+},
+"DIGISPICE": {
+"band": 10,
+"series": "EQ"
+},
+"DISHTV": {
+"band": 10,
+"series": "EQ"
+},
+"DPWIRES": {
+"band": 10,
+"series": "EQ"
+},
+"EDELALTS": {
+"band": 10,
+"series": "EQ"
+},
+"EIFFL": {
+"band": 10,
+"series": "EQ"
+},
+"ELECTHERM": {
+"band": 10,
+"series": "EQ"
+},
+"ELLEN": {
+"band": 10,
+"series": "EQ"
+},
+"ELPROINTL": {
+"band": 10,
+"series": "EQ"
+},
+"EMAMIREAL": {
+"band": 10,
+"series": "EQ"
+},
+"EMCURE": {
+"band": 10,
+"series": "EQ"
+},
+"EMMVEE": {
+"band": 10,
+"series": "EQ"
+},
+"EMUDHRA": {
+"band": 10,
+"series": "EQ"
+},
+"ESSENTIA": {
+"band": 10,
+"series": "EQ"
+},
+"FILATFASH": {
+"band": 10,
+"series": "EQ"
+},
+"FLAIR": {
+"band": 10,
+"series": "EQ"
+},
+"FMNL": {
+"band": 10,
+"series": "EQ"
+},
+"FUSIONCX": {
+"band": 10,
+"series": "EQ"
+},
+"GATECH": {
+"band": 10,
+"series": "EQ"
+},
+"GENESYS": {
+"band": 10,
+"series": "EQ"
+},
+"GKENERGY": {
+"band": 10,
+"series": "EQ"
+},
+"GLFL": {
+"band": 10,
+"series": "EQ"
+},
+"GLOBALE": {
+"band": 10,
+"series": "EQ"
+},
+"GOPAL": {
+"band": 10,
+"series": "EQ"
+},
+"GRANDOAK": {
+"band": 10,
+"series": "EQ"
+},
+"HAPPYFORGE": {
+"band": 10,
+"series": "EQ"
+},
+"HDFIRE": {
+"band": 10,
+"series": "EQ"
+},
+"HEXATRADEX": {
+"band": 10,
+"series": "EQ"
+},
+"HILTON": {
+"band": 10,
+"series": "EQ"
+},
+"HORIZONIND": {
+"band": 10,
+"series": "EQ"
+},
+"HYBRIDFIN": {
+"band": 10,
+"series": "EQ"
+},
+"ICICIAMC": {
+"band": 10,
+"series": "EQ"
+},
+"IDEAFORGE": {
+"band": 10,
+"series": "EQ"
+},
+"IGIL": {
+"band": 10,
+"series": "EQ"
+},
+"INDOMIM": {
+"band": 10,
+"series": "EQ"
+},
+"INDOTECH": {
+"band": 10,
+"series": "EQ"
+},
+"INSPIRISYS": {
+"band": 10,
+"series": "EQ"
+},
+"JAIBALAJI": {
+"band": 10,
+"series": "EQ"
+},
+"JAYKAY": {
+"band": 10,
+"series": "EQ"
+},
+"JINDWORLD": {
+"band": 10,
+"series": "EQ"
+},
+"JKIPL": {
+"band": 10,
+"series": "EQ"
+},
+"JNPR": {
+"band": 10,
+"series": "EQ"
+},
+"JUNIPER": {
+"band": 10,
+"series": "EQ"
+},
+"KAKATCEM": {
+"band": 10,
+"series": "EQ"
+},
+"KALPATARU": {
+"band": 10,
+"series": "EQ"
+},
+"KANCHI": {
+"band": 10,
+"series": "EQ"
+},
+"KANCOTEA": {
+"band": 10,
+"series": "EQ"
+},
+"KARAMTARA": {
+"band": 10,
+"series": "EQ"
+},
+"KAUSHALYA": {
+"band": 10,
+"series": "EQ"
+},
+"KESORAMIND": {
+"band": 10,
+"series": "EQ"
+},
+"KJMCFIN": {
+"band": 10,
+"series": "EQ"
+},
+"KRITINUT": {
+"band": 10,
+"series": "EQ"
+},
+"KUSUMGAR": {
+"band": 10,
+"series": "EQ"
+},
+"LASERPOWER": {
+"band": 10,
+"series": "EQ"
+},
+"LCCPROJECT": {
+"band": 10,
+"series": "EQ"
+},
+"LGEINDIA": {
+"band": 10,
+"series": "EQ"
+},
+"MADHUCON": {
+"band": 10,
+"series": "EQ"
+},
+"MANGALAM": {
+"band": 10,
+"series": "EQ"
+},
+"MANORG": {
+"band": 10,
+"series": "EQ"
+},
+"MASKINVEST": {
+"band": 10,
+"series": "EQ"
+},
+"MCLEODRUSS": {
+"band": 10,
+"series": "EQ"
+},
+"MEDICO": {
+"band": 10,
+"series": "EQ"
+},
+"MENONBE": {
+"band": 10,
+"series": "EQ"
+},
+"MICEL": {
+"band": 10,
+"series": "EQ"
+},
+"MUKESHB": {
+"band": 10,
+"series": "EQ"
+},
+"NAVKARURB": {
+"band": 10,
+"series": "EQ"
+},
+"NEAGI": {
+"band": 10,
+"series": "EQ"
+},
+"NORBTEAEXP": {
+"band": 10,
+"series": "EQ"
+},
+"ODIGMA": {
+"band": 10,
+"series": "EQ"
+},
+"OMAXE": {
+"band": 10,
+"series": "EQ"
+},
+"ONEGLOBAL": {
+"band": 10,
+"series": "EQ"
+},
+"ONIDA": {
+"band": 10,
+"series": "EQ"
+},
+"ONMOBILE": {
+"band": 10,
+"series": "EQ"
+},
+"ORIENTCABL": {
+"band": 10,
+"series": "EQ"
+},
+"ORIENTLTD": {
+"band": 10,
+"series": "EQ"
+},
+"ORTINGLOBE": {
+"band": 10,
+"series": "EQ"
+},
+"OSWALPUMPS": {
+"band": 10,
+"series": "EQ"
+},
+"PARKHOSPS": {
+"band": 10,
+"series": "EQ"
+},
+"PASHUPATI": {
+"band": 10,
+"series": "EQ"
+},
+"PILITA": {
+"band": 10,
+"series": "EQ"
+},
+"PLAZACABLE": {
+"band": 10,
+"series": "EQ"
+},
+"PNGJL": {
+"band": 10,
+"series": "EQ"
+},
+"POWERICA": {
+"band": 10,
+"series": "EQ"
+},
+"PPAP": {
+"band": 10,
+"series": "EQ"
+},
+"PRADPME": {
+"band": 10,
+"series": "EQ"
+},
+"PRASOLCHEM": {
+"band": 10,
+"series": "EQ"
+},
+"PROTEAN": {
+"band": 10,
+"series": "EQ"
+},
+"QPOWER": {
+"band": 10,
+"series": "EQ"
+},
+"RAMCOSYS": {
+"band": 10,
+"series": "EQ"
+},
+"RAYMOND": {
+"band": 10,
+"series": "EQ"
+},
+"RSDFIN": {
+"band": 10,
+"series": "EQ"
+},
+"RSSOFTWARE": {
+"band": 10,
+"series": "EQ"
+},
+"S&SPOWER": {
+"band": 10,
+"series": "EQ"
+},
+"SAATVIKGL": {
+"band": 10,
+"series": "EQ"
+},
+"SADBHAV": {
+"band": 10,
+"series": "EQ"
+},
+"SANATHAN": {
+"band": 10,
+"series": "EQ"
+},
+"SASKEN": {
+"band": 10,
+"series": "EQ"
+},
+"SAYAJIIND": {
+"band": 10,
+"series": "EQ"
+},
+"SBCL": {
+"band": 10,
+"series": "EQ"
+},
+"SBIFUNDS": {
+"band": 10,
+"series": "EQ"
+},
+"SEJALLTD": {
+"band": 10,
+"series": "EQ"
+},
+"SEMAC": {
+"band": 10,
+"series": "EQ"
+},
+"SGLRES": {
+"band": 10,
+"series": "EQ"
+},
+"SHIVAM-RE1": {
+"band": 10,
+"series": "BE"
+},
+"SHIVAMILLS": {
+"band": 10,
+"series": "EQ"
+},
+"SHREEJISPG": {
+"band": 10,
+"series": "EQ"
+},
+"SHRIKRISH": {
+"band": 10,
+"series": "EQ"
+},
+"SHRINGARMS": {
+"band": 10,
+"series": "EQ"
+},
+"SHYAMCENT": {
+"band": 10,
+"series": "EQ"
+},
+"SICAGEN": {
+"band": 10,
+"series": "EQ"
+},
+"SOFTTECH": {
+"band": 10,
+"series": "EQ"
+},
+"SOMATEX": {
+"band": 10,
+"series": "EQ"
+},
+"SONAL": {
+"band": 10,
+"series": "EQ"
+},
+"STEAMHOUSE": {
+"band": 10,
+"series": "EQ"
+},
+"STYL": {
+"band": 10,
+"series": "EQ"
+},
+"STYLEBAAZA": {
+"band": 10,
+"series": "EQ"
+},
+"SUDARSHAN": {
+"band": 10,
+"series": "EQ"
+},
+"SUDEEPPHRM": {
+"band": 10,
+"series": "EQ"
+},
+"SUNSHINE": {
+"band": 10,
+"series": "EQ"
+},
+"SVPGLOB": {
+"band": 10,
+"series": "EQ"
+},
+"TATACAP": {
+"band": 10,
+"series": "EQ"
+},
+"THANGAMAYL": {
+"band": 10,
+"series": "EQ"
+},
+"THELEELA": {
+"band": 10,
+"series": "EQ"
+},
+"TOKYOPLAST": {
+"band": 10,
+"series": "EQ"
+},
+"TRAVELFOOD": {
+"band": 10,
+"series": "EQ"
+},
+"UEL": {
+"band": 10,
+"series": "EQ"
+},
+"UMAEXPORTS": {
+"band": 10,
+"series": "EQ"
+},
+"UNIINFO": {
+"band": 10,
+"series": "EQ"
+},
+"UNIMECH": {
+"band": 10,
+"series": "EQ"
+},
+"URAVIDEF": {
+"band": 10,
+"series": "EQ"
+},
+"UTLSOLAR": {
+"band": 10,
+"series": "EQ"
+},
+"VENTIVE": {
+"band": 10,
+"series": "EQ"
+},
+"VGCL": {
+"band": 10,
+"series": "EQ"
+},
+"VIDYAWIRES": {
+"band": 10,
+"series": "EQ"
+},
+"VIJSOLX": {
+"band": 10,
+"series": "EQ"
+},
+"VINEETLAB": {
+"band": 10,
+"series": "EQ"
+},
+"VISACHROME": {
+"band": 10,
+"series": "EQ"
+},
+"VITAL": {
+"band": 10,
+"series": "EQ"
+},
+"WHEELS": {
+"band": 10,
+"series": "EQ"
+}
+},
 "events": [
 {
 "symbol": "3MINDIA",
@@ -27,6 +2230,15 @@
 "title": "Results",
 "detail": "3M INDIA LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1158_20261014_163331599_WEB.html"
+},
+{
+"symbol": "3MINDIA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "3M India Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/3MINDIA_ROID_103969_KMP_Doc.zip"
 },
 {
 "symbol": "694GS2036",
@@ -117,6 +2329,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27080_20261103_161937877_WEB.html"
 },
 {
+"symbol": "AAVAS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Aavas Financiers Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/AAVAS_05112026171817_Credit_Rating_Disclosure_Final.pdf"
+},
+{
 "symbol": "ABB",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -203,6 +2424,15 @@
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.com/corporate/ADVANIHOTR_05112026181617_20261105_BMNotice_UFR_Sep2026_mb.pdf"
+},
+{
+"symbol": "AEQUS",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "Aequs Limited has informed the Exchange about sanction of Scheme of Amalgamation between Aequs Limited (\"Transferee Company) and AeroStructures Manufacturing India Private Limited, Aequs Engineered Plastics Private Limited and Aequs Force C",
+"link": "https://nsearchives.nseindia.com/corporate/AEQUSLIMITED_06112026184033_SE_Intimation_Sanction_of_Order.pdf"
 },
 {
 "symbol": "AFFORDABLE",
@@ -549,6 +2779,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17254_20261030_141739321_WEB.html"
 },
 {
+"symbol": "ANUP",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "The Anup Engineering Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/ANUP_ROID_104208_KMP_Doc.zip"
+},
+{
 "symbol": "ANURAS",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -571,6 +2810,15 @@
 "title": "Results",
 "detail": "ANJANI PORTLAND CEMENT LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14887_20261103_114020970_WEB.html"
+},
+{
+"symbol": "APCOTEXIND",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Apcotex Industries Limited has informed the Exchange about orders passed by Assistant Commissioner, Division - VI, CGST & C. EX. Raigad Commissionerate.",
+"link": "https://nsearchives.nseindia.com/corporate/APCOTEXIND_06112026182243_Regulation_30_-_signed.pdf"
 },
 {
 "symbol": "APEX",
@@ -779,6 +3027,15 @@
 "title": "Results",
 "detail": "ASTRAZENECA PHARMA INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1686_20261030_144151489_WEB.html"
+},
+{
+"symbol": "ASTRON",
+"date": "2026-11-07",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.com/corporate/ASTRON_07112026171147_Intimation_8th_Oct_2026.pdf"
 },
 {
 "symbol": "ATALREAL",
@@ -1205,12 +3462,30 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2002_20261026_192632288_WEB.html"
 },
 {
+"symbol": "BHARTIARTL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Bharti Airtel Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_06112026144741_BhartiAirtelReg30disclosure.pdf"
+},
+{
 "symbol": "BHARTIHEXA",
 "date": "2026-11-05",
 "kind": "meeting",
 "title": "Results",
 "detail": "BHARTI HEXACOM LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17875_20261026_191811332_WEB.html"
+},
+{
+"symbol": "BHARTIHEXA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Bharti Hexacom Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/BHARTIHEXA_ROID_104116_KMP_Doc.zip"
 },
 {
 "symbol": "BIKAJI",
@@ -1275,6 +3550,15 @@
 "title": "Results",
 "detail": "B. L. KASHYAP AND SONS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2375_20261103_100433246_WEB.html"
+},
+{
+"symbol": "BLSPOLY",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "BLS Polymers Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/BLSPOLY_ROID_104133_KMP_Doc.zip"
 },
 {
 "symbol": "BLUEBLENDS",
@@ -1411,6 +3695,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 3 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=BSOFT"
+},
+{
+"symbol": "BSOFT",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "BIRLASOFT LIMITED has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/BSOFT_ROID_104160_KMP_Doc.zip"
 },
 {
 "symbol": "BTML",
@@ -1581,6 +3874,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1692_20261027_151214000_WEB.html"
 },
 {
+"symbol": "CEMPRO",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Cemindia Projects Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.com/corporate/ITD_06112026152218_STK_ltr_Creditrating_CARE_SIGNED.pdf"
+},
+{
 "symbol": "CENTEXT",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -1613,12 +3915,30 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1245_20261029_143702452_WEB.html"
 },
 {
+"symbol": "CGPOWER",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "CG Power and Industrial Solutions Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/CGPOWER_05112026123502_Draft_SE_Disclosure-_Closure_of_Operations-051126.pdf"
+},
+{
 "symbol": "CHAMBLFERT",
 "date": "2026-11-11",
 "kind": "action",
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 5 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=CHAMBLFERT"
+},
+{
+"symbol": "CHENNPETRO",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Chennai Petroleum Corporation Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/CHENNPETRO_06112026235743_Reg30_Credit_Rating.pdf"
 },
 {
 "symbol": "CHEVIOT",
@@ -1854,6 +4174,24 @@
 },
 {
 "symbol": "DABUR",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Dabur India Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/DABUR_ROID_103682_KMP_Doc.zip"
+},
+{
+"symbol": "DABUR",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Dabur India Limited has informed the Exchange about Administrative warning letter received from SEBI",
+"link": "https://nsearchives.nseindia.com/corporate/DABURA_06112026162506_Letter.pdf"
+},
+{
+"symbol": "DABUR",
 "date": "2026-11-09",
 "kind": "action",
 "title": "Ex-dividend",
@@ -2070,6 +4408,15 @@
 },
 {
 "symbol": "DPSCLTD",
+"date": "2026-11-06",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-Intimation of the Meeting of the Suspended Board of Directors with the Resolution Professional (RP) (Management Committee) pursuant to Regulation 29(1)(a) ",
+"link": "https://nsearchives.nseindia.com/corporate/DPSCLTD_06112026201107_IntimationofManagement_BoardMeetin06112026.pdf"
+},
+{
+"symbol": "DPSCLTD",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
@@ -2107,6 +4454,15 @@
 "title": "Results",
 "detail": "D S KULKARNI DEVELOPERS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1042_20261102_180317283_WEB.html"
+},
+{
+"symbol": "DTIL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Dhunseri Tea & Industries Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/DTIL_05112026114207_Credit_Ratings_2026.pdf"
 },
 {
 "symbol": "DTIL",
@@ -2195,6 +4551,24 @@
 "title": "Results",
 "detail": "Enviro Infra Engineers Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21143_20261030_113910442_WEB.html"
+},
+{
+"symbol": "EIEL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "alert",
+"title": "Auditor resigned",
+"detail": "Enviro Infra Engineers Limited has informed the Exchange about Resignation of Statutory Auditor",
+"link": "https://nsearchives.nseindia.com/corporate/EIEL_ROSA_103737_KMP_Doc.zip"
+},
+{
+"symbol": "EIEL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Enviro Infra Engineers Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/ENVIRO_05112026165818_Intimation.pdf"
 },
 {
 "symbol": "EIFFL",
@@ -2405,6 +4779,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2923_20261105_111012806_WEB.html"
 },
 {
+"symbol": "FABTECH",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Fabtech Technologies Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/FABTECH_ROID_103597_KMP_Doc.zip"
+},
+{
 "symbol": "FACT",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -2422,11 +4805,29 @@
 },
 {
 "symbol": "FDC",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "FDC Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/FDC_05112026110803_IT21crDisclosure30A04Nov26signed.pdf"
+},
+{
+"symbol": "FDC",
 "date": "2026-11-13",
 "kind": "action",
 "title": "Buyback",
 "detail": "Buy Back",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=FDC"
+},
+{
+"symbol": "FEDFINA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Fedbank Financial Services Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/FEDFINA_06112026171346_Credit_Rating_Intimation_Signed.pdf"
 },
 {
 "symbol": "FERMENTA",
@@ -2467,6 +4868,15 @@
 "title": "Results",
 "detail": "FINKURVE FINANCIAL SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24303_20261028_171023742_WEB.html"
+},
+{
+"symbol": "FINOPB",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Fino Payments Bank Limited has informed the Exchange about order passed by Hon'ble High Court of Karnataka",
+"link": "https://nsearchives.nseindia.com/corporate/FINOPB_06112026151506_Cover_CID.pdf"
 },
 {
 "symbol": "FIRSTCRY",
@@ -2563,6 +4973,15 @@
 "title": "Results",
 "detail": "Gammon India Limited has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1548_20261103_171409293_WEB.html"
+},
+{
+"symbol": "GANESHBE",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Ganesh Benzoplast Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/GANESHBE_06112026234340_Disclosurecreditrating.pdf"
 },
 {
 "symbol": "GANESHBE",
@@ -3006,6 +5425,15 @@
 },
 {
 "symbol": "GTECJAINX",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Open offer",
+"detail": "G-TEC JAINX EDUCATION LIMITED has submitted a copy of the Letter of Offer from pursuant to Regulations 3(1) and 3(3) read with applicable provisions of the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011",
+"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_05112026191805_Dis.zip"
+},
+{
+"symbol": "GTECJAINX",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
@@ -3067,6 +5495,15 @@
 "title": "Results",
 "detail": "Gujarat Themis Bioysn Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24436_20261102_162831187_WEB.html"
+},
+{
+"symbol": "GULFPETRO",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "GP Petroleums Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/GULFPETRO_ROID_103977_KMP_Doc.zip"
 },
 {
 "symbol": "GULPOLY",
@@ -3171,6 +5608,15 @@
 "title": "Results",
 "detail": "HBL Engineering Limited has informed the Exchange about Board Meeting to be held on 07-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2495_20261022_111906609_WEB.html"
+},
+{
+"symbol": "HBLENGINE",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "HBL Engineering Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.com/corporate/HBLPOWER_07112026153705_IntimationofchangeinCreditrating.pdf"
 },
 {
 "symbol": "HBSL",
@@ -3317,6 +5763,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_844_20261027_170835581_WEB.html"
 },
 {
+"symbol": "HINDCOMPOS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Hindustan Composites Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/HINDCOMPOS_ROID_103884_KMP_Doc.zip"
+},
+{
 "symbol": "HINDCON",
 "date": "2026-11-05",
 "kind": "meeting",
@@ -3379,6 +5834,15 @@
 "title": "Results",
 "detail": "HI-TECH PIPES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2027 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13489_20261028_170512394_WEB.html"
+},
+{
+"symbol": "HITECHCORP",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Geetanjali Trading and Investments Pvt. Ltd. has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of ",
+"link": "https://nsearchives.nseindia.com/corporate/tchari_05112026172024_28102026120107_GTIPL.pdf"
 },
 {
 "symbol": "HITECHCORP",
@@ -3485,6 +5949,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15601_20261102_102724755_WEB.html"
 },
 {
+"symbol": "ICRA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "ICRA Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/ICRA_ROID_104145_KMP_Doc.zip"
+},
+{
 "symbol": "ICSA",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -3499,6 +5972,15 @@
 "title": "Results",
 "detail": "Vodafone Idea Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2548_20261103_154826001_WEB.html"
+},
+{
+"symbol": "IFCI",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "IFCI Limited has informed the Exchange about Credit Rating- Others",
+"link": "https://nsearchives.nseindia.com/corporate/IFCI_05112026122946_STX_Credit_Rating_BWR_Nov04_2026.pdf"
 },
 {
 "symbol": "IFCI",
@@ -3542,11 +6024,29 @@
 },
 {
 "symbol": "IIFL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "IIFL Finance Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/IIFL_06112026183137_Intimation_CR_Crisil.pdf"
+},
+{
+"symbol": "IIFL",
 "date": "2026-11-10",
 "kind": "meeting",
 "title": "Fund raising",
 "detail": "IIFL Finance Limited has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2281_20261105_233804920_WEB.html"
+},
+{
+"symbol": "IIFLCAPS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Open offer",
+"detail": "IIFL Capital Services Limited has informed the Exchange that Pre - Offer Advertisement in accordance with Regulation 18(7) of the SEBI (Substantial Acquisition of Share and Takeover) Regulation, 2011 and Corrigendum to the Detailed Public S",
+"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_30102026114512_IIFL.zip"
 },
 {
 "symbol": "IIRM",
@@ -3749,6 +6249,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20489_20261106_185837540_WEB.html"
 },
 {
+"symbol": "INOXINDIA",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Shreyashi Goenka has Submitted to the Exchange a copy of Disclosure under Regulation 10(5) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
+"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_05112026162759_Dis7.pdf"
+},
+{
 "symbol": "INOXWIND",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -3949,6 +6458,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1198_20261103_164838988_WEB.html"
 },
 {
+"symbol": "JETFREIGHT",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Jet Freight Logistics Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/JETFREIGHT_06112026125821_Revised_Reg_30_Intimation_SEBI_Summon_Signed.pdf"
+},
+{
 "symbol": "JINDALPHOT",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -3971,6 +6489,24 @@
 "title": "Results",
 "detail": "Jindal Worldwide Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3766_20261029_173550543_WEB.html"
+},
+{
+"symbol": "JISLDVREQS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Jain Irrigation Systems Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/JISLDVREQS_05112026115104_SE_Letter_Credit_Ratings_Crisil_05112026_.pdf"
+},
+{
+"symbol": "JISLJALEQS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Jain Irrigation Systems Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/JISLJALEQS_05112026114846_SE_Letter_Credit_Ratings_Crisil_05112026_.pdf"
 },
 {
 "symbol": "JITFINFRA",
@@ -4021,6 +6557,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/JNKINDIA23_02112026123730_JNK_Intimation.pdf"
 },
 {
+"symbol": "JNKINDIA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "JNK India Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/JNKINDIA_ROID_104182_KMP_Doc.zip"
+},
+{
 "symbol": "JPOLYINVST",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -4037,6 +6582,24 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20048_20261103_140619170_WEB.html"
 },
 {
+"symbol": "JSWDULUX",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "JSW Dulux Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/AKZOINDIA_05112026114504_JSWDuluxRegulation30Disclosure_05112026.pdf"
+},
+{
+"symbol": "JSWSTEEL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Disclosure regarding incorporation of a step down wholly-owned subsidiary.",
+"link": "https://nsearchives.nseindia.com/corporate/jessydenny_06112026141830_Stock_Exchange_Intimation.pdf"
+},
+{
 "symbol": "JUBLCPL",
 "date": "2026-11-05",
 "kind": "meeting",
@@ -4051,6 +6614,24 @@
 "title": "Results",
 "detail": "JUBILANT FOODWORKS LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3061_20261026_171854932_WEB.html"
+},
+{
+"symbol": "JUBLFOOD",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Jubilant Foodworks Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/JUBLFOOD_ROID_104150_KMP_Doc.zip"
+},
+{
+"symbol": "JUBLFOOD",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Jubilant Foodworks Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/JUBLFOOD_06112026152348_SEIntimationAuditorAppointment.pdf"
 },
 {
 "symbol": "JUBLPHARMA",
@@ -4123,6 +6704,15 @@
 "title": "Results",
 "detail": "KANORIA CHEMICALS & INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_943_20261104_120440811_WEB.html"
+},
+{
+"symbol": "KANSAINER",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 and relevant SEBI Circulars is enclosed herewith.",
+"link": "https://nsearchives.nseindia.com/corporate/KANSAINER_05112026140519_Reg30_Disclosure_5th_November_2026_signed.pdf"
 },
 {
 "symbol": "KARAMTARA",
@@ -4229,6 +6819,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15568_20261030_190950574_WEB.html"
 },
 {
+"symbol": "KHADIM",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Khadim India Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/KHADIM_ROID_103852_KMP_Doc.zip"
+},
+{
 "symbol": "KHAICHEM",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -4315,6 +6914,15 @@
 "title": "Results",
 "detail": "K M SUGAR MILLS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2605_20261024_131424667_WEB.html"
+},
+{
+"symbol": "KMSUGAR",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "K.M.Sugar Mills Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/KMSUGAR_ROID_103854_KMP_Doc.zip"
 },
 {
 "symbol": "KNAGRI",
@@ -4437,6 +7045,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22833_20261030_193806549_WEB.html"
 },
 {
+"symbol": "KRONOX",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Open offer",
+"detail": "IIFL Capital Services Ltd (\"Manager to the Open Offer\") has submitted to BSE a copy of Letter of Offer to the Public Shareholders of Kronox Lab Sciences Ltd (\"Target Company\")",
+"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_06112026130011_Pdf.zip"
+},
+{
 "symbol": "KRT",
 "date": "2026-11-06",
 "kind": "action",
@@ -4459,6 +7076,15 @@
 "title": "Results",
 "detail": "KSHITIJ POLYLINE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16761_20261104_192140357_WEB.html"
+},
+{
+"symbol": "KSHITIJPOL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Kshitij Polyline Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/KSHITIJPOL_ROID_104069_KMP_Doc.zip"
 },
 {
 "symbol": "KSOILS",
@@ -4629,6 +7255,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25031_20261105_130036260_WEB.html"
 },
 {
+"symbol": "LCL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Lohia Corp Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/LCL_ROID_103663_KMP_Doc.zip"
+},
+{
 "symbol": "LEEL",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -4797,6 +7432,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_679_WebXMLFile_20260924_110902825.xml"
 },
 {
+"symbol": "M&MFIN",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Mahindra & Mahindra Financial Services Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/M_MFIN_06112026150354_credit_rating.pdf"
+},
+{
 "symbol": "MAANALU",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -4934,6 +7578,15 @@
 },
 {
 "symbol": "MANAPPURAM",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Manappuram Finance Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/MANAPPURAM_ROID_104248_KMP_Doc.zip"
+},
+{
+"symbol": "MANAPPURAM",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results \u00b7 Dividend",
@@ -4982,6 +7635,15 @@
 },
 {
 "symbol": "MANORAMA",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Manorama Industries Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/MANORAMA_07112026154138_signedintimation.pdf"
+},
+{
+"symbol": "MANORAMA",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
@@ -5019,6 +7681,15 @@
 "title": "Results",
 "detail": "MAWANA SUGARS LIMITED has informed the Exchange about Board Meeting to be held on 07-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2798_20261029_123402675_WEB.html"
+},
+{
+"symbol": "MAYURUNIQ",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Mayur Uniquoters Ltd has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/MAYURUNIQ_ROID_104235_KMP_Doc.zip"
 },
 {
 "symbol": "MBAPL",
@@ -5117,6 +7788,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17639_20261102_191546929_WEB.html"
 },
 {
+"symbol": "MGEL",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Mangalam Global Enterprise Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/MGEL_07112026121928_CREDIT_RATING_07112026_SIGNED.pdf"
+},
+{
 "symbol": "MICEL",
 "date": "2026-11-07",
 "kind": "meeting",
@@ -5139,6 +7819,15 @@
 "title": "Results",
 "detail": "Midwest Limited has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24639_20261104_152313465_WEB.html"
+},
+{
+"symbol": "MINDACORP",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Minda Corporation Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/MINDACORP_ROID_104059_KMP_Doc.zip"
 },
 {
 "symbol": "MINDSPACE",
@@ -5187,6 +7876,15 @@
 "title": "Results",
 "detail": "MMTC LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3031_20261102_171751235_WEB.html"
+},
+{
+"symbol": "MOBIKWIK",
+"date": "2026-11-06",
+"kind": "news",
+"level": "alert",
+"title": "Licence suspended",
+"detail": "One Mobikwik Systems Limited has informed the Exchange about Certificate of Registration to operate as a Non-Banking Financial Company ( NBFC ) received by MobiKwik Financial Services Private Limited (Wholly Owned Subsidiary of the Company)",
+"link": "https://nsearchives.nseindia.com/corporate/MOBIKWIK_06112026141941_Intimation_about_granting_of_NBFC_License.pdf"
 },
 {
 "symbol": "MODINATUR",
@@ -5299,6 +7997,15 @@
 "title": "Results \u00b7 Dividend",
 "detail": "MRF LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1310_20261102_164707692_WEB.html"
+},
+{
+"symbol": "MRPL",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Disclosure of event or information under Regulation 30 regarding order of Additional Commissioner of Customs (Import), Mumbai.",
+"link": "https://nsearchives.nseindia.com/corporate/MRPL_07112026165700_customsorder07112026sd.pdf"
 },
 {
 "symbol": "MSPL",
@@ -5573,6 +8280,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2307_20261106_122954237_WEB.html"
 },
 {
+"symbol": "NEOGEN",
+"date": "2026-11-08",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Neogen Chemicals Limited has informed the Exchange about Action(s) taken or orders passed- Update on Fire Incident - Order for Revocation of earlier Directions issued by GPCB and granting of CC&A Amendment by GPCB.",
+"link": "https://nsearchives.nseindia.com/corporate/NEOGEN_08112026105343_GPCBorder.pdf"
+},
+{
 "symbol": "NFL",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -5757,6 +8473,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=NXT-INFRA"
 },
 {
+"symbol": "NYKAA",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "FSN E Commerce Ventures Limited has informed the Exchange about ESG Rating.",
+"link": "https://nsearchives.nseindia.com/corporate/NYKAA_05112026122426_SES_ESG_Intimation.pdf"
+},
+{
 "symbol": "OCCLLTD",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -5931,6 +8656,15 @@
 "title": "Results \u00b7 Dividend",
 "detail": "PAGE INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2552_20261030_155000674_WEB.html"
+},
+{
+"symbol": "PAKKA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "PAKKA LIMITED has informed regarding Sanction of the Scheme of Amalgamation of Pakka Impact Limited with Pakka Limited by the Hon ble National Company Law Tribunal, Allahabad Bench, Prayagraj",
+"link": "https://nsearchives.nseindia.com/corporate/yashpakka_06112026225835_Disclosure_under_Regulation_30_SEBI_LODR.pdf"
 },
 {
 "symbol": "PALASHSECU",
@@ -6341,6 +9075,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6130_20261028_180344607_WEB.html"
 },
 {
+"symbol": "PROZONER",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Prozone Realty Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/PROZONER_ROID_104037_KMP_Doc.zip"
+},
+{
 "symbol": "PRSMJOHNSN",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -6363,6 +9106,15 @@
 "title": "Results",
 "detail": "PTC INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21821_20261106_200459031_WEB.html"
+},
+{
+"symbol": "PUNJLLOYD",
+"date": "2026-11-05",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Intimation regarding change in the Corporate Office of the Registrar and Share Transfer Agent (RTA) of the Company",
+"link": "https://nsearchives.nseindia.com/corporate/PUNJLLOYD_05112026115008_RTA_Letter.pdf"
 },
 {
 "symbol": "PVP",
@@ -6470,6 +9222,15 @@
 },
 {
 "symbol": "RAJTV",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Raj Television Network Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/RAJTV_05112026181649_RAJTV_CreditRatings_05112026_signed.pdf"
+},
+{
+"symbol": "RAJTV",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
@@ -6507,6 +9268,15 @@
 "title": "Results",
 "detail": "THE RAMCO CEMENTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_289_20261024_103356559_WEB.html"
+},
+{
+"symbol": "RAMCOIND",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Ramco Industries Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.com/corporate/RAMCOIND_07112026113002_Reg30int_imp_penalty_07112026.pdf"
 },
 {
 "symbol": "RAMKY",
@@ -6845,6 +9615,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21550_20261102_115116134_WEB.html"
 },
 {
+"symbol": "RSL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Rajputana Stainless Limited has informed the Exchange about disclosure under SEBI Takeover Regulations",
+"link": "https://nsearchives.nseindia.com/corporate/tchari_05112026172629_28102026164103_Bhavika.PDF"
+},
+{
 "symbol": "RUBFILA",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -6891,6 +9670,15 @@
 "title": "Results",
 "detail": "RUNWAL ENTERPRISES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25798_20261105_193659348_WEB.html"
+},
+{
+"symbol": "RUSTOMJEE",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Keystone Realtors Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/RUSTOMJEE_05112026185957_Credit_Rating_Crisil.pdf"
 },
 {
 "symbol": "RVHL",
@@ -6949,6 +9737,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=SAFARI"
 },
 {
+"symbol": "SAGCEM",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "Sagar Cements Limited has informed the Exchange about Receipt of Observation Letters from BSE Limited (BSE) and National Stock Exchange of India Limited (NSE) in relation to the Scheme of Amalgamation between Andhra Cements Limited (Transfe",
+"link": "https://nsearchives.nseindia.com/corporate/SAGCEM_06112026175331_SCLNSEBSEReg30_06112026.pdf"
+},
+{
 "symbol": "SAHLIBHFI",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7003,6 +9800,15 @@
 "title": "Results",
 "detail": "S.A.L. STEEL LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2250_20261102_171036636_WEB.html"
+},
+{
+"symbol": "SALSTEEL",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "S.A.L. Steel Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/SALSTEEL_ROID_104297_KMP_Doc.zip"
 },
 {
 "symbol": "SALZERELEC",
@@ -7134,6 +9940,15 @@
 },
 {
 "symbol": "SECURKLOUD",
+"date": "2026-11-06",
+"kind": "news",
+"level": "alert",
+"title": "Payment default",
+"detail": "Pls find enclosed subsequent disclosure on default of interest on promoter's loan",
+"link": "https://nsearchives.nseindia.com/corporate/SECURKLOUD_06112026180134_E34_Subsq_intimation_SD.pdf"
+},
+{
+"symbol": "SECURKLOUD",
 "date": "2026-11-11",
 "kind": "meeting",
 "title": "Results",
@@ -7197,12 +10012,30 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3662_20261105_180301231_WEB.html"
 },
 {
+"symbol": "SHAILY",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Shaily Engineering Plastics Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/Shailyengineering_06112026162924_DISCLOSURE_UR_30_SHAILY_MEDTECH.pdf"
+},
+{
 "symbol": "SHANKESH",
 "date": "2026-11-05",
 "kind": "meeting",
 "title": "Results",
 "detail": "SHANKESH JEWELLERS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27045_20261030_182118787_WEB.html"
+},
+{
+"symbol": "SHANTI",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Shanti Overseas (India) Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/SHANTI_ROID_103795_KMP_Doc.zip"
 },
 {
 "symbol": "SHANTI",
@@ -7235,6 +10068,15 @@
 "title": "Merger",
 "detail": "SHARE INDIA SECURITIES LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to consider Amalgamation.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18723_20261103_191450753_WEB.html"
+},
+{
+"symbol": "SHAREINDIA",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "Pursuant to Regulation 30 of SEBI(LODR) Regulations, 2015, please be informed that Board of Directors of the Company at its meeting held today i.e., on November 06, 2026, has approved the Scheme of Amalgamation of Ace Alpha Tech Limited wit",
+"link": "https://nsearchives.nseindia.com/corporate/SISL_06112026181732_Reg30_merger_ace_alphasislsigned.pdf"
 },
 {
 "symbol": "SHILPAMED",
@@ -7341,6 +10183,24 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_12915_20261026_160709570_WEB.html"
 },
 {
+"symbol": "SHYAMCENT",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Shyam Century Ferrous Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/SHYAMCENT_ROID_103920_KMP_Doc.zip"
+},
+{
+"symbol": "SHYAMMETL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Shyam Metalics And Energy Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/SHYAMMETL_06112026123809_SMELCreditratingintimation06112026.pdf"
+},
+{
 "symbol": "SICALLOG",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -7373,6 +10233,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2627_20261103_162359558_WEB.html"
 },
 {
+"symbol": "SIGMAADV",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "SIGMA ADVANCED SYSTEMS LIMITED has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/SIGMAADV_ROID_104219_KMP_Doc.zip"
+},
+{
 "symbol": "SIGNATURE",
 "date": "2026-11-05",
 "kind": "meeting",
@@ -7387,6 +10256,15 @@
 "title": "Results",
 "detail": "SILGO RETAIL LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16785_20261029_163055972_WEB.html"
+},
+{
+"symbol": "SIMBHALS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Simbhaoli Sugars Limited is hereby informing the Exchange about the Post Facto Intimation of 5th Meeting of Committee of Creditors (COC).",
+"link": "https://nsearchives.nseindia.com/corporate/SIMBHALS_05112026180720_5th_COC_Meeting_-_Post_Facto_Intimation_-_Signed.pdf"
 },
 {
 "symbol": "SIMPLEXINF",
@@ -7437,6 +10315,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16217_20261030_190151842_WEB.html"
 },
 {
+"symbol": "SKIL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "SKIL Infrastructure Limited has informed the Exchange regarding the Fifteenth (15th) Committee of Creditors meeting to be held on Monday, November 09, 2026",
+"link": "https://nsearchives.nseindia.com/corporate/Skilinfra_06112026174605_SKIL_Letter_Intimation_15th_COC_sd.pdf"
+},
+{
 "symbol": "SKYWAYS",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7475,6 +10362,15 @@
 "title": "Results",
 "detail": "Sahajanand Medical Technologies Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20057_20261026_180313582_WEB.html"
+},
+{
+"symbol": "SMT",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Sahajanand Medical Technologies Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/SAHAJANAND_05112026190931_14_Sec_Auditor_Appointment.pdf"
 },
 {
 "symbol": "SOLEX",
@@ -7605,6 +10501,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_8188_20261104_171058739_WEB.html"
 },
 {
+"symbol": "SRF",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "SRF Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/ekta_maheshwari_05112026130607_IntimationPenaltyNov2026.pdf"
+},
+{
 "symbol": "SRHHYPOLTD",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7627,6 +10532,15 @@
 "title": "Results",
 "detail": "SHREE RAM PROTEINS LIMITED has informed the Exchange about Board Meeting to be held on 07-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15754_20261104_142421652_WEB.html"
+},
+{
+"symbol": "SRPL",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Shree Ram Proteins Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/SRPL_07112026145510_signedoutcome07112026.pdf"
 },
 {
 "symbol": "SSDL",
@@ -7685,6 +10599,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19796_20261103_185225000_WEB.html"
 },
 {
+"symbol": "STEELCITY",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Steel City Securities Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/STEELCITY_06112026180407_REG.pdf"
+},
+{
 "symbol": "STYLEBAAZA",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7715,6 +10638,15 @@
 "title": "Results",
 "detail": "SULA VINEYARDS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20896_20261027_174320364_WEB.html"
+},
+{
+"symbol": "SUMEETINDS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Sumeet Industries Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/SUMEETINDS_05112026171131_Rating_Report_SIL.pdf"
 },
 {
 "symbol": "SUNDARAM",
@@ -7787,6 +10719,15 @@
 "title": "Results",
 "detail": "SUPER SPINNING MILLS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_122_20261102_101016861_WEB.html"
+},
+{
+"symbol": "SUPERSPIN",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Super Spinning Mills Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/SUPERSPIN_05112026142057_Outcome_of_the_meeting.pdf"
 },
 {
 "symbol": "SUPRAJIT",
@@ -7899,6 +10840,15 @@
 "title": "Results",
 "detail": "SWELECT ENERGY SYSTEMS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and ESOP/Other busin",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2403_20261106_200308427_WEB.html"
+},
+{
+"symbol": "SWSOLAR",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Sterling and Wilson Renewable Energy Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/SWSOLAR_06112026113215_SEBI_Warning.pdf"
 },
 {
 "symbol": "SYMBIOTEC",
@@ -8029,6 +10979,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14409_20261026_165422636_WEB.html"
 },
 {
+"symbol": "TCIEXP",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "TCI Express Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.com/corporate/TCIEXP_05112026215121_StockExchangeIntimationReg30.pdf"
+},
+{
 "symbol": "TCPLPACK",
 "date": "2026-11-05",
 "kind": "meeting",
@@ -8059,6 +11018,24 @@
 "title": "Results",
 "detail": "TEAMLEASE SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13446_20261014_182736688_WEB.html"
+},
+{
+"symbol": "TEAMLEASE",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "TeamLease Services Limited (TeamLease/The Company) Change in hearing date in respect of Writ Petition filed on June 12, 2026, before the Hon ble High Court of Karnataka",
+"link": "https://nsearchives.nseindia.com/corporate/TEAMLEASE_05112026175317_TeamLeaseIntimationonhearingwithrespecttoWritPetition.pdf"
+},
+{
+"symbol": "TEAMLEASE",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Teamlease Services Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/TEAMLEASE_ROID_103799_KMP_Doc.zip"
 },
 {
 "symbol": "TECHNOCRAF",
@@ -8149,12 +11126,39 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_65_20261012_161037761_WEB.html"
 },
 {
+"symbol": "THERMAX",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Thermax Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/THERMAXNSE_05112026152702_SEIntimationGSTPenalty_Nov2026.pdf"
+},
+{
 "symbol": "THOMASCOTT",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "Thomas Scott (India) Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5530_20261106_161347857_WEB.html"
+},
+{
+"symbol": "THYROCARE",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Thyrocare Technologies Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/THYROCARE_ROID_104098_KMP_Doc.zip"
+},
+{
+"symbol": "TI",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Tilaknagar Industries Limited has informed the Exchange about Action(s) initiated or orders passed by Directorate of Revenue Intelligence, Mumbai Zonal Unit issued a seizure memo under the provisions of Section 110 of the Customs Act, 1962.",
+"link": "https://nsearchives.nseindia.com/corporate/gthakur_06112026165503_TI_Order_Nov2026.pdf"
 },
 {
 "symbol": "TICL",
@@ -8229,6 +11233,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_233_20261102_114122141_WEB.html"
 },
 {
+"symbol": "TITAN",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Titan Company Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/TITAN_05112026183608_SEappoinmentofstatutoryauditor.pdf"
+},
+{
 "symbol": "TMPV",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -8301,6 +11314,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17085_20261014_151036516_WEB.html"
 },
 {
+"symbol": "TREL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Transindia Real Estate Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/TREL_ROID_103636_KMP_Doc.zip"
+},
+{
 "symbol": "TRITURBINE",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -8333,6 +11355,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_2534_WebXMLFile_20261103_135432982.xml"
 },
 {
+"symbol": "TTML",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Tata Teleservices (Maharashtra) Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/TTMLCS_07112026133816_TTML532371.pdf"
+},
+{
 "symbol": "TURTLEMINT",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -8347,6 +11378,15 @@
 "title": "Results",
 "detail": "TVS Electronics Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2163_20261027_152045943_WEB.html"
+},
+{
+"symbol": "TVSHLTD",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "TVS Holdings Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/SUNCLAYLTD_06112026191335_BSENSEINTIMATIONSGD.pdf"
 },
 {
 "symbol": "TVSINVIT",
@@ -8437,6 +11477,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15900_20261105_151151341_WEB.html"
 },
 {
+"symbol": "UNITDSPR",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "United Spirits Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/MCDOWELL_05112026165440_SEDisclosure_05112026_Sd.pdf"
+},
+{
 "symbol": "UNITECH",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -8459,6 +11508,15 @@
 "title": "Results",
 "detail": "UNIVASTU INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15369_20261030_181501816_WEB.html"
+},
+{
+"symbol": "UNIVPHOTO",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Universus Photo Imagings Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/UNIVPHOTO_ROID_103935_KMP_Doc.zip"
 },
 {
 "symbol": "UNOMINDA",
@@ -8581,6 +11639,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2504_20261027_175019673_WEB.html"
 },
 {
+"symbol": "VEEDOL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Veedol Corporation Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/VEEDOL_ROID_103880_KMP_Doc.zip"
+},
+{
 "symbol": "VEEGALAND",
 "date": "2026-11-05",
 "kind": "meeting",
@@ -8629,6 +11696,24 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6227_20261103_183902347_WEB.html"
 },
 {
+"symbol": "VGL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "alert",
+"title": "Auditor resigned",
+"detail": "VARVEE GLOBAL LIMITED has informed the Exchange about Resignation of Statutory Auditor",
+"link": "https://nsearchives.nseindia.com/corporate/VGL_ROSA_103864_KMP_Doc.zip"
+},
+{
+"symbol": "VGL",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "VARVEE GLOBAL LIMITED has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/AARVEEDEN_05112026185628_Reg_30_Disclosure_for_resignation__of_auditor.pdf"
+},
+{
 "symbol": "VHL",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -8651,6 +11736,15 @@
 "title": "Results",
 "detail": "VIKRAN ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24644_20261102_182621232_WEB.html"
+},
+{
+"symbol": "VIKRAN",
+"date": "2026-11-07",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Vikran Engineering Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/VIKRAN123_07112026232736_Intimation_of_Change_in_Credit_Rating.pdf"
 },
 {
 "symbol": "VINEETLAB",
@@ -8757,12 +11851,30 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28339_20261030_110943002_WEB.html"
 },
 {
+"symbol": "VOGL",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Vedanta Oil and Gas Limited has informed the Exchange about Credit Rating- Others",
+"link": "https://nsearchives.nseindia.com/corporate/VOGL1_06112026154428_VOGLSEIntimationCreditRatingCRISIL.pdf"
+},
+{
 "symbol": "VOLTAS",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "VOLTAS LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_231_20261030_155555097_WEB.html"
+},
+{
+"symbol": "VOLTAS",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Voltas Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/VOLTAS_RB_06112026170542_03_Auditor_appointment_signed.pdf"
 },
 {
 "symbol": "VPRPL",
@@ -8861,6 +11973,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2248_20261102_164021634_WEB.html"
 },
 {
+"symbol": "WELENT",
+"date": "2026-11-06",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Welspun Enterprises Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/WELENT_ROID_104007_KMP_Doc.zip"
+},
+{
 "symbol": "WHIRLPOOL",
 "date": "2026-11-09",
 "kind": "meeting",
@@ -8883,6 +12004,15 @@
 "title": "Results",
 "detail": "WINDLAS BIOTECH LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19453_20261030_123009257_WEB.html"
+},
+{
+"symbol": "WINDLAS",
+"date": "2026-11-05",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Windlas Biotech Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/WINDLAS_ROID_103830_KMP_Doc.zip"
 },
 {
 "symbol": "WINDMACHIN",

@@ -148,15 +148,49 @@ def build_surveillance(matcher: "Matcher") -> tuple[dict, dict]:
     return out, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
 
 
-def build_events() -> tuple[dict, dict]:
-    """F&O ban list and company events by symbol, for public/data/events.json."""
-    raw = load_json(RAW / "events.json", None)
-    if not raw:
-        return {"ban": None, "events": {}}, {}
+BROKER_LABEL = {"kotak": "Kotak Neo", "rupeezy": "Rupeezy"}
+BROKER_LIST = {"kotak": "https://www.kotakneo.com/margin-requirement/margin-trading/1/",
+               "rupeezy": "https://rupeezy.in/margin-trading-facility/mtf-stock-lists"}
+CHANGE_DAYS = 3  # broker-list changes stay flagged this many days
+
+
+def broker_changes(dates: list[str], snaps: list[dict]) -> list[dict]:
+    """Day-over-day changes in each broker's MTF list over the last few snapshots."""
+    out = []
+    pairs = list(zip(range(len(snaps) - 1), range(1, len(snaps))))[-CHANGE_DAYS:]
+    for i, j in pairs:
+        prev, cur = snaps[i], snaps[j]
+        for sym in set(prev) | set(cur):
+            p, c = prev.get(sym) or [None] * len(BROKERS), cur.get(sym) or [None] * len(BROKERS)
+            for bi, b in enumerate(BROKERS):
+                pv, cv = p[bi], c[bi]
+                pf, cf = pv is not None and pv > 1, cv is not None and cv > 1
+                ev = None
+                if pf and not cf:
+                    ev = ("alert", f"Dropped from {BROKER_LABEL[b]} MTF",
+                          f"{BROKER_LABEL[b]} stopped funding this stock (was {round(pv, 1)}×). Existing MTF positions may need "
+                          "to be converted to delivery or closed; check the app.")
+                elif pf and cf and round(pv, 1) - round(cv, 1) >= 0.2 - 1e-9:
+                    ev = ("watch", f"{BROKER_LABEL[b]} leverage cut",
+                          f"{BROKER_LABEL[b]} cut the multiplier from {round(pv, 1)}× to {round(cv, 1)}×, so an existing "
+                          "position needs more of your own margin.")
+                elif cf and not pf:
+                    ev = ("info", f"Added to {BROKER_LABEL[b]} MTF", f"{BROKER_LABEL[b]} now funds this stock at {round(cv, 1)}×.")
+                if ev:
+                    out.append({"symbol": sym, "date": dates[j], "kind": "broker", "level": ev[0], "title": ev[1],
+                                "detail": ev[2], "link": BROKER_LIST[b]})
+    return out
+
+
+def build_events(dates: list[str], snaps: list[dict]) -> tuple[dict, dict]:
+    """F&O ban, price bands, company events and broker-list changes by symbol, for public/data/events.json."""
+    raw = load_json(RAW / "events.json", None) or {}
     by_sym: dict[str, list] = {}
-    for e in raw.get("events", []):
-        by_sym.setdefault(e["symbol"], []).append({k: e[k] for k in ("date", "kind", "title", "detail", "link")})
-    return {"ban": raw.get("ban"), "events": by_sym}, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
+    for e in raw.get("events", []) + broker_changes(dates, snaps):
+        by_sym.setdefault(e["symbol"], []).append(
+            {k: e[k] for k in ("date", "kind", "title", "detail", "link")} | ({"level": e["level"]} if e.get("level") else {}))
+    data = {"ban": raw.get("ban"), "bands": raw.get("bands", {}), "events": by_sym}
+    return data, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
 
 
 def main() -> None:
@@ -229,7 +263,7 @@ def main() -> None:
                "rows": {sym: [sn.get(sym) for sn in snaps] for sym in snapshot}}
 
     surveillance, surv_meta = build_surveillance(matcher)
-    events, events_meta = build_events()
+    events, events_meta = build_events([p.stem for p in recent], snaps)
 
     meta = {
         "generatedAt": now.isoformat().replace("+00:00", "Z"),

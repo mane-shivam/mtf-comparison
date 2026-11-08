@@ -39,3 +39,12 @@ def test_status_stale_when_old():
     now = datetime(2026, 10, 30, 12, tzinfo=timezone.utc)
     info = merge.broker_status("rupeezy", {"fetchedAt": "2026-10-28T04:30:00Z", "count": 1}, now)
     assert info["status"] == "stale"
+
+
+def test_broker_changes():
+    dates = ["2026-11-05", "2026-11-06"]
+    snaps = [{"AAA": [4.0, 3.0], "BBB": [3.0, None], "CCC": [2.0, 2.0]},
+             {"AAA": [1.0, 3.0], "BBB": [3.0, 2.5], "CCC": [1.7, 2.0]}]
+    got = {(e["symbol"], e["title"], e["level"]) for e in merge.broker_changes(dates, snaps)}
+    assert got == {("AAA", "Dropped from Kotak Neo MTF", "alert"), ("BBB", "Added to Rupeezy MTF", "info"),
+                   ("CCC", "Kotak Neo leverage cut", "watch")}

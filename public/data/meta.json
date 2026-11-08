@@ -1,28 +1,33 @@
 {
-  "generatedAt": "2026-11-08T10:10:25Z",
+  "generatedAt": "2026-11-08T10:14:22Z",
   "surveillance": {
-    "fetchedAt": "2026-11-08T08:09:32Z",
+    "fetchedAt": "2026-11-08T10:14:15Z",
     "sources": {
       "NSE": {
         "status": "ok",
-        "count": 255,
-        "fetchedAt": "2026-11-08T08:09:32Z",
+        "count": 474,
+        "fetchedAt": "2026-11-08T10:14:15Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-08T10:10:25Z",
+    "fetchedAt": "2026-11-08T10:14:22Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T10:10:22Z",
+        "fetchedAt": "2026-11-08T10:14:15Z",
+        "error": null
+      },
+      "bands": {
+        "status": "ok",
+        "fetchedAt": "2026-11-08T10:14:16Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T10:10:25Z",
-        "count": 1125,
+        "fetchedAt": "2026-11-08T10:14:22Z",
+        "count": 1228,
         "error": null
       }
     }
