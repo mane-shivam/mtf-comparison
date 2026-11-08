@@ -1,7 +1,7 @@
 {
 "broker": "paytm",
-"fetchedAt": "2026-11-07T18:59:30Z",
-"count": 1536,
+"fetchedAt": "2026-11-08T08:09:07Z",
+"count": 1539,
 "rows": [
 {
 "symbol": "ARE&M",
@@ -81,8 +81,8 @@
 "isin": "INE552D01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.9,
-"ownPct": 52.81
+"lev": 1.7,
+"ownPct": 59.89
 },
 {
 "symbol": "SYNGENE",
@@ -108,8 +108,8 @@
 "isin": "INE898S01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 33.16
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "FINCABLES",
@@ -118,7 +118,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
-"ownPct": 36.37
+"ownPct": 36.45
 },
 {
 "symbol": "JISLJALEQS",
@@ -172,7 +172,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.8,
-"ownPct": 20.85
+"ownPct": 20.86
 },
 {
 "symbol": "SATIN",
@@ -261,8 +261,8 @@
 "isin": "INE278M01019",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 41.99
+"lev": 2.6,
+"ownPct": 39.09
 },
 {
 "symbol": "NIFTYBEES",
@@ -288,8 +288,8 @@
 "isin": "INE943D01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.0
+"lev": 2.7,
+"ownPct": 36.82
 },
 {
 "symbol": "MARKSANS",
@@ -333,8 +333,8 @@
 "isin": "INE844O01030",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 35.92
+"lev": 2.3,
+"ownPct": 43.73
 },
 {
 "symbol": "BHARTIARTL",
@@ -469,7 +469,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
-"ownPct": 39.46
+"ownPct": 39.91
 },
 {
 "symbol": "SYRMA",
@@ -603,8 +603,8 @@
 "isin": "INE344S01016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.2,
-"ownPct": 46.39
+"lev": 2.3,
+"ownPct": 44.36
 },
 {
 "symbol": "BANKIETF",
@@ -721,7 +721,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
-"ownPct": 36.16
+"ownPct": 36.26
 },
 {
 "symbol": "JAIBALAJI",
@@ -846,8 +846,8 @@
 "isin": "INE910C01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.1,
-"ownPct": 32.0
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "BIOCON",
@@ -919,7 +919,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
-"ownPct": 33.21
+"ownPct": 33.27
 },
 {
 "symbol": "DATAMATICS",
@@ -1008,8 +1008,8 @@
 "isin": "INE02YR01019",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.68
+"lev": 2.3,
+"ownPct": 43.87
 },
 {
 "symbol": "ULTRACEMCO",
@@ -1054,7 +1054,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.1,
-"ownPct": 31.85
+"ownPct": 31.94
 },
 {
 "symbol": "PPLPHARMA",
@@ -1125,8 +1125,8 @@
 "isin": "INE625G01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 33.89
+"lev": 2.9,
+"ownPct": 34.13
 },
 {
 "symbol": "NTPC",
@@ -1206,8 +1206,8 @@
 "isin": "INE244B01030",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.7,
-"ownPct": 59.84
+"lev": 1.8,
+"ownPct": 56.81
 },
 {
 "symbol": "ALKEM",
@@ -1233,8 +1233,8 @@
 "isin": "INE113A01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.1,
-"ownPct": 31.81
+"lev": 2.6,
+"ownPct": 37.78
 },
 {
 "symbol": "JPPOWER",
@@ -1279,7 +1279,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
-"ownPct": 35.31
+"ownPct": 35.34
 },
 {
 "symbol": "GODFRYPHLP",
@@ -1477,7 +1477,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
-"ownPct": 29.22
+"ownPct": 29.34
 },
 {
 "symbol": "BIKAJI",
@@ -1486,7 +1486,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
-"ownPct": 28.99
+"ownPct": 29.06
 },
 {
 "symbol": "GOLDIAM",
@@ -1539,8 +1539,8 @@
 "isin": "INE963C01033",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.1,
-"ownPct": 48.6
+"lev": 2.2,
+"ownPct": 45.58
 },
 {
 "symbol": "AEROENTER",
@@ -1593,8 +1593,8 @@
 "isin": "INE128S01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.3,
-"ownPct": 44.12
+"lev": 2.8,
+"ownPct": 36.09
 },
 {
 "symbol": "KAYNES",
@@ -1630,7 +1630,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
-"ownPct": 29.0
+"ownPct": 29.07
 },
 {
 "symbol": "INOXGREEN",
@@ -1648,7 +1648,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.3,
-"ownPct": 30.17
+"ownPct": 30.2
 },
 {
 "symbol": "GRASIM",
@@ -1746,8 +1746,8 @@
 "isin": "INE985S01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.5,
-"ownPct": 28.73
+"lev": 2.8,
+"ownPct": 35.19
 },
 {
 "symbol": "ROUTE",
@@ -1953,8 +1953,8 @@
 "isin": "INE01JE01028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.49
+"lev": 2.4,
+"ownPct": 40.91
 },
 {
 "symbol": "M&MFIN",
@@ -2052,8 +2052,8 @@
 "isin": "INE786F01031",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 1.7,
+"ownPct": 60.0
 },
 {
 "symbol": "SDBL",
@@ -2259,8 +2259,8 @@
 "isin": "INE242C01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.12
+"lev": 2.2,
+"ownPct": 46.32
 },
 {
 "symbol": "HINDALCO",
@@ -2430,8 +2430,8 @@
 "isin": "INE227C01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 34.62
+"lev": 2.7,
+"ownPct": 36.43
 },
 {
 "symbol": "AARTIPHARM",
@@ -2466,8 +2466,8 @@
 "isin": "INE835D01023",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 39.77
+"lev": 2.2,
+"ownPct": 45.88
 },
 {
 "symbol": "NFL",
@@ -2494,7 +2494,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
-"ownPct": 42.11
+"ownPct": 42.24
 },
 {
 "symbol": "HBLENGINE",
@@ -2601,8 +2601,8 @@
 "isin": "INE076B01028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 51.05
+"lev": 2.3,
+"ownPct": 44.05
 },
 {
 "symbol": "NETWORK18",
@@ -2610,8 +2610,8 @@
 "isin": "INE870H01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 35.19
+"lev": 2.9,
+"ownPct": 34.16
 },
 {
 "symbol": "AGI",
@@ -2737,7 +2737,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
-"ownPct": 36.69
+"ownPct": 37.07
 },
 {
 "symbol": "PGIL",
@@ -2808,8 +2808,8 @@
 "isin": "INE019C01026",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 36.71
+"lev": 2.8,
+"ownPct": 35.67
 },
 {
 "symbol": "GANESHHOU",
@@ -2835,8 +2835,8 @@
 "isin": "INE669E01016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.3,
-"ownPct": 30.66
+"lev": 3.4,
+"ownPct": 29.62
 },
 {
 "symbol": "POCL",
@@ -2871,8 +2871,8 @@
 "isin": "INE006I01046",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.3,
-"ownPct": 23.05
+"lev": 3.0,
+"ownPct": 33.1
 },
 {
 "symbol": "SANOFI",
@@ -2881,7 +2881,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.8,
-"ownPct": 26.62
+"ownPct": 26.66
 },
 {
 "symbol": "LAOPALA",
@@ -3006,8 +3006,8 @@
 "isin": "INE061F01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.6,
-"ownPct": 21.69
+"lev": 3.7,
+"ownPct": 27.08
 },
 {
 "symbol": "NAVINFLUOR",
@@ -3231,8 +3231,8 @@
 "isin": "INE193E01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.5
+"lev": 2.7,
+"ownPct": 36.44
 },
 {
 "symbol": "CERA",
@@ -3240,8 +3240,8 @@
 "isin": "INE739E01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.1,
-"ownPct": 32.15
+"lev": 3.3,
+"ownPct": 30.21
 },
 {
 "symbol": "DELTACORP",
@@ -3340,7 +3340,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
-"ownPct": 41.48
+"ownPct": 41.58
 },
 {
 "symbol": "COLPAL",
@@ -3348,8 +3348,8 @@
 "isin": "INE259A01022",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.4,
-"ownPct": 22.87
+"lev": 4.8,
+"ownPct": 20.91
 },
 {
 "symbol": "JYOTHYLAB",
@@ -3466,7 +3466,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.5,
-"ownPct": 68.2
+"ownPct": 66.13
 },
 {
 "symbol": "IRB",
@@ -3592,7 +3592,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
-"ownPct": 33.49
+"ownPct": 33.77
 },
 {
 "symbol": "GILLETTE",
@@ -3637,7 +3637,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
-"ownPct": 33.54
+"ownPct": 33.59
 },
 {
 "symbol": "BHARATWIRE",
@@ -3691,7 +3691,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.3,
-"ownPct": 30.1
+"ownPct": 30.36
 },
 {
 "symbol": "BECTORFOOD",
@@ -3816,8 +3816,8 @@
 "isin": "INE926X01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.3
+"lev": 2.4,
+"ownPct": 42.43
 },
 {
 "symbol": "RPGLIFE",
@@ -3862,7 +3862,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
-"ownPct": 39.34
+"ownPct": 39.36
 },
 {
 "symbol": "ARTEMISMED",
@@ -4032,8 +4032,8 @@
 "isin": "INE153T01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 38.09
+"lev": 2.8,
+"ownPct": 36.14
 },
 {
 "symbol": "AJMERA",
@@ -4041,8 +4041,8 @@
 "isin": "INE298G01035",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 42.55
+"lev": 2.7,
+"ownPct": 36.53
 },
 {
 "symbol": "LLOYDSME",
@@ -4068,8 +4068,8 @@
 "isin": "INE735W01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.3,
-"ownPct": 44.27
+"lev": 2.5,
+"ownPct": 40.23
 },
 {
 "symbol": "VINATIORGA",
@@ -4122,8 +4122,8 @@
 "isin": "INE615I01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 50.37
+"lev": 1.7,
+"ownPct": 60.43
 },
 {
 "symbol": "NETWEB",
@@ -4374,8 +4374,8 @@
 "isin": "INE758C01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.8
+"lev": 2.3,
+"ownPct": 42.79
 },
 {
 "symbol": "DLINKINDIA",
@@ -4509,8 +4509,8 @@
 "isin": "INE197A01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 50.38
+"lev": 2.2,
+"ownPct": 46.33
 },
 {
 "symbol": "SBFC",
@@ -4537,7 +4537,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
-"ownPct": 35.42
+"ownPct": 35.61
 },
 {
 "symbol": "KAJARIACER",
@@ -4590,8 +4590,8 @@
 "isin": "INE879I01012",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.1,
-"ownPct": 47.08
+"lev": 1.7,
+"ownPct": 58.14
 },
 {
 "symbol": "YASHO",
@@ -4717,7 +4717,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.0,
-"ownPct": 24.74
+"ownPct": 24.76
 },
 {
 "symbol": "RBLBANK",
@@ -4797,8 +4797,8 @@
 "isin": "INE777K01022",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 34.37
+"lev": 2.3,
+"ownPct": 44.39
 },
 {
 "symbol": "GNA",
@@ -4869,8 +4869,8 @@
 "isin": "INE495S01016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.2,
-"ownPct": 46.37
+"lev": 1.9,
+"ownPct": 53.46
 },
 {
 "symbol": "NUVAMA",
@@ -4896,8 +4896,8 @@
 "isin": "INE438K01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 50.89
+"lev": 2.2,
+"ownPct": 45.45
 },
 {
 "symbol": "YATRA",
@@ -4932,8 +4932,8 @@
 "isin": "INE002L01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 35.28
+"lev": 3.0,
+"ownPct": 33.27
 },
 {
 "symbol": "KSL",
@@ -4968,8 +4968,8 @@
 "isin": "INE473D01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 33.54
+"lev": 2.9,
+"ownPct": 34.08
 },
 {
 "symbol": "RAJRATAN",
@@ -5022,8 +5022,8 @@
 "isin": "INE250A01039",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 2.9,
+"ownPct": 34.02
 },
 {
 "symbol": "MANAPPURAM",
@@ -5067,8 +5067,8 @@
 "isin": "INE916U01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 42.2
+"lev": 2.6,
+"ownPct": 38.21
 },
 {
 "symbol": "KOPRAN",
@@ -5184,8 +5184,8 @@
 "isin": "INE999A01023",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.3,
-"ownPct": 30.6
+"lev": 2.5,
+"ownPct": 40.49
 },
 {
 "symbol": "BAJAJCON",
@@ -5275,7 +5275,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
-"ownPct": 36.46
+"ownPct": 36.51
 },
 {
 "symbol": "GPPL",
@@ -5293,7 +5293,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
-"ownPct": 36.84
+"ownPct": 36.91
 },
 {
 "symbol": "MUFIN",
@@ -5337,8 +5337,8 @@
 "isin": "INE348L01012",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 35.0
+"lev": 3.3,
+"ownPct": 30.59
 },
 {
 "symbol": "DMART",
@@ -5401,7 +5401,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.0,
-"ownPct": 32.91
+"ownPct": 33.27
 },
 {
 "symbol": "GREENPOWER",
@@ -5418,8 +5418,8 @@
 "isin": "INE874I01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.8,
-"ownPct": 55.38
+"lev": 1.5,
+"ownPct": 66.25
 },
 {
 "symbol": "ASKAUTOLTD",
@@ -5454,8 +5454,8 @@
 "isin": "INE442H01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 32.93
+"lev": 2.6,
+"ownPct": 39.04
 },
 {
 "symbol": "WABAG",
@@ -5526,8 +5526,8 @@
 "isin": "INE348A01023",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.8,
-"ownPct": 56.13
+"lev": 1.5,
+"ownPct": 66.05
 },
 {
 "symbol": "PRESTIGE",
@@ -5580,8 +5580,8 @@
 "isin": "INE688D01026",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.3,
-"ownPct": 43.35
+"lev": 2.6,
+"ownPct": 38.3
 },
 {
 "symbol": "CGCL",
@@ -5643,8 +5643,8 @@
 "isin": "INE09VQ01012",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 37.76
+"lev": 2.9,
+"ownPct": 34.86
 },
 {
 "symbol": "CHENNPETRO",
@@ -5661,8 +5661,8 @@
 "isin": "INE0KQN01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 2.8,
+"ownPct": 35.65
 },
 {
 "symbol": "GOLDAXIS",
@@ -5707,7 +5707,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
-"ownPct": 36.28
+"ownPct": 35.27
 },
 {
 "symbol": "DOLLAR",
@@ -5787,8 +5787,8 @@
 "isin": "INE031A01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 41.64
+"lev": 2.8,
+"ownPct": 35.83
 },
 {
 "symbol": "MOIL",
@@ -5814,8 +5814,8 @@
 "isin": "INE330T01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.2,
-"ownPct": 31.35
+"lev": 3.1,
+"ownPct": 32.02
 },
 {
 "symbol": "PSPPROJECT",
@@ -5823,8 +5823,8 @@
 "isin": "INE488V01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.35
+"lev": 2.6,
+"ownPct": 37.83
 },
 {
 "symbol": "MAHSEAMLES",
@@ -5895,8 +5895,8 @@
 "isin": "INE460H01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.5,
-"ownPct": 28.49
+"lev": 2.9,
+"ownPct": 35.0
 },
 {
 "symbol": "TEJASNET",
@@ -5931,8 +5931,8 @@
 "isin": "INE208A01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.6,
-"ownPct": 27.58
+"lev": 4.0,
+"ownPct": 24.95
 },
 {
 "symbol": "AUBANK",
@@ -6048,8 +6048,8 @@
 "isin": "INE171Z01026",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.7,
-"ownPct": 27.17
+"lev": 2.8,
+"ownPct": 36.23
 },
 {
 "symbol": "OPTIEMUS",
@@ -6093,8 +6093,8 @@
 "isin": "INE073V01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 41.72
+"lev": 2.5,
+"ownPct": 40.56
 },
 {
 "symbol": "ABCAPITAL",
@@ -6111,8 +6111,8 @@
 "isin": "INE346W01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.2,
-"ownPct": 46.23
+"lev": 2.3,
+"ownPct": 43.16
 },
 {
 "symbol": "DIXON",
@@ -6156,8 +6156,8 @@
 "isin": "INE264T01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.6,
-"ownPct": 62.47
+"lev": 1.9,
+"ownPct": 53.21
 },
 {
 "symbol": "ICICIGI",
@@ -6192,8 +6192,8 @@
 "isin": "INE621L01012",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.3,
-"ownPct": 43.18
+"lev": 2.6,
+"ownPct": 38.13
 },
 {
 "symbol": "TSFINV",
@@ -6336,8 +6336,8 @@
 "isin": "INE560K01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 35.18
+"lev": 3.1,
+"ownPct": 32.03
 },
 {
 "symbol": "BANDHANBNK",
@@ -6381,8 +6381,8 @@
 "isin": "INE0J1F01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 35.74
+"lev": 2.7,
+"ownPct": 37.28
 },
 {
 "symbol": "ENTERO",
@@ -6390,8 +6390,8 @@
 "isin": "INE010601016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 33.88
+"lev": 2.9,
+"ownPct": 34.27
 },
 {
 "symbol": "MON100",
@@ -6462,8 +6462,8 @@
 "isin": "INE153A01019",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 37.82
+"lev": 2.3,
+"ownPct": 43.44
 },
 {
 "symbol": "EXICOM",
@@ -6534,8 +6534,8 @@
 "isin": "INE103C01036",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 1.7,
+"ownPct": 60.0
 },
 {
 "symbol": "CPSEETF",
@@ -6607,7 +6607,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
-"ownPct": 39.27
+"ownPct": 39.55
 },
 {
 "symbol": "MUTHOOTFIN",
@@ -6652,7 +6652,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
-"ownPct": 29.58
+"ownPct": 29.69
 },
 {
 "symbol": "BSLGOLDETF",
@@ -6687,8 +6687,8 @@
 "isin": "INE108V01019",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.09
+"lev": 2.6,
+"ownPct": 38.12
 },
 {
 "symbol": "NELCO",
@@ -6723,8 +6723,8 @@
 "isin": "INE0HV901016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.1
+"lev": 2.2,
+"ownPct": 45.05
 },
 {
 "symbol": "MID150CASE",
@@ -6751,7 +6751,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
-"ownPct": 40.0
+"ownPct": 40.53
 },
 {
 "symbol": "PIIND",
@@ -6768,8 +6768,8 @@
 "isin": "INE225D01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.72
+"lev": 2.7,
+"ownPct": 36.61
 },
 {
 "symbol": "VADILALIND",
@@ -6795,8 +6795,8 @@
 "isin": "INE131B01039",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.4
+"lev": 2.7,
+"ownPct": 37.29
 },
 {
 "symbol": "VSTTILLERS",
@@ -6966,8 +6966,8 @@
 "isin": "INE912T01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 1.8,
+"ownPct": 54.06
 },
 {
 "symbol": "CEIGALL",
@@ -7029,8 +7029,8 @@
 "isin": "INE02RE01045",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.29
+"lev": 2.0,
+"ownPct": 51.21
 },
 {
 "symbol": "METALIETF",
@@ -7083,8 +7083,8 @@
 "isin": "INE0PPK01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.5,
-"ownPct": 65.59
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "WINDMACHIN",
@@ -7102,7 +7102,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
-"ownPct": 42.32
+"ownPct": 42.45
 },
 {
 "symbol": "ADANIENT",
@@ -7128,8 +7128,8 @@
 "isin": "INE02ID01020",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.4,
-"ownPct": 69.13
+"lev": 1.6,
+"ownPct": 64.1
 },
 {
 "symbol": "MULTICAP",
@@ -7182,8 +7182,8 @@
 "isin": "INE419M01035",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.47
+"lev": 1.9,
+"ownPct": 51.57
 },
 {
 "symbol": "SANOFICONR",
@@ -7227,8 +7227,8 @@
 "isin": "INE901L01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.3,
-"ownPct": 30.33
+"lev": 3.2,
+"ownPct": 30.78
 },
 {
 "symbol": "PGHH",
@@ -7263,8 +7263,8 @@
 "isin": "INE0QRL01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.1,
-"ownPct": 32.33
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "NORTHARC",
@@ -7344,8 +7344,8 @@
 "isin": "INE417B01040",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 42.18
+"lev": 2.5,
+"ownPct": 39.73
 },
 {
 "symbol": "POLYMED",
@@ -7533,8 +7533,8 @@
 "isin": "INE100A01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 38.46
+"lev": 3.1,
+"ownPct": 32.4
 },
 {
 "symbol": "DIVOPPBEES",
@@ -7659,8 +7659,8 @@
 "isin": "INE665A01038",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.1,
-"ownPct": 48.0
+"lev": 1.8,
+"ownPct": 55.0
 },
 {
 "symbol": "NIVABUPA",
@@ -7722,8 +7722,8 @@
 "isin": "INE0LLY01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.18
+"lev": 2.3,
+"ownPct": 42.83
 },
 {
 "symbol": "RTNINDIA",
@@ -7758,8 +7758,8 @@
 "isin": "INE010A01011",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 3.2,
+"ownPct": 31.15
 },
 {
 "symbol": "AUROPHARMA",
@@ -7794,8 +7794,8 @@
 "isin": "INE570L01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.2,
-"ownPct": 31.47
+"lev": 3.1,
+"ownPct": 32.04
 },
 {
 "symbol": "EASEMYTRIP",
@@ -7804,7 +7804,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.2,
-"ownPct": 46.51
+"ownPct": 45.41
 },
 {
 "symbol": "VMM",
@@ -7939,7 +7939,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.1,
-"ownPct": 31.88
+"ownPct": 31.91
 },
 {
 "symbol": "RELIANCE",
@@ -7974,8 +7974,8 @@
 "isin": "INE602G01020",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.13
+"lev": 2.2,
+"ownPct": 45.13
 },
 {
 "symbol": "MAYURUNIQ",
@@ -8010,8 +8010,8 @@
 "isin": "INE209B01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.2,
-"ownPct": 45.58
+"lev": 1.5,
+"ownPct": 67.09
 },
 {
 "symbol": "DDEVPLSTIK",
@@ -8154,8 +8154,8 @@
 "isin": "INE303R01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.4,
-"ownPct": 29.81
+"lev": 3.3,
+"ownPct": 29.89
 },
 {
 "symbol": "NIFTYIETF",
@@ -8183,6 +8183,15 @@
 "type": "equity",
 "lev": 3.3,
 "ownPct": 30.33
+},
+{
+"symbol": "AJAXENGG",
+"name": "AJAX ENGINEERING LIMITED",
+"isin": "INE274Y01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.1,
+"ownPct": 31.87
 },
 {
 "symbol": "SAIL",
@@ -8307,8 +8316,8 @@
 "isin": "INE951D01028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 40.83
+"lev": 2.6,
+"ownPct": 37.74
 },
 {
 "symbol": "MOCAPITAL",
@@ -8329,22 +8338,13 @@
 "ownPct": 30.74
 },
 {
-"symbol": "ITAXIS",
-"name": "AXISAMC-ITAXIS",
-"isin": "INF846K01Y96",
-"exchange": "NSE",
-"type": "etf",
-"lev": 3.6,
-"ownPct": 27.61
-},
-{
 "symbol": "GOLD360",
 "name": "360ONEAMC - GOLD360",
 "isin": "INF579M01BB5",
 "exchange": "NSE",
 "type": "etf",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 3.5,
+"ownPct": 28.78
 },
 {
 "symbol": "ABFRL",
@@ -8352,8 +8352,8 @@
 "isin": "INE647O01011",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.21
+"lev": 1.5,
+"ownPct": 67.52
 },
 {
 "symbol": "SELECTIPO",
@@ -8370,8 +8370,8 @@
 "isin": "INE148I01020",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 38.3
+"lev": 2.7,
+"ownPct": 36.46
 },
 {
 "symbol": "PRABHA",
@@ -8550,8 +8550,8 @@
 "isin": "INE974X01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.1,
-"ownPct": 24.53
+"lev": 4.0,
+"ownPct": 24.75
 },
 {
 "symbol": "SCHNEIDER",
@@ -8568,8 +8568,8 @@
 "isin": "INE095N01031",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.3,
-"ownPct": 29.89
+"lev": 2.8,
+"ownPct": 35.95
 },
 {
 "symbol": "BORORENEW",
@@ -8587,7 +8587,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.2,
-"ownPct": 23.62
+"ownPct": 23.68
 },
 {
 "symbol": "SIMPLEXINF",
@@ -8685,8 +8685,8 @@
 "isin": "INE565V01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 41.54
+"lev": 2.1,
+"ownPct": 47.62
 },
 {
 "symbol": "SPMLINFRA",
@@ -8767,7 +8767,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.4,
-"ownPct": 22.78
+"ownPct": 22.84
 },
 {
 "symbol": "SURYAROSNI",
@@ -8776,7 +8776,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.9,
-"ownPct": 35.05
+"ownPct": 34.03
 },
 {
 "symbol": "BALMLAWRIE",
@@ -8901,8 +8901,8 @@
 "isin": "INE152A01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.1,
-"ownPct": 32.3
+"lev": 2.2,
+"ownPct": 44.69
 },
 {
 "symbol": "THOMASCOOK",
@@ -8910,8 +8910,8 @@
 "isin": "INE332A01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.4,
-"ownPct": 41.8
+"lev": 2.6,
+"ownPct": 39.09
 },
 {
 "symbol": "TIRUMALCHM",
@@ -8919,8 +8919,8 @@
 "isin": "INE338A01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.4,
-"ownPct": 70.0
+"lev": 1.6,
+"ownPct": 62.86
 },
 {
 "symbol": "TATASTEEL",
@@ -8965,7 +8965,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.2,
-"ownPct": 31.49
+"ownPct": 31.56
 },
 {
 "symbol": "ADANIGREEN",
@@ -9000,8 +9000,8 @@
 "isin": "INE279A01012",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.9,
-"ownPct": 52.1
+"lev": 1.7,
+"ownPct": 57.26
 },
 {
 "symbol": "HEALTHIETF",
@@ -9045,8 +9045,8 @@
 "isin": "INE373A01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.65
+"lev": 2.9,
+"ownPct": 34.58
 },
 {
 "symbol": "VINDHYATEL",
@@ -9055,7 +9055,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
-"ownPct": 41.38
+"ownPct": 41.39
 },
 {
 "symbol": "VIPIND",
@@ -9063,8 +9063,8 @@
 "isin": "INE054A01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 33.08
+"lev": 2.4,
+"ownPct": 42.19
 },
 {
 "symbol": "BATAINDIA",
@@ -9162,8 +9162,8 @@
 "isin": "INE976A01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.59
+"lev": 2.6,
+"ownPct": 38.28
 },
 {
 "symbol": "BBTC",
@@ -9171,8 +9171,8 @@
 "isin": "INE050A01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 35.0
+"lev": 3.1,
+"ownPct": 32.0
 },
 {
 "symbol": "ZEEL",
@@ -9316,7 +9316,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.6,
-"ownPct": 39.08
+"ownPct": 39.11
 },
 {
 "symbol": "NAVA",
@@ -9343,7 +9343,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.6,
-"ownPct": 38.4
+"ownPct": 38.41
 },
 {
 "symbol": "PANACEABIO",
@@ -9369,8 +9369,8 @@
 "isin": "INE495C01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.0,
-"ownPct": 33.89
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "BEPL",
@@ -9388,7 +9388,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.1,
-"ownPct": 24.16
+"ownPct": 24.39
 },
 {
 "symbol": "BHARATFORG",
@@ -9765,8 +9765,8 @@
 "isin": "INE962Y01021",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.68
+"lev": 2.8,
+"ownPct": 35.7
 },
 {
 "symbol": "SHARDACROP",
@@ -9828,8 +9828,8 @@
 "isin": "INE070D01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.29
+"lev": 2.8,
+"ownPct": 36.24
 },
 {
 "symbol": "TATVA",
@@ -9837,8 +9837,8 @@
 "isin": "INE0GK401011",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.0
+"lev": 2.6,
+"ownPct": 38.77
 },
 {
 "symbol": "STYLAMIND",
@@ -9982,7 +9982,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.9,
-"ownPct": 34.1
+"ownPct": 34.37
 },
 {
 "symbol": "DEVYANI",
@@ -10080,8 +10080,8 @@
 "isin": "INE382Z01011",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 40.77
+"lev": 2.6,
+"ownPct": 38.67
 },
 {
 "symbol": "SERVOTECH",
@@ -10134,8 +10134,8 @@
 "isin": "INE168A01041",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.23
+"lev": 2.8,
+"ownPct": 36.06
 },
 {
 "symbol": "CUB",
@@ -10224,8 +10224,8 @@
 "isin": "INE306R01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.6,
-"ownPct": 62.73
+"lev": 1.4,
+"ownPct": 70.0
 },
 {
 "symbol": "MONTECARLO",
@@ -10252,7 +10252,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.1,
-"ownPct": 32.7
+"ownPct": 32.72
 },
 {
 "symbol": "ABSLAMC",
@@ -10296,8 +10296,8 @@
 "isin": "INE485A01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 2.7,
+"ownPct": 36.62
 },
 {
 "symbol": "FCL",
@@ -10359,8 +10359,8 @@
 "isin": "INE188B01013",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 36.64
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "NIFTYETF",
@@ -10395,8 +10395,8 @@
 "isin": "INE285K01026",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.63
+"lev": 2.9,
+"ownPct": 34.88
 },
 {
 "symbol": "TECH",
@@ -10404,8 +10404,8 @@
 "isin": "INF209KB11D8",
 "exchange": "NSE",
 "type": "etf",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 3.6,
+"ownPct": 27.59
 },
 {
 "symbol": "NYKAA",
@@ -10593,8 +10593,8 @@
 "isin": "INE0BJS01011",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.9,
-"ownPct": 53.9
+"lev": 2.1,
+"ownPct": 46.82
 },
 {
 "symbol": "BSOFT",
@@ -10620,8 +10620,8 @@
 "isin": "INE0AJG01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 36.27
+"lev": 2.9,
+"ownPct": 35.0
 },
 {
 "symbol": "ASIANENE",
@@ -10648,7 +10648,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.6,
-"ownPct": 27.46
+"ownPct": 27.6
 },
 {
 "symbol": "TEGA",
@@ -10674,8 +10674,8 @@
 "isin": "INE0CLI01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 34.86
+"lev": 2.8,
+"ownPct": 35.25
 },
 {
 "symbol": "BBETF0432",
@@ -10729,7 +10729,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
-"ownPct": 29.36
+"ownPct": 29.38
 },
 {
 "symbol": "MEDPLUS",
@@ -10765,7 +10765,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.2,
-"ownPct": 31.54
+"ownPct": 31.56
 },
 {
 "symbol": "SBIBANKNIF",
@@ -10791,8 +10791,8 @@
 "isin": "INE169A01031",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.3,
-"ownPct": 23.07
+"lev": 3.5,
+"ownPct": 28.17
 },
 {
 "symbol": "SUPRIYA",
@@ -10800,8 +10800,8 @@
 "isin": "INE07RO01027",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.15
+"lev": 2.0,
+"ownPct": 49.89
 },
 {
 "symbol": "SBIIT",
@@ -10819,7 +10819,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 4.5,
-"ownPct": 22.34
+"ownPct": 22.42
 },
 {
 "symbol": "ALPHA",
@@ -10881,8 +10881,8 @@
 "isin": "INE704J01044",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 38.02
+"lev": 2.7,
+"ownPct": 37.0
 },
 {
 "symbol": "VEDPOWER",
@@ -10918,7 +10918,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
-"ownPct": 35.29
+"ownPct": 35.3
 },
 {
 "symbol": "EVIETF",
@@ -11029,6 +11029,15 @@
 "ownPct": 38.94
 },
 {
+"symbol": "AONENIFTY",
+"name": "AONEAMC - AONENIFTY",
+"isin": "INF1J2R01064",
+"exchange": "NSE",
+"type": "etf",
+"lev": 5.0,
+"ownPct": 20.0
+},
+{
 "symbol": "BELRISE",
 "name": "BELRISE INDUSTRIES LTD",
 "isin": "INE894V01022",
@@ -11071,7 +11080,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
-"ownPct": 41.14
+"ownPct": 41.27
 },
 {
 "symbol": "TRAVELFOOD",
@@ -11169,8 +11178,8 @@
 "isin": "INE0S4R01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.93
+"lev": 2.3,
+"ownPct": 43.4
 },
 {
 "symbol": "EBGNG",
@@ -11178,8 +11187,8 @@
 "isin": "INE18JU01028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.52
+"lev": 2.3,
+"ownPct": 43.19
 },
 {
 "symbol": "ANTHEM",
@@ -11206,7 +11215,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.4,
-"ownPct": 29.79
+"ownPct": 29.82
 },
 {
 "symbol": "SHANTIGOLD",
@@ -11278,7 +11287,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.7,
-"ownPct": 37.44
+"ownPct": 37.72
 },
 {
 "symbol": "INTERNET",
@@ -11286,8 +11295,8 @@
 "isin": "INF769K01PB6",
 "exchange": "NSE",
 "type": "etf",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 3.8,
+"ownPct": 26.5
 },
 {
 "symbol": "EFCIL",
@@ -11295,8 +11304,8 @@
 "isin": "INE886D01026",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 36.78
+"lev": 2.8,
+"ownPct": 35.73
 },
 {
 "symbol": "REGAAL",
@@ -11385,8 +11394,8 @@
 "isin": "INE01R501028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 36.79
+"lev": 2.4,
+"ownPct": 42.05
 },
 {
 "symbol": "GCSL",
@@ -11430,8 +11439,8 @@
 "isin": "INE13B501022",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 2.7,
+"ownPct": 37.43
 },
 {
 "symbol": "URBANCO",
@@ -11475,8 +11484,8 @@
 "isin": "INE0MLS01022",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.6,
-"ownPct": 38.77
+"lev": 2.3,
+"ownPct": 44.42
 },
 {
 "symbol": "TATACAP",
@@ -11485,7 +11494,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.7,
-"ownPct": 27.23
+"ownPct": 27.3
 },
 {
 "symbol": "BLUESTONE",
@@ -11512,7 +11521,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.3,
-"ownPct": 30.08
+"ownPct": 30.19
 },
 {
 "symbol": "RUBICON",
@@ -11682,8 +11691,8 @@
 "isin": "INE198501012",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.6,
-"ownPct": 62.0
+"lev": 1.4,
+"ownPct": 70.0
 },
 {
 "symbol": "GROWW",
@@ -11746,7 +11755,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.9,
-"ownPct": 33.9
+"ownPct": 34.46
 },
 {
 "symbol": "TENNIND",
@@ -11754,8 +11763,8 @@
 "isin": "INE19RI01016",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.4,
-"ownPct": 29.16
+"lev": 2.5,
+"ownPct": 39.71
 },
 {
 "symbol": "CHEMICAL",
@@ -11772,8 +11781,8 @@
 "isin": "INE0TY101024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.4,
-"ownPct": 70.0
+"lev": 1.6,
+"ownPct": 61.37
 },
 {
 "symbol": "STYL",
@@ -11844,8 +11853,8 @@
 "isin": "INE903A01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.05
+"lev": 2.3,
+"ownPct": 44.0
 },
 {
 "symbol": "SKFINDUS",
@@ -11889,8 +11898,8 @@
 "isin": "INE14UN01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 39.91
+"lev": 1.9,
+"ownPct": 51.34
 },
 {
 "symbol": "MEESHO",
@@ -11907,8 +11916,8 @@
 "isin": "INE947N01017",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.7,
-"ownPct": 37.01
+"lev": 2.2,
+"ownPct": 44.99
 },
 {
 "symbol": "PNGSREVA",
@@ -11926,7 +11935,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.6,
-"ownPct": 28.12
+"ownPct": 28.14
 },
 {
 "symbol": "WAKEFIT",
@@ -11943,8 +11952,8 @@
 "isin": "INE925R01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 35.0
+"lev": 3.5,
+"ownPct": 28.97
 },
 {
 "symbol": "GOLDBND",
@@ -11998,7 +12007,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.8,
-"ownPct": 36.02
+"ownPct": 36.29
 },
 {
 "symbol": "GROWWMETAL",
@@ -12015,8 +12024,8 @@
 "isin": "INE24OJ01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.8,
-"ownPct": 54.22
+"lev": 2.1,
+"ownPct": 47.2
 },
 {
 "symbol": "ADVAIT",
@@ -12078,8 +12087,8 @@
 "isin": "INE212S01015",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.9,
-"ownPct": 34.76
+"lev": 3.0,
+"ownPct": 33.71
 },
 {
 "symbol": "AYE",
@@ -12222,8 +12231,8 @@
 "isin": "INE0H9F01037",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.4,
-"ownPct": 29.4
+"lev": 2.9,
+"ownPct": 34.49
 },
 {
 "symbol": "POWERICA",
@@ -12231,8 +12240,8 @@
 "isin": "INE921L01032",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.2,
-"ownPct": 31.54
+"lev": 2.7,
+"ownPct": 37.68
 },
 {
 "symbol": "TCC",
@@ -12250,7 +12259,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
-"ownPct": 40.69
+"ownPct": 40.73
 },
 {
 "symbol": "CORDELIA",
@@ -12276,8 +12285,8 @@
 "isin": "INE515A01019",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
+"lev": 2.5,
+"ownPct": 40.12
 },
 {
 "symbol": "DECNGOLD",
@@ -12285,8 +12294,8 @@
 "isin": "INE945F01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 49.82
+"lev": 2.1,
+"ownPct": 46.75
 },
 {
 "symbol": "ELANTAS",
@@ -12294,8 +12303,8 @@
 "isin": "INE280B01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.8,
-"ownPct": 35.39
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "FEDDERSHOL",
@@ -12340,7 +12349,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.4,
-"ownPct": 42.06
+"ownPct": 41.06
 },
 {
 "symbol": "SEIL",
@@ -12393,8 +12402,8 @@
 "isin": "INE731F01037",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 39.78
+"lev": 1.0,
+"ownPct": 100.0
 },
 {
 "symbol": "WPIL",
@@ -12412,7 +12421,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.2,
-"ownPct": 31.52
+"ownPct": 31.63
 },
 {
 "symbol": "AGL",
@@ -12420,8 +12429,8 @@
 "isin": "INE1YPB01014",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.3,
-"ownPct": 42.67
+"lev": 2.0,
+"ownPct": 50.0
 },
 {
 "symbol": "KNACK",
@@ -12456,8 +12465,8 @@
 "isin": "INE302D01024",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.0,
-"ownPct": 50.54
+"lev": 2.2,
+"ownPct": 46.51
 },
 {
 "symbol": "LASERPOWER",
@@ -12465,8 +12474,8 @@
 "isin": "INE17IR01028",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.3,
-"ownPct": 44.35
+"lev": 1.8,
+"ownPct": 57.09
 },
 {
 "symbol": "SBIFUNDS",
@@ -12532,13 +12541,22 @@
 "ownPct": 26.5
 },
 {
+"symbol": "EBANK10",
+"name": "EDELAMC - EBANK10",
+"isin": "INF754K01XH9",
+"exchange": "NSE",
+"type": "etf",
+"lev": 3.8,
+"ownPct": 26.5
+},
+{
 "symbol": "MVELECTRO",
 "name": "MV ELECTROSYSTEMS LIMITED",
 "isin": "INE0OWZ01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.9,
-"ownPct": 34.54
+"ownPct": 34.59
 },
 {
 "symbol": "JNPR",
@@ -12667,13 +12685,22 @@
 "ownPct": 40.0
 },
 {
+"symbol": "NIFTYJBLK",
+"name": "JIOBLACKROCKAMC-NIFTYJBLK",
+"isin": "INF22M001184",
+"exchange": "NSE",
+"type": "etf",
+"lev": 5.0,
+"ownPct": 20.0
+},
+{
 "symbol": "HORIZONIND",
 "name": "HORIZON INDUSTRIAL PRKS L",
 "isin": "INE685T01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.6,
-"ownPct": 27.5
+"lev": 2.7,
+"ownPct": 36.5
 },
 {
 "symbol": "SHANKESH",
@@ -12888,8 +12915,8 @@
 "isin": "INE0PTN01011",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.4,
-"ownPct": 29.4
+"lev": 2.5,
+"ownPct": 40.0
 },
 {
 "symbol": "ORIENTCABL",
@@ -13006,7 +13033,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.2,
-"ownPct": 31.67
+"ownPct": 31.72
 },
 {
 "symbol": "ZYDUSLIFE",
@@ -13302,8 +13329,8 @@
 "isin": "INE366I01010",
 "exchange": "NSE",
 "type": "equity",
-"lev": 3.2,
-"ownPct": 31.32
+"lev": 3.1,
+"ownPct": 31.8
 },
 {
 "symbol": "SHAILY",
@@ -13410,8 +13437,8 @@
 "isin": "INE234A01025",
 "exchange": "NSE",
 "type": "equity",
-"lev": 2.5,
-"ownPct": 39.28
+"lev": 2.6,
+"ownPct": 38.2
 },
 {
 "symbol": "ANUP",
@@ -13419,8 +13446,8 @@
 "isin": "INE294Z01018",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.9,
-"ownPct": 52.0
+"lev": 1.6,
+"ownPct": 62.0
 },
 {
 "symbol": "ROTO",
@@ -13510,7 +13537,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
-"ownPct": 39.77
+"ownPct": 39.86
 },
 {
 "symbol": "ELECTCAST",
@@ -13599,8 +13626,8 @@
 "isin": "INE625X01026",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.9,
-"ownPct": 53.87
+"lev": 1.6,
+"ownPct": 63.78
 },
 {
 "symbol": "SKIPPER",
@@ -13797,8 +13824,8 @@
 "isin": "INE176B01034",
 "exchange": "NSE",
 "type": "equity",
-"lev": 4.9,
-"ownPct": 20.58
+"lev": 4.8,
+"ownPct": 20.83
 },
 {
 "symbol": "NV20BEES",
@@ -13816,7 +13843,7 @@
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.6,
-"ownPct": 37.74
+"ownPct": 37.88
 },
 {
 "symbol": "ONEPOINT",
@@ -13824,8 +13851,8 @@
 "isin": "INE840Y01029",
 "exchange": "NSE",
 "type": "equity",
-"lev": 1.7,
-"ownPct": 60.0
+"lev": 2.5,
+"ownPct": 40.0
 }
 ]
 }

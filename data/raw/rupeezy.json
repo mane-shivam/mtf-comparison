@@ -1,11 +1,11 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-07T18:59:52Z",
+"fetchedAt": "2026-11-08T08:09:29Z",
 "count": 2210,
 "rows": [
 {
 "symbol": "LIQUIDCASE",
-"name": "Zerodha Nifty 1D Rate Liquid ETF",
+"name": "Zerodha CASE Nifty 1D Rate Liquid ETF",
 "isin": "INF0R8F01034",
 "exchange": "NSE",
 "type": "equity",
@@ -50,7 +50,7 @@
 },
 {
 "symbol": "NIFTYCASE",
-"name": "Zerodha Nifty 50 ETF",
+"name": "Zerodha CASE Nifty 50 ETF",
 "isin": "INF0R8F01166",
 "exchange": "NSE",
 "type": "equity",
@@ -59,7 +59,7 @@
 },
 {
 "symbol": "SML100CASE",
-"name": "Zerodha Nifty Smallcap 100 ETF",
+"name": "Zerodha CASE Nifty Smallcap 100 ETF",
 "isin": "INF0R8F01141",
 "exchange": "NSE",
 "type": "equity",
@@ -95,7 +95,7 @@
 },
 {
 "symbol": "TOP100CASE",
-"name": "Zerodha Nifty 100 ETF",
+"name": "Zerodha CASE Nifty 100 ETF",
 "isin": "INF0R8F01067",
 "exchange": "NSE",
 "type": "equity",
@@ -158,7 +158,7 @@
 },
 {
 "symbol": "MID150CASE",
-"name": "Zerodha Nifty Midcap 150 ETF",
+"name": "Zerodha CASE Nifty Midcap 150 ETF",
 "isin": "INF0R8F01059",
 "exchange": "NSE",
 "type": "equity",
@@ -428,7 +428,7 @@
 },
 {
 "symbol": "LTGILTCASE",
-"name": "Zerodha Nifty 8-13 Yr G-Sec ETF",
+"name": "Zerodha CASE Nifty 8-13 Yr G-Sec ETF",
 "isin": "INF0R8F01133",
 "exchange": "NSE",
 "type": "equity",
@@ -589,18 +589,18 @@
 "ownPct": 20.0
 },
 {
-"symbol": "SENSEXETF",
-"name": "Mirae Asset BSE Sensex ETF",
-"isin": "INF769K01KT9",
+"symbol": "NIF100IETF",
+"name": "ICICI Prudential Nifty 100 ETF",
+"isin": "INF109KC16V9",
 "exchange": "NSE",
 "type": "equity",
 "lev": 5.0,
 "ownPct": 20.0
 },
 {
-"symbol": "NIF100IETF",
-"name": "ICICI Prudential Nifty 100 ETF",
-"isin": "INF109KC16V9",
+"symbol": "SENSEXETF",
+"name": "Mirae Asset BSE Sensex ETF",
+"isin": "INF769K01KT9",
 "exchange": "NSE",
 "type": "equity",
 "lev": 5.0,
@@ -887,7 +887,7 @@
 },
 {
 "symbol": "NXT100CASE",
-"name": "Zerodha Nifty Next 100 ETF",
+"name": "Zerodha CASE Nifty Next 100 ETF",
 "isin": "INF0R8F01257",
 "exchange": "NSE",
 "type": "equity",
@@ -4829,7 +4829,7 @@
 },
 {
 "symbol": "GOLDCASE",
-"name": "Zerodha Gold ETF",
+"name": "Zerodha CASE Gold ETF",
 "isin": "INF0R8F01042",
 "exchange": "NSE",
 "type": "equity",
@@ -9409,6 +9409,15 @@
 "ownPct": 32.68
 },
 {
+"symbol": "HAPPSTMNDS",
+"name": "HAPPIEST MINDS TECHNO LTD",
+"isin": "INE419U01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.06,
+"ownPct": 32.68
+},
+{
 "symbol": "CARBORUNIV",
 "name": "CARBORUNDUM UNIVERSAL LTD",
 "isin": "INE120A01034",
@@ -9484,15 +9493,6 @@
 "symbol": "APOLSINHOT",
 "name": "APOLLO SINDOORI HOTEL LTD",
 "isin": "INE451F01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.06,
-"ownPct": 32.68
-},
-{
-"symbol": "HAPPSTMNDS",
-"name": "HAPPIEST MINDS TECHNO LTD",
-"isin": "INE419U01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.06,
@@ -13685,7 +13685,7 @@
 },
 {
 "symbol": "SILVERCASE",
-"name": "Zerodha Silver ETF",
+"name": "Zerodha CASE Silver ETF",
 "isin": "INF0R8F01091",
 "exchange": "NSE",
 "type": "equity",

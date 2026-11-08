@@ -10134,6 +10134,12 @@
 "type": "equity"
 },
 {
+"symbol": "ORTEL",
+"name": "Ortel Communications Limited",
+"isin": "INE849L01019",
+"type": "equity"
+},
+{
 "symbol": "ORTINGLOBE",
 "name": "ORTIN GLOBAL LIMITED",
 "isin": "INE749B01020",
@@ -14955,6 +14961,12 @@
 "symbol": "VEEDOL",
 "name": "Veedol Corporation Limited",
 "isin": "INE484C01030",
+"type": "equity"
+},
+{
+"symbol": "VEEFIN",
+"name": "Veefin Solutions Limited",
+"isin": "INE0Q0M01015",
 "type": "equity"
 },
 {
