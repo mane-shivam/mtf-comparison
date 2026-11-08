@@ -31,6 +31,7 @@ Saved responses are in `samples/` and the parser tests run against them.
 
 ```bash
 pip install -r requirements.txt
+python scrapers/nse.py && python scrapers/kotak.py && python scrapers/rupeezy.py && python scrapers/surveillance.py
 python merge.py
 python -m pytest -q
 
