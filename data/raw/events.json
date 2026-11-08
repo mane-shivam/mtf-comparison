@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-08T16:48:43Z",
+"fetchedAt": "2026-11-08T18:57:47Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-08T16:48:36Z",
+"fetchedAt": "2026-11-08T18:57:42Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-08T16:48:37Z",
+"fetchedAt": "2026-11-08T18:57:43Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-08T16:48:43Z",
-"count": 1229,
+"fetchedAt": "2026-11-08T18:57:47Z",
+"count": 914,
 "error": null
 }
 },
@@ -2341,14 +2341,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18645_20261107_170300781_WEB.html"
 },
 {
-"symbol": "AADHARHFC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "AADHAR HOUSING FINANCE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19106_20261028_175506552_WEB.html"
-},
-{
 "symbol": "AAREYDRUGS",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -2389,15 +2381,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27080_20261103_161937877_WEB.html"
 },
 {
-"symbol": "AAVAS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Aavas Financiers Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/AAVAS_05112026171817_Credit_Rating_Disclosure_Final.pdf"
-},
-{
 "symbol": "ABB",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -2412,14 +2395,6 @@
 "title": "Results",
 "detail": "ABC Industries India Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19522_20261106_130512114_WEB.html"
-},
-{
-"symbol": "ABFRL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Aditya Birla Fashion and Retail Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_7044_20261030_155625257_WEB.html"
 },
 {
 "symbol": "ABHISHEK",
@@ -2460,14 +2435,6 @@
 "title": "Results",
 "detail": "ACE INTEGRATED SOLUTIONS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15322_20261102_163015437_WEB.html"
-},
-{
-"symbol": "ADFFOODS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "ADF FOODS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3510_20261031_232340889_WEB.html"
 },
 {
 "symbol": "ADFFOODS",
@@ -2517,14 +2484,6 @@
 "title": "Results",
 "detail": "Agarwal Industrial Corporation Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_9854_20261105_162710724_WEB.html"
-},
-{
-"symbol": "AGARWALEYE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "DR. AGARWAL'S HEALTH CARE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24622_20261023_174832688_WEB.html"
 },
 {
 "symbol": "AGASTYAEN",
@@ -2719,14 +2678,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2590_20261104_161056030_WEB.html"
 },
 {
-"symbol": "ALPINETEX",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ALPINE TEXWORLD LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27009_20261031_162431895_WEB.html"
-},
-{
 "symbol": "ALPSINDUS",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -2735,28 +2686,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1352_20261103_171809731_WEB.html"
 },
 {
-"symbol": "AMAGI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Amagi Media Labs Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26604_20261019_154829838_WEB.html"
-},
-{
 "symbol": "AMBER",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "Amber Enterprises India Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15745_20261107_120701327_WEB.html"
-},
-{
-"symbol": "AMBICAAGAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Ambica Agarbathies & Aroma industries Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2206_20261031_172925306_WEB.html"
 },
 {
 "symbol": "AMBIKCO",
@@ -2813,14 +2748,6 @@
 "title": "Results",
 "detail": "ANMOL INDIA LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19518_20261105_110319860_WEB.html"
-},
-{
-"symbol": "ANTGRAPHIC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Antarctica Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1650_20261031_142333571_WEB.html"
 },
 {
 "symbol": "ANTGRAPHIC",
@@ -2889,14 +2816,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15441_20261105_185918690_WEB.html"
 },
 {
-"symbol": "APOLLOPIPE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "APOLLO PIPES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17628_20261029_173537268_WEB.html"
-},
-{
 "symbol": "APOLSINHOT",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -2961,14 +2880,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2707_20261105_121142773_WEB.html"
 },
 {
-"symbol": "ARMEE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ARMEE INFOTECH LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23954_20261102_190839367_WEB.html"
-},
-{
 "symbol": "AROGRANITE",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -2977,36 +2888,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2580_20261104_125415317_WEB.html"
 },
 {
-"symbol": "ARROWGREEN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ARROW GREENTECH LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_12379_20261031_172826888_WEB.html"
-},
-{
 "symbol": "ARSSINFRA",
 "date": "2026-11-10",
 "kind": "meeting",
 "title": "Results",
 "detail": "ARSS INFRASTRUCTURE PROJECTS LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3082_20261105_124214677_WEB.html"
-},
-{
-"symbol": "ARTNIRMAN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ART NIRMAN LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14313_20261026_161905979_WEB.html"
-},
-{
-"symbol": "ARVSMART",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Arvind SmartSpaces Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13015_20261028_185723687_WEB.html"
 },
 {
 "symbol": "ASAHISONG",
@@ -3023,22 +2910,6 @@
 "title": "Results",
 "detail": "ASSOCIATED ALCOHOLS & BREWERIES LTD. has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other bu",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17759_20261104_164828362_WEB.html"
-},
-{
-"symbol": "ASHAPURMIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ASHAPURA MINECHEM LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1262_20261029_155806635_WEB.html"
-},
-{
-"symbol": "ASHOKA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ASHOKA BUILDCON LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3633_20261027_131007485_WEB.html"
 },
 {
 "symbol": "ASHOKLEY",
@@ -3065,28 +2936,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15805_20261028_191253896_WEB.html"
 },
 {
-"symbol": "ASTRAL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "ASTRAL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2559_20261029_182754685_WEB.html"
-},
-{
 "symbol": "ASTRAMICRO",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "ASTRA MICROWAVE PRODUCTS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2246_20261102_151439200_WEB.html"
-},
-{
-"symbol": "ASTRAZEN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ASTRAZENECA PHARMA INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1686_20261030_144151489_WEB.html"
 },
 {
 "symbol": "ASTRON",
@@ -3139,14 +2994,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=AUROPHARMA"
 },
 {
-"symbol": "AURUS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "AURUS GEM CORPORATION LTD has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_7857_20261031_183230711_WEB.html"
-},
-{
 "symbol": "AUTOAXLES",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -3161,14 +3008,6 @@
 "title": "Results",
 "detail": "AUTOLINE INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2513_20261030_143636987_WEB.html"
-},
-{
-"symbol": "AVADHSUGAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "AVADH SUGAR & ENERGY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15370_20261030_143143047_WEB.html"
 },
 {
 "symbol": "AVALON",
@@ -3203,14 +3042,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2500_20261102_110732144_WEB.html"
 },
 {
-"symbol": "AWHCL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Antony Waste Handling Cell Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17128_20261026_174110536_WEB.html"
-},
-{
 "symbol": "AZAD",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -3225,22 +3056,6 @@
 "title": "Results",
 "detail": "BAFNA PHARMACEUTICALS LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17773_20261106_152113735_WEB.html"
-},
-{
-"symbol": "BAGFILMS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "B.A.G FILMS AND MEDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2153_20261026_181233709_WEB.html"
-},
-{
-"symbol": "BAGMANE",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Distribution - Rs 1.55 Per Unit Consists Of Rs 1.22 Per Unit As Dividend & Re 0.33 Per Unit As Interest",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=BAGMANE"
 },
 {
 "symbol": "BAJAJHIND",
@@ -3395,22 +3210,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/BCG_07112026145517_BCG_Intimation_of_Board_Meeting_71126_.pdf"
 },
 {
-"symbol": "BCONCEPTS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BRAND CONCEPTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15702_20261030_184631529_WEB.html"
-},
-{
-"symbol": "BCPL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BCPL RAILWAY INFRASTRUCTURE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27365_20261028_191212108_WEB.html"
-},
-{
 "symbol": "BDL",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -3435,36 +3234,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3634_20261030_140802075_WEB.html"
 },
 {
-"symbol": "BELLACASA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BELLA CASA FASHION & RETAIL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26028_20261029_201801507_WEB.html"
-},
-{
 "symbol": "BELRISE",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "BELRISE INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24878_20261107_152347542_WEB.html"
-},
-{
-"symbol": "BEML",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BEML LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_296_20261028_115729306_WEB.html"
-},
-{
-"symbol": "BERGEPAINT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BERGER PAINTS (I) LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_488_20261005_163807015_WEB.html"
 },
 {
 "symbol": "BFINVEST",
@@ -3483,28 +3258,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_2586_WebXMLFile_20261102_154658251.xml"
 },
 {
-"symbol": "BGLOBAL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Bharatiya Global Infomedia Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5080_20261026_164826078_WEB.html"
-},
-{
 "symbol": "BHANDARI",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "BHANDARI HOSIERY EXPORTS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14489_20261105_172908870_WEB.html"
-},
-{
-"symbol": "BHARATFORG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BHARAT FORGE LTD has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_201_20261027_120352890_WEB.html"
 },
 {
 "symbol": "BHARATIDIL",
@@ -3524,14 +3283,6 @@
 },
 {
 "symbol": "BHARTIARTL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Bharti Airtel Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2002_20261026_192632288_WEB.html"
-},
-{
-"symbol": "BHARTIARTL",
 "date": "2026-11-06",
 "kind": "news",
 "level": "watch",
@@ -3541,28 +3292,12 @@
 },
 {
 "symbol": "BHARTIHEXA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BHARTI HEXACOM LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17875_20261026_191811332_WEB.html"
-},
-{
-"symbol": "BHARTIHEXA",
 "date": "2026-11-06",
 "kind": "news",
 "level": "watch",
 "title": "Director/KMP resigned",
 "detail": "Bharti Hexacom Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.com/corporate/BHARTIHEXA_ROID_104116_KMP_Doc.zip"
-},
-{
-"symbol": "BIKAJI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BIKAJI FOODS INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20521_20261026_105257080_WEB.html"
 },
 {
 "symbol": "BIL",
@@ -3587,22 +3322,6 @@
 "title": "Results",
 "detail": "BIOFIL CHEMICALS & PHARMACEUTICALS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Ot",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1371_20261103_134659903_WEB.html"
-},
-{
-"symbol": "BIRET",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Distribution - Rs 5.70 Per Unit Consists Of Rs 1.72 Per Unit As Dividend/ Rs 1.54 Per Unit As Interest/Rs 2.24 Per Unit Repayemt Of Spv And Ncd/ Re 0.20 Per Unit Interest On Fd",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=BIRET"
-},
-{
-"symbol": "BIRLACABLE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BIRLA CABLE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_328_20261021_124941351_WEB.html"
 },
 {
 "symbol": "BLEL",
@@ -3652,14 +3371,6 @@
 "title": "Results",
 "detail": "Blue Dart Express Limited has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_510_20261030_154810038_WEB.html"
-},
-{
-"symbol": "BLUEJET",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BLUE JET HEALTHCARE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21086_20261029_131747646_WEB.html"
 },
 {
 "symbol": "BLUSPRING",
@@ -3726,14 +3437,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_29011_20261106_132439700_WEB.html"
 },
 {
-"symbol": "BRITANNIA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "BRITANNIA INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_761_20261023_184518856_WEB.html"
-},
-{
 "symbol": "BRNL",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -3759,14 +3462,6 @@
 },
 {
 "symbol": "BSOFT",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 3 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=BSOFT"
-},
-{
-"symbol": "BSOFT",
 "date": "2026-11-06",
 "kind": "news",
 "level": "watch",
@@ -3781,14 +3476,6 @@
 "title": "Results",
 "detail": "BODHI TREE MULTIMEDIA LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18685_20261105_150641657_WEB.html"
-},
-{
-"symbol": "BUILDPRO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHANKARA BUILDPRO LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27124_20261028_120635568_WEB.html"
 },
 {
 "symbol": "BURNPUR",
@@ -3807,28 +3494,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2679_20261106_150341046_WEB.html"
 },
 {
-"symbol": "BYKE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "The Byke Hospitality Ltd has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11875_20261029_192538511_WEB.html"
-},
-{
 "symbol": "CALSOFT",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "CALIFORNIA SOFTWARE COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other bus",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1899_20261107_122304268_WEB.html"
-},
-{
-"symbol": "CAMPUS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "CAMPUS ACTIVEWEAR LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20295_20261029_175045524_WEB.html"
 },
 {
 "symbol": "CAMS",
@@ -3911,36 +3582,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11402_20261107_145443963_WEB.html"
 },
 {
-"symbol": "CEIGALL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Fund raising",
-"detail": "CEIGALL INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider Fund raising.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23401_20261102_153521499_WEB.html"
-},
-{
 "symbol": "CEINSYS",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "CEINSYS TECH LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23542_20261106_133019933_WEB.html"
-},
-{
-"symbol": "CELLO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "CELLO WORLD LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22391_20261102_165027755_WEB.html"
-},
-{
-"symbol": "CEMPRO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Cemindia Projects Limited (formerly ITD Cementation India Limited) has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly e",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1692_20261027_151214000_WEB.html"
 },
 {
 "symbol": "CEMPRO",
@@ -3974,23 +3621,6 @@
 "title": "Results",
 "detail": "Cerebra Integrated Technologies Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6992_20261106_143113206_WEB.html"
-},
-{
-"symbol": "CESC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "CESC LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1245_20261029_143702452_WEB.html"
-},
-{
-"symbol": "CGPOWER",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "CG Power and Industrial Solutions Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.com/corporate/CGPOWER_05112026123502_Draft_SE_Disclosure-_Closure_of_Operations-051126.pdf"
 },
 {
 "symbol": "CHAMBLFERT",
@@ -4162,28 +3792,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2793_20261102_175156237_WEB.html"
 },
 {
-"symbol": "CPPLUS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ADITYA INFOTECH LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24649_20261031_162538190_WEB.html"
-},
-{
 "symbol": "CREATIVEYE",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "CREATIVE EYE LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1881_20261104_180146863_WEB.html"
-},
-{
-"symbol": "CREST",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "CREST VENTURES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1415_20261028_190834787_WEB.html"
 },
 {
 "symbol": "CRESTO",
@@ -4243,15 +3857,6 @@
 },
 {
 "symbol": "DABUR",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Dabur India Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/DABUR_ROID_103682_KMP_Doc.zip"
-},
-{
-"symbol": "DABUR",
 "date": "2026-11-06",
 "kind": "news",
 "level": "watch",
@@ -4300,28 +3905,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14078_20261105_115757648_WEB.html"
 },
 {
-"symbol": "DBREALTY",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Valor Estate Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3072_20261102_154110345_WEB.html"
-},
-{
 "symbol": "DCAL",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "DISHMAN CARBOGEN AMCIS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_15473_WebXMLFile_20261104_192134082.xml"
-},
-{
-"symbol": "DCI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "DC Infotech And Communication Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17591_20261102_180534435_WEB.html"
 },
 {
 "symbol": "DCM",
@@ -4388,28 +3977,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22914_20261031_185956461_WEB.html"
 },
 {
-"symbol": "DEVIT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Dev Information Technology Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busi",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14898_20261030_175642521_WEB.html"
-},
-{
 "symbol": "DHARSUGAR",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "DHARANI SUGARS & CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_547_20261104_163804156_WEB.html"
-},
-{
-"symbol": "DHRUV",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "DHRUV CONSULTANCY SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20205_20261026_161147415_WEB.html"
 },
 {
 "symbol": "DHUNINV",
@@ -4493,14 +4066,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2743_20261106_200438513_WEB.html"
 },
 {
-"symbol": "DPWIRES",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "D P WIRES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15508_20261028_165738317_WEB.html"
-},
-{
 "symbol": "DREDGECORP",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -4526,28 +4091,11 @@
 },
 {
 "symbol": "DTIL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Dhunseri Tea & Industries Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/DTIL_05112026114207_Credit_Ratings_2026.pdf"
-},
-{
-"symbol": "DTIL",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "DHUNSERI TEA & INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11352_20261030_161902437_WEB.html"
-},
-{
-"symbol": "DUCON",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Ducon Infratechnologies Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6183_20261028_171804452_WEB.html"
 },
 {
 "symbol": "DVL",
@@ -4614,32 +4162,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1238_20261030_181920094_WEB.html"
 },
 {
-"symbol": "EIEL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Enviro Infra Engineers Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21143_20261030_113910442_WEB.html"
-},
-{
-"symbol": "EIEL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "alert",
-"title": "Auditor resigned",
-"detail": "Enviro Infra Engineers Limited has informed the Exchange about Resignation of Statutory Auditor",
-"link": "https://nsearchives.nseindia.com/corporate/EIEL_ROSA_103737_KMP_Doc.zip"
-},
-{
-"symbol": "EIEL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Auditor change",
-"detail": "Enviro Infra Engineers Limited has informed the Exchange regarding Change in Auditors of the company.",
-"link": "https://nsearchives.nseindia.com/corporate/ENVIRO_05112026165818_Intimation.pdf"
-},
-{
 "symbol": "EIFFL",
 "date": "2026-11-07",
 "kind": "meeting",
@@ -4670,14 +4192,6 @@
 "title": "Results",
 "detail": "Everest Kanto Cylinder Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2343_20261104_171412636_WEB.html"
-},
-{
-"symbol": "ELDEHSG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ELDECO HOUSING AND INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20218_20261028_125529198_WEB.html"
 },
 {
 "symbol": "ELECTCAST",
@@ -4712,36 +4226,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5115_20261103_183651216_WEB.html"
 },
 {
-"symbol": "ELIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ELIN ELECTRONICS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20223_20261024_173333880_WEB.html"
-},
-{
-"symbol": "EMAMILTD",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "EMAMI LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend/Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2417_20261024_130600974_WEB.html"
-},
-{
 "symbol": "EMAMIREAL",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "EMAMI REALTY LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3373_20261105_173308169_WEB.html"
-},
-{
-"symbol": "EMIL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ELECTRONICS MART INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20014_20261024_133823126_WEB.html"
 },
 {
 "symbol": "EMSLIMITED",
@@ -4758,14 +4248,6 @@
 "title": "Results",
 "detail": "ENERGY DEVELOPMENT COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busine",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2672_20261104_173049575_WEB.html"
-},
-{
-"symbol": "ENGINERSIN",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 1.50 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=ENGINERSIN"
 },
 {
 "symbol": "ENNATURE",
@@ -4816,14 +4298,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20120_20261107_192937487_WEB.html"
 },
 {
-"symbol": "EUROPRATIK",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "EURO PRATIK SALES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25276_20261027_205844188_WEB.html"
-},
-{
 "symbol": "EUROTEXIND",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -4832,29 +4306,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_130_20261031_184417448_WEB.html"
 },
 {
-"symbol": "EXCELSOFT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Excelsoft Technologies Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25530_20261022_182916307_WEB.html"
-},
-{
 "symbol": "EXPLEOSOL",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "EXPLEO SOLUTIONS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2923_20261105_111012806_WEB.html"
-},
-{
-"symbol": "FABTECH",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Fabtech Technologies Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/FABTECH_ROID_103597_KMP_Doc.zip"
 },
 {
 "symbol": "FACT",
@@ -4874,15 +4331,6 @@
 },
 {
 "symbol": "FDC",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Material issue",
-"detail": "FDC Limited has informed regarding Disclosure of material issue",
-"link": "https://nsearchives.nseindia.com/corporate/FDC_05112026110803_IT21crDisclosure30A04Nov26signed.pdf"
-},
-{
-"symbol": "FDC",
 "date": "2026-11-13",
 "kind": "action",
 "title": "Buyback",
@@ -4897,14 +4345,6 @@
 "title": "Credit rating update",
 "detail": "Fedbank Financial Services Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.com/corporate/FEDFINA_06112026171346_Credit_Rating_Intimation_Signed.pdf"
-},
-{
-"symbol": "FERMENTA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "FERMENTA BIOTECH LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28435_20261029_175540275_WEB.html"
 },
 {
 "symbol": "FIEMIND",
@@ -4929,14 +4369,6 @@
 "title": "Results",
 "detail": "FINOLEX CABLES LIMITED has informed the Exchange about Board Meeting to be held on 07-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1237_20261102_150534297_WEB.html"
-},
-{
-"symbol": "FINKURVE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "FINKURVE FINANCIAL SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24303_20261028_171023742_WEB.html"
 },
 {
 "symbol": "FINOPB",
@@ -4972,38 +4404,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_1117_WebXMLFile_20261104_175030816.xml"
 },
 {
-"symbol": "FMNL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Future Market Networks Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3870_20261030_151007598_WEB.html"
-},
-{
-"symbol": "FOCUS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "FOCUS LIGHTING AND FIXTURES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14891_20261102_155646306_WEB.html"
-},
-{
-"symbol": "FOODSIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "FOODS AND INNSLIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19917_20261102_161241214_WEB.html"
-},
-{
-"symbol": "FORTIS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Rights",
-"detail": "Fortis Healthcare Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Alteration of form or",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2587_20261029_162403531_WEB.html"
-},
-{
 "symbol": "FOSECOIND",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -5018,14 +4418,6 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 2.15 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=GABRIEL"
-},
-{
-"symbol": "GALAPREC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GALA PRECISION ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23291_20261030_164459452_WEB.html"
 },
 {
 "symbol": "GALAXYSURF",
@@ -5110,14 +4502,6 @@
 },
 {
 "symbol": "GAYAHWS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GAYATRI HIGHWAYS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16342_20261016_124131829_WEB.html"
-},
-{
-"symbol": "GAYAHWS",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
@@ -5131,14 +4515,6 @@
 "title": "Results",
 "detail": "GB GLOBAL LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17492_20261106_181925701_WEB.html"
-},
-{
-"symbol": "GCSL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GRETEX CORPORATE SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26835_20261028_190146242_WEB.html"
 },
 {
 "symbol": "GENESYS",
@@ -5157,14 +4533,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2303_20261107_144844763_WEB.html"
 },
 {
-"symbol": "GERMAN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GERMAN GREEN STEEL AND POWER LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26436_20261030_175444732_WEB.html"
-},
-{
 "symbol": "GESHIP",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -5179,14 +4547,6 @@
 "title": "Results",
 "detail": "GFL LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_198_20261106_151852325_WEB.html"
-},
-{
-"symbol": "GHCLTEXTIL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GHCL Textiles Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21880_20261022_152334015_WEB.html"
 },
 {
 "symbol": "GICHSGFIN",
@@ -5221,36 +4581,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1144_20260928_150531769_WEB.html"
 },
 {
-"symbol": "GIPCL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GUJARAT INDUSTRIES POWER COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_807_20261027_163949645_WEB.html"
-},
-{
-"symbol": "GKWLIMITED",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GKW LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2896_20261029_152124404_WEB.html"
-},
-{
 "symbol": "GLAND",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "GLAND PHARMA LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18003_20261021_180555032_WEB.html"
-},
-{
-"symbol": "GLENMARK",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GLENMARK PHARMACEUTICALS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1853_20261023_114324823_WEB.html"
 },
 {
 "symbol": "GLOBAL",
@@ -5277,28 +4613,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2454_20261105_184519415_WEB.html"
 },
 {
-"symbol": "GLOBE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GLOBE ENTERPRISES (INDIA) LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15248_20261028_165350848_WEB.html"
-},
-{
 "symbol": "GLOBECIVIL",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "GLOBE CIVIL PROJECTS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24624_20261103_125340774_WEB.html"
-},
-{
-"symbol": "GLOSTERLTD",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GLOSTER LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22426_20261029_192336577_WEB.html"
 },
 {
 "symbol": "GLOSTERLTD",
@@ -5315,38 +4635,6 @@
 "title": "Results",
 "detail": "Glottis Limited has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24556_20261105_151818144_WEB.html"
-},
-{
-"symbol": "GNRL",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Split",
-"detail": "Face Value Split (Sub-Division) - From Rs 10/- Per Share To Re 1/- Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=GNRL"
-},
-{
-"symbol": "GOACARBON",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Goa Carbon Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1724_20261022_120354461_WEB.html"
-},
-{
-"symbol": "GODFRYPHLP",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "GODFREY PHILLIPS INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1204_20261029_160459795_WEB.html"
-},
-{
-"symbol": "GODIGIT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GO DIGIT GENERAL INSURANCE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21009_20261030_171516040_WEB.html"
 },
 {
 "symbol": "GODREJAGRO",
@@ -5371,14 +4659,6 @@
 "title": "Results",
 "detail": "GOENKA DIAMOND AND JEWELS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3178_20261105_194147115_WEB.html"
-},
-{
-"symbol": "GOKEX",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Gokaldas Exports Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2276_20261030_163436938_WEB.html"
 },
 {
 "symbol": "GOKUL",
@@ -5429,14 +4709,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=GPPL"
 },
 {
-"symbol": "GPTHEALTH",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "GPT HEALTHCARE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20115_20261027_165314538_WEB.html"
-},
-{
 "symbol": "GPTINFRA",
 "date": "2026-11-11",
 "kind": "action",
@@ -5451,14 +4723,6 @@
 "title": "Results",
 "detail": "Grasim Industries Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1234_20261030_112431216_WEB.html"
-},
-{
-"symbol": "GREENLAM",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GREENLAM INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11560_20261029_123712735_WEB.html"
 },
 {
 "symbol": "GREENPOWER",
@@ -5494,28 +4758,11 @@
 },
 {
 "symbol": "GTECJAINX",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Open offer",
-"detail": "G-TEC JAINX EDUCATION LIMITED has submitted a copy of the Letter of Offer from pursuant to Regulations 3(1) and 3(3) read with applicable provisions of the SEBI (Substantial Acquisition of Shares and Takeovers) Regulations, 2011",
-"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_05112026191805_Dis.zip"
-},
-{
-"symbol": "GTECJAINX",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "G-TEC JAINX EDUCATION LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15394_20261105_160041993_WEB.html"
-},
-{
-"symbol": "GTL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GTL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1076_20261029_185111673_WEB.html"
 },
 {
 "symbol": "GTLINFRA",
@@ -5534,28 +4781,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2242_20261106_185633449_WEB.html"
 },
 {
-"symbol": "GUJALKALI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "GUJARAT ALKALIES AND CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other bu",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1080_20261026_120912543_WEB.html"
-},
-{
 "symbol": "GUJAPOLLO",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "GUJARAT APOLLO INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busines",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1503_20261104_165930425_WEB.html"
-},
-{
-"symbol": "GUJENERGY",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Gujarat Energy Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13076_20260925_184507627_WEB.html"
 },
 {
 "symbol": "GUJTHEM",
@@ -5639,14 +4870,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=HAPPSTMNDS"
 },
 {
-"symbol": "HAPPYFORGE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HAPPY FORGINGS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22370_20261024_110530220_WEB.html"
-},
-{
 "symbol": "HARDWYN",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5688,38 +4911,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/HBLPOWER_07112026153705_IntimationofchangeinCreditrating.pdf"
 },
 {
-"symbol": "HBSL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HB STOCKHOLDINGS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16466_20261029_125826072_WEB.html"
-},
-{
-"symbol": "HCC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HINDUSTAN CONSTRUCTION COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_408_20261028_185638791_WEB.html"
-},
-{
-"symbol": "HCG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HEALTHCARE GLOBAL ENTERPRISES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other b",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13642_20261013_192408444_WEB.html"
-},
-{
-"symbol": "HCL-INSYS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HCL INFOSYSTEMS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1878_20261030_153356240_WEB.html"
-},
-{
 "symbol": "HDBFS",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5744,14 +4935,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3600_20261106_181302202_WEB.html"
 },
 {
-"symbol": "HEMIPROP",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Hemisphere Properties India Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18828_20261027_121530036_WEB.html"
-},
-{
 "symbol": "HERANBA",
 "date": "2026-11-07",
 "kind": "meeting",
@@ -5768,28 +4951,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24331_20261107_161222494_WEB.html"
 },
 {
-"symbol": "HESTERBIO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HESTER BIOSCIENCES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11637_20261027_143402936_WEB.html"
-},
-{
 "symbol": "HEXAGON",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "HEXAGON NUTRITION LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20301_20261106_115721927_WEB.html"
-},
-{
-"symbol": "HEXATRADEX",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HEXA TRADEX LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5859_20261029_143845586_WEB.html"
 },
 {
 "symbol": "HGM",
@@ -5822,31 +4989,6 @@
 "title": "Results",
 "detail": "HINDALCO INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1230_20260925_152934668_WEB.html"
-},
-{
-"symbol": "HINDCOMPOS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Hindustan Composites Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_844_20261027_170835581_WEB.html"
-},
-{
-"symbol": "HINDCOMPOS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Hindustan Composites Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/HINDCOMPOS_ROID_103884_KMP_Doc.zip"
-},
-{
-"symbol": "HINDCON",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Hindcon Chemicals Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15847_20261022_182820194_WEB.html"
 },
 {
 "symbol": "HINDCOPPER",
@@ -5897,23 +5039,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14447_20261024_101228610_WEB.html"
 },
 {
-"symbol": "HITECH",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HI-TECH PIPES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2027 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13489_20261028_170512394_WEB.html"
-},
-{
-"symbol": "HITECHCORP",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Stake/pledge disclosure",
-"detail": "Geetanjali Trading and Investments Pvt. Ltd. has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of ",
-"link": "https://nsearchives.nseindia.com/corporate/tchari_05112026172024_28102026120107_GTIPL.pdf"
-},
-{
 "symbol": "HITECHCORP",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5930,36 +5055,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1145_20261029_190509588_WEB.html"
 },
 {
-"symbol": "HNDFDS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HINDUSTAN FOODS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17576_20261030_174820742_WEB.html"
-},
-{
 "symbol": "HONASA",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "Honasa Consumer Limited has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21481_20261022_175535643_WEB.html"
-},
-{
-"symbol": "HONDAPOWER",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Honda India Power Products Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_735_WebXMLFile_20261026_150859873.xml"
-},
-{
-"symbol": "HPAL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HP ADHESIVES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19797_20261031_151523285_WEB.html"
 },
 {
 "symbol": "HPIL",
@@ -5970,22 +5071,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17598_20261103_130709853_WEB.html"
 },
 {
-"symbol": "HPL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HPL ELECTRIC & POWER LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14271_20261029_165335402_WEB.html"
-},
-{
-"symbol": "HTMEDIA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "HT MEDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2318_20261028_182155327_WEB.html"
-},
-{
 "symbol": "HUDCO",
 "date": "2026-11-11",
 "kind": "action",
@@ -5994,28 +5079,12 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=HUDCO"
 },
 {
-"symbol": "IBULLSLTD",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "INDIABULLS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5135_20261102_181102894_WEB.html"
-},
-{
 "symbol": "ICDSLTD",
 "date": "2026-11-11",
 "kind": "meeting",
 "title": "Results",
 "detail": "ICDS LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1825_20261102_134256206_WEB.html"
-},
-{
-"symbol": "ICEMAKE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ICE MAKE REFRIGERATION LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2027 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15601_20261102_102724755_WEB.html"
 },
 {
 "symbol": "ICRA",
@@ -6044,15 +5113,6 @@
 },
 {
 "symbol": "IFCI",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "IFCI Limited has informed the Exchange about Credit Rating- Others",
-"link": "https://nsearchives.nseindia.com/corporate/IFCI_05112026122946_STX_Credit_Rating_BWR_Nov04_2026.pdf"
-},
-{
-"symbol": "IFCI",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
@@ -6068,28 +5128,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15566_20261105_171011491_WEB.html"
 },
 {
-"symbol": "IGARASHI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "IGARASHI MOTORS INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_505_20261027_192052594_WEB.html"
-},
-{
 "symbol": "IGLSPIRITS",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "IGL SPIRITS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_29326_20261105_162418013_WEB.html"
-},
-{
-"symbol": "IGPL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "IG PETROCHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_187_20261102_185856528_WEB.html"
 },
 {
 "symbol": "IIFL",
@@ -6109,37 +5153,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2281_20261105_233804920_WEB.html"
 },
 {
-"symbol": "IIFLCAPS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Open offer",
-"detail": "IIFL Capital Services Limited has informed the Exchange that Pre - Offer Advertisement in accordance with Regulation 18(7) of the SEBI (Substantial Acquisition of Share and Takeover) Regulation, 2011 and Corrigendum to the Detailed Public S",
-"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_30102026114512_IIFL.zip"
-},
-{
 "symbol": "IIRM",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "IIRM Hlodings India Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2027 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28799_20261104_120349172_WEB.html"
-},
-{
-"symbol": "IKIO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "IKIO TECHNOLOGIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21181_20261029_173322616_WEB.html"
-},
-{
-"symbol": "IKS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Inventurus Knowledge Solutions Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24260_20261030_143239090_WEB.html"
 },
 {
 "symbol": "IMAGICAA",
@@ -6180,22 +5199,6 @@
 "title": "Results",
 "detail": "INDIA GLYCOLS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_183_20261106_145515919_WEB.html"
-},
-{
-"symbol": "INDIANHUME",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "THE INDIAN HUME PIPE COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_826_20261027_161836211_WEB.html"
-},
-{
-"symbol": "INDIASHLTR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "INDIA SHELTER FINANCE CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22388_20261028_172755356_WEB.html"
 },
 {
 "symbol": "INDNIPPON",
@@ -6246,28 +5249,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2373_20261106_153530454_WEB.html"
 },
 {
-"symbol": "INDOWIND",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "INDOWIND ENERGY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2653_20261029_144209419_WEB.html"
-},
-{
 "symbol": "INDTERRAIN",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "INDIAN TERRAIN FASHIONS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busines",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4184_20261106_121313535_WEB.html"
-},
-{
-"symbol": "INDTONER",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 1.20 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=INDTONER"
 },
 {
 "symbol": "INDUSFILA",
@@ -6318,29 +5305,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20489_20261106_185837540_WEB.html"
 },
 {
-"symbol": "INOXINDIA",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Stake/pledge disclosure",
-"detail": "Shreyashi Goenka has Submitted to the Exchange a copy of Disclosure under Regulation 10(5) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
-"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_05112026162759_Dis7.pdf"
-},
-{
 "symbol": "INOXWIND",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "INOX WIND LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11855_20261106_175130885_WEB.html"
-},
-{
-"symbol": "INSECTICID",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Insecticides (India) Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2603_20260925_130423623_WEB.html"
 },
 {
 "symbol": "INSPIRISYS",
@@ -6375,22 +5345,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19779_20261107_155654283_WEB.html"
 },
 {
-"symbol": "IPCALAB",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Ipca Laboratories Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1224_20261022_114238370_WEB.html"
-},
-{
-"symbol": "IRB",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "IRB INFRASTRUCTURE DEVELOPERS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividen",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2724_20261102_173741237_WEB.html"
-},
-{
 "symbol": "IRB",
 "date": "2026-11-12",
 "kind": "action",
@@ -6413,14 +5367,6 @@
 "title": "Results",
 "detail": "INDIAN RAILWAY CATERING AND TOURISM CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended Sept",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17586_20261105_152352792_WEB.html"
-},
-{
-"symbol": "IRIS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "IRIS REGTECH SOLUTIONS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20089_20261019_182351848_WEB.html"
 },
 {
 "symbol": "ISFT",
@@ -6447,14 +5393,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ITI_07112026171443_SE_BM_intimation_07112026.pdf"
 },
 {
-"symbol": "IVALUE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "IVALUE INFOSOLUTIONS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24439_20261102_175815518_WEB.html"
-},
-{
 "symbol": "IZMO",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6471,14 +5409,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2359_20261107_144919989_WEB.html"
 },
 {
-"symbol": "JAIBALAJI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "JAI BALAJI INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2161_20261102_134906367_WEB.html"
-},
-{
 "symbol": "JAICORPLTD",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6493,14 +5423,6 @@
 "title": "Results \u00b7 Dividend",
 "detail": "JAMNA AUTO INDUSTRIES LIMTIED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3807_20261105_111424173_WEB.html"
-},
-{
-"symbol": "JARO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Jaro Institute of Technology Management and Research Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended S",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24645_20261102_184444682_WEB.html"
 },
 {
 "symbol": "JAYKAY",
@@ -6552,40 +5474,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2480_20261106_160649058_WEB.html"
 },
 {
-"symbol": "JINDWORLD",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Jindal Worldwide Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3766_20261029_173550543_WEB.html"
-},
-{
-"symbol": "JISLDVREQS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Jain Irrigation Systems Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/JISLDVREQS_05112026115104_SE_Letter_Credit_Ratings_Crisil_05112026_.pdf"
-},
-{
-"symbol": "JISLJALEQS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Jain Irrigation Systems Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/JISLJALEQS_05112026114846_SE_Letter_Credit_Ratings_Crisil_05112026_.pdf"
-},
-{
-"symbol": "JITFINFRA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "JITF INFRALOGISTICS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14569_20261029_153918609_WEB.html"
-},
-{
 "symbol": "JKIL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6619,14 +5507,6 @@
 },
 {
 "symbol": "JNKINDIA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "JNK India Ltd has informed BSE that the meeting of the Board of Directors of the Company is scheduled on 05/11/2026 ,inter alia, to consider and approve 1. The Unaudited (Standalone and Consolidated) Financial Results of the Company for the",
-"link": "https://nsearchives.nseindia.com/corporate/JNKINDIA23_02112026123730_JNK_Intimation.pdf"
-},
-{
-"symbol": "JNKINDIA",
 "date": "2026-11-06",
 "kind": "news",
 "level": "watch",
@@ -6651,15 +5531,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20048_20261103_140619170_WEB.html"
 },
 {
-"symbol": "JSWDULUX",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Material issue",
-"detail": "JSW Dulux Limited has informed regarding Disclosure of material issue",
-"link": "https://nsearchives.nseindia.com/corporate/AKZOINDIA_05112026114504_JSWDuluxRegulation30Disclosure_05112026.pdf"
-},
-{
 "symbol": "JSWSTEEL",
 "date": "2026-11-06",
 "kind": "news",
@@ -6667,14 +5538,6 @@
 "title": "Material issue",
 "detail": "Disclosure regarding incorporation of a step down wholly-owned subsidiary.",
 "link": "https://nsearchives.nseindia.com/corporate/jessydenny_06112026141830_Stock_Exchange_Intimation.pdf"
-},
-{
-"symbol": "JUBLCPL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Jubilant Agri and Consumer Products Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24830_20261029_160627801_WEB.html"
 },
 {
 "symbol": "JUBLFOOD",
@@ -6711,28 +5574,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_631_20261030_172121885_WEB.html"
 },
 {
-"symbol": "JUNIPER",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "JUNIPER HOTELS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22603_20261102_144316075_WEB.html"
-},
-{
 "symbol": "JYOTHYLAB",
 "date": "2026-11-11",
 "kind": "action",
 "title": "Buyback",
 "detail": "Buy Back",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=JYOTHYLAB"
-},
-{
-"symbol": "JYOTIRES",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Jyoti Resins & Adhesives Ltd has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_29197_20261031_183326279_WEB.html"
 },
 {
 "symbol": "KAKATCEM",
@@ -6751,14 +5598,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14536_20261104_153822103_WEB.html"
 },
 {
-"symbol": "KALYANIFRG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Fund raising",
-"detail": "KALYANI FORGE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Fund raising.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2695_20261102_191642932_WEB.html"
-},
-{
 "symbol": "KALYANKJIL",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -6773,23 +5612,6 @@
 "title": "Results",
 "detail": "KANORIA CHEMICALS & INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_943_20261104_120440811_WEB.html"
-},
-{
-"symbol": "KANSAINER",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 and relevant SEBI Circulars is enclosed herewith.",
-"link": "https://nsearchives.nseindia.com/corporate/KANSAINER_05112026140519_Reg30_Disclosure_5th_November_2026_signed.pdf"
-},
-{
-"symbol": "KARAMTARA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KARAMTARA ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25302_20261028_144951590_WEB.html"
 },
 {
 "symbol": "KARMAENG",
@@ -6880,23 +5702,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/KEYFINSERV_05112026180246_IntimationofBoardMeeting.pdf"
 },
 {
-"symbol": "KHADIM",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Khadim India Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15568_20261030_190950574_WEB.html"
-},
-{
-"symbol": "KHADIM",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Khadim India Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/KHADIM_ROID_103852_KMP_Doc.zip"
-},
-{
 "symbol": "KHAICHEM",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6921,28 +5726,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3565_20261102_162548899_WEB.html"
 },
 {
-"symbol": "KINGFA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Kingfa Science & Technology (India) Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14349_20261029_153858606_WEB.html"
-},
-{
 "symbol": "KIOCL",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "KIOCL Limited has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14381_20261104_125019722_WEB.html"
-},
-{
-"symbol": "KIRIINDUS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KIRI INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2745_20261029_173506445_WEB.html"
 },
 {
 "symbol": "KIRLOSIND",
@@ -6977,23 +5766,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=KMEW"
 },
 {
-"symbol": "KMSUGAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "K M SUGAR MILLS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2605_20261024_131424667_WEB.html"
-},
-{
-"symbol": "KMSUGAR",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "K.M.Sugar Mills Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/KMSUGAR_ROID_103854_KMP_Doc.zip"
-},
-{
 "symbol": "KNAGRI",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7016,14 +5788,6 @@
 "title": "Results",
 "detail": "Kohinoor Foods Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_374_20261105_181329610_WEB.html"
-},
-{
-"symbol": "KOTARISUG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KOTHARI SUGARS AND CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2251_20261023_131959508_WEB.html"
 },
 {
 "symbol": "KOTHARIPRO",
@@ -7050,14 +5814,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19804_20261106_175409845_WEB.html"
 },
 {
-"symbol": "KPIL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KALPATARU PROJECTS INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other ",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_500_20261029_203109304_WEB.html"
-},
-{
 "symbol": "KRIDHANINF",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7072,46 +5828,6 @@
 "title": "Results",
 "detail": "KRISHANA PHOSCHEM LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14570_20261106_163904096_WEB.html"
-},
-{
-"symbol": "KRISHNADEF",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Re 0.75 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=KRISHNADEF"
-},
-{
-"symbol": "KRITI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KRITI INDUSTRIES (INDIA) LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19962_20261030_180914673_WEB.html"
-},
-{
-"symbol": "KRITIKA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "To consider and approve the financial results for the period ended September 30, 2026 and other business matters",
-"link": "https://nsearchives.nseindia.com/corporate/KRITIKA_28102026175022_Kritika_Intimation_of_BM_05-11-2026.pdf"
-},
-{
-"symbol": "KRITINUT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KRITI NUTRIENTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20915_20261030_191452802_WEB.html"
-},
-{
-"symbol": "KRONOX",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KRONOX LAB SCIENCES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22833_20261030_193806549_WEB.html"
 },
 {
 "symbol": "KRONOX",
@@ -7137,14 +5853,6 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 5 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=KSCL"
-},
-{
-"symbol": "KSHITIJPOL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KSHITIJ POLYLINE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16761_20261104_192140357_WEB.html"
 },
 {
 "symbol": "KSHITIJPOL",
@@ -7186,14 +5894,6 @@
 "title": "Results",
 "detail": "KUNDAN MINERALS AND METALS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1372_20261107_185354611_WEB.html"
-},
-{
-"symbol": "KUSUMGAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "KUSUMGAR LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27022_20261030_162414583_WEB.html"
 },
 {
 "symbol": "KWIL",
@@ -7285,14 +5985,6 @@
 },
 {
 "symbol": "LATTEYS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LATTEYS INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16230_20261029_161411325_WEB.html"
-},
-{
-"symbol": "LATTEYS",
 "date": "2026-12-05",
 "kind": "meeting",
 "title": "Results",
@@ -7324,15 +6016,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25031_20261105_130036260_WEB.html"
 },
 {
-"symbol": "LCL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Lohia Corp Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/LCL_ROID_103663_KMP_Doc.zip"
-},
-{
 "symbol": "LEEL",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -7349,22 +6032,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1580_20261107_114750649_WEB.html"
 },
 {
-"symbol": "LEMERITE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LE MERITE EXPORTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20438_20261030_185429552_WEB.html"
-},
-{
-"symbol": "LEMONTREE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LEMON TREE HOTELS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16074_20261029_211803109_WEB.html"
-},
-{
 "symbol": "LEXUS",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7379,14 +6046,6 @@
 "title": "Results",
 "detail": "LAKSHMI FINANCE & INDUSTRIAL CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 202",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11874_20261102_125716655_WEB.html"
-},
-{
-"symbol": "LGEINDIA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LG ELECTRONICS INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24979_20261028_153617649_WEB.html"
 },
 {
 "symbol": "LGHL",
@@ -7413,36 +6072,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/LIBERTSHOE_02112026183246_IntimationBoardMeeting12112026.pdf"
 },
 {
-"symbol": "LICI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Life Insurance Corporation of India has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20463_20261014_132738796_WEB.html"
-},
-{
 "symbol": "LIKHITHA",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "LIKHITHA INFRASTRUCTURE LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17672_20261102_152937780_WEB.html"
-},
-{
-"symbol": "LINC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LINC LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_11602_20261029_114129795_WEB.html"
-},
-{
-"symbol": "LLOYDSENT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LLOYDS ENTERPRISES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22162_20261102_155614410_WEB.html"
 },
 {
 "symbol": "LOKESHMACH",
@@ -7483,22 +6118,6 @@
 "title": "Results",
 "detail": "LANDMARK PROPERTY DEVELOPMENT COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2778_20261103_172917084_WEB.html"
-},
-{
-"symbol": "LXCHEM",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "LAXMI ORGANIC INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19006_20261023_150841711_WEB.html"
-},
-{
-"symbol": "M&M",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MAHINDRA & MAHINDRA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_679_WebXMLFile_20260924_110902825.xml"
 },
 {
 "symbol": "M&MFIN",
@@ -7574,28 +6193,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13960_20261105_145451040_WEB.html"
 },
 {
-"symbol": "MAHESHWARI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MAHESHWARI LOGISTICS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14468_20261028_115600798_WEB.html"
-},
-{
 "symbol": "MAHSEAMLES",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "MAHARASHTRA SEAMLESS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_263_20261106_144908866_WEB.html"
-},
-{
-"symbol": "MAITHANALL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Maithan Alloys Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5004_20261028_171236073_WEB.html"
 },
 {
 "symbol": "MALLCOM",
@@ -7671,14 +6274,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=MANBA"
 },
 {
-"symbol": "MANGALAM",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MANGALAM DRUGS AND ORGANICS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2283_20261029_191740283_WEB.html"
-},
-{
 "symbol": "MANINDS",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -7718,14 +6313,6 @@
 "title": "Results",
 "detail": "Manorama Industries Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20855_20261104_112203643_WEB.html"
-},
-{
-"symbol": "MANYAVAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Vedant Fashions Ltd has informed the Exchange that the meeting of the Board of Directors of the Company is scheduled on 05/11/2026, inter alia, to consider and approve the Unaudited Financial Results along with Limited Review Reports of the",
-"link": "https://nsearchives.nseindia.com/corporate/MANYAVAR_28102026231255_IntimationofBM28102026.pdf"
 },
 {
 "symbol": "MARSONS",
@@ -7775,14 +6362,6 @@
 "title": "Results",
 "detail": "McNally Bharat Engineering Company Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2446_20261029_163825402_WEB.html"
-},
-{
-"symbol": "MBEL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "M & B Engineering Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24557_20261030_130436564_WEB.html"
 },
 {
 "symbol": "MBLINFRA",
@@ -7841,14 +6420,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=METROPOLIS"
 },
 {
-"symbol": "MFML",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Mahalaxmi Fabric Mills Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_23683_WebXMLFile_20261022_171849235.xml"
-},
-{
 "symbol": "MGEL",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -7899,14 +6470,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/MINDACORP_ROID_104059_KMP_Doc.zip"
 },
 {
-"symbol": "MINDSPACE",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Distribution - Rs 6.67 Per Unit Consisting Of Dividend - Rs 4.17 Per Unit/ Repayment Of Spv Debt - Rs 2.50 Per Unit",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=MINDSPACE"
-},
-{
 "symbol": "MIRZAINT",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7931,14 +6494,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14902_20261104_165402545_WEB.html"
 },
 {
-"symbol": "MMFL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MM FORGINGS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1509_20261029_122100500_WEB.html"
-},
-{
 "symbol": "MMTC",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -7954,14 +6509,6 @@
 "title": "Licence suspended",
 "detail": "One Mobikwik Systems Limited has informed the Exchange about Certificate of Registration to operate as a Non-Banking Financial Company ( NBFC ) received by MobiKwik Financial Services Private Limited (Wholly Owned Subsidiary of the Company)",
 "link": "https://nsearchives.nseindia.com/corporate/MOBIKWIK_06112026141941_Intimation_about_granting_of_NBFC_License.pdf"
-},
-{
-"symbol": "MODINATUR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MODI NATURALS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22070_20261030_164116308_WEB.html"
 },
 {
 "symbol": "MODIRUBBER",
@@ -7996,14 +6543,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15680_20261106_190447877_WEB.html"
 },
 {
-"symbol": "MOLBIO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MOLBIO DIAGNOSTICS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26787_20261102_154842428_WEB.html"
-},
-{
 "symbol": "MOMSBELIEF",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -8020,22 +6559,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26305_20261103_115302326_WEB.html"
 },
 {
-"symbol": "MONEYVIEW",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Moneyview Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28012_20261029_193944009_WEB.html"
-},
-{
-"symbol": "MOTHERSON",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Samvardhana Motherson International Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1385_20261022_202422876_WEB.html"
-},
-{
 "symbol": "MOTISONS",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -8050,14 +6573,6 @@
 "title": "Results",
 "detail": "THE MOTOR & GENERAL FINANCE LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_279_20261028_143629783_WEB.html"
-},
-{
-"symbol": "MPHASIS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MPHASIS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1534_20260921_203420894_WEB.html"
 },
 {
 "symbol": "MRF",
@@ -8101,14 +6616,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1309_20261021_124847091_WEB.html"
 },
 {
-"symbol": "MUFIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Mufin Green Finance Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22219_20261031_131753600_WEB.html"
-},
-{
 "symbol": "MUKANDLTD",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -8123,14 +6630,6 @@
 "title": "Results",
 "detail": "MUKKA PROTEINS LIMITED has informed the Exchange about Board Meeting to be held on 07-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20581_20261102_170313985_WEB.html"
-},
-{
-"symbol": "MUKTAARTS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Mukta Arts Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1889_20261030_114412125_WEB.html"
 },
 {
 "symbol": "MUNJALAU",
@@ -8155,22 +6654,6 @@
 "title": "Results",
 "detail": "MURUDESHWAR CERAMICS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_664_20261102_115234282_WEB.html"
-},
-{
-"symbol": "MUTHOOTCAP",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Muthoot Capital Services Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13008_20261005_190746955_WEB.html"
-},
-{
-"symbol": "MUTHOOTMF",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "MUTHOOT MICROFIN LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22265_20261023_133000995_WEB.html"
 },
 {
 "symbol": "MVELECTRO",
@@ -8269,14 +6752,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1264_20261103_101001607_WEB.html"
 },
 {
-"symbol": "NAVINFLUOR",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 8 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=NAVINFLUOR"
-},
-{
 "symbol": "NAVNETEDUL",
 "date": "2026-11-11",
 "kind": "action",
@@ -8286,35 +6761,11 @@
 },
 {
 "symbol": "NBCC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "NBCC (India) Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5846_20261023_184316057_WEB.html"
-},
-{
-"symbol": "NBCC",
 "date": "2026-11-11",
 "kind": "action",
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.25 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=NBCC"
-},
-{
-"symbol": "NBIFIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "N. B. I. INDUSTRIAL FINANCE COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14378_20261026_162319006_WEB.html"
-},
-{
-"symbol": "NCC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "NCC Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_917_20261022_143634117_WEB.html"
 },
 {
 "symbol": "NCLIND",
@@ -8388,14 +6839,6 @@
 "title": "Results",
 "detail": "NIBE LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24772_20261106_165449687_WEB.html"
-},
-{
-"symbol": "NIMBSPROJ",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "NIMBUS PROJECTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27671_20261026_152628469_WEB.html"
 },
 {
 "symbol": "NIPPOBATRY",
@@ -8542,15 +6985,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=NXT-INFRA"
 },
 {
-"symbol": "NYKAA",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "FSN E Commerce Ventures Limited has informed the Exchange about ESG Rating.",
-"link": "https://nsearchives.nseindia.com/corporate/NYKAA_05112026122426_SES_ESG_Intimation.pdf"
-},
-{
 "symbol": "OCCLLTD",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -8565,14 +6999,6 @@
 "title": "Results \u00b7 Dividend",
 "detail": "OIL INDIA LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2906_20261027_170408980_WEB.html"
-},
-{
-"symbol": "OILCOUNTUB",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Oil Country Tubular Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_385_20261029_105858822_WEB.html"
 },
 {
 "symbol": "OLAELEC",
@@ -8616,27 +7042,11 @@
 },
 {
 "symbol": "ONGC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "Oil & Natural Gas Corporation Limted has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_467_20261023_182847503_WEB.html"
-},
-{
-"symbol": "ONGC",
 "date": "2026-11-12",
 "kind": "action",
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 8 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=ONGC"
-},
-{
-"symbol": "OPTIEMUS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Fund raising",
-"detail": "OPTIEMUS INFRACOM LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Fund raising.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15395_20261029_124513277_WEB.html"
 },
 {
 "symbol": "ORCHASP",
@@ -8645,14 +7055,6 @@
 "title": "Results",
 "detail": "Orchasp Limited has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24148_20261031_154609213_WEB.html"
-},
-{
-"symbol": "ORIENTALTL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Oriental Trimex Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2543_20261031_172020400_WEB.html"
 },
 {
 "symbol": "ORIENTBELL",
@@ -8669,22 +7071,6 @@
 "title": "Results",
 "detail": "Orient Cables (India) Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26510_20261105_175303015_WEB.html"
-},
-{
-"symbol": "ORIENTLTD",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ORIENT PRESS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3081_20261029_153337610_WEB.html"
-},
-{
-"symbol": "ORIENTPPR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ORIENT PAPER & INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_142_20261005_161347586_WEB.html"
 },
 {
 "symbol": "ORTINGLOBE",
@@ -8760,22 +7146,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1350_20261105_172856524_WEB.html"
 },
 {
-"symbol": "PARASHLTH",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Paras Healthcare Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24195_20261102_194722018_WEB.html"
-},
-{
-"symbol": "PARASPETRO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PARAS PETROFILS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1280_20261030_173258176_WEB.html"
-},
-{
 "symbol": "PARKHOSPS",
 "date": "2026-11-09",
 "kind": "meeting",
@@ -8798,14 +7168,6 @@
 "title": "Results \u00b7 Dividend",
 "detail": "PASHUPATI COTSPIN LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15456_20261103_185346404_WEB.html"
-},
-{
-"symbol": "PATELENG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PATEL ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2262_20261029_110020496_WEB.html"
 },
 {
 "symbol": "PAVNAIND",
@@ -8872,14 +7234,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1062_20260925_173526904_WEB.html"
 },
 {
-"symbol": "PGIL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "Pearl Global Industries Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2531_20261029_145631403_WEB.html"
-},
-{
 "symbol": "PGINVIT",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -8936,14 +7290,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21714_20261105_145812658_WEB.html"
 },
 {
-"symbol": "POLYMED",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "POLY MEDICURE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5391_20261029_172848889_WEB.html"
-},
-{
 "symbol": "POLYPLEX",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -8958,14 +7304,6 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 3 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=POWERGRID"
-},
-{
-"symbol": "POWERICA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "POWERICA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17365_20261029_214404413_WEB.html"
 },
 {
 "symbol": "POWERINDIA",
@@ -9000,14 +7338,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17511_20261104_174940138_WEB.html"
 },
 {
-"symbol": "PRABHA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PRABHA ENERGY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24408_20261029_183258896_WEB.html"
-},
-{
 "symbol": "PRAENG",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -9022,22 +7352,6 @@
 "title": "Results",
 "detail": "PRAKASH INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1188_20261104_165710743_WEB.html"
-},
-{
-"symbol": "PRAKASHSTL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PRAKASH STEELAGE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3459_20261028_152930347_WEB.html"
-},
-{
-"symbol": "PRAXIS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PRAXIS HOME RETAIL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15746_20261008_155851623_WEB.html"
 },
 {
 "symbol": "PRAXIS",
@@ -9080,28 +7394,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13935_20261104_174912316_WEB.html"
 },
 {
-"symbol": "PREMIER",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PREMIER LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_717_20261030_193246004_WEB.html"
-},
-{
 "symbol": "PREMIERENE",
 "date": "2026-11-11",
 "kind": "action",
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.50 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PREMIERENE"
-},
-{
-"symbol": "PRESTIGE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Prestige Estates Projects Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3661_20261028_160544705_WEB.html"
 },
 {
 "symbol": "PRIMESECU",
@@ -9112,36 +7410,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2294_20261030_163313181_WEB.html"
 },
 {
-"symbol": "PRITIKAUTO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PRITIKA AUTO INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_19740_WebXMLFile_20261030_174126026.xml"
-},
-{
 "symbol": "PROSTARM",
 "date": "2026-11-07",
 "kind": "meeting",
 "title": "Results",
 "detail": "PROSTARM INFO SYSTEMS LIMITED has informed the Exchange about Board Meeting to be held on 07-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24625_20261030_173928664_WEB.html"
-},
-{
-"symbol": "PROTEAN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PROTEAN EGOV TECHNOLOGIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24937_20261027_165620610_WEB.html"
-},
-{
-"symbol": "PROZONER",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "PROZONE REALTY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6130_20261028_180344607_WEB.html"
 },
 {
 "symbol": "PROZONER",
@@ -9175,15 +7449,6 @@
 "title": "Results",
 "detail": "PTC INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21821_20261106_200459031_WEB.html"
-},
-{
-"symbol": "PUNJLLOYD",
-"date": "2026-11-05",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Intimation regarding change in the Corporate Office of the Registrar and Share Transfer Agent (RTA) of the Company",
-"link": "https://nsearchives.nseindia.com/corporate/PUNJLLOYD_05112026115008_RTA_Letter.pdf"
 },
 {
 "symbol": "PVP",
@@ -9291,28 +7556,11 @@
 },
 {
 "symbol": "RAJTV",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Raj Television Network Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/RAJTV_05112026181649_RAJTV_CreditRatings_05112026_signed.pdf"
-},
-{
-"symbol": "RAJTV",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "Raj Television Network Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2554_20261103_180517032_WEB.html"
-},
-{
-"symbol": "RAMANEWS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHREE RAMA NEWSPRINT LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2426_20261102_181402531_WEB.html"
 },
 {
 "symbol": "RAMAPHO",
@@ -9329,14 +7577,6 @@
 "title": "Results",
 "detail": "RAMA STEEL TUBES LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_12986_20261106_123744916_WEB.html"
-},
-{
-"symbol": "RAMCOCEM",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "THE RAMCO CEMENTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_289_20261024_103356559_WEB.html"
 },
 {
 "symbol": "RAMCOIND",
@@ -9370,14 +7610,6 @@
 "title": "Results",
 "detail": "RANE HOLDINGS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_358_20260929_184105590_WEB.html"
-},
-{
-"symbol": "RATEGAIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "RATEGAIN TRAVEL TECHNOLOGIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19891_20261029_051942667_WEB.html"
 },
 {
 "symbol": "RATNAMANI",
@@ -9420,14 +7652,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4914_20261103_180912239_WEB.html"
 },
 {
-"symbol": "RELCHEMQ",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "RELIANCE CHEMOTEX INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20271_20261029_113502563_WEB.html"
-},
-{
 "symbol": "RELIABLE",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -9468,22 +7692,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28271_20261104_165506918_WEB.html"
 },
 {
-"symbol": "REPCOHOME",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "REPCO HOME FINANCE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6655_20261029_150351201_WEB.html"
-},
-{
-"symbol": "RETAIL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "JHS SVENDGAARD RETAIL VENTURES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22777_20261031_114140067_WEB.html"
-},
-{
 "symbol": "RGL",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -9498,14 +7706,6 @@
 "title": "Results",
 "detail": "RHI Magnesita India Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5649_20261028_170305413_WEB.html"
-},
-{
-"symbol": "RHL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "ROBUST HOTELS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21284_20261030_130537675_WEB.html"
 },
 {
 "symbol": "RICOAUTO",
@@ -9580,14 +7780,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27859_20261104_125156840_WEB.html"
 },
 {
-"symbol": "RMCL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "RADHA MADHAV CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2680_20261027_193602710_WEB.html"
-},
-{
 "symbol": "RMDRIP",
 "date": "2026-11-09",
 "kind": "meeting",
@@ -9597,35 +7789,11 @@
 },
 {
 "symbol": "RNBDENIMS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "R&B DENIMS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26306_20261027_182856978_WEB.html"
-},
-{
-"symbol": "RNBDENIMS",
 "date": "2026-12-05",
 "kind": "meeting",
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.com/corporate/RBDENIMS_27102026182444_Intimation_of_Board_Meeting.pdf"
-},
-{
-"symbol": "ROADSTAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "To consider and approve the financial results for the period ended September 30, 2026",
-"link": "https://nsearchives.nseindia.com/corporate/ROADSTAR_23102026204402_BMIntimation51126.pdf"
-},
-{
-"symbol": "ROML",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "RAJ CONSUMER CARE LIMITED (Formerly known as RAJ OIL MILLS LIMITED) has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18778_20261029_121842213_WEB.html"
 },
 {
 "symbol": "ROSSELLIND",
@@ -9668,45 +7836,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3798_20261103_165345221_WEB.html"
 },
 {
-"symbol": "RPSGVENT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "RPSG VENTURES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17158_20261029_155214827_WEB.html"
-},
-{
-"symbol": "RPTECH",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Fund raising",
-"detail": "Rashi Peripherals Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Increase in authorise",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21550_20261102_115116134_WEB.html"
-},
-{
-"symbol": "RSL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Stake/pledge disclosure",
-"detail": "Rajputana Stainless Limited has informed the Exchange about disclosure under SEBI Takeover Regulations",
-"link": "https://nsearchives.nseindia.com/corporate/tchari_05112026172629_28102026164103_Bhavika.PDF"
-},
-{
 "symbol": "RUBFILA",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
 "detail": "RUBFILA INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19047_20261103_170453036_WEB.html"
-},
-{
-"symbol": "RUBICON",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Rubicon Research Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24193_20261027_154857525_WEB.html"
 },
 {
 "symbol": "RUBYMILLS",
@@ -9725,29 +7860,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2475_20261105_171849411_WEB.html"
 },
 {
-"symbol": "RUDRA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "RUDRA GLOBAL INFRA PRODUCTS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27284_20261028_132247217_WEB.html"
-},
-{
 "symbol": "RUNWALENTR",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "RUNWAL ENTERPRISES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25798_20261105_193659348_WEB.html"
-},
-{
-"symbol": "RUSTOMJEE",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Keystone Realtors Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/RUSTOMJEE_05112026185957_Credit_Rating_Crisil.pdf"
 },
 {
 "symbol": "RVHL",
@@ -9774,30 +7892,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1011_20261103_185950975_WEB.html"
 },
 {
-"symbol": "SAATVIKGL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Saatvik Green Energy Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24873_20261026_184800966_WEB.html"
-},
-{
-"symbol": "SABEVENTS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SAB EVENTS & GOVERNANCE NOW MEDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14192_20261030_170704808_WEB.html"
-},
-{
-"symbol": "SAFARI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "SAFARI INDUSTRIES (INDIA) LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17590_20261029_153839452_WEB.html"
-},
-{
 "symbol": "SAFARI",
 "date": "2026-11-12",
 "kind": "action",
@@ -9821,14 +7915,6 @@
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.com/corporate/SHALIFIN_07112026162729_Intimation_of_Board_Meeting.pdf"
-},
-{
-"symbol": "SAILIFE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Sai Life Sciences Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24081_20261001_110806388_WEB.html"
 },
 {
 "symbol": "SAKHTISUG",
@@ -9888,52 +7974,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13263_20261029_110340522_WEB.html"
 },
 {
-"symbol": "SAMPANN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SAMPANN UTPADAN INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6066_20261024_174259174_WEB.html"
-},
-{
-"symbol": "SANDHAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SANDHAR TECHNOLOGIES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16017_20261023_181407720_WEB.html"
-},
-{
 "symbol": "SANDHAR",
 "date": "2026-11-16",
 "kind": "meeting",
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.com/corporate/SANDHAR_23102026184935_BM_Intimation_05112026_signed.pdf"
-},
-{
-"symbol": "SANOFI",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 75 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=SANOFI"
-},
-{
-"symbol": "SANSERA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Sansera Engineering Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19738_20261030_200355287_WEB.html"
-},
-{
-"symbol": "SANSTAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Sanstar Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23042_20261102_163258333_WEB.html"
 },
 {
 "symbol": "SANWARIA",
@@ -9958,22 +8004,6 @@
 "title": "Results",
 "detail": "Satia Industries Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17555_20261027_102129732_WEB.html"
-},
-{
-"symbol": "SCHAND",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "S CHAND AND COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15023_20261027_184042058_WEB.html"
-},
-{
-"symbol": "SCHNEIDER",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Oth",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5712_20261029_155942975_WEB.html"
 },
 {
 "symbol": "SCODATUBES",
@@ -10049,28 +8079,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2722_20261105_160512875_WEB.html"
 },
 {
-"symbol": "SETL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Standard Engineering Technology Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other b",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24151_20261028_195137192_WEB.html"
-},
-{
 "symbol": "SGL",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "STL GLOBAL LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2391_20261106_110857882_WEB.html"
-},
-{
-"symbol": "SHAH",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHAH METACORP LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3662_20261028_185211100_WEB.html"
 },
 {
 "symbol": "SHAH",
@@ -10090,23 +8104,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/Shailyengineering_06112026162924_DISCLOSURE_UR_30_SHAILY_MEDTECH.pdf"
 },
 {
-"symbol": "SHANKESH",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHANKESH JEWELLERS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27045_20261030_182118787_WEB.html"
-},
-{
-"symbol": "SHANTI",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Shanti Overseas (India) Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/SHANTI_ROID_103795_KMP_Doc.zip"
-},
-{
 "symbol": "SHANTI",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -10124,14 +8121,6 @@
 },
 {
 "symbol": "SHAREINDIA",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Re 0.40 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=SHAREINDIA"
-},
-{
-"symbol": "SHAREINDIA",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Merger",
@@ -10146,22 +8135,6 @@
 "title": "Merger",
 "detail": "Pursuant to Regulation 30 of SEBI(LODR) Regulations, 2015, please be informed that Board of Directors of the Company at its meeting held today i.e., on November 06, 2026, has approved the Scheme of Amalgamation of Ace Alpha Tech Limited wit",
 "link": "https://nsearchives.nseindia.com/corporate/SISL_06112026181732_Reg30_merger_ace_alphasislsigned.pdf"
-},
-{
-"symbol": "SHILPAMED",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHILPA MEDICARE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2988_20261029_134121593_WEB.html"
-},
-{
-"symbol": "SHIPROCKET",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHIPROCKET LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26082_20261029_163918508_WEB.html"
 },
 {
 "symbol": "SHIVALIK",
@@ -10220,14 +8193,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=SHREMINVIT"
 },
 {
-"symbol": "SHRENIK",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Shrenik Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15331_20261102_193610146_WEB.html"
-},
-{
 "symbol": "SHREYANIND",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -10242,23 +8207,6 @@
 "title": "Results",
 "detail": "Shriram Properties Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17080_20261103_170721972_WEB.html"
-},
-{
-"symbol": "SHYAMCENT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SHYAM CENTURY FERROUS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_12915_20261026_160709570_WEB.html"
-},
-{
-"symbol": "SHYAMCENT",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Shyam Century Ferrous Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/SHYAMCENT_ROID_103920_KMP_Doc.zip"
 },
 {
 "symbol": "SHYAMMETL",
@@ -10311,14 +8259,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/SIGMAADV_ROID_104219_KMP_Doc.zip"
 },
 {
-"symbol": "SIGNATURE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SIGNATUREGLOBAL (INDIA) LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20913_20261030_202947203_WEB.html"
-},
-{
 "symbol": "SILGO",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -10327,29 +8267,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16785_20261029_163055972_WEB.html"
 },
 {
-"symbol": "SIMBHALS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Simbhaoli Sugars Limited is hereby informing the Exchange about the Post Facto Intimation of 5th Meeting of Committee of Creditors (COC).",
-"link": "https://nsearchives.nseindia.com/corporate/SIMBHALS_05112026180720_5th_COC_Meeting_-_Post_Facto_Intimation_-_Signed.pdf"
-},
-{
 "symbol": "SIMPLEXINF",
 "date": "2026-11-10",
 "kind": "meeting",
 "title": "Results",
 "detail": "SIMPLEX INFRASTRUCTURES LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_618_20261103_110408508_WEB.html"
-},
-{
-"symbol": "SINCLAIR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SINCLAIRS HOTELS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and ESOP.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22933_20261030_180308079_WEB.html"
 },
 {
 "symbol": "SINDHUTRAD",
@@ -10425,23 +8348,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20106_20261103_130806945_WEB.html"
 },
 {
-"symbol": "SMT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Sahajanand Medical Technologies Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20057_20261026_180313582_WEB.html"
-},
-{
-"symbol": "SMT",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Auditor change",
-"detail": "Sahajanand Medical Technologies Limited has informed the Exchange regarding Change in Auditors of the company.",
-"link": "https://nsearchives.nseindia.com/corporate/SAHAJANAND_05112026190931_14_Sec_Auditor_Appointment.pdf"
-},
-{
 "symbol": "SOLEX",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -10480,14 +8386,6 @@
 "title": "Results",
 "detail": "SONASELECTION INDIA LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27491_20261105_184522043_WEB.html"
-},
-{
-"symbol": "SONATSOFTW",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "SONATA SOFTWARE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1704_20261030_153312507_WEB.html"
 },
 {
 "symbol": "SONATSOFTW",
@@ -10530,14 +8428,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16738_20261029_102307437_WEB.html"
 },
 {
-"symbol": "SPENCERS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Spencer's Retail Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17159_20261029_155457696_WEB.html"
-},
-{
 "symbol": "SPLIL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -10568,15 +8458,6 @@
 "title": "Results",
 "detail": "SREELEATHERS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_8188_20261104_171058739_WEB.html"
-},
-{
-"symbol": "SRF",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "SRF Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.com/corporate/ekta_maheshwari_05112026130607_IntimationPenaltyNov2026.pdf"
 },
 {
 "symbol": "SRHHYPOLTD",
@@ -10701,23 +8582,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1219_20261103_175828396_WEB.html"
 },
 {
-"symbol": "SULA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SULA VINEYARDS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20896_20261027_174320364_WEB.html"
-},
-{
-"symbol": "SUMEETINDS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Sumeet Industries Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.com/corporate/SUMEETINDS_05112026171131_Rating_Report_SIL.pdf"
-},
-{
 "symbol": "SUNDARAM",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -10742,14 +8606,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=SUNDRMFAST"
 },
 {
-"symbol": "SUNDROP",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SUNDROP BRANDS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_308_20261029_150857647_WEB.html"
-},
-{
 "symbol": "SUNFLAG",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -10766,37 +8622,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25200_20261103_121509478_WEB.html"
 },
 {
-"symbol": "SUNTV",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 3.75 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=SUNTV"
-},
-{
 "symbol": "SUPERHOUSE",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "SUPERHOUSE LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_10712_20261031_164058218_WEB.html"
-},
-{
-"symbol": "SUPERSPIN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SUPER SPINNING MILLS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_122_20261102_101016861_WEB.html"
-},
-{
-"symbol": "SUPERSPIN",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Material issue",
-"detail": "Super Spinning Mills Limited has informed regarding Disclosure of material issue",
-"link": "https://nsearchives.nseindia.com/corporate/SUPERSPIN_05112026142057_Outcome_of_the_meeting.pdf"
 },
 {
 "symbol": "SUPRAJIT",
@@ -10871,22 +8702,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2470_20261102_185930980_WEB.html"
 },
 {
-"symbol": "SUVEN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SUVEN LIFE SCIENCES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1985_20261029_160048356_WEB.html"
-},
-{
-"symbol": "SUVIDHAA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "SUVIDHAA INFOSERVE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19313_20261102_173601208_WEB.html"
-},
-{
 "symbol": "SVPGLOB",
 "date": "2026-11-09",
 "kind": "meeting",
@@ -10918,14 +8733,6 @@
 "title": "Regulatory/tax order",
 "detail": "Sterling and Wilson Renewable Energy Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.com/corporate/SWSOLAR_06112026113215_SEBI_Warning.pdf"
-},
-{
-"symbol": "SYMBIOTEC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Symbiotec Pharmalab Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27545_20261028_171757359_WEB.html"
 },
 {
 "symbol": "SYNCOMF",
@@ -10977,14 +8784,6 @@
 },
 {
 "symbol": "TARC",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TARC LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19007_20261030_123403893_WEB.html"
-},
-{
-"symbol": "TARC",
 "date": "2026-11-12",
 "kind": "meeting",
 "title": "Results",
@@ -11006,14 +8805,6 @@
 "title": "Results",
 "detail": "TARSONS PRODUCTS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19886_20261104_172523681_WEB.html"
-},
-{
-"symbol": "TASTYBITE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TASTY BITE EATABLES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14716_20261026_124237385_WEB.html"
 },
 {
 "symbol": "TATACHEM",
@@ -11040,31 +8831,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_234_20261024_190258030_WEB.html"
 },
 {
-"symbol": "TCIEXP",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TCI EXPRESS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14409_20261026_165422636_WEB.html"
-},
-{
-"symbol": "TCIEXP",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "TCI Express Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
-"link": "https://nsearchives.nseindia.com/corporate/TCIEXP_05112026215121_StockExchangeIntimationReg30.pdf"
-},
-{
-"symbol": "TCPLPACK",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TCPL PACKAGING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15535_20261023_165202663_WEB.html"
-},
-{
 "symbol": "TDPOWERSYS",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -11079,32 +8845,6 @@
 "title": "Results",
 "detail": "TEAM INDIA GUARANTY LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2018_20261106_172100690_WEB.html"
-},
-{
-"symbol": "TEAMLEASE",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TEAMLEASE SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13446_20261014_182736688_WEB.html"
-},
-{
-"symbol": "TEAMLEASE",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "TeamLease Services Limited (TeamLease/The Company) Change in hearing date in respect of Writ Petition filed on June 12, 2026, before the Hon ble High Court of Karnataka",
-"link": "https://nsearchives.nseindia.com/corporate/TEAMLEASE_05112026175317_TeamLeaseIntimationonhearingwithrespecttoWritPetition.pdf"
-},
-{
-"symbol": "TEAMLEASE",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Teamlease Services Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/TEAMLEASE_ROID_103799_KMP_Doc.zip"
 },
 {
 "symbol": "TECHNOCRAF",
@@ -11131,36 +8871,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_578_20261104_154855495_WEB.html"
 },
 {
-"symbol": "TEGA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Tega Industries Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19890_20261027_134854796_WEB.html"
-},
-{
 "symbol": "TERASOFT",
 "date": "2026-11-11",
 "kind": "meeting",
 "title": "Results \u00b7 Fund raising",
 "detail": "TERA SOFTWARE LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Fund raising/Other busi",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14436_20261107_114342988_WEB.html"
-},
-{
-"symbol": "TEXINFRA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Texmaco Infrastructure & Holdings Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2214_20261030_152452352_WEB.html"
-},
-{
-"symbol": "TEXRAIL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TEXMACO RAIL & ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busi",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4128_20261029_172754021_WEB.html"
 },
 {
 "symbol": "THEJO",
@@ -11172,36 +8888,11 @@
 },
 {
 "symbol": "THEMISMED",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Themis Medicare Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2566_20261027_130547357_WEB.html"
-},
-{
-"symbol": "THEMISMED",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "Themis Medicare Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2566_20261102_152003582_WEB.html"
-},
-{
-"symbol": "THERMAX",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "THERMAX LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_65_20261012_161037761_WEB.html"
-},
-{
-"symbol": "THERMAX",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Thermax Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.com/corporate/THERMAXNSE_05112026152702_SEIntimationGSTPenalty_Nov2026.pdf"
 },
 {
 "symbol": "THOMASCOTT",
@@ -11246,14 +8937,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2526_20261026_163722640_WEB.html"
 },
 {
-"symbol": "TIINDIA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TUBE INVESTMENTS OF INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15551_20261026_194439450_WEB.html"
-},
-{
 "symbol": "TIL",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -11262,53 +8945,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_480_20261106_110910143_WEB.html"
 },
 {
-"symbol": "TIMETECHNO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TIME TECHNOPLAST LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2609_20261028_155713752_WEB.html"
-},
-{
-"symbol": "TIRUMALCHM",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "THIRUMALAI CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_442_20261101_232817295_WEB.html"
-},
-{
-"symbol": "TIRUPATIFL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "TIRUPATI FORGE LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15528_20261028_115853261_WEB.html"
-},
-{
 "symbol": "TITAGARH",
 "date": "2026-11-10",
 "kind": "meeting",
 "title": "Results",
 "detail": "TITAGARH RAIL SYSTEMS LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2744_20261105_215638259_WEB.html"
-},
-{
-"symbol": "TITAN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Fund raising",
-"detail": "TITAN COMPANY LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider Fund raising.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_233_20261102_114122141_WEB.html"
-},
-{
-"symbol": "TITAN",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Auditor change",
-"detail": "Titan Company Limited has informed the Exchange regarding Change in Auditors of the company.",
-"link": "https://nsearchives.nseindia.com/corporate/TITAN_05112026183608_SEappoinmentofstatutoryauditor.pdf"
 },
 {
 "symbol": "TMPV",
@@ -11343,14 +8985,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23301_20261107_173602718_WEB.html"
 },
 {
-"symbol": "TONBO",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Tonbo Imaging India Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27549_20261030_170047002_WEB.html"
-},
-{
 "symbol": "TOUCHWOOD",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -11381,15 +9015,6 @@
 "title": "Results",
 "detail": "TREJHARA SOLUTIONS LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17085_20261014_151036516_WEB.html"
-},
-{
-"symbol": "TREL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Transindia Real Estate Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/TREL_ROID_103636_KMP_Doc.zip"
 },
 {
 "symbol": "TRITURBINE",
@@ -11506,14 +9131,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_589_20261103_183322514_WEB.html"
 },
 {
-"symbol": "UGROCAP",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "UGRO CAPITAL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19798_20261016_182918222_WEB.html"
-},
-{
 "symbol": "UMAEXPORTS",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -11546,15 +9163,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15900_20261105_151151341_WEB.html"
 },
 {
-"symbol": "UNITDSPR",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "United Spirits Limited has informed the Exchange about Action(s) initiated or orders passed",
-"link": "https://nsearchives.nseindia.com/corporate/MCDOWELL_05112026165440_SEDisclosure_05112026_Sd.pdf"
-},
-{
 "symbol": "UNITECH",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -11571,14 +9179,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3039_20261103_104343431_WEB.html"
 },
 {
-"symbol": "UNIVASTU",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "UNIVASTU INDIA LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15369_20261030_181501816_WEB.html"
-},
-{
 "symbol": "UNIVPHOTO",
 "date": "2026-11-06",
 "kind": "news",
@@ -11588,28 +9188,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/UNIVPHOTO_ROID_103935_KMP_Doc.zip"
 },
 {
-"symbol": "UNOMINDA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Uno Minda Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2518_20261026_131826630_WEB.html"
-},
-{
 "symbol": "URAVIDEF",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
 "detail": "Uravi Defence and Technology Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16015_20261107_224456861_WEB.html"
-},
-{
-"symbol": "URJA",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "URJA GLOBAL LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14753_20261030_141342067_WEB.html"
 },
 {
 "symbol": "USHAMART",
@@ -11628,22 +9212,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21171_20261106_132739435_WEB.html"
 },
 {
-"symbol": "UTLSOLAR",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Fujiyama Power Systems Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25131_20261102_181115346_WEB.html"
-},
-{
-"symbol": "VAISHALI",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Fund raising",
-"detail": "Vaishali Pharma Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve Other business/Increase in authorised capital/Fund raising.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15422_20261102_212917381_WEB.html"
-},
-{
 "symbol": "VAISHALI",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -11658,14 +9226,6 @@
 "title": "Results",
 "detail": "VALECHA ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2424_20261105_192411615_WEB.html"
-},
-{
-"symbol": "VALIANTORG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Valiant Organics Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_18775_20261031_114748927_WEB.html"
 },
 {
 "symbol": "VARDMNPOLY",
@@ -11684,14 +9244,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5235_20261105_170414197_WEB.html"
 },
 {
-"symbol": "VBL",
-"date": "2026-11-05",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Re 0.50 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=VBL"
-},
-{
 "symbol": "VCL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -11700,45 +9252,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17495_20261106_192240036_WEB.html"
 },
 {
-"symbol": "VEEDOL",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "VEEDOL CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2504_20261027_175019673_WEB.html"
-},
-{
-"symbol": "VEEDOL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Veedol Corporation Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/VEEDOL_ROID_103880_KMP_Doc.zip"
-},
-{
-"symbol": "VEEGALAND",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "Veegaland Developers Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27602_20261027_154129384_WEB.html"
-},
-{
 "symbol": "VENKEYS",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "Venky's (India) Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1003_20261023_164446736_WEB.html"
-},
-{
-"symbol": "VENUSPIPES",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results \u00b7 Dividend",
-"detail": "VENUS PIPES & TUBES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20300_20261030_191815563_WEB.html"
 },
 {
 "symbol": "VERANDA",
@@ -11765,24 +9284,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6227_20261103_183902347_WEB.html"
 },
 {
-"symbol": "VGL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "alert",
-"title": "Auditor resigned",
-"detail": "VARVEE GLOBAL LIMITED has informed the Exchange about Resignation of Statutory Auditor",
-"link": "https://nsearchives.nseindia.com/corporate/VGL_ROSA_103864_KMP_Doc.zip"
-},
-{
-"symbol": "VGL",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Auditor change",
-"detail": "VARVEE GLOBAL LIMITED has informed the Exchange regarding Change in Auditors of the company.",
-"link": "https://nsearchives.nseindia.com/corporate/AARVEEDEN_05112026185628_Reg_30_Disclosure_for_resignation__of_auditor.pdf"
-},
-{
 "symbol": "VHL",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -11797,14 +9298,6 @@
 "title": "Results",
 "detail": "VICEROY HOTELS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22857_20261105_183804224_WEB.html"
-},
-{
-"symbol": "VIKRAN",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "VIKRAN ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24644_20261102_182621232_WEB.html"
 },
 {
 "symbol": "VIKRAN",
@@ -11904,14 +9397,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_313_20261105_172258651_WEB.html"
 },
 {
-"symbol": "VMSTMT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "VMS TMT LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24632_20261102_120108346_WEB.html"
-},
-{
 "symbol": "VOEPL",
 "date": "2026-11-06",
 "kind": "meeting",
@@ -11970,36 +9455,12 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22607_20261104_114254282_WEB.html"
 },
 {
-"symbol": "VSTTILLERS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "V.S.T Tillers Tractors Limited has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4929_20261023_183322704_WEB.html"
-},
-{
 "symbol": "VTL",
 "date": "2026-11-06",
 "kind": "meeting",
 "title": "Results",
 "detail": "VARDHMAN TEXTILES LIMITED has informed the Exchange about Board Meeting to be held on 06-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_307_20261030_101940221_WEB.html"
-},
-{
-"symbol": "VTMLTD",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "VTM LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5461_20261028_150509690_WEB.html"
-},
-{
-"symbol": "WABAG",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "VA TECH WABAG LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3630_20261028_151219894_WEB.html"
 },
 {
 "symbol": "WAKEFIT",
@@ -12035,14 +9496,6 @@
 },
 {
 "symbol": "WELENT",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "WELSPUN ENTERPRISES LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2248_20261102_164021634_WEB.html"
-},
-{
-"symbol": "WELENT",
 "date": "2026-11-06",
 "kind": "news",
 "level": "watch",
@@ -12065,23 +9518,6 @@
 "title": "Results",
 "detail": "Williamson Magor & Company Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_271_20261102_144856854_WEB.html"
-},
-{
-"symbol": "WINDLAS",
-"date": "2026-11-05",
-"kind": "meeting",
-"title": "Results",
-"detail": "WINDLAS BIOTECH LIMITED has informed the Exchange about Board Meeting to be held on 05-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19453_20261030_123009257_WEB.html"
-},
-{
-"symbol": "WINDLAS",
-"date": "2026-11-05",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Windlas Biotech Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.com/corporate/WINDLAS_ROID_103830_KMP_Doc.zip"
 },
 {
 "symbol": "WINDMACHIN",
