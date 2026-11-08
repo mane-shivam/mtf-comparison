@@ -1,6 +1,7 @@
 import './style.css';
+import { computeCosts, STATUTORY, type BrokerRates, type CostBreakdown } from './calc';
 
-type BrokerKey = 'kotak' | 'paytm' | 'rupeezy';
+type BrokerKey = 'kotak' | 'rupeezy';
 
 interface Cell {
   lev: number;
@@ -13,7 +14,6 @@ interface Stock {
   name: string;
   type: 'equity' | 'etf';
   kotak: Cell | null;
-  paytm: Cell | null;
   rupeezy: Cell | null;
   best: BrokerKey[];
   bestLev: number | null;
@@ -68,12 +68,11 @@ interface Unmatched {
   lev: number;
 }
 
-const BROKERS: BrokerKey[] = ['kotak', 'paytm', 'rupeezy'];
-const BROKER_NAME: Record<BrokerKey, string> = { kotak: 'Kotak Neo', paytm: 'Paytm Money', rupeezy: 'Rupeezy' };
-const BROKER_SHORT: Record<BrokerKey, string> = { kotak: 'Kotak', paytm: 'Paytm', rupeezy: 'Rupeezy' };
+const BROKERS: BrokerKey[] = ['kotak', 'rupeezy'];
+const BROKER_NAME: Record<BrokerKey, string> = { kotak: 'Kotak Neo', rupeezy: 'Rupeezy' };
+const BROKER_SHORT: Record<BrokerKey, string> = { kotak: 'Kotak', rupeezy: 'Rupeezy' };
 const SOURCES: Record<BrokerKey, string> = {
   kotak: 'https://www.kotakneo.com/margin-requirement/margin-trading/1/',
-  paytm: 'https://www.paytmmoney.com/mtf/list',
   rupeezy: 'https://rupeezy.in/margin-trading-facility/mtf-stock-lists',
 };
 // Generic starter pins for a new device. Personal lists live only in the browser (or a ?pins= link).
@@ -117,6 +116,7 @@ const state = {
   refreshing: false,
   symbols: null as Map<string, string> | null, // every NSE symbol → name, loaded on demand
   surv: {} as Record<string, SurvFlag[]>, // NSE/BSE ASM and GSM flags by symbol
+  sheetSym: null as string | null, // stock open in the detail sheet
 };
 
 async function loadSymbols(): Promise<Map<string, string>> {
@@ -129,8 +129,8 @@ async function loadSymbols(): Promise<Map<string, string>> {
 
 function stubStock(sym: string): Stock {
   return {
-    symbol: sym, name: state.symbols?.get(sym) ?? '', type: 'equity', kotak: null, paytm: null, rupeezy: null,
-    best: [], bestLev: null, change: { kotak: 0, paytm: 0, rupeezy: 0 }, stub: true,
+    symbol: sym, name: state.symbols?.get(sym) ?? '', type: 'equity', kotak: null, rupeezy: null,
+    best: [], bestLev: null, change: { kotak: 0, rupeezy: 0 }, stub: true,
   };
 }
 
@@ -668,6 +668,115 @@ function setType(type: 'equity' | 'etf') {
   renderList();
 }
 
+/* ---------- trade calculator ---------- */
+
+// Defaults: Kotak Neo Trade Free Pro as published; Rupeezy on the owner's custom 10.99% + ₹20 plan.
+// Every rate can be edited in the sheet and is remembered on the device.
+const DEFAULT_RATES: Record<BrokerKey, BrokerRates> = {
+  kotak: { interest: 9.69, brokPct: 0.1, brokFlat: 0, dpPct: 0.04, dpMin: 20, pledge: 20, unpledge: 20 },
+  rupeezy: { interest: 10.99, brokPct: 0, brokFlat: 20, dpPct: 0, dpMin: 25, pledge: 25, unpledge: 25 },
+};
+const CALC_KEY = 'mtf.calc';
+const RATES_KEY = 'mtf.calcRates';
+const RATE_FIELDS: [keyof BrokerRates, string, string][] = [
+  ['interest', 'MTF interest', '% p.a.'],
+  ['brokPct', 'Brokerage', '% / order'],
+  ['brokFlat', 'Brokerage', '₹ / order'],
+  ['dpPct', 'DP on sell', '%'],
+  ['dpMin', 'DP minimum', '₹'],
+  ['pledge', 'Pledge', '₹'],
+  ['unpledge', 'Unpledge', '₹'],
+];
+
+function calcInputs(): { funds: number; days: number; move: number } {
+  return { funds: 100000, days: 30, move: 0, ...(store<{ funds: number; days: number; move: number }>(CALC_KEY) ?? {}) };
+}
+
+function brokerRates(): Record<BrokerKey, BrokerRates> {
+  const saved = store<Partial<Record<BrokerKey, Partial<BrokerRates>>>>(RATES_KEY) ?? {};
+  return {
+    kotak: { ...DEFAULT_RATES.kotak, ...saved.kotak },
+    rupeezy: { ...DEFAULT_RATES.rupeezy, ...saved.rupeezy },
+  };
+}
+
+const inr = (n: number, dp = 0) =>
+  `${n < 0 ? '−' : ''}₹${Math.abs(n).toLocaleString('en-IN', { minimumFractionDigits: dp, maximumFractionDigits: dp })}`;
+const inr2 = (n: number) => inr(n, Math.abs(n) < 1000 ? 2 : 0);
+
+function calcSectionHTML(): string {
+  const v = calcInputs();
+  const rates = brokerRates();
+  const rateRows = RATE_FIELDS.map(
+    ([k, label, unit]) => `<tr><th>${label} <span class="muted">${unit}</span></th>${BROKERS.map(
+      (b) => `<td><input type="number" inputmode="decimal" step="any" min="0" data-rate="${b}.${k}" value="${rates[b][k]}" aria-label="${BROKER_SHORT[b]} ${label} ${unit}" /></td>`,
+    ).join('')}</tr>`,
+  ).join('');
+  return `<h3>Trade calculator</h3>
+    <div class="calc-inputs">
+      <label><span>Your funds</span><span class="calc-field"><span class="pre">₹</span><input type="number" inputmode="numeric" min="0" step="1000" data-calc="funds" value="${v.funds}" /></span></label>
+      <label><span>Hold for</span><span class="calc-field"><input type="number" inputmode="numeric" min="1" step="1" data-calc="days" value="${v.days}" /><span class="post">days</span></span></label>
+      <label><span>Sell price move</span><span class="calc-field"><input type="number" inputmode="decimal" step="0.5" data-calc="move" value="${v.move}" /><span class="post">%</span></span></label>
+    </div>
+    <div id="calc-out"></div>
+    <details class="calc-rates">
+      <summary>Rates used <span class="muted small">· edit to match your plan</span></summary>
+      <div class="table-scroll"><table class="rates-table"><tr><th></th>${BROKERS.map((b) => `<th>${BROKER_SHORT[b]}</th>`).join('')}</tr>${rateRows}</table></div>
+      <p class="muted small">Government and exchange (both): STT ${STATUTORY.stt}% buy and sell · NSE transaction ${STATUTORY.txn}% each side · SEBI ₹10/crore · stamp duty ${STATUTORY.stamp}% on buy · GST ${STATUTORY.gst}% on brokerage, transaction and SEBI charges and on DP and pledge charges. No GST on MTF interest. Kotak's ₹249/month Pro plan fee is not included.</p>
+      <button class="btn btn-ghost" data-reset-rates>Reset to defaults</button>
+    </details>`;
+}
+
+function renderCalc() {
+  const out = document.getElementById('calc-out');
+  const s = state.sheetSym ? state.bySymbol.get(state.sheetSym) : null;
+  if (!out || !s) return;
+  const { funds, days, move } = calcInputs();
+  const rates = brokerRates();
+  const res = BROKERS.map((b) => (isFunded(s[b]) ? computeCosts(rates[b], funds, s[b]!.lev, days, move) : null));
+  const live = res.filter((r): r is CostBreakdown => !!r);
+  const cheapest = live.length > 1 ? Math.min(...live.map((r) => r.total)) : null;
+
+  const cell = (r: CostBreakdown | null, f: (r: CostBreakdown) => string, cls = '') => `<td class="${cls}">${r ? f(r) : '—'}</td>`;
+  const row = (label: string, f: (r: CostBreakdown) => string, cls = '') =>
+    `<tr class="${cls}"><th>${label}</th>${res.map((r) => cell(r, f)).join('')}</tr>`;
+  const group = (label: string) => `<tr class="grp"><th colspan="${BROKERS.length + 1}">${label}</th></tr>`;
+
+  const head = `<tr><th></th>${BROKERS.map((b, i) => `<th>${BROKER_SHORT[b]}${res[i] ? ` <span class="muted">${fmtLev(res[i]!.lev)}</span>` : ''}</th>`).join('')}</tr>`;
+  const body = [
+    row('You buy for', (r) => inr(r.buyValue), 'strong'),
+    row('Broker funds', (r) => inr(r.funded)),
+    group('Broker'),
+    row('Brokerage on buy', (r) => inr2(r.brokBuy)),
+    row('Brokerage on sell', (r) => inr2(r.brokSell)),
+    row(`MTF interest · ${days} days`, (r) => inr2(r.interest)),
+    group('Depository'),
+    row('Pledge on buy', (r) => inr2(r.pledge)),
+    row('Unpledge on sell', (r) => inr2(r.unpledge)),
+    row('DP charge on sell', (r) => inr2(r.dp)),
+    row('GST on DP and pledge', (r) => inr2(r.gstDepository)),
+    group('Government and exchange'),
+    row('STT (0.1% buy and sell)', (r) => inr2(r.stt)),
+    row('NSE transaction', (r) => inr2(r.txn)),
+    row('SEBI fee', (r) => inr2(r.sebi)),
+    row('Stamp duty (buy)', (r) => inr2(r.stamp)),
+    row('GST (brokerage, transaction, SEBI)', (r) => inr2(r.gstTrade)),
+    `<tr class="total"><th>Total charges</th>${res
+      .map((r) => cell(r, (x) => `${inr2(x.total)}${cheapest !== null && Math.abs(x.total - cheapest) < 0.005 ? '<span class="tag">Cheaper</span>' : ''}`))
+      .join('')}</tr>`,
+    row('Charges as % of your funds', (r) => `${((r.total / funds) * 100).toFixed(2)}%`),
+    row('Break-even price rise', (r) => `≈ ${r.breakEvenPct.toFixed(2)}%`),
+    row(`Net P&L if price moves ${move}%`, (r) => `<span class="${r.pnl >= 0 ? 'pos' : 'neg'}">${inr2(r.pnl)} <span class="muted">(${r.roiPct.toFixed(1)}%)</span></span>`, 'strong'),
+  ].join('');
+
+  const missing = BROKERS.filter((_, i) => !res[i]).map((b) => BROKER_NAME[b]);
+  out.innerHTML = live.length
+    ? `<div class="table-scroll"><table class="calc-table">${head}${body}</table></div>
+       ${missing.length ? `<p class="muted small">${missing.join(' and ')} does not fund this stock for MTF.</p>` : ''}
+       <p class="muted small">One buy order and one sell order on NSE, pledged in one request and sold in one go. Interest is charged on the broker's funds for each calendar day held.</p>`
+    : '<p class="muted small">Neither broker funds this stock for MTF.</p>';
+}
+
 /* ---------- detail sheet ---------- */
 
 function survSectionHTML(sym: string): string {
@@ -715,11 +824,14 @@ async function openSheet(sym: string) {
         </div>
       </div>
       <div class="d-list">${rows}</div>
+      ${s.stub ? '' : calcSectionHTML()}
       ${survSectionHTML(sym)}
       <h3>Last 7 days</h3>
       <div class="history" id="history"><p class="muted small">Loading…</p></div>
       <p class="muted small">Kotak's own-funds share is 1 ÷ leverage. Kotak does not publish it separately.</p>
     </div>`;
+  state.sheetSym = sym;
+  renderCalc();
   if (!sheet.open) sheet.showModal();
   try {
     state.history ??= await getJSON<History>('/data/history.json');
@@ -1157,6 +1269,11 @@ function bind() {
       return;
     }
     if (t.closest('[data-add]')) return void openAddSheet();
+    if (t.closest('[data-reset-rates]')) {
+      store(RATES_KEY, {});
+      if (state.sheetSym) openSheet(state.sheetSym);
+      return;
+    }
     if (t.closest('#add-go')) return applyPending(false);
     if (t.closest('#replace-go')) return applyPending(true);
     const unpin = t.closest<HTMLElement>('[data-unpin]');
@@ -1214,6 +1331,24 @@ function bind() {
 
   $<HTMLDialogElement>('#sheet').addEventListener('click', (e) => {
     if (e.target === e.currentTarget) (e.currentTarget as HTMLDialogElement).close();
+  });
+
+  document.addEventListener('input', (e) => {
+    const t = e.target as HTMLInputElement;
+    if (t.dataset.calc) {
+      const v = calcInputs();
+      const n = Number(t.value);
+      if (t.value === '' || !Number.isFinite(n)) return;
+      store(CALC_KEY, { ...v, [t.dataset.calc]: n });
+      renderCalc();
+    } else if (t.dataset.rate) {
+      const [b, k] = t.dataset.rate.split('.') as [BrokerKey, keyof BrokerRates];
+      const n = Number(t.value);
+      if (t.value === '' || !Number.isFinite(n) || n < 0) return;
+      const saved = store<Partial<Record<BrokerKey, Partial<BrokerRates>>>>(RATES_KEY) ?? {};
+      store(RATES_KEY, { ...saved, [b]: { ...saved[b], [k]: n } });
+      renderCalc();
+    }
   });
 
   document.addEventListener('change', (e) => {

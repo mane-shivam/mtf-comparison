@@ -20,7 +20,7 @@ MASTER = ROOT / "data" / "nse" / "master.json"
 OVERRIDES = ROOT / "data" / "overrides.csv"
 OUT = ROOT / "public" / "data"
 
-BROKERS = ["kotak", "paytm", "rupeezy"]
+BROKERS = ["kotak", "rupeezy"]
 IST = timezone(timedelta(hours=5, minutes=30))
 FUZZY_MIN = 92
 STALE_AFTER = timedelta(hours=26)
@@ -179,7 +179,7 @@ def main() -> None:
             nse_name = m.get("name") if m.get("type") == "equity" else None
             s = stocks.setdefault(sym, {"symbol": sym, "name": nse_name or row.get("name") or sym,
                                         "type": m.get("type") or row.get("type") or "equity",
-                                        "kotak": None, "paytm": None, "rupeezy": None})
+                                        "kotak": None, "rupeezy": None})
             # NSE has the best equity names, then Kotak; Rupeezy has the best ETF names.
             preferred = "rupeezy" if s["type"] == "etf" else None if nse_name else "kotak"
             if b == preferred and row.get("name"):

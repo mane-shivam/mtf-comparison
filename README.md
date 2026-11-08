@@ -1,6 +1,6 @@
 # MTF Compare
 
-One page that shows the MTF leverage Kotak Neo, Paytm Money and Rupeezy offer for every NSE stock and ETF, and flags which broker gives the most.
+One page that shows the MTF leverage Kotak Neo and Rupeezy offer for every NSE stock and ETF, flags which broker gives the most, and works out the full cost of a trade at each (calculator in each stock's detail sheet; formulas and sources in `src/calc.ts`).
 
 For personal reference. Check the broker app before placing an order.
 
@@ -20,7 +20,6 @@ The browser loads `mtf.json` once (about 65 KB gzipped for ~2,200 stocks) and se
 | Broker | Route used | Rows | Notes |
 | --- | --- | --- | --- |
 | Kotak Neo | HTML table, `/margin-requirement/margin-trading/{page}/` | 1,709 (58 pages) | NSE symbol in the table; page count read from `totalPages` on page 1. Leverage 1 = not funded. |
-| Paytm Money | JSON `api-eq.paytmmoney.com/mtf/order/api/v2/scrips` | 1,534 | One call; symbol, ISIN, margin %, multiplier. Found behind `paytmmoney.com/mtf/list`. |
 | Rupeezy | JSON `rupeezy.in/api/mtf-stocks?page=N&pageSize=100` | 2,198 (22 pages) | Symbol and ISIN in the JSON even though the table hides them. Multiplier below 1 = not funded. |
 | NSE | `EQUITY_L.csv`, `eq_etfseclist.csv` | 2,975 | Master list for matching. |
 
@@ -32,7 +31,6 @@ Saved responses are in `samples/` and the parser tests run against them.
 
 ```bash
 pip install -r requirements.txt
-python scrapers/nse.py && python scrapers/kotak.py && python scrapers/paytm.py && python scrapers/rupeezy.py
 python merge.py
 python -m pytest -q
 
@@ -66,7 +64,6 @@ npm run dev        # http://localhost:5173
 | `scrapers/` | One scraper per broker plus the NSE master list |
 | `merge.py` | Matching, best broker with ties, daily history, `meta.json` status |
 | `data/overrides.csv` | Hand fixes: broker, name → symbol |
-| `data/manual/paytm.csv` | Fallback rows for days Paytm's API is down |
 | `data/history/` | One snapshot per IST day (90 days kept); powers ▲/▼ and the 7-day table |
 | `src/` | Frontend (Vite + vanilla TypeScript) |
 | `api/refresh.js` | Vercel function that triggers the workflow |

@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from scrapers import kotak, paytm, rupeezy
+from scrapers import kotak, rupeezy
 
 SAMPLES = Path(__file__).resolve().parent.parent / "samples"
 
@@ -20,18 +20,6 @@ def test_kotak_last_page():
     assert total == 58
     assert rows[-1]["symbol"] == "ZYDUSWELL"
     assert rows[-1]["lev"] == 3.1
-
-
-def test_paytm():
-    rows = paytm.parse(json.loads((SAMPLES / "paytm_scrips.json").read_text()))
-    assert len(rows) == 40
-    godrej = next(r for r in rows if r["symbol"] == "GODREJCP")
-    assert godrej["lev"] == 4.7 and godrej["ownPct"] == 21.08 and godrej["isin"] == "INE102D01028"
-
-
-def test_paytm_skips_disabled():
-    payload = {"data": [{"symbol": "X", "scrip_name": "X LTD", "margin_x": 4, "margin_perc": 25, "status": "DISABLED"}]}
-    assert paytm.parse(payload) == []
 
 
 def test_rupeezy():

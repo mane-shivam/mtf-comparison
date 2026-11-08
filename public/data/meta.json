@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T08:09:32Z",
+  "generatedAt": "2026-11-08T10:00:16Z",
   "surveillance": {
     "fetchedAt": "2026-11-08T08:09:32Z",
     "sources": {
@@ -19,13 +19,6 @@
       "error": null,
       "matched": 1711
     },
-    "paytm": {
-      "fetchedAt": "2026-11-08T08:09:07Z",
-      "count": 1539,
-      "status": "ok",
-      "error": null,
-      "matched": 1539
-    },
     "rupeezy": {
       "fetchedAt": "2026-11-08T08:09:29Z",
       "count": 2210,
@@ -34,6 +27,6 @@
       "matched": 2210
     }
   },
-  "total": 2234,
+  "total": 2233,
   "unmatched": 0
 }

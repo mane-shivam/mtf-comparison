@@ -39,9 +39,6 @@ jobs:
       - name: Kotak Neo
         run: python scrapers/kotak.py
         continue-on-error: true
-      - name: Paytm Money
-        run: python scrapers/paytm.py
-        continue-on-error: true
       - name: Rupeezy
         run: python scrapers/rupeezy.py
         continue-on-error: true

@@ -13,7 +13,7 @@
   --r-card: 14px;
   --r-input: 10px;
   --gutter: 16px;
-  --cols: minmax(0, 1.7fr) repeat(3, minmax(0, 1fr)) minmax(0, 1.15fr) 44px;
+  --cols: minmax(0, 1.9fr) repeat(2, minmax(0, 1fr)) minmax(0, 1.15fr) 44px;
   color-scheme: dark;
 }
 
@@ -310,7 +310,7 @@ kbd {
 
 .summary {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin: 14px 0 28px;
 }
@@ -512,7 +512,7 @@ kbd {
   color: var(--muted);
 }
 
-.list-head span:nth-child(n + 2):nth-child(-n + 5) {
+.list-head span:nth-child(n + 2):nth-child(-n + 4) {
   text-align: right;
 }
 
@@ -1311,10 +1311,10 @@ td.down {
 
 @media (max-width: 860px) {
   :root {
-    --cols: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)) 44px;
+    --cols: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)) 44px;
   }
 
-  .list-head span:nth-child(5),
+  .list-head span:nth-child(4),
   .row .best {
     display: none;
   }
@@ -1492,10 +1492,11 @@ td.down {
   }
 
   .row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: relative;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
-      'stock stock star'
-      'k p r';
+      'stock stock'
+      'k r';
     row-gap: 8px;
     column-gap: 6px;
     min-height: 0;
@@ -1511,12 +1512,13 @@ td.down {
 
   .row .stock {
     grid-area: stock;
+    padding-right: 40px;
   }
 
   .row .star {
-    grid-area: star;
-    justify-self: end;
-    margin: -8px -6px 0 0;
+    position: absolute;
+    top: 4px;
+    right: 4px;
   }
 
   .row .cell:nth-of-type(2) {
@@ -1524,10 +1526,6 @@ td.down {
   }
 
   .row .cell:nth-of-type(3) {
-    grid-area: p;
-  }
-
-  .row .cell:nth-of-type(4) {
     grid-area: r;
   }
 
@@ -1614,4 +1612,194 @@ td.down {
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
+}
+
+/* ---------- trade calculator ---------- */
+
+.calc-inputs {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.calc-inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.calc-field {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-input);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.calc-field:focus-within {
+  border-color: #3a3a40;
+}
+
+.calc-field input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 4px;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.calc-table {
+  font-size: 13.5px;
+}
+
+.calc-table th,
+.calc-table td {
+  padding: 7px 10px;
+}
+
+.calc-table td {
+  min-width: 92px;
+}
+
+.calc-table tr:first-child th {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.calc-table th {
+  font-weight: 400;
+}
+
+.calc-table tr.grp th {
+  padding-top: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.calc-table tr.strong th,
+.calc-table tr.strong td,
+.calc-table tr.total th,
+.calc-table tr.total td {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.calc-table tr.total th,
+.calc-table tr.total td {
+  border-top: 1px solid #3a3a40;
+  font-size: 15px;
+}
+
+.calc-table tr.total .tag {
+  margin-left: 6px;
+  vertical-align: 1px;
+}
+
+.calc-table .pos {
+  color: var(--best);
+}
+
+.calc-table .neg {
+  color: var(--down);
+}
+
+.calc-rates {
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.calc-rates summary {
+  min-height: 44px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.calc-rates > :not(summary) {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.calc-rates .btn {
+  margin-bottom: 14px;
+}
+
+.rates-table input {
+  width: 84px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.rates-table th {
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .calc-inputs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calc-inputs label:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .calc-table {
+    table-layout: fixed;
+    font-size: 12px;
+  }
+
+  .calc-table th,
+  .calc-table td {
+    padding: 7px 3px;
+  }
+
+  .calc-table td {
+    min-width: 0;
+  }
+
+  .calc-table th:first-child {
+    width: 34%;
+    white-space: normal;
+  }
+
+  .calc-table tr.total th,
+  .calc-table tr.total td {
+    font-size: 14px;
+  }
+
+  .calc-table tr.total .tag {
+    display: table;
+    margin: 4px 0 0 auto;
+  }
+
+  .calc-table tr:first-child .muted {
+    display: block;
+  }
 }

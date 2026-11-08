@@ -16,7 +16,7 @@ def test_normalise():
 
 def test_match_order():
     m = merge.Matcher(MASTER, [{"broker": "", "name": "Some Odd Name", "symbol": "ABB"}])
-    assert m.resolve("paytm", {"name": "x", "isin": "INE040A01034", "symbol": "WRONG", "exchange": "NSE"}) == ("HDFCBANK", "isin")
+    assert m.resolve("rupeezy", {"name": "x", "isin": "INE040A01034", "symbol": "WRONG", "exchange": "NSE"}) == ("HDFCBANK", "isin")
     assert m.resolve("kotak", {"name": "ABB India", "symbol": "ABB", "exchange": "NSE"}) == ("ABB", "symbol")
     assert m.resolve("rupeezy", {"name": "MAHINDRA AND MAHINDRA LTD", "exchange": "BSE"}) == ("M&M", "name")
     assert m.resolve("rupeezy", {"name": "Mahindra & Mahindr Ltd", "exchange": "BSE"}) == ("M&M", "fuzzy")
@@ -37,5 +37,5 @@ def test_status_stale_when_error_is_newer(tmp_path, monkeypatch):
 
 def test_status_stale_when_old():
     now = datetime(2026, 10, 30, 12, tzinfo=timezone.utc)
-    info = merge.broker_status("paytm", {"fetchedAt": "2026-10-28T04:30:00Z", "count": 1}, now)
+    info = merge.broker_status("rupeezy", {"fetchedAt": "2026-10-28T04:30:00Z", "count": 1}, now)
     assert info["status"] == "stale"
