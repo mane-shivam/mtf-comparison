@@ -1898,8 +1898,3 @@ td.down {
   white-space: nowrap;
 }
 
-@media (max-width: 640px) {
-  .calc-table td .sub {
-    white-space: normal;
-  }
-}

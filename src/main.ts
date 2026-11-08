@@ -933,10 +933,10 @@ function renderCalc() {
     row(
       'Charges as % of your funds',
       // Second line: everything except MTF interest, i.e. what the trade costs regardless of days held.
-      (r) => `${((r.total / funds) * 100).toFixed(2)}%<span class="sub">(${(((r.total - r.interest) / funds) * 100).toFixed(2)}% excl. interest)</span>`,
+      (r) => `${((r.total / funds) * 100).toFixed(2)}%<span class="sub">(${(((r.total - r.interest) / funds) * 100).toFixed(2)}% excl. I)</span>`,
     ),
     row('Break-even price rise', (r) => `≈ ${r.breakEvenPct.toFixed(2)}%`),
-    row(`Net P&L if price moves ${move}%`, (r) => `<span class="${r.pnl >= 0 ? 'pos' : 'neg'}">${inr2(r.pnl)} <span class="muted">(${r.roiPct.toFixed(1)}%)</span></span>`, 'strong'),
+    row(`Net P&L if price moves ${move}%`, (r) => `<span class="${r.pnl >= 0 ? 'pos' : 'neg'}">${inr2(r.pnl)}</span><span class="sub">${r.roiPct >= 0 ? '+' : ''}${r.roiPct.toFixed(1)}%</span>`, 'strong'),
   ].join('');
 
   const missing = BROKERS.filter((_, i) => !res[i]).map((b) => BROKER_NAME[b]);
@@ -945,7 +945,7 @@ function renderCalc() {
     ? `<div class="table-scroll"><table class="calc-table">${head}${body}</table></div>
        ${horizon}
        ${missing.length ? `<p class="muted small">${missing.join(' and ')} does not fund this stock for MTF.</p>` : ''}
-       <p class="muted small">One buy order and one sell order on NSE, pledged in one request and sold in one go. Interest is charged on the broker's funds for each calendar day held.</p>`
+       <p class="muted small">One buy order and one sell order on NSE, pledged in one request and sold in one go. Interest is charged on the broker's funds for each calendar day held. “excl. I” = excluding MTF interest.</p>`
     : '<p class="muted small">Neither broker funds this stock for MTF.</p>';
 }
 
