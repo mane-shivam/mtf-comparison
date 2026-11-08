@@ -1,25 +1,25 @@
 {
-"fetchedAt": "2026-11-08T11:30:19Z",
+"fetchedAt": "2026-11-08T16:48:43Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-08T11:30:14Z",
+"fetchedAt": "2026-11-08T16:48:36Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-08T11:30:14Z",
+"fetchedAt": "2026-11-08T16:48:37Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-08T11:30:19Z",
-"count": 1228,
+"fetchedAt": "2026-11-08T16:48:43Z",
+"count": 1229,
 "error": null
 }
 },
 "ban": {
-"date": "2026-11-08",
+"date": "2026-11-09",
 "symbols": [
 "KAYNES"
 ]
@@ -72,6 +72,10 @@
 "ICDSLTD": {
 "band": 2,
 "series": "BE"
+},
+"IMPEXFERRO": {
+"band": 2,
+"series": "BZ"
 },
 "LYKALABS": {
 "band": 2,
@@ -345,6 +349,10 @@
 "band": 5,
 "series": "BE"
 },
+"BGLOBAL": {
+"band": 5,
+"series": "BZ"
+},
 "BGRENERGY": {
 "band": 5,
 "series": "BE"
@@ -401,9 +409,21 @@
 "band": 5,
 "series": "EQ"
 },
+"CEREBRAINT": {
+"band": 5,
+"series": "BZ"
+},
 "CFEL": {
 "band": 5,
 "series": "BE"
+},
+"CLCIND": {
+"band": 5,
+"series": "BE"
+},
+"CMICABLES": {
+"band": 5,
+"series": "BZ"
 },
 "COMFINTE": {
 "band": 5,
@@ -517,6 +537,10 @@
 "band": 5,
 "series": "EQ"
 },
+"EDUCOMP": {
+"band": 5,
+"series": "BZ"
+},
 "EKI": {
 "band": 5,
 "series": "EQ"
@@ -582,6 +606,10 @@
 "series": "BE"
 },
 "GICL": {
+"band": 5,
+"series": "BE"
+},
+"GLOBAL": {
 "band": 5,
 "series": "BE"
 },
@@ -785,6 +813,10 @@
 "band": 5,
 "series": "BE"
 },
+"LASA": {
+"band": 5,
+"series": "BE"
+},
 "LCCINFOTEC": {
 "band": 5,
 "series": "EQ"
@@ -961,6 +993,10 @@
 "band": 5,
 "series": "BE"
 },
+"NAGAFERT": {
+"band": 5,
+"series": "BZ"
+},
 "NATCAPSUQ": {
 "band": 5,
 "series": "EQ"
@@ -1029,6 +1065,10 @@
 "band": 5,
 "series": "BE"
 },
+"OPTIFIN": {
+"band": 5,
+"series": "BE"
+},
 "ORTEL": {
 "band": 5,
 "series": "BZ"
@@ -1042,6 +1082,10 @@
 "series": "BE"
 },
 "PARASPETRO": {
+"band": 5,
+"series": "EQ"
+},
+"PASHUPATI": {
 "band": 5,
 "series": "EQ"
 },
@@ -1100,6 +1144,10 @@
 "RAJTV": {
 "band": 5,
 "series": "EQ"
+},
+"RAJVIR": {
+"band": 5,
+"series": "BZ"
 },
 "RAMASTEEL": {
 "band": 5,
@@ -1185,6 +1233,10 @@
 "band": 5,
 "series": "BE"
 },
+"SELMC": {
+"band": 5,
+"series": "BE"
+},
 "SETCO": {
 "band": 5,
 "series": "EQ"
@@ -1249,6 +1301,10 @@
 "band": 5,
 "series": "EQ"
 },
+"SKIL": {
+"band": 5,
+"series": "BZ"
+},
 "SMLMAH": {
 "band": 5,
 "series": "EQ"
@@ -1268,6 +1324,10 @@
 "SPECTRUM": {
 "band": 5,
 "series": "EQ"
+},
+"SPELS": {
+"band": 5,
+"series": "BE"
 },
 "SPENCERS": {
 "band": 5,
@@ -1434,6 +1494,10 @@
 "series": "BE"
 },
 "UGARSUGAR": {
+"band": 5,
+"series": "BE"
+},
+"UNIVAFOODS": {
 "band": 5,
 "series": "BE"
 },
@@ -1974,10 +2038,6 @@
 "series": "EQ"
 },
 "PARKHOSPS": {
-"band": 10,
-"series": "EQ"
-},
-"PASHUPATI": {
 "band": 10,
 "series": "EQ"
 },
@@ -3060,6 +3120,15 @@
 "title": "Results",
 "detail": "ATN INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2422_20261106_193401925_WEB.html"
+},
+{
+"symbol": "AURIGROW",
+"date": "2026-11-08",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Auri Grow India Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.com/corporate/GODHA_08112026185248_2nd_CoC_Outcome_-_Auri_Grow_India_Limited_NSE.pdf"
 },
 {
 "symbol": "AUROPHARMA",
