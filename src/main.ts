@@ -126,6 +126,7 @@ const state = {
   sort: 'az' as 'az' | 'lev' | 'gap',
   filter: null as BrokerKey | null,
   solo: false, // only stocks where one broker is best on its own
+  results: false, // only stocks with results still to come, nearest first
   type: 'equity' as 'equity' | 'etf', // search and the All list show one kind at a time; stocks by default
   query: '',
   limit: PAGE,
@@ -455,6 +456,12 @@ function inBan(sym: string): boolean {
 
 const shortDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 
+// Next board meeting that will consider results (today or later).
+function nextResult(sym: string): CoEvent | undefined {
+  const today = localISO();
+  return stockEvents(sym).find((e) => e.kind === 'meeting' && e.title.includes('Results') && e.date >= today);
+}
+
 function eventFlagsHTML(sym: string): string {
   const out: string[] = [];
   if (inBan(sym)) out.push(`<span class="flag severe" title="In NSE F&amp;O ban for ${fmtDate(state.ban!.date)}">F&amp;O ban</span>`);
@@ -547,7 +554,18 @@ function gap(s: Stock): number {
 const contested = (s: Stock) => BROKERS.some((b) => s[b] && !s.best.includes(b));
 
 function sorted(list: Stock[]): Stock[] {
-  const out = list.filter((s) => (!state.filter || s.best.includes(state.filter)) && (!state.solo || s.best.length === 1));
+  const out = list.filter(
+    (s) =>
+      (!state.filter || s.best.includes(state.filter)) &&
+      (!state.solo || s.best.length === 1) &&
+      (!state.results || !!nextResult(s.symbol)),
+  );
+  if (state.results) {
+    // Nearest results date first; the chosen sort breaks ties.
+    const byDate = (a: Stock, b: Stock) => nextResult(a.symbol)!.date.localeCompare(nextResult(b.symbol)!.date);
+    const tie = state.sort === 'lev' ? (a: Stock, b: Stock) => (b.bestLev ?? 0) - (a.bestLev ?? 0) : (a: Stock, b: Stock) => a.symbol.localeCompare(b.symbol);
+    return out.sort((a, b) => byDate(a, b) || tie(a, b));
+  }
   const az = (a: Stock, b: Stock) => a.symbol.localeCompare(b.symbol);
   if (state.sort === 'lev') out.sort((a, b) => (b.bestLev ?? 0) - (a.bestLev ?? 0) || az(a, b));
   else if (state.sort === 'gap') out.sort((a, b) => gap(b) - gap(a) || az(a, b));
@@ -635,11 +653,13 @@ function renderSummary() {
 }
 
 function renderChips() {
+  const pendingResults = state.pins.filter((p) => nextResult(p)).length;
   $('#chips').innerHTML = '<span class="chips-label">Best on</span>' + BROKERS.map(
     (b) =>
       `<button class="chip${state.filter === b ? ' on' : ''}" data-filter="${b}" aria-pressed="${state.filter === b}" aria-label="Best on ${BROKER_SHORT[b]}"><span class="chip-pre">Best on </span>${BROKER_SHORT[b]}</button>`,
   ).join('') +
-    `<button class="chip chip-solo${state.solo ? ' on' : ''}" data-solo aria-pressed="${state.solo}">Sole best</button>`;
+    `<button class="chip chip-solo${state.solo ? ' on' : ''}" data-solo aria-pressed="${state.solo}">Sole best</button>` +
+    `<button class="chip${state.results ? ' on' : ''}" data-results aria-pressed="${state.results}" title="Pinned stocks with results still to come">Results due${pendingResults ? ` <span class="count">${pendingResults}</span>` : ''}</button>`;
 }
 
 function emptyState(): string {
@@ -654,6 +674,9 @@ function emptyState(): string {
   if (state.view === 'pinned' && !state.pins.length) {
     return `<div class="empty"><p class="empty-title">Nothing pinned yet</p><p>Search a stock and tap the star, or add several at once.</p>
       <div class="chips"><button class="chip" data-add>+ Add stocks</button></div></div>`;
+  }
+  if (state.results && !state.filter && !state.solo) {
+    return `<div class="empty"><p class="empty-title">No results due</p><p>None of your ${state.view === 'pinned' ? 'pinned ' : ''}stocks has a results date announced on NSE yet.</p></div>`;
   }
   const where = state.filter ? ` on ${BROKER_NAME[state.filter]}` : '';
   const what = state.solo ? `is best${where} alone (by more than ${TIE_GAP}×)` : `has its best multiplier${where}`;
@@ -1486,6 +1509,12 @@ function bind() {
     const typeBtn = t.closest<HTMLElement>('[data-type]');
     if (typeBtn) {
       setType(typeBtn.dataset.type as 'equity' | 'etf');
+      return;
+    }
+    if (t.closest('[data-results]')) {
+      state.results = !state.results;
+      state.limit = PAGE;
+      render();
       return;
     }
     if (t.closest('[data-solo]')) {
