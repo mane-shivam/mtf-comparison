@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T10:00:16Z",
+  "generatedAt": "2026-11-08T10:10:25Z",
   "surveillance": {
     "fetchedAt": "2026-11-08T08:09:32Z",
     "sources": {
@@ -7,6 +7,22 @@
         "status": "ok",
         "count": 255,
         "fetchedAt": "2026-11-08T08:09:32Z",
+        "error": null
+      }
+    }
+  },
+  "events": {
+    "fetchedAt": "2026-11-08T10:10:25Z",
+    "sources": {
+      "ban": {
+        "status": "ok",
+        "fetchedAt": "2026-11-08T10:10:22Z",
+        "error": null
+      },
+      "events": {
+        "status": "ok",
+        "fetchedAt": "2026-11-08T10:10:25Z",
+        "count": 1125,
         "error": null
       }
     }

@@ -39,6 +39,19 @@ interface SurvFlag {
   desc: string;
 }
 
+interface CoEvent {
+  date: string; // YYYY-MM-DD: meeting date, or ex-date for a corporate action
+  kind: 'meeting' | 'action';
+  title: string; // 'Results', 'Results · Dividend', 'Ex-dividend', 'Split', ...
+  detail: string;
+  link: string; // filing on NSE, or the stock's NSE page
+}
+
+interface EventsFile {
+  ban: { date: string | null; symbols: string[] } | null;
+  events: Record<string, CoEvent[]>;
+}
+
 interface SurvSource {
   status: 'ok' | 'stale' | 'failed';
   count?: number;
@@ -50,6 +63,7 @@ interface Meta {
   generatedAt: string;
   brokers: Record<BrokerKey, BrokerMeta>;
   surveillance?: { fetchedAt: string | null; sources: Record<string, SurvSource> };
+  events?: { fetchedAt: string | null; sources: Record<string, SurvSource> };
   total: number;
   unmatched: number;
 }
@@ -117,6 +131,8 @@ const state = {
   symbols: null as Map<string, string> | null, // every NSE symbol → name, loaded on demand
   surv: {} as Record<string, SurvFlag[]>, // NSE/BSE ASM and GSM flags by symbol
   sheetSym: null as string | null, // stock open in the detail sheet
+  events: {} as Record<string, CoEvent[]>, // company events from 3 days ago onwards
+  ban: null as { date: string; symbols: Set<string> } | null, // NSE F&O ban list
 };
 
 async function loadSymbols(): Promise<Map<string, string>> {
@@ -373,6 +389,14 @@ async function getJSON<T>(path: string): Promise<T> {
 async function loadData() {
   const [stocks, meta] = await Promise.all([getJSON<Stock[]>('/data/mtf.json'), getJSON<Meta>('/data/meta.json')]);
   setData(stocks, meta);
+  // Events and the F&O ban list are extra too.
+  getJSON<EventsFile>('data/events.json')
+    .then((ev) => {
+      state.events = ev.events ?? {};
+      state.ban = ev.ban?.date ? { date: ev.ban.date, symbols: new Set(ev.ban.symbols) } : null;
+      render();
+    })
+    .catch(() => {});
   // Surveillance flags are extra: the page works without them.
   getJSON<Record<string, SurvFlag[]>>('data/surveillance.json')
     .then((surv) => {
@@ -399,8 +423,49 @@ function survSince(f: SurvFlag): string {
   return f.exact ? `added ${fmtDate(f.since)}` : `on list since at least ${fmtDate(f.since)}`;
 }
 
+const BAN_LINK = 'https://nsearchives.nseindia.com/content/fo/fo_secban.csv';
+const EVENT_LOOKBACK_DAYS = 3;
+
+function localISO(d = new Date()): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function daysAgoISO(n: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return localISO(d);
+}
+
+// Events from 3 days ago onwards, soonest first (the file can be a few hours old, so filter here too).
+function stockEvents(sym: string): CoEvent[] {
+  const from = daysAgoISO(EVENT_LOOKBACK_DAYS);
+  return (state.events[sym] ?? []).filter((e) => e.date >= from).sort((a, b) => a.date.localeCompare(b.date));
+}
+
+// The ban list is for one trade date; show it while that date is recent.
+function inBan(sym: string): boolean {
+  return !!state.ban && state.ban.date >= daysAgoISO(EVENT_LOOKBACK_DAYS) && state.ban.symbols.has(sym);
+}
+
+const shortDate = (iso: string) => new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+
+function eventFlagsHTML(sym: string): string {
+  const out: string[] = [];
+  if (inBan(sym)) out.push(`<span class="flag severe" title="In NSE F&amp;O ban for ${fmtDate(state.ban!.date)}">F&amp;O ban</span>`);
+  const evs = stockEvents(sym);
+  if (evs.length) {
+    const today = localISO();
+    const next = evs.find((e) => e.date >= today) ?? evs[evs.length - 1];
+    const past = next.date < today;
+    const more = evs.length > 1 ? ` +${evs.length - 1}` : '';
+    const title = evs.map((e) => `${fmtDate(e.date)}: ${e.title}`).join('\n');
+    out.push(`<span class="flag event${past ? ' past' : ''}" title="${esc(title)}">${esc(next.title.split(' · ')[0])} ${shortDate(next.date)}${more}</span>`);
+  }
+  return out.join('');
+}
+
 function flagsHTML(sym: string): string {
-  return (state.surv[sym] ?? [])
+  return eventFlagsHTML(sym) + (state.surv[sym] ?? [])
     .map((f) => {
       const title = `${f.ex.join(' + ')} · ${survName(f)} · Stage ${f.stage} · ${survSince(f)}`;
       return `<span class="flag${survSevere(f) ? ' severe' : ''}" title="${esc(title)}">${esc(survLabel(f))}</span>`;
@@ -612,6 +677,19 @@ function survSourcesHTML(m: Meta): string {
     .join('');
 }
 
+function eventSourcesHTML(m: Meta): string {
+  const src = m.events?.sources;
+  if (!src) return '';
+  const rows: [string, string, SurvSource | undefined][] = [
+    ['NSE F&amp;O ban list', BAN_LINK, src.ban],
+    ['NSE board meetings and corporate actions', 'https://www.nseindia.com/companies-listing/corporate-filings-event-calendar', src.events],
+  ];
+  return rows
+    .filter(([, , i]) => i)
+    .map(([label, link, i]) => `<li><a href="${link}" target="_blank" rel="noopener">${label}</a><span class="muted">${i!.status === 'ok' ? '' : `${i!.status} · `}fetched ${fmtTime(i!.fetchedAt ?? null)}</span></li>`)
+    .join('');
+}
+
 function renderFooter() {
   const m = state.meta;
   if (!m) return;
@@ -623,7 +701,7 @@ function renderFooter() {
     <div class="foot-grid">
       <div>
         <h2>Sources</h2>
-        <ul class="sources">${fetches}${survSourcesHTML(m)}</ul>
+        <ul class="sources">${fetches}${survSourcesHTML(m)}${eventSourcesHTML(m)}</ul>
       </div>
       <div>
         <h2>Pins</h2>
@@ -779,6 +857,28 @@ function renderCalc() {
 
 /* ---------- detail sheet ---------- */
 
+function eventsSectionHTML(sym: string): string {
+  const today = localISO();
+  const rows = stockEvents(sym).map((e) => {
+    const when = e.date < today ? 'past' : e.date === today ? 'today' : '';
+    return `<div class="e-row">
+      <div class="e-date${when ? ` ${when}` : ''}"><span>${shortDate(e.date)}</span>${when === 'today' ? '<span class="tag">Today</span>' : ''}</div>
+      <div class="e-main"><div class="e-title">${esc(e.title)}${e.kind === 'action' ? ' <span class="muted small">· ex-date</span>' : ''}</div>
+        ${e.detail ? `<div class="muted small">${esc(e.detail)}</div>` : ''}
+        <a class="e-link" href="${esc(e.link)}" target="_blank" rel="noopener">Read more ↗</a></div>
+    </div>`;
+  });
+  if (inBan(sym)) {
+    rows.unshift(`<div class="e-row">
+      <div class="e-date"><span>${shortDate(state.ban!.date)}</span></div>
+      <div class="e-main"><div class="e-title"><span class="flag severe">F&amp;O ban</span></div>
+        <div class="muted small">In NSE's F&amp;O ban period: open interest is above 95% of the market-wide limit, so no new F&amp;O positions can be opened.</div>
+        <a class="e-link" href="${BAN_LINK}" target="_blank" rel="noopener">Read more ↗</a></div>
+    </div>`);
+  }
+  return rows.length ? `<h3>Events</h3><div class="s-list">${rows.join('')}</div>` : '';
+}
+
 function survSectionHTML(sym: string): string {
   const flags = state.surv[sym];
   if (!flags?.length) return '';
@@ -824,8 +924,9 @@ async function openSheet(sym: string) {
         </div>
       </div>
       <div class="d-list">${rows}</div>
-      ${s.stub ? '' : calcSectionHTML()}
+      ${eventsSectionHTML(sym)}
       ${survSectionHTML(sym)}
+      ${s.stub ? '' : calcSectionHTML()}
       <h3>Last 7 days</h3>
       <div class="history" id="history"><p class="muted small">Loading…</p></div>
       <p class="muted small">Kotak's own-funds share is 1 ÷ leverage. Kotak does not publish it separately.</p>

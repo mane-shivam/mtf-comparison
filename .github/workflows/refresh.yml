@@ -47,6 +47,10 @@ jobs:
         run: python scrapers/surveillance.py
         continue-on-error: true
 
+      - name: NSE F&O ban list and company events
+        run: python scrapers/events.py
+        continue-on-error: true
+
       - name: Merge
         run: python merge.py
 

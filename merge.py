@@ -148,6 +148,17 @@ def build_surveillance(matcher: "Matcher") -> tuple[dict, dict]:
     return out, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
 
 
+def build_events() -> tuple[dict, dict]:
+    """F&O ban list and company events by symbol, for public/data/events.json."""
+    raw = load_json(RAW / "events.json", None)
+    if not raw:
+        return {"ban": None, "events": {}}, {}
+    by_sym: dict[str, list] = {}
+    for e in raw.get("events", []):
+        by_sym.setdefault(e["symbol"], []).append({k: e[k] for k in ("date", "kind", "title", "detail", "link")})
+    return {"ban": raw.get("ban"), "events": by_sym}, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
+
+
 def main() -> None:
     now = datetime.now(timezone.utc).replace(microsecond=0)
     today = now.astimezone(IST).date().isoformat()
@@ -218,10 +229,12 @@ def main() -> None:
                "rows": {sym: [sn.get(sym) for sn in snaps] for sym in snapshot}}
 
     surveillance, surv_meta = build_surveillance(matcher)
+    events, events_meta = build_events()
 
     meta = {
         "generatedAt": now.isoformat().replace("+00:00", "Z"),
         "surveillance": surv_meta,
+        "events": events_meta,
         "brokers": meta_brokers,
         "total": len(rows),
         "unmatched": len(unmatched),
@@ -232,6 +245,7 @@ def main() -> None:
     (OUT / "unmatched.json").write_text(json.dumps(unmatched, indent=1, ensure_ascii=False) + "\n")
     (OUT / "history.json").write_text(json.dumps(history, separators=(",", ":")) + "\n")
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
+    (OUT / "events.json").write_text(json.dumps(events, separators=(",", ":"), ensure_ascii=False) + "\n")
     (OUT / "surveillance.json").write_text(json.dumps(surveillance, separators=(",", ":")) + "\n")
     # Every NSE symbol, so the site can pin a stock no broker funds yet.
     listed = sorted({m["symbol"]: m["name"] for m in master}.items())
