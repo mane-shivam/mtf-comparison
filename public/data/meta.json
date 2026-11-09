@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-11-09T13:17:45Z",
+  "generatedAt": "2026-11-09T21:05:45Z",
   "surveillance": {
-    "fetchedAt": "2026-11-09T13:17:39Z",
+    "fetchedAt": "2026-11-09T21:05:37Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 474,
-        "fetchedAt": "2026-11-09T13:17:39Z",
+        "fetchedAt": "2026-11-09T21:05:37Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-09T13:17:45Z",
+    "fetchedAt": "2026-11-09T21:05:44Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-09T13:17:39Z",
+        "fetchedAt": "2026-11-09T21:05:37Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-09T13:17:41Z",
+        "fetchedAt": "2026-11-09T21:05:40Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-09T13:17:45Z",
-        "count": 982,
+        "fetchedAt": "2026-11-09T21:05:44Z",
+        "count": 794,
         "error": null
       }
     }
@@ -36,12 +36,12 @@
     "kotak": {
       "fetchedAt": "2026-11-09T13:17:13Z",
       "count": 1688,
-      "status": "ok",
-      "error": null,
+      "status": "stale",
+      "error": "MTF table not found on Kotak page",
       "matched": 1688
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-09T13:17:36Z",
+      "fetchedAt": "2026-11-09T21:05:33Z",
       "count": 2209,
       "status": "ok",
       "error": null,
