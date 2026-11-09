@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-09T09:07:59Z",
+"fetchedAt": "2026-11-09T13:17:36Z",
 "count": 2209,
 "rows": [
 {
@@ -6754,15 +6754,6 @@
 "ownPct": 29.94
 },
 {
-"symbol": "PATANJALI",
-"name": "PATANJALI FOODS LIMITED",
-"isin": "INE619A01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.34,
-"ownPct": 29.94
-},
-{
 "symbol": "TMCV",
 "name": "TATA MOTORS LIMITED",
 "isin": "INE1TAE01010",
@@ -6829,6 +6820,15 @@
 "symbol": "LEMONTREE",
 "name": "LEMON TREE HOTELS LTD",
 "isin": "INE970X01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.33,
+"ownPct": 30.03
+},
+{
+"symbol": "PATANJALI",
+"name": "PATANJALI FOODS LIMITED",
+"isin": "INE619A01035",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.33,

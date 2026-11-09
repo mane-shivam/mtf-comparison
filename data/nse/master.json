@@ -18022,5 +18022,11 @@
 "name": "BSE Top 10 Banks",
 "isin": "INF0R8F01265",
 "type": "etf"
+},
+{
+"symbol": "POWERIETF",
+"name": "BSE Power Index",
+"isin": "INF109K1A724",
+"type": "etf"
 }
 ]
