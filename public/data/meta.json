@@ -1,53 +1,53 @@
 {
-  "generatedAt": "2026-11-08T18:57:47Z",
+  "generatedAt": "2026-11-09T09:08:10Z",
   "surveillance": {
-    "fetchedAt": "2026-11-08T18:57:42Z",
+    "fetchedAt": "2026-11-09T09:08:03Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 474,
-        "fetchedAt": "2026-11-08T18:57:42Z",
+        "fetchedAt": "2026-11-09T09:08:03Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-08T18:57:47Z",
+    "fetchedAt": "2026-11-09T09:08:10Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T18:57:42Z",
+        "fetchedAt": "2026-11-09T09:08:04Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T18:57:43Z",
+        "fetchedAt": "2026-11-09T09:08:05Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-08T18:57:47Z",
-        "count": 914,
+        "fetchedAt": "2026-11-09T09:08:10Z",
+        "count": 930,
         "error": null
       }
     }
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-08T18:57:16Z",
-      "count": 1711,
+      "fetchedAt": "2026-11-09T09:07:36Z",
+      "count": 1658,
       "status": "ok",
       "error": null,
-      "matched": 1711
+      "matched": 1658
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-08T18:57:38Z",
-      "count": 2210,
+      "fetchedAt": "2026-11-09T09:07:59Z",
+      "count": 2209,
       "status": "ok",
       "error": null,
-      "matched": 2210
+      "matched": 2209
     }
   },
-  "total": 2233,
+  "total": 2227,
   "unmatched": 0
 }
