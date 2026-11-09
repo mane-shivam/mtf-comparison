@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-09T21:05:45Z",
+  "generatedAt": "2026-11-09T22:45:06Z",
   "surveillance": {
-    "fetchedAt": "2026-11-09T21:05:37Z",
+    "fetchedAt": "2026-11-09T22:44:59Z",
     "sources": {
       "NSE": {
         "status": "ok",
-        "count": 474,
-        "fetchedAt": "2026-11-09T21:05:37Z",
+        "count": 472,
+        "fetchedAt": "2026-11-09T22:44:59Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-09T21:05:44Z",
+    "fetchedAt": "2026-11-09T22:45:06Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-09T21:05:37Z",
+        "fetchedAt": "2026-11-09T22:44:59Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-09T21:05:40Z",
+        "fetchedAt": "2026-11-09T22:45:00Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-09T21:05:44Z",
+        "fetchedAt": "2026-11-09T22:45:06Z",
         "count": 794,
         "error": null
       }
@@ -34,14 +34,14 @@
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-09T13:17:13Z",
-      "count": 1688,
-      "status": "stale",
-      "error": "MTF table not found on Kotak page",
-      "matched": 1688
+      "fetchedAt": "2026-11-09T22:44:33Z",
+      "count": 1702,
+      "status": "ok",
+      "error": null,
+      "matched": 1702
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-09T21:05:33Z",
+      "fetchedAt": "2026-11-09T22:44:55Z",
       "count": 2209,
       "status": "ok",
       "error": null,
