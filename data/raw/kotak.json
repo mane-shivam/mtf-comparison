@@ -1,7 +1,7 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-09T22:44:33Z",
-"count": 1702,
+"fetchedAt": "2026-11-09T23:31:11Z",
+"count": 1706,
 "rows": [
 {
 "symbol": "ASHIANA",
@@ -1274,14 +1274,14 @@
 "symbol": "BANCOINDIA",
 "name": "Banco Products (I) Limited",
 "exchange": "NSE",
-"lev": 2.72,
+"lev": 2.8,
 "maxExposureCr": 2.0
 },
 {
 "symbol": "BANDHANBNK",
 "name": "Bandhan Bank Limited",
 "exchange": "NSE",
-"lev": 3.59,
+"lev": 3.58,
 "maxExposureCr": 25.0
 },
 {
@@ -1295,7 +1295,7 @@
 "symbol": "BANKBARODA",
 "name": "Bank Of Baroda",
 "exchange": "NSE",
-"lev": 4.64,
+"lev": 4.63,
 "maxExposureCr": 50.0
 },
 {
@@ -1365,7 +1365,7 @@
 "symbol": "BELRISE",
 "name": "Belrise Industries Limited",
 "exchange": "NSE",
-"lev": 3.19,
+"lev": 3.21,
 "maxExposureCr": 10.0
 },
 {
@@ -1379,7 +1379,7 @@
 "symbol": "BEML",
 "name": "Beml Limited",
 "exchange": "NSE",
-"lev": 2.88,
+"lev": 2.87,
 "maxExposureCr": 10.0
 },
 {
@@ -1470,7 +1470,7 @@
 "symbol": "BEL",
 "name": "Bharat Electronics Limited",
 "exchange": "NSE",
-"lev": 4.73,
+"lev": 4.71,
 "maxExposureCr": 50.0
 },
 {
@@ -9303,14 +9303,14 @@
 "symbol": "SBFC",
 "name": "Sbfc Finance Limited",
 "exchange": "NSE",
-"lev": 3.2,
+"lev": 3.19,
 "maxExposureCr": 5.0
 },
 {
 "symbol": "SBICARD",
 "name": "Sbi Cards And Payment Services Limited",
 "exchange": "NSE",
-"lev": 4.55,
+"lev": 4.57,
 "maxExposureCr": 50.0
 },
 {
@@ -9424,6 +9424,34 @@
 "exchange": "NSE",
 "lev": 3.33,
 "maxExposureCr": 5.0
+},
+{
+"symbol": "SCHNEIDER",
+"name": "Schneider Electric Infrastructure Ltd",
+"exchange": "NSE",
+"lev": 2.0,
+"maxExposureCr": 1.0
+},
+{
+"symbol": "SCODATUBES",
+"name": "Scoda Tubes Ltd",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "SEAMECLTD",
+"name": "Seamec Limited",
+"exchange": "NSE",
+"lev": 1.0,
+"maxExposureCr": 0.1
+},
+{
+"symbol": "SEDEMAC",
+"name": "Sedemac Mechatronics Limited",
+"exchange": "NSE",
+"lev": 2.0,
+"maxExposureCr": 1.0
 },
 {
 "symbol": "SENCO",
