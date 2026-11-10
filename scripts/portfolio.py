@@ -93,22 +93,47 @@ def metrics(pos: dict, px: dict | None, rates: dict, today: date) -> dict:
     return m
 
 
+def accounts(positions: list[dict], prices: dict, rates: dict, today: date) -> list[dict]:
+    """Margin per broker account, as brokers check it: a gain on one stock covers a loss on another.
+
+    needed = sum(value / leverage), equity = sum(value - broker's money - interest), spare = equity - needed,
+    fall = % every holding can drop together before spare reaches zero (same as the site).
+    """
+    out = []
+    for broker in LABEL:
+        value = needed = equity = 0.0
+        n = 0
+        for pos in positions:
+            if pos["broker"] != broker:
+                continue
+            m = metrics(pos, prices.get(pos["sym"]), rates, today)
+            lev = max(1.0, float(pos["lev"]))
+            if m["value"] is None or lev <= 1:
+                continue
+            n += 1
+            value += m["value"]
+            needed += m["value"] / lev
+            equity += m["value"] - m["funded"] - m["interest"]
+        if not n:
+            continue
+        spare, sens = equity - needed, value - needed
+        out.append({"broker": broker, "n": n, "needed": needed, "equity": equity, "spare": spare,
+                    "fall": spare / sens * 100 if sens > 0 else None})
+    return out
+
+
 def warnings(positions: list[dict], prices: dict, rates: dict, today: date) -> list[dict]:
     out = []
-    for pos in positions:
-        m = metrics(pos, prices.get(pos["sym"]), rates, today)
-        if m["dist"] is None:
-            continue
-        who = f"{pos['qty']:g} @ ₹{pos['price']:,.2f}, {LABEL.get(pos['broker'], pos['broker'])}"
-        if m["dist"] <= 0:
-            level, text = "alert", (f"Margin top-up needed ({who}): price ₹{m['ltp']:,.2f} is below the top-up "
-                                    f"price ₹{m['call']:,.2f}")
-        elif m["dist"] <= CALL_WARN:
-            level, text = "watch", (f"Close to a margin top-up ({who}): ₹{m['ltp']:,.2f} is {m['dist']:.1f}% above "
-                                    f"₹{m['call']:,.2f}")
+    for a in accounts(positions, prices, rates, today):
+        label = LABEL[a["broker"]]
+        if a["spare"] < 0:
+            level, text = "alert", f"Margin top-up needed: {rupees(-a['spare'])} short across your {a['n']} MTF stocks"
+        elif a["fall"] is not None and a["fall"] <= CALL_WARN:
+            level, text = "watch", (f"Close to a margin top-up: {rupees(a['spare'])} spare, a {a['fall']:.1f}% fall across "
+                                    f"your {a['n']} MTF stocks would need one")
         else:
             continue
-        out.append({"id": pos["id"], "symbol": pos["sym"], "name": pos["sym"], "level": level, "text": text, "link": None})
+        out.append({"id": a["broker"], "symbol": label, "name": label, "level": level, "text": text, "link": None})
     return out
 
 
@@ -146,9 +171,9 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
             lines.append(f"Last session: {rupees(day, True)}")
             lines.append(f"Interest: {rupees(sum(m['perDay'] for _, m in ms))} a day, "
                          f"{rupees(sum(m['interest'] for _, m in ms))} so far")
-            near = sorted(((m["dist"], p["sym"]) for p, m in priced if m["dist"] is not None and m["dist"] <= CALL_WARN))
-            if near:
-                lines.append("Top-up: " + ", ".join(f"{s} ({'below' if d <= 0 else f'{d:.1f}% above'})" for d, s in near))
+            for a in accounts(pos, prices, payload.get("rates") or {}, today):
+                lines.append(f"{LABEL[a['broker']]} margin: " + (f"{rupees(-a['spare'])} short, top-up needed" if a["spare"] < 0
+                             else f"{rupees(a['spare'])} spare, can fall {a['fall'] or 0:.1f}%"))
             movers = sorted(priced, key=lambda x: x[1]["day"] or 0)
             if len(movers) >= 2:
                 lo, hi = movers[0], movers[-1]
@@ -215,8 +240,7 @@ def main(now: datetime | None = None) -> int:
         if fresh:
             PRIVATE.write_text(json.dumps(fresh, ensure_ascii=False, indent=1) + "\n")
         # Only today's tags matter; older ones can't repeat.
-        seen["sent"] = [k for k in sent if k in {tag(passphrase, day, p["id"], lv)
-                                                 for p in payload.get("positions") or [] for lv in ("alert", "watch")}]
+        seen["sent"] = [k for k in sent if k in {tag(passphrase, day, b, lv) for b in LABEL for lv in ("alert", "watch")}]
         print(f"[portfolio] {len(payload.get('positions') or [])} positions, {len(fresh)} new top-up warnings")
 
     if now.hour >= SUMMARY_HOUR and seen.get("summary") != today.isoformat():

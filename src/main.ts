@@ -878,7 +878,7 @@ function renderList() {
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
     $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>${posSyncHTML()}
-      <p class="muted small">“Top-up needed below” assumes the broker keeps asking for the same margin share as at entry (1 ÷ leverage), so with leverage a fall below about your buy price (plus interest) creates a shortfall. Brokers set their own rules and timelines, so treat it as a guide.</p>`;
+      <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the same share of its value as at entry (1 ÷ leverage), and gains on one stock cover losses on another at the same broker. Brokers can raise a stock's margin (for example after ASM) and set their own timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
   }
@@ -1165,6 +1165,7 @@ interface PosMetrics {
   roi: number | null; // net as % of own funds
   callPrice: number | null; // price at which equity falls below the margin needed
   callDist: number | null; // % the price can fall from now before that
+  spare: number | null; // this stock's part of the account margin: equity − margin needed (negative = uses others' cushion)
   breakEven: number | null; // sell price that covers all costs so far
   costs: CostBreakdown;
   gross: number | null; // value now − total investment, before charges (the broker apps' unrealised P&L)
@@ -1198,7 +1199,7 @@ function posMetrics(pos: Position): PosMetrics {
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
   const costs = shareBuyFees(computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100), r, pos.qty / (pos.orig ?? pos.qty));
   if (ltp == null) {
-    return { buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
+    return { buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, spare: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
   }
   const px = state.market!.prices[pos.sym];
   const boughtToday = pos.date >= px.date;
@@ -1214,6 +1215,8 @@ function posMetrics(pos: Position): PosMetrics {
     roi: own ? (net / own) * 100 : null,
     callPrice,
     callDist: callPrice != null ? ((ltp - callPrice) / ltp) * 100 : null,
+    // Equity (value − broker's money − interest) minus the margin share asked at entry (value ÷ leverage).
+    spare: lev > 1 ? value - funded - interest - value / lev : null,
     breakEven: pos.price + costs.total / pos.qty,
     costs,
     gross: value - invested,
@@ -1223,26 +1226,38 @@ function posMetrics(pos: Position): PosMetrics {
   };
 }
 
-// The margin cushion: where today's price sits against the top-up level and break-even.
-// Thin cushion line: red up to the top-up level, a tick at break-even, a dot at today's price.
-function cushionHTML(m: PosMetrics): string {
-  if (m.ltp == null || m.callPrice == null || m.breakEven == null) return '';
-  const pts = [m.ltp, m.callPrice, m.breakEven];
-  const span = Math.max(Math.max(...pts) - Math.min(...pts), m.ltp * 0.02);
-  const lo = Math.min(...pts) - span * 0.4;
-  const hi = Math.max(...pts) + span * 0.4;
-  const at = (v: number) => (((v - lo) / (hi - lo)) * 100).toFixed(1);
-  return `<div class="pr-track" role="button" tabindex="0" aria-label="How to read this line" data-now="${m.ltp}" data-be="${m.breakEven}" data-call="${m.callPrice}">
-    <span class="pr-danger" style="width:${at(m.callPrice)}%"></span>
-    <span class="pr-tick is-call" style="left:${at(m.callPrice)}%"></span>
-    <span class="pr-tick is-be" style="left:${at(m.breakEven)}%"></span>
-    <span class="pr-now" style="left:${at(m.ltp)}%"></span>
-  </div>`;
+// Brokers check margin for the whole MTF account, not stock by stock: a gain on one stock covers a loss
+// on another at the same broker (Kotak and Rupeezy are separate accounts). Per broker:
+//   needed = Σ value ÷ leverage at entry, equity = Σ (value − broker's money − interest so far),
+//   spare = equity − needed; a negative spare is the top-up the broker will ask for.
+// fall = how far every holding at that broker can drop together before spare reaches zero.
+interface Account { broker: BrokerKey; n: number; value: number; needed: number; equity: number; spare: number; fall: number | null }
+
+function accounts(list = loadPositions()): Account[] {
+  return BROKERS.map((broker) => {
+    const ms = list.filter((p) => p.broker === broker).map(posMetrics).filter((m) => m.spare != null);
+    const value = ms.reduce((t, m) => t + m.value!, 0);
+    const needed = ms.reduce((t, m) => t + m.value! / Math.max(1, m.buyValue / m.own), 0);
+    const equity = ms.reduce((t, m) => t + m.value! - m.funded - m.interest, 0);
+    const spare = equity - needed;
+    const sens = value - needed; // equity lost per 100% fall, net of the lower margin needed
+    return { broker, n: ms.length, value, needed, equity, spare, fall: sens > 0 ? (spare / sens) * 100 : null };
+  }).filter((a) => a.n);
 }
 
+const accountState = (a: Account): 'short' | 'close' | 'ok' => (a.spare < 0 ? 'short' : (a.fall ?? 99) < CALL_WARN ? 'close' : 'ok');
+
+function accountLine(a: Account): string {
+  const st = accountState(a);
+  return st === 'short'
+    ? `${inr(-a.spare)} short: add funds or sell to cover it`
+    : `${inr(a.spare)} spare, can fall ${(a.fall ?? 0).toFixed(1)}% before a top-up`;
+}
+
+// A stock's own standing inside its account: below its margin share, thin, or comfortable.
 type PosState = 'short' | 'close' | 'ok' | 'none';
 const posState = (m: PosMetrics): PosState =>
-  m.callDist == null ? 'none' : m.callDist < 0 ? 'short' : m.callDist < CALL_WARN ? 'close' : 'ok';
+  m.spare == null || m.value == null ? 'none' : m.spare < 0 ? 'short' : m.spare < (m.value * CALL_WARN) / 100 ? 'close' : 'ok';
 
 function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const m = posMetrics(pos);
@@ -1265,9 +1280,9 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const name = state.bySymbol.get(pos.sym)?.name;
   const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
   const pill =
-    st === 'short' ? `<span class="pc-pill is-short">Top-up needed</span>`
-    : st === 'close' ? `<span class="pc-pill is-close">${m.callDist!.toFixed(1)}% from top-up</span>`
-    : st === 'ok' ? `<span class="pc-pill">${m.callDist!.toFixed(0)}% cushion</span>`
+    st === 'short' ? `<span class="pc-pill is-short">Uses ${inr(-m.spare!)} margin</span>`
+    : st === 'close' ? `<span class="pc-pill is-close">Thin margin</span>`
+    : st === 'ok' ? `<span class="pc-pill">Adds ${inr(m.spare!)} margin</span>`
     : '';
   return `<article class="pr pc is-${st}" data-sym="${esc(pos.sym)}">
     ${flags ? `<div class="pc-flags">${flags}</div>` : ''}
@@ -1295,10 +1310,9 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     </div>
     <div class="pc-grid pc-risk">
       ${cell(m.breakEven != null ? rupeeShort(m.breakEven) : '—', 'Break-even')}
-      ${cell(m.callPrice != null ? rupeeShort(m.callPrice) : '—', 'Top-up below', st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
+      ${cell(m.spare != null ? `${m.spare >= 0 ? '+' : '−'}${inr(Math.abs(m.spare)).replace('−', '')}` : '—', m.spare != null && m.spare < 0 ? 'Margin used' : 'Margin spare', st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
       ${cell(m.net != null ? money(m.net) : '—', `Net if sold now${both(m.net)}`, tone(m.net))}
     </div>
-    ${cushionHTML(m)}
     <details class="pr-more">
       <summary><span>Money and charges</span><span class="pr-faint">${inr(c.total)} if sold now</span></summary>
       <dl class="pr-dl">
@@ -1360,8 +1374,8 @@ function positionsToolbarHTML(v: PosView, counts: Record<string, number>): strin
     <div class="chips pr-chips">
       ${chip('broker', 'kotak', 'Kotak', v.broker === 'kotak', counts.kotak)}
       ${chip('broker', 'rupeezy', 'Rupeezy', v.broker === 'rupeezy', counts.rupeezy)}
-      ${chip('status', 'short', 'Need top-up', v.status === 'short', counts.short)}
-      ${chip('status', 'close', 'Close', v.status === 'close', counts.close)}
+      ${chip('status', 'short', 'Using margin', v.status === 'short', counts.short)}
+      ${chip('status', 'close', 'Thin margin', v.status === 'close', counts.close)}
       ${chip('pnl', 'down', 'Losers', v.pnl === 'down', counts.down)}
       ${chip('pnl', 'up', 'Gainers', v.pnl === 'up', counts.up)}
       ${chip('results', '1', 'Results due', v.results, counts.results)}
@@ -1398,7 +1412,7 @@ function positionsViewHTML(): string {
       (!v.results || !!nextResult(x.p.sym)),
   );
   const by: Record<PosSort, (a: (typeof all)[number], b: (typeof all)[number]) => number> = {
-    risk: (a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999),
+    risk: (a, b) => (a.m.spare ?? 1e12) / (a.m.value || 1) - (b.m.spare ?? 1e12) / (b.m.value || 1),
     pnl: (a, b) => (a.m.gross ?? 0) - (b.m.gross ?? 0),
     pnlBest: (a, b) => (b.m.gross ?? 0) - (a.m.gross ?? 0),
     today: (a, b) => (a.m.day ?? 0) - (b.m.day ?? 0),
@@ -1421,21 +1435,24 @@ function positionsViewHTML(): string {
   const sign = (n: number) => (n >= 0 ? '+' : '−');
   const pct = (n: number, base: number) => (base ? `${sign(n)}${Math.abs((n / base) * 100).toFixed(2)}%` : '—');
   const filtered = shown.length !== all.length;
+  const accts = accounts(list);
 
   const rows = (items: typeof shown) => items.map(({ p }) => positionCardHTML(p, true)).join('');
   const body = !shown.length
     ? '<div class="empty"><p class="empty-title">No positions match</p><p>Clear a filter to see more.</p></div>'
     : v.sort === 'risk'
-      ? ([[['short'], 'Need a top-up'], [['close'], 'Close to a top-up'], [['ok', 'none'], 'Comfortable']] as [PosState[], string][])
-          .map(([states, title]) => {
-            const g = shown.filter((x) => states.includes(posState(x.m)));
-            return g.length ? `<h2 class="pr-group">${title}<span>${g.length}</span></h2><div class="pr-list">${rows(g)}</div>` : '';
+      ? accts
+          .sort((a, b) => a.spare - b.spare)
+          .map((a) => {
+            const g = shown.filter((x) => x.p.broker === a.broker);
+            const st = accountState(a);
+            return g.length ? `<h2 class="pr-group pr-acct is-${st}">${BROKER_NAME[a.broker]}<span>${g.length}</span><em>${accountLine(a)}</em></h2><div class="pr-list">${rows(g)}</div>` : '';
           })
-          .join('')
+          .join('') + (shown.some((x) => !accts.some((a) => a.broker === x.p.broker)) ? `<div class="pr-list">${rows(shown.filter((x) => !accts.some((a) => a.broker === x.p.broker)))}</div>` : '')
       : `<div class="pr-list">${rows(shown)}</div>`;
 
   const perDay = sum((m) => m.perDay);
-  const short = shown.filter((x) => posState(x.m) === 'short').length;
+  const shortAccts = accts.filter((a) => accountState(a) === 'short');
   const rates = brokerRates();
   const saving = (b: BrokerKey) => inr((100000 * rates[b].interest) / 1200);
   const chip = (n: number, base: number) => `<span class="ps-chip ${n >= 0 ? 'up' : 'down'}">${pct(n, base)}</span>`;
@@ -1472,8 +1489,9 @@ function positionsViewHTML(): string {
         <div><i>Fixed charges</i><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} on sale</small></div>
       </div>
       <details class="ps-more"${store<boolean>(PS_MORE_KEY) ? ' open' : ''}>
-        <summary><span>Margin and paying back</span>${short ? `<span class="ps-more-hint">${short} need a top-up</span>` : ''}</summary>
-        <button class="ps-margin${short ? ' is-short' : ''}" ${short ? 'data-posf="status:short"' : 'disabled'}><i>Margin</i><b>${short ? `${short} need a top-up` : 'All covered'}</b><small>${short ? 'Show them' : 'No position below its top-up level'}</small></button>
+        <summary><span>Margin and paying back</span><span class="ps-more-hint${shortAccts.length ? '' : ' is-ok'}">${shortAccts.length ? shortAccts.map((a) => `${BROKER_SHORT[a.broker]} ${inr(-a.spare)} short`).join(', ') : 'All accounts covered'}</span></summary>
+        <div class="ps-accts">${accts.map((a) => `<div class="ps-acct is-${accountState(a)}"><i>${BROKER_NAME[a.broker]} margin</i><b>${accountState(a) === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`}</b><small>${accountState(a) === 'short' ? 'Add funds or sell to cover it' : `All holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`}. Needs ${inr(a.needed)}, you have ${inr(a.equity)}.</small></div>`).join('')}</div>
+        <p class="ps-save">Brokers check margin for the whole account, so a gain on one stock covers a loss on another at the same broker. Each stock's “Margin spare” is its part of that total.</p>
         <p class="ps-save">Each ₹1 L of broker's money you pay back saves about ${saving('kotak')} a month at Kotak and ${saving('rupeezy')} at Rupeezy.</p>
       </details>
     </section>
@@ -1512,7 +1530,7 @@ function setStartPnl() {
 
 function positionsBadge() {
   const list = loadPositions();
-  const near = list.some((p) => (posMetrics(p).callDist ?? 999) < CALL_WARN);
+  const near = accounts(list).some((a) => accountState(a) !== 'ok');
   const el = document.getElementById('pos-count');
   if (el) {
     el.textContent = list.length ? String(list.length) : '';
