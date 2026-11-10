@@ -3898,3 +3898,188 @@ button.pr-sym:hover {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ---------- position card: three columns, value over label ---------- */
+.pr-list,
+.sheet .pr-list {
+  display: grid;
+  gap: 12px;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+}
+
+.pr.pc,
+.sheet .pr.pc {
+  padding: 18px 18px 4px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.sheet .pr.pc {
+  background: var(--surface-2);
+}
+
+.pr.pc::before {
+  display: none;
+}
+
+.pc-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.pc-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pc-title {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.pc-sym,
+button.pc-sym {
+  color: #8ab4ff;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.pc-sub {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pc-pill {
+  flex: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.sheet .pc-pill {
+  background: var(--bg);
+}
+
+.pc-pill.is-short {
+  background: rgba(228, 135, 139, 0.14);
+  color: var(--down-soft);
+}
+
+.pc-pill.is-close {
+  background: rgba(217, 173, 98, 0.14);
+  color: var(--amber-soft);
+}
+
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pc-cell {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.pc-cell:nth-child(2) {
+  text-align: center;
+}
+
+.pc-cell:nth-child(3) {
+  text-align: right;
+}
+
+.pc-cell b {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pc-cell > span {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.pc-cell small {
+  display: block;
+  color: var(--faint-2);
+  font-size: 12px;
+}
+
+/* The row that matters most: bigger, coloured by direction. */
+.pc-key .pc-cell b {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pc-cell.up b {
+  color: var(--up-soft);
+}
+
+.pc-cell.down b {
+  color: var(--down-soft);
+}
+
+.pc-cell.amber b {
+  color: var(--amber-soft);
+}
+
+/* Quieter reference rows. */
+.pc-risk {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.sheet .pc-risk {
+  border-top-color: var(--border);
+}
+
+.pc .pr-track {
+  margin-top: 16px;
+}
+
+.pc .pr-more {
+  margin: 12px -18px 0;
+}
+
+@media (max-width: 380px) {
+  .pr.pc {
+    padding: 16px 14px 4px;
+  }
+  .pc-cell b {
+    font-size: 15px;
+  }
+  .pc-key .pc-cell b {
+    font-size: 18px;
+  }
+  .pc .pr-more {
+    margin: 12px -14px 0;
+  }
+}

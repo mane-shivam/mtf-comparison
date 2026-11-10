@@ -1194,36 +1194,52 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const st = posState(m);
   const sign = (n: number) => (n >= 0 ? '+' : '−');
   const money = (n: number) => `${sign(n)}${inr(Math.abs(n)).replace('−', '')}`;
-  const head = withSymbol
-    ? `<span class="pr-head"><button class="pr-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>${flagsHTML(pos.sym, 1)}</span>`
-    : `<span class="pr-sym">${BROKER_NAME[pos.broker]}</span>`;
-  const cushion =
-    st === 'short' ? `<span class="pr-state is-short">${Math.abs(m.callDist!).toFixed(1)}% below top-up</span>`
-    : st === 'close' ? `<span class="pr-state is-close">${m.callDist!.toFixed(1)}% above top-up</span>`
-    : st === 'ok' ? `<span class="pr-state">${m.callDist!.toFixed(1)}% cushion</span>`
-    : '';
   const items: [string, number][] = [
     ['Brokerage on buy', c.brokBuy], ['Brokerage on sell', c.brokSell], ['Pledge on buy', c.pledge], ['Unpledge on sell', c.unpledge],
     ['DP charge on sell', c.dp], ['GST on DP and pledge', c.gstDepository], ['STT, buy and sell', c.stt], ['NSE transaction', c.txn],
     ['SEBI fee', c.sebi], ['Stamp duty on buy', c.stamp], ['GST on brokerage and fees', c.gstTrade], [`Interest, ${m.days} day${m.days === 1 ? '' : 's'}`, c.interest],
   ];
-  return `<article class="pr is-${st}" data-sym="${esc(pos.sym)}">
-    <div class="pr-line">
-      ${head}
-      ${m.gross != null ? `<span class="pr-pnl ${m.gross >= 0 ? 'up' : 'down'}" title="Unrealised P&amp;L before charges">${money(m.gross)}</span>` : '<span class="pr-pnl">—</span>'}
+  // Three columns, each value above its label, read left to right; P&L is the loudest row.
+  const cell = (value: string, label: string, cls = '') => `<div class="pc-cell${cls ? ` ${cls}` : ''}"><b>${value}</b><span>${label}</span></div>`;
+  const tone = (n: number | null) => (n == null ? '' : n >= 0 ? 'up' : 'down');
+  const pctOf = (n: number, base: number) => `${sign(n)}${Math.abs((n / base) * 100).toFixed(1)}%`;
+  const name = state.bySymbol.get(pos.sym)?.name;
+  const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
+  const pill =
+    st === 'short' ? `<span class="pc-pill is-short">Top-up needed</span>`
+    : st === 'close' ? `<span class="pc-pill is-close">${m.callDist!.toFixed(1)}% from top-up</span>`
+    : st === 'ok' ? `<span class="pc-pill">${m.callDist!.toFixed(0)}% cushion</span>`
+    : '';
+  return `<article class="pr pc is-${st}" data-sym="${esc(pos.sym)}">
+    ${flags ? `<div class="pc-flags">${flags}</div>` : ''}
+    <header class="pc-head">
+      <div class="pc-title">
+        ${withSymbol ? `<button class="pr-sym pc-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>` : `<span class="pc-sym">${BROKER_NAME[pos.broker]}</span>`}
+        <span class="pc-sub">${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×${name ? `, ${esc(name)}` : ''}` : `${round1(pos.lev)}× leverage`}</span>
+      </div>
+      ${pill}
+    </header>
+    <div class="pc-grid">
+      ${cell(pos.qty.toLocaleString('en-IN'), 'Quantity')}
+      ${cell(m.ltp != null ? rupee(m.ltp) : '—', 'Last price')}
+      ${cell(m.value != null ? lakh(m.value) : '—', 'Current value')}
     </div>
-    <div class="pr-line pr-meta">
-      <span>${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}</span>
+    <div class="pc-grid pc-key">
+      ${cell(m.gross != null ? money(m.gross) : '—', 'Unrealised P&amp;L', tone(m.gross))}
+      ${cell(m.gross != null ? pctOf(m.gross, m.own) : '—', `On your money<small>${m.gross != null ? `${pctOf(m.gross, m.buyValue)} on total` : ''}</small>`, tone(m.gross))}
+      ${cell(m.day != null ? money(m.day) : '—', `Day P&amp;L${m.day != null && m.dayBase ? `<small>${pctOf(m.day, m.dayBase)}</small>` : ''}`, tone(m.day))}
     </div>
-    ${m.day != null ? `<div class="pr-day">Today <b class="${m.day >= 0 ? 'up' : 'down'}">${money(m.day)}</b>${m.dayBase ? ` ${sign(m.day)}${Math.abs((m.day / m.dayBase) * 100).toFixed(1)}%` : ''}</div>` : ''}
-    ${m.gross != null ? `<div class="pr-ret"><b class="${m.gross >= 0 ? 'up' : 'down'}">${sign(m.gross)}${Math.abs((m.gross / m.own) * 100).toFixed(1)}%</b> on your money, <b>${sign(m.gross)}${Math.abs((m.gross / m.buyValue) * 100).toFixed(1)}%</b> on total<br />If sold now, after charges <b class="${m.net! >= 0 ? 'up' : 'down'}">${money(m.net!)}</b></div>` : ''}
+    <div class="pc-grid">
+      ${cell(rupee(pos.price), 'Avg buy price')}
+      ${cell(lakh(m.buyValue), 'Total investment')}
+      ${cell(lakh(m.own), 'Your money')}
+    </div>
+    <div class="pc-grid pc-risk">
+      ${cell(m.breakEven != null ? rupeeShort(m.breakEven) : '—', 'Break-even')}
+      ${cell(m.callPrice != null ? rupeeShort(m.callPrice) : '—', 'Top-up below', st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
+      ${cell(m.net != null ? money(m.net) : '—', 'If sold now<small>after charges</small>', tone(m.net))}
+    </div>
     ${cushionHTML(m)}
-    <div class="pr-prices">
-      ${cushion}
-      <span><i>Now</i>${m.ltp != null ? rupeeShort(m.ltp) : '—'}</span>
-      <span><i>Break-even</i>${m.breakEven != null ? rupeeShort(m.breakEven) : '—'}</span>
-      <span><i>Top-up</i>${m.callPrice != null ? rupeeShort(m.callPrice) : '—'}</span>
-    </div>
     <details class="pr-more">
       <summary><span>Money and charges</span><span class="pr-faint">${inr(c.total)} if sold now</span></summary>
       <dl class="pr-dl">
@@ -2087,6 +2103,7 @@ function eventsSectionHTML(sym: string): string {
 
 const rupee = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
 // Prices in lists: whole rupees from ₹1,000 up, two decimals below.
+const lakh = (n: number) => (Math.abs(n) >= 1e5 ? `₹${(n / 1e5).toFixed(2)}L` : inr(n));
 const rupeeShort = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: n >= 1000 ? 0 : 2 })}`;
 const compact = (n: number) => (n >= 1e7 ? `${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `${(n / 1e5).toFixed(2)} L` : n.toLocaleString('en-IN'));
 
