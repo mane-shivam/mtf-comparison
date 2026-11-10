@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-10T16:32:42Z",
+"fetchedAt": "2026-11-10T18:04:29Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-10T16:32:37Z",
+"fetchedAt": "2026-11-10T18:04:25Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-10T16:32:38Z",
+"fetchedAt": "2026-11-10T18:04:25Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-10T16:32:42Z",
-"count": 883,
+"fetchedAt": "2026-11-10T18:04:29Z",
+"count": 884,
 "error": null
 }
 },
@@ -7383,6 +7383,14 @@
 "title": "Results",
 "detail": "RENTOMOJO LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28271_20261104_165506918_WEB.html"
+},
+{
+"symbol": "RENTOMOJO",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "Rentomojo Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/RENTMOJO_10112026224733_BMOUTCOME.pdf"
 },
 {
 "symbol": "REPCOHOME",
