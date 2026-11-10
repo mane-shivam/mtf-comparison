@@ -2012,9 +2012,47 @@ function exportPositions() {
   const blob = new Blob([JSON.stringify({ positions: loadPositions(), exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'mtf-positions.json';
+  a.download = `mtf-positions-${localISO()}.json`;
+  document.body.append(a);
   a.click();
-  URL.revokeObjectURL(a.href);
+  a.remove();
+  // Revoking at once can cancel the download in some browsers.
+  setTimeout(() => URL.revokeObjectURL(a.href), 10_000);
+}
+
+// Removing everything asks first and offers a backup file, which "Import file" can restore.
+function openClearSheet() {
+  const n = loadPositions().length;
+  if (!n) return;
+  const sheet = $<HTMLDialogElement>('#sheet');
+  sheet.innerHTML = `
+    <div class="sheet-inner clear-sheet">
+      <div class="sheet-head">
+        <div><div class="sym big">Remove all ${n} position${n === 1 ? '' : 's'}?</div>
+        <div class="name">This can't be undone. Save a file first if you may want them back: “Import file” restores it.</div></div>
+        <div class="sheet-actions"><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      </div>
+      <ul class="clear-notes">
+        <li>Closed trades and realised P&amp;L stay.</li>
+        ${store<string>(POS_PASS_KEY) ? '<li>Private sync is on, so your other devices clear too.</li>' : ''}
+      </ul>
+      <div class="clear-actions">
+        <button class="btn btn-primary" data-clear="export">Save a file, then remove</button>
+        <button class="btn btn-ghost btn-danger" data-clear="now">Remove without saving</button>
+        <button class="btn btn-ghost" data-close>Cancel</button>
+      </div>
+    </div>`;
+  state.sheetSym = null;
+  if (!sheet.open) sheet.showModal();
+}
+
+function clearPositions(withExport: boolean) {
+  const n = loadPositions().length;
+  if (withExport) exportPositions();
+  savePositions([]);
+  $<HTMLDialogElement>('#sheet').close();
+  toast(`${withExport ? 'Saved a file and removed' : 'Removed'} ${n} position${n === 1 ? '' : 's'}`);
+  render();
 }
 
 async function importPositions(file: File) {
@@ -2927,13 +2965,9 @@ function bind() {
       return;
     }
     if (t.closest('#pos-export')) return exportPositions();
-    if (t.closest('#pos-clear')) {
-      const n = loadPositions().length;
-      if (!confirm(`Remove all ${n} open position${n === 1 ? '' : 's'}? Closed trades and realised P&L stay. With private sync on, your other devices clear too. Export a file first if you may want them back.`)) return;
-      savePositions([]);
-      toast(`Removed ${n} position${n === 1 ? '' : 's'}`);
-      return render();
-    }
+    if (t.closest('#pos-clear')) return openClearSheet();
+    const clr = t.closest<HTMLElement>('[data-clear]');
+    if (clr) return clearPositions(clr.dataset.clear === 'export');
     if (t.closest('[data-pnl-start]')) return setStartPnl();
     const ps = t.closest<HTMLElement>('[data-possync]');
     if (ps) return void setPositionsPassphrase(ps.dataset.possync === 'on');

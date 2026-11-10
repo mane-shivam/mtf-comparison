@@ -4806,3 +4806,21 @@ body.positions-view #summary {
   border-color: rgba(228, 135, 139, 0.4);
   background: rgba(228, 135, 139, 0.08);
 }
+
+.clear-notes {
+  margin: 4px 0 16px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.clear-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.clear-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
