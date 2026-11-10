@@ -13,12 +13,16 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import alerts
+
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT / "data" / "raw"
 HISTORY = ROOT / "data" / "history"
 MASTER = ROOT / "data" / "nse" / "master.json"
 OVERRIDES = ROOT / "data" / "overrides.csv"
 OUT = ROOT / "public" / "data"
+ALERT_STATE = ROOT / "data" / "alerts_state.json"
+ALERTS_NEW = ROOT / "data" / "alerts_new.json"
 
 BROKERS = ["kotak", "rupeezy"]
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -281,11 +285,21 @@ def main() -> None:
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
     (OUT / "events.json").write_text(json.dumps(events, separators=(",", ":"), ensure_ascii=False) + "\n")
     (OUT / "surveillance.json").write_text(json.dumps(surveillance, separators=(",", ":")) + "\n")
+
+    # Change alerts for pinned stocks (compared with the previous refresh).
+    pins = (load_json(ROOT / "data" / "pins.json", {}) or {}).get("pins", [])
+    live = {b for b, info in meta_brokers.items() if info["status"] != "failed"}
+    state, log, fresh = alerts.run(pins, stocks, BROKERS, surveillance, events,
+                                   load_json(ALERT_STATE, {}), load_json(OUT / "alerts.json", []),
+                                   meta["generatedAt"], live)
+    ALERT_STATE.write_text(json.dumps(state, separators=(",", ":"), sort_keys=True, ensure_ascii=False) + "\n")
+    (OUT / "alerts.json").write_text(json.dumps(log, indent=0, ensure_ascii=False) + "\n")
+    ALERTS_NEW.write_text(json.dumps(fresh, indent=1, ensure_ascii=False) + "\n")
     # Every NSE symbol, so the site can pin a stock no broker funds yet.
     listed = sorted({m["symbol"]: m["name"] for m in master}.items())
     (OUT / "symbols.json").write_text(json.dumps(listed, separators=(",", ":"), ensure_ascii=False) + "\n")
 
-    print(f"merged {len(rows)} stocks, {len(unmatched)} unmatched")
+    print(f"merged {len(rows)} stocks, {len(unmatched)} unmatched, {len(fresh)} new alerts for {len(pins)} pins")
     for b, info in meta_brokers.items():
         print(f"  {b:8} {info['status']:6} rows={info['count']:5} matched={info['matched']:5} {info['error'] or ''}")
 

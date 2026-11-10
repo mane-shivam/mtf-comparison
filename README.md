@@ -27,6 +27,22 @@ Saved responses are in `samples/` and the parser tests run against them.
 
 **Matching:** overrides.csv → ISIN → broker's own NSE symbol → exact normalised name → rapidfuzz ≥ 92 → `unmatched.json` (shown in the page's "Needs matching" panel). On the first run every row matched.
 
+## Watchlist alerts and phone notifications
+
+Every refresh compares each pinned stock with the previous refresh (`alerts.py`) and records changes:
+multiplier up or down, dropped from or added to a broker's MTF list, entering, leaving or changing stage on
+ASM/GSM/ESM, F&O ban in or out, price band or trade-to-trade changes, and newly announced events or
+flagged announcements. They appear under the bell on the site (last 30 days) and, if set up, on your phone.
+A newly pinned stock only sets its baseline, so pinning never floods the feed.
+
+Phone notifications go out from the refresh workflow (`scripts/notify.py`). Set either channel as
+repository secrets (Settings → Secrets and variables → Actions → New repository secret):
+
+- **Telegram**: message @BotFather → `/newbot` → copy the token into `TELEGRAM_BOT_TOKEN`. Send any message
+  to your new bot, open `https://api.telegram.org/bot<token>/getUpdates`, and copy `chat.id` into `TELEGRAM_CHAT_ID`.
+- **ntfy**: install the ntfy app, subscribe to a long random topic (e.g. `mtf-7f3k9q2x8w`), and put the same
+  name in `NTFY_TOPIC`. Anyone who knows the topic can read it, so keep it random.
+
 ## Local development
 
 ```bash

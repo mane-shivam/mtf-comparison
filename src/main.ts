@@ -54,6 +54,15 @@ interface EventsFile {
   events: Record<string, CoEvent[]>;
 }
 
+interface WatchAlert {
+  at: string; // refresh time (UTC ISO)
+  symbol: string;
+  name: string;
+  level: 'alert' | 'watch' | 'info' | 'good';
+  text: string;
+  link: string | null;
+}
+
 interface SurvSource {
   status: 'ok' | 'stale' | 'failed';
   count?: number;
@@ -134,6 +143,7 @@ const state = {
   symbols: null as Map<string, string> | null, // every NSE symbol → name, loaded on demand
   surv: {} as Record<string, SurvFlag[]>, // NSE/BSE ASM and GSM flags by symbol
   sheetSym: null as string | null, // stock open in the detail sheet
+  alerts: [] as WatchAlert[], // changes to pinned stocks, newest last
   events: {} as Record<string, CoEvent[]>, // company events from 3 days ago onwards
   ban: null as { date: string; symbols: Set<string> } | null, // NSE F&O ban list
   bands: {} as Record<string, { band: number | null; series: string }>, // tight circuits and T2T series
@@ -393,6 +403,13 @@ async function getJSON<T>(path: string): Promise<T> {
 async function loadData() {
   const [stocks, meta] = await Promise.all([getJSON<Stock[]>('/data/mtf.json'), getJSON<Meta>('/data/meta.json')]);
   setData(stocks, meta);
+  // Watchlist change alerts drive the bell.
+  getJSON<WatchAlert[]>('data/alerts.json')
+    .then((a) => {
+      state.alerts = a;
+      renderBell();
+    })
+    .catch(() => {});
   // Events and the F&O ban list are extra too.
   getJSON<EventsFile>('data/events.json')
     .then((ev) => {
@@ -792,6 +809,65 @@ function setType(type: 'equity' | 'etf') {
   });
   $<HTMLInputElement>('#q').placeholder = type === 'etf' ? 'Search ETFs' : 'Search stocks';
   renderList();
+}
+
+/* ---------- watchlist alerts ---------- */
+
+const SEEN_KEY = 'mtf.alertsSeen';
+const ALERT_ICON: Record<WatchAlert['level'], string> = { alert: 'severe', watch: 'warn', info: 'info', good: 'good' };
+
+function unseenAlerts(): WatchAlert[] {
+  const seen = store<string>(SEEN_KEY) ?? '';
+  return state.alerts.filter((a) => a.at > seen);
+}
+
+function renderBell() {
+  const n = unseenAlerts().length;
+  const badge = $('#bell-count');
+  badge.hidden = !n;
+  badge.textContent = n > 99 ? '99+' : String(n);
+  $('#bell').setAttribute('aria-label', n ? `Watchlist alerts, ${n} new` : 'Watchlist alerts');
+}
+
+function openAlerts() {
+  const sheet = $<HTMLDialogElement>('#sheet');
+  const fresh = new Set(unseenAlerts());
+  const byDay = new Map<string, WatchAlert[]>();
+  for (const a of [...state.alerts].reverse()) {
+    const day = new Date(a.at).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+    byDay.set(day, [...(byDay.get(day) ?? []), a]);
+  }
+  const list = [...byDay]
+    .map(
+      ([day, items]) => `<h3>${day}</h3><div class="s-list">${items
+        .map(
+          (a) => `<div class="a-row${fresh.has(a) ? ' is-new' : ''}">
+            <span class="a-dot ${ALERT_ICON[a.level]}" aria-hidden="true"></span>
+            <div class="a-main">
+              <div><button class="link-sym" data-open="${esc(a.symbol)}">${esc(a.symbol)}</button> <span class="muted small">${new Date(a.at).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' })}</span></div>
+              <div>${esc(a.text)}</div>
+              ${a.link ? `<a class="e-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read more ↗</a>` : ''}
+            </div>
+          </div>`,
+        )
+        .join('')}</div>`,
+    )
+    .join('');
+  sheet.innerHTML = `
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <div><div class="sym big">Watchlist alerts</div><div class="name">What changed for your pinned stocks at each refresh, last 30 days.</div></div>
+        <div class="sheet-actions"><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      </div>
+      ${list || '<div class="empty"><p class="empty-title">No changes yet</p><p>You will see multiplier changes, ASM/GSM/ESM moves, F&amp;O ban, price band changes and new events for your pinned stocks here.</p></div>'}
+      <p class="muted small">Phone notifications: add Telegram or ntfy secrets to the repo (see the README) and every refresh with changes pings you.</p>
+    </div>`;
+  if (!sheet.open) sheet.showModal();
+  state.sheetSym = null;
+  // Opening the panel marks everything as seen on this device.
+  const latest = state.alerts.reduce((m, a) => (a.at > m ? a.at : m), '');
+  if (latest) store(SEEN_KEY, latest);
+  renderBell();
 }
 
 /* ---------- trade calculator ---------- */
@@ -1480,6 +1556,9 @@ function bind() {
       return;
     }
     if (t.closest('[data-add]')) return void openAddSheet();
+    if (t.closest('#bell')) return openAlerts();
+    const openSym = t.closest<HTMLElement>('[data-open]');
+    if (openSym) return void openSheet(openSym.dataset.open!);
     if (t.closest('[data-reset-rates]')) {
       store(RATES_KEY, {});
       if (state.sheetSym) openSheet(state.sheetSym);
