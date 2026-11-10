@@ -58,6 +58,10 @@ repository secrets (Settings → Secrets and variables → Actions → New repos
 
 ## Local development
 
+Data files under `data/` and `public/data/` are rewritten by the bot on every refresh. Never merge them by
+hand: take the bot's copies (`git checkout origin/<branch> -- data public/data`) and re-run the scrapers and
+`merge.py` instead.
+
 ```bash
 pip install -r requirements.txt
 python scrapers/nse.py && python scrapers/kotak.py && python scrapers/rupeezy.py && python scrapers/surveillance.py
