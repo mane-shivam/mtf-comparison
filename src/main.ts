@@ -584,13 +584,21 @@ function marketFlagsHTML(sym: string): string {
   return out.join('');
 }
 
-function flagsHTML(sym: string): string {
-  return eventFlagsHTML(sym) + marketFlagsHTML(sym) + (state.surv[sym] ?? [])
+const PILL_RANK = (html: string) =>
+  html.includes('severe') ? 0 : html.includes(' past') ? 4 : html.includes(' good') ? 3 : html.includes(' event') ? 2 : 1;
+
+// Every flag for a stock, most serious first. Rows show the first `max` and a quiet "+N".
+function flagsHTML(sym: string, max = Infinity): string {
+  const all = (eventFlagsHTML(sym) + marketFlagsHTML(sym) + (state.surv[sym] ?? [])
     .map((f) => {
       const title = `${f.ex.join(' + ')} · ${survName(f)} · Stage ${f.stage} · ${survSince(f)}`;
       return `<span class="flag${survSevere(f) ? ' severe' : ''}" title="${esc(title)}">${esc(survLabel(f))}</span>`;
     })
-    .join('');
+    .join(''))
+    .match(/<span class="flag[^"]*"[^>]*>.*?<\/span>/g) ?? [];
+  const sorted = all.map((h, i) => [PILL_RANK(h), i, h] as const).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map((x) => x[2]);
+  if (sorted.length <= max) return sorted.join('');
+  return sorted.slice(0, max).join('') + `<span class="flag more" title="Open the stock for all ${sorted.length} flags">+${sorted.length - max}</span>`;
 }
 
 function setData(stocks: Stock[], meta: Meta) {
@@ -700,7 +708,7 @@ function rowHTML(s: Stock): string {
     : `<span class="none">${s.stub ? 'Not on MTF lists' : 'No funding'}</span>`;
   return `<div class="row${s.stub ? ' is-stub' : ''}" role="listitem" data-sym="${esc(s.symbol)}" tabindex="0">
     <div class="stock">
-      <div class="sym">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}${flagsHTML(s.symbol)}</div>
+      <div class="sym">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}${flagsHTML(s.symbol, 2)}</div>
       <div class="name">${esc(s.name)}</div>
     </div>
     ${BROKERS.map((b) => levCell(s, b)).join('')}
@@ -1018,20 +1026,24 @@ function openAlerts(switching = false) {
     const day = new Date(a.at).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
     byDay.set(day, [...(byDay.get(day) ?? []), a]);
   }
+  // One entry per stock per refresh, so a busy day reads as a list of stocks, not of lines.
+  const groupsOf = (items: WatchAlert[]) => {
+    const g = new Map<string, WatchAlert[]>();
+    for (const a of items) g.set(`${a.at}|${a.symbol}`, [...(g.get(`${a.at}|${a.symbol}`) ?? []), a]);
+    return [...g.values()];
+  };
   const list = [...byDay]
     .map(
-      ([day, items]) => `<h3>${day}</h3><div class="s-list">${items
+      ([day, items]) => `<h3>${day}</h3><ul class="a-list">${groupsOf(items)
         .map(
-          (a) => `<div class="a-row${fresh.has(a) ? ' is-new' : ''}">
-            <span class="a-dot ${ALERT_ICON[a.level]}" aria-hidden="true"></span>
-            <div class="a-main">
-              <div><button class="link-sym" data-open="${esc(a.symbol)}">${esc(a.symbol)}</button> <span class="muted small">${new Date(a.at).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' })}</span></div>
-              <div>${esc(a.text)}</div>
-              ${a.link ? `<a class="e-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read more ↗</a>` : ''}
-            </div>
-          </div>`,
+          (g) => `<li class="a-entry${g.some((a) => fresh.has(a)) ? ' is-new' : ''}">
+            <div class="a-head"><button class="link-sym" data-open="${esc(g[0].symbol)}">${esc(g[0].symbol)}</button>${held.has(g[0].symbol) ? '<span class="a-held">In portfolio</span>' : ''}<time>${new Date(g[0].at).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' })}</time></div>
+            <ul class="a-lines">${g
+              .map((a) => `<li><span class="a-dot ${ALERT_ICON[a.level]}" aria-hidden="true"></span><span>${esc(a.text)}${a.link ? ` <a class="tl-link" href="${esc(a.link)}" target="_blank" rel="noopener">Filing</a>` : ''}</span></li>`)
+              .join('')}</ul>
+          </li>`,
         )
-        .join('')}</div>`,
+        .join('')}</ul>`,
     )
     .join('');
   sheet.innerHTML = `
@@ -1121,43 +1133,73 @@ function posMetrics(pos: Position): PosMetrics {
   };
 }
 
+// The margin cushion: where today's price sits against the top-up level and break-even.
+function cushionHTML(m: PosMetrics): string {
+  if (m.ltp == null || m.callPrice == null || m.breakEven == null) return '';
+  const pts = [m.ltp, m.callPrice, m.breakEven];
+  const span = Math.max(Math.max(...pts) - Math.min(...pts), m.ltp * 0.02);
+  const lo = Math.min(...pts) - span * 0.35;
+  const hi = Math.max(...pts) + span * 0.35;
+  const at = (v: number) => ((v - lo) / (hi - lo)) * 100;
+  const gap = m.ltp - m.callPrice;
+  const close = Math.abs(at(m.callPrice) - at(m.breakEven)) < 14; // labels would collide
+  const caption =
+    gap >= 0
+      ? `<b>${inr(gap * (m.value! / m.ltp))}</b> of cushion: the price can fall ${m.callDist!.toFixed(1)}% before a top-up`
+      : `<b class="neg">Below the top-up level by ${Math.abs(m.callDist!).toFixed(1)}%</b>: add margin or reduce the position`;
+  return `<div class="cushion${gap < 0 ? ' is-short' : m.callDist! < CALL_WARN ? ' is-close' : ''}">
+    <div class="cushion-track" aria-hidden="true">
+      <span class="cushion-danger" style="width:${at(m.callPrice)}%"></span>
+      <span class="cushion-mark is-call" style="left:${at(m.callPrice)}%"><span>${close ? 'Top-up ≈ break-even' : 'Top-up'}</span></span>
+      ${close ? '' : `<span class="cushion-mark is-be" style="left:${at(m.breakEven)}%"><span>Break-even</span></span>`}
+      <span class="cushion-now" style="left:${at(m.ltp)}%"></span>
+    </div>
+    <p class="cushion-cap">${caption}</p>
+  </div>`;
+}
+
 function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const m = posMetrics(pos);
-  const near = m.callDist != null && m.callDist < CALL_WARN;
-  const short = m.callDist != null && m.callDist < 0;
-  const kv: [string, string][] = [
-    ['Holding', `${pos.qty.toLocaleString('en-IN')} @ ${rupee(pos.price)} · ${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}× · ${m.days} day${m.days === 1 ? '' : 's'}`],
-    ['Your funds', `${inr(m.own)} <span class="muted small">· broker funds ${inr(m.funded)}</span>`],
-    ['Interest so far', inr2(m.interest)],
-  ];
-  if (m.ltp != null) {
-    kv.push(['Now', `${rupee(m.ltp)} <span class="muted small">· value ${inr(m.value!)}</span>`]);
-    kv.push(['P&amp;L if sold now', `<span class="${m.net! >= 0 ? 'pos' : 'neg'}">${inr2(m.net!)}</span> <span class="muted small">(${m.roi! >= 0 ? '+' : ''}${m.roi!.toFixed(1)}% on your funds, after all charges)</span>`]);
-    kv.push(['Break-even today', `${rupee(m.breakEven!)}`]);
-    if (m.callPrice != null) {
-      kv.push(['Top-up needed below', `<span class="${near ? 'neg' : ''}">${rupee(m.callPrice)}</span> <span class="muted small">· ${m.callDist! >= 0 ? `${m.callDist!.toFixed(1)}% below now` : `price is ${Math.abs(m.callDist!).toFixed(1)}% under it`}</span>`]);
-    }
-  } else {
-    kv.push(['Now', '<span class="muted">No price yet (it appears after the next refresh)</span>']);
-  }
   const c = m.costs;
-  kv.push(['Fixed charges', `${inr2(c.fixed)} <span class="muted small">· ${inr2(c.buySide)} paid at buy + ${inr2(c.sellSide)} on sale · excl. interest</span>`]);
-  kv.push(['Charges if sold now', `<b>${inr2(c.total)}</b> <span class="muted small">· fixed ${inr2(c.fixed)} + interest ${inr2(c.interest)}</span>`]);
+  const short = m.callDist != null && m.callDist < 0;
+  const title = withSymbol
+    ? `<button class="link-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>`
+    : `<span class="pos-name">${BROKER_NAME[pos.broker]}</span>`;
+  const pnl = m.net != null
+    ? `<div class="pos-pnl"><b class="${m.net >= 0 ? 'pos' : 'neg'}">${m.net >= 0 ? '+' : '−'}${inr(Math.abs(m.net)).replace('−', '')}</b><span title="On your money, after every charge">${m.roi! >= 0 ? '+' : ''}${m.roi!.toFixed(1)}%</span></div>`
+    : '<div class="pos-pnl"><span>Waiting for a price</span></div>';
+  const stat = (k: string, v: string) => `<div><div class="tile-k">${k}</div><div class="pos-stat">${v}</div></div>`;
   const items: [string, number][] = [
     ['Brokerage on buy', c.brokBuy], ['Brokerage on sell', c.brokSell], ['Pledge on buy', c.pledge], ['Unpledge on sell', c.unpledge],
-    ['DP charge on sell', c.dp], ['GST on DP and pledge', c.gstDepository], ['STT (buy and sell)', c.stt], ['NSE transaction', c.txn],
-    ['SEBI fee', c.sebi], ['Stamp duty (buy)', c.stamp], ['GST (brokerage, transaction, SEBI)', c.gstTrade], [`MTF interest · ${m.days} days`, c.interest],
+    ['DP charge on sell', c.dp], ['GST on DP and pledge', c.gstDepository], ['STT, buy and sell', c.stt], ['NSE transaction', c.txn],
+    ['SEBI fee', c.sebi], ['Stamp duty on buy', c.stamp], ['GST on brokerage and fees', c.gstTrade], [`Interest, ${m.days} day${m.days === 1 ? '' : 's'}`, c.interest],
   ];
-  const breakdown = `<details class="pos-breakdown"><summary>Charge breakdown${m.ltp == null ? ' <span class="muted small">· sale at buy price until a price arrives</span>' : ''}</summary>
-    <table class="calc-table">${items.map(([k, v]) => `<tr><th>${k}</th><td>${inr2(v)}</td></tr>`).join('')}
-    <tr class="total"><th>Total if sold now</th><td>${inr2(c.total)}</td></tr></table></details>`;
-  return `<div class="pos-card${short ? ' is-near' : ''}">
-    <div class="pos-head">${withSymbol ? `<button class="link-sym" data-open="${esc(pos.sym)}">${esc(pos.sym)}</button>` : `<b>${BROKER_NAME[pos.broker]}</b>`}
-      ${short ? '<span class="flag severe">Margin top-up needed</span>' : near ? '<span class="flag">Close to a top-up</span>' : ''}
-      <button class="btn btn-ghost btn-sm" data-pos-del="${esc(pos.id)}">Remove</button></div>
-    <div class="kv">${kv.map(([k, v]) => `<div class="kv-k">${k}</div><div class="kv-v">${v}</div>`).join('')}</div>
-    ${breakdown}
-  </div>`;
+  return `<article class="pos-card${short ? ' is-short' : ''}">
+    <header class="pos-top">
+      <div><div class="pos-title">${title}</div><div class="pos-sub">${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}, ${m.days ? `${m.days} day${m.days === 1 ? '' : 's'}` : 'today'}</div></div>
+      ${pnl}
+    </header>
+    ${cushionHTML(m)}
+    <div class="pos-stats">
+      ${stat('Now', m.ltp != null ? rupee(m.ltp) : '—')}
+      ${stat('Break-even', m.breakEven != null ? rupee(m.breakEven) : '—')}
+      ${stat('Top-up below', m.callPrice != null ? rupee(m.callPrice) : '—')}
+    </div>
+    <details class="pos-more">
+      <summary>Money and charges <span class="pos-more-hint">${inr(c.total)} if sold now</span></summary>
+      <dl class="pos-dl">
+        <dt>Your money in</dt><dd>${inr(m.own)}</dd>
+        <dt>Broker's money</dt><dd>${inr(m.funded)}</dd>
+        <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<span>${inr2(c.buySide)} paid at buy, ${inr2(c.sellSide)} on sale</span></dd>
+        <dt>Interest so far</dt><dd>${inr2(m.interest)}</dd>
+        <dt>Charges if sold now</dt><dd><b>${inr2(c.total)}</b></dd>
+      </dl>
+      <details class="pos-breakdown"><summary>Every charge</summary>
+        <table class="calc-table">${items.map(([k, v]) => `<tr><th>${k}</th><td>${inr2(v)}</td></tr>`).join('')}</table>
+      </details>
+      <button class="btn btn-ghost btn-sm pos-remove" data-pos-del="${esc(pos.id)}">Remove this position</button>
+    </details>
+  </article>`;
 }
 
 function positionSectionHTML(s: Stock): string {
@@ -1167,7 +1209,8 @@ function positionSectionHTML(s: Stock): string {
   const ltp = state.market?.prices[s.symbol]?.p;
   const form = funded.length
     ? `<details class="calc-rates pos-form"${mine.length ? '' : ' open'}>
-        <summary>${mine.length ? 'Add another position' : 'Track my position'} <span class="muted small">· saved on this device only</span></summary>
+        <summary>${mine.length ? 'Add another position' : 'Track my position'}</summary>
+        <p class="muted small pos-form-note">Saved on this device only.</p>
         <div class="calc-inputs pos-inputs">
           <label><span>Broker</span><span class="calc-field"><select id="pos-broker">${funded.map((b) => `<option value="${b}" data-lev="${s[b]!.lev}">${BROKER_SHORT[b]} · ${fmtLev(s[b]!.lev)}</option>`).join('')}</select></span></label>
           <label><span>Quantity</span><span class="calc-field"><input id="pos-qty" type="number" inputmode="numeric" min="1" step="1" /></span></label>
@@ -1178,25 +1221,32 @@ function positionSectionHTML(s: Stock): string {
         <button class="btn btn-primary" data-pos-save="${esc(s.symbol)}">Save position</button>
       </details>`
     : '';
-  return `<h3>My position</h3>${mine.map((p) => positionCardHTML(p, false)).join('')}${form}`;
+  return `${mine.map((p) => positionCardHTML(p, false)).join('')}${form}`;
 }
 
 function positionsViewHTML(): string {
   const list = loadPositions();
   if (!list.length) {
-    return `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and use “Track my position”. You'll see live P&amp;L, charges, interest so far, break-even and the price below which a margin top-up is needed. Positions stay on this device.</p></div>`;
+    return `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
   }
   const withM = list.map((p) => ({ p, m: posMetrics(p) })).sort((a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999));
   const own = withM.reduce((t, x) => t + x.m.own, 0);
   const net = withM.reduce((t, x) => t + (x.m.net ?? 0), 0);
   const interest = withM.reduce((t, x) => t + x.m.interest, 0);
   const fixed = withM.reduce((t, x) => t + x.m.costs.fixed, 0);
-  return `<div class="pos-summary">
-      <div><span class="muted small">Your funds</span><b>${inr(own)}</b></div>
-      <div><span class="muted small">P&amp;L if all sold now</span><b class="${net >= 0 ? 'pos' : 'neg'}">${inr(net)}</b></div>
-      <div><span class="muted small">Fixed charges</span><b>${inr(fixed)}</b></div>
-      <div><span class="muted small">Interest so far</span><b>${inr(interest)}</b></div>
-    </div>
+  const short = withM.filter((x) => x.m.callDist != null && x.m.callDist < 0).length;
+  return `<section class="pos-summary">
+      <div class="pos-summary-main">
+        <div class="tile-k">If you sold everything now</div>
+        <div class="pos-summary-pnl ${net >= 0 ? 'pos' : 'neg'}">${net >= 0 ? '+' : '−'}${inr(Math.abs(net)).replace('−', '')}</div>
+        <div class="pos-sub">${own ? `${((net / own) * 100).toFixed(1)}% on ${inr(own)} of your money, after every charge` : ''}</div>
+      </div>
+      <div class="pos-summary-side">
+        <div><div class="tile-k">Fixed charges</div><div class="pos-stat">${inr(fixed)}</div></div>
+        <div><div class="tile-k">Interest so far</div><div class="pos-stat">${inr(interest)}</div></div>
+        <div><div class="tile-k">Need a top-up</div><div class="pos-stat${short ? ' neg' : ''}">${short ? `${short} of ${list.length}` : 'None'}</div></div>
+      </div>
+    </section>
     ${withM.map(({ p }) => positionCardHTML(p, true)).join('')}`;
 }
 
@@ -1544,42 +1594,27 @@ function renderCalc() {
 
 /* ---------- detail sheet ---------- */
 
-function eventsSectionHTML(sym: string): string {
+// One timeline line: date column, title, the company's own words (two lines at most), link to the filing.
+function eventLineHTML(date: string, title: string, detail: string, link: string | null, dot = ''): string {
   const today = localISO();
-  const levelBadge = (e: CoEvent) =>
-    e.level === 'alert' ? '<span class="flag severe">Serious</span> ' : e.level === 'watch' ? '<span class="flag">Check</span> ' : '';
-  const kindNote = (e: CoEvent) =>
-    e.kind === 'action' ? ' <span class="muted small">· ex-date</span>' : e.kind === 'news' ? ' <span class="muted small">· announcement</span>' : '';
-  const rows = stockEvents(sym).map((e) => {
-    const when = e.date < today ? 'past' : e.date === today ? 'today' : '';
-    return `<div class="e-row">
-      <div class="e-date${when ? ` ${when}` : ''}"><span>${shortDate(e.date)}</span>${when === 'today' ? '<span class="tag">Today</span>' : ''}</div>
-      <div class="e-main"><div class="e-title">${levelBadge(e)}${esc(e.title)}${kindNote(e)}</div>
-        ${e.detail ? `<div class="muted small">${esc(e.detail)}</div>` : ''}
-        <a class="e-link" href="${esc(e.link)}" target="_blank" rel="noopener">Read more ↗</a></div>
-    </div>`;
+  const when = date === 'now' ? 'Now' : date === today ? 'Today' : shortDate(date);
+  return `<li class="tl-item${date !== 'now' && date < today ? ' is-past' : ''}">
+    <span class="tl-date${date === today ? ' is-today' : ''}">${when}</span>
+    <div class="tl-body">
+      <div class="tl-title">${dot ? `<span class="a-dot ${dot}" aria-hidden="true"></span>` : ''}${esc(title)}</div>
+      ${detail ? `<p class="tl-detail">${esc(detail)}</p>` : ''}
+      ${link ? `<a class="tl-link" href="${esc(link)}" target="_blank" rel="noopener">Read the filing</a>` : ''}
+    </div>
+  </li>`;
+}
+
+function eventsSectionHTML(sym: string): string {
+  const items = stockEvents(sym).map((e) => {
+    const title = e.kind === 'action' ? `${e.title} (ex-date)` : e.title;
+    const dot = e.level === 'alert' ? 'severe' : e.level === 'watch' ? 'warn' : '';
+    return eventLineHTML(e.date, title, e.detail, e.link, dot);
   });
-  const band = state.bands[sym];
-  if (band && (band.series === 'BE' || band.series === 'BZ' || (band.band && band.band <= 10))) {
-    const notes: string[] = [];
-    if (band.band) notes.push(`Price band ${band.band}%: the stock can move at most ${band.band}% in a day, so a leveraged position can get stuck at the circuit.`);
-    if (band.series === 'BE' || band.series === 'BZ') notes.push(`Trade-to-trade (${band.series}): every trade settles by delivery and no intraday netting is allowed${band.series === 'BZ' ? '; BZ also marks companies that have not met listing requirements' : ''}.`);
-    rows.unshift(`<div class="e-row">
-      <div class="e-date"><span>Now</span></div>
-      <div class="e-main"><div class="e-title">${band.series === 'BE' || band.series === 'BZ' ? `<span class="flag${band.series === 'BZ' ? ' severe' : ''}">T2T</span> ` : ''}${band.band ? `<span class="flag${band.band <= 2 ? ' severe' : ''}">${band.band}% band</span>` : ''}</div>
-        <div class="muted small">${notes.join(' ')}</div>
-        <a class="e-link" href="https://nsearchives.nseindia.com/content/equities/sec_list.csv" target="_blank" rel="noopener">Read more ↗</a></div>
-    </div>`);
-  }
-  if (inBan(sym)) {
-    rows.unshift(`<div class="e-row">
-      <div class="e-date"><span>${shortDate(state.ban!.date)}</span></div>
-      <div class="e-main"><div class="e-title"><span class="flag severe">F&amp;O ban</span></div>
-        <div class="muted small">In NSE's F&amp;O ban period: open interest is above 95% of the market-wide limit, so no new F&amp;O positions can be opened.</div>
-        <a class="e-link" href="${BAN_LINK}" target="_blank" rel="noopener">Read more ↗</a></div>
-    </div>`);
-  }
-  return rows.length ? `<h3>Alerts and events</h3><div class="s-list">${rows.join('')}</div>` : '';
+  return items.length ? `<h3>Events</h3><ul class="timeline">${items.join('')}</ul>` : '';
 }
 
 const rupee = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
@@ -1594,84 +1629,158 @@ function sinceResults(sym: string): { date: string; move: number } | null {
   return base ? { date: res.date, move: (px.p / base[1] - 1) * 100 } : null;
 }
 
+// A position marker on a track, for ranges (52-week) and limits (F&O open interest).
+function trackHTML(pct: number, ticks: number[] = [], cls = ''): string {
+  const at = Math.max(0, Math.min(100, pct));
+  return `<div class="track ${cls}" aria-hidden="true">${ticks.map((t) => `<span class="track-tick" style="left:${t}%"></span>`).join('')}<span class="track-dot" style="left:${at}%"></span></div>`;
+}
+
+function tile(label: string, value: string, hint = '', extra = ''): string {
+  return `<div class="tile"><div class="tile-k">${label}</div><div class="tile-v">${value}</div>${extra}${hint ? `<div class="tile-h">${hint}</div>` : ''}</div>`;
+}
+
 function marketSectionHTML(sym: string, s: Stock): string {
   const m = state.market;
   if (!m) return '';
-  const rows: [string, string][] = [];
+  const tiles: string[] = [];
   const px = m.prices[sym];
   if (px) {
     const when = new Date(px.t * 1000).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
-    const chg = px.chg != null ? ` <span class="${px.chg >= 0 ? 'pos' : 'neg'}">${px.chg >= 0 ? '+' : ''}${px.chg.toFixed(2)}%</span>` : '';
-    rows.push(['Price', `${rupee(px.p)}${chg} <span class="muted small">· ${when}</span>`]);
-    if (px.dayLo != null && px.dayHi != null) rows.push(['Day range', `${rupee(px.dayLo)} – ${rupee(px.dayHi)}`]);
-    if (px.lo52 != null && px.hi52 != null) {
-      const pos = px.hi52 > px.lo52 ? ((px.p - px.lo52) / (px.hi52 - px.lo52)) * 100 : 0;
-      rows.push(['52-week range', `${rupee(px.lo52)} – ${rupee(px.hi52)} <span class="muted small">· ${pos.toFixed(0)}% of the way up</span>`]);
+    const chg = px.chg != null ? `<span class="${px.chg >= 0 ? 'pos' : 'neg'}">${px.chg >= 0 ? '+' : ''}${px.chg.toFixed(2)}%</span>` : '';
+    tiles.push(tile('Price', `${rupee(px.p)} ${chg}`, `As of ${when}`));
+    if (px.lo52 != null && px.hi52 != null && px.hi52 > px.lo52) {
+      const pos = ((px.p - px.lo52) / (px.hi52 - px.lo52)) * 100;
+      tiles.push(tile('52-week range', `${pos.toFixed(0)}%`, `Of the way from ${rupee(Math.round(px.lo52))} to ${rupee(Math.round(px.hi52))}`, trackHTML(pos)));
     }
-    if (px.vol && px.avgVol) rows.push(['Volume', `${compact(px.vol)} <span class="muted small">· ${(px.vol / px.avgVol).toFixed(1)}× the 20-day average</span>`]);
+    if (px.vol && px.avgVol) tiles.push(tile('Volume', `${(px.vol / px.avgVol).toFixed(1)}× usual`, `${compact(px.vol)} shares today`));
     const band = state.bands[sym]?.band;
-    if (band && px.prev) rows.push(['Circuit limits', `${rupee(px.prev * (1 - band / 100))} – ${rupee(px.prev * (1 + band / 100))} <span class="muted small">· ${band}% band</span>`]);
+    if (band && px.prev) tiles.push(tile('Circuit limits', `${band}% band`, `${rupee(px.prev * (1 - band / 100))} to ${rupee(px.prev * (1 + band / 100))}`));
   }
   const dv = m.deliv[sym];
-  if (dv?.d != null) rows.push(['Delivery', `${dv.d.toFixed(0)}%${dv.avg != null ? ` <span class="muted small">· 20-day average ${dv.avg.toFixed(0)}% · ${shortDate(dv.date)}</span>` : ''}`]);
+  if (dv?.d != null) tiles.push(tile('Delivery', `${dv.d.toFixed(0)}%`, dv.avg != null ? `Usually ${dv.avg.toFixed(0)}%, ${shortDate(dv.date)}` : shortDate(dv.date)));
   const v = m.var.rows[sym];
   if (v?.m != null) {
     const cap = v.m > 0 ? 100 / v.m : null;
-    rows.push(['Exchange margin', `${v.m.toFixed(2)}%${v.adhoc ? ` <span class="muted small">(ad hoc ${v.adhoc.toFixed(2)}%)</span>` : ''}${cap ? ` <span class="muted small">· supports up to about ${round1(cap)}×</span>` : ''}`]);
+    tiles.push(tile('Exchange margin', `${v.m.toFixed(1)}%`, `${cap ? `Supports up to about ${round1(cap)}×` : ''}${v.adhoc ? `${cap ? ', ' : ''}incl. ${v.adhoc.toFixed(1)}% ad hoc` : ''}`));
   }
   const oi = m.mwpl.rows[sym];
-  if (oi?.pct != null) rows.push(['F&amp;O open interest', `${oi.pct.toFixed(1)}% of the market-wide limit <span class="muted small">· ban at 95%, lifted below 80%${oi.ban ? ' · in ban' : ''}</span>`]);
-  if (s.kotak?.maxExposureCr != null) rows.push(['Kotak max exposure', `₹${s.kotak.maxExposureCr} Cr per client`]);
+  if (oi?.pct != null) {
+    tiles.push(tile('F&amp;O open interest', `${oi.pct.toFixed(0)}% of limit`, oi.ban ? 'In the ban until it falls below 80%' : 'Ban starts at 95%', trackHTML(oi.pct, [80, 95], oi.pct >= 90 ? 'is-hot' : oi.pct >= 80 ? 'is-warm' : '')));
+  }
+  if (s.kotak?.maxExposureCr != null) tiles.push(tile('Kotak exposure cap', `₹${s.kotak.maxExposureCr} Cr`, 'Per client'));
   const pl = m.pledge[sym];
-  if (pl) rows.push(['Promoter pledge', `${pl.pct.toFixed(2)}% of promoter shares${pl.promoter != null ? ` <span class="muted small">· promoters hold ${pl.promoter.toFixed(1)}%</span>` : ''}`]);
+  if (pl) tiles.push(tile('Promoter pledge', `${pl.pct.toFixed(1)}%`, pl.promoter != null ? `Of their shares; promoters own ${pl.promoter.toFixed(0)}%` : 'Of promoter shares'));
   const sr = sinceResults(sym);
-  if (sr) rows.push(['Since results', `<span class="${sr.move >= 0 ? 'pos' : 'neg'}">${sr.move >= 0 ? '+' : ''}${sr.move.toFixed(1)}%</span> <span class="muted small">· from the close on ${shortDate(sr.date)}</span>`]);
+  if (sr) tiles.push(tile('Since results', `<span class="${sr.move >= 0 ? 'pos' : 'neg'}">${sr.move >= 0 ? '+' : ''}${sr.move.toFixed(1)}%</span>`, `From the close on ${shortDate(sr.date)}`));
+
   const deals = (m.deals[sym] ?? []).sort((a, b) => b.date.localeCompare(a.date));
-  const dealRows = deals
-    .map((d) => `<div class="deal"><span class="${d.side === 'SELL' ? 'neg' : 'pos'}">${d.side === 'SELL' ? 'Sold' : 'Bought'}</span> ${d.qty ? compact(d.qty) : '?'}${d.price ? ` @ ${rupee(d.price)}` : ''} <span class="muted small">· ${esc(d.client)} · ${d.kind} deal · ${shortDate(d.date)}</span></div>`)
+  const dealList = deals
+    .map((d) => `<li class="deal"><span class="tl-date">${shortDate(d.date)}</span><div><span class="${d.side === 'SELL' ? 'neg' : 'pos'}">${d.side === 'SELL' ? 'Sold' : 'Bought'}</span> ${d.qty ? compact(d.qty) : '?'} shares${d.price ? ` at ${rupee(d.price)}` : ''}<div class="tl-detail">${esc(titleCase(d.client))}, ${d.kind} deal</div></div></li>`)
     .join('');
-  if (!rows.length && !dealRows) return '';
-  return `<h3>Market</h3><div class="kv">${rows.map(([k, val]) => `<div class="kv-k">${k}</div><div class="kv-v">${val}</div>`).join('')}</div>
-    ${dealRows ? `<div class="deals"><div class="muted small">Bulk and block deals, last 7 days</div>${dealRows}</div>` : ''}`;
+  if (!tiles.length && !dealList) return '';
+  return `${tiles.length ? `<div class="tiles">${tiles.join('')}</div>` : ''}
+    ${dealList ? `<h3>Big deals this week</h3><ul class="deals">${dealList}</ul>` : ''}`;
 }
 
 function survSectionHTML(sym: string): string {
   const flags = state.surv[sym];
   if (!flags?.length) return '';
   const rows = flags
-    .map(
-      (f) => `<div class="s-row">
-        <span class="flag${survSevere(f) ? ' severe' : ''}">${esc(survLabel(f))}</span>
-        <div class="s-main"><div>${survName(f)} · Stage ${esc(f.stage)} <span class="muted">· ${f.ex.join(' + ')}</span></div>
-        <div class="muted small">${survSince(f)}${f.desc && f.list === 'GSM' ? ` · ${esc(f.desc)}` : ''}</div></div>
-      </div>`,
-    )
+    .map((f) => eventLineHTML(f.exact && f.since ? f.since : 'now', `${survName(f)}, stage ${f.stage}`,
+      `${f.ex.join(' and ')}. ${f.exact ? `Added ${fmtDate(f.since)}.` : `On the list since at least ${fmtDate(f.since)}.`}${f.desc && f.list === 'GSM' ? ` ${f.desc}.` : ''}`,
+      null, survSevere(f) ? 'severe' : 'warn'))
     .join('');
-  return `<h3>Surveillance</h3><div class="s-list">${rows}</div>`;
+  return `<h3>Surveillance</h3><ul class="timeline">${rows}</ul>`;
 }
 
-async function openSheet(sym: string) {
-  // Pinned stocks no broker funds still open, mainly to show their ASM/GSM status.
-  const s = state.bySymbol.get(sym) ?? (state.pins.includes(sym) ? stubStock(sym) : null);
-  if (!s) return;
-  const sheet = $<HTMLDialogElement>('#sheet');
-  const pinned = state.pins.includes(sym);
-  const rows = BROKERS.map((b) => {
+// What needs attention now, in plain words: the overview's short list, most serious first.
+function attentionItems(sym: string): { level: 'severe' | 'warn' | 'info'; title: string; detail: string; link: string | null }[] {
+  const out: ReturnType<typeof attentionItems> = [];
+  if (inBan(sym)) out.push({ level: 'severe', title: 'In the F&O ban', detail: 'No new F&O positions until open interest falls below 80% of the limit.', link: BAN_LINK });
+  const band = state.bands[sym];
+  if (band?.band && band.band <= 5) out.push({ level: band.band <= 2 ? 'severe' : 'warn', title: `${band.band}% price band`, detail: `It can move at most ${band.band}% a day, so a leveraged position can get stuck at the circuit.`, link: null });
+  if (band?.series === 'BE' || band?.series === 'BZ') out.push({ level: band.series === 'BZ' ? 'severe' : 'warn', title: `Trade-to-trade (${band.series})`, detail: 'Every trade settles by delivery; no intraday netting.', link: null });
+  for (const f of state.surv[sym] ?? []) {
+    out.push({ level: survSevere(f) ? 'severe' : 'warn', title: `${survName(f)}, stage ${f.stage}`, detail: f.exact ? `Added ${fmtDate(f.since)}.` : `On the list since at least ${fmtDate(f.since)}.`, link: null });
+  }
+  for (const e of stockEvents(sym)) {
+    if (e.level === 'alert' || e.level === 'watch') out.push({ level: e.level === 'alert' ? 'severe' : 'warn', title: `${e.title}, ${shortDate(e.date)}`, detail: e.detail, link: e.kind === 'broker' ? null : e.link });
+  }
+  const m = state.market;
+  const px = m?.prices[sym];
+  if (px?.prev && band?.band && px.p <= px.prev * (1 - band.band / 100) * 1.01) out.push({ level: 'severe', title: 'At the lower circuit', detail: 'Sell orders may not fill until buyers return.', link: null });
+  if (px?.chg != null && px.chg <= -5) out.push({ level: 'warn', title: `Down ${Math.abs(px.chg).toFixed(1)}% today`, detail: `At ${rupee(px.p)}.`, link: null });
+  if (px?.lo52 && px.p <= px.lo52 * 1.005) out.push({ level: 'warn', title: 'At a 52-week low', detail: `At ${rupee(px.p)}.`, link: null });
+  const oi = m?.mwpl.rows[sym];
+  if (oi?.pct != null && oi.pct >= 80 && !inBan(sym)) out.push({ level: oi.pct >= 90 ? 'severe' : 'warn', title: `F&O open interest at ${oi.pct.toFixed(0)}% of the limit`, detail: 'The F&O ban starts at 95%.', link: null });
+  const vm = m?.var.rows[sym]?.m;
+  if (vm != null && vm >= 40) out.push({ level: vm >= 60 ? 'severe' : 'warn', title: `Exchange margin ${vm.toFixed(0)}%`, detail: `Brokers can fund at most about ${round1(100 / vm)}×.`, link: null });
+  return out.sort((a, b) => (a.level === 'severe' ? 0 : 1) - (b.level === 'severe' ? 0 : 1));
+}
+
+function overviewHTML(sym: string, s: Stock): string {
+  const items = attentionItems(sym);
+  const line = (a: (typeof items)[number]) => `<li class="att-item"><span class="a-dot ${a.level}" aria-hidden="true"></span><div><div class="att-title">${esc(a.title)}</div>${a.detail ? `<p class="tl-detail">${esc(a.detail)}</p>` : ''}${a.link ? `<a class="tl-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read the filing</a>` : ''}</div></li>`;
+  const shown = items.slice(0, 4).map(line).join('');
+  const rest = items.slice(4).map(line).join('');
+  const attention = items.length
+    ? `<h3>Needs attention</h3><ul class="att">${shown}</ul>${rest ? `<details class="more-list"><summary>${items.length - 4} more</summary><ul class="att">${rest}</ul></details>` : ''}`
+    : '';
+  const today = localISO();
+  const next = stockEvents(sym).filter((e) => (e.kind === 'meeting' || e.kind === 'action') && e.date >= today).slice(0, 3);
+  const res = sinceResults(sym);
+  const coming = next.map((e) => eventLineHTML(e.date, e.kind === 'action' ? `${e.title} (ex-date)` : e.title, '', e.link)).join('');
+  const resultsLine = res ? eventLineHTML(res.date, `Results out, ${res.move >= 0 ? 'up' : 'down'} ${Math.abs(res.move).toFixed(1)}% since`, '', (state.events[sym] ?? []).find((e) => e.kind === 'result')?.link ?? null) : '';
+  const upcoming = coming || resultsLine ? `<h3>Coming up</h3><ul class="timeline">${resultsLine}${coming}</ul>` : '';
+  const px = state.market?.prices[sym];
+  const price = px
+    ? `<div class="ov-price"><span class="ov-p">${rupee(px.p)}</span>${px.chg != null ? `<span class="${px.chg >= 0 ? 'pos' : 'neg'}">${px.chg >= 0 ? '+' : ''}${px.chg.toFixed(2)}% today</span>` : ''}</div>`
+    : '';
+  return `${price}<div class="d-list">${brokerRowsHTML(s)}</div>${attention}${upcoming}`;
+}
+
+function brokerRowsHTML(s: Stock): string {
+  return BROKERS.map((b) => {
     const c = s[b];
     const own = c ? (b === 'kotak' ? (isFunded(c) ? `${Number((100 / c.lev).toFixed(1))}%` : '100%') : c.ownPct != null ? `${Number(c.ownPct.toFixed(2))}%` : '—') : '—';
     const lev = !c ? '<span class="none">Not listed</span>' : isFunded(c) ? fmtLev(c.lev) : '<span class="nf">Not funded</span>';
-    const extra = b === 'kotak' && c?.maxExposureCr != null ? `Max exposure ₹${c.maxExposureCr} Cr` : b === 'kotak' ? '' : c ? 'Own funds as published' : '';
     return `<div class="d-row${s.best.includes(b) ? ' is-best' : ''}">
-      <div><div class="d-broker">${BROKER_NAME[b]}</div><div class="muted small">${extra}</div></div>
-      <div class="d-own"><span class="muted small">Your funds</span>${own}</div>
+      <div class="d-broker">${BROKER_NAME[b]}</div>
+      <div class="d-own">${c ? `<span class="muted small">Your share</span>${own}` : ''}</div>
       <div class="d-lev">${lev}${s.best.includes(b) && contested(s) ? '<span class="tag">Best</span>' : ''}</div>
     </div>`;
   }).join('');
+}
+
+type SheetTab = 'overview' | 'position' | 'costs' | 'market';
+let sheetTab: SheetTab = 'overview';
+
+async function openSheet(sym: string, tab?: SheetTab) {
+  // Pinned stocks no broker funds still open, mainly to show their ASM/GSM status.
+  const s = state.bySymbol.get(sym) ?? (state.pins.includes(sym) ? stubStock(sym) : null);
+  if (!s) return;
+  if (tab) sheetTab = tab;
+  if (s.stub && (sheetTab === 'position' || sheetTab === 'costs')) sheetTab = 'overview';
+  const sheet = $<HTMLDialogElement>('#sheet');
+  const pinned = state.pins.includes(sym);
+  const held = loadPositions().filter((p) => p.sym === sym).length;
+  const attention = attentionItems(sym).length;
+  const tabs: [SheetTab, string, string][] = [
+    ['overview', 'Overview', attention ? `<span class="tab-dot" title="${attention} to look at"></span>` : ''],
+    ...(s.stub ? [] : ([['position', 'Position', held ? `<span class="count">${held}</span>` : ''], ['costs', 'Costs', '']] as [SheetTab, string, string][])),
+    ['market', 'Market', ''],
+  ];
+  const panel =
+    sheetTab === 'position' ? positionSectionHTML(s)
+    : sheetTab === 'costs' ? calcSectionHTML()
+    : sheetTab === 'market'
+      ? `${marketSectionHTML(sym, s)}${eventsSectionHTML(sym)}${survSectionHTML(sym)}<h3>Multiplier, last 7 days</h3><div class="history" id="history"><p class="muted small">Loading…</p></div><p class="muted small">Kotak does not publish an own-funds share; it is 1 ÷ leverage.</p>`
+      : overviewHTML(sym, s);
   sheet.innerHTML = `
     <div class="sheet-inner">
       <div class="sheet-head">
         <div>
-          <div class="sym big">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}${flagsHTML(s.symbol)}</div>
+          <div class="sym big">${esc(s.symbol)}${s.type === 'etf' ? '<span class="pill">ETF</span>' : ''}</div>
           <div class="name">${esc(s.name)}</div>
         </div>
         <div class="sheet-actions">
@@ -1679,24 +1788,19 @@ async function openSheet(sym: string) {
           <button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
         </div>
       </div>
-      <div class="d-list">${rows}</div>
-      ${positionSectionHTML(s)}
-      ${eventsSectionHTML(sym)}
-      ${survSectionHTML(sym)}
-      ${marketSectionHTML(sym, s)}
-      ${s.stub ? '' : calcSectionHTML()}
-      <h3>Last 7 days</h3>
-      <div class="history" id="history"><p class="muted small">Loading…</p></div>
-      <p class="muted small">Kotak's own-funds share is 1 ÷ leverage. Kotak does not publish it separately.</p>
+      <div class="sheet-tabs" role="tablist">${tabs.map(([k, label, badge]) => `<button role="tab" data-sheet-tab="${k}" aria-selected="${k === sheetTab}">${label}${badge}</button>`).join('')}</div>
+      <div class="sheet-panel">${panel}</div>
     </div>`;
   state.sheetSym = sym;
   renderCalc();
   if (!sheet.open) sheet.showModal();
+  if (sheetTab !== 'market') return;
   try {
     state.history ??= await getJSON<History>('/data/history.json');
     renderHistory(sym);
   } catch {
-    $('#history').innerHTML = '<p class="muted small">No history yet.</p>';
+    const el = document.getElementById('history');
+    if (el) el.innerHTML = '<p class="muted small">No history yet.</p>';
   }
 }
 
@@ -2101,7 +2205,7 @@ function bind() {
       renderList();
       q.blur();
     } else if (e.key === 'Enter' && e.target instanceof HTMLElement && e.target.classList.contains('row')) {
-      openSheet(e.target.dataset.sym!);
+      openSheet(e.target.dataset.sym!, 'overview');
     }
   });
 
@@ -2131,6 +2235,12 @@ function bind() {
       return;
     }
     if (t.closest('[data-add]')) return void openAddSheet();
+    const st = t.closest<HTMLElement>('[data-sheet-tab]');
+    if (st && state.sheetSym) {
+      openSheet(state.sheetSym, st.dataset.sheetTab as SheetTab);
+      $('#sheet').scrollTop = 0;
+      return;
+    }
     if (t.closest('#bell')) return openAlerts();
     const af = t.closest<HTMLElement>('[data-alert-filter]');
     if (af) {
@@ -2151,8 +2261,10 @@ function bind() {
     if (t.closest('[data-import-holdings]')) return void openHoldingsImport();
     if (t.closest('#h-add')) return applyHoldings(false);
     if (t.closest('#h-replace')) return applyHoldings(true);
+    const openPos = t.closest<HTMLElement>('[data-open-pos]');
+    if (openPos) return void openSheet(openPos.dataset.openPos!, 'position');
     const openSym = t.closest<HTMLElement>('[data-open]');
-    if (openSym) return void openSheet(openSym.dataset.open!);
+    if (openSym) return void openSheet(openSym.dataset.open!, 'overview');
     if (t.closest('[data-reset-rates]')) {
       store(RATES_KEY, {});
       if (state.sheetSym) openSheet(state.sheetSym);
@@ -2216,7 +2328,7 @@ function bind() {
     if (t.closest('#copy-link')) return void copyPinLink();
     if (t.closest('#export')) return void exportPins();
     const row = t.closest<HTMLElement>('.row');
-    if (row) openSheet(row.dataset.sym!);
+    if (row) openSheet(row.dataset.sym!, 'overview');
   });
 
   $<HTMLDialogElement>('#sheet').addEventListener('click', (e) => {
