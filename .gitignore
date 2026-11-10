@@ -5,3 +5,5 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .env*
+data/private_alerts.json
+data/summary.json

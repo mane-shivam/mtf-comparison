@@ -3633,3 +3633,268 @@ button.pr-sym:hover {
     width: 136px;
   }
 }
+
+/* =========================================================
+   Portfolio summary card
+   ========================================================= */
+
+.ps {
+  margin-bottom: 16px;
+  padding: 18px;
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(92, 201, 164, 0.06), transparent 60%),
+    var(--surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.ps-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ps-label,
+.ps-grid i {
+  display: block;
+  color: var(--faint-2);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.ps-value {
+  margin-top: 2px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.ps-sub {
+  margin-top: 4px;
+  color: var(--faint-2);
+  font-size: 12.5px;
+}
+
+.ps-count {
+  flex: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ps-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.ps-cell {
+  padding: 12px 14px 13px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ps-amt {
+  margin: 4px 0 8px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.ps-chip {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ps-chip.up {
+  background: rgba(92, 201, 164, 0.12);
+  color: var(--up-soft);
+}
+
+.ps-chip.down {
+  background: rgba(228, 135, 139, 0.12);
+  color: var(--down-soft);
+}
+
+.ps-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--faint-2);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.ps-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--faint-2);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.ps-row-v {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.ps-row-v b {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.ps-grid > * {
+  min-width: 0;
+}
+
+.ps-grid b {
+  display: block;
+  margin-top: 3px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.ps-grid small {
+  display: block;
+  margin-top: 2px;
+  color: var(--faint-2);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.ps-margin {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+}
+
+.ps-margin.is-short b {
+  color: var(--down-soft);
+}
+
+.ps-margin.is-short small {
+  color: var(--down-soft);
+  opacity: 0.8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ps-margin:disabled {
+  cursor: default;
+}
+
+.ps-save {
+  margin: 14px 0 0;
+  color: var(--faint-2);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ps-value.up,
+.ps-amt.up {
+  color: var(--up-soft);
+}
+
+.ps-value.down,
+.ps-amt.down {
+  color: var(--down-soft);
+}
+
+.pr-modes {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.pr-modes button {
+  flex: 1;
+  justify-content: center;
+}
+
+.pr-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 16px 12px;
+}
+
+.pr-actions .pr-remove {
+  margin: 0 0 0 auto;
+  min-height: 34px;
+  padding: 0 8px;
+}
+
+.pr.cl {
+  padding-bottom: 4px;
+}
+
+.pr.cl .pr-actions {
+  padding: 4px 0 8px;
+}
+
+.sell-inputs {
+  margin: 0 0 12px;
+}
+
+.sell-dl {
+  padding: 10px 0 0;
+}
+
+.sell-dl b {
+  font-size: 15px;
+}
+
+@media (max-width: 640px) {
+  .ps {
+    padding: 16px;
+  }
+
+  .ps-value {
+    font-size: 27px;
+  }
+
+  .ps-amt {
+    font-size: 19px;
+  }
+
+  .ps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ps-margin {
+    grid-column: 1 / -1;
+  }
+
+  .sell-inputs {
+    grid-template-columns: 1fr 1fr;
+  }
+}

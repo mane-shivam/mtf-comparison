@@ -1,4 +1,5 @@
-"""Send this refresh's new alerts (data/alerts_new.json) to the phone.
+"""Send this refresh's new alerts (data/alerts_new.json), private top-up warnings and the morning summary
+(both from scripts/portfolio.py) to the phone.
 
 Channels, each turned on by setting repository secrets (Settings > Secrets and variables > Actions):
 - Telegram: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID
@@ -17,6 +18,8 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 NEW = ROOT / "data" / "alerts_new.json"
+PRIVATE = ROOT / "data" / "private_alerts.json"  # top-up warnings, from scripts/portfolio.py
+SUMMARY = ROOT / "data" / "summary.json"  # morning summary, from scripts/portfolio.py
 ICON = {"alert": "🔴", "watch": "🟠", "info": "🔵", "good": "🟢"}
 ORDER = {"alert": 0, "watch": 1, "good": 2, "info": 3}
 MAX_LINES = 40
@@ -52,33 +55,50 @@ def send_ntfy(topic: str, title: str, body: str, site: str | None, serious: bool
     r.raise_for_status()
 
 
-def main() -> int:
+def messages(site: str | None) -> list[tuple[str, str, bool]]:
+    """(title, body, serious) for each message this run sends: top-up warnings, watchlist changes, summary."""
+    out = []
+    private = json.loads(PRIVATE.read_text()) if PRIVATE.exists() else []
+    if private:
+        n = len(private)
+        title = f"MTF Compare: margin top-up {'needed' if any(a['level'] == 'alert' for a in private) else 'close'}"
+        body = "\n".join(f"{ICON.get(a['level'], '•')} {a['symbol']}: {a['text']}" for a in private)
+        out.append((title if n == 1 else f"{title} ({n} positions)", body + (f"\n\n{site}" if site else ""), True))
     alerts = json.loads(NEW.read_text()) if NEW.exists() else []
-    if not alerts:
-        print("[notify] no new alerts")
-        return 0
+    if alerts:
+        title, body = compose(alerts, site)
+        out.append((title, body, any(a["level"] == "alert" for a in alerts)))
+    if SUMMARY.exists():
+        s = json.loads(SUMMARY.read_text())
+        out.append((s["title"], "\n".join(s["lines"]) + (f"\n\n{site}" if site else ""), False))
+    return out
+
+
+def main() -> int:
     site = os.environ.get("SITE_URL") or None
-    title, body = compose(alerts, site)
-    serious = any(a["level"] == "alert" for a in alerts)
+    msgs = messages(site)
+    if not msgs:
+        print("[notify] nothing to send")
+        return 0
     sent, failed = [], []
     token, chat, topic = (os.environ.get(k, "").strip() for k in ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "NTFY_TOPIC"))
-    if token and chat:
-        try:
-            send_telegram(token, chat, title, body)
-            sent.append("Telegram")
-        except Exception as e:  # noqa: BLE001
-            failed.append(f"Telegram: {e}")
-    if topic:
-        try:
-            send_ntfy(topic, title, body, site, serious)
-            sent.append("ntfy")
-        except Exception as e:  # noqa: BLE001
-            failed.append(f"ntfy: {e}")
-    print(f"[notify] {len(alerts)} alerts; sent via {', '.join(sent) or 'nothing (no channel configured)'}")
+    for title, body, serious in msgs:
+        if token and chat:
+            try:
+                send_telegram(token, chat, title, body)
+                sent.append("Telegram")
+            except Exception as e:  # noqa: BLE001
+                failed.append(f"Telegram: {e}")
+        if topic:
+            try:
+                send_ntfy(topic, title, body, site, serious)
+                sent.append("ntfy")
+            except Exception as e:  # noqa: BLE001
+                failed.append(f"ntfy: {e}")
+    print(f"[notify] {len(msgs)} messages; sent via {', '.join(sorted(set(sent))) or 'nothing (no channel configured)'}")
     for f in failed:
         print(f"[notify] failed: {f}")
     return 1 if failed and not sent else 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

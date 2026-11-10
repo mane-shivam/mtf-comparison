@@ -875,7 +875,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>
+    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>${posSyncHTML()}
       <p class="muted small">“Top-up needed below” assumes the broker keeps asking for the same margin share as at entry (1 ÷ leverage), so with leverage a fall below about your buy price (plus interest) creates a shortfall. Brokers set their own rules and timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
@@ -1115,13 +1115,19 @@ interface PosMetrics {
   gross: number | null; // value now − total investment, before charges (the broker apps' unrealised P&L)
   day: number | null; // today's change: since the previous close, or since the buy price if bought today
   dayBase: number | null; // value the day's change is measured from
+  perDay: number; // interest the broker's money costs each day
 }
 
 const POS_KEY = 'mtf.positions';
 const CALL_WARN = 3; // % above the top-up price that counts as close
 
 const loadPositions = (): Position[] => store<Position[]>(POS_KEY) ?? [];
-const savePositions = (list: Position[]) => store(POS_KEY, list);
+const savePositions = (list: Position[]) => {
+  store(POS_KEY, list);
+  positionsChanged();
+};
+// Filled in by private sync: called whenever positions, closed trades or rates change.
+let positionsChanged: () => void = () => {};
 
 function posMetrics(pos: Position): PosMetrics {
   const r = brokerRates()[pos.broker];
@@ -1131,11 +1137,12 @@ function posMetrics(pos: Position): PosMetrics {
   const funded = buyValue - own;
   const days = Math.max(0, Math.floor((Date.parse(localISO()) - Date.parse(pos.date)) / 86_400_000));
   const interest = (funded * r.interest * days) / 36500;
+  const perDay = (funded * r.interest) / 36500;
   const ltp = state.market?.prices[pos.sym]?.p ?? null;
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
   const costs = computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100);
   if (ltp == null) {
-    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null };
+    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
   }
   const px = state.market!.prices[pos.sym];
   const boughtToday = pos.date >= px.date;
@@ -1156,6 +1163,7 @@ function posMetrics(pos: Position): PosMetrics {
     gross: value - buyValue,
     day,
     dayBase: dayFrom ? dayFrom * pos.qty : null,
+    perDay,
   };
 }
 
@@ -1208,7 +1216,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
       <span>${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}</span>
     </div>
     ${m.day != null ? `<div class="pr-day">Today <b class="${m.day >= 0 ? 'up' : 'down'}">${money(m.day)}</b>${m.dayBase ? ` ${sign(m.day)}${Math.abs((m.day / m.dayBase) * 100).toFixed(1)}%` : ''}</div>` : ''}
-    ${m.gross != null ? `<div class="pr-ret"><b class="${m.gross >= 0 ? 'up' : 'down'}">${sign(m.gross)}${Math.abs((m.gross / m.own) * 100).toFixed(1)}%</b> on your money, <b>${sign(m.gross)}${Math.abs((m.gross / m.buyValue) * 100).toFixed(1)}%</b> on total<br />If sold now <b class="${m.net! >= 0 ? 'up' : 'down'}">${money(m.net!)}</b> after charges</div>` : ''}
+    ${m.gross != null ? `<div class="pr-ret"><b class="${m.gross >= 0 ? 'up' : 'down'}">${sign(m.gross)}${Math.abs((m.gross / m.own) * 100).toFixed(1)}%</b> on your money, <b>${sign(m.gross)}${Math.abs((m.gross / m.buyValue) * 100).toFixed(1)}%</b> on total<br />If sold now, after charges <b class="${m.net! >= 0 ? 'up' : 'down'}">${money(m.net!)}</b></div>` : ''}
     ${cushionHTML(m)}
     <div class="pr-prices">
       ${cushion}
@@ -1224,12 +1232,16 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
         <dt>Total investment</dt><dd>${inr(m.buyValue)}${m.value != null ? `<small>Worth ${inr(m.value)} now</small>` : ''}</dd>
         <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<small>${inr2(c.buySide)} at buy, ${inr2(c.sellSide)} on sale</small></dd>
         <dt>Interest so far</dt><dd>${inr2(m.interest)}<small>${m.days ? `${m.days} day${m.days === 1 ? '' : 's'}` : 'Bought today'}</small></dd>
+        <dt>Interest cost</dt><dd>${inr2(m.perDay)} a day<small>${inr(m.perDay * 30)} a month</small></dd>
         <dt>Charges if sold now</dt><dd>${inr2(c.total)}</dd>
       </dl>
       <details class="pr-items"><summary>Every charge</summary>
         <dl class="pr-dl">${items.map(([k, v]) => `<dt>${k}</dt><dd>${inr2(v)}</dd>`).join('')}</dl>
       </details>
-      <button class="pr-remove" data-pos-del="${esc(pos.id)}">Remove this position</button>
+      <div class="pr-actions">
+        <button class="btn btn-ghost btn-sm" data-sell="${esc(pos.id)}">Record sale</button>
+        <button class="pr-remove" data-pos-del="${esc(pos.id)}">Remove</button>
+      </div>
     </details>
   </article>`;
 }
@@ -1257,9 +1269,9 @@ function positionSectionHTML(s: Stock): string {
 }
 
 type PosSort = 'risk' | 'pnl' | 'pnlBest' | 'today' | 'ret' | 'size' | 'interest' | 'days' | 'az';
-interface PosView { broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
+interface PosView { mode: 'open' | 'closed'; broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
 const POS_VIEW_KEY = 'mtf.posView';
-const posView = (): PosView => ({ broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
+const posView = (): PosView => ({ mode: 'open', broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
 
 function positionsToolbarHTML(v: PosView, counts: Record<string, number>): string {
   const chip = (key: string, value: string, label: string, on: boolean, n?: number) =>
@@ -1284,8 +1296,12 @@ function positionsToolbarHTML(v: PosView, counts: Record<string, number>): strin
 
 function positionsViewHTML(): string {
   const list = loadPositions();
+  const v0 = posView();
+  const closedN = loadClosed().length;
+  const modes = `<div class="seg pr-modes" role="tablist"><button role="tab" data-posmode="open" aria-selected="${v0.mode === 'open'}">Open <span class="count">${list.length || ''}</span></button><button role="tab" data-posmode="closed" aria-selected="${v0.mode === 'closed'}">Closed <span class="count">${closedN || ''}</span></button></div>`;
+  if (v0.mode === 'closed') return modes + closedViewHTML();
   if (!list.length) {
-    return `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
+    return modes + `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
   }
   const v = posView();
   const all = list.map((p) => ({ p, m: posMetrics(p) }));
@@ -1343,22 +1359,43 @@ function positionsViewHTML(): string {
           .join('')
       : `<div class="pr-list">${rows(shown)}</div>`;
 
-  const amt = (n: number) => `<b class="${n >= 0 ? 'up' : 'down'}">${sign(n)}${inr(Math.abs(n)).replace('−', '')}</b>`;
-  return `<section class="pr-summary">
-      ${filtered ? `<div class="pr-faint">${shown.length} of ${all.length} positions</div>` : ''}
-      <dl class="pr-pnls">
-        <dt>Today</dt><dd>${amt(day)}<span>${pct(day, dayBase)}</span></dd>
-        <dt>P&amp;L</dt><dd>${amt(gross)}<span>${pct(gross, own)} on your money, ${pct(gross, invested)} on total</span></dd>
-        <dt>If sold now</dt><dd>${amt(net)}<span>${pct(net, own)} on your money, after every charge and interest</span></dd>
-      </dl>
-      <div class="pr-sumstats">
-        <div><i>Your money</i>${inr(own)}</div>
-        <div><i>Total investment</i>${inr(invested)}</div>
-        <div><i>Value now</i>${inr(value)}</div>
-        <div><i>Fixed charges</i>${inr(sum((m) => m.costs.fixed))}</div>
-        <div><i>Interest so far</i>${inr(sum((m) => m.interest))}</div>
-        <div><i>Charges if sold now</i>${inr(sum((m) => m.costs.total))}</div>
+  const perDay = sum((m) => m.perDay);
+  const short = shown.filter((x) => posState(x.m) === 'short').length;
+  const rates = brokerRates();
+  const saving = (b: BrokerKey) => inr((100000 * rates[b].interest) / 1200);
+  const chip = (n: number, base: number) => `<span class="ps-chip ${n >= 0 ? 'up' : 'down'}">${pct(n, base)}</span>`;
+  const amount = (n: number) => `${sign(n)}${inr(Math.abs(n)).replace('−', '')}`;
+  return modes + `<section class="ps">
+      <div class="ps-top">
+        <div>
+          <div class="ps-label">Value now</div>
+          <div class="ps-value">${inr(value)}</div>
+          <div class="ps-sub">${inr(invested)} invested, ${inr(own)} of it your money</div>
+        </div>
+        <div class="ps-count">${filtered ? `${shown.length} of ${all.length}` : `${all.length} positions`}</div>
       </div>
+      <div class="ps-pair">
+        <div class="ps-cell">
+          <div class="ps-label">Today</div>
+          <div class="ps-amt ${day >= 0 ? 'up' : 'down'}">${amount(day)}</div>
+          ${chip(day, dayBase)}
+        </div>
+        <div class="ps-cell">
+          <div class="ps-label">Total P&amp;L</div>
+          <div class="ps-amt ${gross >= 0 ? 'up' : 'down'}">${amount(gross)}</div>
+          ${chip(gross, own)}<span class="ps-note">on your money, ${pct(gross, invested)} on total</span>
+        </div>
+      </div>
+      <div class="ps-row">
+        <span>If you sold everything now, after charges and interest</span>
+        <span class="ps-row-v"><b class="${net >= 0 ? 'up' : 'down'}">${amount(net)}</b>${chip(net, own)}</span>
+      </div>
+      <div class="ps-grid">
+        <div><i>Interest</i><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far</small></div>
+        <div><i>Fixed charges</i><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} on sale</small></div>
+        <button class="ps-margin${short ? ' is-short' : ''}" ${short ? 'data-posf="status:short"' : 'disabled'}><i>Margin</i><b>${short ? `${short} need a top-up` : 'All covered'}</b><small>${short ? 'Show them' : 'No position below its top-up level'}</small></button>
+      </div>
+      <p class="ps-save">Each ₹1 L of broker's money you pay back saves about ${saving('kotak')} a month at Kotak and ${saving('rupeezy')} at Rupeezy.</p>
     </section>
     ${positionsToolbarHTML(v, counts)}
     ${body}`;
@@ -1372,6 +1409,329 @@ function positionsBadge() {
     el.textContent = list.length ? String(list.length) : '';
     el.classList.toggle('warn-count', near);
   }
+}
+
+/* ---------- recorded sales (closed trades) ---------- */
+
+interface ClosedTrade {
+  id: string;
+  sym: string;
+  broker: BrokerKey;
+  qty: number;
+  buy: number;
+  sell: number;
+  buyDate: string;
+  sellDate: string;
+  lev: number;
+  charges: number; // every charge except interest
+  interest: number;
+  pnl: number; // after every charge and interest
+  own: number; // your money in this part of the position
+}
+
+const CLOSED_KEY = 'mtf.closed';
+const loadClosed = (): ClosedTrade[] => store<ClosedTrade[]>(CLOSED_KEY) ?? [];
+const saveClosed = (list: ClosedTrade[]) => {
+  store(CLOSED_KEY, list);
+  positionsChanged();
+};
+
+/* ---------- private positions sync ----------
+   Positions, closed trades and rates are encrypted in this browser (AES-GCM, key from your
+   passphrase via PBKDF2) and saved as data/positions.enc.json. The repo is public, so only the
+   ciphertext is visible; the passphrase never leaves your devices (and the repo secret, if you
+   add it for top-up warnings). The newest save wins. */
+
+const POS_FILE = 'data/positions.enc.json';
+const POS_PASS_KEY = 'mtf.posPass';
+const POS_AT_KEY = 'mtf.posAt';
+const KDF_ROUNDS = 200_000;
+const psync = { status: 'off' as 'off' | 'syncing' | 'synced' | 'error' | 'locked', sha: null as string | null, timer: 0, busy: false };
+
+const posUrl = () => `https://api.github.com/repos/${GH_REPO}/contents/${POS_FILE}`;
+const bytesB64 = (b: Uint8Array) => btoa(String.fromCharCode(...b));
+const b64Bytes = (s: string): Uint8Array<ArrayBuffer> => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+
+interface EncFile { v: 1; kdf: 'PBKDF2-SHA256'; iter: number; salt: string; iv: string; data: string }
+interface PosPayload { at: string; positions: Position[]; closed: ClosedTrade[]; rates: unknown }
+
+async function posKey(pass: string, salt: Uint8Array<ArrayBuffer>, iter: number): Promise<CryptoKey> {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: iter }, base,
+    { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+
+async function encryptPayload(pass: string, payload: PosPayload): Promise<EncFile> {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await posKey(pass, salt, KDF_ROUNDS);
+  const data = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(JSON.stringify(payload))));
+  return { v: 1, kdf: 'PBKDF2-SHA256', iter: KDF_ROUNDS, salt: bytesB64(salt), iv: bytesB64(iv), data: bytesB64(data) };
+}
+
+async function decryptPayload(pass: string, f: EncFile): Promise<PosPayload> {
+  const key = await posKey(pass, b64Bytes(f.salt), f.iter);
+  const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64Bytes(f.iv) }, key, b64Bytes(f.data));
+  return JSON.parse(new TextDecoder().decode(plain));
+}
+
+async function fetchPosFile(): Promise<{ file: EncFile | null; sha: string | null } | null> {
+  try {
+    const r = await fetch(`${posUrl()}?ref=${encodeURIComponent(GH_REF)}`, { headers: ghHeaders(), cache: 'no-store' });
+    if (r.status === 404) return { file: null, sha: null };
+    if (r.ok) {
+      const body = await r.json();
+      return { file: JSON.parse(b64decode(body.content)), sha: body.sha };
+    }
+  } catch {
+    /* offline */
+  }
+  return null;
+}
+
+const localPayload = (): PosPayload => ({
+  at: store<string>(POS_AT_KEY) || store(POS_AT_KEY, new Date().toISOString())!, positions: loadPositions(), closed: loadClosed(), rates: store(RATES_KEY) ?? {},
+});
+
+function applyPayload(p: PosPayload) {
+  store(POS_KEY, p.positions ?? []);
+  store(CLOSED_KEY, p.closed ?? []);
+  store(RATES_KEY, p.rates ?? {});
+  store(POS_AT_KEY, p.at);
+}
+
+function setPsync(status: typeof psync.status) {
+  psync.status = status;
+  const el = document.getElementById('possync');
+  if (el) el.outerHTML = posSyncHTML();
+}
+
+function posSyncHTML(): string {
+  if (!SYNC_ON) return '';
+  const on = !!store<string>(POS_PASS_KEY);
+  if (!on) {
+    return `<p class="sync local" id="possync"><span class="dot stale"></span>Positions are on this device only. <button class="link-btn" data-possync="on">Turn on private sync</button></p>`;
+  }
+  const msg = {
+    off: 'Private sync on', syncing: 'Saving positions (encrypted)…', synced: 'Positions synced, encrypted',
+    error: 'Couldn’t reach GitHub. Positions are kept here and will sync later.',
+    locked: 'The saved positions use a different passphrase.',
+  }[psync.status];
+  const dot = psync.status === 'synced' ? 'ok' : psync.status === 'syncing' || psync.status === 'off' ? '' : 'stale';
+  const fix = psync.status === 'locked' ? ' <button class="link-btn" data-possync="on">Enter passphrase</button>' : '';
+  return `<p class="sync ${psync.status}" id="possync"><span class="dot ${dot}"></span>${msg}.${fix} <button class="link-btn" data-possync="off">Turn off</button></p>`;
+}
+
+async function pullPositions(first = false): Promise<void> {
+  const pass = store<string>(POS_PASS_KEY);
+  if (!SYNC_ON || !pass || psync.busy) return;
+  const remote = await fetchPosFile();
+  if (!remote) return setPsync('error');
+  psync.sha = remote.sha;
+  if (!remote.file) return void pushPositions();
+  let p: PosPayload;
+  try {
+    p = await decryptPayload(pass, remote.file);
+  } catch {
+    return setPsync('locked');
+  }
+  let localAt = store<string>(POS_AT_KEY) ?? '';
+  if (first) {
+    // Joining sync: an empty side takes the other; if both have positions, the person picks.
+    const mine = loadPositions().length + loadClosed().length;
+    const theirs = (p.positions?.length ?? 0) + (p.closed?.length ?? 0);
+    const same = JSON.stringify([loadPositions(), loadClosed()]) === JSON.stringify([p.positions ?? [], p.closed ?? []]);
+    if (!same && mine && theirs && !confirm(`The synced copy has ${p.positions?.length ?? 0} open positions; this device has ${loadPositions().length}. OK uses the synced copy here. Cancel keeps this device’s and replaces the synced copy.`)) {
+      store(POS_AT_KEY, new Date().toISOString());
+      return void pushPositions();
+    }
+    localAt = mine && !theirs ? new Date().toISOString() : '';
+    store(POS_AT_KEY, localAt || null);
+    if (!localAt) p.at ||= new Date().toISOString();
+  }
+  if (p.at > localAt) {
+    applyPayload(p);
+    ensureHeldPinned();
+    setPsync('synced');
+    render();
+  } else if (localAt > p.at) {
+    return void pushPositions();
+  } else setPsync('synced');
+}
+
+async function pushPositions(retry = true): Promise<void> {
+  const pass = store<string>(POS_PASS_KEY);
+  if (!SYNC_ON || !pass || psync.busy || psync.status === 'locked') return;
+  if (!store<string>(GH_TOKEN_KEY)) return setPsync('error');
+  psync.busy = true;
+  setPsync('syncing');
+  try {
+    if (!psync.sha) psync.sha = (await fetchPosFile())?.sha ?? null;
+    const file = await encryptPayload(pass, localPayload());
+    const r = await fetch(posUrl(), {
+      method: 'PUT',
+      headers: { ...ghHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: 'positions: encrypted update',
+        content: b64encode(`${JSON.stringify(file)}\n`),
+        branch: GH_REF,
+        ...(psync.sha ? { sha: psync.sha } : {}),
+        committer: { name: 'mtf-bot', email: 'mtf-bot@users.noreply.github.com' },
+      }),
+    });
+    if ((r.status === 409 || r.status === 422) && retry) {
+      // Another device saved first: the newer copy wins (pull), then save again if ours is newer.
+      psync.sha = null;
+      psync.busy = false;
+      await pullPositions();
+      return;
+    }
+    if (!r.ok) throw new Error(String(r.status));
+    psync.sha = (await r.json()).content?.sha ?? null;
+    setPsync('synced');
+  } catch {
+    setPsync('error');
+  } finally {
+    psync.busy = false;
+  }
+}
+
+positionsChanged = () => {
+  store(POS_AT_KEY, new Date().toISOString());
+  if (!SYNC_ON || !store<string>(POS_PASS_KEY)) return;
+  clearTimeout(psync.timer);
+  psync.timer = window.setTimeout(pushPositions, 1500);
+};
+
+async function setPositionsPassphrase(on: boolean) {
+  if (!on) {
+    if (!confirm('Turn off private sync on this device? Positions stay here; the encrypted copy stays in the repo.')) return;
+    store(POS_PASS_KEY, null);
+    return setPsync('off');
+  }
+  if (!store<string>(GH_TOKEN_KEY)) {
+    toast('Connect GitHub first (Watchlist tab, below the list): sync saves through your token.');
+    return;
+  }
+  const pass = prompt('Passphrase for your positions (at least 10 characters). Use the same one on every device, and as the POSITIONS_PASSPHRASE repo secret for top-up warnings. It is never uploaded.')?.trim();
+  if (!pass) return;
+  if (pass.length < 10) return toast('Use at least 10 characters.');
+  store(POS_PASS_KEY, pass);
+  psync.status = 'off';
+  setPsync('syncing');
+  await pullPositions(true);
+}
+
+// The result of selling `qty` of a position at `price` on `date`, after every charge and interest to that day.
+function saleResult(pos: Position, qty: number, price: number, date: string): ClosedTrade {
+  const r = brokerRates()[pos.broker];
+  const lev = Math.max(1, pos.lev);
+  const own = (qty * pos.price) / lev;
+  const days = Math.max(0, Math.floor((Date.parse(date) - Date.parse(pos.date)) / 86_400_000));
+  const c = computeCosts(r, own, lev, days, (price / pos.price - 1) * 100);
+  return {
+    id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
+    sym: pos.sym, broker: pos.broker, qty, buy: pos.price, sell: price, buyDate: pos.date, sellDate: date, lev,
+    charges: c.fixed, interest: c.interest, pnl: (price - pos.price) * qty - c.total, own,
+  };
+}
+
+let selling: Position | null = null;
+
+function openSellSheet(id: string) {
+  const pos = loadPositions().find((p) => p.id === id);
+  if (!pos) return;
+  selling = pos;
+  const ltp = state.market?.prices[pos.sym]?.p ?? pos.price;
+  const sheet = $<HTMLDialogElement>('#sheet');
+  sheet.innerHTML = `
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <div><div class="sym big">Record sale</div><div class="name">${esc(pos.sym)}, ${BROKER_NAME[pos.broker]}: ${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}</div></div>
+        <div class="sheet-actions"><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      </div>
+      <div class="calc-inputs pos-inputs sell-inputs">
+        <label><span>Quantity sold</span><span class="calc-field"><input id="sell-qty" type="number" inputmode="numeric" min="1" max="${pos.qty}" step="1" value="${pos.qty}" /></span></label>
+        <label><span>Sell price</span><span class="calc-field"><span class="pre">₹</span><input id="sell-price" type="number" inputmode="decimal" min="0" step="any" value="${ltp}" /></span></label>
+        <label><span>Sell date</span><span class="calc-field"><input id="sell-date" type="date" value="${localISO()}" min="${pos.date}" max="${localISO()}" /></span></label>
+      </div>
+      <div id="sell-preview"></div>
+      <div class="sheet-buttons"><button class="btn btn-primary" id="sell-save">Save sale</button><button class="btn btn-ghost" data-close>Cancel</button></div>
+      <p class="muted small">Selling part of the position keeps the rest open. The result counts every charge and the interest up to the sell date.</p>
+    </div>`;
+  if (!sheet.open) sheet.showModal();
+  state.sheetSym = null;
+  renderSellPreview();
+}
+
+function readSale(): ClosedTrade | null {
+  if (!selling) return null;
+  const qty = Math.floor(Number(($<HTMLInputElement>('#sell-qty')).value));
+  const price = Number(($<HTMLInputElement>('#sell-price')).value);
+  const date = ($<HTMLInputElement>('#sell-date')).value || localISO();
+  if (!(qty > 0 && qty <= selling.qty) || !(price > 0) || date < selling.date) return null;
+  return saleResult(selling, qty, price, date);
+}
+
+function renderSellPreview() {
+  const box = document.getElementById('sell-preview');
+  if (!box) return;
+  const t = readSale();
+  box.innerHTML = t
+    ? `<dl class="pr-dl sell-dl">
+        <dt>Price move</dt><dd>${inr2((t.sell - t.buy) * t.qty)}</dd>
+        <dt>Charges</dt><dd>−${inr2(t.charges)}</dd>
+        <dt>Interest, ${Math.max(0, Math.floor((Date.parse(t.sellDate) - Date.parse(t.buyDate)) / 86_400_000))} days</dt><dd>−${inr2(t.interest)}</dd>
+        <dt>Realised P&amp;L</dt><dd><b class="${t.pnl >= 0 ? 'up' : 'down'}">${t.pnl >= 0 ? '+' : '−'}${inr2(Math.abs(t.pnl)).replace('−', '')}</b><small>${t.own ? `${((t.pnl / t.own) * 100).toFixed(1)}% on your money` : ''}</small></dd>
+      </dl>`
+    : '<p class="muted small">Enter a quantity up to what you hold, a price and a date on or after the buy date.</p>';
+  $<HTMLButtonElement>('#sell-save').disabled = !t;
+}
+
+function saveSale() {
+  const t = readSale();
+  if (!t || !selling) return;
+  const list = loadPositions();
+  const i = list.findIndex((p) => p.id === selling!.id);
+  if (i < 0) return;
+  if (t.qty >= list[i].qty) list.splice(i, 1);
+  else list[i] = { ...list[i], qty: list[i].qty - t.qty };
+  savePositions(list);
+  saveClosed([t, ...loadClosed()]);
+  $<HTMLDialogElement>('#sheet').close();
+  toast(`Sale recorded: ${t.pnl >= 0 ? '+' : '−'}${inr(Math.abs(t.pnl)).replace('−', '')} after charges`);
+  render();
+}
+
+function closedViewHTML(): string {
+  const list = loadClosed().sort((a, b) => b.sellDate.localeCompare(a.sellDate));
+  if (!list.length) return '<div class="empty"><p class="empty-title">No closed trades yet</p><p>Use “Record sale” on a position to keep its result here, after every charge and interest.</p></div>';
+  const total = list.reduce((t, x) => t + x.pnl, 0);
+  const own = list.reduce((t, x) => t + x.own, 0);
+  const charges = list.reduce((t, x) => t + x.charges, 0);
+  const interest = list.reduce((t, x) => t + x.interest, 0);
+  const wins = list.filter((x) => x.pnl >= 0).length;
+  const sign = (n: number) => (n >= 0 ? '+' : '−');
+  const rows = list.map((x) => {
+    const days = Math.max(0, Math.floor((Date.parse(x.sellDate) - Date.parse(x.buyDate)) / 86_400_000));
+    return `<article class="pr cl">
+      <div class="pr-line"><span class="pr-sym">${esc(x.sym)}</span><span class="pr-pnl ${x.pnl >= 0 ? 'up' : 'down'}">${sign(x.pnl)}${inr(Math.abs(x.pnl)).replace('−', '')}</span></div>
+      <div class="pr-line pr-meta"><span>${BROKER_SHORT[x.broker]} ${round1(x.lev)}×, ${x.qty.toLocaleString('en-IN')} bought ${rupeeShort(x.buy)}, sold ${rupeeShort(x.sell)}</span><span>${x.own ? `${sign(x.pnl)}${Math.abs((x.pnl / x.own) * 100).toFixed(1)}%` : ''}</span></div>
+      <div class="pr-day">${shortDate(x.buyDate)} to ${shortDate(x.sellDate)}, ${days} day${days === 1 ? '' : 's'}. Charges ${inr(x.charges)}, interest ${inr(x.interest)}</div>
+      <div class="pr-actions"><button class="pr-remove" data-closed-del="${esc(x.id)}">Delete record</button></div>
+    </article>`;
+  });
+  return `<section class="ps">
+      <div class="ps-top"><div><div class="ps-label">Realised P&amp;L</div><div class="ps-value ${total >= 0 ? 'up' : 'down'}">${sign(total)}${inr(Math.abs(total)).replace('−', '')}</div>
+        <div class="ps-sub">${own ? `${sign(total)}${Math.abs((total / own) * 100).toFixed(1)}% on ${inr(own)} of your money, after every charge and interest` : ''}</div></div>
+        <div class="ps-count">${list.length} trade${list.length === 1 ? '' : 's'}</div></div>
+      <div class="ps-grid">
+        <div><i>Won</i><b>${wins} of ${list.length}</b></div>
+        <div><i>Charges paid</i><b>${inr(charges)}</b></div>
+        <div><i>Interest paid</i><b>${inr(interest)}</b></div>
+      </div>
+    </section>
+    <div class="pr-list">${rows.join('')}</div>`;
 }
 
 function savePositionFromForm(sym: string) {
@@ -2434,6 +2794,22 @@ function bind() {
       return;
     }
     if (t.closest('#pos-export')) return exportPositions();
+    const ps = t.closest<HTMLElement>('[data-possync]');
+    if (ps) return void setPositionsPassphrase(ps.dataset.possync === 'on');
+    const sell = t.closest<HTMLElement>('[data-sell]');
+    if (sell) return openSellSheet(sell.dataset.sell!);
+    if (t.closest('#sell-save')) return saveSale();
+    const cdel = t.closest<HTMLElement>('[data-closed-del]');
+    if (cdel) {
+      if (!confirm('Delete this closed trade record?')) return;
+      saveClosed(loadClosed().filter((x) => x.id !== cdel.dataset.closedDel));
+      return renderList();
+    }
+    const pm = t.closest<HTMLElement>('[data-posmode]');
+    if (pm) {
+      store(POS_VIEW_KEY, { ...posView(), mode: pm.dataset.posmode });
+      return renderList();
+    }
     const pf = t.closest<HTMLElement>('[data-posf]');
     if (pf) {
       const [key, value] = pf.dataset.posf!.split(':');
@@ -2455,6 +2831,7 @@ function bind() {
     }
     if (t.closest('[data-reset-rates]')) {
       store(RATES_KEY, {});
+      positionsChanged();
       if (state.sheetSym) openSheet(state.sheetSym);
       return;
     }
@@ -2525,6 +2902,10 @@ function bind() {
 
   document.addEventListener('input', (e) => {
     const t = e.target as HTMLInputElement;
+    if (t.id === 'sell-qty' || t.id === 'sell-price' || t.id === 'sell-date') {
+      renderSellPreview();
+      return;
+    }
     if (t.dataset.calc) {
       const v = calcInputs();
       const n = Number(t.value);
@@ -2537,6 +2918,7 @@ function bind() {
       if (t.value === '' || !Number.isFinite(n) || n < 0) return;
       const saved = store<Partial<Record<BrokerKey, Partial<BrokerRates>>>>(RATES_KEY) ?? {};
       store(RATES_KEY, { ...saved, [b]: { ...saved[b], [k]: n } });
+      positionsChanged();
       renderCalc();
     }
   });
@@ -2625,9 +3007,11 @@ async function boot() {
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible') return;
     if (!sync.busy) pullPins();
+    pullPositions();
     checkRun();
   });
   pullPins();
+  pullPositions();
 
   bind();
   updateRefreshCooldown();

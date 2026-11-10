@@ -58,6 +58,14 @@ jobs:
       - name: Merge
         run: python merge.py
 
+      # Decrypts the synced positions for top-up warnings and builds the 08:00 IST summary.
+      # Only hashes and the summary date are committed; the readable output is gitignored.
+      - name: Portfolio checks and morning summary
+        continue-on-error: true
+        run: python scripts/portfolio.py
+        env:
+          POSITIONS_PASSPHRASE: ${{ secrets.POSITIONS_PASSPHRASE }}
+
       - name: Commit if changed
         run: |
           git add data public/data
@@ -74,7 +82,7 @@ jobs:
           done
           exit 1
 
-      # Push this run's watchlist changes to the phone (Telegram and/or ntfy, if their secrets are set).
+      # Push this run's watchlist changes, top-up warnings and the morning summary to the phone (Telegram and/or ntfy, if their secrets are set).
       - name: Notify
         continue-on-error: true
         run: python scripts/notify.py
