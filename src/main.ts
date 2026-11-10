@@ -1137,24 +1137,9 @@ function shareBuyFees(c: CostBreakdown, r: BrokerRates, share: number): CostBrea
   return { ...c, total: c.total - cut, fixed: c.fixed - cut, buySide: c.buySide - cut };
 }
 
-// Brokers differ in what "invested" means. Kotak Neo folds the buy-side trade charges (brokerage, its GST,
-// stamp duty, exchange and SEBI fees; not STT or the pledge fee) into the average price; Rupeezy shows the
-// plain trade price. Matching each keeps invested, P&L and returns equal to what the broker app shows.
-const AVG_HAS_BUY_CHARGES: Record<BrokerKey, boolean> = { kotak: true, rupeezy: false };
-
-function brokerInvested(broker: BrokerKey, qty: number, price: number): number {
-  const v = qty * price;
-  if (!AVG_HAS_BUY_CHARGES[broker]) return v;
-  const r = brokerRates()[broker];
-  const pc = (x: number, rate: number) => (x * rate) / 100;
-  const brok = pc(v, r.brokPct) + r.brokFlat;
-  const fees = pc(v, STATUTORY.txn) + pc(v, STATUTORY.sebi);
-  return v + brok + fees + pc(v, STATUTORY.stamp) + pc(brok + fees, STATUTORY.gst);
-}
-
 interface PosMetrics {
   buyValue: number; // quantity × trade price
-  invested: number; // what the broker app shows as invested (see AVG_HAS_BUY_CHARGES)
+  invested: number; // quantity × trade price, for every broker (charges are counted in net P&L)
   own: number;
   funded: number;
   days: number;
@@ -1191,7 +1176,7 @@ function posMetrics(pos: Position): PosMetrics {
   const buyValue = pos.qty * pos.price;
   const own = buyValue / lev;
   const funded = buyValue - own;
-  const invested = brokerInvested(pos.broker, pos.qty, pos.price);
+  const invested = buyValue;
   const days = Math.max(0, Math.floor((Date.parse(localISO()) - Date.parse(pos.date)) / 86_400_000));
   const interest = (funded * r.interest * days) / 36500;
   const perDay = (funded * r.interest) / 36500;
