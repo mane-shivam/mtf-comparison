@@ -4824,3 +4824,15 @@ body.positions-view #summary {
   width: 100%;
   justify-content: center;
 }
+
+.broker-sync {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.broker-sync > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

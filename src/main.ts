@@ -879,7 +879,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}
+    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}${brokerSyncHTML()}
       <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the margin % the broker asks for it today (from the hourly MTF data, so a raised margin shows up here), and gains on one stock cover losses on another at the same broker. A stock the broker stops funding needs its full value. Brokers set their own timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
@@ -1598,6 +1598,38 @@ async function decryptPayload(pass: string, f: EncFile): Promise<PosPayload> {
   const key = await posKey(pass, b64Bytes(f.salt), f.iter);
   const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64Bytes(f.iv) }, key, b64Bytes(f.data));
   return JSON.parse(new TextDecoder().decode(plain));
+}
+
+/* Broker accounts, read from the brokers' APIs by the refresh job (scripts/brokers.py), encrypted with the
+   same passphrase. Holdings are shown as synced once their fields are mapped; for now the status shows. */
+interface BrokerSnap { at: string; brokers: Record<string, { ok: boolean; at: string | null; error?: string; failedAt?: string; raw?: Record<string, unknown> }> }
+let brokerSnap: BrokerSnap | null = null;
+
+async function loadBrokerSnapshot(): Promise<void> {
+  const pass = store<string>(POS_PASS_KEY);
+  if (!SYNC_ON || !pass) return;
+  try {
+    const r = await fetch(`https://raw.githubusercontent.com/${GH_REPO}/${GH_REF}/data/broker.enc.json?t=${Date.now()}`, { cache: 'no-store' });
+    if (!r.ok) return;
+    brokerSnap = (await decryptPayload(pass, await r.json())) as unknown as BrokerSnap;
+    const el = document.getElementById('brokersync');
+    if (el) el.outerHTML = brokerSyncHTML();
+  } catch {
+    /* not set up yet, offline, or a different passphrase */
+  }
+}
+
+function brokerSyncHTML(): string {
+  if (!SYNC_ON || !store<string>(POS_PASS_KEY)) return '<span id="brokersync"></span>';
+  const item = (b: BrokerKey) => {
+    const x = brokerSnap?.brokers[b];
+    if (!x) return `<span><span class="dot"></span>${BROKER_SHORT[b]}: not connected</span>`;
+    const when = x.at ? fmtTime(x.at) : 'never';
+    return x.ok
+      ? `<span><span class="dot ok"></span>${BROKER_SHORT[b]}: synced ${when}</span>`
+      : `<span title="${esc(x.error ?? '')}"><span class="dot stale"></span>${BROKER_SHORT[b]}: last synced ${when}, latest attempt failed</span>`;
+  };
+  return `<p class="sync broker-sync" id="brokersync">${item('kotak')}${item('rupeezy')}</p>`;
 }
 
 async function fetchPosFile(): Promise<{ file: EncFile | null; sha: string | null } | null> {
@@ -3194,10 +3226,12 @@ async function boot() {
     if (document.visibilityState !== 'visible') return;
     if (!sync.busy) pullPins();
     pullPositions();
+    loadBrokerSnapshot();
     checkRun();
   });
   pullPins();
   pullPositions();
+  loadBrokerSnapshot();
 
   bind();
   updateRefreshCooldown();

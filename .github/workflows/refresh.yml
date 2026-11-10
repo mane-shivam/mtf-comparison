@@ -58,6 +58,24 @@ jobs:
       - name: Merge
         run: python merge.py
 
+      # Read-only pull of holdings, positions, trades and funds from the brokers' APIs, saved encrypted
+      # (data/broker.enc.json). Skipped for a broker whose secrets aren't set.
+      - name: Broker accounts (read-only)
+        continue-on-error: true
+        run: python scripts/brokers.py
+        env:
+          POSITIONS_PASSPHRASE: ${{ secrets.POSITIONS_PASSPHRASE }}
+          KOTAK_ACCESS_TOKEN: ${{ secrets.KOTAK_ACCESS_TOKEN }}
+          KOTAK_TOTP_SECRET: ${{ secrets.KOTAK_TOTP_SECRET }}
+          KOTAK_MOBILE: ${{ secrets.KOTAK_MOBILE }}
+          KOTAK_UCC: ${{ secrets.KOTAK_UCC }}
+          KOTAK_MPIN: ${{ secrets.KOTAK_MPIN }}
+          RUPEEZY_API_KEY: ${{ secrets.RUPEEZY_API_KEY }}
+          RUPEEZY_APP_ID: ${{ secrets.RUPEEZY_APP_ID }}
+          RUPEEZY_CLIENT_CODE: ${{ secrets.RUPEEZY_CLIENT_CODE }}
+          RUPEEZY_PASSWORD: ${{ secrets.RUPEEZY_PASSWORD }}
+          RUPEEZY_TOTP_SECRET: ${{ secrets.RUPEEZY_TOTP_SECRET }}
+
       # Decrypts the synced positions for top-up warnings and builds the 08:00 IST summary.
       # Only hashes and the summary date are committed; the readable output is gitignored.
       - name: Portfolio checks and morning summary
