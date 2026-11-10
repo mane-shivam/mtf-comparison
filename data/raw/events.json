@@ -1,37 +1,20 @@
 {
-<<<<<<< Updated upstream
-"fetchedAt": "2026-11-10T10:43:54Z",
+"fetchedAt": "2026-11-10T10:47:22Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-10T10:43:47Z",
-=======
-"fetchedAt": "2026-11-10T10:42:03Z",
-"sources": {
-"ban": {
-"status": "ok",
-"fetchedAt": "2026-11-10T10:41:57Z",
->>>>>>> Stashed changes
+"fetchedAt": "2026-11-10T10:47:17Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-<<<<<<< Updated upstream
-"fetchedAt": "2026-11-10T10:43:48Z",
-=======
-"fetchedAt": "2026-11-10T10:41:57Z",
->>>>>>> Stashed changes
+"fetchedAt": "2026-11-10T10:47:18Z",
 "error": null
 },
 "events": {
 "status": "ok",
-<<<<<<< Updated upstream
-"fetchedAt": "2026-11-10T10:43:54Z",
-"count": 818,
-=======
-"fetchedAt": "2026-11-10T10:42:03Z",
+"fetchedAt": "2026-11-10T10:47:22Z",
 "count": 859,
->>>>>>> Stashed changes
 "error": null
 }
 },

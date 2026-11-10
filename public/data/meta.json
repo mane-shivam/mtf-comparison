@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T10:46:55Z",
+  "generatedAt": "2026-11-10T10:47:22Z",
   "surveillance": {
     "fetchedAt": "2026-11-10T10:43:47Z",
     "sources": {
@@ -12,8 +12,25 @@
     }
   },
   "events": {
-    "fetchedAt": null,
-    "sources": {}
+    "fetchedAt": "2026-11-10T10:47:22Z",
+    "sources": {
+      "ban": {
+        "status": "ok",
+        "fetchedAt": "2026-11-10T10:47:17Z",
+        "error": null
+      },
+      "bands": {
+        "status": "ok",
+        "fetchedAt": "2026-11-10T10:47:18Z",
+        "error": null
+      },
+      "events": {
+        "status": "ok",
+        "fetchedAt": "2026-11-10T10:47:22Z",
+        "count": 859,
+        "error": null
+      }
+    }
   },
   "market": {
     "fetchedAt": "2026-11-10T10:41:32Z",
