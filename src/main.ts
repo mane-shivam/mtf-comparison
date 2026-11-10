@@ -742,7 +742,10 @@ function renderStatus() {
   const dots = BROKERS.map((b) => {
     const info = m.brokers[b];
     const age = info.status === 'stale' ? ` <span class="age">${fmtAge(info.fetchedAt)}</span>` : '';
-    return `<button class="dot-btn" data-broker="${b}" aria-label="${BROKER_NAME[b]}: ${info.status}"><span class="dot ${info.status}"></span>${BROKER_SHORT[b]}${age}</button>`;
+    // With account sync on, the dot also turns amber when the account sync needs attention.
+    const acct = accountSyncState(b);
+    const dot = info.status !== 'ok' ? info.status : acct === 'attention' ? 'stale' : 'ok';
+    return `<button class="dot-btn" data-broker="${b}" aria-label="${BROKER_NAME[b]}: ${dot}"><span class="dot ${dot}"></span>${BROKER_SHORT[b]}${age}</button>`;
   }).join('');
   $('#status').innerHTML = `<span class="updated">Updated ${fmtTime(m.generatedAt)}</span>${runHTML()}<span class="dots">${dots}</span>`;
 }
@@ -879,7 +882,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}${brokerSyncHTML()}
+    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}
       <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the margin % the broker asks for it today (from the hourly MTF data, so a raised margin shows up here), and gains on one stock cover losses on another at the same broker. A stock the broker stops funding needs its full value. Brokers set their own timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
@@ -1621,27 +1624,10 @@ async function loadBrokerSnapshot(): Promise<void> {
       file = await r.json();
     }
     brokerSnap = (await decryptPayload(pass, file!)) as unknown as BrokerSnap;
-    const el = document.getElementById('brokersync');
-    if (el) el.outerHTML = brokerSyncHTML();
-    else if (state.view === 'positions') renderList();
+    renderStatus();
   } catch {
     /* not set up yet, offline, or a different passphrase */
   }
-}
-
-function brokerSyncHTML(): string {
-  if (!SYNC_ON || !store<string>(POS_PASS_KEY)) return '<span id="brokersync"></span>';
-  const item = (b: BrokerKey) => {
-    const x = brokerSnap?.brokers[b];
-    if (!x) return `<span><span class="dot"></span>${BROKER_SHORT[b]}: not connected</span>`;
-    const when = x.at ? fmtTime(x.at) : 'never';
-    return x.ok
-      ? `<span><span class="dot ok"></span>${BROKER_SHORT[b]}: synced ${when}</span>`
-      : `<span title="${esc(x.error ?? '')}"><span class="dot stale"></span>${BROKER_SHORT[b]}: last synced ${when}, latest attempt failed</span>`;
-  };
-  const rz = brokerSnap?.brokers.rupeezy;
-  const connect = !rz?.ok ? '<button class="btn btn-ghost btn-sm" data-connect-rupeezy>Connect Rupeezy</button>' : '';
-  return `<div class="broker-sync-wrap" id="brokersync"><p class="sync broker-sync">${item('kotak')}${item('rupeezy')}</p>${connect}</div>`;
 }
 
 /* Sign in with Rupeezy: Rupeezy's page sends you back with a one-time ?auth= code. It is saved encrypted
@@ -2746,8 +2732,31 @@ function showPopover(btn: HTMLElement, b: BrokerKey) {
   const info = state.meta!.brokers[b];
   const label = { ok: 'Up to date', stale: 'Stale, showing last good data', failed: 'Failed' }[info.status];
   showPanel(btn, `<div class="pop-title"><span class="dot ${info.status}"></span>${BROKER_NAME[b]}</div>
+    <p class="pop-sec">MTF list</p>
     <dl><dt>Status</dt><dd>${label}</dd><dt>Stocks</dt><dd>${fmtNum(info.count)}</dd><dt>Last fetch</dt><dd>${fmtTime(info.fetchedAt)}</dd></dl>
-    ${info.error ? `<p class="pop-err">${esc(info.error)}</p>` : ''}`);
+    ${info.error ? `<p class="pop-err">${esc(info.error)}</p>` : ''}
+    ${accountPopHTML(b)}`);
+}
+
+// Account sync for one broker: 'off' (no passphrase or not set up), 'ok', or 'attention'.
+function accountSyncState(b: BrokerKey): 'off' | 'ok' | 'attention' {
+  if (!SYNC_ON || !store<string>(POS_PASS_KEY)) return 'off';
+  const x = brokerSnap?.brokers[b];
+  if (!x) return b === 'rupeezy' && brokerSnap ? 'attention' : 'off';
+  return x.ok ? 'ok' : 'attention';
+}
+
+function accountPopHTML(b: BrokerKey): string {
+  if (!SYNC_ON || !store<string>(POS_PASS_KEY)) return '';
+  const x = brokerSnap?.brokers[b];
+  const rows = !x
+    ? `<dt>Status</dt><dd>Not connected</dd>`
+    : x.ok
+      ? `<dt>Status</dt><dd>Synced</dd><dt>Last sync</dt><dd>${fmtTime(x.at)}</dd>${(x.raw as { _errors?: Record<string, string> } | undefined)?._errors ? `<dt>Partial</dt><dd>${Object.keys((x.raw as { _errors: Record<string, string> })._errors).join(', ')} unavailable</dd>` : ''}`
+      : `<dt>Status</dt><dd>Latest sync failed</dd><dt>Last good</dt><dd>${x.at ? fmtTime(x.at) : 'never'}</dd>`;
+  const err = x && !x.ok && x.error ? `<p class="pop-err">${esc(x.error)}</p>` : '';
+  const connect = b === 'rupeezy' && (!x || !x.ok) ? '<button class="btn btn-primary btn-sm pop-btn" data-connect-rupeezy>Connect Rupeezy</button>' : '';
+  return `<p class="pop-sec">Your account</p><dl>${rows}</dl>${err}${connect}`;
 }
 
 // Everything flagged on a stock, in plain words: what a tapped pill opens.
