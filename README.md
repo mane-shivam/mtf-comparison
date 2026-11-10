@@ -1,103 +1,58 @@
 # MTF Compare
 
-One page that shows the MTF leverage Kotak Neo and Rupeezy offer for every NSE stock and ETF, flags which broker gives the most, and works out the full cost of a trade at each (calculator in each stock's detail sheet; formulas and sources in `src/calc.ts`).
+A personal dashboard for margin trading (MTF) on NSE. It compares Kotak Neo and Rupeezy leverage for every stock and ETF, tracks open MTF positions, and sends alerts for changes that affect them.
 
-For personal reference. Check the broker app before placing an order.
+## What it does
 
-## How it works
+- **Leverage comparison.** Shows each broker's multiplier for about 2,200 NSE stocks and ETFs. Brokers within 0.2× of the top count as best.
+- **Risk flags.** Covers ASM, GSM and ESM stages, the F&O ban, price bands and trade-to-trade, board meetings and results, corporate actions, and adverse announcements.
+- **Cost calculator.** Works out brokerage, statutory charges, depository fees and interest for each broker. Formulas and sources are in `src/calc.ts`.
+- **Positions.**
+  - P&L before and after every charge and interest. Returns are shown on total investment and on own money.
+  - Interest per day and per month.
+  - Margin checked per broker account using each broker's current rate for the stock.
+  - Recorded sales, and realised P&L as of now.
+- **Alerts.** Each refresh compares pinned stocks with the last refresh. Changes appear under the bell and go to the phone, along with margin top-up warnings and an 08:00 IST summary.
+
+## How it runs
 
 ```
-GitHub Actions (hourly 08:00-18:00 IST, then 22:00, 02:00, 06:00 IST, or the Refresh button)
-  └─ scrapers/*.py  → data/raw/<broker>.json      (last good file kept on failure)
-  └─ merge.py       → public/data/mtf.json, meta.json, unmatched.json, history.json
-  └─ commit         → Vercel redeploys the static site
+keeper.yml        starts each refresh on time (hourly 08:00-18:00 IST, then 22:00, 02:00, 06:00)
+refresh.yml       scrapers/*.py → merge.py → alerts.py → scripts/portfolio.py → commit → notify → deploy
+pages.yml         builds the Vite site and publishes it to GitHub Pages
 ```
 
-The browser loads `mtf.json` once (about 65 KB gzipped for ~2,200 stocks) and searches it locally.
+A scraper that fails keeps its last good data and is marked stale. Saved broker responses in `samples/` back the parser tests.
 
-## Data sources (recon, 28 Oct 2026)
+## Data and privacy
 
-| Broker | Route used | Rows | Notes |
-| --- | --- | --- | --- |
-| Kotak Neo | HTML table, `/margin-requirement/margin-trading/{page}/` | 1,709 (58 pages) | NSE symbol in the table; page count read from `totalPages` on page 1. Leverage 1 = not funded. |
-| Rupeezy | JSON `rupeezy.in/api/mtf-stocks?page=N&pageSize=100` | 2,198 (22 pages) | Symbol and ISIN in the JSON even though the table hides them. Multiplier below 1 = not funded. |
-| NSE | `EQUITY_L.csv`, `eq_etfseclist.csv` | 2,975 | Master list for matching. |
+| Data | Where it lives |
+| --- | --- |
+| Watchlist | `data/pins.json`, public |
+| Positions, closed trades, rates, earlier P&L | `data/positions.enc.json`, encrypted in the browser (AES-256-GCM, key from the passphrase with PBKDF2-SHA256, 200,000 rounds) |
+| Decrypted portfolio output | Built in the Actions runner only; the output files are gitignored and never committed |
 
-Saved responses are in `samples/` and the parser tests run against them.
+The passphrase and tokens are never stored in the repo.
 
-**Matching:** overrides.csv → ISIN → broker's own NSE symbol → exact normalised name → rapidfuzz ≥ 92 → `unmatched.json` (shown in the page's "Needs matching" panel). On the first run every row matched.
+## Setup
 
-## Market data for open positions
+**Repository secrets** (Settings → Secrets and variables → Actions):
 
-`scrapers/market.py` collects, each refresh: prices for pinned stocks (Yahoo Finance, since NSE's quote API
-refuses servers), NSE exchange margin per stock (C_VAR1: VaR + ELM + ad hoc, which brokers set MTF leverage
-from), F&O open interest vs the market-wide limit (combineoi), delivery % (bhavcopy, 30-session history kept
-in `data/market_hist.json`), bulk and block deals (7 days) and promoter pledges. Results filings come from
-NSE announcements (`scrapers/events.py`).
+| Secret | Purpose |
+| --- | --- |
+| `POSITIONS_PASSPHRASE` | The same passphrase used for private sync on the site. Enables top-up warnings and portfolio figures in the summary. |
+| `NTFY_TOPIC` | Phone notifications through the ntfy app. Use a long random topic. |
+| `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Optional second channel. |
 
-**Positions** (the Positions tab) are saved only in the browser: P&L after all charges, interest so far,
-break-even today and the price below which a margin top-up is needed. Export/Import moves them between devices.
+**Browser:** connect a fine-grained GitHub token, limited to this repo with Contents and Actions set to Read and write. The site needs it to save pins and positions and to start refreshes. Then turn on private sync in the Positions tab.
 
-## Watchlist alerts and phone notifications
-
-Every refresh compares each pinned stock with the previous refresh (`alerts.py`) and records changes:
-multiplier up or down, dropped from or added to a broker's MTF list, entering, leaving or changing stage on
-ASM/GSM/ESM, F&O ban in or out, price band or trade-to-trade changes, newly announced events or
-flagged announcements, exchange margin moves, F&O open interest crossing 80%/90%, Kotak exposure cap changes,
-promoter pledge changes, bulk/block deals, ±5% days, lower/upper circuit, 52-week high/low, volume ≥3× and
-delivery spikes (price alerts at most once per day), and results filings. They appear under the bell on the site (last 30 days) and, if set up, on your phone.
-A newly pinned stock only sets its baseline, so pinning never floods the feed.
-
-Phone notifications go out from the refresh workflow (`scripts/notify.py`). Set either channel as
-repository secrets (Settings → Secrets and variables → Actions → New repository secret):
-
-- **Telegram**: message @BotFather → `/newbot` → copy the token into `TELEGRAM_BOT_TOKEN`. Send any message
-  to your new bot, open `https://api.telegram.org/bot<token>/getUpdates`, and copy `chat.id` into `TELEGRAM_CHAT_ID`.
-- **ntfy**: install the ntfy app, subscribe to a long random topic (e.g. `mtf-7f3k9q2x8w`), and put the same
-  name in `NTFY_TOPIC`. Anyone who knows the topic can read it, so keep it random.
-
-## Local development
-
-Data files under `data/` and `public/data/` are rewritten by the bot on every refresh. Never merge them by
-hand: take the bot's copies (`git checkout origin/<branch> -- data public/data`) and re-run the scrapers and
-`merge.py` instead.
+## Development
 
 ```bash
-pip install -r requirements.txt
-python scrapers/nse.py && python scrapers/kotak.py && python scrapers/rupeezy.py && python scrapers/surveillance.py
-python merge.py
-python -m pytest -q
-
-npm install
-npm run dev        # http://localhost:5173
+pip install -r requirements.txt && python -m pytest -q
+npm install && npm run dev
 ```
 
-## Deploy: GitHub Pages
+The bot rewrites the files under `data/` and `public/data/` on every refresh. Never merge them by hand. Take the bot's copies and re-run the scrapers and `merge.py`.
 
-1. Repo → Settings → Pages → Build and deployment → Source: **GitHub Actions**. (Pages on a private repo needs a paid GitHub plan, and the published site is public to anyone with the link.)
-2. Actions → "Deploy to GitHub Pages" → Run workflow. The site goes to `https://<owner>.github.io/<repo>/`.
-3. Every data refresh redeploys the site (`refresh.yml` calls `pages.yml`).
-4. Refresh button on Pages: there is no server, so the button asks once for a GitHub fine-grained token (this repo only, **Actions: Read and write**) and keeps it in that browser's storage.
-
-## Deploy: Vercel (alternative)
-
-1. GitHub runs scheduled workflows only from the default branch, so keep the workflows there.
-2. Import the repo in Vercel. `vercel.json` sets the Vite build and `dist/` output.
-3. In Vercel → Settings → Environment Variables add:
-   - `GITHUB_TOKEN`: fine-grained token, this repo only, **Actions: Read and write**.
-   - `REFRESH_PASSCODE`: any short passcode. The page asks for it once and remembers it.
-   - Optional `GITHUB_BRANCH` (default `main`) and `GITHUB_REPO` (default: the repo Vercel deploys).
-4. Optional backup cron: point cron-job.org at `POST https://<site>/api/refresh` with header `x-refresh-passcode: <passcode>` at 04:30, 10:45 and 14:30 UTC.
-
-`/api/refresh` refuses a new run if one started in the last 10 minutes or is still running.
-
-## Files
-
-| Path | What |
-| --- | --- |
-| `scrapers/` | One scraper per broker plus the NSE master list |
-| `merge.py` | Matching, best broker with ties, daily history, `meta.json` status |
-| `data/overrides.csv` | Hand fixes: broker, name → symbol |
-| `data/history/` | One snapshot per IST day (90 days kept); powers ▲/▼ and the 7-day table |
-| `src/` | Frontend (Vite + vanilla TypeScript) |
-| `api/refresh.js` | Vercel function that triggers the workflow |
+Check the broker app before placing an order. Margins and charges here are estimates.
