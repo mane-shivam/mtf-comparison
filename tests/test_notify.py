@@ -11,11 +11,12 @@ def test_compose_orders_by_severity_and_adds_link():
         {"symbol": "MTARTECH", "level": "alert", "text": "LT-ASM stage I → II"},
         {"symbol": "HFCL", "level": "good", "text": "Exited LT-ASM IV"},
     ]
-    title, body = notify.compose(alerts, "https://example.github.io/mtf/")
-    assert title == "MTF Compare: 3 changes in your watchlist (1 serious)"
+    title, body = notify.compose(alerts)
+    assert title == "3 watchlist changes, 1 serious"
     assert body.splitlines()[:3] == ["🔴 MTARTECH: LT-ASM stage I → II", "🟢 HFCL: Exited LT-ASM IV",
                                      "🔵 ABB: Results on 13 Nov (board meeting announced)"]
-    assert body.endswith("https://example.github.io/mtf/")
+    assert len(body.splitlines()) == 3  # the site opens from the notification itself
+    assert notify.short("Rupeezy leverage cut 3.5× → 3.4×: you need more margin") == "Rupeezy leverage cut 3.5× → 3.4×"
 
 
 def test_no_alerts_sends_nothing(tmp_path, monkeypatch):

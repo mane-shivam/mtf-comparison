@@ -25,24 +25,38 @@ ORDER = {"alert": 0, "watch": 1, "good": 2, "info": 3}
 MAX_LINES = 40
 
 
-def compose(alerts: list[dict], site: str | None) -> tuple[str, str]:
-    """(title, body): most serious first, one line per change."""
+# Site wording explains itself ("…: you need more margin"); a notification only needs the change.
+TRIM = (": you need more margin", ": you need less margin", ": a broker leverage cut may follow",
+        ". Convert or close an existing position.", ": selling may not fill", ": read the filing")
+
+
+def short(text: str) -> str:
+    for t in TRIM:
+        text = text.replace(t, "")
+    return text
+
+
+def line(a: dict) -> str:
+    return f"{ICON.get(a['level'], '•')} {a['symbol']}: {short(a['text'])}"
+
+
+def compose(alerts: list[dict], site: str | None = None) -> tuple[str, str]:
+    """(title, body): most serious first, one short line per change."""
     alerts = sorted(alerts, key=lambda a: (ORDER.get(a["level"], 9), a["symbol"]))
-    lines = [f"{ICON.get(a['level'], '•')} {a['symbol']}: {a['text']}" for a in alerts[:MAX_LINES]]
+    lines = [line(a) for a in alerts[:MAX_LINES]]
     if len(alerts) > MAX_LINES:
-        lines.append(f"…and {len(alerts) - MAX_LINES} more")
+        lines.append(f"+{len(alerts) - MAX_LINES} more")
     serious = sum(a["level"] == "alert" for a in alerts)
-    title = f"MTF Compare: {len(alerts)} change{'s' if len(alerts) != 1 else ''} in your watchlist"
-    if serious:
-        title += f" ({serious} serious)"
-    if site:
-        lines += ["", site]
+    n = len(alerts)
+    title = f"{n} watchlist change{'s' if n != 1 else ''}" + (f", {serious} serious" if serious else "")
     return title, "\n".join(lines)
 
 
-def send_telegram(token: str, chat: str, title: str, body: str) -> None:
+def send_telegram(token: str, chat: str, title: str, body: str, site: str | None = None) -> None:
+    text = f"{title}\n{body}" + (f"\n{site}" if site else "")
     r = requests.post(f"https://api.telegram.org/bot{token}/sendMessage", timeout=20,
-                      json={"chat_id": chat, "text": f"{title}\n\n{body}"[:4000], "disable_web_page_preview": True})
+                      json={"chat_id": chat, "text": text[:4000],
+                            "disable_web_page_preview": True})
     r.raise_for_status()
 
 
@@ -55,22 +69,24 @@ def send_ntfy(topic: str, title: str, body: str, site: str | None, serious: bool
     r.raise_for_status()
 
 
-def messages(site: str | None) -> list[tuple[str, str, bool]]:
+def messages(site: str | None = None) -> list[tuple[str, str, bool]]:
     """(title, body, serious) for each message this run sends: top-up warnings, watchlist changes, summary."""
     out = []
     private = json.loads(PRIVATE.read_text()) if PRIVATE.exists() else []
     if private:
-        n = len(private)
-        title = f"MTF Compare: margin top-up {'needed' if any(a['level'] == 'alert' for a in private) else 'close'}"
-        body = "\n".join(f"{ICON.get(a['level'], '•')} {a['symbol']}: {a['text']}" for a in private)
-        out.append((title if n == 1 else f"{title} ({n} positions)", body + (f"\n\n{site}" if site else ""), True))
+        private = sorted(private, key=lambda a: ORDER.get(a["level"], 9))
+        top = private[0]
+        title = (f"Top-up needed: {top['symbol']} {top['text']}" if top["level"] == "alert"
+                 else f"Margin low: {top['symbol']}")
+        rest = private[1:] if top["level"] == "alert" else private
+        out.append((title, "\n".join(line(a) for a in rest) or "Add funds or reduce positions", True))
     alerts = json.loads(NEW.read_text()) if NEW.exists() else []
     if alerts:
-        title, body = compose(alerts, site)
+        title, body = compose(alerts)
         out.append((title, body, any(a["level"] == "alert" for a in alerts)))
     if SUMMARY.exists():
         s = json.loads(SUMMARY.read_text())
-        out.append((s["title"], "\n".join(s["lines"]) + (f"\n\n{site}" if site else ""), False))
+        out.append((s["title"], "\n".join(s["lines"]), False))
     return out
 
 
@@ -85,7 +101,7 @@ def main() -> int:
     for title, body, serious in msgs:
         if token and chat:
             try:
-                send_telegram(token, chat, title, body)
+                send_telegram(token, chat, title, body, site)
                 sent.append("Telegram")
             except Exception as e:  # noqa: BLE001
                 failed.append(f"Telegram: {e}")

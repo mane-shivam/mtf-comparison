@@ -35,6 +35,7 @@ IST = timezone(timedelta(hours=5, minutes=30))
 CALL_WARN = 3.0  # % above the top-up price that counts as close (same as the site)
 SUMMARY_HOUR = 8
 LABEL = {"kotak": "Kotak Neo", "rupeezy": "Rupeezy"}
+SHORT = {"kotak": "Kotak", "rupeezy": "Rupeezy"}
 DEFAULT_INTEREST = {"kotak": 9.69, "rupeezy": 10.99}  # % a year; the site's defaults
 
 
@@ -121,12 +122,11 @@ def accounts(positions: list[dict], prices: dict, rates: dict, today: date, mtf:
 def warnings(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None) -> list[dict]:
     out = []
     for a in accounts(positions, prices, rates, today, mtf):
-        label = LABEL[a["broker"]]
+        label = SHORT[a["broker"]]
         if a["spare"] < 0:
-            level, text = "alert", f"Margin top-up needed: {rupees(-a['spare'])} short across your {a['n']} MTF stocks"
+            level, text = "alert", f"{rupees(-a['spare'])} short"
         elif a["fall"] is not None and a["fall"] <= CALL_WARN:
-            level, text = "watch", (f"Close to a margin top-up: {rupees(a['spare'])} spare, a {a['fall']:.1f}% fall across "
-                                    f"your {a['n']} MTF stocks would need one")
+            level, text = "watch", f"{a['fall']:.1f}% from a top-up ({rupees(a['spare'])} spare)"
         else:
             continue
         out.append({"id": a["broker"], "symbol": label, "name": label, "level": level, "text": text, "link": None})
@@ -145,7 +145,7 @@ def results_due(pins: list[str], events: dict, today: date, days: int = 7) -> li
             if e["kind"] == "meeting" and "Results" in e["title"] and today.isoformat() <= e["date"] <= end:
                 out.append((e["date"], sym))
                 break
-    return [f"{sym} {datetime.fromisoformat(d).strftime('%a %-d %b')}" for d, sym in sorted(out)]
+    return [f"{sym} {datetime.fromisoformat(d).strftime('%a')}" for d, sym in sorted(out)]
 
 
 def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, alerts: list[dict],
@@ -161,42 +161,36 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
             gross = sum(m["gross"] for _, m in priced)
             day = sum(m["day"] or 0 for _, m in priced)
             invest = sum(m["buy"] for _, m in priced)
-            lines.append(f"Portfolio: {len(pos)} position{'s' if len(pos) != 1 else ''}, unrealised "
-                         f"{rupees(gross, True)} ({gross / invest * 100 if invest else 0:+.1f}% on total, "
-                         f"{gross / own * 100 if own else 0:+.1f}% on own money)")
-            lines.append(f"Last session: {rupees(day, True)}")
-            lines.append(f"Interest: {rupees(sum(m['perDay'] for _, m in ms))} a day, "
-                         f"{rupees(sum(m['interest'] for _, m in ms))} so far")
-            for a in accounts(pos, prices, payload.get("rates") or {}, today, mtf):
-                lines.append(f"{LABEL[a['broker']]} margin: " + (f"{rupees(-a['spare'])} short, top-up needed" if a["spare"] < 0
-                             else f"{rupees(a['spare'])} spare, can fall {a['fall'] or 0:.1f}%"))
+            pct = gross / invest * 100 if invest else 0
+            lines.append(f"P&L {rupees(gross, True)} ({pct:+.1f}%), last session {rupees(day, True)}")
+            lines.append(f"Interest {rupees(sum(m['perDay'] for _, m in ms))}/day")
+            margin = [f"{SHORT[a['broker']]} {rupees(-a['spare'])} short" if a["spare"] < 0
+                      else f"{SHORT[a['broker']]} {a['fall'] or 0:.1f}% headroom"
+                      for a in accounts(pos, prices, payload.get("rates") or {}, today, mtf)]
+            if margin:
+                lines.append("Margin: " + ", ".join(margin))
             movers = sorted(priced, key=lambda x: x[1]["day"] or 0)
             if len(movers) >= 2:
                 lo, hi = movers[0], movers[-1]
-                lines.append(f"Moves: {hi[0]['sym']} {rupees(hi[1]['day'] or 0, True)}, "
+                lines.append(f"Movers: {hi[0]['sym']} {rupees(hi[1]['day'] or 0, True)}, "
                              f"{lo[0]['sym']} {rupees(lo[1]['day'] or 0, True)}")
         booked = float(payload.get("start") or 0) + sum(c["pnl"] for c in payload.get("closed") or [])
         if booked:
-            lines.append(f"Booked so far: {rupees(booked, True)} after charges and interest")
-        closed = [c for c in payload.get("closed") or [] if c.get("sellDate", "")[:7] == today.isoformat()[:7]]
-        if closed:
-            lines.append(f"Booked this month: {rupees(sum(c['pnl'] for c in closed), True)} on {len(closed)} sale"
-                         f"{'s' if len(closed) != 1 else ''}")
+            lines.append(f"Booked {rupees(booked, True)}")
     due = results_due(pins, events, today)
     if due:
-        lines.append("Results this week: " + ", ".join(due))
+        lines.append("Results: " + ", ".join(due))
     since = (now - timedelta(hours=24)).astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
     recent = [a for a in alerts if a["at"] >= since and a["level"] in ("alert", "watch")]
     if recent:
         mine = [a for a in recent if a["symbol"] in held]
         serious = [a for a in recent if a["level"] == "alert"]
-        lines.append(f"Last 24 h: {len(recent)} flag{'s' if len(recent) != 1 else ''}"
-                     + (f", {len(mine)} on stocks you hold" if held else ""))
-        for a in sorted(serious, key=lambda a: a["symbol"] not in held)[:6]:
+        lines.append(f"24h: {len(recent)} flag{'s' if len(recent) != 1 else ''}" + (f", {len(mine)} held" if held else ""))
+        for a in sorted(serious, key=lambda a: a["symbol"] not in held)[:3]:
             lines.append(f"🔴 {a['symbol']}: {a['text']}")
     if not lines:
-        lines.append("Nothing new for your watchlist.")
-    return {"title": f"MTF morning summary, {today.strftime('%a %-d %b')}", "lines": lines}
+        lines.append("Nothing new on your watchlist")
+    return {"title": f"Morning summary, {today.strftime('%a %-d %b')}", "lines": lines}
 
 
 def load_json(p: Path, default):

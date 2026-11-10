@@ -60,8 +60,8 @@ def test_warn_once_a_day_and_summary_once(tmp_path, monkeypatch):
     assert "AAA" not in portfolio.SEEN.read_text()  # nothing readable is committed
     later = datetime(2026, 11, 10, 3, 0, tzinfo=timezone.utc)  # 08:30 IST
     out, summ = run(tmp_path, monkeypatch, 379, later)
-    assert out == [] and summ["lines"][0].startswith("Portfolio: 1 position, unrealised −₹2,100 (-5.2% on total, -21.0% on own money")
-    assert any(line.startswith("Kotak Neo margin: ") and "short" in line for line in summ["lines"])
+    assert out == [] and summ["lines"][0] == "P&L −₹2,100 (-5.2%), last session +₹0"
+    assert any(line.startswith("Margin: Kotak ₹") and line.endswith("short") for line in summ["lines"])
     out, summ = run(tmp_path, monkeypatch, 379, datetime(2026, 11, 10, 4, 0, tzinfo=timezone.utc))
     assert out == [] and summ is None  # both already sent today
     out, _ = run(tmp_path, monkeypatch, 379, datetime(2026, 11, 11, 4, 0, tzinfo=timezone.utc))
@@ -76,7 +76,7 @@ def test_wrong_passphrase_still_sends_summary(tmp_path, monkeypatch):
     monkeypatch.setenv("POSITIONS_PASSPHRASE", "wrong passphrase!")
     portfolio.main(datetime(2026, 11, 10, 3, 0, tzinfo=timezone.utc))
     assert not portfolio.PRIVATE.exists()
-    assert json.loads(portfolio.SUMMARY.read_text())["lines"] == ["Nothing new for your watchlist."]
+    assert json.loads(portfolio.SUMMARY.read_text())["lines"] == ["Nothing new on your watchlist"]
 
 
 def test_margin_is_checked_per_broker_account():
@@ -89,7 +89,7 @@ def test_margin_is_checked_per_broker_account():
     assert portfolio.warnings([loser, winner], prices, {}, today) == []
     # At a different broker it doesn't help.
     got = portfolio.warnings([loser, {**winner, "broker": "rupeezy"}], prices, {}, today)
-    assert [(a["symbol"], a["level"]) for a in got] == [("Kotak Neo", "alert")]
+    assert [(a["symbol"], a["level"]) for a in got] == [("Kotak", "alert")]
 
 
 def test_margin_uses_todays_broker_rate():
