@@ -4720,3 +4720,11 @@ body.positions-view #summary {
   text-decoration-color: var(--faint);
   text-underline-offset: 2px;
 }
+
+.ps-ov-parts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ps-ov-parts > :nth-child(2) {
+  text-align: right;
+}

@@ -1449,7 +1449,7 @@ function positionsViewHTML(): string {
         <span>Net if you sold all now<small>after charges and interest</small></span>
         <span class="ps-row-v"><b class="${net >= 0 ? 'up' : 'down'}">${amount(net)}</b>${rets(net)}</span>
       </div>
-      ${overallHTML(all.reduce((t, x) => t + (x.m.net ?? 0), 0), amount)}
+      ${overallHTML(amount)}
       <div class="ps-grid">
         <div><i>Interest</i><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far</small></div>
         <div><i>Fixed charges</i><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} on sale</small></div>
@@ -1464,20 +1464,18 @@ function positionsViewHTML(): string {
     ${body}`;
 }
 
-// Everything made or lost so far, after every charge and interest: earlier P&L + booked sales + open positions if sold now.
-// Recording a sale moves that part from open to booked, so the total carries on without a jump.
-function overallHTML(openNet: number, amount: (n: number) => string): string {
+// Realised P&L so far, after every charge and interest: earlier P&L + sales recorded here. Open positions are not in it.
+function overallHTML(amount: (n: number) => string): string {
   const start = store<number>(START_KEY) ?? 0;
   const booked = loadClosed().reduce((t, x) => t + x.pnl, 0);
-  const total = start + booked + openNet;
+  const total = start + booked;
   const part = (label: string, n: number) => `<span><i>${label}</i><b class="${n >= 0 ? 'up' : 'down'}">${amount(n)}</b></span>`;
   return `<div class="ps-overall">
       <div class="ps-ov-top">
-        <span class="ps-label">Overall P&amp;L as of now<small>after every charge and interest</small></span>
+        <span class="ps-label">Realised P&amp;L as of now<small>after every charge and interest</small></span>
         <b class="ps-ov-amt ${total >= 0 ? 'up' : 'down'}">${amount(total)}</b>
       </div>
       <div class="ps-ov-parts">
-        ${part('Open, if sold now', openNet)}
         ${part('Booked here', booked)}
         <button class="ps-ov-start" data-pnl-start><i>Earlier</i><b class="${start >= 0 ? 'up' : 'down'}">${start ? amount(start) : 'Add'}</b></button>
       </div>
