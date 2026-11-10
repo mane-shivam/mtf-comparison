@@ -104,3 +104,15 @@ def test_margin_uses_todays_broker_rate():
     # Rupeezy's exact own-money % wins over 100 / leverage.
     r = {**POS, "broker": "rupeezy"}
     assert portfolio.margin_pct(r, {"AAA": {"rupeezy": {"lev": 4.0, "ownPct": 26.1}}}) == 26.1
+
+
+def test_keeper_slots():
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import keeper
+
+    u = lambda *a: datetime(*a, tzinfo=timezone.utc)  # noqa: E731
+    assert keeper.next_slot(u(2026, 11, 10, 2, 0)) == u(2026, 11, 10, 2, 30)  # 08:00 IST
+    assert keeper.next_slot(u(2026, 11, 10, 2, 30)) == u(2026, 11, 10, 3, 30)
+    assert keeper.next_slot(u(2026, 11, 10, 12, 31)) == u(2026, 11, 10, 16, 30)  # 22:00 IST
+    assert keeper.next_slot(u(2026, 11, 10, 20, 31)) == u(2026, 11, 11, 0, 30)  # 06:00 IST next day
+    assert keeper.next_slot(u(2026, 11, 11, 0, 31)) == u(2026, 11, 11, 2, 30)

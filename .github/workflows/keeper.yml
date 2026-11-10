@@ -1,0 +1,33 @@
+name: Keep refreshes on time
+
+# GitHub's own schedule often runs refresh.yml late or skips it. This job waits for each refresh slot
+# and starts the refresh itself, then hands over to a fresh run before the 6-hour job limit.
+# The schedule below only restarts it if the chain ever stops; pushing this file starts it too.
+on:
+  push:
+    paths: [".github/workflows/keeper.yml", "scripts/keeper.py"]
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write   # start refresh.yml and the next keeper run
+  contents: read
+
+concurrency:
+  group: keeper
+  cancel-in-progress: false
+
+jobs:
+  keep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/keeper.py
+          sparse-checkout-cone-mode: false
+      - name: Start each refresh on time
+        run: python3 scripts/keeper.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
