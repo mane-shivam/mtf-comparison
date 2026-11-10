@@ -7,7 +7,7 @@ For personal reference. Check the broker app before placing an order.
 ## How it works
 
 ```
-GitHub Actions (10:00, 16:15, 20:00 IST, or the Refresh button)
+GitHub Actions (hourly 08:00-18:00 IST, then 22:00, 02:00, 06:00 IST, or the Refresh button)
   └─ scrapers/*.py  → data/raw/<broker>.json      (last good file kept on failure)
   └─ merge.py       → public/data/mtf.json, meta.json, unmatched.json, history.json
   └─ commit         → Vercel redeploys the static site

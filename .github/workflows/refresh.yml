@@ -2,9 +2,9 @@ name: Refresh MTF data
 
 on:
   schedule:
-    - cron: "30 4 * * *"   # 10:00 IST
-    - cron: "45 10 * * *"  # 16:15 IST, after close
-    - cron: "30 14 * * *"  # 20:00 IST
+    # GitHub cron is UTC (IST - 5:30) and often starts a few minutes late.
+    - cron: "30 2-12 * * *"     # every hour 08:00-18:00 IST
+    - cron: "30 16,20,0 * * *"  # every 4 hours overnight: 22:00, 02:00, 06:00 IST
   workflow_dispatch:       # Refresh button (/api/refresh) or GitHub's "Run workflow"
 
 permissions:

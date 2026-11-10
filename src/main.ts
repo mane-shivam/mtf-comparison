@@ -403,6 +403,11 @@ async function getJSON<T>(path: string): Promise<T> {
 async function loadData() {
   const [stocks, meta] = await Promise.all([getJSON<Stock[]>('/data/mtf.json'), getJSON<Meta>('/data/meta.json')]);
   setData(stocks, meta);
+  loadExtras();
+}
+
+// Alerts, events and surveillance load after the main table; the page works without them.
+function loadExtras() {
   // Watchlist change alerts drive the bell.
   getJSON<WatchAlert[]>('data/alerts.json')
     .then((a) => {
@@ -645,7 +650,78 @@ function renderStatus() {
     const age = info.status === 'stale' ? ` <span class="age">${fmtAge(info.fetchedAt)}</span>` : '';
     return `<button class="dot-btn" data-broker="${b}" aria-label="${BROKER_NAME[b]}: ${info.status}"><span class="dot ${info.status}"></span>${BROKER_SHORT[b]}${age}</button>`;
   }).join('');
-  $('#status').innerHTML = `<span class="updated">Updated ${fmtTime(m.generatedAt)}</span><span class="dots">${dots}</span>`;
+  $('#status').innerHTML = `<span class="updated">Updated ${fmtTime(m.generatedAt)}</span>${runHTML()}<span class="dots">${dots}</span>`;
+}
+
+/* ---------- live refresh status ----------
+   The page asks GitHub whether the refresh workflow is running (scheduled or from the button), so
+   "Updated" is never mistaken for current while a run is in flight. When a run finishes, the new
+   data loads by itself. Checks every 30 s while running, every 3 min otherwise, only while visible. */
+
+type RunState = { status: 'unknown' | 'idle' | 'running' | 'failed'; startedAt?: string; url?: string };
+const run: RunState = { status: 'unknown' };
+let runTimer = 0;
+const RUN_ACTIVE = new Set(['queued', 'in_progress', 'waiting', 'requested', 'pending']);
+
+function runHTML(): string {
+  if (run.status === 'running') {
+    const mins = run.startedAt ? Math.max(0, Math.round((Date.now() - new Date(run.startedAt).getTime()) / 60000)) : 0;
+    return `<span class="run-live" title="A refresh is running on GitHub; new data loads here when it finishes"><span class="spin" aria-hidden="true"></span>Refreshing now${mins ? ` · ${mins} min` : ''}</span>`;
+  }
+  if (run.status === 'failed') {
+    return `<a class="run-failed" href="${esc(run.url ?? '#')}" target="_blank" rel="noopener" title="The last refresh run failed; the page shows the data from the run before">Last refresh failed</a>`;
+  }
+  return '';
+}
+
+async function checkRun(): Promise<void> {
+  clearTimeout(runTimer);
+  if (!GH_REPO || document.visibilityState !== 'visible') return;
+  let next = 180_000;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/refresh.yml/runs?per_page=1`, {
+      headers: ghHeaders(),
+      cache: 'no-store',
+    });
+    if (r.status === 403 || r.status === 429) next = 600_000; // rate limited: back off
+    else if (r.ok) {
+      const last = (await r.json()).workflow_runs?.[0];
+      const was = run.status;
+      if (last && RUN_ACTIVE.has(last.status)) {
+        Object.assign(run, { status: 'running', startedAt: last.run_started_at ?? last.created_at, url: last.html_url });
+        next = 30_000;
+      } else if (last?.conclusion === 'failure' && state.meta && last.created_at > state.meta.generatedAt) {
+        Object.assign(run, { status: 'failed', url: last.html_url });
+      } else {
+        run.status = 'idle';
+      }
+      if (was === 'running' && run.status !== 'running') await reloadAfterRun();
+      renderStatus();
+      updateRefreshCooldown();
+    }
+  } catch {
+    /* offline: try again later */
+  }
+  runTimer = window.setTimeout(checkRun, next);
+}
+
+// The run deploys the site as its last step; the CDN can lag a little, so retry once if needed.
+async function reloadAfterRun(retry = true): Promise<void> {
+  const before = state.meta?.generatedAt;
+  try {
+    const meta = await getJSON<Meta>('/data/meta.json');
+    if (meta.generatedAt === before) {
+      if (retry) window.setTimeout(() => reloadAfterRun(false), 20_000);
+      return;
+    }
+    const stocks = await getJSON<Stock[]>('/data/mtf.json');
+    setData(stocks, meta);
+    renderAll();
+    loadExtras();
+    toast(`Updated ${fmtTime(meta.generatedAt, false)}`);
+  } catch {
+    /* keep current data */
+  }
 }
 
 function renderSummary() {
@@ -1397,6 +1473,7 @@ function setRefreshButton(label: string, opts: { busy?: boolean; disabled?: bool
 
 function updateRefreshCooldown() {
   if (state.refreshing) return;
+  if (run.status === 'running') return setRefreshButton('Refreshing…', { busy: true, disabled: true, title: 'A refresh is already running' });
   const left = cooldownLeft();
   if (left > 0) setRefreshButton('Refresh', { disabled: true, title: `Available again in ${Math.ceil(left / 60000)} min` });
   else setRefreshButton('Refresh');
@@ -1468,6 +1545,7 @@ async function refresh() {
       return;
     }
     if (r.status === 429) toast('A refresh is already running. Watching for its result.');
+    window.setTimeout(checkRun, 5000); // show "Refreshing now" as soon as GitHub reports the run
     await pollForUpdate();
   } catch (e) {
     toast((e as Error).message);
@@ -1487,6 +1565,7 @@ async function pollForUpdate() {
         const stocks = await getJSON<Stock[]>('/data/mtf.json');
         setData(stocks, meta);
         renderAll();
+        loadExtras();
         state.refreshing = false;
         setRefreshButton('Updated', { disabled: true });
         toast(`Updated ${fmtTime(meta.generatedAt, false)}`);
@@ -1703,7 +1782,9 @@ async function boot() {
 
   // Pick up edits made on other devices when this tab comes back into view.
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && !sync.busy) pullPins();
+    if (document.visibilityState !== 'visible') return;
+    if (!sync.busy) pullPins();
+    checkRun();
   });
   pullPins();
 
@@ -1714,6 +1795,7 @@ async function boot() {
   try {
     await loadData();
     renderAll();
+    checkRun();
     if (fromUrl !== null) toast(`Loaded ${state.pins.length} pins from link`);
   } catch (e) {
     $('#list').innerHTML = `<div class="empty"><p class="empty-title">Could not load data</p><p>${esc((e as Error).message)}</p></div>`;

@@ -1985,3 +1985,32 @@ td.down {
   text-decoration-color: var(--faint);
   text-underline-offset: 3px;
 }
+
+/* ---------- live refresh status ---------- */
+
+.run-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--best);
+  font-weight: 500;
+}
+
+.spin {
+  width: 11px;
+  height: 11px;
+  border: 2px solid rgba(0, 196, 140, 0.25);
+  border-top-color: var(--best);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.run-failed {
+  color: var(--warn);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.run-failed:hover {
+  text-decoration: underline;
+}
