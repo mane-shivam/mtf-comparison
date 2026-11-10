@@ -1158,7 +1158,7 @@ function cushionHTML(m: PosMetrics): string {
   const lo = Math.min(...pts) - span * 0.4;
   const hi = Math.max(...pts) + span * 0.4;
   const at = (v: number) => (((v - lo) / (hi - lo)) * 100).toFixed(1);
-  return `<div class="pr-track" aria-hidden="true">
+  return `<div class="pr-track" role="button" tabindex="0" aria-label="How to read this line" data-now="${m.ltp}" data-be="${m.breakEven}" data-call="${m.callPrice}">
     <span class="pr-danger" style="width:${at(m.callPrice)}%"></span>
     <span class="pr-tick is-call" style="left:${at(m.callPrice)}%"></span>
     <span class="pr-tick is-be" style="left:${at(m.breakEven)}%"></span>
@@ -1189,7 +1189,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     ['DP charge on sell', c.dp], ['GST on DP and pledge', c.gstDepository], ['STT, buy and sell', c.stt], ['NSE transaction', c.txn],
     ['SEBI fee', c.sebi], ['Stamp duty on buy', c.stamp], ['GST on brokerage and fees', c.gstTrade], [`Interest, ${m.days} day${m.days === 1 ? '' : 's'}`, c.interest],
   ];
-  return `<article class="pr is-${st}">
+  return `<article class="pr is-${st}" data-sym="${esc(pos.sym)}">
     <div class="pr-line">
       ${head}
       ${m.net != null ? `<span class="pr-pnl ${m.net >= 0 ? 'up' : 'down'}">${money(m.net)}</span>` : '<span class="pr-pnl">—</span>'}
@@ -2087,18 +2087,74 @@ function applyPending(replace: boolean) {
 
 /* ---------- popover for broker dots ---------- */
 
+// Small floating card next to what was tapped; inside the stock sheet it lives in the dialog's layer.
+function showPanel(anchor: HTMLElement, html: string, wide = false) {
+  const pop = $('#popover');
+  const host = anchor.closest('dialog') ?? document.body;
+  if (pop.parentElement !== host) host.appendChild(pop);
+  pop.innerHTML = html;
+  pop.dataset.y = String(anchor.closest('dialog') ? anchor.closest('dialog')!.scrollTop + 100000 : window.scrollY);
+  pop.classList.toggle('is-wide', wide);
+  pop.hidden = false;
+  const r = anchor.getBoundingClientRect();
+  const w = pop.offsetWidth;
+  const h = pop.offsetHeight;
+  pop.style.left = `${Math.min(Math.max(12, r.left), window.innerWidth - w - 12)}px`;
+  const below = r.bottom + 8;
+  pop.style.top = `${below + h > window.innerHeight - 12 && r.top - h - 8 > 12 ? r.top - h - 8 : below}px`;
+}
+
 function showPopover(btn: HTMLElement, b: BrokerKey) {
   const info = state.meta!.brokers[b];
-  const pop = $('#popover');
   const label = { ok: 'Up to date', stale: 'Stale, showing last good data', failed: 'Failed' }[info.status];
-  pop.innerHTML = `<div class="pop-title"><span class="dot ${info.status}"></span>${BROKER_NAME[b]}</div>
+  showPanel(btn, `<div class="pop-title"><span class="dot ${info.status}"></span>${BROKER_NAME[b]}</div>
     <dl><dt>Status</dt><dd>${label}</dd><dt>Stocks</dt><dd>${fmtNum(info.count)}</dd><dt>Last fetch</dt><dd>${fmtTime(info.fetchedAt)}</dd></dl>
-    ${info.error ? `<p class="pop-err">${esc(info.error)}</p>` : ''}`;
-  pop.hidden = false;
-  const r = btn.getBoundingClientRect();
-  const w = pop.offsetWidth;
-  pop.style.left = `${Math.min(Math.max(12, r.left), window.innerWidth - w - 12)}px`;
-  pop.style.top = `${r.bottom + 8 + window.scrollY}px`;
+    ${info.error ? `<p class="pop-err">${esc(info.error)}</p>` : ''}`);
+}
+
+// Everything flagged on a stock, in plain words: what a tapped pill opens.
+function flagDetails(sym: string): { level: string; title: string; detail: string; link: string | null }[] {
+  const out: { level: string; title: string; detail: string; link: string | null }[] = attentionItems(sym);
+  for (const e of stockEvents(sym)) {
+    if (e.kind === 'meeting' || e.kind === 'action' || e.kind === 'result') {
+      const when = e.date === localISO() ? 'today' : shortDate(e.date);
+      out.push({ level: 'info', title: `${e.title}${e.kind === 'action' ? ' (ex-date)' : ''}, ${when}`, detail: e.detail, link: e.link });
+    }
+    if (e.kind === 'broker' && e.level === 'info') out.push({ level: 'good', title: e.title, detail: e.detail, link: null });
+  }
+  const px = state.market?.prices[sym];
+  const band = state.bands[sym]?.band;
+  if (px?.chg != null && px.chg >= 5) out.push({ level: 'good', title: `Up ${px.chg.toFixed(1)}% today`, detail: `At ${rupee(px.p)}.`, link: null });
+  if (px?.prev && band && px.p >= px.prev * (1 + band / 100) * 0.99) out.push({ level: 'good', title: 'At the upper circuit', detail: 'Buy orders may not fill until sellers return.', link: null });
+  if (px?.hi52 && px.p >= px.hi52 * 0.995) out.push({ level: 'good', title: 'At a 52-week high', detail: `At ${rupee(px.p)}.`, link: null });
+  if (px?.vol && px.avgVol && px.vol >= 3 * px.avgVol) {
+    out.push({ level: 'info', title: `Volume ${(px.vol / px.avgVol).toFixed(1)}× the usual`, detail: `${compact(px.vol)} shares traded against a 20-day average of ${compact(px.avgVol)}. Big volume often comes with news or a big move.`, link: null });
+  }
+  return out;
+}
+
+function showFlags(anchor: HTMLElement, sym: string) {
+  const items = flagDetails(sym);
+  const list = items
+    .map((a) => `<li class="att-item"><span class="a-dot ${a.level === 'good' ? 'good' : a.level}" aria-hidden="true"></span><div><div class="att-title">${esc(a.title)}</div>${a.detail ? `<p class="tl-detail">${esc(a.detail)}</p>` : ''}${a.link ? `<a class="tl-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read the filing</a>` : ''}</div></li>`)
+    .join('');
+  showPanel(anchor, `<div class="pop-title">${esc(sym)}<span class="pop-sub">${items.length} flag${items.length === 1 ? '' : 's'}</span></div>
+    <ul class="att pop-list">${list || '<li class="muted small">Nothing flagged right now.</li>'}</ul>
+    <button class="btn btn-ghost btn-sm pop-open" data-open="${esc(sym)}">Open ${esc(sym)}</button>`, true);
+}
+
+// What the cushion line means, with this position's own numbers.
+function showCushionHelp(track: HTMLElement) {
+  const now = Number(track.dataset.now), be = Number(track.dataset.be), call = Number(track.dataset.call);
+  const gap = ((now - call) / now) * 100;
+  showPanel(track, `<div class="pop-title">Reading this line</div>
+    <ul class="legend">
+      <li><span class="lg-dot"></span><div><b>Today's price</b> ${rupeeShort(now)}</div></li>
+      <li><span class="lg-tick is-call"></span><div><b>Top-up level</b> ${rupeeShort(call)}. Below it your margin is short and the broker asks for more money.</div></li>
+      <li><span class="lg-zone"></span><div><b>Red stretch</b> is everything below the top-up level.</div></li>
+      <li><span class="lg-tick"></span><div><b>Break-even</b> ${rupeeShort(be)}. Selling above it makes money after every charge and interest so far.</div></li>
+    </ul>
+    <p class="pop-note">${gap >= 0 ? `The dot is ${gap.toFixed(1)}% above the top-up level: that is your cushion.` : `The dot is ${Math.abs(gap).toFixed(1)}% inside the red stretch: add margin or reduce the position.`} The line is zoomed to these three prices, so short distances look long.</p>`, true);
 }
 
 /* ---------- toast ---------- */
@@ -2318,6 +2374,16 @@ function bind() {
     }
     if (!t.closest('#popover')) pop.hidden = true;
 
+    // A tapped flag explains itself (on the watchlist and in Positions), without opening the stock.
+    const flag = t.closest<HTMLElement>('.flag');
+    const flagSym = flag?.closest<HTMLElement>('[data-sym]')?.dataset.sym;
+    if (flag && flagSym) {
+      e.stopPropagation();
+      return showFlags(flag, flagSym);
+    }
+    const track = t.closest<HTMLElement>('.pr-track');
+    if (track) return showCushionHelp(track);
+
     const pin = t.closest<HTMLElement>('[data-pin]');
     if (pin) {
       togglePin(pin.dataset.pin!);
@@ -2367,7 +2433,10 @@ function bind() {
     const openPos = t.closest<HTMLElement>('[data-open-pos]');
     if (openPos) return void openSheet(openPos.dataset.openPos!, 'position');
     const openSym = t.closest<HTMLElement>('[data-open]');
-    if (openSym) return void openSheet(openSym.dataset.open!, 'overview');
+    if (openSym) {
+      pop.hidden = true;
+      return void openSheet(openSym.dataset.open!, 'overview');
+    }
     if (t.closest('[data-reset-rates]')) {
       store(RATES_KEY, {});
       if (state.sheetSym) openSheet(state.sheetSym);
@@ -2500,6 +2569,18 @@ function bind() {
 
   $('#refresh').addEventListener('click', refresh);
   window.addEventListener('resize', () => ($('#popover').hidden = true));
+  // Close a floating card once the page has really moved, not on the tail of the scroll that led to the tap.
+  const closeOnScroll = (y: number) => {
+    const pop = $('#popover');
+    if (!pop.hidden && Math.abs(y - Number(pop.dataset.y ?? y)) > 40) pop.hidden = true;
+  };
+  window.addEventListener('scroll', () => closeOnScroll(window.scrollY), { passive: true });
+  $('#sheet').addEventListener('scroll', () => closeOnScroll($('#sheet').scrollTop + 100000), { passive: true });
+  $('#sheet').addEventListener('close', () => {
+    const pop = $('#popover');
+    pop.hidden = true;
+    if (pop.parentElement !== document.body) document.body.appendChild(pop);
+  });
 }
 
 /* ---------- boot ---------- */
