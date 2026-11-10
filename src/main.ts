@@ -411,6 +411,8 @@ function togglePin(sym: string) {
 
 /* ---------- formatting ---------- */
 
+// Links from scraped data only ever open http(s) pages: a javascript: or data: URL becomes inert.
+const safeUrl = (u: string | null | undefined) => (u && /^https?:\/\//i.test(u.trim()) ? u.trim() : '#');
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
@@ -1076,7 +1078,7 @@ function openAlerts(switching = false) {
               <div class="al-meta">${isNew ? '<span class="al-new">New</span>' : ''}<time>${time(g[0].at)}</time></div>
             </header>
             <ul class="al-lines">${g
-              .map((a) => `<li class="al-line is-${a.level}"><span class="al-tag">${LEVELS.find(([k]) => k === a.level)![1]}</span><span class="al-text">${esc(a.text)}${a.link ? ` <a class="al-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read filing</a>` : ''}</span></li>`)
+              .map((a) => `<li class="al-line is-${a.level}"><span class="al-tag">${LEVELS.find(([k]) => k === a.level)![1]}</span><span class="al-text">${esc(a.text)}${a.link ? ` <a class="al-link" href="${esc(safeUrl(a.link))}" target="_blank" rel="noopener">Read filing</a>` : ''}</span></li>`)
               .join('')}</ul>
           </article>`;
         })
@@ -2196,7 +2198,7 @@ function eventLineHTML(date: string, title: string, detail: string, link: string
     <div class="tl-body">
       <div class="tl-title">${dot ? `<span class="a-dot ${dot}" aria-hidden="true"></span>` : ''}${esc(title)}</div>
       ${detail ? `<p class="tl-detail">${esc(detail)}</p>` : ''}
-      ${link ? `<a class="tl-link" href="${esc(link)}" target="_blank" rel="noopener">Read the filing</a>` : ''}
+      ${link ? `<a class="tl-link" href="${esc(safeUrl(link))}" target="_blank" rel="noopener">Read the filing</a>` : ''}
     </div>
   </li>`;
 }
@@ -2316,7 +2318,7 @@ function attentionItems(sym: string): { level: 'severe' | 'warn' | 'info'; title
 
 function overviewHTML(sym: string, s: Stock): string {
   const items = attentionItems(sym);
-  const line = (a: (typeof items)[number]) => `<li class="att-item"><span class="a-dot ${a.level}" aria-hidden="true"></span><div><div class="att-title">${esc(a.title)}</div>${a.detail ? `<p class="tl-detail">${esc(a.detail)}</p>` : ''}${a.link ? `<a class="tl-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read the filing</a>` : ''}</div></li>`;
+  const line = (a: (typeof items)[number]) => `<li class="att-item"><span class="a-dot ${a.level}" aria-hidden="true"></span><div><div class="att-title">${esc(a.title)}</div>${a.detail ? `<p class="tl-detail">${esc(a.detail)}</p>` : ''}${a.link ? `<a class="tl-link" href="${esc(safeUrl(a.link))}" target="_blank" rel="noopener">Read the filing</a>` : ''}</div></li>`;
   const shown = items.slice(0, 4).map(line).join('');
   const rest = items.slice(4).map(line).join('');
   const attention = items.length
@@ -2638,7 +2640,7 @@ function flagDetails(sym: string): { level: string; title: string; detail: strin
 function showFlags(anchor: HTMLElement, sym: string) {
   const items = flagDetails(sym);
   const list = items
-    .map((a) => `<li class="att-item"><span class="a-dot ${a.level === 'good' ? 'good' : a.level}" aria-hidden="true"></span><div><div class="att-title">${esc(a.title)}</div>${a.detail ? `<p class="tl-detail">${esc(a.detail)}</p>` : ''}${a.link ? `<a class="tl-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read the filing</a>` : ''}</div></li>`)
+    .map((a) => `<li class="att-item"><span class="a-dot ${a.level === 'good' ? 'good' : a.level}" aria-hidden="true"></span><div><div class="att-title">${esc(a.title)}</div>${a.detail ? `<p class="tl-detail">${esc(a.detail)}</p>` : ''}${a.link ? `<a class="tl-link" href="${esc(safeUrl(a.link))}" target="_blank" rel="noopener">Read the filing</a>` : ''}</div></li>`)
     .join('');
   showPanel(anchor, `<div class="pop-title">${esc(sym)}<span class="pop-sub">${items.length} flag${items.length === 1 ? '' : 's'}</span></div>
     <ul class="att pop-list">${list || '<li class="muted small">Nothing flagged right now.</li>'}</ul>
