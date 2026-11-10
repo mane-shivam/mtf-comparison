@@ -93,7 +93,7 @@ jobs:
           git commit -m "data: refresh $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
           for i in 1 2 3; do
             git push && exit 0
-            git pull --rebase -X theirs && sleep $((i * 5))
+            git pull --rebase --autostash -X theirs && sleep $((i * 5))
           done
           exit 1
 
