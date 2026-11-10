@@ -91,7 +91,8 @@ def _json(r: requests.Response, what: str) -> dict:
         body = r.json()
     except ValueError:
         kind = (getattr(r, "headers", {}) or {}).get("content-type", "?")
-        raise SyncError(f"{what}: HTTP {r.status_code}, {kind} response") from None
+        hint = " (this login route no longer exists)" if r.status_code == 404 else ""
+        raise SyncError(f"{what}: HTTP {r.status_code}, {kind} response{hint}") from None
     if not r.ok:
         raise SyncError(f"{what}: HTTP {r.status_code} ({_reason(body)})")
     return body
@@ -100,6 +101,8 @@ def _json(r: requests.Response, what: str) -> dict:
 # ---------- Kotak Neo (Trade API v2) ----------
 
 def kotak(env: dict) -> dict:
+    if not (env["KOTAK_MPIN"].isdigit() and len(env["KOTAK_MPIN"]) == 6):
+        raise SyncError("KOTAK_MPIN must be the 6-digit Neo trading MPIN (digits only); the secret isn't")
     key = env["KOTAK_ACCESS_TOKEN"]
     common = {"Authorization": key, "neo-fin-key": "neotradeapi", "Content-Type": "application/json"}
     s = requests.Session()

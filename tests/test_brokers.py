@@ -8,7 +8,7 @@ import portfolio  # noqa: E402
 
 PASS = "correct horse battery"
 KOTAK = {"KOTAK_ACCESS_TOKEN": "tok", "KOTAK_TOTP_SECRET": "GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ",
-         "KOTAK_MOBILE": "+910000000000", "KOTAK_UCC": "ABC12", "KOTAK_MPIN": "1234", "POSITIONS_PASSPHRASE": PASS}
+         "KOTAK_MOBILE": "+910000000000", "KOTAK_UCC": "ABC12", "KOTAK_MPIN": "123456", "POSITIONS_PASSPHRASE": PASS}
 
 
 def test_totp_matches_rfc6238():
@@ -94,3 +94,11 @@ def test_skips_without_secrets_or_passphrase(tmp_path, monkeypatch):
 def test_reason_shows_broker_error_text_only():
     assert brokers._reason({"error": [{"code": "10522", "message": "Invalid MPIN"}]}) == "code=10522; message=Invalid MPIN"
     assert brokers._reason({"data": None, "ok": False}) == "fields: ['data', 'ok']"
+
+
+def test_mpin_format_is_checked_before_calling_kotak(tmp_path, monkeypatch):
+    monkeypatch.setattr(brokers, "OUT", tmp_path / "broker.enc.json")
+    monkeypatch.setattr(brokers.requests, "Session", FakeSession)
+    FakeSession.calls = []
+    brokers.main({**KOTAK, "KOTAK_MPIN": "1234"})
+    assert FakeSession.calls == []
