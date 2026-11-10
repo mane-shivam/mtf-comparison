@@ -4174,3 +4174,92 @@ button.pc-sym {
   white-space: normal;
   line-height: 1.2;
 }
+
+/* Returns: on total is primary, on own money secondary. */
+.pc-cell em.pc-t {
+  display: block;
+  color: var(--text);
+  font-size: 12px;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.82;
+}
+
+.pc-cell small {
+  font-variant-numeric: tabular-nums;
+}
+
+.ps-rets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.ps-rets .ps-note {
+  margin: 0;
+}
+
+.ps-own {
+  flex-basis: 100%;
+  color: var(--faint-2);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ps-row-v {
+  flex-wrap: wrap;
+}
+
+.ps-row-v .ps-rets {
+  flex: 1 1 auto;
+}
+
+.cl-ret {
+  display: grid;
+  justify-items: end;
+  gap: 1px;
+  white-space: nowrap;
+}
+
+.cl-ret b {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.cl-ret small {
+  color: var(--faint-2);
+  font-size: 11px;
+}
+
+.cl-t {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.pc-cell em.pc-t,
+.pc-cell small {
+  white-space: nowrap;
+}
+
+.pc-cell em.pc-t,
+.pc-cell small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 380px) {
+  .pc-grid {
+    gap: 6px;
+  }
+  .pc-cell small {
+    font-size: 10.5px;
+  }
+  .pc-cell em.pc-t {
+    font-size: 11.5px;
+  }
+}
+
+.pc-cell {
+  grid-template-columns: minmax(0, 1fr);
+}

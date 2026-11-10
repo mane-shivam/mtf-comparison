@@ -1203,6 +1203,9 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const cell = (value: string, label: string, cls = '') => `<div class="pc-cell${cls ? ` ${cls}` : ''}"><b>${value}</b><span>${label}</span></div>`;
   const tone = (n: number | null) => (n == null ? '' : n >= 0 ? 'up' : 'down');
   const pctOf = (n: number, base: number) => `${sign(n)}${Math.abs((n / base) * 100).toFixed(1)}%`;
+  // Every return: on total investment first and larger, on your own money smaller below.
+  const both = (n: number | null, withTotal = true) => n == null ? ''
+    : `${withTotal ? `<em class="pc-t">${pctOf(n, m.buyValue)} on total</em>` : ''}<small>${sign(n)}${Math.abs((n / m.own) * 100).toFixed(Math.abs(n / m.own) >= 0.1 ? 0 : 1)}% own money</small>`;
   const name = state.bySymbol.get(pos.sym)?.name;
   const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
   const pill =
@@ -1226,8 +1229,8 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     </div>
     <div class="pc-grid pc-key">
       ${cell(m.gross != null ? money(m.gross) : '—', 'Unrealised P&amp;L', tone(m.gross))}
-      ${cell(m.gross != null ? pctOf(m.gross, m.own) : '—', `On your money<small>${m.gross != null ? `${pctOf(m.gross, m.buyValue)} on total` : ''}</small>`, tone(m.gross))}
-      ${cell(m.day != null ? money(m.day) : '—', `Day P&amp;L${m.day != null ? `<small>${pctOf(m.day, m.buyValue)} on total</small>` : ''}`, tone(m.day))}
+      ${cell(m.gross != null ? pctOf(m.gross, m.buyValue) : '—', `On total${both(m.gross, false)}`, tone(m.gross))}
+      ${cell(m.day != null ? money(m.day) : '—', `Day P&amp;L${both(m.day)}`, tone(m.day))}
     </div>
     <div class="pc-grid">
       ${cell(rupee(pos.price), 'Avg buy price')}
@@ -1237,7 +1240,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     <div class="pc-grid pc-risk">
       ${cell(m.breakEven != null ? rupeeShort(m.breakEven) : '—', 'Break-even')}
       ${cell(m.callPrice != null ? rupeeShort(m.callPrice) : '—', 'Top-up below', st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
-      ${cell(m.net != null ? money(m.net) : '—', `Net if sold now${m.net != null ? `<small>${pctOf(m.net, m.buyValue)} on total</small>` : ''}`, tone(m.net))}
+      ${cell(m.net != null ? money(m.net) : '—', `Net if sold now${both(m.net)}`, tone(m.net))}
     </div>
     ${cushionHTML(m)}
     <details class="pr-more">
@@ -1379,6 +1382,7 @@ function positionsViewHTML(): string {
   const rates = brokerRates();
   const saving = (b: BrokerKey) => inr((100000 * rates[b].interest) / 1200);
   const chip = (n: number, base: number) => `<span class="ps-chip ${n >= 0 ? 'up' : 'down'}">${pct(n, base)}</span>`;
+  const rets = (n: number) => `<div class="ps-rets">${chip(n, invested)}<span class="ps-note">on total</span><span class="ps-own">${pct(n, own)} on own money</span></div>`;
   const amount = (n: number) => `${sign(n)}${inr(Math.abs(n)).replace('−', '')}`;
   return modes + `<section class="ps">
       <div class="ps-top">
@@ -1393,17 +1397,17 @@ function positionsViewHTML(): string {
         <div class="ps-cell">
           <div class="ps-label">Today</div>
           <div class="ps-amt ${day >= 0 ? 'up' : 'down'}">${amount(day)}</div>
-          ${chip(day, invested)}<span class="ps-note">on total</span>
+          ${rets(day)}
         </div>
         <div class="ps-cell">
           <div class="ps-label">Total P&amp;L</div>
           <div class="ps-amt ${gross >= 0 ? 'up' : 'down'}">${amount(gross)}</div>
-          <div class="ps-split"><span>${chip(gross, own)}<span class="ps-note">on your money</span></span><span>${chip(gross, invested)}<span class="ps-note">on total</span></span></div>
+          ${rets(gross)}
         </div>
       </div>
       <div class="ps-row">
         <span>Net if you sold all now<small>after charges and interest</small></span>
-        <span class="ps-row-v"><b class="${net >= 0 ? 'up' : 'down'}">${amount(net)}</b>${chip(net, invested)}<span class="ps-note">on total</span></span>
+        <span class="ps-row-v"><b class="${net >= 0 ? 'up' : 'down'}">${amount(net)}</b>${rets(net)}</span>
       </div>
       <div class="ps-grid">
         <div><i>Interest</i><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far</small></div>
@@ -1697,7 +1701,7 @@ function renderSellPreview() {
         <dt>Price move</dt><dd>${inr2((t.sell - t.buy) * t.qty)}</dd>
         <dt>Charges</dt><dd>−${inr2(t.charges)}</dd>
         <dt>Interest, ${Math.max(0, Math.floor((Date.parse(t.sellDate) - Date.parse(t.buyDate)) / 86_400_000))} days</dt><dd>−${inr2(t.interest)}</dd>
-        <dt>Realised P&amp;L</dt><dd><b class="${t.pnl >= 0 ? 'up' : 'down'}">${t.pnl >= 0 ? '+' : '−'}${inr2(Math.abs(t.pnl)).replace('−', '')}</b><small>${t.qty * t.buy ? `${((t.pnl / (t.qty * t.buy)) * 100).toFixed(1)}% on total` : ''}</small></dd>
+        <dt>Realised P&amp;L</dt><dd><b class="${t.pnl >= 0 ? 'up' : 'down'}">${t.pnl >= 0 ? '+' : '−'}${inr2(Math.abs(t.pnl)).replace('−', '')}</b><small><span class="cl-t">${((t.pnl / (t.qty * t.buy)) * 100).toFixed(1)}% on total</span>${t.own ? `, ${((t.pnl / t.own) * 100).toFixed(1)}% on own money` : ''}</small></dd>
       </dl>`
     : '<p class="muted small">Enter a quantity up to what you hold, a price and a date on or after the buy date.</p>';
   $<HTMLButtonElement>('#sell-save').disabled = !t;
@@ -1723,6 +1727,7 @@ function closedViewHTML(): string {
   if (!list.length) return '<div class="empty"><p class="empty-title">No closed trades yet</p><p>Use “Record sale” on a position to keep its result here, after every charge and interest.</p></div>';
   const total = list.reduce((t, x) => t + x.pnl, 0);
   const invested = list.reduce((t, x) => t + x.qty * x.buy, 0);
+  const own = list.reduce((t, x) => t + x.own, 0);
   const charges = list.reduce((t, x) => t + x.charges, 0);
   const interest = list.reduce((t, x) => t + x.interest, 0);
   const wins = list.filter((x) => x.pnl >= 0).length;
@@ -1731,14 +1736,14 @@ function closedViewHTML(): string {
     const days = Math.max(0, Math.floor((Date.parse(x.sellDate) - Date.parse(x.buyDate)) / 86_400_000));
     return `<article class="pr cl">
       <div class="pr-line"><span class="pr-sym">${esc(x.sym)}</span><span class="pr-pnl ${x.pnl >= 0 ? 'up' : 'down'}">${sign(x.pnl)}${inr(Math.abs(x.pnl)).replace('−', '')}</span></div>
-      <div class="pr-line pr-meta"><span>${BROKER_SHORT[x.broker]} ${round1(x.lev)}×, ${x.qty.toLocaleString('en-IN')} bought ${rupeeShort(x.buy)}, sold ${rupeeShort(x.sell)}</span><span>${sign(x.pnl)}${Math.abs((x.pnl / (x.qty * x.buy)) * 100).toFixed(1)}% on total</span></div>
+      <div class="pr-line pr-meta"><span>${BROKER_SHORT[x.broker]} ${round1(x.lev)}×, ${x.qty.toLocaleString('en-IN')} bought ${rupeeShort(x.buy)}, sold ${rupeeShort(x.sell)}</span><span class="cl-ret"><b>${sign(x.pnl)}${Math.abs((x.pnl / (x.qty * x.buy)) * 100).toFixed(1)}% on total</b>${x.own ? `<small>${sign(x.pnl)}${Math.abs((x.pnl / x.own) * 100).toFixed(1)}% on own money</small>` : ''}</span></div>
       <div class="pr-day">${shortDate(x.buyDate)} to ${shortDate(x.sellDate)}, ${days} day${days === 1 ? '' : 's'}. Charges ${inr(x.charges)}, interest ${inr(x.interest)}</div>
       <div class="pr-actions"><button class="pr-remove" data-closed-del="${esc(x.id)}">Delete record</button></div>
     </article>`;
   });
   return `<section class="ps">
       <div class="ps-top"><div><div class="ps-label">Realised P&amp;L</div><div class="ps-value ${total >= 0 ? 'up' : 'down'}">${sign(total)}${inr(Math.abs(total)).replace('−', '')}</div>
-        <div class="ps-sub">${invested ? `${sign(total)}${Math.abs((total / invested) * 100).toFixed(1)}% on ${inr(invested)} invested, after every charge and interest` : ''}</div></div>
+        <div class="ps-sub">${invested ? `<b class="cl-t">${sign(total)}${Math.abs((total / invested) * 100).toFixed(1)}% on ${inr(invested)} invested</b>${own ? `<br />${sign(total)}${Math.abs((total / own) * 100).toFixed(1)}% on ${inr(own)} own money` : ''}<br />After every charge and interest` : ''}</div></div>
         <div class="ps-count">${list.length} trade${list.length === 1 ? '' : 's'}</div></div>
       <div class="ps-grid">
         <div><i>Won</i><b>${wins} of ${list.length}</b></div>
