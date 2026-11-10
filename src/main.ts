@@ -1126,6 +1126,15 @@ interface Position {
   price: number; // average buy price
   date: string; // buy date YYYY-MM-DD
   lev: number; // leverage the position was taken at
+  orig?: number; // quantity bought, once part of it has been sold
+}
+
+// Buy-side fees charged once per buy order (flat brokerage, pledge, their GST). After a partial sale each
+// part carries its share, so booked + open adds up to the same total as before the sale.
+function shareBuyFees(c: CostBreakdown, r: BrokerRates, share: number): CostBreakdown {
+  const cut = (r.brokFlat + r.pledge) * (1 + STATUTORY.gst / 100) * (1 - Math.min(1, Math.max(0, share)));
+  if (!cut) return c;
+  return { ...c, total: c.total - cut, fixed: c.fixed - cut, buySide: c.buySide - cut };
 }
 
 interface PosMetrics {
@@ -1170,7 +1179,7 @@ function posMetrics(pos: Position): PosMetrics {
   const perDay = (funded * r.interest) / 36500;
   const ltp = state.market?.prices[pos.sym]?.p ?? null;
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
-  const costs = computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100);
+  const costs = shareBuyFees(computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100), r, pos.qty / (pos.orig ?? pos.qty));
   if (ltp == null) {
     return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
   }
@@ -1440,6 +1449,7 @@ function positionsViewHTML(): string {
         <span>Net if you sold all now<small>after charges and interest</small></span>
         <span class="ps-row-v"><b class="${net >= 0 ? 'up' : 'down'}">${amount(net)}</b>${rets(net)}</span>
       </div>
+      ${overallHTML(all.reduce((t, x) => t + (x.m.net ?? 0), 0), amount)}
       <div class="ps-grid">
         <div><i>Interest</i><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far</small></div>
         <div><i>Fixed charges</i><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} on sale</small></div>
@@ -1452,6 +1462,37 @@ function positionsViewHTML(): string {
     </section>
     ${positionsToolbarHTML(v, counts)}
     ${body}`;
+}
+
+// Everything made or lost so far, after every charge and interest: earlier P&L + booked sales + open positions if sold now.
+// Recording a sale moves that part from open to booked, so the total carries on without a jump.
+function overallHTML(openNet: number, amount: (n: number) => string): string {
+  const start = store<number>(START_KEY) ?? 0;
+  const booked = loadClosed().reduce((t, x) => t + x.pnl, 0);
+  const total = start + booked + openNet;
+  const part = (label: string, n: number) => `<span><i>${label}</i><b class="${n >= 0 ? 'up' : 'down'}">${amount(n)}</b></span>`;
+  return `<div class="ps-overall">
+      <div class="ps-ov-top">
+        <span class="ps-label">Overall P&amp;L as of now<small>after every charge and interest</small></span>
+        <b class="ps-ov-amt ${total >= 0 ? 'up' : 'down'}">${amount(total)}</b>
+      </div>
+      <div class="ps-ov-parts">
+        ${part('Open, if sold now', openNet)}
+        ${part('Booked here', booked)}
+        <button class="ps-ov-start" data-pnl-start><i>Earlier</i><b class="${start >= 0 ? 'up' : 'down'}">${start ? amount(start) : 'Add'}</b></button>
+      </div>
+    </div>`;
+}
+
+function setStartPnl() {
+  const cur = store<number>(START_KEY) ?? 0;
+  const raw = prompt('Realised P&L from trades closed before you recorded them here, after charges and interest (₹). Use a minus sign for a loss. Leave empty for 0.', cur ? String(cur) : '');
+  if (raw === null) return;
+  const n = raw.trim() === '' ? 0 : Number(raw.replace(/[₹,\s]/g, '').replace('−', '-'));
+  if (!Number.isFinite(n)) return toast('Enter a number, like 25000 or -8000.');
+  store(START_KEY, n);
+  positionsChanged();
+  renderList();
 }
 
 function positionsBadge() {
@@ -1483,6 +1524,8 @@ interface ClosedTrade {
 }
 
 const CLOSED_KEY = 'mtf.closed';
+// Realised P&L from before trades were recorded here (after charges and interest), entered once.
+const START_KEY = 'mtf.pnlStart';
 const loadClosed = (): ClosedTrade[] => store<ClosedTrade[]>(CLOSED_KEY) ?? [];
 const saveClosed = (list: ClosedTrade[]) => {
   store(CLOSED_KEY, list);
@@ -1506,7 +1549,7 @@ const bytesB64 = (b: Uint8Array) => btoa(String.fromCharCode(...b));
 const b64Bytes = (s: string): Uint8Array<ArrayBuffer> => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
 
 interface EncFile { v: 1; kdf: 'PBKDF2-SHA256'; iter: number; salt: string; iv: string; data: string }
-interface PosPayload { at: string; positions: Position[]; closed: ClosedTrade[]; rates: unknown }
+interface PosPayload { at: string; positions: Position[]; closed: ClosedTrade[]; rates: unknown; start?: number }
 
 async function posKey(pass: string, salt: Uint8Array<ArrayBuffer>, iter: number): Promise<CryptoKey> {
   const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
@@ -1543,13 +1586,14 @@ async function fetchPosFile(): Promise<{ file: EncFile | null; sha: string | nul
 }
 
 const localPayload = (): PosPayload => ({
-  at: store<string>(POS_AT_KEY) || store(POS_AT_KEY, new Date().toISOString())!, positions: loadPositions(), closed: loadClosed(), rates: store(RATES_KEY) ?? {},
+  at: store<string>(POS_AT_KEY) || store(POS_AT_KEY, new Date().toISOString())!, positions: loadPositions(), closed: loadClosed(), rates: store(RATES_KEY) ?? {}, start: store<number>(START_KEY) ?? 0,
 });
 
 function applyPayload(p: PosPayload) {
   store(POS_KEY, p.positions ?? []);
   store(CLOSED_KEY, p.closed ?? []);
   store(RATES_KEY, p.rates ?? {});
+  store(START_KEY, p.start ?? 0);
   store(POS_AT_KEY, p.at);
 }
 
@@ -1681,7 +1725,7 @@ function saleResult(pos: Position, qty: number, price: number, date: string): Cl
   const lev = Math.max(1, pos.lev);
   const own = (qty * pos.price) / lev;
   const days = Math.max(0, Math.floor((Date.parse(date) - Date.parse(pos.date)) / 86_400_000));
-  const c = computeCosts(r, own, lev, days, (price / pos.price - 1) * 100);
+  const c = shareBuyFees(computeCosts(r, own, lev, days, (price / pos.price - 1) * 100), r, qty / (pos.orig ?? pos.qty));
   return {
     id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
     sym: pos.sym, broker: pos.broker, qty, buy: pos.price, sell: price, buyDate: pos.date, sellDate: date, lev,
@@ -1748,7 +1792,7 @@ function saveSale() {
   const i = list.findIndex((p) => p.id === selling!.id);
   if (i < 0) return;
   if (t.qty >= list[i].qty) list.splice(i, 1);
-  else list[i] = { ...list[i], qty: list[i].qty - t.qty };
+  else list[i] = { ...list[i], qty: list[i].qty - t.qty, orig: list[i].orig ?? list[i].qty };
   savePositions(list);
   saveClosed([t, ...loadClosed()]);
   $<HTMLDialogElement>('#sheet').close();
@@ -2854,6 +2898,7 @@ function bind() {
       return;
     }
     if (t.closest('#pos-export')) return exportPositions();
+    if (t.closest('[data-pnl-start]')) return setStartPnl();
     const ps = t.closest<HTMLElement>('[data-possync]');
     if (ps) return void setPositionsPassphrase(ps.dataset.possync === 'on');
     const sell = t.closest<HTMLElement>('[data-sell]');

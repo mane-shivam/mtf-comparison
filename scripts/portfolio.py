@@ -127,8 +127,8 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
             day = sum(m["day"] or 0 for _, m in priced)
             invest = sum(m["buy"] for _, m in priced)
             lines.append(f"Portfolio: {len(pos)} position{'s' if len(pos) != 1 else ''}, unrealised "
-                         f"{rupees(gross, True)} ({gross / own * 100 if own else 0:+.1f}% on your money, "
-                         f"{gross / invest * 100 if invest else 0:+.1f}% on total)")
+                         f"{rupees(gross, True)} ({gross / invest * 100 if invest else 0:+.1f}% on total, "
+                         f"{gross / own * 100 if own else 0:+.1f}% on own money)")
             lines.append(f"Last session: {rupees(day, True)}")
             lines.append(f"Interest: {rupees(sum(m['perDay'] for _, m in ms))} a day, "
                          f"{rupees(sum(m['interest'] for _, m in ms))} so far")
@@ -140,7 +140,10 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
                 lo, hi = movers[0], movers[-1]
                 lines.append(f"Moves: {hi[0]['sym']} {rupees(hi[1]['day'] or 0, True)}, "
                              f"{lo[0]['sym']} {rupees(lo[1]['day'] or 0, True)}")
-        closed = [c for c in payload.get("closed") or [] if c.get("date", "")[:7] == today.isoformat()[:7]]
+        booked = float(payload.get("start") or 0) + sum(c["pnl"] for c in payload.get("closed") or [])
+        if booked:
+            lines.append(f"Booked so far: {rupees(booked, True)} after charges and interest")
+        closed = [c for c in payload.get("closed") or [] if c.get("sellDate", "")[:7] == today.isoformat()[:7]]
         if closed:
             lines.append(f"Booked this month: {rupees(sum(c['pnl'] for c in closed), True)} on {len(closed)} sale"
                          f"{'s' if len(closed) != 1 else ''}")

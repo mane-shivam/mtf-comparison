@@ -4619,3 +4619,104 @@ body.positions-view #summary {
   min-height: 28px;
   padding: 0 9px;
 }
+
+/* Overall P&L: the running total across open, booked and earlier trades. */
+.ps-overall {
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid rgba(138, 180, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(138, 180, 255, 0.05);
+}
+
+.ps-ov-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ps-ov-top .ps-label {
+  color: var(--muted);
+}
+
+.ps-ov-top .ps-label small {
+  display: block;
+  margin-top: 2px;
+  color: var(--faint-2);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.ps-ov-amt {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+.ps-ov-amt.up {
+  color: var(--up-soft);
+}
+
+.ps-ov-amt.down {
+  color: var(--down-soft);
+}
+
+.ps-ov-parts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ps-ov-parts > * {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ps-ov-parts > :nth-child(2) {
+  text-align: center;
+}
+
+.ps-ov-parts > :nth-child(3) {
+  text-align: right;
+}
+
+.ps-ov-parts i {
+  color: var(--faint-2);
+  font-size: 11px;
+  font-style: normal;
+}
+
+.ps-ov-parts b {
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ps-ov-parts .up {
+  color: var(--up-soft);
+}
+
+.ps-ov-parts .down {
+  color: var(--down-soft);
+}
+
+.ps-ov-start {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ps-ov-start i {
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-underline-offset: 2px;
+}
