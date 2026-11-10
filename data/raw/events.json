@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-10T13:32:16Z",
+"fetchedAt": "2026-11-10T13:52:27Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-10T13:32:09Z",
+"fetchedAt": "2026-11-10T13:52:22Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-10T13:32:10Z",
+"fetchedAt": "2026-11-10T13:52:23Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-10T13:32:16Z",
-"count": 876,
+"fetchedAt": "2026-11-10T13:52:27Z",
+"count": 878,
 "error": null
 }
 },
@@ -6203,6 +6203,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3031_20261102_171751235_WEB.html"
 },
 {
+"symbol": "MMTC",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "MMTC Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ajaymisra_10112026191813_final__2_.pdf"
+},
+{
 "symbol": "MODIRUBBER",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -8125,6 +8133,14 @@
 "title": "Results",
 "detail": "SRIT INDIA LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27796_20261105_132013881_WEB.html"
+},
+{
+"symbol": "SRM",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "SRM CONTRACTORS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22596_20261110_192030846_WEB.html"
 },
 {
 "symbol": "SRPL",
