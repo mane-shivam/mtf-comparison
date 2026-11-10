@@ -878,7 +878,7 @@ function renderList() {
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
     $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>${posSyncHTML()}
-      <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the same share of its value as at entry (1 ÷ leverage), and gains on one stock cover losses on another at the same broker. Brokers can raise a stock's margin (for example after ASM) and set their own timelines, so treat it as a guide.</p>`;
+      <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the margin % the broker asks for it today (from the hourly MTF data, so a raised margin shows up here), and gains on one stock cover losses on another at the same broker. A stock the broker stops funding needs its full value. Brokers set their own timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
   }
@@ -1150,6 +1150,8 @@ interface PosMetrics {
   roi: number | null; // net as % of own funds
   callPrice: number | null; // price at which equity falls below the margin needed
   callDist: number | null; // % the price can fall from now before that
+  marginPct: number; // margin the broker asks for this stock today, % of value
+  marginFrom: 'live' | 'entry' | 'dropped'; // today's broker rate, the entry leverage (no data yet), or no longer funded
   spare: number | null; // this stock's part of the account margin: equity − margin needed (negative = uses others' cushion)
   breakEven: number | null; // sell price that covers all costs so far
   costs: CostBreakdown;
@@ -1177,6 +1179,11 @@ function posMetrics(pos: Position): PosMetrics {
   const own = buyValue / lev;
   const funded = buyValue - own;
   const invested = buyValue;
+  // The broker's margin for this stock right now, from the hourly MTF data (Rupeezy publishes the exact %).
+  // A stock the broker has stopped funding needs its full value: convert to delivery or sell.
+  const cur = state.stocks.length ? state.bySymbol.get(pos.sym)?.[pos.broker] ?? null : undefined;
+  const marginFrom = cur === undefined ? 'entry' : isFunded(cur) ? 'live' : 'dropped';
+  const marginPct = marginFrom === 'live' ? (cur!.ownPct ?? 100 / cur!.lev) : marginFrom === 'dropped' ? 100 : 100 / lev;
   const days = Math.max(0, Math.floor((Date.parse(localISO()) - Date.parse(pos.date)) / 86_400_000));
   const interest = (funded * r.interest * days) / 36500;
   const perDay = (funded * r.interest) / 36500;
@@ -1184,7 +1191,7 @@ function posMetrics(pos: Position): PosMetrics {
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
   const costs = shareBuyFees(computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100), r, pos.qty / (pos.orig ?? pos.qty));
   if (ltp == null) {
-    return { buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, spare: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
+    return { buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, marginPct, marginFrom, spare: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
   }
   const px = state.market!.prices[pos.sym];
   const boughtToday = pos.date >= px.date;
@@ -1200,8 +1207,9 @@ function posMetrics(pos: Position): PosMetrics {
     roi: own ? (net / own) * 100 : null,
     callPrice,
     callDist: callPrice != null ? ((ltp - callPrice) / ltp) * 100 : null,
-    // Equity (value − broker's money − interest) minus the margin share asked at entry (value ÷ leverage).
-    spare: lev > 1 ? value - funded - interest - value / lev : null,
+    // Equity (value − broker's money − interest) minus the margin the broker asks for today.
+    marginPct, marginFrom,
+    spare: lev > 1 ? value - funded - interest - (value * marginPct) / 100 : null,
     breakEven: pos.price + costs.total / pos.qty,
     costs,
     gross: value - invested,
@@ -1213,7 +1221,7 @@ function posMetrics(pos: Position): PosMetrics {
 
 // Brokers check margin for the whole MTF account, not stock by stock: a gain on one stock covers a loss
 // on another at the same broker (Kotak and Rupeezy are separate accounts). Per broker:
-//   needed = Σ value ÷ leverage at entry, equity = Σ (value − broker's money − interest so far),
+//   needed = Σ value × the broker's margin % for that stock today, equity = Σ (value − broker's money − interest so far),
 //   spare = equity − needed; a negative spare is the top-up the broker will ask for.
 // fall = how far every holding at that broker can drop together before spare reaches zero.
 interface Account { broker: BrokerKey; n: number; value: number; needed: number; equity: number; spare: number; fall: number | null }
@@ -1222,7 +1230,7 @@ function accounts(list = loadPositions()): Account[] {
   return BROKERS.map((broker) => {
     const ms = list.filter((p) => p.broker === broker).map(posMetrics).filter((m) => m.spare != null);
     const value = ms.reduce((t, m) => t + m.value!, 0);
-    const needed = ms.reduce((t, m) => t + m.value! / Math.max(1, m.buyValue / m.own), 0);
+    const needed = ms.reduce((t, m) => t + (m.value! * m.marginPct) / 100, 0);
     const equity = ms.reduce((t, m) => t + m.value! - m.funded - m.interest, 0);
     const spare = equity - needed;
     const sens = value - needed; // equity lost per 100% fall, net of the lower margin needed
@@ -1265,7 +1273,8 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const name = state.bySymbol.get(pos.sym)?.name;
   const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
   const pill =
-    st === 'short' ? `<span class="pc-pill is-short">Uses ${inr(-m.spare!)} margin</span>`
+    m.marginFrom === 'dropped' ? `<span class="pc-pill is-short">No longer funded</span>`
+    : st === 'short' ? `<span class="pc-pill is-short">Uses ${inr(-m.spare!)} margin</span>`
     : st === 'close' ? `<span class="pc-pill is-close">Thin margin</span>`
     : st === 'ok' ? `<span class="pc-pill">Adds ${inr(m.spare!)} margin</span>`
     : '';
@@ -1295,7 +1304,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     </div>
     <div class="pc-grid pc-risk">
       ${cell(m.breakEven != null ? rupeeShort(m.breakEven) : '—', 'Break-even')}
-      ${cell(m.spare != null ? `${m.spare >= 0 ? '+' : '−'}${inr(Math.abs(m.spare)).replace('−', '')}` : '—', m.spare != null && m.spare < 0 ? 'Margin used' : 'Margin spare', st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
+      ${cell(m.spare != null ? `${m.spare >= 0 ? '+' : '−'}${inr(Math.abs(m.spare)).replace('−', '')}` : '—', `${m.spare != null && m.spare < 0 ? 'Margin used' : 'Margin spare'}<small>${m.marginFrom === 'dropped' ? 'Not funded now: 100%' : `${round1(m.marginPct)}% margin${Math.abs(m.marginPct - 100 / Math.max(1, pos.lev)) >= 0.5 ? `, was ${round1(100 / Math.max(1, pos.lev))}%` : ''}`}</small>`, st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
       ${cell(m.net != null ? money(m.net) : '—', `Net if sold now${both(m.net)}`, tone(m.net))}
     </div>
     <details class="pr-more">

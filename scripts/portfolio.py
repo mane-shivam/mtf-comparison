@@ -79,10 +79,20 @@ def metrics(pos: dict, px: dict | None, rates: dict, today: date) -> dict:
     return m
 
 
-def accounts(positions: list[dict], prices: dict, rates: dict, today: date) -> list[dict]:
+def margin_pct(pos: dict, mtf: dict | None) -> float:
+    """The broker's margin for this stock today (% of value), from public/data/mtf.json; 100 if no longer funded."""
+    if mtf is None:
+        return 100 / max(1.0, float(pos["lev"]))
+    c = (mtf.get(pos["sym"]) or {}).get(pos["broker"])
+    if not c or c.get("lev", 0) <= 1:
+        return 100.0
+    return float(c.get("ownPct") or 100 / c["lev"])
+
+
+def accounts(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None) -> list[dict]:
     """Margin per broker account, as brokers check it: a gain on one stock covers a loss on another.
 
-    needed = sum(value / leverage), equity = sum(value - broker's money - interest), spare = equity - needed,
+    needed = sum(value x the broker's margin % for that stock today), equity = sum(value - broker's money - interest), spare = equity - needed,
     fall = % every holding can drop together before spare reaches zero (same as the site).
     """
     out = []
@@ -98,7 +108,7 @@ def accounts(positions: list[dict], prices: dict, rates: dict, today: date) -> l
                 continue
             n += 1
             value += m["value"]
-            needed += m["value"] / lev
+            needed += m["value"] * margin_pct(pos, mtf) / 100
             equity += m["value"] - m["funded"] - m["interest"]
         if not n:
             continue
@@ -108,9 +118,9 @@ def accounts(positions: list[dict], prices: dict, rates: dict, today: date) -> l
     return out
 
 
-def warnings(positions: list[dict], prices: dict, rates: dict, today: date) -> list[dict]:
+def warnings(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None) -> list[dict]:
     out = []
-    for a in accounts(positions, prices, rates, today):
+    for a in accounts(positions, prices, rates, today, mtf):
         label = LABEL[a["broker"]]
         if a["spare"] < 0:
             level, text = "alert", f"Margin top-up needed: {rupees(-a['spare'])} short across your {a['n']} MTF stocks"
@@ -139,7 +149,7 @@ def results_due(pins: list[str], events: dict, today: date, days: int = 7) -> li
 
 
 def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, alerts: list[dict],
-            now: datetime, held: set[str]) -> dict:
+            now: datetime, held: set[str], mtf: dict | None = None) -> dict:
     today = now.date()
     lines: list[str] = []
     if payload is not None:
@@ -157,7 +167,7 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
             lines.append(f"Last session: {rupees(day, True)}")
             lines.append(f"Interest: {rupees(sum(m['perDay'] for _, m in ms))} a day, "
                          f"{rupees(sum(m['interest'] for _, m in ms))} so far")
-            for a in accounts(pos, prices, payload.get("rates") or {}, today):
+            for a in accounts(pos, prices, payload.get("rates") or {}, today, mtf):
                 lines.append(f"{LABEL[a['broker']]} margin: " + (f"{rupees(-a['spare'])} short, top-up needed" if a["spare"] < 0
                              else f"{rupees(a['spare'])} spare, can fall {a['fall'] or 0:.1f}%"))
             movers = sorted(priced, key=lambda x: x[1]["day"] or 0)
@@ -205,6 +215,8 @@ def main(now: datetime | None = None) -> int:
     passphrase = os.environ.get("POSITIONS_PASSPHRASE", "").strip()
     market = load_json(PUB / "market.json", {})
     prices = market.get("prices") or {}
+    rows = load_json(PUB / "mtf.json", None)
+    mtf = {r["symbol"]: r for r in rows} if isinstance(rows, list) else None
 
     payload = None
     if passphrase and ENC.exists():
@@ -218,7 +230,7 @@ def main(now: datetime | None = None) -> int:
     if payload is not None:
         fresh, sent = [], set(seen.get("sent") or [])
         day = today.isoformat()
-        for w in warnings(payload.get("positions") or [], prices, payload.get("rates") or {}, today):
+        for w in warnings(payload.get("positions") or [], prices, payload.get("rates") or {}, today, mtf):
             k = tag(passphrase, day, w.pop("id"), w["level"])
             if k not in sent:
                 fresh.append(w)
@@ -234,7 +246,7 @@ def main(now: datetime | None = None) -> int:
         events = load_json(PUB / "events.json", {}).get("events") or {}
         alerts = load_json(PUB / "alerts.json", [])
         held = {p["sym"] for p in (payload or {}).get("positions") or []}
-        SUMMARY.write_text(json.dumps(summary(payload, prices, pins, events, alerts, now, held), ensure_ascii=False,
+        SUMMARY.write_text(json.dumps(summary(payload, prices, pins, events, alerts, now, held, mtf), ensure_ascii=False,
                                       indent=1) + "\n")
         seen["summary"] = today.isoformat()
         print("[portfolio] morning summary ready")

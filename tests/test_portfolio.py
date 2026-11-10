@@ -90,3 +90,17 @@ def test_margin_is_checked_per_broker_account():
     # At a different broker it doesn't help.
     got = portfolio.warnings([loser, {**winner, "broker": "rupeezy"}], prices, {}, today)
     assert [(a["symbol"], a["level"]) for a in got] == [("Kotak Neo", "alert")]
+
+
+def test_margin_uses_todays_broker_rate():
+    today = date(2026, 11, 9)
+    prices = {"AAA": {"p": 430, "prev": 430, "date": "2026-11-09"}}
+    # At the entry 4x (25%) a 7.5% gain leaves room; if the broker now asks 40%, it's short.
+    assert portfolio.warnings([POS], prices, {}, today, {"AAA": {"kotak": {"lev": 4.0}}}) == []
+    got = portfolio.warnings([POS], prices, {}, today, {"AAA": {"kotak": {"lev": 2.5}}})
+    assert got[0]["level"] == "alert"
+    # Dropped from MTF: the full value is needed.
+    assert portfolio.warnings([POS], prices, {}, today, {"AAA": {"kotak": None}})[0]["level"] == "alert"
+    # Rupeezy's exact own-money % wins over 100 / leverage.
+    r = {**POS, "broker": "rupeezy"}
+    assert portfolio.margin_pct(r, {"AAA": {"rupeezy": {"lev": 4.0, "ownPct": 26.1}}}) == 26.1
