@@ -1137,8 +1137,24 @@ function shareBuyFees(c: CostBreakdown, r: BrokerRates, share: number): CostBrea
   return { ...c, total: c.total - cut, fixed: c.fixed - cut, buySide: c.buySide - cut };
 }
 
+// Brokers differ in what "invested" means. Kotak Neo folds the buy-side trade charges (brokerage, its GST,
+// stamp duty, exchange and SEBI fees; not STT or the pledge fee) into the average price; Rupeezy shows the
+// plain trade price. Matching each keeps invested, P&L and returns equal to what the broker app shows.
+const AVG_HAS_BUY_CHARGES: Record<BrokerKey, boolean> = { kotak: true, rupeezy: false };
+
+function brokerInvested(broker: BrokerKey, qty: number, price: number): number {
+  const v = qty * price;
+  if (!AVG_HAS_BUY_CHARGES[broker]) return v;
+  const r = brokerRates()[broker];
+  const pc = (x: number, rate: number) => (x * rate) / 100;
+  const brok = pc(v, r.brokPct) + r.brokFlat;
+  const fees = pc(v, STATUTORY.txn) + pc(v, STATUTORY.sebi);
+  return v + brok + fees + pc(v, STATUTORY.stamp) + pc(brok + fees, STATUTORY.gst);
+}
+
 interface PosMetrics {
-  buyValue: number;
+  buyValue: number; // quantity × trade price
+  invested: number; // what the broker app shows as invested (see AVG_HAS_BUY_CHARGES)
   own: number;
   funded: number;
   days: number;
@@ -1174,6 +1190,7 @@ function posMetrics(pos: Position): PosMetrics {
   const buyValue = pos.qty * pos.price;
   const own = buyValue / lev;
   const funded = buyValue - own;
+  const invested = brokerInvested(pos.broker, pos.qty, pos.price);
   const days = Math.max(0, Math.floor((Date.parse(localISO()) - Date.parse(pos.date)) / 86_400_000));
   const interest = (funded * r.interest * days) / 36500;
   const perDay = (funded * r.interest) / 36500;
@@ -1181,7 +1198,7 @@ function posMetrics(pos: Position): PosMetrics {
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
   const costs = shareBuyFees(computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100), r, pos.qty / (pos.orig ?? pos.qty));
   if (ltp == null) {
-    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
+    return { buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
   }
   const px = state.market!.prices[pos.sym];
   const boughtToday = pos.date >= px.date;
@@ -1193,13 +1210,13 @@ function posMetrics(pos: Position): PosMetrics {
   // i.e. the same margin share the broker asked for at entry.
   const callPrice = lev > 1 ? (funded + interest) / (pos.qty * (1 - 1 / lev)) : null;
   return {
-    buyValue, own, funded, days, interest, ltp, value, net,
+    buyValue, invested, own, funded, days, interest, ltp, value, net,
     roi: own ? (net / own) * 100 : null,
     callPrice,
     callDist: callPrice != null ? ((ltp - callPrice) / ltp) * 100 : null,
     breakEven: pos.price + costs.total / pos.qty,
     costs,
-    gross: value - buyValue,
+    gross: value - invested,
     day,
     dayBase: dayFrom ? dayFrom * pos.qty : null,
     perDay,
@@ -1244,7 +1261,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const pctOf = (n: number, base: number) => `${sign(n)}${Math.abs((n / base) * 100).toFixed(1)}%`;
   // Every return: on total investment first and larger, on your own money smaller below.
   const both = (n: number | null, withTotal = true) => n == null ? ''
-    : `${withTotal ? `<em class="pc-t">${pctOf(n, m.buyValue)} on total</em>` : ''}<small>${sign(n)}${Math.abs((n / m.own) * 100).toFixed(Math.abs(n / m.own) >= 0.1 ? 0 : 1)}% own money</small>`;
+    : `${withTotal ? `<em class="pc-t">${pctOf(n, m.invested)} on total</em>` : ''}<small>${sign(n)}${Math.abs((n / m.own) * 100).toFixed(Math.abs(n / m.own) >= 0.1 ? 0 : 1)}% own money</small>`;
   const name = state.bySymbol.get(pos.sym)?.name;
   const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
   const pill =
@@ -1268,12 +1285,12 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     </div>
     <div class="pc-grid pc-key">
       ${cell(m.gross != null ? money(m.gross) : '—', 'Unrealised P&amp;L', tone(m.gross))}
-      ${cell(m.gross != null ? pctOf(m.gross, m.buyValue) : '—', `On total${both(m.gross, false)}`, tone(m.gross))}
+      ${cell(m.gross != null ? pctOf(m.gross, m.invested) : '—', `On total${both(m.gross, false)}`, tone(m.gross))}
       ${cell(m.day != null ? money(m.day) : '—', `Day P&amp;L${both(m.day)}`, tone(m.day))}
     </div>
     <div class="pc-grid">
-      ${cell(rupee(pos.price), 'Avg buy price')}
-      ${cell(lakh(m.buyValue), 'Total investment')}
+      ${cell(rupee(Math.round((m.invested / pos.qty) * 100) / 100), 'Avg buy price')}
+      ${cell(lakh(m.invested), 'Total investment')}
       ${cell(lakh(m.own), 'Your money')}
     </div>
     <div class="pc-grid pc-risk">
@@ -1287,7 +1304,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
       <dl class="pr-dl">
         <dt>Your money in</dt><dd>${inr(m.own)}</dd>
         <dt>Broker's money</dt><dd>${inr(m.funded)}</dd>
-        <dt>Total investment</dt><dd>${inr(m.buyValue)}${m.value != null ? `<small>Worth ${inr(m.value)} now</small>` : ''}</dd>
+        <dt>Total investment</dt><dd>${inr(m.invested)}${m.value != null ? `<small>Worth ${inr(m.value)} now</small>` : ''}</dd>
         <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<small>${inr2(c.buySide)} at buy, ${inr2(c.sellSide)} on sale</small></dd>
         <dt>Interest so far</dt><dd>${inr2(m.interest)}<small>${m.days ? `${m.days} day${m.days === 1 ? '' : 's'}` : 'Bought today'}</small></dd>
         <dt>Interest cost</dt><dd>${inr2(m.perDay)} a day<small>${inr(m.perDay * 30)} a month</small></dd>
@@ -1396,8 +1413,8 @@ function positionsViewHTML(): string {
   // Totals follow the filters, so "Kotak" shows Kotak-only numbers.
   const sum = (f: (m: PosMetrics) => number) => shown.reduce((t, x) => t + f(x.m), 0);
   const own = sum((m) => m.own);
-  const invested = sum((m) => m.buyValue);
-  const value = sum((m) => m.value ?? m.buyValue);
+  const invested = sum((m) => m.invested);
+  const value = sum((m) => m.value ?? m.invested);
   const net = sum((m) => m.net ?? 0);
   const gross = sum((m) => m.gross ?? 0);
   const day = sum((m) => m.day ?? 0);

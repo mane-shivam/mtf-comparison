@@ -60,7 +60,7 @@ def test_warn_once_a_day_and_summary_once(tmp_path, monkeypatch):
     assert "AAA" not in portfolio.SEEN.read_text()  # nothing readable is committed
     later = datetime(2026, 11, 10, 3, 0, tzinfo=timezone.utc)  # 08:30 IST
     out, summ = run(tmp_path, monkeypatch, 379, later)
-    assert out == [] and summ["lines"][0].startswith("Portfolio: 1 position, unrealised −₹2,100 (-5.2% on total, -21.0% on own money")
+    assert out == [] and summ["lines"][0].startswith("Portfolio: 1 position, unrealised −₹2,155 (-5.4% on total, -21.5% on own money")
     assert any(line.startswith("Top-up: AAA") for line in summ["lines"])
     out, summ = run(tmp_path, monkeypatch, 379, datetime(2026, 11, 10, 4, 0, tzinfo=timezone.utc))
     assert out == [] and summ is None  # both already sent today

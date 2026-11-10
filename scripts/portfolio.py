@@ -56,6 +56,20 @@ def rupees(x: float, signed: bool = False) -> str:
     return ("−" if x < 0 else "") + s
 
 
+# Kotak Neo's average price includes the buy-side trade charges (brokerage + GST, stamp, exchange and
+# SEBI fees; not STT or pledge); Rupeezy shows the plain price. Same rule as the site.
+KOTAK_BUY = {"brok": 0.1, "txn": 0.0030699, "sebi": 0.0001, "stamp": 0.015, "gst": 18}
+
+
+def invested(pos: dict) -> float:
+    v = pos["qty"] * pos["price"]
+    if pos["broker"] != "kotak":
+        return v
+    k = KOTAK_BUY
+    brok, fees = v * k["brok"] / 100, v * (k["txn"] + k["sebi"]) / 100
+    return v + brok + fees + v * k["stamp"] / 100 + (brok + fees) * k["gst"] / 100
+
+
 def metrics(pos: dict, px: dict | None, rates: dict, today: date) -> dict:
     lev = max(1.0, float(pos["lev"]))
     buy = pos["qty"] * pos["price"]
@@ -63,14 +77,14 @@ def metrics(pos: dict, px: dict | None, rates: dict, today: date) -> dict:
     rate = float((rates.get(pos["broker"]) or {}).get("interest", DEFAULT_INTEREST.get(pos["broker"], 10)))
     days = max(0, (today - date.fromisoformat(pos["date"])).days)
     interest = funded * rate * days / 36500
-    m = {"buy": buy, "own": buy / lev, "funded": funded, "interest": interest, "perDay": funded * rate / 36500,
+    m = {"buy": invested(pos), "own": buy / lev, "funded": funded, "interest": interest, "perDay": funded * rate / 36500,
          "ltp": None, "value": None, "gross": None, "day": None, "call": None, "dist": None}
     if lev > 1:
         m["call"] = (funded + interest) / (pos["qty"] * (1 - 1 / lev))
     if not px or not px.get("p"):
         return m
     p = px["p"]
-    m.update(ltp=p, value=pos["qty"] * p, gross=pos["qty"] * p - buy)
+    m.update(ltp=p, value=pos["qty"] * p, gross=pos["qty"] * p - m["buy"])
     base = pos["price"] if pos["date"] >= (px.get("date") or "") else px.get("prev")
     if base:
         m["day"] = pos["qty"] * (p - base)
