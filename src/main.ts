@@ -271,7 +271,8 @@ async function fetchRemotePins(): Promise<{ pins: string[]; sha: string | null }
 
 // Re-apply this device's unsynced adds and removes (relative to the last list it saw) onto `remote`.
 function rebasePins(remote: string[]): string[] {
-  const base = new Set(store<string[]>(BASE_KEY) ?? remote);
+  // Without a list this device has seen before, nothing counts as removed: only additions apply.
+  const base = new Set(store<string[]>(BASE_KEY) ?? []);
   const local = new Set(state.pins);
   const removed = new Set([...base].filter((p) => !local.has(p)));
   const added = state.pins.filter((p) => !base.has(p));
@@ -287,6 +288,7 @@ async function pullPins(): Promise<void> {
     state.pins = rebasePins(remote.pins);
     store(PIN_KEY, state.pins);
     store(BASE_KEY, remote.pins);
+    ensureHeldPinned();
     render();
     return void pushPins();
   }
@@ -295,7 +297,17 @@ async function pullPins(): Promise<void> {
   store(BASE_KEY, remote.pins);
   sync.at = Date.now();
   setSync('synced');
+  ensureHeldPinned(); // another device's list can't drop a stock you hold here
   render();
+}
+
+// Every stock in Positions stays on the watchlist (prices and alerts are only fetched for pins).
+function ensureHeldPinned(): boolean {
+  const missing = [...new Set(loadPositions().map((p) => p.sym))].filter((sym) => !state.pins.includes(sym));
+  if (!missing.length) return false;
+  state.pins.push(...missing);
+  savePins();
+  return true;
 }
 
 function scheduleSync() {
@@ -386,6 +398,10 @@ function connectGitHub() {
 
 function togglePin(sym: string) {
   const i = state.pins.indexOf(sym);
+  if (i >= 0 && loadPositions().some((p) => p.sym === sym)) {
+    toast(`${sym} is in your positions, so it stays on the watchlist`);
+    return;
+  }
   if (i >= 0) state.pins.splice(i, 1);
   else state.pins.push(sym);
   savePins();
@@ -1134,70 +1150,74 @@ function posMetrics(pos: Position): PosMetrics {
 }
 
 // The margin cushion: where today's price sits against the top-up level and break-even.
+// Thin cushion line: red up to the top-up level, a tick at break-even, a dot at today's price.
 function cushionHTML(m: PosMetrics): string {
   if (m.ltp == null || m.callPrice == null || m.breakEven == null) return '';
   const pts = [m.ltp, m.callPrice, m.breakEven];
   const span = Math.max(Math.max(...pts) - Math.min(...pts), m.ltp * 0.02);
-  const lo = Math.min(...pts) - span * 0.35;
-  const hi = Math.max(...pts) + span * 0.35;
-  const at = (v: number) => ((v - lo) / (hi - lo)) * 100;
-  const gap = m.ltp - m.callPrice;
-  const close = Math.abs(at(m.callPrice) - at(m.breakEven)) < 14; // labels would collide
-  const caption =
-    gap >= 0
-      ? `<b>${inr(gap * (m.value! / m.ltp))}</b> of cushion: the price can fall ${m.callDist!.toFixed(1)}% before a top-up`
-      : `<b class="neg">Below the top-up level by ${Math.abs(m.callDist!).toFixed(1)}%</b>: add margin or reduce the position`;
-  return `<div class="cushion${gap < 0 ? ' is-short' : m.callDist! < CALL_WARN ? ' is-close' : ''}">
-    <div class="cushion-track" aria-hidden="true">
-      <span class="cushion-danger" style="width:${at(m.callPrice)}%"></span>
-      <span class="cushion-mark is-call" style="left:${at(m.callPrice)}%"><span>${close ? 'Top-up ≈ break-even' : 'Top-up'}</span></span>
-      ${close ? '' : `<span class="cushion-mark is-be" style="left:${at(m.breakEven)}%"><span>Break-even</span></span>`}
-      <span class="cushion-now" style="left:${at(m.ltp)}%"></span>
-    </div>
-    <p class="cushion-cap">${caption}</p>
+  const lo = Math.min(...pts) - span * 0.4;
+  const hi = Math.max(...pts) + span * 0.4;
+  const at = (v: number) => (((v - lo) / (hi - lo)) * 100).toFixed(1);
+  return `<div class="pr-track" aria-hidden="true">
+    <span class="pr-danger" style="width:${at(m.callPrice)}%"></span>
+    <span class="pr-tick is-call" style="left:${at(m.callPrice)}%"></span>
+    <span class="pr-tick is-be" style="left:${at(m.breakEven)}%"></span>
+    <span class="pr-now" style="left:${at(m.ltp)}%"></span>
   </div>`;
 }
+
+type PosState = 'short' | 'close' | 'ok' | 'none';
+const posState = (m: PosMetrics): PosState =>
+  m.callDist == null ? 'none' : m.callDist < 0 ? 'short' : m.callDist < CALL_WARN ? 'close' : 'ok';
 
 function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const m = posMetrics(pos);
   const c = m.costs;
-  const short = m.callDist != null && m.callDist < 0;
-  const title = withSymbol
-    ? `<button class="link-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>`
-    : `<span class="pos-name">${BROKER_NAME[pos.broker]}</span>`;
-  const pnl = m.net != null
-    ? `<div class="pos-pnl"><b class="${m.net >= 0 ? 'pos' : 'neg'}">${m.net >= 0 ? '+' : '−'}${inr(Math.abs(m.net)).replace('−', '')}</b><span title="On your money, after every charge">${m.roi! >= 0 ? '+' : ''}${m.roi!.toFixed(1)}%</span></div>`
-    : '<div class="pos-pnl"><span>Waiting for a price</span></div>';
-  const stat = (k: string, v: string) => `<div><div class="tile-k">${k}</div><div class="pos-stat">${v}</div></div>`;
+  const st = posState(m);
+  const sign = (n: number) => (n >= 0 ? '+' : '−');
+  const money = (n: number) => `${sign(n)}${inr(Math.abs(n)).replace('−', '')}`;
+  const head = withSymbol
+    ? `<button class="pr-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>`
+    : `<span class="pr-sym">${BROKER_NAME[pos.broker]}</span>`;
+  const cushion =
+    st === 'short' ? `<span class="pr-state is-short">${Math.abs(m.callDist!).toFixed(1)}% below top-up</span>`
+    : st === 'close' ? `<span class="pr-state is-close">${m.callDist!.toFixed(1)}% above top-up</span>`
+    : st === 'ok' ? `<span class="pr-state">${m.callDist!.toFixed(1)}% cushion</span>`
+    : '';
   const items: [string, number][] = [
     ['Brokerage on buy', c.brokBuy], ['Brokerage on sell', c.brokSell], ['Pledge on buy', c.pledge], ['Unpledge on sell', c.unpledge],
     ['DP charge on sell', c.dp], ['GST on DP and pledge', c.gstDepository], ['STT, buy and sell', c.stt], ['NSE transaction', c.txn],
     ['SEBI fee', c.sebi], ['Stamp duty on buy', c.stamp], ['GST on brokerage and fees', c.gstTrade], [`Interest, ${m.days} day${m.days === 1 ? '' : 's'}`, c.interest],
   ];
-  return `<article class="pos-card${short ? ' is-short' : ''}">
-    <header class="pos-top">
-      <div><div class="pos-title">${title}</div><div class="pos-sub">${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}, ${m.days ? `${m.days} day${m.days === 1 ? '' : 's'}` : 'today'}</div></div>
-      ${pnl}
-    </header>
-    ${cushionHTML(m)}
-    <div class="pos-stats">
-      ${stat('Now', m.ltp != null ? rupee(m.ltp) : '—')}
-      ${stat('Break-even', m.breakEven != null ? rupee(m.breakEven) : '—')}
-      ${stat('Top-up below', m.callPrice != null ? rupee(m.callPrice) : '—')}
+  return `<article class="pr is-${st}">
+    <div class="pr-line">
+      ${head}
+      ${m.net != null ? `<span class="pr-pnl ${m.net >= 0 ? 'up' : 'down'}">${money(m.net)}</span>` : '<span class="pr-pnl">—</span>'}
     </div>
-    <details class="pos-more">
-      <summary>Money and charges <span class="pos-more-hint">${inr(c.total)} if sold now</span></summary>
-      <dl class="pos-dl">
+    <div class="pr-line pr-meta">
+      <span>${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}</span>
+      ${m.roi != null ? `<span class="${m.roi >= 0 ? 'up' : 'down'}">${sign(m.roi)}${Math.abs(m.roi).toFixed(1)}%</span>` : ''}
+    </div>
+    ${cushionHTML(m)}
+    <div class="pr-prices">
+      ${cushion}
+      <span><i>Now</i>${m.ltp != null ? rupeeShort(m.ltp) : '—'}</span>
+      <span><i>Break-even</i>${m.breakEven != null ? rupeeShort(m.breakEven) : '—'}</span>
+      <span><i>Top-up</i>${m.callPrice != null ? rupeeShort(m.callPrice) : '—'}</span>
+    </div>
+    <details class="pr-more">
+      <summary><span>Money and charges</span><span class="pr-faint">${inr(c.total)} if sold now</span></summary>
+      <dl class="pr-dl">
         <dt>Your money in</dt><dd>${inr(m.own)}</dd>
         <dt>Broker's money</dt><dd>${inr(m.funded)}</dd>
-        <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<span>${inr2(c.buySide)} paid at buy, ${inr2(c.sellSide)} on sale</span></dd>
-        <dt>Interest so far</dt><dd>${inr2(m.interest)}</dd>
-        <dt>Charges if sold now</dt><dd><b>${inr2(c.total)}</b></dd>
+        <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<small>${inr2(c.buySide)} at buy, ${inr2(c.sellSide)} on sale</small></dd>
+        <dt>Interest so far</dt><dd>${inr2(m.interest)}<small>${m.days ? `${m.days} day${m.days === 1 ? '' : 's'}` : 'Bought today'}</small></dd>
+        <dt>Charges if sold now</dt><dd>${inr2(c.total)}</dd>
       </dl>
-      <details class="pos-breakdown"><summary>Every charge</summary>
-        <table class="calc-table">${items.map(([k, v]) => `<tr><th>${k}</th><td>${inr2(v)}</td></tr>`).join('')}</table>
+      <details class="pr-items"><summary>Every charge</summary>
+        <dl class="pr-dl">${items.map(([k, v]) => `<dt>${k}</dt><dd>${inr2(v)}</dd>`).join('')}</dl>
       </details>
-      <button class="btn btn-ghost btn-sm pos-remove" data-pos-del="${esc(pos.id)}">Remove this position</button>
+      <button class="pr-remove" data-pos-del="${esc(pos.id)}">Remove this position</button>
     </details>
   </article>`;
 }
@@ -1221,7 +1241,7 @@ function positionSectionHTML(s: Stock): string {
         <button class="btn btn-primary" data-pos-save="${esc(s.symbol)}">Save position</button>
       </details>`
     : '';
-  return `${mine.map((p) => positionCardHTML(p, false)).join('')}${form}`;
+  return `${mine.length ? `<div class="pr-list">${mine.map((p) => positionCardHTML(p, false)).join('')}</div>` : ''}${form}`;
 }
 
 function positionsViewHTML(): string {
@@ -1230,24 +1250,28 @@ function positionsViewHTML(): string {
     return `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
   }
   const withM = list.map((p) => ({ p, m: posMetrics(p) })).sort((a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999));
-  const own = withM.reduce((t, x) => t + x.m.own, 0);
-  const net = withM.reduce((t, x) => t + (x.m.net ?? 0), 0);
-  const interest = withM.reduce((t, x) => t + x.m.interest, 0);
-  const fixed = withM.reduce((t, x) => t + x.m.costs.fixed, 0);
-  const short = withM.filter((x) => x.m.callDist != null && x.m.callDist < 0).length;
-  return `<section class="pos-summary">
-      <div class="pos-summary-main">
-        <div class="tile-k">If you sold everything now</div>
-        <div class="pos-summary-pnl ${net >= 0 ? 'pos' : 'neg'}">${net >= 0 ? '+' : '−'}${inr(Math.abs(net)).replace('−', '')}</div>
-        <div class="pos-sub">${own ? `${((net / own) * 100).toFixed(1)}% on ${inr(own)} of your money, after every charge` : ''}</div>
+  const sum = (f: (m: PosMetrics) => number) => withM.reduce((t, x) => t + f(x.m), 0);
+  const own = sum((m) => m.own);
+  const net = sum((m) => m.net ?? 0);
+  const groups: [PosState[], string][] = [[['short'], 'Need a top-up'], [['close'], 'Close to a top-up'], [['ok', 'none'], 'Comfortable']];
+  const sections = groups
+    .map(([states, title]) => {
+      const rows = withM.filter((x) => states.includes(posState(x.m)));
+      return rows.length
+        ? `<h2 class="pr-group">${title}<span>${rows.length}</span></h2><div class="pr-list">${rows.map(({ p }) => positionCardHTML(p, true)).join('')}</div>`
+        : '';
+    })
+    .join('');
+  return `<section class="pr-summary">
+      <div class="pr-faint">If you sold everything now</div>
+      <div class="pr-total ${net >= 0 ? 'up' : 'down'}">${net >= 0 ? '+' : '−'}${inr(Math.abs(net)).replace('−', '')}</div>
+      <div class="pr-faint">${own ? `${net >= 0 ? '+' : '−'}${Math.abs((net / own) * 100).toFixed(1)}% on ${inr(own)} of your money, after every charge` : ''}</div>
+      <div class="pr-sumstats">
+        <div><i>Fixed charges</i>${inr(sum((m) => m.costs.fixed))}</div>
+        <div><i>Interest so far</i>${inr(sum((m) => m.interest))}</div>
+        <div><i>Positions</i>${list.length}</div>
       </div>
-      <div class="pos-summary-side">
-        <div><div class="tile-k">Fixed charges</div><div class="pos-stat">${inr(fixed)}</div></div>
-        <div><div class="tile-k">Interest so far</div><div class="pos-stat">${inr(interest)}</div></div>
-        <div><div class="tile-k">Need a top-up</div><div class="pos-stat${short ? ' neg' : ''}">${short ? `${short} of ${list.length}` : 'None'}</div></div>
-      </div>
-    </section>
-    ${withM.map(({ p }) => positionCardHTML(p, true)).join('')}`;
+    </section>${sections}`;
 }
 
 function positionsBadge() {
@@ -1271,11 +1295,7 @@ function savePositionFromForm(sym: string) {
   const list = loadPositions();
   list.push({ id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, sym, broker, qty, price, date, lev });
   savePositions(list);
-  // Prices are fetched for pinned stocks, so a tracked position is pinned too.
-  if (!state.pins.includes(sym)) {
-    state.pins.push(sym);
-    savePins();
-  }
+  ensureHeldPinned();
   toast('Position saved on this device');
   openSheet(sym);
   render();
@@ -1402,16 +1422,13 @@ function applyHoldings(replace: boolean) {
     id: `${Date.now().toString(36)}${i}${Math.random().toString(36).slice(2, 5)}`,
     sym: h.sym!, broker: h.broker!, qty: h.qty, price: h.price, date: h.date, lev: h.lev,
   }));
+  const toPin = new Set(fresh.map((p) => p.sym).filter((sym) => !state.pins.includes(sym)));
   savePositions(replace ? fresh : [...current, ...fresh]);
-  const toPin = fresh.map((p) => p.sym).filter((sym) => !state.pins.includes(sym));
-  if (toPin.length) {
-    state.pins.push(...new Set(toPin));
-    savePins();
-  }
+  ensureHeldPinned();
   $<HTMLDialogElement>('#sheet').close();
   state.view = 'positions';
   render();
-  toast(`${replace ? 'Replaced with' : 'Added'} ${fresh.length} position${fresh.length === 1 ? '' : 's'}${toPin.length ? `; pinned ${toPin.length} for prices` : ''}`);
+  toast(`${replace ? 'Replaced with' : 'Added'} ${fresh.length} position${fresh.length === 1 ? '' : 's'}${toPin.size ? `; added ${toPin.size} to the watchlist` : ''}`);
 }
 
 function exportPositions() {
@@ -1430,6 +1447,7 @@ async function importPositions(file: File) {
     if (!Array.isArray(list) || list.some((p) => !p.sym || !p.qty || !p.price)) throw new Error('bad');
     const byId = new Map([...loadPositions(), ...list].map((p) => [p.id, p]));
     savePositions([...byId.values()]);
+    ensureHeldPinned();
     render();
     toast(`Imported ${list.length} positions`);
   } catch {
@@ -1618,6 +1636,8 @@ function eventsSectionHTML(sym: string): string {
 }
 
 const rupee = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
+// Prices in lists: whole rupees from ₹1,000 up, two decimals below.
+const rupeeShort = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: n >= 1000 ? 0 : 2 })}`;
 const compact = (n: number) => (n >= 1e7 ? `${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `${(n / 1e5).toFixed(2)} L` : n.toLocaleString('en-IN'));
 
 // Price move from the close on the results day (or the last session before it) to now.
@@ -2414,6 +2434,9 @@ async function boot() {
       store(DIRTY_KEY, true);
     }
   }
+
+  // With sync, held stocks are added on top of the shared list after it loads (see pullPins).
+  if (!SYNC_ON) ensureHeldPinned();
 
   // Pick up edits made on other devices when this tab comes back into view.
   document.addEventListener('visibilitychange', () => {
