@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-10T10:47:22Z",
+"fetchedAt": "2026-11-10T11:26:29Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-10T10:47:17Z",
+"fetchedAt": "2026-11-10T11:26:23Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-10T10:47:18Z",
+"fetchedAt": "2026-11-10T11:26:24Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-10T10:47:22Z",
-"count": 859,
+"fetchedAt": "2026-11-10T11:26:29Z",
+"count": 864,
 "error": null
 }
 },
@@ -2384,6 +2384,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15322_20261102_163015437_WEB.html"
 },
 {
+"symbol": "ADANIPOWER",
+"date": "2026-11-10",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Adani Power Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/ADANIPOWER_10112026164048_APLCreditRatingenhancementICRA10112026.pdf"
+},
+{
 "symbol": "ADFFOODS",
 "date": "2026-11-11",
 "kind": "action",
@@ -2790,6 +2799,14 @@
 "title": "Results",
 "detail": "ARSS INFRASTRUCTURE PROJECTS LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3082_20261105_124214677_WEB.html"
+},
+{
+"symbol": "ARSSINFRA",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "ARSS Infrastructure Projects Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ARSSINFRA_10112026163301_outcome_BM_10_11_2026.pdf"
 },
 {
 "symbol": "ASAHISONG",
@@ -5998,6 +6015,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14514_20261105_134201673_WEB.html"
 },
 {
+"symbol": "MCLOUD",
+"date": "2026-11-13",
+"kind": "meeting",
+"title": "Results",
+"detail": "Magellanic Cloud Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22297_20261110_162820237_WEB.html"
+},
+{
 "symbol": "MEDIASSIST",
 "date": "2026-11-20",
 "kind": "action",
@@ -6866,6 +6891,14 @@
 "title": "Results",
 "detail": "PIONEER EMBROIDERIES LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2407_20261103_172606618_WEB.html"
+},
+{
+"symbol": "PLAZACABLE",
+"date": "2026-11-13",
+"kind": "meeting",
+"title": "Results",
+"detail": "PLAZA WIRES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20707_20261110_165120285_WEB.html"
 },
 {
 "symbol": "PNB",
@@ -8413,6 +8446,14 @@
 "title": "Results",
 "detail": "TECIL CHEMICALS AND HYDRO POWER LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_578_20261104_154855495_WEB.html"
+},
+{
+"symbol": "TEMBO",
+"date": "2026-11-12",
+"kind": "meeting",
+"title": "Results",
+"detail": "Tembo Global Industries Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16528_20261110_165059235_WEB.html"
 },
 {
 "symbol": "TERASOFT",
