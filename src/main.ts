@@ -1177,7 +1177,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const sign = (n: number) => (n >= 0 ? '+' : '−');
   const money = (n: number) => `${sign(n)}${inr(Math.abs(n)).replace('−', '')}`;
   const head = withSymbol
-    ? `<button class="pr-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>`
+    ? `<span class="pr-head"><button class="pr-sym" data-open-pos="${esc(pos.sym)}">${esc(pos.sym)}</button>${flagsHTML(pos.sym, 1)}</span>`
     : `<span class="pr-sym">${BROKER_NAME[pos.broker]}</span>`;
   const cushion =
     st === 'short' ? `<span class="pr-state is-short">${Math.abs(m.callDist!).toFixed(1)}% below top-up</span>`
@@ -1196,8 +1196,8 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     </div>
     <div class="pr-line pr-meta">
       <span>${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}</span>
-      ${m.roi != null ? `<span class="${m.roi >= 0 ? 'up' : 'down'}">${sign(m.roi)}${Math.abs(m.roi).toFixed(1)}%</span>` : ''}
     </div>
+    ${m.roi != null ? `<div class="pr-ret">Return <b class="${m.roi >= 0 ? 'up' : 'down'}">${sign(m.roi)}${Math.abs(m.roi).toFixed(1)}%</b> on your money, <b>${sign(m.net!)}${Math.abs((m.net! / m.buyValue) * 100).toFixed(1)}%</b> on total</div>` : ''}
     ${cushionHTML(m)}
     <div class="pr-prices">
       ${cushion}
@@ -1210,6 +1210,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
       <dl class="pr-dl">
         <dt>Your money in</dt><dd>${inr(m.own)}</dd>
         <dt>Broker's money</dt><dd>${inr(m.funded)}</dd>
+        <dt>Total investment</dt><dd>${inr(m.buyValue)}${m.value != null ? `<small>Worth ${inr(m.value)} now</small>` : ''}</dd>
         <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<small>${inr2(c.buySide)} at buy, ${inr2(c.sellSide)} on sale</small></dd>
         <dt>Interest so far</dt><dd>${inr2(m.interest)}<small>${m.days ? `${m.days} day${m.days === 1 ? '' : 's'}` : 'Bought today'}</small></dd>
         <dt>Charges if sold now</dt><dd>${inr2(c.total)}</dd>
@@ -1244,34 +1245,107 @@ function positionSectionHTML(s: Stock): string {
   return `${mine.length ? `<div class="pr-list">${mine.map((p) => positionCardHTML(p, false)).join('')}</div>` : ''}${form}`;
 }
 
+type PosSort = 'risk' | 'pnl' | 'pnlBest' | 'ret' | 'size' | 'interest' | 'days' | 'az';
+interface PosView { broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
+const POS_VIEW_KEY = 'mtf.posView';
+const posView = (): PosView => ({ broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
+
+function positionsToolbarHTML(v: PosView, counts: Record<string, number>): string {
+  const chip = (key: string, value: string, label: string, on: boolean, n?: number) =>
+    `<button class="chip${on ? ' on' : ''}" data-posf="${key}:${value}" aria-pressed="${on}">${label}${n != null ? ` <span class="count">${n}</span>` : ''}</button>`;
+  const sorts: [PosSort, string][] = [
+    ['risk', 'Risk first'], ['pnl', 'Biggest loss'], ['pnlBest', 'Biggest gain'], ['ret', 'Return %'],
+    ['size', 'Largest'], ['interest', 'Most interest'], ['days', 'Held longest'], ['az', 'A to Z'],
+  ];
+  return `<div class="pr-tools">
+    <div class="chips pr-chips">
+      ${chip('broker', 'kotak', 'Kotak', v.broker === 'kotak', counts.kotak)}
+      ${chip('broker', 'rupeezy', 'Rupeezy', v.broker === 'rupeezy', counts.rupeezy)}
+      ${chip('status', 'short', 'Need top-up', v.status === 'short', counts.short)}
+      ${chip('status', 'close', 'Close', v.status === 'close', counts.close)}
+      ${chip('pnl', 'down', 'Losers', v.pnl === 'down', counts.down)}
+      ${chip('pnl', 'up', 'Gainers', v.pnl === 'up', counts.up)}
+      ${chip('results', '1', 'Results due', v.results, counts.results)}
+    </div>
+    <label class="select"><span class="sr-only">Sort positions</span><select id="pos-sort">${sorts.map(([k, l]) => `<option value="${k}"${k === v.sort ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
+  </div>`;
+}
+
 function positionsViewHTML(): string {
   const list = loadPositions();
   if (!list.length) {
     return `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
   }
-  const withM = list.map((p) => ({ p, m: posMetrics(p) })).sort((a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999));
-  const sum = (f: (m: PosMetrics) => number) => withM.reduce((t, x) => t + f(x.m), 0);
+  const v = posView();
+  const all = list.map((p) => ({ p, m: posMetrics(p) }));
+  const counts: Record<string, number> = {
+    kotak: all.filter((x) => x.p.broker === 'kotak').length,
+    rupeezy: all.filter((x) => x.p.broker === 'rupeezy').length,
+    short: all.filter((x) => posState(x.m) === 'short').length,
+    close: all.filter((x) => posState(x.m) === 'close').length,
+    up: all.filter((x) => (x.m.net ?? 0) >= 0).length,
+    down: all.filter((x) => (x.m.net ?? 0) < 0).length,
+    results: all.filter((x) => nextResult(x.p.sym)).length,
+  };
+  const shown = all.filter(
+    (x) =>
+      (v.broker === 'all' || x.p.broker === v.broker) &&
+      (v.status === 'all' || posState(x.m) === v.status) &&
+      (v.pnl === 'all' || (v.pnl === 'up' ? (x.m.net ?? 0) >= 0 : (x.m.net ?? 0) < 0)) &&
+      (!v.results || !!nextResult(x.p.sym)),
+  );
+  const by: Record<PosSort, (a: (typeof all)[number], b: (typeof all)[number]) => number> = {
+    risk: (a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999),
+    pnl: (a, b) => (a.m.net ?? 0) - (b.m.net ?? 0),
+    pnlBest: (a, b) => (b.m.net ?? 0) - (a.m.net ?? 0),
+    ret: (a, b) => (b.m.roi ?? -999) - (a.m.roi ?? -999),
+    size: (a, b) => b.m.buyValue - a.m.buyValue,
+    interest: (a, b) => b.m.interest - a.m.interest,
+    days: (a, b) => b.m.days - a.m.days,
+    az: (a, b) => a.p.sym.localeCompare(b.p.sym),
+  };
+  shown.sort((a, b) => by[v.sort](a, b) || a.p.sym.localeCompare(b.p.sym));
+
+  // Totals follow the filters, so "Kotak" shows Kotak-only numbers.
+  const sum = (f: (m: PosMetrics) => number) => shown.reduce((t, x) => t + f(x.m), 0);
   const own = sum((m) => m.own);
+  const invested = sum((m) => m.buyValue);
+  const value = sum((m) => m.value ?? m.buyValue);
   const net = sum((m) => m.net ?? 0);
-  const groups: [PosState[], string][] = [[['short'], 'Need a top-up'], [['close'], 'Close to a top-up'], [['ok', 'none'], 'Comfortable']];
-  const sections = groups
-    .map(([states, title]) => {
-      const rows = withM.filter((x) => states.includes(posState(x.m)));
-      return rows.length
-        ? `<h2 class="pr-group">${title}<span>${rows.length}</span></h2><div class="pr-list">${rows.map(({ p }) => positionCardHTML(p, true)).join('')}</div>`
-        : '';
-    })
-    .join('');
+  const sign = (n: number) => (n >= 0 ? '+' : '−');
+  const pct = (n: number, base: number) => (base ? `${sign(n)}${Math.abs((n / base) * 100).toFixed(2)}%` : '—');
+  const filtered = shown.length !== all.length;
+
+  const rows = (items: typeof shown) => items.map(({ p }) => positionCardHTML(p, true)).join('');
+  const body = !shown.length
+    ? '<div class="empty"><p class="empty-title">No positions match</p><p>Clear a filter to see more.</p></div>'
+    : v.sort === 'risk'
+      ? ([[['short'], 'Need a top-up'], [['close'], 'Close to a top-up'], [['ok', 'none'], 'Comfortable']] as [PosState[], string][])
+          .map(([states, title]) => {
+            const g = shown.filter((x) => states.includes(posState(x.m)));
+            return g.length ? `<h2 class="pr-group">${title}<span>${g.length}</span></h2><div class="pr-list">${rows(g)}</div>` : '';
+          })
+          .join('')
+      : `<div class="pr-list">${rows(shown)}</div>`;
+
   return `<section class="pr-summary">
-      <div class="pr-faint">If you sold everything now</div>
-      <div class="pr-total ${net >= 0 ? 'up' : 'down'}">${net >= 0 ? '+' : '−'}${inr(Math.abs(net)).replace('−', '')}</div>
-      <div class="pr-faint">${own ? `${net >= 0 ? '+' : '−'}${Math.abs((net / own) * 100).toFixed(1)}% on ${inr(own)} of your money, after every charge` : ''}</div>
+      <div class="pr-faint">${filtered ? `${shown.length} of ${all.length} positions, if sold now` : 'If you sold everything now'}</div>
+      <div class="pr-total ${net >= 0 ? 'up' : 'down'}">${sign(net)}${inr(Math.abs(net)).replace('−', '')}</div>
+      <div class="pr-returns">
+        <span><b class="${net >= 0 ? 'up' : 'down'}">${pct(net, own)}</b> on your money</span>
+        <span><b class="${net >= 0 ? 'up' : 'down'}">${pct(net, invested)}</b> on total investment</span>
+      </div>
       <div class="pr-sumstats">
+        <div><i>Your money</i>${inr(own)}</div>
+        <div><i>Total investment</i>${inr(invested)}</div>
+        <div><i>Value now</i>${inr(value)}</div>
         <div><i>Fixed charges</i>${inr(sum((m) => m.costs.fixed))}</div>
         <div><i>Interest so far</i>${inr(sum((m) => m.interest))}</div>
-        <div><i>Positions</i>${list.length}</div>
+        <div><i>Charges if sold now</i>${inr(sum((m) => m.costs.total))}</div>
       </div>
-    </section>${sections}`;
+    </section>
+    ${positionsToolbarHTML(v, counts)}
+    ${body}`;
 }
 
 function positionsBadge() {
@@ -2278,6 +2352,15 @@ function bind() {
       return;
     }
     if (t.closest('#pos-export')) return exportPositions();
+    const pf = t.closest<HTMLElement>('[data-posf]');
+    if (pf) {
+      const [key, value] = pf.dataset.posf!.split(':');
+      const v = posView() as unknown as Record<string, unknown>;
+      if (key === 'results') v.results = !v.results;
+      else v[key] = v[key] === value ? 'all' : value; // tap again to clear
+      store(POS_VIEW_KEY, v);
+      return renderList();
+    }
     if (t.closest('[data-import-holdings]')) return void openHoldingsImport();
     if (t.closest('#h-add')) return applyHoldings(false);
     if (t.closest('#h-replace')) return applyHoldings(true);
@@ -2375,7 +2458,10 @@ function bind() {
 
   document.addEventListener('change', (e) => {
     const t = e.target as HTMLElement;
-    if (t.id === 'sort') {
+    if (t.id === 'pos-sort') {
+      store(POS_VIEW_KEY, { ...posView(), sort: (t as HTMLSelectElement).value as PosSort });
+      renderList();
+    } else if (t.id === 'sort') {
       state.sort = (t as HTMLSelectElement).value as typeof state.sort;
       renderList();
     } else if (t.id === 'pos-broker') {

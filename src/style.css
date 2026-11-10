@@ -3310,3 +3310,145 @@ button.pr-sym:hover {
 .pr-dl dt {
   white-space: nowrap;
 }
+
+/* Positions: separate blocks, both returns, filter row */
+.pr-list,
+.sheet .pr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+}
+
+.pr,
+.pr:first-child {
+  padding: 14px 16px 2px;
+  border-top: 0;
+  border-radius: var(--r-card);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.sheet .pr {
+  background: var(--bg);
+}
+
+.pr-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pr-ret {
+  display: inline-flex;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.pr-ret > span:last-child {
+  color: var(--faint-2);
+}
+
+.pr-returns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  color: var(--faint-2);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pr-returns b {
+  font-weight: 600;
+}
+
+.pr-sumstats {
+  row-gap: 14px;
+}
+
+.pr-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+}
+
+.pr-chips {
+  flex-wrap: nowrap;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  padding-right: 18px;
+}
+
+.pr-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.pr-chips .chip {
+  flex: none;
+  min-height: 36px;
+  font-size: 13px;
+}
+
+.pr-tools .select select {
+  width: 128px;
+  min-height: 36px;
+}
+
+.pr-tools + .pr-group {
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .pr-meta {
+    flex-wrap: wrap;
+  }
+
+  .pr-tools .select select {
+    width: 118px;
+  }
+}
+
+.pr-tools .select,
+.pr-tools .chips {
+  grid-area: auto;
+}
+
+.pr-tools .chips {
+  margin: 0;
+}
+
+.pr-ret,
+.pr-ret > span:last-child {
+  display: block;
+  margin-top: 2px;
+  color: var(--faint-2);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pr-ret b {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pr-ret b.up {
+  color: var(--up-soft);
+}
+
+.pr-ret b.down {
+  color: var(--down-soft);
+}
+
+@media (max-width: 640px) {
+  .pr-meta {
+    flex-wrap: nowrap;
+  }
+}
