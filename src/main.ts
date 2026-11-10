@@ -1011,7 +1011,6 @@ function setType(type: 'equity' | 'etf') {
 /* ---------- watchlist alerts ---------- */
 
 const SEEN_KEY = 'mtf.alertsSeen';
-const ALERT_ICON: Record<WatchAlert['level'], string> = { alert: 'severe', watch: 'warn', info: 'info', good: 'good' };
 
 function unseenAlerts(): WatchAlert[] {
   const seen = store<string>(SEEN_KEY) ?? '';
@@ -1027,6 +1026,7 @@ function renderBell() {
 }
 
 const ALERT_FILTER_KEY = 'mtf.alertsFilter';
+const ALERT_LEVEL_KEY = 'mtf.alertsLevel';
 let freshAlerts = new Set<WatchAlert>(); // unseen when the panel was opened; kept while switching filters
 
 function openAlerts(switching = false) {
@@ -1039,46 +1039,74 @@ function openAlerts(switching = false) {
   const shown = portfolio ? state.alerts.filter((a) => held.has(a.symbol)) : state.alerts;
   const heldCount = state.alerts.filter((a) => held.has(a.symbol)).length;
   const heldNew = [...fresh].filter((a) => held.has(a.symbol)).length;
+  // Level filter: tap a count to see only serious, watch, good or info changes.
+  const LEVELS: [WatchAlert['level'], string][] = [['alert', 'Serious'], ['watch', 'Watch'], ['good', 'Good'], ['info', 'Info']];
+  const lvl = store<string>(ALERT_LEVEL_KEY);
+  const level = LEVELS.some(([k]) => k === lvl) ? (lvl as WatchAlert['level']) : null;
+  const listed = level ? shown.filter((a) => a.level === level) : shown;
+  const today = localISO();
+  const yesterday = localISO(new Date(Date.now() - 86_400_000));
   const byDay = new Map<string, WatchAlert[]>();
-  for (const a of [...shown].reverse()) {
-    const day = new Date(a.at).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+  for (const a of [...listed].sort((p, q) => q.at.localeCompare(p.at))) {
+    const d = localISO(new Date(a.at));
+    const day = d === today ? 'Today' : d === yesterday ? 'Yesterday' : new Date(a.at).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
     byDay.set(day, [...(byDay.get(day) ?? []), a]);
   }
-  // One entry per stock per refresh, so a busy day reads as a list of stocks, not of lines.
+  // One card per stock per refresh, most serious line first.
+  const rank: Record<WatchAlert['level'], number> = { alert: 0, watch: 1, good: 2, info: 3 };
   const groupsOf = (items: WatchAlert[]) => {
     const g = new Map<string, WatchAlert[]>();
     for (const a of items) g.set(`${a.at}|${a.symbol}`, [...(g.get(`${a.at}|${a.symbol}`) ?? []), a]);
-    return [...g.values()];
+    return [...g.values()].map((x) => x.sort((p, q) => rank[p.level] - rank[q.level]));
   };
+  const time = (iso: string) => new Date(iso).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' });
   const list = [...byDay]
     .map(
-      ([day, items]) => `<h3>${day}</h3><ul class="a-list">${groupsOf(items)
-        .map(
-          (g) => `<li class="a-entry${g.some((a) => fresh.has(a)) ? ' is-new' : ''}">
-            <div class="a-head"><button class="link-sym" data-open="${esc(g[0].symbol)}">${esc(g[0].symbol)}</button>${held.has(g[0].symbol) ? '<span class="a-held">In portfolio</span>' : ''}<time>${new Date(g[0].at).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' })}</time></div>
-            <ul class="a-lines">${g
-              .map((a) => `<li><span class="a-dot ${ALERT_ICON[a.level]}" aria-hidden="true"></span><span>${esc(a.text)}${a.link ? ` <a class="tl-link" href="${esc(a.link)}" target="_blank" rel="noopener">Filing</a>` : ''}</span></li>`)
+      ([day, items]) => `<h3 class="al-day">${day}<span>${items.length}</span></h3><div class="al-list">${groupsOf(items)
+        .map((g) => {
+          const top = g[0].level;
+          const isNew = g.some((a) => fresh.has(a));
+          const name = state.bySymbol.get(g[0].symbol)?.name || (g[0].name !== g[0].symbol ? g[0].name : '');
+          return `<article class="al is-${top}${isNew ? ' is-new' : ''}">
+            <header class="al-head">
+              <div class="al-title">
+                <span class="al-symrow"><button class="al-sym" data-open="${esc(g[0].symbol)}">${esc(g[0].symbol)}</button>${held.has(g[0].symbol) ? '<span class="al-held">Held</span>' : ''}</span>
+                ${name ? `<span class="al-name">${esc(name)}</span>` : ''}
+              </div>
+              <div class="al-meta">${isNew ? '<span class="al-new">New</span>' : ''}<time>${time(g[0].at)}</time></div>
+            </header>
+            <ul class="al-lines">${g
+              .map((a) => `<li class="al-line is-${a.level}"><span class="al-tag">${LEVELS.find(([k]) => k === a.level)![1]}</span><span class="al-text">${esc(a.text)}${a.link ? ` <a class="al-link" href="${esc(a.link)}" target="_blank" rel="noopener">Read filing</a>` : ''}</span></li>`)
               .join('')}</ul>
-          </li>`,
-        )
-        .join('')}</ul>`,
+          </article>`;
+        })
+        .join('')}</div>`,
     )
     .join('');
+  const counts = Object.fromEntries(LEVELS.map(([k]) => [k, shown.filter((a) => a.level === k).length]));
+  const levelChips = shown.length
+    ? `<div class="al-levels">${LEVELS.filter(([k]) => counts[k] || level === k)
+        .map(([k, label]) => `<button class="al-chip is-${k}${level === k ? ' on' : ''}" data-alert-level="${level === k ? '' : k}" aria-pressed="${level === k}">${label}<b>${counts[k]}</b></button>`)
+        .join('')}</div>`
+    : '';
   sheet.innerHTML = `
-    <div class="sheet-inner">
+    <div class="sheet-inner al-sheet">
       <div class="sheet-head">
-        <div><div class="sym big">Watchlist alerts</div><div class="name">What changed for your pinned stocks at each refresh, last 30 days.</div></div>
+        <div><div class="sym big">Alerts</div><div class="name">What changed for your pinned stocks, last 30 days</div></div>
         <div class="sheet-actions"><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
       </div>
       <div class="seg alert-filter" role="tablist" aria-label="Which alerts">
         <button role="tab" data-alert-filter="all" aria-selected="${!portfolio}">All watchlist <span class="count">${state.alerts.length || ''}</span></button>
         <button role="tab" data-alert-filter="portfolio" aria-selected="${portfolio}">Portfolio only <span class="count${heldNew ? ' warn-count' : ''}">${heldNew ? `${heldNew} new` : heldCount || ''}</span></button>
       </div>
+      ${levelChips}
       ${list ||
-        (portfolio
+        (level
+          ? '<div class="empty"><p class="empty-title">Nothing at this level</p><p>Tap the highlighted chip again to see every alert.</p></div>'
+          : portfolio
           ? `<div class="empty"><p class="empty-title">No alerts for your positions</p><p>${held.size ? 'Nothing has changed for the stocks you hold in the last 30 days.' : 'Add positions in the Positions tab to see their alerts here.'}</p></div>`
           : '<div class="empty"><p class="empty-title">No changes yet</p><p>You will see multiplier changes, ASM/GSM/ESM moves, F&amp;O ban, price band changes and new events for your pinned stocks here.</p></div>')}
-      <p class="muted small">Phone notifications: add Telegram or ntfy secrets to the repo (see the README) and every refresh with changes pings you.</p>
+      <p class="al-foot">Get these on your phone: add Telegram or ntfy secrets to the repo (see the README).</p>
     </div>`;
   if (!sheet.open) sheet.showModal();
   state.sheetSym = null;
@@ -2805,6 +2833,11 @@ function bind() {
       return;
     }
     if (t.closest('#bell')) return openAlerts();
+    const al = t.closest<HTMLElement>('[data-alert-level]');
+    if (al) {
+      store(ALERT_LEVEL_KEY, al.dataset.alertLevel || null);
+      return openAlerts(true);
+    }
     const af = t.closest<HTMLElement>('[data-alert-filter]');
     if (af) {
       store(ALERT_FILTER_KEY, af.dataset.alertFilter);
