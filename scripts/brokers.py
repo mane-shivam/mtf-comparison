@@ -86,6 +86,27 @@ def _reason(body) -> str:
     return "; ".join(out) or f"fields: {sorted(body)[:8] if isinstance(body, dict) else type(body).__name__}"
 
 
+# Category fields whose values are labels like "MTF" or "Equity", never account data: safe for public logs.
+LABEL_FIELDS = {"instrumentType", "subType", "securityType", "securitySubType", "exchangeSegment", "series",
+                "instrumentStatus", "isAlternateScrip", "product", "exchange", "prod", "prdCode", "exSeg"}
+
+
+def labels(obj, out: dict | None = None, depth: int = 0) -> dict:
+    out = {} if out is None else out
+    if depth > 5:
+        return out
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k in LABEL_FIELDS and isinstance(v, str) and len(v) <= 24:
+                out.setdefault(k, set()).add(v)
+            elif isinstance(v, (dict, list)):
+                labels(v, out, depth + 1)
+    elif isinstance(obj, list):
+        for v in obj:
+            labels(v, out, depth + 1)
+    return {k: sorted(v) if isinstance(v, set) else v for k, v in out.items()} if depth == 0 else out
+
+
 def _json(r: requests.Response, what: str) -> dict:
     try:
         body = r.json()
@@ -256,6 +277,7 @@ def main(env: dict | None = None) -> int:
                 print(f"[brokers] {name} {part}: failed: {err}")
             print(f"[brokers] {name}: ok; response shape (names and types only):")
             print(json.dumps(shape(raw), indent=1)[:6000])
+            print(f"[brokers] {name} category labels: {json.dumps(labels(raw))}")
         except (SyncError, requests.RequestException, KeyError, ValueError) as e:
             msg = str(e) if isinstance(e, SyncError) else type(e).__name__
             last = prev.get(name) or {}

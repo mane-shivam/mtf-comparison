@@ -1132,6 +1132,7 @@ interface Position {
   date: string; // buy date YYYY-MM-DD
   lev: number; // leverage the position was taken at
   orig?: number; // quantity bought, once part of it has been sold
+  src?: 'broker'; // added by a broker sync (date = first seen, leverage = broker's rate that day)
 }
 
 // Buy-side fees charged once per buy order (flat brokerage, pledge, their GST). After a partial sale each
@@ -1489,7 +1490,7 @@ function positionsViewHTML(): string {
       </div>
       <details class="ps-more"${store<boolean>(PS_MORE_KEY) ? ' open' : ''}>
         <summary><span>Margin and paying back</span><span class="ps-more-hint${shortAccts.length ? '' : ' is-ok'}">${shortAccts.length ? shortAccts.map((a) => `${BROKER_SHORT[a.broker]} ${inr(-a.spare)} short`).join(', ') : 'All accounts covered'}</span></summary>
-        <div class="ps-accts">${accts.map((a) => `<div class="ps-acct is-${accountState(a)}"><i>${BROKER_NAME[a.broker]} margin</i><b>${accountState(a) === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`}</b><small>${accountState(a) === 'short' ? 'Add funds or sell to cover it' : `All holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`}. Needs ${inr(a.needed)}, you have ${inr(a.equity)}.</small></div>`).join('')}</div>
+        <div class="ps-accts">${accts.map((a) => `<div class="ps-acct is-${accountState(a)}"><i>${BROKER_NAME[a.broker]} margin</i><b>${accountState(a) === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`}</b><small>${accountState(a) === 'short' ? 'Add funds or sell to cover it' : `All holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`}. Needs ${inr(a.needed)}, you have ${inr(a.equity)}.${brokerFundsLine(a.broker)}</small></div>`).join('')}</div>
         <p class="ps-save">Brokers check margin for the whole account, so a gain on one stock covers a loss on another at the same broker. Each stock's “Margin spare” is its part of that total.</p>
         <p class="ps-save">Each ₹1 L of broker's money you pay back saves about ${saving('kotak')} a month at Kotak and ${saving('rupeezy')} at Rupeezy.</p>
       </details>
@@ -1498,23 +1499,42 @@ function positionsViewHTML(): string {
     ${body}`;
 }
 
+// What the broker itself reports for the account (Rupeezy funds; Kotak limits once its night maintenance ends).
+function brokerFundsLine(b: BrokerKey): string {
+  const raw = brokerSnap?.brokers[b]?.ok ? (brokerSnap.brokers[b].raw as Record<string, any>) : null;
+  if (!raw) return '';
+  if (b === 'rupeezy') {
+    const f = raw.funds?.nse ?? raw.funds?.exchange_combined;
+    const avail = num(f?.net_available);
+    if (Number.isFinite(avail)) return ` Rupeezy reports ${avail < 0 ? `${inr(-avail)} short` : `${inr(avail)} available`}.`;
+  }
+  if (b === 'kotak' && raw.limits && !raw._errors?.limits) {
+    const net = num(raw.limits.Net ?? raw.limits.net ?? raw.limits.data?.Net);
+    if (Number.isFinite(net)) return ` Kotak reports ${net < 0 ? `${inr(-net)} short` : `${inr(net)} available`}.`;
+  }
+  return '';
+}
+
 // Realised P&L so far, after every charge and interest: earlier P&L + sales recorded here. Open positions are not in it.
 function overallHTML(amount: (n: number) => string): string {
   const start = store<number>(START_KEY) ?? 0;
   const booked = loadClosed().reduce((t, x) => t + x.pnl, 0);
   const total = start + booked;
   const part = (label: string, n: number) => `<span><i>${label}</i><b class="${n >= 0 ? 'up' : 'down'}">${amount(n)}</b></span>`;
-  return `<div class="ps-overall">
-      <div class="ps-ov-top">
+  // Collapsed by default: the total shows in the header; the split opens on tap.
+  return `<details class="ps-overall"${store<boolean>(OV_OPEN_KEY) ? ' open' : ''}>
+      <summary class="ps-ov-top">
         <span class="ps-label">Realised P&amp;L as of now<small>after every charge and interest</small></span>
         <b class="ps-ov-amt ${total >= 0 ? 'up' : 'down'}">${amount(total)}</b>
-      </div>
+      </summary>
       <div class="ps-ov-parts">
         ${part('Booked here', booked)}
         <button class="ps-ov-start" data-pnl-start><i>Earlier</i><b class="${start >= 0 ? 'up' : 'down'}">${start ? amount(start) : 'Add'}</b></button>
       </div>
-    </div>`;
+    </details>`;
 }
+
+const OV_OPEN_KEY = 'mtf.realisedOpen';
 
 function setStartPnl() {
   const cur = store<number>(START_KEY) ?? 0;
@@ -1553,6 +1573,7 @@ interface ClosedTrade {
   interest: number;
   pnl: number; // after every charge and interest
   own: number; // your money in this part of the position
+  est?: boolean; // recorded from a broker sync without the exact sell price: last price used
 }
 
 const CLOSED_KEY = 'mtf.closed';
@@ -1625,9 +1646,124 @@ async function loadBrokerSnapshot(): Promise<void> {
     }
     brokerSnap = (await decryptPayload(pass, file!)) as unknown as BrokerSnap;
     renderStatus();
+    reconcileFromBrokers();
+    if (state.view === 'positions' && !state.query.trim()) renderList(); // broker-reported margin and funds
   } catch {
     /* not set up yet, offline, or a different passphrase */
   }
+}
+
+/* ---------- positions from the brokers ----------
+   Broker data decides which stocks you hold and how many. Your entries keep what the brokers don't report:
+   the buy date (for interest) and the leverage taken. New shares are added at once (dated the day they
+   first show up, at the broker's leverage that day). Fewer shares are recorded as a sale only after two
+   syncs agree, so one empty or glitchy response can never wipe a position. */
+
+interface BrokerHolding { sym: string; qty: number; avg: number; mtf: boolean | null; close: number | null }
+const RECON_KEY = 'mtf.recon';
+const newId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
+
+const num = (v: unknown) => (typeof v === 'number' ? v : typeof v === 'string' && v.trim() !== '' ? Number(v) : NaN);
+const cleanSym = (v: unknown) => String(v ?? '').toUpperCase().replace(/-(EQ|BE|BZ|SM|ST)$/, '').trim();
+const LABEL_KEYS = ['instrumentType', 'subType', 'securityType', 'securitySubType', 'product', 'prod', 'prdCode'];
+
+// null = the broker didn't say (no MTF marker anywhere in its rows); then MTF is assumed when it funds the stock.
+function markerOf(row: Record<string, unknown>): boolean | null {
+  const vals = LABEL_KEYS.map((k) => String(row[k] ?? '').toUpperCase()).filter(Boolean);
+  if (vals.some((v) => v.includes('MTF') || v.includes('MARGIN'))) return true;
+  if (vals.some((v) => /\b(CNC|DELIVERY|NORMAL|NRML)\b/.test(v))) return false;
+  return null;
+}
+
+function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
+  const x = brokerSnap?.brokers[b];
+  const raw = x?.ok ? (x.raw as Record<string, any> | undefined) : undefined;
+  if (!raw) return null;
+  const rows: BrokerHolding[] = [];
+  if (b === 'kotak') {
+    if (raw._errors?.holdings || !Array.isArray(raw.holdings?.data)) return null;
+    for (const r of raw.holdings.data as Record<string, unknown>[]) {
+      if (r.exchangeSegment && !String(r.exchangeSegment).toLowerCase().startsWith('nse')) continue;
+      rows.push({ sym: cleanSym(r.symbol ?? r.displaySymbol), qty: num(r.quantity), avg: num(r.averagePrice), mtf: markerOf(r), close: num(r.closingPrice) || null });
+    }
+  } else {
+    if (raw._errors?.positions) return null;
+    const net = raw.positions?.data?.net;
+    if (!Array.isArray(net)) return null;
+    for (const r of net as Record<string, unknown>[]) {
+      const prod = String(r.product ?? '').toUpperCase();
+      if (/INTRADAY|MIS/.test(prod)) continue;
+      const avg = num(r.overnight_average_price) || num(r.average_price) || num(r.buy_price);
+      rows.push({ sym: cleanSym(r.symbol), qty: num(r.quantity), avg, mtf: markerOf(r), close: null });
+    }
+  }
+  // One row per stock (a stock can appear once per exchange); bad rows are dropped.
+  const by = new Map<string, BrokerHolding>();
+  for (const h of rows) if (h.sym && h.qty > 0 && h.avg > 0 && (by.get(h.sym)?.qty ?? 0) < h.qty) by.set(h.sym, h);
+  return [...by.values()];
+}
+
+function reconcileFromBrokers() {
+  if (!brokerSnap) return;
+  const done = store<Record<string, string>>(RECON_KEY) ?? {};
+  const pending = (store<Record<string, Record<string, number>>>(`${RECON_KEY}.pending`) ?? {});
+  let list = loadPositions();
+  const sales: ClosedTrade[] = [];
+  const notes: string[] = [];
+  for (const b of BROKERS) {
+    const at = brokerSnap.brokers[b]?.at;
+    const held = brokerHoldings(b);
+    if (!held || !at || done[b] === at) continue;
+    done[b] = at;
+    const anyMarker = held.some((h) => h.mtf !== null);
+    const want = new Map(held.map((h) => [h.sym, h]));
+    const mine = list.filter((p) => p.broker === b);
+    const syms = new Set([...want.keys(), ...mine.map((p) => p.sym)]);
+    const nextPending: Record<string, number> = {};
+    let added = 0, sold = 0;
+    for (const sym of syms) {
+      const h = want.get(sym);
+      const lots = mine.filter((p) => p.sym === sym).sort((x, y) => x.date.localeCompare(y.date));
+      const have = lots.reduce((t, p) => t + p.qty, 0);
+      const brokerQty = h?.qty ?? 0;
+      if (brokerQty > have && h) {
+        const isMtf = h.mtf ?? (anyMarker ? false : true);
+        const cur = state.bySymbol.get(sym)?.[b];
+        const lev = isMtf && isFunded(cur ?? null) ? cur!.lev : 1;
+        const extra = brokerQty - have;
+        // The new shares' price: what the broker's average implies once your tracked lots are taken out.
+        const price = have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
+        list.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' });
+        added += 1;
+      } else if (brokerQty < have) {
+        const prev = pending[b]?.[sym];
+        if (prev !== brokerQty) {
+          nextPending[sym] = brokerQty; // confirm on the next sync before booking a sale
+          continue;
+        }
+        let toSell = have - brokerQty;
+        const px = state.market?.prices[sym]?.p ?? h?.close ?? lots[0].price;
+        for (const lot of lots) {
+          if (!toSell) break;
+          const q = Math.min(lot.qty, toSell);
+          sales.push({ ...saleResult(lot, q, px, localISO()), est: true });
+          list = q >= lot.qty ? list.filter((p) => p.id !== lot.id) : list.map((p) => (p.id === lot.id ? { ...p, qty: p.qty - q, orig: p.orig ?? p.qty } : p));
+          toSell -= q;
+        }
+        sold += 1;
+      }
+    }
+    pending[b] = nextPending;
+    if (added || sold) notes.push(`${BROKER_SHORT[b]}: ${[added && `${added} added`, sold && `${sold} sold`].filter(Boolean).join(', ')}`);
+  }
+  store(RECON_KEY, done);
+  store(`${RECON_KEY}.pending`, pending);
+  if (!notes.length) return;
+  if (sales.length) saveClosed([...loadClosed(), ...sales]);
+  savePositions(list);
+  ensureHeldPinned();
+  toast(`Synced from your brokers. ${notes.join('; ')}`);
+  render();
 }
 
 /* Sign in with Rupeezy: Rupeezy's page sends you back with a one-time ?auth= code. It is saved encrypted
@@ -1925,7 +2061,7 @@ function closedViewHTML(): string {
     const days = Math.max(0, Math.floor((Date.parse(x.sellDate) - Date.parse(x.buyDate)) / 86_400_000));
     return `<article class="pr cl">
       <div class="pr-line"><span class="pr-sym">${esc(x.sym)}</span><span class="pr-pnl ${x.pnl >= 0 ? 'up' : 'down'}">${sign(x.pnl)}${inr(Math.abs(x.pnl)).replace('−', '')}</span></div>
-      <div class="pr-line pr-meta"><span>${BROKER_SHORT[x.broker]} ${round1(x.lev)}×, ${x.qty.toLocaleString('en-IN')} bought ${rupeeShort(x.buy)}, sold ${rupeeShort(x.sell)}</span><span class="cl-ret"><b>${sign(x.pnl)}${Math.abs((x.pnl / (x.qty * x.buy)) * 100).toFixed(1)}% on total</b>${x.own ? `<small>${sign(x.pnl)}${Math.abs((x.pnl / x.own) * 100).toFixed(1)}% on own money</small>` : ''}</span></div>
+      <div class="pr-line pr-meta"><span>${BROKER_SHORT[x.broker]} ${round1(x.lev)}×, ${x.qty.toLocaleString('en-IN')} bought ${rupeeShort(x.buy)}, sold ${rupeeShort(x.sell)}${x.est ? ' (last price; broker sync)' : ''}</span><span class="cl-ret"><b>${sign(x.pnl)}${Math.abs((x.pnl / (x.qty * x.buy)) * 100).toFixed(1)}% on total</b>${x.own ? `<small>${sign(x.pnl)}${Math.abs((x.pnl / x.own) * 100).toFixed(1)}% on own money</small>` : ''}</span></div>
       <div class="pr-day">${shortDate(x.buyDate)} to ${shortDate(x.sellDate)}, ${days} day${days === 1 ? '' : 's'}. Charges ${inr(x.charges)}, interest ${inr(x.interest)}</div>
       <div class="pr-actions"><button class="pr-remove" data-closed-del="${esc(x.id)}">Delete record</button></div>
     </article>`;
@@ -3293,6 +3429,7 @@ async function boot() {
   document.addEventListener('toggle', (e) => {
     const d = e.target as HTMLElement;
     if (d.classList?.contains('ps-more')) store(PS_MORE_KEY, (d as HTMLDetailsElement).open);
+    if (d.classList?.contains('ps-overall')) store(OV_OPEN_KEY, (d as HTMLDetailsElement).open);
   }, true);
 
   // Pick up edits made on other devices when this tab comes back into view.

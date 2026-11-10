@@ -4855,3 +4855,20 @@ body.positions-view #summary {
   margin-top: 10px;
   justify-content: center;
 }
+
+details.ps-overall > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.ps-overall > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.ps-overall:not([open]) .ps-ov-top {
+  margin: 0;
+}
+
+details.ps-overall .ps-ov-parts {
+  margin-top: 10px;
+}
