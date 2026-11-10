@@ -2064,12 +2064,6 @@
 "type": "equity"
 },
 {
-"symbol": "BGLOBAL",
-"name": "Bharatiya Global Infomedia Limited",
-"isin": "INE224M01013",
-"type": "equity"
-},
-{
 "symbol": "BGRENERGY",
 "name": "BGR Energy Systems Limited",
 "isin": "INE661I01014",
@@ -2790,12 +2784,6 @@
 "type": "equity"
 },
 {
-"symbol": "CEREBRAINT",
-"name": "Cerebra Integrated Technologies Limited",
-"isin": "INE345B01019",
-"type": "equity"
-},
-{
 "symbol": "CESC",
 "name": "CESC Limited",
 "isin": "INE486A01021",
@@ -2940,12 +2928,6 @@
 "type": "equity"
 },
 {
-"symbol": "CLCIND",
-"name": "CLC Industries Limited",
-"isin": "INE376C01038",
-"type": "equity"
-},
-{
 "symbol": "CLEAN",
 "name": "Clean Science and Technology Limited",
 "isin": "INE227W01023",
@@ -2967,12 +2949,6 @@
 "symbol": "CLSEL",
 "name": "Chaman Lal Setia Exports Limited",
 "isin": "INE419D01026",
-"type": "equity"
-},
-{
-"symbol": "CMICABLES",
-"name": "CMI Limited",
-"isin": "INE981B01011",
 "type": "equity"
 },
 {
@@ -4005,12 +3981,6 @@
 "symbol": "EDELWEISS",
 "name": "Edelweiss Financial Services Limited",
 "isin": "INE532F01054",
-"type": "equity"
-},
-{
-"symbol": "EDUCOMP",
-"name": "Educomp Solutions Limited",
-"isin": "INE216H01027",
 "type": "equity"
 },
 {
@@ -6294,12 +6264,6 @@
 "type": "equity"
 },
 {
-"symbol": "IMPEXFERRO",
-"name": "Impex Ferro Tech Limited",
-"isin": "INE691G01015",
-"type": "equity"
-},
-{
 "symbol": "INA",
 "name": "Insolation Energy Limited",
 "isin": "INE0LGX01024",
@@ -7968,12 +7932,6 @@
 "type": "equity"
 },
 {
-"symbol": "LASA",
-"name": "Lasa Supergenerics Limited",
-"isin": "INE670X01014",
-"type": "equity"
-},
-{
 "symbol": "LASERPOWER",
 "name": "Laser Power & Infra Limited",
 "isin": "INE17IR01028",
@@ -9345,12 +9303,6 @@
 "symbol": "NACLIND",
 "name": "NACL Industries Limited",
 "isin": "INE295D01020",
-"type": "equity"
-},
-{
-"symbol": "NAGAFERT",
-"name": "Nagarjuna Fertilizers and Chemicals Limited",
-"isin": "INE454M01024",
 "type": "equity"
 },
 {
@@ -11238,12 +11190,6 @@
 "type": "equity"
 },
 {
-"symbol": "RAJVIR",
-"name": "Rajvir Industries Limited",
-"isin": "INE011H01014",
-"type": "equity"
-},
-{
 "symbol": "RALLIS",
 "name": "Rallis India Limited",
 "isin": "INE613A01020",
@@ -12324,12 +12270,6 @@
 "type": "equity"
 },
 {
-"symbol": "SELMC",
-"name": "SEL Manufacturing Company Limited",
-"isin": "INE105I01020",
-"type": "equity"
-},
-{
 "symbol": "SEMAC",
 "name": "Semac Construction Limited",
 "isin": "INE617A01013",
@@ -12951,12 +12891,6 @@
 "symbol": "SKFINDUS",
 "name": "SKF India (Industrial) Limited",
 "isin": "INE2J8701016",
-"type": "equity"
-},
-{
-"symbol": "SKIL",
-"name": "SKIL Infrastructure Limited",
-"isin": "INE429F01012",
 "type": "equity"
 },
 {
@@ -14805,12 +14739,6 @@
 "symbol": "UNITEDTEA",
 "name": "The United Nilgiri Tea Estates Company Limited",
 "isin": "INE458F01011",
-"type": "equity"
-},
-{
-"symbol": "UNIVAFOODS",
-"name": "Univa Foods Limited",
-"isin": "INE275F01019",
 "type": "equity"
 },
 {
