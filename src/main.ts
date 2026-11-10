@@ -879,7 +879,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>${posSyncHTML()}
+    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}
       <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the margin % the broker asks for it today (from the hourly MTF data, so a raised margin shows up here), and gains on one stock cover losses on another at the same broker. A stock the broker stops funding needs its full value. Brokers set their own timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
@@ -2927,6 +2927,13 @@ function bind() {
       return;
     }
     if (t.closest('#pos-export')) return exportPositions();
+    if (t.closest('#pos-clear')) {
+      const n = loadPositions().length;
+      if (!confirm(`Remove all ${n} open position${n === 1 ? '' : 's'}? Closed trades and realised P&L stay. With private sync on, your other devices clear too. Export a file first if you may want them back.`)) return;
+      savePositions([]);
+      toast(`Removed ${n} position${n === 1 ? '' : 's'}`);
+      return render();
+    }
     if (t.closest('[data-pnl-start]')) return setStartPnl();
     const ps = t.closest<HTMLElement>('[data-possync]');
     if (ps) return void setPositionsPassphrase(ps.dataset.possync === 'on');

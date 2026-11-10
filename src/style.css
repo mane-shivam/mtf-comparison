@@ -4797,3 +4797,12 @@ body.positions-view #summary {
   font-size: 14px;
   font-weight: 600;
 }
+
+.btn-danger {
+  color: var(--down-soft);
+}
+
+.btn-danger:hover {
+  border-color: rgba(228, 135, 139, 0.4);
+  background: rgba(228, 135, 139, 0.08);
+}
