@@ -1,7 +1,8 @@
-name: Sync broker accounts
+name: Quick sync (accounts and prices)
 
-# Quick read-only sync of Kotak and Rupeezy accounts only (about half a minute), started by the site
-# right after Sign in with Rupeezy. The full refresh runs the same step every hour.
+# The Refresh button and Sign in with Rupeezy start this: a read-only sync of your Kotak and Rupeezy
+# accounts plus prices for pinned stocks (under a minute). The MTF lists, events and exchange data
+# refresh in refresh.yml every hour.
 on:
   workflow_dispatch:
 
@@ -23,7 +24,11 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Prices for pinned stocks
+        continue-on-error: true
+        run: python scrapers/market.py --prices-only
       - name: Broker accounts (read-only)
+        continue-on-error: true
         run: python scripts/brokers.py
         env:
           POSITIONS_PASSPHRASE: ${{ secrets.POSITIONS_PASSPHRASE }}
@@ -37,7 +42,7 @@ jobs:
       - name: Commit if changed
         if: always()
         run: |
-          git add data/broker.enc.json data/rupeezy_session.enc.json 2>/dev/null || true
+          git add data/broker.enc.json data/rupeezy_session.enc.json public/data/market.json 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git config user.name "mtf-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

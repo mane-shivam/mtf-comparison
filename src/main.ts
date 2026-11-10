@@ -3025,8 +3025,11 @@ async function triggerViaApi(pass: string): Promise<TriggerResult> {
 }
 
 // GitHub Pages mode: same checks as api/refresh.js, run in the browser with a token saved on this device.
+// The button runs the quick sync (accounts + prices, under a minute); the full refresh runs hourly.
+const QUICK_WORKFLOW = 'brokers.yml';
+
 async function triggerViaGitHub(token: string): Promise<TriggerResult> {
-  const base = `https://api.github.com/repos/${GH_REPO}/actions/workflows/refresh.yml`;
+  const base = `https://api.github.com/repos/${GH_REPO}/actions/workflows/${QUICK_WORKFLOW}`;
   const headers = { Accept: 'application/vnd.github+json', Authorization: `Bearer ${token}`, 'X-GitHub-Api-Version': '2022-11-28' };
   const runs = await fetch(`${base}/runs?per_page=1`, { headers, cache: 'no-store' });
   if (runs.status === 401 || runs.status === 403 || runs.status === 404) return { status: 401, body: {} };
@@ -3078,13 +3081,51 @@ async function refresh() {
       return;
     }
     if (r.status === 429) toast('A refresh is already running. Watching for its result.');
-    window.setTimeout(checkRun, 5000); // show "Refreshing now" as soon as GitHub reports the run
-    await pollForUpdate();
+    if (github) await pollQuickSync();
+    else {
+      window.setTimeout(checkRun, 5000); // show "Refreshing now" as soon as GitHub reports the run
+      await pollForUpdate();
+    }
   } catch (e) {
     toast((e as Error).message);
     state.refreshing = false;
     updateRefreshCooldown();
   }
+}
+
+// Wait for the quick sync to finish, then read the fresh files straight from GitHub's API (live, no
+// waiting for the site to be rebuilt): your broker accounts and prices.
+async function pollQuickSync() {
+  const started = Date.now();
+  const runs = `https://api.github.com/repos/${GH_REPO}/actions/workflows/${QUICK_WORKFLOW}/runs?per_page=1`;
+  while (Date.now() - started < 4 * 60_000) {
+    await new Promise((res) => setTimeout(res, 6000));
+    setRefreshButton(`Syncing… ${Math.round((Date.now() - started) / 1000)}s`, { busy: true, disabled: true });
+    try {
+      const last = (await (await fetch(runs, { headers: ghHeaders(), cache: 'no-store' })).json()).workflow_runs?.[0];
+      if (!last || new Date(last.created_at).getTime() < started - 60_000 || RUN_ACTIVE.has(last.status)) continue;
+      await Promise.all([loadBrokerSnapshot(), reloadMarketLive()]);
+      state.refreshing = false;
+      setRefreshButton('Updated', { disabled: true });
+      toast(last.conclusion === 'success' ? `Synced in ${Math.round((Date.now() - started) / 1000)}s` : 'Sync finished with errors: see the broker status in the header');
+      setTimeout(updateRefreshCooldown, 3000);
+      return;
+    } catch {
+      /* keep polling */
+    }
+  }
+  state.refreshing = false;
+  setRefreshButton('Still running, check back shortly', { disabled: true });
+  setTimeout(updateRefreshCooldown, 8000);
+}
+
+async function reloadMarketLive() {
+  const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/public/data/market.json?ref=${encodeURIComponent(GH_REF)}`, {
+    headers: { ...ghHeaders(), Accept: 'application/vnd.github.raw+json' }, cache: 'no-store',
+  });
+  if (!r.ok) return;
+  state.market = await r.json();
+  render();
 }
 
 async function pollForUpdate() {

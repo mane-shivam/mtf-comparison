@@ -42,6 +42,7 @@ PLEDGE = "https://www.nseindia.com/api/corporate-pledgedata?index=equities"
 PLEDGE_PAGE = "https://www.nseindia.com/companies-listing/corporate-filings-pledged-data"
 LOOKBACK = 6  # days to search back for the latest daily file
 HIST_SESSIONS = 30
+PRICE_LANES = 4  # parallel price lanes, each one request a second
 DEAL_DAYS = 7
 
 
@@ -178,18 +179,29 @@ def main() -> int:
             sources[name] = {**(prev.get("sources") or {}).get(name, {}), "status": "stale" if out[name] else "failed",
                              "error": str(e)[:300]}
 
-    ys = PoliteSession(referer="https://finance.yahoo.com/")
-
     def prices():
+        # Four lanes, each still about one request a second (PoliteSession), so ~4x faster than one queue.
+        from concurrent.futures import ThreadPoolExecutor
+
         got = {}
-        for i, sym in enumerate(pins):
-            try:
-                r = ys.get(YAHOO.format(n=1 + i % 2, sym=quote(sym, safe="")))
-                p = parse_yahoo(r.json())
-                if p:
-                    got[sym] = p
-            except Exception as e:  # noqa: BLE001 - one missing stock shouldn't fail the rest
-                print(f"[market] price {sym}: {e}")
+
+        def lane(chunk):
+            ys = PoliteSession(referer="https://finance.yahoo.com/")
+            out = {}
+            for i, sym in chunk:
+                try:
+                    r = ys.get(YAHOO.format(n=1 + i % 2, sym=quote(sym, safe="")))
+                    p = parse_yahoo(r.json())
+                    if p:
+                        out[sym] = p
+                except Exception as e:  # noqa: BLE001 - one missing stock shouldn't fail the rest
+                    print(f"[market] price {sym}: {e}")
+            return out
+
+        items = list(enumerate(pins))
+        with ThreadPoolExecutor(PRICE_LANES) as pool:
+            for part_ in pool.map(lane, [items[k::PRICE_LANES] for k in range(PRICE_LANES)]):
+                got.update(part_)
         if pins and len(got) < len(pins) * 0.5:
             raise RuntimeError(f"prices for only {len(got)} of {len(pins)} pins")
         return got
@@ -249,11 +261,17 @@ def main() -> int:
         return rows
 
     part("prices", prices, {})
-    part("var", var, {})
-    part("mwpl", mwpl, {})
-    part("deliv", deliv, {})
-    part("deals", deals, [])
-    part("pledge", pledge, [])
+    if "--prices-only" in sys.argv:
+        # Quick sync (Refresh button): everything except prices stays as the last full refresh left it.
+        for k in ("var", "mwpl", "deliv", "deals", "pledge"):
+            out[k] = prev.get(k, [] if k in ("deals", "pledge") else {})
+            sources[k] = (prev.get("sources") or {}).get(k, {"status": "stale", "fetchedAt": None, "error": None})
+    else:
+        part("var", var, {})
+        part("mwpl", mwpl, {})
+        part("deliv", deliv, {})
+        part("deals", deals, [])
+        part("pledge", pledge, [])
 
     HIST.write_text(json.dumps(hist, separators=(",", ":")) + "\n")
     OUT.write_text(json.dumps({"fetchedAt": now_iso(), "sources": sources, **out}, separators=(",", ":")) + "\n")
