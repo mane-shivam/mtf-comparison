@@ -1609,9 +1609,18 @@ async function loadBrokerSnapshot(): Promise<void> {
   const pass = store<string>(POS_PASS_KEY);
   if (!SYNC_ON || !pass) return;
   try {
-    const r = await fetch(`https://raw.githubusercontent.com/${GH_REPO}/${GH_REF}/data/broker.enc.json?t=${Date.now()}`, { cache: 'no-store' });
-    if (!r.ok) return;
-    brokerSnap = (await decryptPayload(pass, await r.json())) as unknown as BrokerSnap;
+    // The contents API is live; the raw file server can lag up to 5 minutes behind a new sync.
+    let file: EncFile | null = null;
+    if (store<string>(GH_TOKEN_KEY)) {
+      const r = await fetch(`https://api.github.com/repos/${GH_REPO}/contents/data/broker.enc.json?ref=${encodeURIComponent(GH_REF)}`, { headers: ghHeaders(), cache: 'no-store' });
+      if (r.ok) file = JSON.parse(b64decode((await r.json()).content));
+    }
+    if (!file) {
+      const r = await fetch(`https://raw.githubusercontent.com/${GH_REPO}/${GH_REF}/data/broker.enc.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (!r.ok) return;
+      file = await r.json();
+    }
+    brokerSnap = (await decryptPayload(pass, file!)) as unknown as BrokerSnap;
     const el = document.getElementById('brokersync');
     if (el) el.outerHTML = brokerSyncHTML();
     else if (state.view === 'positions') renderList();

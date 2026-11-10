@@ -98,6 +98,26 @@ def _json(r: requests.Response, what: str) -> dict:
     return body
 
 
+def parts(calls: dict) -> dict:
+    """Run each read on its own: one failing report (say, limits while the broker's back end sleeps)
+    must not throw away the others. Failures land in "_errors"; an expired session still fails the broker."""
+    out, errors = {}, {}
+    for name, call in calls.items():
+        try:
+            out[name] = call()
+        except SyncError as e:
+            if "expired" in str(e) or "not signed in" in str(e):
+                raise
+            errors[name] = str(e)
+        except requests.RequestException as e:
+            errors[name] = type(e).__name__
+    if not out:
+        raise SyncError("; ".join(errors.values()) or "no data")
+    if errors:
+        out["_errors"] = errors
+    return out
+
+
 # ---------- Kotak Neo (Trade API v2) ----------
 
 def kotak(env: dict) -> dict:
@@ -123,12 +143,13 @@ def kotak(env: dict) -> dict:
     auth = {"Sid": v.get("sid", ""), "Auth": v["token"], "neo-fin-key": "neotradeapi", "accept": "application/json"}
     form = {**auth, "Content-Type": "application/x-www-form-urlencoded"}
     every = {"jData": json.dumps({"seg": "ALL", "exch": "ALL", "prod": "ALL"})}
-    return {
-        "holdings": _json(s.get(f"{base}/portfolio/v1/holdings", headers=form, timeout=TIMEOUT), "Kotak holdings"),
-        "positions": _json(s.get(f"{base}/quick/user/positions", headers=auth, timeout=TIMEOUT), "Kotak positions"),
-        "trades": _json(s.get(f"{base}/quick/user/trades", headers=auth, timeout=TIMEOUT), "Kotak trades"),
-        "limits": _json(s.post(f"{base}/quick/user/limits", headers=form, data=every, timeout=TIMEOUT), "Kotak limits"),
-    }
+    return parts({
+        "holdings": lambda: _json(s.get(f"{base}/portfolio/v1/holdings", headers=form, timeout=TIMEOUT), "Kotak holdings"),
+        "positions": lambda: _json(s.get(f"{base}/quick/user/positions", headers=auth, timeout=TIMEOUT), "Kotak positions"),
+        "trades": lambda: _json(s.get(f"{base}/quick/user/trades", headers=auth, timeout=TIMEOUT), "Kotak trades"),
+        "limits": lambda: _json(s.post(f"{base}/quick/user/limits", headers=form, data=every, timeout=TIMEOUT),
+                                "Kotak limits"),
+    })
 
 
 # ---------- Rupeezy (Vortex API) ----------
@@ -180,12 +201,12 @@ def rupeezy(env: dict) -> dict:
             raise SyncError("Rupeezy session expired. Tap Connect Rupeezy on the site")
         return _json(r, what)
 
-    return {
-        "holdings": get("/trading/portfolio/holdings", "Rupeezy holdings"),
-        "positions": get("/trading/portfolio/positions", "Rupeezy positions"),
-        "trades": get("/trading/trades", "Rupeezy trades"),
-        "funds": get("/user/funds", "Rupeezy funds"),
-    }
+    return parts({
+        "holdings": lambda: get("/trading/portfolio/holdings", "Rupeezy holdings"),
+        "positions": lambda: get("/trading/portfolio/positions", "Rupeezy positions"),
+        "trades": lambda: get("/trading/trades", "Rupeezy trades"),
+        "funds": lambda: get("/user/funds", "Rupeezy funds"),
+    })
 
 
 BROKERS = {
@@ -231,6 +252,8 @@ def main(env: dict | None = None) -> int:
         try:
             raw = fetch(env)
             snapshot["brokers"][name] = {"ok": True, "at": now, "raw": raw}
+            for part, err in raw.get("_errors", {}).items():
+                print(f"[brokers] {name} {part}: failed: {err}")
             print(f"[brokers] {name}: ok; response shape (names and types only):")
             print(json.dumps(shape(raw), indent=1)[:6000])
         except (SyncError, requests.RequestException, KeyError, ValueError) as e:

@@ -131,3 +131,19 @@ def test_rupeezy_sign_in_code_becomes_a_reusable_session(tmp_path, monkeypatch):
     seen.clear()
     assert brokers.main(env) == 0  # the same code isn't exchanged twice: the saved session is reused
     assert not any(u.endswith("/user/session") for u, _ in seen)
+
+
+def test_one_failed_report_keeps_the_rest(tmp_path, monkeypatch):
+    monkeypatch.setattr(brokers, "OUT", tmp_path / "broker.enc.json")
+
+    class LimitsDown(FakeSession):
+        def post(self, url, **kw):
+            if url.endswith("/limits"):
+                return Resp({"errMsg": "bridge API error out", "stat": "bridge API error out"}, 424)
+            return super().post(url, **kw)
+
+    monkeypatch.setattr(brokers.requests, "Session", LimitsDown)
+    assert brokers.main(KOTAK) == 0
+    k = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))["brokers"]["kotak"]
+    assert k["ok"] and "holdings" in k["raw"] and "limits" not in k["raw"]
+    assert "bridge API error out" in k["raw"]["_errors"]["limits"]
