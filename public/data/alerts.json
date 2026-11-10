@@ -1,1 +1,26 @@
-[]
+[
+{
+"symbol": "MONEYVIEW",
+"name": "Moneyview Limited",
+"level": "watch",
+"text": "Rupeezy leverage cut 3.5× → 3.4×: you need more margin",
+"link": null,
+"at": "2026-11-10T10:30:06Z"
+},
+{
+"symbol": "MCX",
+"name": "Multi Commodity Exchange of India Limited",
+"level": "good",
+"text": "Rupeezy leverage up 3.7× → 3.8×: you need less margin",
+"link": null,
+"at": "2026-11-10T10:30:06Z"
+},
+{
+"symbol": "GRWRHITECH",
+"name": "Garware Hi-Tech Films Limited",
+"level": "good",
+"text": "Rupeezy leverage up 2.5× → 2.6×: you need less margin",
+"link": null,
+"at": "2026-11-10T10:30:06Z"
+}
+]

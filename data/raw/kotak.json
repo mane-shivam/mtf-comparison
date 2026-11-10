@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-09T23:31:11Z",
+"fetchedAt": "2026-11-10T10:29:35Z",
 "count": 1706,
 "rows": [
 {
@@ -1274,14 +1274,14 @@
 "symbol": "BANCOINDIA",
 "name": "Banco Products (I) Limited",
 "exchange": "NSE",
-"lev": 2.8,
+"lev": 2.72,
 "maxExposureCr": 2.0
 },
 {
 "symbol": "BANDHANBNK",
 "name": "Bandhan Bank Limited",
 "exchange": "NSE",
-"lev": 3.58,
+"lev": 3.59,
 "maxExposureCr": 25.0
 },
 {
@@ -1295,7 +1295,7 @@
 "symbol": "BANKBARODA",
 "name": "Bank Of Baroda",
 "exchange": "NSE",
-"lev": 4.63,
+"lev": 4.64,
 "maxExposureCr": 50.0
 },
 {
@@ -1365,7 +1365,7 @@
 "symbol": "BELRISE",
 "name": "Belrise Industries Limited",
 "exchange": "NSE",
-"lev": 3.21,
+"lev": 3.19,
 "maxExposureCr": 10.0
 },
 {
@@ -1379,7 +1379,7 @@
 "symbol": "BEML",
 "name": "Beml Limited",
 "exchange": "NSE",
-"lev": 2.87,
+"lev": 2.88,
 "maxExposureCr": 10.0
 },
 {
@@ -1470,7 +1470,7 @@
 "symbol": "BEL",
 "name": "Bharat Electronics Limited",
 "exchange": "NSE",
-"lev": 4.71,
+"lev": 4.73,
 "maxExposureCr": 50.0
 },
 {
