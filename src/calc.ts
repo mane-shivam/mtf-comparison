@@ -47,6 +47,9 @@ export interface CostBreakdown {
   depositoryTotal: number; // pledge + unpledge + DP + their GST
   govTotal: number; // STT + txn + SEBI + stamp + GST on trade
   total: number;
+  fixed: number; // every charge except interest
+  buySide: number; // part of `fixed` paid when buying
+  sellSide: number; // part of `fixed` paid when selling
   breakEvenPct: number; // price rise needed to cover all costs
   pnl: number; // after all costs, at the chosen exit move
   roiPct: number; // pnl as % of own funds
@@ -79,11 +82,18 @@ export function computeCosts(r: BrokerRates, funds: number, lev: number, days: n
   const depositoryTotal = pledge + unpledge + dp + gstDepository;
   const govTotal = stt + txn + sebi + stamp + gstTrade;
   const total = brokerTotal + depositoryTotal + govTotal;
+  // Split the fixed charges into what the buy leg and the sell leg each cost.
+  const gstRate = STATUTORY.gst;
+  const legStat = (v: number) => pct(v, STATUTORY.stt) + pct(v, STATUTORY.txn) + pct(v, STATUTORY.sebi);
+  const legGst = (brok: number, v: number) => pct(brok + pct(v, STATUTORY.txn) + pct(v, STATUTORY.sebi), gstRate);
+  const buySide = brokBuy + pledge + stamp + legStat(buyValue) + legGst(brokBuy, buyValue) + pct(pledge, gstRate);
+  const fixed = total - interest;
   const pnl = sellValue - buyValue - total;
 
   return {
     lev, buyValue, funded, sellValue, brokBuy, brokSell, interest, pledge, unpledge, dp, gstDepository,
     stt, txn, sebi, stamp, gstTrade, brokerTotal, depositoryTotal, govTotal, total,
+    fixed, buySide, sellSide: fixed - buySide,
     breakEvenPct: buyValue ? (total / buyValue) * 100 : 0,
     pnl,
     roiPct: funds ? (pnl / funds) * 100 : 0,

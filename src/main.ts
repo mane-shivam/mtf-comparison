@@ -851,7 +851,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-ghost" id="pos-export">Export positions</button><label class="btn btn-ghost">Import<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>
+    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>
       <p class="muted small">“Top-up needed below” assumes the broker keeps asking for the same margin share as at entry (1 ÷ leverage), so with leverage a fall below about your buy price (plus interest) creates a shortfall. Brokers set their own rules and timelines, so treat it as a guide.</p>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
@@ -1000,11 +1000,21 @@ function renderBell() {
   $('#bell').setAttribute('aria-label', n ? `Watchlist alerts, ${n} new` : 'Watchlist alerts');
 }
 
-function openAlerts() {
+const ALERT_FILTER_KEY = 'mtf.alertsFilter';
+let freshAlerts = new Set<WatchAlert>(); // unseen when the panel was opened; kept while switching filters
+
+function openAlerts(switching = false) {
   const sheet = $<HTMLDialogElement>('#sheet');
-  const fresh = new Set(unseenAlerts());
+  if (!switching) freshAlerts = new Set(unseenAlerts());
+  const fresh = freshAlerts;
+  // "Portfolio only" keeps alerts for stocks you hold (positions on this device).
+  const held = new Set(loadPositions().map((p) => p.sym));
+  const portfolio = store<string>(ALERT_FILTER_KEY) === 'portfolio';
+  const shown = portfolio ? state.alerts.filter((a) => held.has(a.symbol)) : state.alerts;
+  const heldCount = state.alerts.filter((a) => held.has(a.symbol)).length;
+  const heldNew = [...fresh].filter((a) => held.has(a.symbol)).length;
   const byDay = new Map<string, WatchAlert[]>();
-  for (const a of [...state.alerts].reverse()) {
+  for (const a of [...shown].reverse()) {
     const day = new Date(a.at).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
     byDay.set(day, [...(byDay.get(day) ?? []), a]);
   }
@@ -1030,7 +1040,14 @@ function openAlerts() {
         <div><div class="sym big">Watchlist alerts</div><div class="name">What changed for your pinned stocks at each refresh, last 30 days.</div></div>
         <div class="sheet-actions"><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
       </div>
-      ${list || '<div class="empty"><p class="empty-title">No changes yet</p><p>You will see multiplier changes, ASM/GSM/ESM moves, F&amp;O ban, price band changes and new events for your pinned stocks here.</p></div>'}
+      <div class="seg alert-filter" role="tablist" aria-label="Which alerts">
+        <button role="tab" data-alert-filter="all" aria-selected="${!portfolio}">All watchlist <span class="count">${state.alerts.length || ''}</span></button>
+        <button role="tab" data-alert-filter="portfolio" aria-selected="${portfolio}">Portfolio only <span class="count${heldNew ? ' warn-count' : ''}">${heldNew ? `${heldNew} new` : heldCount || ''}</span></button>
+      </div>
+      ${list ||
+        (portfolio
+          ? `<div class="empty"><p class="empty-title">No alerts for your positions</p><p>${held.size ? 'Nothing has changed for the stocks you hold in the last 30 days.' : 'Add positions in the Positions tab to see their alerts here.'}</p></div>`
+          : '<div class="empty"><p class="empty-title">No changes yet</p><p>You will see multiplier changes, ASM/GSM/ESM moves, F&amp;O ban, price band changes and new events for your pinned stocks here.</p></div>')}
       <p class="muted small">Phone notifications: add Telegram or ntfy secrets to the repo (see the README) and every refresh with changes pings you.</p>
     </div>`;
   if (!sheet.open) sheet.showModal();
@@ -1066,7 +1083,7 @@ interface PosMetrics {
   callPrice: number | null; // price at which equity falls below the margin needed
   callDist: number | null; // % the price can fall from now before that
   breakEven: number | null; // sell price that covers all costs so far
-  costs: CostBreakdown | null;
+  costs: CostBreakdown;
 }
 
 const POS_KEY = 'mtf.positions';
@@ -1084,10 +1101,11 @@ function posMetrics(pos: Position): PosMetrics {
   const days = Math.max(0, Math.floor((Date.parse(localISO()) - Date.parse(pos.date)) / 86_400_000));
   const interest = (funded * r.interest * days) / 36500;
   const ltp = state.market?.prices[pos.sym]?.p ?? null;
+  // Charges are known even without a price (sale assumed at the buy price until one arrives).
+  const costs = computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100);
   if (ltp == null) {
-    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs: null };
+    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs };
   }
-  const costs = computeCosts(r, own, lev, days, (ltp / pos.price - 1) * 100);
   const value = ltp * pos.qty;
   const net = value - buyValue - costs.total;
   // Margin call when your equity (value − broker's money − interest) drops below value ÷ leverage,
@@ -1122,11 +1140,23 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   } else {
     kv.push(['Now', '<span class="muted">No price yet (it appears after the next refresh)</span>']);
   }
+  const c = m.costs;
+  kv.push(['Fixed charges', `${inr2(c.fixed)} <span class="muted small">· ${inr2(c.buySide)} paid at buy + ${inr2(c.sellSide)} on sale · excl. interest</span>`]);
+  kv.push(['Charges if sold now', `<b>${inr2(c.total)}</b> <span class="muted small">· fixed ${inr2(c.fixed)} + interest ${inr2(c.interest)}</span>`]);
+  const items: [string, number][] = [
+    ['Brokerage on buy', c.brokBuy], ['Brokerage on sell', c.brokSell], ['Pledge on buy', c.pledge], ['Unpledge on sell', c.unpledge],
+    ['DP charge on sell', c.dp], ['GST on DP and pledge', c.gstDepository], ['STT (buy and sell)', c.stt], ['NSE transaction', c.txn],
+    ['SEBI fee', c.sebi], ['Stamp duty (buy)', c.stamp], ['GST (brokerage, transaction, SEBI)', c.gstTrade], [`MTF interest · ${m.days} days`, c.interest],
+  ];
+  const breakdown = `<details class="pos-breakdown"><summary>Charge breakdown${m.ltp == null ? ' <span class="muted small">· sale at buy price until a price arrives</span>' : ''}</summary>
+    <table class="calc-table">${items.map(([k, v]) => `<tr><th>${k}</th><td>${inr2(v)}</td></tr>`).join('')}
+    <tr class="total"><th>Total if sold now</th><td>${inr2(c.total)}</td></tr></table></details>`;
   return `<div class="pos-card${short ? ' is-near' : ''}">
     <div class="pos-head">${withSymbol ? `<button class="link-sym" data-open="${esc(pos.sym)}">${esc(pos.sym)}</button>` : `<b>${BROKER_NAME[pos.broker]}</b>`}
       ${short ? '<span class="flag severe">Margin top-up needed</span>' : near ? '<span class="flag">Close to a top-up</span>' : ''}
       <button class="btn btn-ghost btn-sm" data-pos-del="${esc(pos.id)}">Remove</button></div>
     <div class="kv">${kv.map(([k, v]) => `<div class="kv-k">${k}</div><div class="kv-v">${v}</div>`).join('')}</div>
+    ${breakdown}
   </div>`;
 }
 
@@ -1154,15 +1184,17 @@ function positionSectionHTML(s: Stock): string {
 function positionsViewHTML(): string {
   const list = loadPositions();
   if (!list.length) {
-    return `<div class="empty"><p class="empty-title">No positions yet</p><p>Open any stock and use “Track my position” to see live P&amp;L, interest so far, break-even and the price below which a margin top-up is needed. Positions stay on this device.</p></div>`;
+    return `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and use “Track my position”. You'll see live P&amp;L, charges, interest so far, break-even and the price below which a margin top-up is needed. Positions stay on this device.</p></div>`;
   }
   const withM = list.map((p) => ({ p, m: posMetrics(p) })).sort((a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999));
   const own = withM.reduce((t, x) => t + x.m.own, 0);
   const net = withM.reduce((t, x) => t + (x.m.net ?? 0), 0);
   const interest = withM.reduce((t, x) => t + x.m.interest, 0);
+  const fixed = withM.reduce((t, x) => t + x.m.costs.fixed, 0);
   return `<div class="pos-summary">
       <div><span class="muted small">Your funds</span><b>${inr(own)}</b></div>
       <div><span class="muted small">P&amp;L if all sold now</span><b class="${net >= 0 ? 'pos' : 'neg'}">${inr(net)}</b></div>
+      <div><span class="muted small">Fixed charges</span><b>${inr(fixed)}</b></div>
       <div><span class="muted small">Interest so far</span><b>${inr(interest)}</b></div>
     </div>
     ${withM.map(({ p }) => positionCardHTML(p, true)).join('')}`;
@@ -1197,6 +1229,139 @@ function savePositionFromForm(sym: string) {
   toast('Position saved on this device');
   openSheet(sym);
   render();
+}
+
+/* Bulk import: one holding per line, e.g.
+     CDSL, Kotak, 100, 1300, 10-10-2026, 4x
+     Tube Investments rupeezy 25 @ 3,450 2026-09-15
+   stock (symbol or name), broker, quantity, avg buy price, then optional buy date and leverage (4x). */
+
+interface ParsedHolding {
+  input: string;
+  sym: string | null;
+  name: string;
+  broker: BrokerKey | null;
+  qty: number;
+  price: number;
+  date: string;
+  lev: number;
+  notes: string[]; // assumptions the preview should show
+  error: string | null;
+}
+
+const BROKER_WORDS: Record<string, BrokerKey> = { kotak: 'kotak', neo: 'kotak', kn: 'kotak', ks: 'kotak', rupeezy: 'rupeezy', rz: 'rupeezy', rupee: 'rupeezy' };
+let pendingHoldings: ParsedHolding[] = [];
+
+function parseDateToken(t: string): string | null {
+  let m = t.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (m) return `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
+  m = t.match(/^(\d{1,2})[-/.](\d{1,2})[-/.](\d{2,4})$/); // Indian order: day first
+  if (m) return `${m[3].length === 2 ? `20${m[3]}` : m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+  return null;
+}
+
+function parseHolding(line: string): ParsedHolding {
+  const clean = line.replace(/(\d),(?=\d{3}\b)/g, '$1').replace(/[₹@]/g, ' ').replace(/[,\t|;]+/g, ' ').trim();
+  const tokens = clean.split(/\s+/);
+  const out: ParsedHolding = { input: line.trim(), sym: null, name: '', broker: null, qty: 0, price: 0, date: localISO(), lev: 0, notes: [], error: null };
+  const bi = tokens.findIndex((t, i) => i > 0 && BROKER_WORDS[t.toLowerCase()]);
+  if (bi < 0) return { ...out, error: 'Add the broker (Kotak or Rupeezy)' };
+  out.broker = BROKER_WORDS[tokens[bi].toLowerCase()];
+  const rest = tokens.slice(bi + 1).filter((t) => t.toLowerCase() !== 'neo');
+  const nums: number[] = [];
+  let dated = false;
+  for (const t of rest) {
+    const d = parseDateToken(t);
+    if (d) { out.date = d; dated = true; continue; }
+    const lev = t.match(/^(\d+(?:\.\d+)?)[x×]$/i);
+    if (lev) { out.lev = Number(lev[1]); continue; }
+    const n = Number(t.replace(/^rs\.?/i, ''));
+    if (Number.isFinite(n) && n > 0) nums.push(n);
+  }
+  [out.qty, out.price] = nums;
+  if (!out.lev && nums[2] && nums[2] <= 10) out.lev = nums[2];
+  const c = resolveLine(tokens.slice(0, bi).join(' '));
+  if (!c) return { ...out, error: 'Stock not found: try its NSE symbol' };
+  out.sym = c.sym;
+  out.name = c.name;
+  if (!(out.qty > 0) || !(out.price > 0)) return { ...out, error: 'Needs quantity and buy price' };
+  if (out.date > localISO()) return { ...out, error: 'Buy date is in the future' };
+  const cur = state.bySymbol.get(out.sym)?.[out.broker];
+  if (!out.lev) {
+    if (cur && cur.lev > 1) { out.lev = cur.lev; out.notes.push(`leverage ${round1(cur.lev)}× (current)`); }
+    else { out.lev = 1; out.notes.push(`${BROKER_SHORT[out.broker]} does not fund it now: add leverage like 3x`); }
+  }
+  if (!dated) out.notes.push('bought today (add a date for interest so far)');
+  return out;
+}
+
+function renderPendingHoldings() {
+  const box = document.getElementById('h-pending');
+  if (!box) return;
+  const ok = pendingHoldings.filter((h) => !h.error);
+  box.innerHTML = pendingHoldings.length
+    ? `<div class="p-list">${pendingHoldings
+        .map((h) => {
+          const what = h.error
+            ? `<span class="neg">${esc(h.error)}</span>`
+            : `<b>${esc(h.sym!)}</b> · ${BROKER_SHORT[h.broker!]} · ${h.qty.toLocaleString('en-IN')} @ ${rupee(h.price)} · ${shortDate(h.date)} · ${round1(h.lev)}×${h.notes.length ? `<div class="muted small">${esc(h.notes.join(' · '))}</div>` : ''}`;
+          return `<div class="p-row"><div class="p-main"><div class="p-in">${esc(h.input)}</div><div class="p-to">${what}</div></div>${h.error ? '<span class="badge miss">Check</span>' : '<span class="badge new">OK</span>'}</div>`;
+        })
+        .join('')}</div>`
+    : '';
+  const add = $<HTMLButtonElement>('#h-add');
+  const rep = $<HTMLButtonElement>('#h-replace');
+  add.disabled = rep.disabled = !ok.length;
+  add.textContent = ok.length ? `Add ${ok.length} position${ok.length === 1 ? '' : 's'}` : 'Add positions';
+  rep.textContent = ok.length ? `Replace all with these ${ok.length}` : 'Replace all';
+}
+
+async function openHoldingsImport() {
+  const sheet = $<HTMLDialogElement>('#sheet');
+  sheet.innerHTML = `
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <div><div class="sym big">Import holdings</div><div class="name">One holding per line: stock, broker, quantity, avg buy price, then buy date and leverage if you know them.</div></div>
+        <div class="sheet-actions"><button class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+      </div>
+      <textarea id="h-paste" rows="5" spellcheck="false" placeholder="CDSL, Kotak, 100, 1300, 10-10-2026, 4x&#10;Tube Investments, Rupeezy, 25, 3450, 15-09-2026&#10;HDFCBANK kotak 50 @ 1,710"></textarea>
+      <div id="h-pending"></div>
+      <div class="sheet-buttons">
+        <button class="btn btn-primary" id="h-add" disabled>Add positions</button>
+        <button class="btn btn-ghost" id="h-replace" disabled>Replace all</button>
+      </div>
+      <p class="muted small">Dates are day-month-year (10-10-2026) or 2026-10-10. Without a leverage, the broker's current multiplier is used. Positions stay on this device.</p>
+    </div>`;
+  pendingHoldings = [];
+  if (!sheet.open) sheet.showModal();
+  state.sheetSym = null;
+  universe = buildUniverse(await loadSymbols());
+  const ta = $<HTMLTextAreaElement>('#h-paste');
+  ta.addEventListener('input', () => {
+    pendingHoldings = ta.value.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#')).map(parseHolding);
+    renderPendingHoldings();
+  });
+  if (!matchMedia('(pointer: coarse)').matches) ta.focus();
+}
+
+function applyHoldings(replace: boolean) {
+  const ok = pendingHoldings.filter((h) => !h.error);
+  const current = loadPositions();
+  if (replace && current.length && !confirm(`Replace your ${current.length} positions with these ${ok.length}?`)) return;
+  const fresh: Position[] = ok.map((h, i) => ({
+    id: `${Date.now().toString(36)}${i}${Math.random().toString(36).slice(2, 5)}`,
+    sym: h.sym!, broker: h.broker!, qty: h.qty, price: h.price, date: h.date, lev: h.lev,
+  }));
+  savePositions(replace ? fresh : [...current, ...fresh]);
+  const toPin = fresh.map((p) => p.sym).filter((sym) => !state.pins.includes(sym));
+  if (toPin.length) {
+    state.pins.push(...new Set(toPin));
+    savePins();
+  }
+  $<HTMLDialogElement>('#sheet').close();
+  state.view = 'positions';
+  render();
+  toast(`${replace ? 'Replaced with' : 'Added'} ${fresh.length} position${fresh.length === 1 ? '' : 's'}${toPin.length ? `; pinned ${toPin.length} for prices` : ''}`);
 }
 
 function exportPositions() {
@@ -1967,6 +2132,11 @@ function bind() {
     }
     if (t.closest('[data-add]')) return void openAddSheet();
     if (t.closest('#bell')) return openAlerts();
+    const af = t.closest<HTMLElement>('[data-alert-filter]');
+    if (af) {
+      store(ALERT_FILTER_KEY, af.dataset.alertFilter);
+      return openAlerts(true);
+    }
     const posSave = t.closest<HTMLElement>('[data-pos-save]');
     if (posSave) return savePositionFromForm(posSave.dataset.posSave!);
     const posDel = t.closest<HTMLElement>('[data-pos-del]');
@@ -1978,6 +2148,9 @@ function bind() {
       return;
     }
     if (t.closest('#pos-export')) return exportPositions();
+    if (t.closest('[data-import-holdings]')) return void openHoldingsImport();
+    if (t.closest('#h-add')) return applyHoldings(false);
+    if (t.closest('#h-replace')) return applyHoldings(true);
     const openSym = t.closest<HTMLElement>('[data-open]');
     if (openSym) return void openSheet(openSym.dataset.open!);
     if (t.closest('[data-reset-rates]')) {
