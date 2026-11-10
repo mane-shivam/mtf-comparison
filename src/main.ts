@@ -165,7 +165,8 @@ const state = {
   history: null as History | null,
   unmatched: null as Unmatched[] | null,
   pins: [] as string[],
-  view: 'pinned' as 'pinned' | 'all' | 'positions',
+  // The tab you were on survives a refresh or hard reload.
+  view: ((v) => (v === 'all' || v === 'positions' ? v : 'pinned'))(store<string>('mtf.view')) as 'pinned' | 'all' | 'positions',
   sort: 'az' as 'az' | 'lev' | 'gap',
   filter: null as BrokerKey | null,
   solo: false, // only stocks where one broker is best on its own
@@ -870,6 +871,7 @@ function emptyState(): string {
 function renderList() {
   const searching = !!state.query.trim();
   document.body.classList.toggle('positions-view', !searching && state.view === 'positions');
+  store('mtf.view', state.view);
   positionsBadge();
   if (!searching && state.view === 'positions') {
     document.body.classList.remove('searching');
@@ -1392,7 +1394,7 @@ function positionsViewHTML(): string {
           <div class="ps-value">${inr(value)}</div>
           <div class="ps-sub">${inr(invested)} invested, ${inr(own)} of it your money</div>
         </div>
-        <div class="ps-count">${filtered ? `${shown.length} of ${all.length}` : `${all.length} positions`}</div>
+        <div class="ps-count">${filtered ? `${shown.length} of ${all.length}` : `${all.length} position${all.length === 1 ? '' : 's'}`}</div>
       </div>
       <div class="ps-pair">
         <div class="ps-cell">
@@ -2882,6 +2884,11 @@ function bind() {
     if (view) {
       state.view = view.dataset.view as 'pinned' | 'all' | 'positions';
       state.limit = PAGE;
+      // Positions is its own page, without search.
+      if (state.view === 'positions' && state.query) {
+        state.query = '';
+        $<HTMLInputElement>('#q').value = '';
+      }
       render();
       return;
     }

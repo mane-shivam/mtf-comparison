@@ -4387,3 +4387,9 @@ button.pc-sym {
     transition: none;
   }
 }
+
+/* Positions is its own page: no search or broker summary above it. */
+body.positions-view .search-wrap,
+body.positions-view #summary {
+  display: none;
+}
