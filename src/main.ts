@@ -41,7 +41,7 @@ interface SurvFlag {
 
 interface CoEvent {
   date: string; // YYYY-MM-DD: meeting date, or ex-date for a corporate action
-  kind: 'meeting' | 'action' | 'news' | 'broker';
+  kind: 'meeting' | 'action' | 'news' | 'broker' | 'result';
   level?: 'alert' | 'watch' | 'info'; // news and broker-list changes only
   title: string; // 'Results', 'Results · Dividend', 'Ex-dividend', 'Split', ...
   detail: string;
@@ -52,6 +52,39 @@ interface EventsFile {
   ban: { date: string | null; symbols: string[] } | null;
   bands?: Record<string, { band: number | null; series: string }>;
   events: Record<string, CoEvent[]>;
+}
+
+interface PriceInfo {
+  p: number;
+  prev: number | null;
+  chg: number | null;
+  dayHi: number | null;
+  dayLo: number | null;
+  hi52: number | null;
+  lo52: number | null;
+  vol: number | null;
+  avgVol: number | null;
+  date: string;
+  t: number; // unix seconds of the last trade
+  closes: [string, number][];
+}
+
+interface Deal {
+  date: string;
+  kind: 'bulk' | 'block';
+  client: string;
+  side: string;
+  qty: number | null;
+  price: number | null;
+}
+
+interface MarketFile {
+  prices: Record<string, PriceInfo>; // pinned stocks only
+  var: { date: string | null; rows: Record<string, { m: number | null; adhoc: number | null }> };
+  mwpl: { date: string | null; rows: Record<string, { pct: number | null; ban: boolean }> };
+  deliv: Record<string, { d: number | null; avg: number | null; date: string }>;
+  pledge: Record<string, { pct: number; promoter: number | null; asOf: string | null }>;
+  deals: Record<string, Deal[]>;
 }
 
 interface WatchAlert {
@@ -75,6 +108,7 @@ interface Meta {
   brokers: Record<BrokerKey, BrokerMeta>;
   surveillance?: { fetchedAt: string | null; sources: Record<string, SurvSource> };
   events?: { fetchedAt: string | null; sources: Record<string, SurvSource> };
+  market?: { fetchedAt: string | null; sources: Record<string, SurvSource> };
   total: number;
   unmatched: number;
 }
@@ -131,7 +165,7 @@ const state = {
   history: null as History | null,
   unmatched: null as Unmatched[] | null,
   pins: [] as string[],
-  view: 'pinned' as 'pinned' | 'all',
+  view: 'pinned' as 'pinned' | 'all' | 'positions',
   sort: 'az' as 'az' | 'lev' | 'gap',
   filter: null as BrokerKey | null,
   solo: false, // only stocks where one broker is best on its own
@@ -144,6 +178,7 @@ const state = {
   surv: {} as Record<string, SurvFlag[]>, // NSE/BSE ASM and GSM flags by symbol
   sheetSym: null as string | null, // stock open in the detail sheet
   alerts: [] as WatchAlert[], // changes to pinned stocks, newest last
+  market: null as MarketFile | null, // prices (pins), exchange margin, F&O OI, delivery, pledges, deals
   events: {} as Record<string, CoEvent[]>, // company events from 3 days ago onwards
   ban: null as { date: string; symbols: Set<string> } | null, // NSE F&O ban list
   bands: {} as Record<string, { band: number | null; series: string }>, // tight circuits and T2T series
@@ -408,6 +443,13 @@ async function loadData() {
 
 // Alerts, events and surveillance load after the main table; the page works without them.
 function loadExtras() {
+  getJSON<MarketFile>('data/market.json')
+    .then((m) => {
+      state.market = m;
+      render();
+      if ($<HTMLDialogElement>('#sheet').open && state.sheetSym) openSheet(state.sheetSym);
+    })
+    .catch(() => {});
   // Watchlist change alerts drive the bell.
   getJSON<WatchAlert[]>('data/alerts.json')
     .then((a) => {
@@ -505,7 +547,7 @@ function eventFlagsHTML(sym: string): string {
   if (band?.band && band.band <= 5) {
     out.push(`<span class="flag${band.band <= 2 ? ' severe' : ''}" title="Price band ${band.band}%: the stock can move at most ${band.band}% in a day">${band.band}% band</span>`);
   }
-  const evs = all.filter((e) => e.kind === 'meeting' || e.kind === 'action');
+  const evs = all.filter((e) => e.kind === 'meeting' || e.kind === 'action' || e.kind === 'result');
   if (evs.length) {
     const today = localISO();
     const next = evs.find((e) => e.date >= today) ?? evs[evs.length - 1];
@@ -517,8 +559,33 @@ function eventFlagsHTML(sym: string): string {
   return out.join('');
 }
 
+function marketFlagsHTML(sym: string): string {
+  const m = state.market;
+  if (!m) return '';
+  const out: string[] = [];
+  const px = m.prices[sym];
+  const band = state.bands[sym]?.band;
+  if (px?.chg != null && Math.abs(px.chg) >= 5) {
+    out.push(`<span class="flag${px.chg < 0 ? ' severe' : ' good'}" title="Change today">${px.chg < 0 ? '▼' : '▲'}${Math.abs(px.chg).toFixed(1)}%</span>`);
+  }
+  if (px && px.prev && band) {
+    if (px.p <= px.prev * (1 - band / 100) * 1.01) out.push('<span class="flag severe" title="At or near the lower circuit: selling may not fill">Lower circuit</span>');
+    else if (px.p >= px.prev * (1 + band / 100) * 0.99) out.push('<span class="flag good" title="At or near the upper circuit">Upper circuit</span>');
+  }
+  if (px?.lo52 && px.p <= px.lo52 * 1.005) out.push('<span class="flag" title="At a 52-week low">52w low</span>');
+  else if (px?.hi52 && px.p >= px.hi52 * 0.995) out.push('<span class="flag good" title="At a 52-week high">52w high</span>');
+  const oi = m.mwpl.rows[sym];
+  if (oi?.pct != null && oi.pct >= 80 && !inBan(sym)) {
+    out.push(`<span class="flag${oi.pct >= 90 ? ' severe' : ''}" title="F&amp;O open interest as % of the market-wide limit; ban at 95%">OI ${oi.pct.toFixed(0)}%</span>`);
+  }
+  const vm = m.var.rows[sym]?.m;
+  if (vm != null && vm >= 40) out.push(`<span class="flag${vm >= 60 ? ' severe' : ''}" title="Exchange margin (VaR + ELM + ad hoc); brokers fund at most about 100 ÷ this">Margin ${vm.toFixed(0)}%</span>`);
+  if (px?.vol && px.avgVol && px.vol >= 3 * px.avgVol) out.push(`<span class="flag event" title="Volume vs 20-day average">Vol ${(px.vol / px.avgVol).toFixed(1)}×</span>`);
+  return out.join('');
+}
+
 function flagsHTML(sym: string): string {
-  return eventFlagsHTML(sym) + (state.surv[sym] ?? [])
+  return eventFlagsHTML(sym) + marketFlagsHTML(sym) + (state.surv[sym] ?? [])
     .map((f) => {
       const title = `${f.ex.join(' + ')} · ${survName(f)} · Stage ${f.stage} · ${survSince(f)}`;
       return `<span class="flag${survSevere(f) ? ' severe' : ''}" title="${esc(title)}">${esc(survLabel(f))}</span>`;
@@ -778,6 +845,17 @@ function emptyState(): string {
 
 function renderList() {
   const searching = !!state.query.trim();
+  document.body.classList.toggle('positions-view', !searching && state.view === 'positions');
+  positionsBadge();
+  if (!searching && state.view === 'positions') {
+    document.body.classList.remove('searching');
+    $('#list').innerHTML = positionsViewHTML();
+    $('#list-head').hidden = true;
+    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-ghost" id="pos-export">Export positions</button><label class="btn btn-ghost">Import<input type="file" id="pos-import" accept="application/json,.json" hidden /></label></div>
+      <p class="muted small">“Top-up needed below” assumes the broker keeps asking for the same margin share as at entry (1 ÷ leverage), so with leverage a fall below about your buy price (plus interest) creates a shortfall. Brokers set their own rules and timelines, so treat it as a guide.</p>`;
+    $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
+    return;
+  }
   let list: Stock[];
   if (searching) list = search(state.query);
   else if (state.view === 'pinned') list = sorted(state.pins.map((p) => state.bySymbol.get(p) ?? stubStock(p)));
@@ -831,6 +909,23 @@ function eventSourcesHTML(m: Meta): string {
     .join('');
 }
 
+function marketSourcesHTML(m: Meta): string {
+  const src = m.market?.sources;
+  if (!src) return '';
+  const rows: [string, string, SurvSource | undefined][] = [
+    ['Prices for pinned stocks (Yahoo Finance)', 'https://finance.yahoo.com/', src.prices],
+    ['NSE exchange margin (VaR + ELM)', 'https://www.nseindia.com/all-reports', src.var],
+    ['NSE F&amp;O open interest vs limit', 'https://www.nseindia.com/all-reports-derivatives', src.mwpl],
+    ['NSE delivery % (bhavcopy)', 'https://www.nseindia.com/all-reports', src.deliv],
+    ['NSE bulk and block deals', 'https://www.nseindia.com/report-detail/display-bulk-and-block-deals', src.deals],
+    ['NSE promoter pledges', 'https://www.nseindia.com/companies-listing/corporate-filings-pledged-data', src.pledge],
+  ];
+  return rows
+    .filter(([, , i]) => i)
+    .map(([label, link, i]) => `<li><a href="${link}" target="_blank" rel="noopener">${label}</a><span class="muted">${i!.status === 'ok' ? '' : `${i!.status} · `}fetched ${fmtTime(i!.fetchedAt ?? null)}</span></li>`)
+    .join('');
+}
+
 function renderFooter() {
   const m = state.meta;
   if (!m) return;
@@ -842,7 +937,7 @@ function renderFooter() {
     <div class="foot-grid">
       <div>
         <h2>Sources</h2>
-        <ul class="sources">${fetches}${survSourcesHTML(m)}${eventSourcesHTML(m)}</ul>
+        <ul class="sources">${fetches}${survSourcesHTML(m)}${eventSourcesHTML(m)}${marketSourcesHTML(m)}</ul>
       </div>
       <div>
         <h2>Pins</h2>
@@ -944,6 +1039,187 @@ function openAlerts() {
   const latest = state.alerts.reduce((m, a) => (a.at > m ? a.at : m), '');
   if (latest) store(SEEN_KEY, latest);
   renderBell();
+}
+
+/* ---------- my positions (this device only) ---------- */
+
+interface Position {
+  id: string;
+  sym: string;
+  broker: BrokerKey;
+  qty: number;
+  price: number; // average buy price
+  date: string; // buy date YYYY-MM-DD
+  lev: number; // leverage the position was taken at
+}
+
+interface PosMetrics {
+  buyValue: number;
+  own: number;
+  funded: number;
+  days: number;
+  interest: number;
+  ltp: number | null;
+  value: number | null;
+  net: number | null; // P&L if sold now, after every charge and interest so far
+  roi: number | null; // net as % of own funds
+  callPrice: number | null; // price at which equity falls below the margin needed
+  callDist: number | null; // % the price can fall from now before that
+  breakEven: number | null; // sell price that covers all costs so far
+  costs: CostBreakdown | null;
+}
+
+const POS_KEY = 'mtf.positions';
+const CALL_WARN = 3; // % above the top-up price that counts as close
+
+const loadPositions = (): Position[] => store<Position[]>(POS_KEY) ?? [];
+const savePositions = (list: Position[]) => store(POS_KEY, list);
+
+function posMetrics(pos: Position): PosMetrics {
+  const r = brokerRates()[pos.broker];
+  const lev = Math.max(1, pos.lev);
+  const buyValue = pos.qty * pos.price;
+  const own = buyValue / lev;
+  const funded = buyValue - own;
+  const days = Math.max(0, Math.floor((Date.parse(localISO()) - Date.parse(pos.date)) / 86_400_000));
+  const interest = (funded * r.interest * days) / 36500;
+  const ltp = state.market?.prices[pos.sym]?.p ?? null;
+  if (ltp == null) {
+    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs: null };
+  }
+  const costs = computeCosts(r, own, lev, days, (ltp / pos.price - 1) * 100);
+  const value = ltp * pos.qty;
+  const net = value - buyValue - costs.total;
+  // Margin call when your equity (value − broker's money − interest) drops below value ÷ leverage,
+  // i.e. the same margin share the broker asked for at entry.
+  const callPrice = lev > 1 ? (funded + interest) / (pos.qty * (1 - 1 / lev)) : null;
+  return {
+    buyValue, own, funded, days, interest, ltp, value, net,
+    roi: own ? (net / own) * 100 : null,
+    callPrice,
+    callDist: callPrice != null ? ((ltp - callPrice) / ltp) * 100 : null,
+    breakEven: pos.price + costs.total / pos.qty,
+    costs,
+  };
+}
+
+function positionCardHTML(pos: Position, withSymbol: boolean): string {
+  const m = posMetrics(pos);
+  const near = m.callDist != null && m.callDist < CALL_WARN;
+  const short = m.callDist != null && m.callDist < 0;
+  const kv: [string, string][] = [
+    ['Holding', `${pos.qty.toLocaleString('en-IN')} @ ${rupee(pos.price)} · ${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}× · ${m.days} day${m.days === 1 ? '' : 's'}`],
+    ['Your funds', `${inr(m.own)} <span class="muted small">· broker funds ${inr(m.funded)}</span>`],
+    ['Interest so far', inr2(m.interest)],
+  ];
+  if (m.ltp != null) {
+    kv.push(['Now', `${rupee(m.ltp)} <span class="muted small">· value ${inr(m.value!)}</span>`]);
+    kv.push(['P&amp;L if sold now', `<span class="${m.net! >= 0 ? 'pos' : 'neg'}">${inr2(m.net!)}</span> <span class="muted small">(${m.roi! >= 0 ? '+' : ''}${m.roi!.toFixed(1)}% on your funds, after all charges)</span>`]);
+    kv.push(['Break-even today', `${rupee(m.breakEven!)}`]);
+    if (m.callPrice != null) {
+      kv.push(['Top-up needed below', `<span class="${near ? 'neg' : ''}">${rupee(m.callPrice)}</span> <span class="muted small">· ${m.callDist! >= 0 ? `${m.callDist!.toFixed(1)}% below now` : `price is ${Math.abs(m.callDist!).toFixed(1)}% under it`}</span>`]);
+    }
+  } else {
+    kv.push(['Now', '<span class="muted">No price yet (it appears after the next refresh)</span>']);
+  }
+  return `<div class="pos-card${short ? ' is-near' : ''}">
+    <div class="pos-head">${withSymbol ? `<button class="link-sym" data-open="${esc(pos.sym)}">${esc(pos.sym)}</button>` : `<b>${BROKER_NAME[pos.broker]}</b>`}
+      ${short ? '<span class="flag severe">Margin top-up needed</span>' : near ? '<span class="flag">Close to a top-up</span>' : ''}
+      <button class="btn btn-ghost btn-sm" data-pos-del="${esc(pos.id)}">Remove</button></div>
+    <div class="kv">${kv.map(([k, v]) => `<div class="kv-k">${k}</div><div class="kv-v">${v}</div>`).join('')}</div>
+  </div>`;
+}
+
+function positionSectionHTML(s: Stock): string {
+  if (s.stub) return '';
+  const mine = loadPositions().filter((p) => p.sym === s.symbol);
+  const funded = BROKERS.filter((b) => isFunded(s[b]));
+  const ltp = state.market?.prices[s.symbol]?.p;
+  const form = funded.length
+    ? `<details class="calc-rates pos-form"${mine.length ? '' : ' open'}>
+        <summary>${mine.length ? 'Add another position' : 'Track my position'} <span class="muted small">· saved on this device only</span></summary>
+        <div class="calc-inputs pos-inputs">
+          <label><span>Broker</span><span class="calc-field"><select id="pos-broker">${funded.map((b) => `<option value="${b}" data-lev="${s[b]!.lev}">${BROKER_SHORT[b]} · ${fmtLev(s[b]!.lev)}</option>`).join('')}</select></span></label>
+          <label><span>Quantity</span><span class="calc-field"><input id="pos-qty" type="number" inputmode="numeric" min="1" step="1" /></span></label>
+          <label><span>Avg buy price</span><span class="calc-field"><span class="pre">₹</span><input id="pos-price" type="number" inputmode="decimal" min="0" step="any" value="${ltp ?? ''}" /></span></label>
+          <label><span>Buy date</span><span class="calc-field"><input id="pos-date" type="date" value="${localISO()}" max="${localISO()}" /></span></label>
+          <label><span>Leverage taken</span><span class="calc-field"><input id="pos-lev" type="number" inputmode="decimal" min="1" step="0.01" value="${funded[0] ? s[funded[0]]!.lev : ''}" /><span class="post">×</span></span></label>
+        </div>
+        <button class="btn btn-primary" data-pos-save="${esc(s.symbol)}">Save position</button>
+      </details>`
+    : '';
+  return `<h3>My position</h3>${mine.map((p) => positionCardHTML(p, false)).join('')}${form}`;
+}
+
+function positionsViewHTML(): string {
+  const list = loadPositions();
+  if (!list.length) {
+    return `<div class="empty"><p class="empty-title">No positions yet</p><p>Open any stock and use “Track my position” to see live P&amp;L, interest so far, break-even and the price below which a margin top-up is needed. Positions stay on this device.</p></div>`;
+  }
+  const withM = list.map((p) => ({ p, m: posMetrics(p) })).sort((a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999));
+  const own = withM.reduce((t, x) => t + x.m.own, 0);
+  const net = withM.reduce((t, x) => t + (x.m.net ?? 0), 0);
+  const interest = withM.reduce((t, x) => t + x.m.interest, 0);
+  return `<div class="pos-summary">
+      <div><span class="muted small">Your funds</span><b>${inr(own)}</b></div>
+      <div><span class="muted small">P&amp;L if all sold now</span><b class="${net >= 0 ? 'pos' : 'neg'}">${inr(net)}</b></div>
+      <div><span class="muted small">Interest so far</span><b>${inr(interest)}</b></div>
+    </div>
+    ${withM.map(({ p }) => positionCardHTML(p, true)).join('')}`;
+}
+
+function positionsBadge() {
+  const list = loadPositions();
+  const near = list.some((p) => (posMetrics(p).callDist ?? 999) < CALL_WARN);
+  const el = document.getElementById('pos-count');
+  if (el) {
+    el.textContent = list.length ? String(list.length) : '';
+    el.classList.toggle('warn-count', near);
+  }
+}
+
+function savePositionFromForm(sym: string) {
+  const val = (id: string) => (document.getElementById(id) as HTMLInputElement | null)?.value ?? '';
+  const broker = val('pos-broker') as BrokerKey;
+  const qty = Number(val('pos-qty'));
+  const price = Number(val('pos-price'));
+  const date = val('pos-date') || localISO();
+  const lev = Number(val('pos-lev'));
+  if (!(qty > 0) || !(price > 0) || !(lev >= 1)) return toast('Enter quantity, buy price and leverage');
+  const list = loadPositions();
+  list.push({ id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, sym, broker, qty, price, date, lev });
+  savePositions(list);
+  // Prices are fetched for pinned stocks, so a tracked position is pinned too.
+  if (!state.pins.includes(sym)) {
+    state.pins.push(sym);
+    savePins();
+  }
+  toast('Position saved on this device');
+  openSheet(sym);
+  render();
+}
+
+function exportPositions() {
+  const blob = new Blob([JSON.stringify({ positions: loadPositions(), exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'mtf-positions.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+async function importPositions(file: File) {
+  try {
+    const data = JSON.parse(await file.text());
+    const list: Position[] = Array.isArray(data) ? data : data.positions;
+    if (!Array.isArray(list) || list.some((p) => !p.sym || !p.qty || !p.price)) throw new Error('bad');
+    const byId = new Map([...loadPositions(), ...list].map((p) => [p.id, p]));
+    savePositions([...byId.values()]);
+    render();
+    toast(`Imported ${list.length} positions`);
+  } catch {
+    toast('That file is not a positions export');
+  }
 }
 
 /* ---------- trade calculator ---------- */
@@ -1141,6 +1417,59 @@ function eventsSectionHTML(sym: string): string {
   return rows.length ? `<h3>Alerts and events</h3><div class="s-list">${rows.join('')}</div>` : '';
 }
 
+const rupee = (n: number) => `₹${n.toLocaleString('en-IN', { maximumFractionDigits: 2 })}`;
+const compact = (n: number) => (n >= 1e7 ? `${(n / 1e7).toFixed(2)} Cr` : n >= 1e5 ? `${(n / 1e5).toFixed(2)} L` : n.toLocaleString('en-IN'));
+
+// Price move from the close on the results day (or the last session before it) to now.
+function sinceResults(sym: string): { date: string; move: number } | null {
+  const px = state.market?.prices[sym];
+  const res = (state.events[sym] ?? []).filter((e) => e.kind === 'result').sort((a, b) => b.date.localeCompare(a.date))[0];
+  if (!px || !res) return null;
+  const base = [...px.closes].reverse().find(([d]) => d <= res.date);
+  return base ? { date: res.date, move: (px.p / base[1] - 1) * 100 } : null;
+}
+
+function marketSectionHTML(sym: string, s: Stock): string {
+  const m = state.market;
+  if (!m) return '';
+  const rows: [string, string][] = [];
+  const px = m.prices[sym];
+  if (px) {
+    const when = new Date(px.t * 1000).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
+    const chg = px.chg != null ? ` <span class="${px.chg >= 0 ? 'pos' : 'neg'}">${px.chg >= 0 ? '+' : ''}${px.chg.toFixed(2)}%</span>` : '';
+    rows.push(['Price', `${rupee(px.p)}${chg} <span class="muted small">· ${when}</span>`]);
+    if (px.dayLo != null && px.dayHi != null) rows.push(['Day range', `${rupee(px.dayLo)} – ${rupee(px.dayHi)}`]);
+    if (px.lo52 != null && px.hi52 != null) {
+      const pos = px.hi52 > px.lo52 ? ((px.p - px.lo52) / (px.hi52 - px.lo52)) * 100 : 0;
+      rows.push(['52-week range', `${rupee(px.lo52)} – ${rupee(px.hi52)} <span class="muted small">· ${pos.toFixed(0)}% of the way up</span>`]);
+    }
+    if (px.vol && px.avgVol) rows.push(['Volume', `${compact(px.vol)} <span class="muted small">· ${(px.vol / px.avgVol).toFixed(1)}× the 20-day average</span>`]);
+    const band = state.bands[sym]?.band;
+    if (band && px.prev) rows.push(['Circuit limits', `${rupee(px.prev * (1 - band / 100))} – ${rupee(px.prev * (1 + band / 100))} <span class="muted small">· ${band}% band</span>`]);
+  }
+  const dv = m.deliv[sym];
+  if (dv?.d != null) rows.push(['Delivery', `${dv.d.toFixed(0)}%${dv.avg != null ? ` <span class="muted small">· 20-day average ${dv.avg.toFixed(0)}% · ${shortDate(dv.date)}</span>` : ''}`]);
+  const v = m.var.rows[sym];
+  if (v?.m != null) {
+    const cap = v.m > 0 ? 100 / v.m : null;
+    rows.push(['Exchange margin', `${v.m.toFixed(2)}%${v.adhoc ? ` <span class="muted small">(ad hoc ${v.adhoc.toFixed(2)}%)</span>` : ''}${cap ? ` <span class="muted small">· supports up to about ${round1(cap)}×</span>` : ''}`]);
+  }
+  const oi = m.mwpl.rows[sym];
+  if (oi?.pct != null) rows.push(['F&amp;O open interest', `${oi.pct.toFixed(1)}% of the market-wide limit <span class="muted small">· ban at 95%, lifted below 80%${oi.ban ? ' · in ban' : ''}</span>`]);
+  if (s.kotak?.maxExposureCr != null) rows.push(['Kotak max exposure', `₹${s.kotak.maxExposureCr} Cr per client`]);
+  const pl = m.pledge[sym];
+  if (pl) rows.push(['Promoter pledge', `${pl.pct.toFixed(2)}% of promoter shares${pl.promoter != null ? ` <span class="muted small">· promoters hold ${pl.promoter.toFixed(1)}%</span>` : ''}`]);
+  const sr = sinceResults(sym);
+  if (sr) rows.push(['Since results', `<span class="${sr.move >= 0 ? 'pos' : 'neg'}">${sr.move >= 0 ? '+' : ''}${sr.move.toFixed(1)}%</span> <span class="muted small">· from the close on ${shortDate(sr.date)}</span>`]);
+  const deals = (m.deals[sym] ?? []).sort((a, b) => b.date.localeCompare(a.date));
+  const dealRows = deals
+    .map((d) => `<div class="deal"><span class="${d.side === 'SELL' ? 'neg' : 'pos'}">${d.side === 'SELL' ? 'Sold' : 'Bought'}</span> ${d.qty ? compact(d.qty) : '?'}${d.price ? ` @ ${rupee(d.price)}` : ''} <span class="muted small">· ${esc(d.client)} · ${d.kind} deal · ${shortDate(d.date)}</span></div>`)
+    .join('');
+  if (!rows.length && !dealRows) return '';
+  return `<h3>Market</h3><div class="kv">${rows.map(([k, val]) => `<div class="kv-k">${k}</div><div class="kv-v">${val}</div>`).join('')}</div>
+    ${dealRows ? `<div class="deals"><div class="muted small">Bulk and block deals, last 7 days</div>${dealRows}</div>` : ''}`;
+}
+
 function survSectionHTML(sym: string): string {
   const flags = state.surv[sym];
   if (!flags?.length) return '';
@@ -1186,8 +1515,10 @@ async function openSheet(sym: string) {
         </div>
       </div>
       <div class="d-list">${rows}</div>
+      ${positionSectionHTML(s)}
       ${eventsSectionHTML(sym)}
       ${survSectionHTML(sym)}
+      ${marketSectionHTML(sym, s)}
       ${s.stub ? '' : calcSectionHTML()}
       <h3>Last 7 days</h3>
       <div class="history" id="history"><p class="muted small">Loading…</p></div>
@@ -1636,6 +1967,17 @@ function bind() {
     }
     if (t.closest('[data-add]')) return void openAddSheet();
     if (t.closest('#bell')) return openAlerts();
+    const posSave = t.closest<HTMLElement>('[data-pos-save]');
+    if (posSave) return savePositionFromForm(posSave.dataset.posSave!);
+    const posDel = t.closest<HTMLElement>('[data-pos-del]');
+    if (posDel) {
+      if (!confirm('Remove this position from this device?')) return;
+      savePositions(loadPositions().filter((p) => p.id !== posDel.dataset.posDel));
+      if ($<HTMLDialogElement>('#sheet').open && state.sheetSym) openSheet(state.sheetSym);
+      render();
+      return;
+    }
+    if (t.closest('#pos-export')) return exportPositions();
     const openSym = t.closest<HTMLElement>('[data-open]');
     if (openSym) return void openSheet(openSym.dataset.open!);
     if (t.closest('[data-reset-rates]')) {
@@ -1663,7 +2005,7 @@ function bind() {
     }
     const view = t.closest<HTMLElement>('[data-view]');
     if (view) {
-      state.view = view.dataset.view as 'pinned' | 'all';
+      state.view = view.dataset.view as 'pinned' | 'all' | 'positions';
       state.limit = PAGE;
       render();
       return;
@@ -1731,6 +2073,14 @@ function bind() {
     if (t.id === 'sort') {
       state.sort = (t as HTMLSelectElement).value as typeof state.sort;
       renderList();
+    } else if (t.id === 'pos-broker') {
+      // Default the leverage field to the chosen broker's current multiplier.
+      const opt = (t as HTMLSelectElement).selectedOptions[0];
+      const lev = document.getElementById('pos-lev') as HTMLInputElement | null;
+      if (opt && lev) lev.value = opt.dataset.lev ?? lev.value;
+    } else if (t.id === 'pos-import') {
+      const f = (t as HTMLInputElement).files?.[0];
+      if (f) importPositions(f);
     } else if (t.id === 'import') {
       const f = (t as HTMLInputElement).files?.[0];
       if (f) importPins(f);

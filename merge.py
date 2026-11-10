@@ -186,6 +186,41 @@ def broker_changes(dates: list[str], snaps: list[dict]) -> list[dict]:
     return out
 
 
+def build_market(matcher: "Matcher", universe: set[str], pins: list[str]) -> tuple[dict, dict]:
+    """Prices, exchange margin, MWPL, delivery %, pledges and deals for public/data/market.json."""
+    raw = load_json(RAW / "market.json", None) or {}
+    keep = universe | set(pins)
+    deliv = {}
+    for sym, days in (raw.get("deliv") or {}).items():
+        series = [v for _, v in sorted(days.items())]
+        if not series:
+            continue
+        last_day = max(days)
+        cur = series[-1][0]
+        base = [d for d, _ in series[-21:-1] if d is not None]
+        deliv[sym] = {"d": cur, "avg": round(sum(base) / len(base), 1) if base else None, "date": last_day}
+    pledge = {}
+    for r in raw.get("pledge") or []:
+        sym = matcher.by_name.get(normalise(r["name"]))
+        if sym in keep:
+            pledge[sym] = {"pct": r["pct"], "promoter": r.get("promoter"), "asOf": r.get("asOf")}
+    deals: dict[str, list] = {}
+    for d in raw.get("deals") or []:
+        if d["symbol"] in keep:
+            deals.setdefault(d["symbol"], []).append({k: d[k] for k in ("date", "kind", "client", "side", "qty", "price")})
+    var = raw.get("var") or {}
+    mwpl = raw.get("mwpl") or {}
+    data = {
+        "prices": raw.get("prices") or {},
+        "var": {"date": var.get("date"), "rows": {k: v for k, v in (var.get("rows") or {}).items() if k in keep}},
+        "mwpl": {"date": mwpl.get("date"), "rows": mwpl.get("rows") or {}},
+        "deliv": deliv,
+        "pledge": pledge,
+        "deals": deals,
+    }
+    return data, {"fetchedAt": raw.get("fetchedAt"), "sources": raw.get("sources", {})}
+
+
 def build_events(dates: list[str], snaps: list[dict]) -> tuple[dict, dict]:
     """F&O ban, price bands, company events and broker-list changes by symbol, for public/data/events.json."""
     raw = load_json(RAW / "events.json", None) or {}
@@ -268,11 +303,14 @@ def main() -> None:
 
     surveillance, surv_meta = build_surveillance(matcher)
     events, events_meta = build_events([p.stem for p in recent], snaps)
+    pins = (load_json(ROOT / "data" / "pins.json", {}) or {}).get("pins", [])
+    market, market_meta = build_market(matcher, set(stocks), pins)
 
     meta = {
         "generatedAt": now.isoformat().replace("+00:00", "Z"),
         "surveillance": surv_meta,
         "events": events_meta,
+        "market": market_meta,
         "brokers": meta_brokers,
         "total": len(rows),
         "unmatched": len(unmatched),
@@ -283,13 +321,13 @@ def main() -> None:
     (OUT / "unmatched.json").write_text(json.dumps(unmatched, indent=1, ensure_ascii=False) + "\n")
     (OUT / "history.json").write_text(json.dumps(history, separators=(",", ":")) + "\n")
     (OUT / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
+    (OUT / "market.json").write_text(json.dumps(market, separators=(",", ":"), ensure_ascii=False) + "\n")
     (OUT / "events.json").write_text(json.dumps(events, separators=(",", ":"), ensure_ascii=False) + "\n")
     (OUT / "surveillance.json").write_text(json.dumps(surveillance, separators=(",", ":")) + "\n")
 
     # Change alerts for pinned stocks (compared with the previous refresh).
-    pins = (load_json(ROOT / "data" / "pins.json", {}) or {}).get("pins", [])
     live = {b for b, info in meta_brokers.items() if info["status"] != "failed"}
-    state, log, fresh = alerts.run(pins, stocks, BROKERS, surveillance, events,
+    state, log, fresh = alerts.run(pins, stocks, BROKERS, surveillance, events, market,
                                    load_json(ALERT_STATE, {}), load_json(OUT / "alerts.json", []),
                                    meta["generatedAt"], live)
     ALERT_STATE.write_text(json.dumps(state, separators=(",", ":"), sort_keys=True, ensure_ascii=False) + "\n")

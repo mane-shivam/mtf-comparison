@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T10:43:54Z",
+  "generatedAt": "2026-11-10T10:46:55Z",
   "surveillance": {
     "fetchedAt": "2026-11-10T10:43:47Z",
     "sources": {
@@ -12,22 +12,40 @@
     }
   },
   "events": {
-    "fetchedAt": "2026-11-10T10:43:54Z",
+    "fetchedAt": null,
+    "sources": {}
+  },
+  "market": {
+    "fetchedAt": "2026-11-10T10:41:32Z",
     "sources": {
-      "ban": {
+      "prices": {
         "status": "ok",
-        "fetchedAt": "2026-11-10T10:43:47Z",
+        "fetchedAt": "2026-11-10T10:41:12Z",
         "error": null
       },
-      "bands": {
+      "var": {
         "status": "ok",
-        "fetchedAt": "2026-11-10T10:43:48Z",
+        "fetchedAt": "2026-11-10T10:41:15Z",
         "error": null
       },
-      "events": {
+      "mwpl": {
         "status": "ok",
-        "fetchedAt": "2026-11-10T10:43:54Z",
-        "count": 818,
+        "fetchedAt": "2026-11-10T10:41:16Z",
+        "error": null
+      },
+      "deliv": {
+        "status": "ok",
+        "fetchedAt": "2026-11-10T10:41:29Z",
+        "error": null
+      },
+      "deals": {
+        "status": "ok",
+        "fetchedAt": "2026-11-10T10:41:30Z",
+        "error": null
+      },
+      "pledge": {
+        "status": "ok",
+        "fetchedAt": "2026-11-10T10:41:32Z",
         "error": null
       }
     }

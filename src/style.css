@@ -2014,3 +2014,189 @@ td.down {
 .run-failed:hover {
   text-decoration: underline;
 }
+
+/* ---------- market section ---------- */
+
+.flag.good {
+  border-color: rgba(0, 196, 140, 0.45);
+  background: var(--best-soft);
+  color: var(--best);
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: minmax(110px, auto) 1fr;
+  gap: 8px 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.kv-k {
+  color: var(--muted);
+}
+
+.kv-v {
+  min-width: 0;
+}
+
+.kv .pos,
+.deal .pos {
+  color: var(--best);
+}
+
+.kv .neg,
+.deal .neg {
+  color: var(--down);
+}
+
+.deals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 13.5px;
+}
+
+/* ---------- positions ---------- */
+
+.pos-card {
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.pos-card.is-near {
+  border-color: rgba(255, 90, 95, 0.55);
+}
+
+.pos-card .kv {
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.pos-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 0 16px;
+}
+
+.pos-head .btn-sm {
+  margin-left: auto;
+}
+
+.btn-sm {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.sheet .pos-card {
+  background: var(--bg);
+}
+
+.pos-inputs {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 14px 12px;
+}
+
+.pos-form .btn-primary {
+  margin: 0 14px 14px;
+}
+
+.calc-field select {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.calc-field input[type='date'] {
+  font-size: 14px;
+  color-scheme: dark;
+}
+
+.pos-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pos-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.pos-summary b {
+  font-size: 17px;
+}
+
+.pos-summary .pos {
+  color: var(--best);
+}
+
+.pos-summary .neg {
+  color: var(--down);
+}
+
+.count.warn-count {
+  color: var(--down);
+  font-weight: 700;
+}
+
+body.positions-view .toolbar-right,
+body.positions-view .list-head {
+  display: none;
+}
+
+body.positions-view .list {
+  border: 0;
+  background: none;
+  overflow: visible;
+}
+
+@media (max-width: 640px) {
+  .kv {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .kv-v {
+    margin-bottom: 8px;
+  }
+
+  .pos-inputs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pos-summary b {
+    font-size: 15px;
+  }
+
+  body.positions-view .toolbar {
+    grid-template-areas: 'seg sort';
+  }
+
+  .seg button {
+    padding: 0 8px;
+  }
+}

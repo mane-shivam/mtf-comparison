@@ -152,6 +152,23 @@ def parse_announcements(rows: list) -> list[dict]:
     return out
 
 
+def parse_results_out(rows: list) -> list[dict]:
+    """Results filings (the outcome of a results board meeting), one per stock and day, with the filing link."""
+    out, seen = [], set()
+    for r in rows or []:
+        cat = (r.get("desc") or "").lower()
+        text = " ".join((r.get("attchmntText") or "").split())
+        is_result = ("integrated filing- financial" in cat or "financial result" in cat
+                     or ("outcome of board meeting" in cat and "result" in text.lower()))
+        sym, when = (r.get("symbol") or "").upper(), iso((r.get("an_dt") or "")[:11])
+        if not is_result or not sym or not when or (sym, when) in seen:
+            continue
+        seen.add((sym, when))
+        out.append({"symbol": sym, "date": when, "kind": "result", "title": "Results out",
+                    "detail": text[:240], "link": r.get("attchmntFile") or QUOTE.format(sym=sym)})
+    return out
+
+
 def parse_sec_list(text: str) -> dict:
     """Stocks with a tight price band (2/5/10%) or in trade-to-trade (BE/BZ): {symbol: {band, series}}."""
     import csv
@@ -199,7 +216,8 @@ def main() -> int:
         s.s.headers["Accept"] = "application/json, text/plain, */*"
         s.get(NSE_PAGE)  # sets the cookies the API checks
         events = parse_board(s.get(BOARD.format(f=f, t=t)).json()) + parse_actions(s.get(ACTIONS.format(f=f, t=t)).json())
-        events += parse_announcements(s.get(ANNOUNCEMENTS.format(f=f, t=today.strftime("%d-%m-%Y"))).json())
+        announcements = s.get(ANNOUNCEMENTS.format(f=f, t=today.strftime("%d-%m-%Y"))).json()
+        events += parse_announcements(announcements) + parse_results_out(announcements)
         if not events:
             raise RuntimeError("NSE returned no events")
         sources["events"] = {"status": "ok", "fetchedAt": now_iso(), "count": len(events), "error": None}

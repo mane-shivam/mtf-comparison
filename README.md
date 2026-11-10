@@ -27,12 +27,25 @@ Saved responses are in `samples/` and the parser tests run against them.
 
 **Matching:** overrides.csv → ISIN → broker's own NSE symbol → exact normalised name → rapidfuzz ≥ 92 → `unmatched.json` (shown in the page's "Needs matching" panel). On the first run every row matched.
 
+## Market data for open positions
+
+`scrapers/market.py` collects, each refresh: prices for pinned stocks (Yahoo Finance, since NSE's quote API
+refuses servers), NSE exchange margin per stock (C_VAR1: VaR + ELM + ad hoc, which brokers set MTF leverage
+from), F&O open interest vs the market-wide limit (combineoi), delivery % (bhavcopy, 30-session history kept
+in `data/market_hist.json`), bulk and block deals (7 days) and promoter pledges. Results filings come from
+NSE announcements (`scrapers/events.py`).
+
+**Positions** (the Positions tab) are saved only in the browser: P&L after all charges, interest so far,
+break-even today and the price below which a margin top-up is needed. Export/Import moves them between devices.
+
 ## Watchlist alerts and phone notifications
 
 Every refresh compares each pinned stock with the previous refresh (`alerts.py`) and records changes:
 multiplier up or down, dropped from or added to a broker's MTF list, entering, leaving or changing stage on
-ASM/GSM/ESM, F&O ban in or out, price band or trade-to-trade changes, and newly announced events or
-flagged announcements. They appear under the bell on the site (last 30 days) and, if set up, on your phone.
+ASM/GSM/ESM, F&O ban in or out, price band or trade-to-trade changes, newly announced events or
+flagged announcements, exchange margin moves, F&O open interest crossing 80%/90%, Kotak exposure cap changes,
+promoter pledge changes, bulk/block deals, ±5% days, lower/upper circuit, 52-week high/low, volume ≥3× and
+delivery spikes (price alerts at most once per day), and results filings. They appear under the bell on the site (last 30 days) and, if set up, on your phone.
 A newly pinned stock only sets its baseline, so pinning never floods the feed.
 
 Phone notifications go out from the refresh workflow (`scripts/notify.py`). Set either channel as

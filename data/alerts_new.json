@@ -1,1 +1,82 @@
-[]
+[
+ {
+  "symbol": "KRN",
+  "name": "KRN Heat Exchanger and Refrigeration Limited",
+  "level": "good",
+  "text": "Price band 5% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "MTARTECH",
+  "name": "Mtar Technologies Limited",
+  "level": "good",
+  "text": "Price band 5% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "HFCL",
+  "name": "HFCL",
+  "level": "good",
+  "text": "Price band 5% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "HFCL",
+  "name": "HFCL",
+  "level": "good",
+  "text": "Moved out of trade-to-trade",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "STLTECH",
+  "name": "STLTECH",
+  "level": "good",
+  "text": "Price band 5% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "STLTECH",
+  "name": "STLTECH",
+  "level": "good",
+  "text": "Moved out of trade-to-trade",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "HAPPYFORGE",
+  "name": "Happy Forgings Limited",
+  "level": "good",
+  "text": "Price band 10% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "QPOWER",
+  "name": "Quality Power Electrical Equipments Limited",
+  "level": "good",
+  "text": "Price band 10% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "SUDEEPPHRM",
+  "name": "Sudeep Pharma Limited",
+  "level": "good",
+  "text": "Price band 10% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ },
+ {
+  "symbol": "INDOMIM",
+  "name": "INDO-MIM Limited",
+  "level": "good",
+  "text": "Price band 10% → none",
+  "link": null,
+  "at": "2026-11-10T10:46:55Z"
+ }
+]
