@@ -1112,6 +1112,9 @@ interface PosMetrics {
   callDist: number | null; // % the price can fall from now before that
   breakEven: number | null; // sell price that covers all costs so far
   costs: CostBreakdown;
+  gross: number | null; // value now − total investment, before charges (the broker apps' unrealised P&L)
+  day: number | null; // today's change: since the previous close, or since the buy price if bought today
+  dayBase: number | null; // value the day's change is measured from
 }
 
 const POS_KEY = 'mtf.positions';
@@ -1132,8 +1135,12 @@ function posMetrics(pos: Position): PosMetrics {
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
   const costs = computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100);
   if (ltp == null) {
-    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs };
+    return { buyValue, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, breakEven: null, costs, gross: null, day: null, dayBase: null };
   }
+  const px = state.market!.prices[pos.sym];
+  const boughtToday = pos.date >= px.date;
+  const dayFrom = boughtToday ? pos.price : px.prev;
+  const day = dayFrom ? (ltp - dayFrom) * pos.qty : null;
   const value = ltp * pos.qty;
   const net = value - buyValue - costs.total;
   // Margin call when your equity (value − broker's money − interest) drops below value ÷ leverage,
@@ -1146,6 +1153,9 @@ function posMetrics(pos: Position): PosMetrics {
     callDist: callPrice != null ? ((ltp - callPrice) / ltp) * 100 : null,
     breakEven: pos.price + costs.total / pos.qty,
     costs,
+    gross: value - buyValue,
+    day,
+    dayBase: dayFrom ? dayFrom * pos.qty : null,
   };
 }
 
@@ -1192,12 +1202,13 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   return `<article class="pr is-${st}" data-sym="${esc(pos.sym)}">
     <div class="pr-line">
       ${head}
-      ${m.net != null ? `<span class="pr-pnl ${m.net >= 0 ? 'up' : 'down'}">${money(m.net)}</span>` : '<span class="pr-pnl">—</span>'}
+      ${m.gross != null ? `<span class="pr-pnl ${m.gross >= 0 ? 'up' : 'down'}" title="Unrealised P&amp;L before charges">${money(m.gross)}</span>` : '<span class="pr-pnl">—</span>'}
     </div>
     <div class="pr-line pr-meta">
       <span>${withSymbol ? `${BROKER_SHORT[pos.broker]} ${round1(pos.lev)}×, ` : `${round1(pos.lev)}×, `}${pos.qty.toLocaleString('en-IN')} at ${rupee(pos.price)}</span>
     </div>
-    ${m.roi != null ? `<div class="pr-ret">Return <b class="${m.roi >= 0 ? 'up' : 'down'}">${sign(m.roi)}${Math.abs(m.roi).toFixed(1)}%</b> on your money, <b>${sign(m.net!)}${Math.abs((m.net! / m.buyValue) * 100).toFixed(1)}%</b> on total</div>` : ''}
+    ${m.day != null ? `<div class="pr-day">Today <b class="${m.day >= 0 ? 'up' : 'down'}">${money(m.day)}</b>${m.dayBase ? ` ${sign(m.day)}${Math.abs((m.day / m.dayBase) * 100).toFixed(1)}%` : ''}</div>` : ''}
+    ${m.gross != null ? `<div class="pr-ret"><b class="${m.gross >= 0 ? 'up' : 'down'}">${sign(m.gross)}${Math.abs((m.gross / m.own) * 100).toFixed(1)}%</b> on your money, <b>${sign(m.gross)}${Math.abs((m.gross / m.buyValue) * 100).toFixed(1)}%</b> on total<br />If sold now <b class="${m.net! >= 0 ? 'up' : 'down'}">${money(m.net!)}</b> after charges</div>` : ''}
     ${cushionHTML(m)}
     <div class="pr-prices">
       ${cushion}
@@ -1245,7 +1256,7 @@ function positionSectionHTML(s: Stock): string {
   return `${mine.length ? `<div class="pr-list">${mine.map((p) => positionCardHTML(p, false)).join('')}</div>` : ''}${form}`;
 }
 
-type PosSort = 'risk' | 'pnl' | 'pnlBest' | 'ret' | 'size' | 'interest' | 'days' | 'az';
+type PosSort = 'risk' | 'pnl' | 'pnlBest' | 'today' | 'ret' | 'size' | 'interest' | 'days' | 'az';
 interface PosView { broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
 const POS_VIEW_KEY = 'mtf.posView';
 const posView = (): PosView => ({ broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
@@ -1254,7 +1265,7 @@ function positionsToolbarHTML(v: PosView, counts: Record<string, number>): strin
   const chip = (key: string, value: string, label: string, on: boolean, n?: number) =>
     `<button class="chip${on ? ' on' : ''}" data-posf="${key}:${value}" aria-pressed="${on}">${label}${n != null ? ` <span class="count">${n}</span>` : ''}</button>`;
   const sorts: [PosSort, string][] = [
-    ['risk', 'Risk first'], ['pnl', 'Biggest loss'], ['pnlBest', 'Biggest gain'], ['ret', 'Return %'],
+    ['risk', 'Risk first'], ['pnl', 'Biggest loss'], ['pnlBest', 'Biggest gain'], ['today', "Today's move"], ['ret', 'Return %'],
     ['size', 'Largest'], ['interest', 'Most interest'], ['days', 'Held longest'], ['az', 'A to Z'],
   ];
   return `<div class="pr-tools">
@@ -1283,22 +1294,23 @@ function positionsViewHTML(): string {
     rupeezy: all.filter((x) => x.p.broker === 'rupeezy').length,
     short: all.filter((x) => posState(x.m) === 'short').length,
     close: all.filter((x) => posState(x.m) === 'close').length,
-    up: all.filter((x) => (x.m.net ?? 0) >= 0).length,
-    down: all.filter((x) => (x.m.net ?? 0) < 0).length,
+    up: all.filter((x) => (x.m.gross ?? 0) >= 0).length,
+    down: all.filter((x) => (x.m.gross ?? 0) < 0).length,
     results: all.filter((x) => nextResult(x.p.sym)).length,
   };
   const shown = all.filter(
     (x) =>
       (v.broker === 'all' || x.p.broker === v.broker) &&
       (v.status === 'all' || posState(x.m) === v.status) &&
-      (v.pnl === 'all' || (v.pnl === 'up' ? (x.m.net ?? 0) >= 0 : (x.m.net ?? 0) < 0)) &&
+      (v.pnl === 'all' || (v.pnl === 'up' ? (x.m.gross ?? 0) >= 0 : (x.m.gross ?? 0) < 0)) &&
       (!v.results || !!nextResult(x.p.sym)),
   );
   const by: Record<PosSort, (a: (typeof all)[number], b: (typeof all)[number]) => number> = {
     risk: (a, b) => (a.m.callDist ?? 999) - (b.m.callDist ?? 999),
-    pnl: (a, b) => (a.m.net ?? 0) - (b.m.net ?? 0),
-    pnlBest: (a, b) => (b.m.net ?? 0) - (a.m.net ?? 0),
-    ret: (a, b) => (b.m.roi ?? -999) - (a.m.roi ?? -999),
+    pnl: (a, b) => (a.m.gross ?? 0) - (b.m.gross ?? 0),
+    pnlBest: (a, b) => (b.m.gross ?? 0) - (a.m.gross ?? 0),
+    today: (a, b) => (a.m.day ?? 0) - (b.m.day ?? 0),
+    ret: (a, b) => ((b.m.gross ?? -1e12) / b.m.own) - ((a.m.gross ?? -1e12) / a.m.own),
     size: (a, b) => b.m.buyValue - a.m.buyValue,
     interest: (a, b) => b.m.interest - a.m.interest,
     days: (a, b) => b.m.days - a.m.days,
@@ -1312,6 +1324,9 @@ function positionsViewHTML(): string {
   const invested = sum((m) => m.buyValue);
   const value = sum((m) => m.value ?? m.buyValue);
   const net = sum((m) => m.net ?? 0);
+  const gross = sum((m) => m.gross ?? 0);
+  const day = sum((m) => m.day ?? 0);
+  const dayBase = sum((m) => m.dayBase ?? m.buyValue);
   const sign = (n: number) => (n >= 0 ? '+' : '−');
   const pct = (n: number, base: number) => (base ? `${sign(n)}${Math.abs((n / base) * 100).toFixed(2)}%` : '—');
   const filtered = shown.length !== all.length;
@@ -1328,13 +1343,14 @@ function positionsViewHTML(): string {
           .join('')
       : `<div class="pr-list">${rows(shown)}</div>`;
 
+  const amt = (n: number) => `<b class="${n >= 0 ? 'up' : 'down'}">${sign(n)}${inr(Math.abs(n)).replace('−', '')}</b>`;
   return `<section class="pr-summary">
-      <div class="pr-faint">${filtered ? `${shown.length} of ${all.length} positions, if sold now` : 'If you sold everything now'}</div>
-      <div class="pr-total ${net >= 0 ? 'up' : 'down'}">${sign(net)}${inr(Math.abs(net)).replace('−', '')}</div>
-      <div class="pr-returns">
-        <span><b class="${net >= 0 ? 'up' : 'down'}">${pct(net, own)}</b> on your money</span>
-        <span><b class="${net >= 0 ? 'up' : 'down'}">${pct(net, invested)}</b> on total investment</span>
-      </div>
+      ${filtered ? `<div class="pr-faint">${shown.length} of ${all.length} positions</div>` : ''}
+      <dl class="pr-pnls">
+        <dt>Today</dt><dd>${amt(day)}<span>${pct(day, dayBase)}</span></dd>
+        <dt>P&amp;L</dt><dd>${amt(gross)}<span>${pct(gross, own)} on your money, ${pct(gross, invested)} on total</span></dd>
+        <dt>If sold now</dt><dd>${amt(net)}<span>${pct(net, own)} on your money, after every charge and interest</span></dd>
+      </dl>
       <div class="pr-sumstats">
         <div><i>Your money</i>${inr(own)}</div>
         <div><i>Total investment</i>${inr(invested)}</div>

@@ -3566,3 +3566,70 @@ button.pr-sym:hover {
   position: absolute;
   inset: -12px 0;
 }
+
+/* Today / P&L / If sold now */
+.pr-pnls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 16px;
+  align-items: baseline;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.pr-pnls dt {
+  color: var(--faint-2);
+  font-size: 12.5px;
+}
+
+.pr-pnls dd {
+  margin: 0;
+}
+
+.pr-pnls dd b {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.pr-pnls dd:nth-of-type(2) b {
+  font-size: 24px;
+}
+
+.pr-pnls dd span {
+  display: block;
+  margin-top: 1px;
+  color: var(--faint-2);
+  font-size: 12.5px;
+}
+
+.pr-faint + .pr-pnls {
+  margin-top: 10px;
+}
+
+.pr-day {
+  flex: none;
+  white-space: nowrap;
+}
+
+.pr-day b {
+  font-weight: 600;
+}
+
+.pr-ret {
+  white-space: normal;
+  line-height: 1.55;
+}
+
+.pr-day {
+  margin-top: 2px;
+  color: var(--faint-2);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .pr-tools .select select {
+    width: 136px;
+  }
+}
