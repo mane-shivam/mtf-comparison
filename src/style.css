@@ -4263,3 +4263,127 @@ button.pc-sym {
 .pc-cell {
   grid-template-columns: minmax(0, 1fr);
 }
+
+/* ---------- summary card: smaller numbers, margin folded away ---------- */
+.ps {
+  padding: 16px;
+}
+
+.ps-value {
+  font-size: 24px;
+}
+
+.ps-sub {
+  font-size: 12px;
+}
+
+.ps-pair {
+  margin-top: 14px;
+}
+
+.ps-cell {
+  padding: 10px 12px 11px;
+}
+
+.ps-amt {
+  margin: 3px 0 6px;
+  font-size: 17px;
+}
+
+.ps-chip {
+  padding: 1px 6px;
+  font-size: 11px;
+}
+
+.ps-note,
+.ps-own {
+  font-size: 11px;
+}
+
+.ps-row {
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.ps-row-v b {
+  font-size: 15px;
+}
+
+.ps-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+
+.ps-grid b {
+  font-size: 13.5px;
+}
+
+.ps-grid small {
+  font-size: 11px;
+}
+
+.ps-more {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.ps-more > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ps-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.ps-more > summary > span:first-child::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0 2px 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.15s;
+}
+
+.ps-more[open] > summary > span:first-child::after {
+  margin-bottom: -2px;
+  transform: rotate(-135deg);
+}
+
+.ps-more-hint {
+  margin-left: auto;
+  color: var(--down-soft);
+  font-size: 11.5px;
+}
+
+.ps-more[open] .ps-more-hint {
+  display: none;
+}
+
+.ps-more .ps-margin {
+  display: block;
+  margin-top: 4px;
+}
+
+.ps-more .ps-save {
+  margin: 10px 0 2px;
+  font-size: 11.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-more > summary > span:first-child::after {
+    transition: none;
+  }
+}

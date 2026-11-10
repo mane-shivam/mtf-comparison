@@ -1290,6 +1290,7 @@ function positionSectionHTML(s: Stock): string {
 type PosSort = 'risk' | 'pnl' | 'pnlBest' | 'today' | 'ret' | 'size' | 'interest' | 'days' | 'az';
 interface PosView { mode: 'open' | 'closed'; broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
 const POS_VIEW_KEY = 'mtf.posView';
+const PS_MORE_KEY = 'mtf.psMore';
 const posView = (): PosView => ({ mode: 'open', broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
 
 function positionsToolbarHTML(v: PosView, counts: Record<string, number>): string {
@@ -1412,9 +1413,12 @@ function positionsViewHTML(): string {
       <div class="ps-grid">
         <div><i>Interest</i><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far</small></div>
         <div><i>Fixed charges</i><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} on sale</small></div>
-        <button class="ps-margin${short ? ' is-short' : ''}" ${short ? 'data-posf="status:short"' : 'disabled'}><i>Margin</i><b>${short ? `${short} need a top-up` : 'All covered'}</b><small>${short ? 'Show them' : 'No position below its top-up level'}</small></button>
       </div>
-      <p class="ps-save">Each ₹1 L of broker's money you pay back saves about ${saving('kotak')} a month at Kotak and ${saving('rupeezy')} at Rupeezy.</p>
+      <details class="ps-more"${store<boolean>(PS_MORE_KEY) ? ' open' : ''}>
+        <summary><span>Margin and paying back</span>${short ? `<span class="ps-more-hint">${short} need a top-up</span>` : ''}</summary>
+        <button class="ps-margin${short ? ' is-short' : ''}" ${short ? 'data-posf="status:short"' : 'disabled'}><i>Margin</i><b>${short ? `${short} need a top-up` : 'All covered'}</b><small>${short ? 'Show them' : 'No position below its top-up level'}</small></button>
+        <p class="ps-save">Each ₹1 L of broker's money you pay back saves about ${saving('kotak')} a month at Kotak and ${saving('rupeezy')} at Rupeezy.</p>
+      </details>
     </section>
     ${positionsToolbarHTML(v, counts)}
     ${body}`;
@@ -3023,6 +3027,12 @@ async function boot() {
 
   // With sync, held stocks are added on top of the shared list after it loads (see pullPins).
   if (!SYNC_ON) ensureHeldPinned();
+
+  // Remember whether the summary's margin section is open.
+  document.addEventListener('toggle', (e) => {
+    const d = e.target as HTMLElement;
+    if (d.classList?.contains('ps-more')) store(PS_MORE_KEY, (d as HTMLDetailsElement).open);
+  }, true);
 
   // Pick up edits made on other devices when this tab comes back into view.
   document.addEventListener('visibilitychange', () => {
