@@ -72,9 +72,6 @@ jobs:
           KOTAK_MPIN: ${{ secrets.KOTAK_MPIN }}
           RUPEEZY_API_KEY: ${{ secrets.RUPEEZY_API_KEY }}
           RUPEEZY_APP_ID: ${{ secrets.RUPEEZY_APP_ID }}
-          RUPEEZY_CLIENT_CODE: ${{ secrets.RUPEEZY_CLIENT_CODE }}
-          RUPEEZY_PASSWORD: ${{ secrets.RUPEEZY_PASSWORD }}
-          RUPEEZY_TOTP_SECRET: ${{ secrets.RUPEEZY_TOTP_SECRET }}
 
       # Decrypts the synced positions for top-up warnings and builds the 08:00 IST summary.
       # Only hashes and the summary date are committed; the readable output is gitignored.

@@ -102,3 +102,32 @@ def test_mpin_format_is_checked_before_calling_kotak(tmp_path, monkeypatch):
     FakeSession.calls = []
     brokers.main({**KOTAK, "KOTAK_MPIN": "1234"})
     assert FakeSession.calls == []
+
+
+def test_rupeezy_sign_in_code_becomes_a_reusable_session(tmp_path, monkeypatch):
+    monkeypatch.setattr(brokers, "OUT", tmp_path / "broker.enc.json")
+    monkeypatch.setattr(brokers, "AUTH_FILE", tmp_path / "auth.enc.json")
+    monkeypatch.setattr(brokers, "SESSION_FILE", tmp_path / "session.enc.json")
+    env = {"RUPEEZY_API_KEY": "key", "RUPEEZY_APP_ID": "app", "POSITIONS_PASSPHRASE": PASS}
+    seen = []
+
+    class RZ(FakeSession):
+        def post(self, url, **kw):
+            seen.append((url, kw.get("json")))
+            return Resp({"data": {"access_token": "tok1"}})
+
+        def get(self, url, **kw):
+            seen.append((url, kw["headers"]["Authorization"]))
+            return Resp({"data": []})
+
+    monkeypatch.setattr(brokers.requests, "Session", RZ)
+    assert brokers.main(env) == 1  # not signed in yet
+    (tmp_path / "auth.enc.json").write_text(json.dumps(brokers.encrypt(PASS, {"at": "2026-11-11T03:00:00Z", "auth": "code9"})))
+    assert brokers.main(env) == 0
+    url, body = seen[0]
+    assert url.endswith("/user/session") and body["token"] == "code9"
+    assert body["checksum"] == brokers.hashlib.sha256(b"appcode9key").hexdigest()
+    assert all(a == "Bearer tok1" for _, a in seen[1:])
+    seen.clear()
+    assert brokers.main(env) == 0  # the same code isn't exchanged twice: the saved session is reused
+    assert not any(u.endswith("/user/session") for u, _ in seen)

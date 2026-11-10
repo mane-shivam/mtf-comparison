@@ -152,7 +152,7 @@ const GH_REPO = import.meta.env.VITE_GITHUB_REPO as string | undefined;
 const GH_REF = (import.meta.env.VITE_GITHUB_REF as string | undefined) || 'main';
 const REFRESH_KEY = 'mtf.lastRefresh';
 const PAGE = 100;
-const COOLDOWN_MS = 10 * 60 * 1000;
+const COOLDOWN_MS = 60 * 1000; // only stops double taps; a running refresh blocks on its own
 const POLL_MS = 15 * 1000;
 const POLL_MAX_MS = 6 * 60 * 1000;
 
@@ -1614,6 +1614,7 @@ async function loadBrokerSnapshot(): Promise<void> {
     brokerSnap = (await decryptPayload(pass, await r.json())) as unknown as BrokerSnap;
     const el = document.getElementById('brokersync');
     if (el) el.outerHTML = brokerSyncHTML();
+    else if (state.view === 'positions') renderList();
   } catch {
     /* not set up yet, offline, or a different passphrase */
   }
@@ -1629,7 +1630,61 @@ function brokerSyncHTML(): string {
       ? `<span><span class="dot ok"></span>${BROKER_SHORT[b]}: synced ${when}</span>`
       : `<span title="${esc(x.error ?? '')}"><span class="dot stale"></span>${BROKER_SHORT[b]}: last synced ${when}, latest attempt failed</span>`;
   };
-  return `<p class="sync broker-sync" id="brokersync">${item('kotak')}${item('rupeezy')}</p>`;
+  const rz = brokerSnap?.brokers.rupeezy;
+  const connect = !rz?.ok ? '<button class="btn btn-ghost btn-sm" data-connect-rupeezy>Connect Rupeezy</button>' : '';
+  return `<div class="broker-sync-wrap" id="brokersync"><p class="sync broker-sync">${item('kotak')}${item('rupeezy')}</p>${connect}</div>`;
+}
+
+/* Sign in with Rupeezy: Rupeezy's page sends you back with a one-time ?auth= code. It is saved encrypted
+   (data/rupeezy_auth.enc.json) and a quick broker sync turns it into a session with the API key, which
+   lives only in repository secrets. */
+const RZ_APP_KEY = 'mtf.rupeezyApp';
+
+function connectRupeezy() {
+  if (!store<string>(POS_PASS_KEY)) return toast('Turn on private sync first: the session is saved with your passphrase.');
+  if (!store<string>(GH_TOKEN_KEY)) return toast('Connect GitHub first (Watchlist tab, below the list).');
+  let app = store<string>(RZ_APP_KEY);
+  if (!app) {
+    app = prompt('Rupeezy application ID (vortex.rupeezy.in → your application). Saved on this device; it is not secret.')?.trim() || null;
+    if (!app) return;
+    store(RZ_APP_KEY, app);
+  }
+  location.href = `https://flow.rupeezy.in?applicationId=${encodeURIComponent(app)}&cb_param=mtf`;
+}
+
+async function finishRupeezyLogin(auth: string) {
+  history.replaceState(null, '', location.pathname);
+  const pass = store<string>(POS_PASS_KEY);
+  if (!pass || !store<string>(GH_TOKEN_KEY)) return toast('Rupeezy sign-in needs private sync and GitHub connected on this device.');
+  toast('Rupeezy signed in. Syncing your account…');
+  try {
+    const path = 'data/rupeezy_auth.enc.json';
+    const url = `https://api.github.com/repos/${GH_REPO}/contents/${path}`;
+    const cur = await fetch(`${url}?ref=${encodeURIComponent(GH_REF)}`, { headers: ghHeaders(), cache: 'no-store' });
+    const sha = cur.ok ? (await cur.json()).sha : undefined;
+    const file = await encryptPayload(pass, { at: new Date().toISOString(), auth } as unknown as PosPayload);
+    const put = await fetch(url, {
+      method: 'PUT',
+      headers: { ...ghHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: 'rupeezy: sign-in', content: b64encode(`${JSON.stringify(file)}\n`), branch: GH_REF, ...(sha ? { sha } : {}),
+        committer: { name: 'mtf-bot', email: 'mtf-bot@users.noreply.github.com' },
+      }),
+    });
+    if (!put.ok) throw new Error(`save ${put.status}`);
+    const run = await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/brokers.yml/dispatches`, {
+      method: 'POST', headers: { ...ghHeaders(), 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: GH_REF }),
+    });
+    if (run.status !== 204) throw new Error(`sync ${run.status}`);
+    // The sync takes about half a minute; pick up the new snapshot when it lands.
+    for (const wait of [40_000, 30_000, 30_000]) {
+      await new Promise((r) => setTimeout(r, wait));
+      await loadBrokerSnapshot();
+      if (brokerSnap?.brokers.rupeezy?.ok) return toast('Rupeezy connected');
+    }
+  } catch (e) {
+    toast(`Couldn't finish the Rupeezy sign-in (${(e as Error).message}). Try Connect Rupeezy again.`);
+  }
 }
 
 async function fetchPosFile(): Promise<{ file: EncFile | null; sha: string | null } | null> {
@@ -2998,6 +3053,7 @@ function bind() {
     }
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
+    if (t.closest('[data-connect-rupeezy]')) return connectRupeezy();
     const clr = t.closest<HTMLElement>('[data-clear]');
     if (clr) return clearPositions(clr.dataset.clear === 'export');
     if (t.closest('[data-pnl-start]')) return setStartPnl();
@@ -3232,6 +3288,8 @@ async function boot() {
   pullPins();
   pullPositions();
   loadBrokerSnapshot();
+  const rzAuth = new URLSearchParams(location.search).get('auth');
+  if (rzAuth) finishRupeezyLogin(rzAuth);
 
   bind();
   updateRefreshCooldown();

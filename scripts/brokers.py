@@ -11,7 +11,7 @@ Nothing readable is written to the repo or the log: the log shows only the shape
 
 Secrets (a broker is skipped when its secrets are missing):
   Kotak:   KOTAK_ACCESS_TOKEN, KOTAK_TOTP_SECRET, KOTAK_MOBILE, KOTAK_UCC, KOTAK_MPIN
-  Rupeezy: RUPEEZY_API_KEY, RUPEEZY_APP_ID, RUPEEZY_CLIENT_CODE, RUPEEZY_PASSWORD, RUPEEZY_TOTP_SECRET
+  Rupeezy: RUPEEZY_API_KEY, RUPEEZY_APP_ID, plus a daily Sign in with Rupeezy on the site
 """
 
 from __future__ import annotations
@@ -133,37 +133,64 @@ def kotak(env: dict) -> dict:
 
 # ---------- Rupeezy (Vortex API) ----------
 
+AUTH_FILE = ROOT / "data" / "rupeezy_auth.enc.json"  # one-time code from Sign in with Rupeezy (the site writes it)
+SESSION_FILE = ROOT / "data" / "rupeezy_session.enc.json"  # the session made from it, reused until it expires
+
+
+def _load(path: Path, passphrase: str) -> dict:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from portfolio import decrypt
+    try:
+        return decrypt(passphrase, json.loads(path.read_text())) if path.exists() else {}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def rupeezy_token(env: dict, s: requests.Session) -> str:
+    """A Rupeezy session: a fresh sign-in code is exchanged once; otherwise the saved session is reused."""
+    passphrase = env["POSITIONS_PASSPHRASE"]
+    auth = _load(AUTH_FILE, passphrase)
+    saved = _load(SESSION_FILE, passphrase)
+    if auth.get("auth") and auth.get("at", "") > saved.get("from", ""):
+        app, key = env["RUPEEZY_APP_ID"], env["RUPEEZY_API_KEY"]
+        res = _json(s.post(f"{VORTEX}/user/session", timeout=TIMEOUT,
+                           headers={"Content-Type": "application/json", "x-api-key": key},
+                           json={"applicationId": app, "token": auth["auth"],
+                                 "checksum": hashlib.sha256(f"{app}{auth['auth']}{key}".encode()).hexdigest()}),
+                    "Rupeezy sign-in")
+        token = (res.get("data") or {}).get("access_token")
+        if not token:
+            raise SyncError("Rupeezy sign-in: no session in the response. Tap Connect Rupeezy again")
+        SESSION_FILE.write_text(json.dumps(encrypt(passphrase, {"token": token, "from": auth["at"]})) + "\n")
+        return token
+    if saved.get("token"):
+        return saved["token"]
+    raise SyncError("Rupeezy: not signed in. Tap Connect Rupeezy on the site")
+
+
 def rupeezy(env: dict) -> dict:
     s = requests.Session()
     s.headers.update({"Accept": "application/json"})
-    login = _json(s.post(f"{VORTEX}/user/login", timeout=TIMEOUT,
-                         headers={"Content-Type": "application/json", "x-api-key": env["RUPEEZY_API_KEY"]},
-                         json={"client_code": env["RUPEEZY_CLIENT_CODE"], "password": env["RUPEEZY_PASSWORD"],
-                               "totp": totp(env["RUPEEZY_TOTP_SECRET"]), "application_id": env["RUPEEZY_APP_ID"]}),
-                  "Rupeezy login")
-    token = (login.get("data") or {}).get("access_token")
-    if not token:
-        raise SyncError("Rupeezy login: no session in the response (password/TOTP login may be retired: "
-                        "switch to Sign in with Rupeezy)")
+    token = rupeezy_token(env, s)
     h = {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
-    get = lambda path, what: _json(s.get(VORTEX + path, headers=h, timeout=TIMEOUT), what)  # noqa: E731
-    out = {
+
+    def get(path: str, what: str) -> dict:
+        r = s.get(VORTEX + path, headers=h, timeout=TIMEOUT)
+        if r.status_code in (401, 403):
+            raise SyncError("Rupeezy session expired. Tap Connect Rupeezy on the site")
+        return _json(r, what)
+
+    return {
         "holdings": get("/trading/portfolio/holdings", "Rupeezy holdings"),
         "positions": get("/trading/portfolio/positions", "Rupeezy positions"),
         "trades": get("/trading/trades", "Rupeezy trades"),
         "funds": get("/user/funds", "Rupeezy funds"),
     }
-    try:  # end the session; harmless if it fails
-        s.delete(f"{VORTEX}/user/session", headers=h, timeout=TIMEOUT)
-    except requests.RequestException:
-        pass
-    return out
 
 
 BROKERS = {
     "kotak": (kotak, ["KOTAK_ACCESS_TOKEN", "KOTAK_TOTP_SECRET", "KOTAK_MOBILE", "KOTAK_UCC", "KOTAK_MPIN"]),
-    "rupeezy": (rupeezy, ["RUPEEZY_API_KEY", "RUPEEZY_APP_ID", "RUPEEZY_CLIENT_CODE", "RUPEEZY_PASSWORD",
-                          "RUPEEZY_TOTP_SECRET"]),
+    "rupeezy": (rupeezy, ["RUPEEZY_API_KEY", "RUPEEZY_APP_ID"]),
 }
 
 

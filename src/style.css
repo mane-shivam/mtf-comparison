@@ -4836,3 +4836,9 @@ body.positions-view #summary {
   align-items: center;
   gap: 6px;
 }
+
+.broker-sync-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
