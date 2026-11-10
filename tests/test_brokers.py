@@ -33,6 +33,9 @@ class Resp:
 class FakeSession:
     calls = []
 
+    def __init__(self):
+        self.headers = {}
+
     def _hit(self, method, url, **kw):
         FakeSession.calls.append((method, url))
         if url.endswith("tradeApiLogin"):
@@ -86,3 +89,8 @@ def test_skips_without_secrets_or_passphrase(tmp_path, monkeypatch):
     assert brokers.main({}) == 0
     assert brokers.main({k: v for k, v in KOTAK.items() if k != "POSITIONS_PASSPHRASE"}) == 0
     assert not (tmp_path / "broker.enc.json").exists()
+
+
+def test_reason_shows_broker_error_text_only():
+    assert brokers._reason({"error": [{"code": "10522", "message": "Invalid MPIN"}]}) == "code=10522; message=Invalid MPIN"
+    assert brokers._reason({"data": None, "ok": False}) == "fields: ['data', 'ok']"

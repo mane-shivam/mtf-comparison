@@ -62,14 +62,38 @@ def shape(obj, depth: int = 0):
     return type(obj).__name__
 
 
+ERROR_KEYS = ("message", "Message", "msg", "errMsg", "emsg", "error", "errors", "description", "stat", "code", "status")
+
+
+def _reason(body) -> str:
+    """The broker's own error text (codes and messages only), for the log."""
+    out: list[str] = []
+
+    def walk(x, depth=0):
+        if depth > 3 or len(out) > 4:
+            return
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if k in ERROR_KEYS and isinstance(v, (str, int)) and str(v).strip():
+                    out.append(f"{k}={str(v).strip()[:100]}")
+                elif isinstance(v, (dict, list)):
+                    walk(v, depth + 1)
+        elif isinstance(x, list):
+            for v in x[:3]:
+                walk(v, depth + 1)
+
+    walk(body)
+    return "; ".join(out) or f"fields: {sorted(body)[:8] if isinstance(body, dict) else type(body).__name__}"
+
+
 def _json(r: requests.Response, what: str) -> dict:
     try:
         body = r.json()
     except ValueError:
-        raise SyncError(f"{what}: HTTP {r.status_code}, not JSON") from None
+        kind = (getattr(r, "headers", {}) or {}).get("content-type", "?")
+        raise SyncError(f"{what}: HTTP {r.status_code}, {kind} response") from None
     if not r.ok:
-        msg = body.get("message") or body.get("Message") or body.get("errMsg") if isinstance(body, dict) else None
-        raise SyncError(f"{what}: HTTP {r.status_code} {str(msg or '')[:120]}")
+        raise SyncError(f"{what}: HTTP {r.status_code} ({_reason(body)})")
     return body
 
 
@@ -79,6 +103,8 @@ def kotak(env: dict) -> dict:
     key = env["KOTAK_ACCESS_TOKEN"]
     common = {"Authorization": key, "neo-fin-key": "neotradeapi", "Content-Type": "application/json"}
     s = requests.Session()
+    # The same client headers Kotak's official SDK sends.
+    s.headers.update({"User-Agent": "NeoSDK-Python/3.0.13", "Accept": "application/json"})
     login = _json(s.post(KOTAK_LOGIN, headers=common, timeout=TIMEOUT, json={
         "mobileNumber": env["KOTAK_MOBILE"], "ucc": env["KOTAK_UCC"], "totp": totp(env["KOTAK_TOTP_SECRET"])}),
         "Kotak login")
@@ -106,6 +132,7 @@ def kotak(env: dict) -> dict:
 
 def rupeezy(env: dict) -> dict:
     s = requests.Session()
+    s.headers.update({"Accept": "application/json"})
     login = _json(s.post(f"{VORTEX}/user/login", timeout=TIMEOUT,
                          headers={"Content-Type": "application/json", "x-api-key": env["RUPEEZY_API_KEY"]},
                          json={"client_code": env["RUPEEZY_CLIENT_CODE"], "password": env["RUPEEZY_PASSWORD"],
