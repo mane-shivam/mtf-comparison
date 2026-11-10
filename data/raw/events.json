@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-10T13:52:27Z",
+"fetchedAt": "2026-11-10T16:32:42Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-10T13:52:22Z",
+"fetchedAt": "2026-11-10T16:32:37Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-10T13:52:23Z",
+"fetchedAt": "2026-11-10T16:32:38Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-10T13:52:27Z",
-"count": 878,
+"fetchedAt": "2026-11-10T16:32:42Z",
+"count": 883,
 "error": null
 }
 },
@@ -3891,6 +3891,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2165_20261026_181803055_WEB.html"
 },
 {
+"symbol": "DREDGECORP",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "Dredging Corporation of India Limited has submitted to the Exchange, the financial results for the quarter / period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/DREDGECORP_10112026195300_20261110__un_audited_financial_results.pdf"
+},
+{
 "symbol": "DSFCL",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -6179,6 +6187,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_24639_20261104_152313465_WEB.html"
 },
 {
+"symbol": "MIDWESTLTD",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "Midwest Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MIDWEST_10112026193356_Outcome_BoardMeeting_10112026.pdf"
+},
+{
 "symbol": "MIRZAINT",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -8140,7 +8156,7 @@
 "kind": "meeting",
 "title": "Results",
 "detail": "SRM CONTRACTORS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22596_20261110_192030846_WEB.html"
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22596_20261110_192704555_WEB.html"
 },
 {
 "symbol": "SRPL",
@@ -8570,6 +8586,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16528_20261110_165059235_WEB.html"
 },
 {
+"symbol": "TEMBO",
+"date": "2026-11-13",
+"kind": "meeting",
+"title": "Results",
+"detail": "Tembo Global Industries Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16528_20261110_213328507_WEB.html"
+},
+{
 "symbol": "TERASOFT",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -8640,6 +8664,14 @@
 "title": "Results",
 "detail": "TITAGARH RAIL SYSTEMS LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2744_20261105_215638259_WEB.html"
+},
+{
+"symbol": "TITAGARH",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "TITAGARH RAIL SYSTEMS LIMITED has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/TWL_10112026204612_OutcomeofBM10112026.pdf"
 },
 {
 "symbol": "TMPV",
@@ -9059,6 +9091,14 @@
 "title": "Results \u00b7 Fund raising",
 "detail": "VIRINCHI LIMITED has informed the Exchange about Board Meeting to be held on 10-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Fund raising.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20201_20261102_173602291_WEB.html"
+},
+{
+"symbol": "VIRINCHI",
+"date": "2026-11-10",
+"kind": "result",
+"title": "Results out",
+"detail": "Virinchi Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/VIRINCHI1303_10112026204233_outcomefinalforupload.pdf"
 },
 {
 "symbol": "VISACHROME",
