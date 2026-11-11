@@ -4314,6 +4314,12 @@
 "type": "equity"
 },
 {
+"symbol": "ESFL",
+"name": "Essen Speciality Films Limited",
+"isin": "INE0ITO01014",
+"type": "equity"
+},
+{
 "symbol": "ESSARSHPNG",
 "name": "Essar Shipping Limited",
 "isin": "INE122M01019",
@@ -13635,6 +13641,12 @@
 "symbol": "SUVEN",
 "name": "Suven Life Sciences Limited",
 "isin": "INE495B01038",
+"type": "equity"
+},
+{
+"symbol": "SUVID-RE",
+"name": "Suvidhaa Infoserve Limited-RE",
+"isin": "INE018420013",
 "type": "equity"
 },
 {

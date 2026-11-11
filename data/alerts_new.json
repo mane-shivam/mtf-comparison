@@ -1,1 +1,10 @@
-[]
+[
+ {
+  "symbol": "ENTERO",
+  "name": "Entero Healthcare Solutions Limited",
+  "level": "alert",
+  "text": "Exchange margin 21% → 50%: a broker leverage cut may follow",
+  "link": null,
+  "at": "2026-11-11T23:00:56Z"
+ }
+]

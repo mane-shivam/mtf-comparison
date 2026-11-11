@@ -1,19 +1,19 @@
 {
-"fetchedAt": "2026-11-11T18:01:36Z",
+"fetchedAt": "2026-11-11T23:00:26Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T18:01:29Z",
+"fetchedAt": "2026-11-11T23:00:21Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T18:01:30Z",
+"fetchedAt": "2026-11-11T23:00:22Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T18:01:36Z",
+"fetchedAt": "2026-11-11T23:00:26Z",
 "count": 916,
 "error": null
 }
@@ -2901,15 +2901,6 @@
 "title": "Results",
 "detail": "ATN INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2422_20261106_193401925_WEB.html"
-},
-{
-"symbol": "AURIGROW",
-"date": "2026-11-08",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Auri Grow India Limited has informed the Exchange about Corporate Insolvency Resolution Process",
-"link": "https://nsearchives.nseindia.com/corporate/GODHA_08112026185248_2nd_CoC_Outcome_-_Auri_Grow_India_Limited_NSE.pdf"
 },
 {
 "symbol": "AUROPHARMA",
@@ -6662,15 +6653,6 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2307_20261106_122954237_WEB.html"
 },
 {
-"symbol": "NEOGEN",
-"date": "2026-11-08",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Neogen Chemicals Limited has informed the Exchange about Action(s) taken or orders passed- Update on Fire Incident - Order for Revocation of earlier Directions issued by GPCB and granting of CC&A Amendment by GPCB.",
-"link": "https://nsearchives.nseindia.com/corporate/NEOGEN_08112026105343_GPCBorder.pdf"
-},
-{
 "symbol": "NFL",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -8397,6 +8379,15 @@
 },
 {
 "symbol": "SPCENET",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Spacenet Enterprises India Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/SPCENET_11112026235926_SEILREG30SALEOFINVESTMENT.pdf"
+},
+{
+"symbol": "SPCENET",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
@@ -8451,6 +8442,14 @@
 "title": "Results",
 "detail": "SREELEATHERS LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_8188_20261104_171058739_WEB.html"
+},
+{
+"symbol": "SRGHFL",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "SRG Housing Finance Limited has informed the Exchange about reasons for Delayed/Non-submission of Financial Results",
+"link": "https://nsearchives.nseindia.com/corporate/SRGHOUSING_11112026235000_Delay_in_financial_results_300926.pdf"
 },
 {
 "symbol": "SRHHYPOLTD",
