@@ -27,6 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ENC = ROOT / "data" / "positions.enc.json"
+BROKER = ROOT / "data" / "broker.enc.json"
 SEEN = ROOT / "data" / "portfolio_seen.json"
 PRIVATE = ROOT / "data" / "private_alerts.json"
 SUMMARY = ROOT / "data" / "summary.json"
@@ -92,11 +93,35 @@ def margin_pct(pos: dict, mtf: dict | None) -> float:
     return float(c.get("ownPct") or 100 / c["lev"])
 
 
-def accounts(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None) -> list[dict]:
+def broker_avail(snapshot: dict | None, now: datetime) -> dict:
+    """Each broker's own free-margin figure from data/broker.enc.json (Kotak's net limit, Rupeezy's net
+    available funds), if read in the last 26 hours. Same rule as the site."""
+    out: dict = {}
+    for b, x in ((snapshot or {}).get("brokers") or {}).items():
+        raw = (x or {}).get("raw") or {}
+        part = "limits" if b == "kotak" else "funds"
+        if not x.get("at") or ((raw.get("_errors") or {}).get(part) and not (raw.get("_stale") or {}).get(part)):
+            continue
+        at = (raw.get("_stale") or {}).get(part) or x["at"]
+        try:
+            age = now - datetime.fromisoformat(str(at).replace("Z", "+00:00"))
+            v = float(raw["limits"]["Net"]) if b == "kotak" else float(
+                (raw["funds"].get("nse") or raw["funds"].get("exchange_combined"))["net_available"])
+        except (KeyError, TypeError, ValueError, AttributeError):
+            continue
+        if age < timedelta(hours=26):
+            out[b] = v
+    return out
+
+
+def accounts(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None,
+             reported: dict | None = None) -> list[dict]:
     """Margin per broker account, as brokers check it: a gain on one stock covers a loss on another.
 
     needed = sum(value x the broker's margin % for that stock today), equity = sum(value - broker's money - interest), spare = equity - needed,
     fall = % every holding can drop together before spare reaches zero (same as the site).
+    When the broker reports its own free margin, that is the spare (it counts charges, interest and
+    withdrawals taken from cash, idle cash, and its exact margin per stock); equity follows from it.
     """
     out = []
     for broker in LABEL:
@@ -115,15 +140,18 @@ def accounts(positions: list[dict], prices: dict, rates: dict, today: date, mtf:
             equity += m["value"] - m["debt"] - m["interest"]  # cash in + unrealised P&L - interest
         if not n:
             continue
+        if reported and broker in reported:
+            equity = needed + reported[broker]
         spare, sens = equity - needed, value - needed
         out.append({"broker": broker, "n": n, "needed": needed, "equity": equity, "spare": spare,
                     "fall": spare / sens * 100 if sens > 0 else None})
     return out
 
 
-def warnings(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None) -> list[dict]:
+def warnings(positions: list[dict], prices: dict, rates: dict, today: date, mtf: dict | None = None,
+             reported: dict | None = None) -> list[dict]:
     out = []
-    for a in accounts(positions, prices, rates, today, mtf):
+    for a in accounts(positions, prices, rates, today, mtf, reported):
         label = SHORT[a["broker"]]
         if a["spare"] < 0:
             level, text = "alert", f"{rupees(-a['spare'])} short"
@@ -151,7 +179,7 @@ def results_due(pins: list[str], events: dict, today: date, days: int = 7) -> li
 
 
 def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, alerts: list[dict],
-            now: datetime, held: set[str], mtf: dict | None = None) -> dict:
+            now: datetime, held: set[str], mtf: dict | None = None, reported: dict | None = None) -> dict:
     today = now.date()
     lines: list[str] = []
     if payload is not None:
@@ -168,7 +196,7 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
             lines.append(f"Interest {rupees(sum(m['perDay'] for _, m in ms))}/day")
             margin = [f"{SHORT[a['broker']]} {rupees(-a['spare'])} short" if a["spare"] < 0
                       else f"{SHORT[a['broker']]} {a['fall'] or 0:.1f}% headroom"
-                      for a in accounts(pos, prices, payload.get("rates") or {}, today, mtf)]
+                      for a in accounts(pos, prices, payload.get("rates") or {}, today, mtf, reported)]
             if margin:
                 lines.append("Margin: " + ", ".join(margin))
             movers = sorted(priced, key=lambda x: x[1]["day"] or 0)
@@ -215,6 +243,12 @@ def main(now: datetime | None = None) -> int:
     mtf = {r["symbol"]: r for r in rows} if isinstance(rows, list) else None
 
     payload = None
+    reported: dict = {}
+    if passphrase and BROKER.exists():
+        try:
+            reported = broker_avail(decrypt(passphrase, json.loads(BROKER.read_text())), now)
+        except Exception as e:  # noqa: BLE001
+            print(f"[portfolio] broker figures unavailable: {type(e).__name__}")
     if passphrase and ENC.exists():
         try:
             payload = decrypt(passphrase, json.loads(ENC.read_text()))
@@ -226,7 +260,7 @@ def main(now: datetime | None = None) -> int:
     if payload is not None:
         fresh, sent = [], set(seen.get("sent") or [])
         day = today.isoformat()
-        for w in warnings(payload.get("positions") or [], prices, payload.get("rates") or {}, today, mtf):
+        for w in warnings(payload.get("positions") or [], prices, payload.get("rates") or {}, today, mtf, reported):
             k = tag(passphrase, day, w.pop("id"), w["level"])
             if k not in sent:
                 fresh.append(w)
@@ -242,7 +276,7 @@ def main(now: datetime | None = None) -> int:
         events = load_json(PUB / "events.json", {}).get("events") or {}
         alerts = load_json(PUB / "alerts.json", [])
         held = {p["sym"] for p in (payload or {}).get("positions") or []}
-        SUMMARY.write_text(json.dumps(summary(payload, prices, pins, events, alerts, now, held, mtf), ensure_ascii=False,
+        SUMMARY.write_text(json.dumps(summary(payload, prices, pins, events, alerts, now, held, mtf, reported), ensure_ascii=False,
                                       indent=1) + "\n")
         seen["summary"] = today.isoformat()
         print("[portfolio] morning summary ready")

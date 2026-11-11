@@ -5591,3 +5591,9 @@ body.positions-view .status .dots {
 
 .kvc-row .up { color: var(--up-soft); }
 .kvc-row .down { color: var(--down-soft); }
+
+.popover dd.pop-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  text-align: left;
+}

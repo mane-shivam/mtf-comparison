@@ -147,3 +147,23 @@ def test_one_failed_report_keeps_the_rest(tmp_path, monkeypatch):
     k = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))["brokers"]["kotak"]
     assert k["ok"] and "holdings" in k["raw"] and "limits" not in k["raw"]
     assert "bridge API error out" in k["raw"]["_errors"]["limits"]
+
+
+def test_failed_report_keeps_its_last_reading_with_its_time(tmp_path, monkeypatch):
+    monkeypatch.setattr(brokers, "OUT", tmp_path / "broker.enc.json")
+    monkeypatch.setattr(brokers.requests, "Session", FakeSession)
+    brokers.main(KOTAK)
+    first = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))["brokers"]["kotak"]
+
+    class LimitsDown(FakeSession):
+        def post(self, url, **kw):
+            if url.endswith("/limits"):
+                return Resp({"errMsg": "bridge API error out"}, 424)
+            return super().post(url, **kw)
+
+    monkeypatch.setattr(brokers.requests, "Session", LimitsDown)
+    for _ in range(2):  # the reading's own time carries over, it isn't refreshed
+        assert brokers.main(KOTAK) == 0
+        k = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))["brokers"]["kotak"]
+        assert k["raw"]["limits"] == first["raw"]["limits"] and k["raw"]["_stale"]["limits"] == first["at"]
+        assert "limits" in k["raw"]["_errors"]

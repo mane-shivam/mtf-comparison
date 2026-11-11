@@ -77,7 +77,7 @@ function marketFile(prices = PRICES) {
 }
 
 // Broker snapshot as scripts/brokers.py writes it (raw responses, encrypted).
-function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date().toISOString(), rupeezyOk = true } = {}) {
+function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date().toISOString(), rupeezyOk = true, rupeezyFree = -5000 } = {}) {
   const trades = kotakTrades
     ? { trades: { stat: 'Ok', stCode: 200, data: kotakTrades.map(([sym, side, qty, px]) => ({ trdSym: `${sym}-EQ`, sym, trnsTp: side, fldQty: qty, avgPrc: String(px), exSeg: 'nse_cm', prod: 'MTF', flDt: TODAY })) } }
     : { _errors: { limits: 'bridge API error out', trades: 'no trades' } };
@@ -86,7 +86,7 @@ function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date(
     brokers: {
       kotak: { ok: true, at, raw: { holdings: { data: kotak.map(([symbol, quantity, averagePrice]) => ({ symbol, displaySymbol: `${symbol}-EQ`, quantity, averagePrice, exchangeSegment: 'nse_cm', closingPrice: PRICES[symbol] })) }, ...trades } },
       rupeezy: rupeezyOk
-        ? { ok: true, at, raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: 12345.6 } } } }
+        ? { ok: true, at, raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: rupeezyFree, funds_transferred: 0 } } } }
         : { ok: false, at: null, error: 'Rupeezy: not signed in. Tap Connect Rupeezy on the site' },
     },
   };
@@ -226,18 +226,23 @@ async function run() {
     const margin = (x) => (x.qty * x.price) / x.lev;
     // CDSL is up ₹60,000 at 4x: its spare covers NUVAMA's whole margin, so no new money.
     assert.equal(nuv.cash, 0, `NUVAMA cash ${nuv.cash}`);
-    // ENTERO's gain covers only part of ANANDRATHI's margin: the rest is new money.
-    assert.ok(ana.cash > 0 && ana.cash < margin(ana), `ANANDRATHI cash ${ana.cash} of ${margin(ana)}`);
+    // Rupeezy's own figure after the buy is ₹5,000 short and nothing was added today: the spare before it
+    // covered all but ₹5,000 of ANANDRATHI's margin, so ₹5,000 is new money.
+    assert.equal(ana.cash, 5000, `ANANDRATHI cash ${ana.cash} of ${margin(ana)}`);
     // Unchanged lots keep your date, price and leverage.
     assert.deepEqual(list.find((x) => x.sym === 'CDSL'), MANUAL[0]);
     const row = await text(p, '.hr[data-open-pos="NUVAMA"]');
     assert.match(row, /^NUVAMA/);
     assert.match(row, /Kotak 3×, 50 at ₹1,900/);
-    const cash = margin(MANUAL[0]) + margin(MANUAL[1]) + ana.cash;
+    // Your money: Kotak from the lots (no Kotak figure in this sync); Rupeezy from its own figure:
+    // equity (margin needed − ₹5,000) − unrealised gain + interest so far.
+    const pct = (sym) => { const r = MTF.find((x) => x.symbol === sym).rupeezy; return r.ownPct ?? 100 / r.lev; };
+    const need = 100 * 2100 * pct('ENTERO') / 100 + 20 * 3000 * pct('ANANDRATHI') / 100;
+    const entInt = (200000 - 200000 / 2.89) * 10.99 * 10 / 36500;
+    const cash = margin(MANUAL[0]) + (need - 5000 - 10000 + entInt);
     const lakh = (x) => `₹${(x / 1e5).toFixed(2)}L`;
     const hero = await text(p, '.hero-sub');
-    assert.ok(hero.includes(`${lakh(cash)} your cash`), `hero shows your cash ${lakh(cash)}: "${hero}"`);
-    assert.match(hero, /from spare margin/);
+    assert.ok(hero.includes(`${lakh(cash)} your money in the accounts`), `hero shows your money ${lakh(cash)}: "${hero}"`);
     await shot(p, 'positions-phone');
     // Tapping a holding opens its detail card, which explains how it was paid for.
     await p.click('.hr[data-open-pos="NUVAMA"]');
@@ -266,7 +271,11 @@ async function run() {
     const interest = (390000 - 97500) * 9.69 * 20 / 36500; // on the broker's loan at purchase
     const before = 97500 + 60000 - interest - 450000 / lev('CDSL', 'kotak');
     assert.ok(Math.abs(spare - (before - nuvMargin)) < 50, `spare ₹${spare}, expected ${Math.round(before - nuvMargin)} (${Math.round(before)} before, minus ${Math.round(nuvMargin)})`);
-    assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /Rupeezy reports ₹12,346 available/);
+    // Rupeezy's own figure is the spare, whatever the lots imply.
+    assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /^Rupeezy Synced .* ₹5,000 short Add funds or sell to cover it.*Rupeezy's own figure, .*: ₹5,000 short\./);
+    await p.click('.acct[data-acct="rupeezy"]');
+    assert.match(await text(p, '#popover'), /Broker's free margin −₹5,000.*Your lots alone imply −?₹[\d,]+ .*The broker's figure is used/);
+    await p.keyboard.press('Escape');
     await p.click('.acct[data-acct="kotak"]');
     assert.match(await text(p, '#popover'), /Kotak Neo account.*Synced.*How margin is counted/);
     await p.context().close();

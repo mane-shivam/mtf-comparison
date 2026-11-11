@@ -272,6 +272,13 @@ def main(env: dict | None = None) -> int:
     for name, fetch in wanted.items():
         try:
             raw = fetch(env)
+            # A report that failed this time (Kotak limits during its night maintenance) keeps its last
+            # reading, with that reading's time in "_stale", so the site still has the broker's own figure.
+            last = (prev.get(name) or {}).get("raw") or {}
+            for part in raw.get("_errors", {}):
+                if part in last:
+                    raw[part] = last[part]
+                    raw.setdefault("_stale", {})[part] = (last.get("_stale") or {}).get(part) or prev[name].get("at")
             snapshot["brokers"][name] = {"ok": True, "at": now, "raw": raw}
             for part, err in raw.get("_errors", {}).items():
                 print(f"[brokers] {name} {part}: failed: {err}")

@@ -40,7 +40,7 @@ def test_top_up_price_and_levels():
 
 
 def run(tmp_path, monkeypatch, price, now):
-    for name in ("ENC", "SEEN", "PRIVATE", "SUMMARY"):
+    for name in ("ENC", "SEEN", "PRIVATE", "SUMMARY", "BROKER"):
         monkeypatch.setattr(portfolio, name, tmp_path / name)
     monkeypatch.setattr(portfolio, "PUB", tmp_path)
     (tmp_path / "market.json").write_text(json.dumps({"prices": {"AAA": {"p": price, "prev": price, "date": "2026-11-09"}}}))
@@ -70,7 +70,7 @@ def test_warn_once_a_day_and_summary_once(tmp_path, monkeypatch):
 
 def test_wrong_passphrase_still_sends_summary(tmp_path, monkeypatch):
     (tmp_path / "ENC").write_text(json.dumps(encrypt({"positions": [POS]})))
-    for name in ("ENC", "SEEN", "PRIVATE", "SUMMARY"):
+    for name in ("ENC", "SEEN", "PRIVATE", "SUMMARY", "BROKER"):
         monkeypatch.setattr(portfolio, name, tmp_path / name)
     monkeypatch.setattr(portfolio, "PUB", tmp_path)
     monkeypatch.setenv("POSITIONS_PASSPHRASE", "wrong passphrase!")
@@ -130,3 +130,28 @@ def test_lot_bought_with_spare_margin_uses_up_spare():
     same_as_cash = {**new, "cash": None}
     c = portfolio.accounts([winner, same_as_cash], prices, {}, today)[0]
     assert round(c["spare"]) == round(a["spare"])  # new money covers its own margin: spare unchanged
+
+
+def test_broker_figure_is_the_spare():
+    today = date(2026, 11, 9)
+    now = datetime(2026, 11, 9, 18, 0, tzinfo=timezone.utc)
+    prices = {"AAA": {"p": 480, "prev": 480, "date": "2026-11-09"}}
+    lots = portfolio.accounts([POS], prices, {}, today)[0]
+    snap = {"brokers": {"kotak": {"ok": True, "at": "2026-11-09T17:30:00Z", "raw": {"limits": {"Net": "9967.5"}}},
+                        "rupeezy": {"ok": True, "at": "2026-11-09T17:30:00Z",
+                                    "raw": {"funds": {"nse": {"net_available": -369.0}}}}}}
+    rep = portfolio.broker_avail(snap, now)
+    assert rep == {"kotak": 9967.5, "rupeezy": -369.0}
+    a = portfolio.accounts([POS], prices, {}, today, None, rep)[0]
+    assert round(a["spare"], 2) == 9967.5 and round(lots["spare"]) != 9968  # the broker wins over the lots
+    assert round(a["equity"] - a["needed"], 2) == 9967.5
+    # Rupeezy reports short: that's a top-up alert even though the lots look fine.
+    r = {**POS, "broker": "rupeezy"}
+    got = portfolio.warnings([r], prices, {}, today, None, rep)
+    assert got[0]["level"] == "alert" and got[0]["text"] == "₹369 short"
+    # Kotak's night maintenance: the last reading is kept with its own time; older than a day is ignored.
+    snap["brokers"]["kotak"]["raw"]["_errors"] = {"limits": "down"}
+    assert "kotak" not in portfolio.broker_avail(snap, now)
+    snap["brokers"]["kotak"]["raw"]["_stale"] = {"limits": "2026-11-09T10:00:00Z"}
+    assert portfolio.broker_avail(snap, now)["kotak"] == 9967.5
+    assert "kotak" not in portfolio.broker_avail(snap, datetime(2026, 11, 10, 13, 0, tzinfo=timezone.utc))

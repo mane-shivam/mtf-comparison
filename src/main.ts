@@ -1245,19 +1245,29 @@ function posMetrics(pos: Position): PosMetrics {
 //   equity = Σ (value − what you owe − interest so far) = cash you put in + unrealised P&L − interest,
 //   spare = equity − needed; a negative spare is the top-up the broker will ask for.
 // fall = how far every holding at that broker can drop together before spare reaches zero.
-interface Account { broker: BrokerKey; n: number; value: number; needed: number; equity: number; spare: number; fall: number | null }
+// When the broker reports its own free margin (Kotak's net available, Rupeezy's net available funds), that
+// figure is the spare: it already counts what the lots can't see (charges and interest debited, money
+// withdrawn or lying idle, profit booked, the broker's exact margin per stock). `off` is how far the lots'
+// own estimate was from it; equity is corrected by the same amount.
+interface Account { broker: BrokerKey; n: number; value: number; needed: number; equity: number; spare: number; fall: number | null; off: number; reported: BrokerAvail | null }
 
 function accounts(list = loadPositions()): Account[] {
   return BROKERS.map((broker) => {
     const ms = list.filter((p) => p.broker === broker).map(posMetrics).filter((m) => m.spare != null);
     const value = ms.reduce((t, m) => t + m.value!, 0);
     const needed = ms.reduce((t, m) => t + (m.value! * m.marginPct) / 100, 0);
-    const equity = ms.reduce((t, m) => t + m.value! - m.debt - m.interest, 0);
+    const lots = ms.reduce((t, m) => t + m.value! - m.debt - m.interest, 0);
+    const reported = brokerAvail(broker);
+    const off = reported ? lots - needed - reported.avail : 0;
+    const equity = lots - off;
     const spare = equity - needed;
     const sens = value - needed; // equity lost per 100% fall, net of the lower margin needed
-    return { broker, n: ms.length, value, needed, equity, spare, fall: sens > 0 ? (spare / sens) * 100 : null };
+    return { broker, n: ms.length, value, needed, equity, spare, fall: sens > 0 ? (spare / sens) * 100 : null, off, reported };
   }).filter((a) => a.n);
 }
+
+// Your money in the MTF accounts: the cash in the lots, corrected to what the brokers report.
+const ownCash = (list: Position[], own: number) => own - accounts(list).reduce((t, a) => t + a.off, 0);
 
 const accountState = (a: Account): 'short' | 'close' | 'ok' => (a.spare < 0 ? 'short' : (a.fall ?? 99) < CALL_WARN ? 'close' : 'ok');
 
@@ -1426,7 +1436,7 @@ function accountCardHTML(a: Account): string {
       <span class="gauge" role="img" aria-label="Margin used ${used.toFixed(0)}%"><span style="width:${used.toFixed(1)}%"></span></span>
       <span class="acct-sub">${sub}</span>
       <span class="acct-kv"><span>Margin used</span><b>${used.toFixed(0)}%</b><span>Needs</span><b>${lakh(a.needed)}</b><span>Equity</span><b>${lakh(a.equity)}</b></span>
-      ${brokerFundsLine(a.broker) ? `<span class="acct-broker">${brokerFundsLine(a.broker).trim()}</span>` : ''}
+      <span class="acct-broker">${a.reported ? brokerFundsLine(a.broker) : x ? `Estimated from your lots: ${BROKER_SHORT[a.broker]}'s own figure isn't available right now.` : 'Estimated from your lots; connect the broker for its exact figure.'}</span>
       ${connect}
     </div>`;
 }
@@ -1486,7 +1496,7 @@ function detailsViewHTML(list: Position[]): string {
   const net = sum((m) => m.net ?? 0);
   const gross = sum((m) => m.gross ?? 0);
   const invested = sum((m) => m.invested);
-  const own = sum((m) => m.own);
+  const own = ownCash(list, sum((m) => m.own));
   const funded = sum((m) => m.funded);
   const perDay = sum((m) => m.perDay);
   const interest = sum((m) => m.interest);
@@ -1500,7 +1510,7 @@ function detailsViewHTML(list: Position[]): string {
       <div class="hero-main">
         <span class="hero-label">Net P&amp;L if you sold everything now</span>
         <span class="hero-val ${tone(net)}">${signed(net)}</span>
-        <span class="hero-sub">${pctStr(net, invested, 2)} on total, ${pctStr(net, own)} on your cash. Price gain <span class="nw">${signed(gross)}</span>, minus every charge and the interest up to today.</span>
+        <span class="hero-sub">${pctStr(net, invested, 2)} on total, ${pctStr(net, own)} on your money. Price gain <span class="nw">${signed(gross)}</span>, minus every charge and the interest up to today.</span>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><span>Interest per day</span><b>${inr2(perDay)}</b><small>${inr(perDay * 30)} a month</small></div>
@@ -1599,12 +1609,12 @@ function portfolioHTML(list: Position[]): string {
   const hs = holdingsOf(list);
   const sum = (f: (m: PosMetrics) => number) => all.reduce((t, x) => t + f(x.m), 0);
   const invested = sum((m) => m.invested);
-  const own = sum((m) => m.own);
+  const ownLots = sum((m) => m.own);
   const value = sum((m) => m.value ?? m.invested);
   const gross = sum((m) => m.gross ?? 0);
   const day = sum((m) => m.day ?? 0);
-  const fromSpare = sum((m) => Math.max(0, m.marginAtBuy - m.own));
   const accts = accounts(list);
+  const own = ownCash(list, ownLots);
   const shown = hs.filter((h) =>
     (v.broker === 'all' || h.broker === v.broker) &&
     (v.pnl === 'all' || (v.pnl === 'up' ? (h.gross ?? 0) >= 0 : (h.gross ?? 0) < 0)) &&
@@ -1633,11 +1643,11 @@ function portfolioHTML(list: Position[]): string {
       <div class="hero-main">
         <span class="hero-label">Current value</span>
         <span class="hero-val">${inr(value)}</span>
-        <span class="hero-sub">${lakh(invested)} invested, ${lakh(own)} your cash${fromSpare > 0.5 ? `, ${lakh(fromSpare)} from spare margin` : ''}</span>
+        <span class="hero-sub">${lakh(invested)} invested, ${lakh(own)} your money in the accounts</span>
       </div>
       <div class="hero-stats is-two">
         <div class="hero-stat"><span>Today</span><b class="${tone(day)}">${signed(day)}</b><small>${pctStr(day, invested, 2)} on total</small></div>
-        <div class="hero-stat"><span>Total P&amp;L</span><b class="${tone(gross)}">${signed(gross)}</b><small>${pctStr(gross, invested, 2)} on total, ${pctStr(gross, own)} on your cash</small></div>
+        <div class="hero-stat"><span>Total P&amp;L</span><b class="${tone(gross)}">${signed(gross)}</b><small>${pctStr(gross, invested, 2)} on total, ${pctStr(gross, own)} on your money</small></div>
       </div>
     </section>
     ${(() => {
@@ -1662,20 +1672,33 @@ function portfolioHTML(list: Position[]): string {
 }
 
 
-// What the broker itself reports for the account (Rupeezy funds; Kotak limits once its night maintenance ends).
+// The broker's own free margin for the account, and when it was read: Rupeezy's net available funds, Kotak's
+// net limit. During Kotak's night maintenance the sync keeps the last reading (marked with its own time).
+interface BrokerAvail { avail: number; at: string }
+function brokerAvail(b: BrokerKey): BrokerAvail | null {
+  const x = brokerSnap?.brokers[b];
+  const raw = x?.raw as Record<string, any> | undefined;
+  if (!x || !raw || !x.at) return null;
+  const part = b === 'kotak' ? 'limits' : 'funds';
+  if (raw._errors?.[part] && !raw._stale?.[part]) return null;
+  const at = String(raw._stale?.[part] ?? x.at);
+  // A failed sync keeps the last good data; trust a reading for a day at most.
+  if (!(Date.now() - Date.parse(at) < 26 * 3_600_000)) return null;
+  const v = b === 'rupeezy' ? num((raw.funds?.nse ?? raw.funds?.exchange_combined)?.net_available) : num(raw.limits?.Net ?? raw.limits?.net);
+  return Number.isFinite(v) ? { avail: v, at } : null;
+}
+
+// Money added to the account today, as the broker reports it (Kotak's pay-in, Rupeezy's funds transferred).
+function brokerPayIn(b: BrokerKey): number {
+  const raw = brokerSnap?.brokers[b]?.raw as Record<string, any> | undefined;
+  const v = b === 'kotak' ? num(raw?.limits?.RmsPayInAmt) : num((raw?.funds?.nse ?? raw?.funds?.exchange_combined)?.funds_transferred);
+  return Number.isFinite(v) && v > 0 ? v : 0;
+}
+
 function brokerFundsLine(b: BrokerKey): string {
-  const raw = brokerSnap?.brokers[b]?.ok ? (brokerSnap.brokers[b].raw as Record<string, any>) : null;
-  if (!raw) return '';
-  if (b === 'rupeezy') {
-    const f = raw.funds?.nse ?? raw.funds?.exchange_combined;
-    const avail = num(f?.net_available);
-    if (Number.isFinite(avail)) return ` Rupeezy reports ${avail < 0 ? `${inr(-avail)} short` : `${inr(avail)} available`}.`;
-  }
-  if (b === 'kotak' && raw.limits && !raw._errors?.limits) {
-    const net = num(raw.limits.Net ?? raw.limits.net ?? raw.limits.data?.Net);
-    if (Number.isFinite(net)) return ` Kotak reports ${net < 0 ? `${inr(-net)} short` : `${inr(net)} available`}.`;
-  }
-  return '';
+  const r = brokerAvail(b);
+  if (!r) return '';
+  return `${BROKER_SHORT[b]}'s own figure, ${fmtTime(r.at, false)}: ${r.avail < 0 ? `${inr(-r.avail)} short` : `${inr(r.avail)} free`}.`;
 }
 
 
@@ -1943,6 +1966,7 @@ function reconcileFromBrokers() {
     const mine = list.filter((p) => p.broker === b);
     const syms = new Set([...want.keys(), ...mine.map((p) => p.sym)]);
     const nextPending: Record<string, number> = {};
+    const fresh: Position[] = [];
     let added = 0, sold = 0;
     for (const sym of syms) {
       const h = want.get(sym);
@@ -1959,11 +1983,7 @@ function reconcileFromBrokers() {
         const fill = fills.get(sym);
         const price = fill?.buyQty ? fill.buyVal / fill.buyQty
           : have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
-        const lot: Position = { id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' };
-        // Brokers pay a new buy's margin from the account's spare margin first (unrealised gains count);
-        // only what that doesn't cover is new money.
-        list.push({ ...lot, cash: cashFromSpare(lot, list) });
-        added += 1;
+        fresh.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' });
       } else if (brokerQty < have) {
         const prev = pending[b]?.[sym];
         // A sell in today's trade book is the broker's own confirmation; otherwise wait for a second sync.
@@ -1986,6 +2006,23 @@ function reconcileFromBrokers() {
         }
         sold += 1;
       }
+    }
+    // Brokers pay a new buy's margin from the account's spare margin first (unrealised gains count); only what
+    // that doesn't cover is new money. The broker's own free margin in this sync was read after these buys, so
+    // the spare just before them = that figure + their margin − money added today. Without a fresh figure,
+    // the lots' own estimate of the spare.
+    const r = brokerAvail(b);
+    let pool = r && r.at === at ? r.avail + fresh.reduce((t, l) => t + lotMargin(l), 0) - brokerPayIn(b) : null;
+    for (const lot of fresh) {
+      let cash: number;
+      if (pool == null) cash = cashFromSpare(lot, list);
+      else {
+        const take = Math.min(lotMargin(lot), Math.max(0, pool));
+        pool -= take;
+        cash = Math.round(lotMargin(lot) - take);
+      }
+      list.push({ ...lot, cash });
+      added += 1;
     }
     pending[b] = nextPending;
     if (added || sold) notes.push(`${BROKER_SHORT[b]}: ${[added && `${added} added`, sold && `${sold} sold`].filter(Boolean).join(', ')}`);
@@ -3128,7 +3165,12 @@ function accountPopHTML(b: BrokerKey): string {
       : `<dt>Status</dt><dd>Latest sync failed</dd><dt>Last good</dt><dd>${x.at ? fmtTime(x.at) : 'never'}</dd>`;
   const err = x && !x.ok && x.error ? `<p class="pop-err">${esc(x.error)}</p>` : '';
   const connect = b === 'rupeezy' && (!x || !x.ok) ? '<button class="btn btn-primary btn-sm pop-btn" data-connect-rupeezy>Connect Rupeezy</button>' : '';
-  return `<p class="pop-sec">Your account</p><dl>${rows}</dl>${err}${connect}`;
+  const a = accounts().find((y) => y.broker === b);
+  // How far the lots' own estimate was from the broker: usually charges, interest or withdrawals taken from cash.
+  const gap = a?.reported && Math.abs(a.off) >= 1
+    ? `<dt>Broker's free margin</dt><dd>${inr(a.reported.avail)}, ${fmtTime(a.reported.at, false)}</dd><dt>Your lots alone imply</dt><dd>${inr(a.spare + a.off)}</dd><dd class="pop-note">${a.off > 0 ? `${inr(a.off)} less at the broker: charges, interest or withdrawals taken from cash, or a higher margin than the published rate.` : `${inr(-a.off)} more at the broker: idle cash or booked profit not in any open lot.`} The broker's figure is used.</dd>`
+    : '';
+  return `<p class="pop-sec">Your account</p><dl>${rows}${gap}</dl>${err}${connect}`;
 }
 
 // Everything flagged on a stock, in plain words: what a tapped pill opens.
@@ -3489,7 +3531,7 @@ function bind() {
       const b = acct.dataset.acct as BrokerKey;
       if (!pop.hidden && pop.dataset.for === `acct-${b}`) return void (pop.hidden = true);
       pop.dataset.for = `acct-${b}`;
-      return showPanel(acct, `<div class="pop-title">${BROKER_NAME[b]} account</div>${accountPopHTML(b) || '<p class="muted small">Turn on private sync in Manage positions to connect your broker accounts.</p>'}<p class="pop-sec">How margin is counted</p><p class="muted small">Needs: each holding's value × the broker's margin % for it today. Equity: your cash + unrealised P&amp;L − interest. A buy paid from spare margin adds no cash, so it lowers the spare.</p>`);
+      return showPanel(acct, `<div class="pop-title">${BROKER_NAME[b]} account</div>${accountPopHTML(b) || '<p class="muted small">Turn on private sync in Manage positions to connect your broker accounts.</p>'}<p class="pop-sec">How margin is counted</p><p class="muted small">Spare is the broker's own free-margin figure from the last sync. It already counts charges and interest taken from cash, withdrawals, idle cash and the broker's exact margin per stock. Needs: each holding's value × the broker's margin % today. Equity: needs + spare. Without a broker figure, spare is estimated from your lots: cash in + unrealised P&amp;L − interest − needs.</p>`);
     }
     const ce = t.closest<HTMLElement>('[data-cash-edit]');
     if (ce) return editLotCash(ce.dataset.cashEdit!);
