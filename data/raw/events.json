@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T06:32:06Z",
+"fetchedAt": "2026-11-11T06:59:53Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T06:32:00Z",
+"fetchedAt": "2026-11-11T06:59:45Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T06:32:01Z",
+"fetchedAt": "2026-11-11T06:59:46Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T06:32:06Z",
-"count": 829,
+"fetchedAt": "2026-11-11T06:59:53Z",
+"count": 831,
 "error": null
 }
 },
@@ -3778,6 +3778,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/DPABHUSHAN_10112026151650_Regulation_30_10-11-2026_Signed.pdf"
 },
 {
+"symbol": "DPABHUSHAN",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "D. P. Abhushan Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/DPABHUSHAN_11112026122126_Outcome_11-11-2026.pdf"
+},
+{
 "symbol": "DPSCLTD",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -4419,6 +4428,14 @@
 "title": "Results",
 "detail": "Orient Green Power Company Limited has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3618_20261104_182533773_WEB.html"
+},
+{
+"symbol": "GREENPOWER",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Orient Green Power Company Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/GREENPOWER_11112026122609_SEIntimationResults.pdf"
 },
 {
 "symbol": "GRMOVER",
