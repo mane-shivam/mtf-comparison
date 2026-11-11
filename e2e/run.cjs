@@ -273,8 +273,12 @@ async function run() {
     await p.goto(url);
     await p.waitForSelector('.accts');
     await settle(p, 4000);
-    const acct = await text(p, '.acct[data-acct="kotak"]');
-    assert.match(acct, /^Kotak Neo Synced .* ₹[\d,]+ spare/);
+    // Collapsed by default: name and spare only.
+    const acct = await text(p, '[data-acct-card="kotak"]');
+    assert.match(acct, /^Kotak Neo ₹[\d,]+ spare$/);
+    assert.equal(await p.getAttribute('[data-acct-toggle="kotak"]', 'aria-expanded'), 'false');
+    const box = async (b) => p.$eval(`[data-acct-card="${b}"]`, (el) => el.getBoundingClientRect().height);
+    assert.ok(await box('kotak') < 110, `collapsed card is short: ${await box('kotak')}px`);
     // Spare before NUVAMA: CDSL equity (cash 97,500 + gain 60,000 - interest) - its margin on 4,50,000.
     // NUVAMA was bought with spare (no cash), so the spare falls by exactly its margin on 95,000.
     const spare = Number(acct.match(/₹([\d,]+) spare/)[1].replace(/,/g, ''));
@@ -283,11 +287,19 @@ async function run() {
     const before = 97500 + 60000 - interest - 450000 / lev('CDSL', 'kotak');
     assert.ok(Math.abs(spare - (before - nuvMargin)) < 50, `spare ₹${spare}, expected ${Math.round(before - nuvMargin)} (${Math.round(before)} before, minus ${Math.round(nuvMargin)})`);
     // Rupeezy's own figure is the spare, whatever the lots imply.
-    assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /^Rupeezy Synced .* ₹5,000 short Add funds or sell to cover it.*Rupeezy's own figure, .*: ₹5,000 short\./);
-    await p.click('.acct[data-acct="rupeezy"]');
+    await p.click('[data-acct-toggle="rupeezy"]');
+    assert.match(await text(p, '[data-acct-card="rupeezy"]'), /^Rupeezy ₹5,000 short Add funds or sell to cover it.*Rupeezy's own figure, .*: ₹5,000 short\. Synced /);
+    // Opening stays opened after a reload; Kotak stays collapsed.
+    await p.reload();
+    await p.waitForSelector('.accts');
+    await settle(p, 3000);
+    assert.equal(await p.getAttribute('[data-acct-toggle="rupeezy"]', 'aria-expanded'), 'true');
+    assert.match(await text(p, '[data-acct-card="kotak"]'), /^Kotak Neo ₹[\d,]+ spare$/);
+    await p.click('[data-acct-card="rupeezy"] [data-acct]');
     assert.match(await text(p, '#popover'), /Broker's free margin −₹5,000.*Your lots alone imply −?₹[\d,]+ .*The broker's figure is used/);
     await p.keyboard.press('Escape');
-    await p.click('.acct[data-acct="kotak"]');
+    await p.click('[data-acct-toggle="kotak"]');
+    await p.click('[data-acct-card="kotak"] [data-acct]');
     assert.match(await text(p, '#popover'), /Kotak Neo account.*Synced.*How margin is counted/);
     await p.context().close();
   });

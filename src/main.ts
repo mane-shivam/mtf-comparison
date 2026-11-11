@@ -1430,13 +1430,20 @@ function accountCardHTML(a: Account): string {
   const head = st === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`;
   const sub = st === 'short' ? 'Add funds or sell to cover it' : `Holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`;
   const connect = a.broker === 'rupeezy' && x && !x.ok ? '<button class="btn btn-primary btn-sm acct-connect" data-connect-rupeezy>Connect Rupeezy</button>' : '';
-  return `<div class="acct is-${st}" data-acct="${a.broker}" role="button" tabindex="0" aria-label="${BROKER_NAME[a.broker]} account">
-      <span class="acct-h"><b>${BROKER_NAME[a.broker]}</b><span class="acct-sync${x && !x.ok ? ' is-bad' : ''}">${sync}</span></span>
-      <span class="acct-big">${head}</span>
-      <span class="gauge" role="img" aria-label="Margin used ${used.toFixed(0)}%"><span style="width:${used.toFixed(1)}%"></span></span>
-      <span class="acct-sub">${sub}</span>
-      <span class="acct-kv"><span>Margin used</span><b>${used.toFixed(0)}%</b><span>Needs</span><b>${lakh(a.needed)}</b><span>Equity</span><b>${lakh(a.equity)}</b></span>
-      <span class="acct-broker">${a.reported ? brokerFundsLine(a.broker) : x ? `Estimated from your lots: ${BROKER_SHORT[a.broker]}'s own figure isn't available right now.` : 'Estimated from your lots; connect the broker for its exact figure.'}</span>
+  // Collapsed by default: name, spare or shortfall, and the margin gauge. Tap to see the rest.
+  const open = !!(store<Record<string, boolean>>(ACCT_OPEN_KEY) ?? {})[a.broker];
+  return `<div class="acct is-${st}${open ? ' is-open' : ''}" data-acct-card="${a.broker}">
+      <button class="acct-top" data-acct-toggle="${a.broker}" aria-expanded="${open}" aria-label="${BROKER_NAME[a.broker]}: ${head}">
+        <span class="acct-h"><b>${BROKER_NAME[a.broker]}</b>${x && !x.ok ? `<span class="acct-sync is-bad">${sync}</span>` : ''}<svg class="acct-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+        <span class="acct-big">${head}</span>
+        <span class="gauge" role="img" aria-label="Margin used ${used.toFixed(0)}%"><span style="width:${used.toFixed(1)}%"></span></span>
+      </button>
+      <div class="acct-more">
+        <span class="acct-sub">${sub}</span>
+        <span class="acct-kv"><span>Margin used</span><b>${used.toFixed(0)}%</b><span>Needs</span><b>${lakh(a.needed)}</b><span>Equity</span><b>${lakh(a.equity)}</b></span>
+        <span class="acct-broker">${a.reported ? brokerFundsLine(a.broker) : x ? `Estimated from your lots: ${BROKER_SHORT[a.broker]}'s own figure isn't available right now.` : 'Estimated from your lots; connect the broker for its exact figure.'}${sync && x?.ok ? ` ${sync}.` : ''}</span>
+        <button class="link-btn acct-how" data-acct="${a.broker}">Account and how margin is counted</button>
+      </div>
       ${connect}
     </div>`;
 }
@@ -1703,6 +1710,7 @@ function brokerFundsLine(b: BrokerKey): string {
 
 
 const OV_OPEN_KEY = 'mtf.realisedOpen';
+const ACCT_OPEN_KEY = 'mtf.acctOpen'; // which account cards are expanded (collapsed by default)
 
 function setStartPnl() {
   const cur = store<number>(START_KEY) ?? 0;
@@ -3526,6 +3534,15 @@ function bind() {
     }
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
+    const tog = t.closest<HTMLElement>('[data-acct-toggle]');
+    if (tog) {
+      const b = tog.dataset.acctToggle!;
+      const open = { ...(store<Record<string, boolean>>(ACCT_OPEN_KEY) ?? {}), [b]: !tog.closest('.acct')!.classList.contains('is-open') };
+      store(ACCT_OPEN_KEY, open);
+      tog.closest('.acct')!.classList.toggle('is-open', open[b]);
+      tog.setAttribute('aria-expanded', String(open[b]));
+      return;
+    }
     const acct = t.closest('[data-connect-rupeezy]') ? null : t.closest<HTMLElement>('[data-acct]');
     if (acct) {
       const b = acct.dataset.acct as BrokerKey;

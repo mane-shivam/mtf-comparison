@@ -5604,3 +5604,97 @@ body.positions-view .status .dots {
 small.ret-line {
   display: block;
 }
+
+/* Account cards: collapsed to name, spare and gauge; side by side; an open card takes the full row */
+.accts {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: start;
+}
+
+.acct:not(.is-empty) {
+  gap: 0;
+  padding: 0;
+  cursor: default;
+}
+
+.acct.is-open {
+  grid-column: 1 / -1;
+}
+
+.acct-top {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 18px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.acct-top:focus-visible {
+  outline: 2px solid var(--up-soft);
+  outline-offset: -2px;
+}
+
+.acct-top .acct-h {
+  align-items: center;
+}
+
+.acct-top .acct-h b {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.acct-top .acct-big {
+  font-size: 17px;
+}
+
+.acct-chev {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--faint-2);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.15s ease;
+}
+
+.acct.is-open .acct-chev {
+  transform: rotate(180deg);
+}
+
+.acct-more {
+  display: none;
+  gap: 8px;
+  padding: 0 14px 12px;
+}
+
+.acct.is-open .acct-more {
+  display: grid;
+}
+
+.acct.is-open .acct-top .acct-big {
+  font-size: 20px;
+}
+
+.acct-how {
+  justify-self: start;
+  font-size: 12px;
+}
+
+.acct:not(.is-empty) > .acct-connect {
+  margin: 0 14px 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acct-chev { transition: none; }
+}
