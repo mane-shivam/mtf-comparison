@@ -7,3 +7,5 @@ __pycache__/
 .env*
 data/private_alerts.json
 data/summary.json
+e2e/.site/
+e2e/.shots/

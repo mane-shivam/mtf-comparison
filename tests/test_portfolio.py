@@ -116,3 +116,17 @@ def test_keeper_slots():
     assert keeper.next_slot(u(2026, 11, 10, 12, 31)) == u(2026, 11, 10, 16, 30)  # 22:00 IST
     assert keeper.next_slot(u(2026, 11, 10, 20, 31)) == u(2026, 11, 11, 0, 30)  # 06:00 IST next day
     assert keeper.next_slot(u(2026, 11, 11, 0, 31)) == u(2026, 11, 11, 2, 30)
+
+
+def test_lot_bought_with_spare_margin_uses_up_spare():
+    today = date(2026, 11, 9)
+    prices = {"AAA": {"p": 480, "prev": 480, "date": "2026-11-09"}, "BBB": {"p": 100, "prev": 100, "date": "2026-11-09"}}
+    winner = {**POS, "id": "w"}  # 100 @ 400 -> 480 at 4x: lots of spare margin
+    a = portfolio.accounts([winner], prices, {}, today)[0]
+    # A new lot paid fully from that spare (cash 0) must use the spare up, not add fresh money.
+    new = {"id": "n", "sym": "BBB", "broker": "kotak", "qty": 200, "price": 100.0, "date": "2026-11-09", "lev": 4, "cash": 0}
+    b = portfolio.accounts([winner, new], prices, {}, today)[0]
+    assert round(a["spare"] - b["spare"]) == 5000  # its 25% margin (20,000 x 25%) comes out of the spare
+    same_as_cash = {**new, "cash": None}
+    c = portfolio.accounts([winner, same_as_cash], prices, {}, today)[0]
+    assert round(c["spare"]) == round(a["spare"])  # new money covers its own margin: spare unchanged

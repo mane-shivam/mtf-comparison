@@ -465,6 +465,8 @@ function loadExtras() {
   getJSON<MarketFile>('data/market.json')
     .then((m) => {
       state.market = m;
+      migrateLotCash();
+      reconcileFromBrokers();
       render();
       if ($<HTMLDialogElement>('#sheet').open && state.sheetSym) openSheet(state.sheetSym);
     })
@@ -1133,7 +1135,15 @@ interface Position {
   lev: number; // leverage the position was taken at
   orig?: number; // quantity bought, once part of it has been sold
   src?: 'broker'; // added by a broker sync (date = first seen, leverage = broker's rate that day)
+  cash?: number; // money you actually put in for this lot; the rest of its margin came from the account's
+  //              spare margin (e.g. unrealised gains). Missing = the full margin (value ÷ leverage) was new money.
 }
+
+// The cash a lot was bought with: by default its whole margin (value ÷ leverage).
+const lotMargin = (p: Position) => (p.qty * p.price) / Math.max(1, p.lev);
+const lotCash = (p: Position) => Math.min(lotMargin(p), Math.max(0, p.cash ?? lotMargin(p)));
+// Keep a lot's cash in step when its quantity changes (a partial sale sells cash and margin alike).
+const resizeLot = (p: Position, qty: number): Position => ({ ...p, qty, orig: p.orig ?? p.qty, ...(p.cash != null ? { cash: (p.cash * qty) / p.qty } : {}) });
 
 // Buy-side fees charged once per buy order (flat brokerage, pledge, their GST). After a partial sale each
 // part carries its share, so booked + open adds up to the same total as before the sale.
@@ -1144,6 +1154,8 @@ function shareBuyFees(c: CostBreakdown, r: BrokerRates, share: number): CostBrea
 }
 
 interface PosMetrics {
+  marginAtBuy: number; // the margin this lot needed when bought (value ÷ leverage)
+  debt: number; // what you owe on it: the broker's MTF loan plus any margin borrowed against gains
   buyValue: number; // quantity × trade price
   invested: number; // quantity × trade price, for every broker (charges are counted in net P&L)
   own: number;
@@ -1182,8 +1194,10 @@ function posMetrics(pos: Position): PosMetrics {
   const r = brokerRates()[pos.broker];
   const lev = Math.max(1, pos.lev);
   const buyValue = pos.qty * pos.price;
-  const own = buyValue / lev;
-  const funded = buyValue - own;
+  const marginAtBuy = buyValue / lev;
+  const own = lotCash(pos); // real money in; less than the margin when spare margin paid for part of it
+  const funded = buyValue - marginAtBuy; // the broker's MTF loan, which carries MTF interest
+  const debt = buyValue - own;
   const invested = buyValue;
   // The broker's margin for this stock right now, from the hourly MTF data (Rupeezy publishes the exact %).
   // A stock the broker has stopped funding needs its full value: convert to delivery or sell.
@@ -1195,9 +1209,9 @@ function posMetrics(pos: Position): PosMetrics {
   const perDay = (funded * r.interest) / 36500;
   const ltp = state.market?.prices[pos.sym]?.p ?? null;
   // Charges are known even without a price (sale assumed at the buy price until one arrives).
-  const costs = shareBuyFees(computeCosts(r, own, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100), r, pos.qty / (pos.orig ?? pos.qty));
+  const costs = shareBuyFees(computeCosts(r, marginAtBuy, lev, days, ltp == null ? 0 : (ltp / pos.price - 1) * 100), r, pos.qty / (pos.orig ?? pos.qty));
   if (ltp == null) {
-    return { buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, marginPct, marginFrom, spare: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
+    return { marginAtBuy, debt, buyValue, invested, own, funded, days, interest, ltp, value: null, net: null, roi: null, callPrice: null, callDist: null, marginPct, marginFrom, spare: null, breakEven: null, costs, gross: null, day: null, dayBase: null, perDay };
   }
   const px = state.market!.prices[pos.sym];
   const boughtToday = pos.date >= px.date;
@@ -1209,13 +1223,13 @@ function posMetrics(pos: Position): PosMetrics {
   // i.e. the same margin share the broker asked for at entry.
   const callPrice = lev > 1 ? (funded + interest) / (pos.qty * (1 - 1 / lev)) : null;
   return {
-    buyValue, invested, own, funded, days, interest, ltp, value, net,
-    roi: own ? (net / own) * 100 : null,
+    marginAtBuy, debt, buyValue, invested, own, funded, days, interest, ltp, value, net,
+    roi: own > 0.5 ? (net / own) * 100 : null,
     callPrice,
     callDist: callPrice != null ? ((ltp - callPrice) / ltp) * 100 : null,
-    // Equity (value − broker's money − interest) minus the margin the broker asks for today.
+    // Equity (value − what you owe − interest) minus the margin the broker asks for today.
     marginPct, marginFrom,
-    spare: lev > 1 ? value - funded - interest - (value * marginPct) / 100 : null,
+    spare: lev > 1 ? value - debt - interest - (value * marginPct) / 100 : null,
     breakEven: pos.price + costs.total / pos.qty,
     costs,
     gross: value - invested,
@@ -1227,7 +1241,8 @@ function posMetrics(pos: Position): PosMetrics {
 
 // Brokers check margin for the whole MTF account, not stock by stock: a gain on one stock covers a loss
 // on another at the same broker (Kotak and Rupeezy are separate accounts). Per broker:
-//   needed = Σ value × the broker's margin % for that stock today, equity = Σ (value − broker's money − interest so far),
+//   needed = Σ value × the broker's margin % for that stock today,
+//   equity = Σ (value − what you owe − interest so far) = cash you put in + unrealised P&L − interest,
 //   spare = equity − needed; a negative spare is the top-up the broker will ask for.
 // fall = how far every holding at that broker can drop together before spare reaches zero.
 interface Account { broker: BrokerKey; n: number; value: number; needed: number; equity: number; spare: number; fall: number | null }
@@ -1237,7 +1252,7 @@ function accounts(list = loadPositions()): Account[] {
     const ms = list.filter((p) => p.broker === broker).map(posMetrics).filter((m) => m.spare != null);
     const value = ms.reduce((t, m) => t + m.value!, 0);
     const needed = ms.reduce((t, m) => t + (m.value! * m.marginPct) / 100, 0);
-    const equity = ms.reduce((t, m) => t + m.value! - m.funded - m.interest, 0);
+    const equity = ms.reduce((t, m) => t + m.value! - m.debt - m.interest, 0);
     const spare = equity - needed;
     const sens = value - needed; // equity lost per 100% fall, net of the lower margin needed
     return { broker, n: ms.length, value, needed, equity, spare, fall: sens > 0 ? (spare / sens) * 100 : null };
@@ -1275,7 +1290,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const pctOf = (n: number, base: number) => `${sign(n)}${Math.abs((n / base) * 100).toFixed(1)}%`;
   // Every return: on total investment first and larger, on your own money smaller below.
   const both = (n: number | null, withTotal = true) => n == null ? ''
-    : `${withTotal ? `<em class="pc-t">${pctOf(n, m.invested)} on total</em>` : ''}<small>${sign(n)}${Math.abs((n / m.own) * 100).toFixed(Math.abs(n / m.own) >= 0.1 ? 0 : 1)}% own money</small>`;
+    : `${withTotal ? `<em class="pc-t">${pctOf(n, m.invested)} on total</em>` : ''}${m.own > 0.5 ? `<small>${sign(n)}${Math.abs((n / m.own) * 100).toFixed(Math.abs(n / m.own) >= 0.1 ? 0 : 1)}% own money</small>` : '<small>bought with spare margin</small>'}`;
   const name = state.bySymbol.get(pos.sym)?.name;
   const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
   const pill =
@@ -1306,7 +1321,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     <div class="pc-grid">
       ${cell(rupee(Math.round((m.invested / pos.qty) * 100) / 100), 'Avg buy price')}
       ${cell(lakh(m.invested), 'Total investment')}
-      ${cell(lakh(m.own), 'Your money')}
+      ${cell(lakh(m.own), m.own < m.marginAtBuy - 0.5 ? `Your cash<small>${lakh(m.marginAtBuy - m.own)} from spare margin</small>` : 'Your cash')}
     </div>
     <div class="pc-grid pc-risk">
       ${cell(m.breakEven != null ? rupeeShort(m.breakEven) : '—', 'Break-even')}
@@ -1316,7 +1331,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     <details class="pr-more">
       <summary><span>Money and charges</span><span class="pr-faint">${inr(c.total)} if sold now</span></summary>
       <dl class="pr-dl">
-        <dt>Your money in</dt><dd>${inr(m.own)}</dd>
+        <dt>Your cash in</dt><dd>${inr(m.own)}${m.own < m.marginAtBuy - 0.5 ? `<small>${inr(m.marginAtBuy - m.own)} of the ${inr(m.marginAtBuy)} margin came from spare margin</small>` : ''}<button class="link-btn" data-cash-edit="${esc(pos.id)}">Change</button></dd>
         <dt>Broker's money</dt><dd>${inr(m.funded)}</dd>
         <dt>Total investment</dt><dd>${inr(m.invested)}${m.value != null ? `<small>Worth ${inr(m.value)} now</small>` : ''}</dd>
         <dt>Fixed charges</dt><dd>${inr2(c.fixed)}<small>${inr2(c.buySide)} at buy, ${inr2(c.sellSide)} on sale</small></dd>
@@ -1349,6 +1364,7 @@ function positionSectionHTML(s: Stock): string {
           <label><span>Quantity</span><span class="calc-field"><input id="pos-qty" type="number" inputmode="numeric" min="1" step="1" /></span></label>
           <label><span>Avg buy price</span><span class="calc-field"><span class="pre">₹</span><input id="pos-price" type="number" inputmode="decimal" min="0" step="any" value="${ltp ?? ''}" /></span></label>
           <label><span>Buy date</span><span class="calc-field"><input id="pos-date" type="date" value="${localISO()}" max="${localISO()}" /></span></label>
+          <label><span>Paid with</span><span class="calc-field"><select id="pos-paid"><option value="cash">New money</option><option value="spare">Spare margin first</option></select></span></label>
           <label><span>Leverage taken</span><span class="calc-field"><input id="pos-lev" type="number" inputmode="decimal" min="1" step="0.01" value="${funded[0] ? s[funded[0]]!.lev : ''}" /><span class="post">×</span></span></label>
         </div>
         <button class="btn btn-primary" data-pos-save="${esc(s.symbol)}">Save position</button>
@@ -1703,8 +1719,48 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
   return [...by.values()];
 }
 
+// Cash a new lot needs on top of the account's spare margin just before it (never below 0 or above its margin).
+function cashFromSpare(lot: Position, before: Position[]): number {
+  const spare = accounts(before.filter((p) => p.id !== lot.id)).find((a) => a.broker === lot.broker)?.spare ?? 0;
+  return Math.round(Math.max(0, Math.min(lotMargin(lot), lotMargin(lot) - Math.max(0, spare))));
+}
+
+// One-off: lots a broker sync added before cash was tracked were counted as all-new money. Price them
+// the way the broker did: spare margin first. Runs once prices are in, so spare is known.
+function migrateLotCash() {
+  if (store<boolean>('mtf.cashMigrated') || !state.market || !state.stocks.length) return;
+  let list = loadPositions();
+  let changed = false;
+  for (const p of list.filter((x) => x.src === 'broker' && x.cash == null).sort((a, b) => a.date.localeCompare(b.date))) {
+    const cash = cashFromSpare(p, list.filter((x) => x.id !== p.id && (x.date < p.date || x.date === p.date && x.id < p.id)));
+    list = list.map((x) => (x.id === p.id ? { ...x, cash } : x));
+    changed = true;
+  }
+  store('mtf.cashMigrated', true);
+  if (changed) {
+    savePositions(list);
+    render();
+  }
+}
+
+function editLotCash(id: string) {
+  const list = loadPositions();
+  const p = list.find((x) => x.id === id);
+  if (!p) return;
+  const margin = Math.round(lotMargin(p));
+  const raw = prompt(`Cash you put in for ${p.qty} ${p.sym} (₹0 to ₹${margin.toLocaleString('en-IN')}). The rest of the ₹${margin.toLocaleString('en-IN')} margin came from spare margin, such as unrealised gains.`, String(Math.round(lotCash(p))));
+  if (raw === null) return;
+  const n = Number(raw.replace(/[₹,\s]/g, ''));
+  if (!Number.isFinite(n) || n < 0) return toast('Enter an amount like 25000, or 0 if it was all spare margin.');
+  savePositions(list.map((x) => (x.id === id ? { ...x, cash: Math.min(n, lotMargin(x)) } : x)));
+  if ($<HTMLDialogElement>('#sheet').open && state.sheetSym) openSheet(state.sheetSym);
+  render();
+}
+
 function reconcileFromBrokers() {
-  if (!brokerSnap) return;
+  // Needs prices and broker rates: spare margin decides how new buys were paid, and a sale needs a price.
+  // Called again when they arrive.
+  if (!brokerSnap || !state.market || !state.stocks.length) return;
   const done = store<Record<string, string>>(RECON_KEY) ?? {};
   const pending = (store<Record<string, Record<string, number>>>(`${RECON_KEY}.pending`) ?? {});
   let list = loadPositions();
@@ -1733,7 +1789,10 @@ function reconcileFromBrokers() {
         const extra = brokerQty - have;
         // The new shares' price: what the broker's average implies once your tracked lots are taken out.
         const price = have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
-        list.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' });
+        const lot: Position = { id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' };
+        // Brokers pay a new buy's margin from the account's spare margin first (unrealised gains count);
+        // only what that doesn't cover is new money.
+        list.push({ ...lot, cash: cashFromSpare(lot, list) });
         added += 1;
       } else if (brokerQty < have) {
         const prev = pending[b]?.[sym];
@@ -1747,7 +1806,7 @@ function reconcileFromBrokers() {
           if (!toSell) break;
           const q = Math.min(lot.qty, toSell);
           sales.push({ ...saleResult(lot, q, px, localISO()), est: true });
-          list = q >= lot.qty ? list.filter((p) => p.id !== lot.id) : list.map((p) => (p.id === lot.id ? { ...p, qty: p.qty - q, orig: p.orig ?? p.qty } : p));
+          list = q >= lot.qty ? list.filter((p) => p.id !== lot.id) : list.map((p) => (p.id === lot.id ? resizeLot(p, p.qty - q) : p));
           toSell -= q;
         }
         sold += 1;
@@ -1970,7 +2029,7 @@ async function setPositionsPassphrase(on: boolean) {
 function saleResult(pos: Position, qty: number, price: number, date: string): ClosedTrade {
   const r = brokerRates()[pos.broker];
   const lev = Math.max(1, pos.lev);
-  const own = (qty * pos.price) / lev;
+  const own = (lotCash(pos) * qty) / pos.qty; // the cash share of the part sold
   const days = Math.max(0, Math.floor((Date.parse(date) - Date.parse(pos.date)) / 86_400_000));
   const c = shareBuyFees(computeCosts(r, own, lev, days, (price / pos.price - 1) * 100), r, qty / (pos.orig ?? pos.qty));
   return {
@@ -2039,7 +2098,7 @@ function saveSale() {
   const i = list.findIndex((p) => p.id === selling!.id);
   if (i < 0) return;
   if (t.qty >= list[i].qty) list.splice(i, 1);
-  else list[i] = { ...list[i], qty: list[i].qty - t.qty, orig: list[i].orig ?? list[i].qty };
+  else list[i] = resizeLot(list[i], list[i].qty - t.qty);
   savePositions(list);
   saveClosed([t, ...loadClosed()]);
   $<HTMLDialogElement>('#sheet').close();
@@ -2088,7 +2147,8 @@ function savePositionFromForm(sym: string) {
   const lev = Number(val('pos-lev'));
   if (!(qty > 0) || !(price > 0) || !(lev >= 1)) return toast('Enter quantity, buy price and leverage');
   const list = loadPositions();
-  list.push({ id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, sym, broker, qty, price, date, lev });
+  const lot: Position = { id: newId(), sym, broker, qty, price, date, lev };
+  list.push(val('pos-paid') === 'spare' ? { ...lot, cash: cashFromSpare(lot, list) } : lot);
   savePositions(list);
   ensureHeldPinned();
   toast('Position saved on this device');
@@ -3248,6 +3308,8 @@ function bind() {
     }
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
+    const ce = t.closest<HTMLElement>('[data-cash-edit]');
+    if (ce) return editLotCash(ce.dataset.cashEdit!);
     if (t.closest('[data-connect-rupeezy]')) return connectRupeezy();
     const clr = t.closest<HTMLElement>('[data-clear]');
     if (clr) return clearPositions(clr.dataset.clear === 'export');

@@ -64,7 +64,9 @@ def metrics(pos: dict, px: dict | None, rates: dict, today: date) -> dict:
     rate = float((rates.get(pos["broker"]) or {}).get("interest", DEFAULT_INTEREST.get(pos["broker"], 10)))
     days = max(0, (today - date.fromisoformat(pos["date"])).days)
     interest = funded * rate * days / 36500
-    m = {"buy": buy, "own": buy / lev, "funded": funded, "interest": interest, "perDay": funded * rate / 36500,
+    # Cash actually put in: a lot bought with spare margin (e.g. unrealised gains) has less than its margin.
+    cash = min(buy / lev, max(0.0, float(pos["cash"]))) if pos.get("cash") is not None else buy / lev
+    m = {"buy": buy, "own": cash, "debt": buy - cash, "funded": funded, "interest": interest, "perDay": funded * rate / 36500,
          "ltp": None, "value": None, "gross": None, "day": None, "call": None, "dist": None}
     if lev > 1:
         m["call"] = (funded + interest) / (pos["qty"] * (1 - 1 / lev))
@@ -110,7 +112,7 @@ def accounts(positions: list[dict], prices: dict, rates: dict, today: date, mtf:
             n += 1
             value += m["value"]
             needed += m["value"] * margin_pct(pos, mtf) / 100
-            equity += m["value"] - m["funded"] - m["interest"]
+            equity += m["value"] - m["debt"] - m["interest"]  # cash in + unrealised P&L - interest
         if not n:
             continue
         spare, sens = equity - needed, value - needed
