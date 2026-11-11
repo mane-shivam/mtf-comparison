@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T10:35:16Z",
+"fetchedAt": "2026-11-11T11:33:40Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T10:35:09Z",
+"fetchedAt": "2026-11-11T11:33:35Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T10:35:10Z",
+"fetchedAt": "2026-11-11T11:33:35Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T10:35:16Z",
-"count": 858,
+"fetchedAt": "2026-11-11T11:33:40Z",
+"count": 867,
 "error": null
 }
 },
@@ -2964,6 +2964,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17773_20261106_152113735_WEB.html"
 },
 {
+"symbol": "BAFNAPH",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Bafna Pharmaceuticals Limited has submitted to the Exchange, the Outcome of the Board Meeting held on 11/11/2026 along with the Unaudited Financial Results and Limited Review Report issued by the Statutory Auditors, for the Quarter and Half",
+"link": "https://nsearchives.nseindia.com/corporate/BAFNAPH_11112026164915_Outcome_of_BM_11112026.pdf"
+},
+{
 "symbol": "BAJAJHIND",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -3706,6 +3714,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14078_20261105_115757648_WEB.html"
 },
 {
+"symbol": "DBOL",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results \u00b7 Buyback",
+"detail": "Dhampur Bio Organics Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Audited Financial results of the Company for the period ended September 2026 and Buyback/Other busine",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20812_20261111_164806333_WEB.html"
+},
+{
 "symbol": "DCAL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -3768,6 +3784,14 @@
 "title": "Results",
 "detail": "DEEPAK FERTILIZERS AND PETROCHEMICALS CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended Se",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_255_20261105_183943445_WEB.html"
+},
+{
+"symbol": "DELPHIFX",
+"date": "2026-11-11",
+"kind": "meeting",
+"title": "Results",
+"detail": "DELPHI WORLD MONEY LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended June 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4960_20261111_165052803_WEB.html"
 },
 {
 "symbol": "DHAMPURSUG",
@@ -3988,6 +4012,14 @@
 "title": "Results",
 "detail": "EIH Associated Hotels Limited has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_732_20261104_192940681_WEB.html"
+},
+{
+"symbol": "EIHAHOTELS",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "EIH Associated Hotels Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/EIHAHOTELS_11112026164846_UFRQ2.pdf"
 },
 {
 "symbol": "EIHOTEL",
@@ -4875,6 +4907,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1825_20261102_134256206_WEB.html"
 },
 {
+"symbol": "ICDSLTD",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "ICDS Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ICDSLTD_11112026164846_ICDS_Board_Outcome_and_Financial_Results_Sep2026.pdf"
+},
+{
 "symbol": "ICSA",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -5114,6 +5154,14 @@
 "title": "Results",
 "detail": "Inspirisys Solutions Limited has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2455_20261026_125014747_WEB.html"
+},
+{
+"symbol": "INSPIRISYS",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Inspirisys Solutions Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/INSPIRISYS_11112026162325_ISLOutcomeOfBoardMeeting11112026.pdf"
 },
 {
 "symbol": "INTENTECH",
@@ -7355,6 +7403,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3851_20261104_131203073_WEB.html"
 },
 {
+"symbol": "RKEC",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "To consider and approve the financial results for the period ended September 30, 2026",
+"link": "https://nsearchives.nseindia.com/corporate/RKEC_11112026160452_NSEIntimationBMRKEC.pdf"
+},
+{
 "symbol": "RKSWAMY",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -7941,6 +7997,14 @@
 "title": "Results",
 "detail": "Soma Textiles & Industries Ltd has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1386_20261107_223251683_WEB.html"
+},
+{
+"symbol": "SOMATEX",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Soma Textiles & Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/SOMATEX_11112026164546_Unaudited_Financial_Result_Sep30.pdf"
 },
 {
 "symbol": "SOMICONVEY",
@@ -9041,6 +9105,14 @@
 "title": "Results",
 "detail": "THE WESTERN INDIA PLYWOODS LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14890_20261027_124409022_WEB.html"
+},
+{
+"symbol": "WIPL",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "The Western India Plywoods Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/WIPL_11112026165526_bmoutcomesecondquarter.pdf"
 },
 {
 "symbol": "WSI",
