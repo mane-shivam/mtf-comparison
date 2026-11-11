@@ -9,8 +9,11 @@ on:
 permissions:
   contents: write
 
+# Its own group: a quick sync never waits behind the hourly refresh (up to 8 min on the Kotak list) and
+# never displaces a waiting hourly run (GitHub keeps one waiting run per group). Two quick syncs still
+# queue one after the other.
 concurrency:
-  group: refresh  # shares the data commit with refresh.yml, so the two never push at once
+  group: quick-sync
   cancel-in-progress: false
 
 jobs:
@@ -49,6 +52,6 @@ jobs:
           git commit -m "data: broker sync $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
           for i in 1 2 3; do
             git push && exit 0
-            git pull --rebase --autostash -X theirs && sleep $((i * 5))
+            git pull --rebase --autostash -X ours && sleep $((i * 5))  # a refresh that saved first wins: its data is as fresh
           done
           exit 1
