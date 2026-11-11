@@ -884,8 +884,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}
-      <p class="muted small">Margin is checked per broker account, as brokers do: each stock needs the margin % the broker asks for it today (from the hourly MTF data, so a raised margin shows up here), and gains on one stock cover losses on another at the same broker. A stock the broker stops funding needs its full value. Brokers set their own timelines, so treat it as a guide.</p>`;
+    $('#list-foot').innerHTML = `<details class="manage"${loadPositions().length ? '' : ' open'}><summary>Manage positions</summary><div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}</details>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
   }
@@ -1261,12 +1260,6 @@ function accounts(list = loadPositions()): Account[] {
 
 const accountState = (a: Account): 'short' | 'close' | 'ok' => (a.spare < 0 ? 'short' : (a.fall ?? 99) < CALL_WARN ? 'close' : 'ok');
 
-function accountLine(a: Account): string {
-  const st = accountState(a);
-  return st === 'short'
-    ? `${inr(-a.spare)} short: add funds or sell to cover it`
-    : `${inr(a.spare)} spare, can fall ${(a.fall ?? 0).toFixed(1)}% before a top-up`;
-}
 
 // A stock's own standing inside its account: below its margin share, thin, or comfortable.
 type PosState = 'short' | 'close' | 'ok' | 'none';
@@ -1294,11 +1287,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
   const name = state.bySymbol.get(pos.sym)?.name;
   const flags = withSymbol ? flagsHTML(pos.sym, 3) : '';
   const pill =
-    m.marginFrom === 'dropped' ? `<span class="pc-pill is-short">No longer funded</span>`
-    : st === 'short' ? `<span class="pc-pill is-short">Uses ${inr(-m.spare!)} margin</span>`
-    : st === 'close' ? `<span class="pc-pill is-close">Thin margin</span>`
-    : st === 'ok' ? `<span class="pc-pill">Adds ${inr(m.spare!)} margin</span>`
-    : '';
+    m.marginFrom === 'dropped' ? `<span class="pc-pill is-short">No longer funded</span>` : '';
   return `<article class="pr pc is-${st}" data-sym="${esc(pos.sym)}">
     ${flags ? `<div class="pc-flags">${flags}</div>` : ''}
     <header class="pc-head">
@@ -1325,7 +1314,7 @@ function positionCardHTML(pos: Position, withSymbol: boolean): string {
     </div>
     <div class="pc-grid pc-risk">
       ${cell(m.breakEven != null ? rupeeShort(m.breakEven) : '—', 'Break-even')}
-      ${cell(m.spare != null ? `${m.spare >= 0 ? '+' : '−'}${inr(Math.abs(m.spare)).replace('−', '')}` : '—', `${m.spare != null && m.spare < 0 ? 'Margin used' : 'Margin spare'}<small>${m.marginFrom === 'dropped' ? 'Not funded now: 100%' : `${round1(m.marginPct)}% margin${Math.abs(m.marginPct - 100 / Math.max(1, pos.lev)) >= 0.5 ? `, was ${round1(100 / Math.max(1, pos.lev))}%` : ''}`}</small>`, st === 'short' ? 'down' : st === 'close' ? 'amber' : '')}
+      ${cell(m.spare != null ? `${m.spare >= 0 ? '+' : '−'}${inr(Math.abs(m.spare)).replace('−', '')}` : '—', `${m.spare != null && m.spare < 0 ? 'Margin drawn' : 'Margin spare'}<small>${m.marginFrom === 'dropped' ? 'Not funded now: 100%' : `${round1(m.marginPct)}% margin${Math.abs(m.marginPct - 100 / Math.max(1, pos.lev)) >= 0.5 ? `, was ${round1(100 / Math.max(1, pos.lev))}%` : ''}`}</small>`)}
       ${cell(m.net != null ? money(m.net) : '—', `Net if sold now${both(m.net)}`, tone(m.net))}
     </div>
     <details class="pr-more">
@@ -1379,26 +1368,6 @@ const POS_VIEW_KEY = 'mtf.posView';
 const PS_MORE_KEY = 'mtf.psMore';
 const posView = (): PosView => ({ mode: 'open', broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
 
-function positionsToolbarHTML(v: PosView, counts: Record<string, number>): string {
-  const chip = (key: string, value: string, label: string, on: boolean, n?: number) =>
-    `<button class="chip${on ? ' on' : ''}" data-posf="${key}:${value}" aria-pressed="${on}">${label}${n != null ? ` <span class="count">${n}</span>` : ''}</button>`;
-  const sorts: [PosSort, string][] = [
-    ['risk', 'Risk first'], ['pnl', 'Biggest loss'], ['pnlBest', 'Biggest gain'], ['today', "Today's move"], ['ret', 'Return %'],
-    ['size', 'Largest'], ['interest', 'Most interest'], ['days', 'Held longest'], ['az', 'A to Z'],
-  ];
-  return `<div class="pr-tools">
-    <div class="chips pr-chips">
-      ${chip('broker', 'kotak', 'Kotak', v.broker === 'kotak', counts.kotak)}
-      ${chip('broker', 'rupeezy', 'Rupeezy', v.broker === 'rupeezy', counts.rupeezy)}
-      ${chip('status', 'short', 'Using margin', v.status === 'short', counts.short)}
-      ${chip('status', 'close', 'Thin margin', v.status === 'close', counts.close)}
-      ${chip('pnl', 'down', 'Losers', v.pnl === 'down', counts.down)}
-      ${chip('pnl', 'up', 'Gainers', v.pnl === 'up', counts.up)}
-      ${chip('results', '1', 'Results due', v.results, counts.results)}
-    </div>
-    <label class="select"><span class="sr-only">Sort positions</span><select id="pos-sort">${sorts.map(([k, l]) => `<option value="${k}"${k === v.sort ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
-  </div>`;
-}
 
 function positionsViewHTML(): string {
   const list = loadPositions();
@@ -1409,111 +1378,165 @@ function positionsViewHTML(): string {
   if (!list.length) {
     return modes + `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
   }
+  return modes + portfolioHTML(list);
+}
+
+/* ---------- Portfolio (open positions) ----------
+   Hero (value, today, total), one card per broker account with a margin gauge, then one row per stock
+   and broker (lots grouped). Tapping a row opens the stock with its lots and full numbers. */
+
+interface Holding { key: string; sym: string; broker: BrokerKey; lots: Position[]; ms: PosMetrics[]; qty: number; avg: number; lev: number;
+  value: number | null; invested: number; own: number; gross: number | null; day: number | null; net: number | null; spare: number | null; ltp: number | null; fromSpare: number }
+
+function holdingsOf(list: Position[]): Holding[] {
+  const by = new Map<string, Position[]>();
+  for (const p of list) by.set(`${p.broker}|${p.sym}`, [...(by.get(`${p.broker}|${p.sym}`) ?? []), p]);
+  return [...by.entries()].map(([key, lots]) => {
+    const ms = lots.map(posMetrics);
+    const sum = (f: (m: PosMetrics) => number | null) => (ms.some((m) => f(m) == null) ? null : ms.reduce((t, m) => t + (f(m) as number), 0));
+    const qty = lots.reduce((t, p) => t + p.qty, 0);
+    const invested = ms.reduce((t, m) => t + m.invested, 0);
+    return {
+      key, sym: lots[0].sym, broker: lots[0].broker, lots, ms, qty, avg: invested / qty,
+      lev: invested / ms.reduce((t, m) => t + m.marginAtBuy, 0),
+      value: sum((m) => m.value), invested, own: ms.reduce((t, m) => t + m.own, 0), gross: sum((m) => m.gross),
+      day: sum((m) => m.day), net: sum((m) => m.net), spare: sum((m) => m.spare), ltp: ms[0].ltp,
+      fromSpare: ms.reduce((t, m) => t + Math.max(0, m.marginAtBuy - m.own), 0),
+    };
+  });
+}
+
+const signed = (n: number) => `${n >= 0 ? '+' : '−'}${inr(Math.abs(n)).replace('−', '')}`;
+const pctStr = (n: number, base: number, dp = 1) => (base ? `${n >= 0 ? '+' : '−'}${Math.abs((n / base) * 100).toFixed(dp)}%` : '');
+const tone = (n: number | null) => (n == null ? '' : n >= 0 ? 'up' : 'down');
+
+function accountCardHTML(a: Account): string {
+  const st = accountState(a);
+  const used = a.equity > 0 ? Math.min(100, (a.needed / a.equity) * 100) : 100;
+  const x = brokerSnap?.brokers[a.broker];
+  const sync = !store<string>(POS_PASS_KEY) ? '' : x?.ok ? `Synced ${fmtTime(x.at, false)}` : x ? 'Sync failed' : 'Not connected';
+  const head = st === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`;
+  const sub = st === 'short' ? 'Add funds or sell to cover it' : `Holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`;
+  const connect = a.broker === 'rupeezy' && x && !x.ok ? '<button class="btn btn-primary btn-sm acct-connect" data-connect-rupeezy>Connect Rupeezy</button>' : '';
+  return `<div class="acct is-${st}" data-acct="${a.broker}" role="button" tabindex="0" aria-label="${BROKER_NAME[a.broker]} account">
+      <span class="acct-h"><b>${BROKER_NAME[a.broker]}</b><span class="acct-sync${x && !x.ok ? ' is-bad' : ''}">${sync}</span></span>
+      <span class="acct-big">${head}</span>
+      <span class="gauge" role="img" aria-label="Margin used ${used.toFixed(0)}%"><span style="width:${used.toFixed(1)}%"></span></span>
+      <span class="acct-sub">${sub}</span>
+      <span class="acct-kv"><span>Margin used</span><b>${used.toFixed(0)}%</b><span>Needs</span><b>${lakh(a.needed)}</b><span>Equity</span><b>${lakh(a.equity)}</b></span>
+      ${brokerFundsLine(a.broker) ? `<span class="acct-broker">${brokerFundsLine(a.broker).trim()}</span>` : ''}
+      ${connect}
+    </div>`;
+}
+
+// A broker with no holdings still gets a card while account sync is on: its status and, for Rupeezy, Connect.
+function emptyAccountCardHTML(b: BrokerKey): string {
+  const x = brokerSnap?.brokers[b];
+  const status = x?.ok ? `Synced ${fmtTime(x.at, false)}` : x ? 'Sync failed' : 'Not connected';
+  const connect = b === 'rupeezy' && (!x || !x.ok) ? '<button class="btn btn-primary btn-sm acct-connect" data-connect-rupeezy>Connect Rupeezy</button>' : '';
+  return `<div class="acct is-empty" data-acct="${b}" role="button" tabindex="0" aria-label="${BROKER_NAME[b]} account">
+      <span class="acct-h"><b>${BROKER_NAME[b]}</b><span class="acct-sync${x && !x.ok ? ' is-bad' : ''}">${status}</span></span>
+      <span class="acct-sub">${x?.ok ? 'No MTF holdings here right now.' : x?.error ? esc(x.error) : 'Connect to sync this account.'}</span>
+      ${connect}
+    </div>`;
+}
+
+function holdingRowHTML(h: Holding): string {
+  const pct = h.gross != null ? pctStr(h.gross, h.invested) : '';
+  const flags = flagsHTML(h.sym, 2);
+  // No per-row warning: margin is an account matter (a buy from spare margin is normal), shown on the account cards.
+  return `<button class="hr" data-open-pos="${esc(h.sym)}">
+      <span class="hr-l">
+        <span class="hr-sym">${esc(h.sym)}${flags ? `<span class="hr-flags">${flags}</span>` : ''}</span>
+        <span class="hr-sub">${BROKER_SHORT[h.broker]} ${round1(h.lev)}×, ${h.qty.toLocaleString('en-IN')} at ${rupee(Math.round(h.avg * 100) / 100)}${h.lots.length > 1 ? `, ${h.lots.length} lots` : ''}</span>
+      </span>
+      <span class="hr-r">
+        <span class="hr-pnl ${tone(h.gross)}">${h.gross != null ? signed(h.gross) : '—'}<small>${pct}</small></span>
+        <span class="hr-sub">${h.ltp != null ? rupee(h.ltp) : '—'}${h.day != null ? ` <span class="${tone(h.day)}">${signed(h.day)} today</span>` : ''}</span>
+      </span>
+    </button>`;
+}
+
+function portfolioHTML(list: Position[]): string {
   const v = posView();
   const all = list.map((p) => ({ p, m: posMetrics(p) }));
-  const counts: Record<string, number> = {
-    kotak: all.filter((x) => x.p.broker === 'kotak').length,
-    rupeezy: all.filter((x) => x.p.broker === 'rupeezy').length,
-    short: all.filter((x) => posState(x.m) === 'short').length,
-    close: all.filter((x) => posState(x.m) === 'close').length,
-    up: all.filter((x) => (x.m.gross ?? 0) >= 0).length,
-    down: all.filter((x) => (x.m.gross ?? 0) < 0).length,
-    results: all.filter((x) => nextResult(x.p.sym)).length,
-  };
-  const shown = all.filter(
-    (x) =>
-      (v.broker === 'all' || x.p.broker === v.broker) &&
-      (v.status === 'all' || posState(x.m) === v.status) &&
-      (v.pnl === 'all' || (v.pnl === 'up' ? (x.m.gross ?? 0) >= 0 : (x.m.gross ?? 0) < 0)) &&
-      (!v.results || !!nextResult(x.p.sym)),
-  );
-  const by: Record<PosSort, (a: (typeof all)[number], b: (typeof all)[number]) => number> = {
-    risk: (a, b) => (a.m.spare ?? 1e12) / (a.m.value || 1) - (b.m.spare ?? 1e12) / (b.m.value || 1),
-    pnl: (a, b) => (a.m.gross ?? 0) - (b.m.gross ?? 0),
-    pnlBest: (a, b) => (b.m.gross ?? 0) - (a.m.gross ?? 0),
-    today: (a, b) => (a.m.day ?? 0) - (b.m.day ?? 0),
-    ret: (a, b) => ((b.m.gross ?? -1e12) / b.m.own) - ((a.m.gross ?? -1e12) / a.m.own),
-    size: (a, b) => b.m.buyValue - a.m.buyValue,
-    interest: (a, b) => b.m.interest - a.m.interest,
-    days: (a, b) => b.m.days - a.m.days,
-    az: (a, b) => a.p.sym.localeCompare(b.p.sym),
-  };
-  shown.sort((a, b) => by[v.sort](a, b) || a.p.sym.localeCompare(b.p.sym));
-
-  // Totals follow the filters, so "Kotak" shows Kotak-only numbers.
-  const sum = (f: (m: PosMetrics) => number) => shown.reduce((t, x) => t + f(x.m), 0);
-  const own = sum((m) => m.own);
+  const hs = holdingsOf(list);
+  const sum = (f: (m: PosMetrics) => number) => all.reduce((t, x) => t + f(x.m), 0);
   const invested = sum((m) => m.invested);
+  const own = sum((m) => m.own);
   const value = sum((m) => m.value ?? m.invested);
-  const net = sum((m) => m.net ?? 0);
   const gross = sum((m) => m.gross ?? 0);
   const day = sum((m) => m.day ?? 0);
-  const sign = (n: number) => (n >= 0 ? '+' : '−');
-  const pct = (n: number, base: number) => (base ? `${sign(n)}${Math.abs((n / base) * 100).toFixed(2)}%` : '—');
-  const filtered = shown.length !== all.length;
+  const net = sum((m) => m.net ?? 0);
+  const fromSpare = sum((m) => Math.max(0, m.marginAtBuy - m.own));
   const accts = accounts(list);
-
-  const rows = (items: typeof shown) => items.map(({ p }) => positionCardHTML(p, true)).join('');
-  const body = !shown.length
-    ? '<div class="empty"><p class="empty-title">No positions match</p><p>Clear a filter to see more.</p></div>'
-    : v.sort === 'risk'
-      ? accts
-          .sort((a, b) => a.spare - b.spare)
-          .map((a) => {
-            const g = shown.filter((x) => x.p.broker === a.broker);
-            const st = accountState(a);
-            return g.length ? `<h2 class="pr-group pr-acct is-${st}">${BROKER_NAME[a.broker]}<span>${g.length}</span><em>${accountLine(a)}</em></h2><div class="pr-list">${rows(g)}</div>` : '';
-          })
-          .join('') + (shown.some((x) => !accts.some((a) => a.broker === x.p.broker)) ? `<div class="pr-list">${rows(shown.filter((x) => !accts.some((a) => a.broker === x.p.broker)))}</div>` : '')
-      : `<div class="pr-list">${rows(shown)}</div>`;
-
+  const shown = hs.filter((h) =>
+    (v.broker === 'all' || h.broker === v.broker) &&
+    (v.pnl === 'all' || (v.pnl === 'up' ? (h.gross ?? 0) >= 0 : (h.gross ?? 0) < 0)) &&
+    (v.status === 'all' || (v.status === 'short' ? (h.spare ?? 0) < 0 : (h.spare ?? 0) >= 0 && (h.spare ?? 0) < ((h.value ?? 0) * CALL_WARN) / 100)) &&
+    (!v.results || !!nextResult(h.sym)));
+  const by: Record<PosSort, (a: Holding, b: Holding) => number> = {
+    risk: (a, b) => (a.spare ?? 1e12) / (a.value || 1) - (b.spare ?? 1e12) / (b.value || 1),
+    pnl: (a, b) => (a.gross ?? 0) - (b.gross ?? 0),
+    pnlBest: (a, b) => (b.gross ?? 0) - (a.gross ?? 0),
+    today: (a, b) => (a.day ?? 0) - (b.day ?? 0),
+    ret: (a, b) => (b.gross ?? 0) / b.invested - (a.gross ?? 0) / a.invested,
+    size: (a, b) => b.invested - a.invested,
+    interest: (a, b) => b.ms.reduce((t, m) => t + m.interest, 0) - a.ms.reduce((t, m) => t + m.interest, 0),
+    days: (a, b) => Math.max(...b.ms.map((m) => m.days)) - Math.max(...a.ms.map((m) => m.days)),
+    az: (a, b) => a.sym.localeCompare(b.sym),
+  };
+  shown.sort((a, b) => by[v.sort](a, b) || a.sym.localeCompare(b.sym));
+  const counts: Record<string, number> = {
+    kotak: hs.filter((h) => h.broker === 'kotak').length, rupeezy: hs.filter((h) => h.broker === 'rupeezy').length,
+    short: hs.filter((h) => (h.spare ?? 0) < 0).length,
+    close: hs.filter((h) => (h.spare ?? 0) >= 0 && (h.spare ?? 0) < ((h.value ?? 0) * CALL_WARN) / 100).length,
+    up: hs.filter((h) => (h.gross ?? 0) >= 0).length, down: hs.filter((h) => (h.gross ?? 0) < 0).length,
+    results: hs.filter((h) => nextResult(h.sym)).length,
+  };
   const perDay = sum((m) => m.perDay);
-  const shortAccts = accts.filter((a) => accountState(a) === 'short');
   const rates = brokerRates();
   const saving = (b: BrokerKey) => inr((100000 * rates[b].interest) / 1200);
-  const chip = (n: number, base: number) => `<span class="ps-chip ${n >= 0 ? 'up' : 'down'}">${pct(n, base)}</span>`;
-  const rets = (n: number) => `<div class="ps-rets">${chip(n, invested)}<span class="ps-note">on total</span><span class="ps-own">${pct(n, own)} on own money</span></div>`;
-  const amount = (n: number) => `${sign(n)}${inr(Math.abs(n)).replace('−', '')}`;
-  return modes + `<section class="ps">
-      <div class="ps-top">
-        <div>
-          <div class="ps-label">Value now</div>
-          <div class="ps-value">${inr(value)}</div>
-          <div class="ps-sub">${inr(invested)} invested, ${inr(own)} of it your money</div>
-        </div>
-        <div class="ps-count">${filtered ? `${shown.length} of ${all.length}` : `${all.length} position${all.length === 1 ? '' : 's'}`}</div>
+  return `<section class="hero">
+      <div class="hero-main">
+        <span class="hero-label">Current value</span>
+        <span class="hero-val">${inr(value)}</span>
+        <span class="hero-sub">${lakh(invested)} invested, ${lakh(own)} your cash${fromSpare > 0.5 ? `, ${lakh(fromSpare)} from spare margin` : ''}</span>
       </div>
-      <div class="ps-pair">
-        <div class="ps-cell">
-          <div class="ps-label">Today</div>
-          <div class="ps-amt ${day >= 0 ? 'up' : 'down'}">${amount(day)}</div>
-          ${rets(day)}
-        </div>
-        <div class="ps-cell">
-          <div class="ps-label">Total P&amp;L</div>
-          <div class="ps-amt ${gross >= 0 ? 'up' : 'down'}">${amount(gross)}</div>
-          ${rets(gross)}
-        </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span>Today</span><b class="${tone(day)}">${signed(day)}</b><small>${pctStr(day, invested, 2)} on total</small></div>
+        <div class="hero-stat"><span>Total P&amp;L</span><b class="${tone(gross)}">${signed(gross)}</b><small>${pctStr(gross, invested, 2)} on total, ${pctStr(gross, own)} on your cash</small></div>
+        <div class="hero-stat"><span>If sold now</span><b class="${tone(net)}">${signed(net)}</b><small>after charges and interest</small></div>
       </div>
-      <div class="ps-row">
-        <span>Net if you sold all now<small>after charges and interest</small></span>
-        <span class="ps-row-v"><b class="${net >= 0 ? 'up' : 'down'}">${amount(net)}</b>${rets(net)}</span>
-      </div>
-      ${overallHTML(amount)}
-      <div class="ps-grid">
-        <div><i>Interest</i><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far</small></div>
-        <div><i>Fixed charges</i><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} on sale</small></div>
-      </div>
-      <details class="ps-more"${store<boolean>(PS_MORE_KEY) ? ' open' : ''}>
-        <summary><span>Margin and paying back</span><span class="ps-more-hint${shortAccts.length ? '' : ' is-ok'}">${shortAccts.length ? shortAccts.map((a) => `${BROKER_SHORT[a.broker]} ${inr(-a.spare)} short`).join(', ') : 'All accounts covered'}</span></summary>
-        <div class="ps-accts">${accts.map((a) => `<div class="ps-acct is-${accountState(a)}"><i>${BROKER_NAME[a.broker]} margin</i><b>${accountState(a) === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`}</b><small>${accountState(a) === 'short' ? 'Add funds or sell to cover it' : `All holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`}. Needs ${inr(a.needed)}, you have ${inr(a.equity)}.${brokerFundsLine(a.broker)}</small></div>`).join('')}</div>
-        <p class="ps-save">Brokers check margin for the whole account, so a gain on one stock covers a loss on another at the same broker. Each stock's “Margin spare” is its part of that total.</p>
-        <p class="ps-save">Each ₹1 L of broker's money you pay back saves about ${saving('kotak')} a month at Kotak and ${saving('rupeezy')} at Rupeezy.</p>
-      </details>
     </section>
-    ${positionsToolbarHTML(v, counts)}
-    ${body}`;
+    ${(() => {
+      const cards = BROKERS.map((b) => { const a = accts.find((x) => x.broker === b); return a ? accountCardHTML(a) : store<string>(POS_PASS_KEY) ? emptyAccountCardHTML(b) : ''; }).join('');
+      return cards ? `<section class="accts">${cards}</section>` : '';
+    })()}
+    <section class="hl">
+      <div class="hl-head">
+        <h2>Holdings <span>${hs.length}</span></h2>
+        <label class="select hl-sort"><span class="sr-only">Sort holdings</span><select id="pos-sort">${([
+          ['risk', 'Margin risk'], ['pnl', 'Biggest loss'], ['pnlBest', 'Biggest gain'], ['today', "Today's move"], ['ret', 'Return %'],
+          ['size', 'Largest'], ['interest', 'Most interest'], ['days', 'Held longest'], ['az', 'A to Z']] as [PosSort, string][])
+          .map(([k, l]) => `<option value="${k}"${k === v.sort ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
+      </div>
+      <div class="chips hl-chips">${([
+        ['broker', 'kotak', 'Kotak', v.broker === 'kotak', counts.kotak], ['broker', 'rupeezy', 'Rupeezy', v.broker === 'rupeezy', counts.rupeezy],
+        ['pnl', 'down', 'Losers', v.pnl === 'down', counts.down], ['pnl', 'up', 'Gainers', v.pnl === 'up', counts.up],
+        ['results', '1', 'Results due', v.results, counts.results]] as [string, string, string, boolean, number][])
+        .filter(([, , , on, n]) => on || n).map(([k, val, l, on, n]) => `<button class="chip${on ? ' on' : ''}" data-posf="${k}:${val}" aria-pressed="${on}">${l} <span class="count">${n}</span></button>`).join('')}</div>
+      <div class="hr-list">${shown.length ? shown.map(holdingRowHTML).join('') : '<p class="empty">No holdings match. Clear a filter to see all.</p>'}</div>
+    </section>
+    <section class="pf-more">
+      ${overallHTML(signed)}
+      <div class="pf-stats">
+        <div><span>Interest</span><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far. Paying back ₹1 L saves ${saving('kotak')} a month at Kotak, ${saving('rupeezy')} at Rupeezy.</small></div>
+        <div><span>Charges</span><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} more when you sell</small></div>
+      </div>
+    </section>`;
 }
+
 
 // What the broker itself reports for the account (Rupeezy funds; Kotak limits once its night maintenance ends).
 function brokerFundsLine(b: BrokerKey): string {
@@ -3308,6 +3331,13 @@ function bind() {
     }
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
+    const acct = t.closest('[data-connect-rupeezy]') ? null : t.closest<HTMLElement>('[data-acct]');
+    if (acct) {
+      const b = acct.dataset.acct as BrokerKey;
+      if (!pop.hidden && pop.dataset.for === `acct-${b}`) return void (pop.hidden = true);
+      pop.dataset.for = `acct-${b}`;
+      return showPanel(acct, `<div class="pop-title">${BROKER_NAME[b]} account</div>${accountPopHTML(b) || '<p class="muted small">Turn on private sync in Manage positions to connect your broker accounts.</p>'}<p class="pop-sec">How margin is counted</p><p class="muted small">Needs: each holding's value × the broker's margin % for it today. Equity: your cash + unrealised P&amp;L − interest. A buy paid from spare margin adds no cash, so it lowers the spare.</p>`);
+    }
     const ce = t.closest<HTMLElement>('[data-cash-edit]');
     if (ce) return editLotCash(ce.dataset.cashEdit!);
     if (t.closest('[data-connect-rupeezy]')) return connectRupeezy();

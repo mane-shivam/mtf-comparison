@@ -4872,3 +4872,460 @@ details.ps-overall:not([open]) .ps-ov-top {
 details.ps-overall .ps-ov-parts {
   margin-top: 10px;
 }
+
+/* =====================================================================
+   Portfolio revamp: hero, account cards with margin gauge, holding rows,
+   bottom navigation on phones.
+   ===================================================================== */
+
+body.positions-view .pr-modes {
+  width: max-content;
+  margin: 4px 0 14px;
+}
+
+body.positions-view .pr-modes button {
+  min-height: 32px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.hero {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-main {
+  display: grid;
+  gap: 2px;
+}
+
+.hero-label,
+.hero-stat > span,
+.pf-stats span {
+  color: var(--faint-2);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.hero-val {
+  font-size: 32px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.hero-stat {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hero-stat b {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+.hero-stat small {
+  color: var(--faint-2);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.hero .up,
+.hl .up,
+.pf-more .up {
+  color: var(--up-soft);
+}
+
+.hero .down,
+.hl .down,
+.pf-more .down {
+  color: var(--down-soft);
+}
+
+/* Account cards: the gauge is margin needed as a share of equity. */
+.accts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.acct {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  --g: var(--up-soft);
+}
+
+.acct.is-close { --g: var(--amber-soft); }
+.acct.is-short { --g: var(--down-soft); border-color: rgba(228, 135, 139, 0.35); }
+
+.acct-h {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.acct-h b {
+  font-weight: 600;
+}
+
+.acct-sync {
+  color: var(--faint-2);
+  font-size: 11.5px;
+}
+
+.acct-sync.is-bad {
+  color: var(--amber-soft);
+}
+
+.acct-big {
+  color: var(--g);
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.gauge {
+  position: relative;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.gauge > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: var(--g);
+  opacity: 0.85;
+}
+
+.acct-sub {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.acct-kv {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-flow: column;
+  grid-template-rows: auto auto;
+  justify-content: space-between;
+  gap: 1px 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.acct-kv span {
+  color: var(--faint-2);
+  font-size: 11px;
+}
+
+.acct-kv b {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.acct-broker {
+  color: var(--faint-2);
+  font-size: 11.5px;
+}
+
+/* Holdings */
+.hl {
+  margin-top: 22px;
+}
+
+.hl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hl-head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.hl-head h2 span {
+  margin-left: 4px;
+  color: var(--faint-2);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hl-sort {
+  width: auto;
+}
+
+.hl-chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  margin: 10px 0 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.hl-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.hl-chips .chip {
+  flex: none;
+}
+
+.hr-list {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.hr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+
+.hr:first-child {
+  border-top: 0;
+}
+
+.hr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.hr.is-short {
+  box-shadow: inset 3px 0 0 var(--down-soft);
+}
+
+.hr.is-close {
+  box-shadow: inset 3px 0 0 var(--amber-soft);
+}
+
+.hr-l,
+.hr-r {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.hr-r {
+  flex: none;
+  justify-items: end;
+  text-align: right;
+}
+
+.hr-sym {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 0;
+}
+
+.hr-flags {
+  display: inline-flex;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.hr-flags .flag {
+  font-size: 10.5px;
+}
+
+.hr-sub {
+  overflow: hidden;
+  color: var(--faint-2);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hr-pnl {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hr-pnl small {
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Below the holdings */
+.pf-more {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pf-more .ps-overall {
+  margin-top: 0;
+}
+
+.pf-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.pf-stats > div {
+  display: grid;
+  gap: 3px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.pf-stats b {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pf-stats small {
+  color: var(--faint-2);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.manage {
+  margin-top: 6px;
+}
+
+.manage > summary {
+  padding: 10px 0;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Navigation: tabs with icons; a bottom bar on phones */
+.toolbar .seg .ico {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: -3px;
+}
+
+@media (max-width: 720px) {
+  .toolbar > .seg[role='tablist'] {
+    position: fixed;
+    z-index: 30;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: rgba(12, 12, 14, 0.94);
+    backdrop-filter: blur(12px);
+  }
+
+  .toolbar > .seg[role='tablist'] > button {
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    min-height: 50px;
+    padding: 6px 0 4px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+
+  .toolbar > .seg[role='tablist'] > button .ico {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+
+  .toolbar > .seg[role='tablist'] > button .count {
+    display: none;
+  }
+
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  .hero-val {
+    font-size: 28px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-stat:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Portfolio is its own page: no data-sources footer or scraper status dots. */
+body.positions-view .footer,
+body.positions-view .status .dots {
+  display: none;
+}
+
+.acct.is-empty {
+  align-content: start;
+}
+
+.acct-connect {
+  justify-self: start;
+  margin-top: 2px;
+}
+
+.acct:focus-visible {
+  outline: 2px solid var(--up-soft);
+  outline-offset: 2px;
+}

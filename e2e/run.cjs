@@ -213,7 +213,7 @@ async function run() {
     const gh = await seededSync();
     const p = await page({ gh, storage: { 'mtf.positions': MANUAL } });
     await p.goto(url);
-    await p.waitForSelector('.ps');
+    await p.waitForSelector('.hero');
     await settle(p, 4000);
     const list = await positions(p);
     const nuv = list.find((x) => x.sym === 'NUVAMA');
@@ -227,14 +227,23 @@ async function run() {
     assert.ok(ana.cash > 0 && ana.cash < margin(ana), `ANANDRATHI cash ${ana.cash} of ${margin(ana)}`);
     // Unchanged lots keep your date, price and leverage.
     assert.deepEqual(list.find((x) => x.sym === 'CDSL'), MANUAL[0]);
-    const card = await text(p, '.pr[data-sym="NUVAMA"]');
+    const row = await text(p, '.hr[data-open-pos="NUVAMA"]');
+    assert.match(row, /^NUVAMA/);
+    assert.match(row, /Kotak 3×, 50 at ₹1,900/);
+    const cash = margin(MANUAL[0]) + margin(MANUAL[1]) + ana.cash;
+    const lakh = (x) => `₹${(x / 1e5).toFixed(2)}L`;
+    const hero = await text(p, '.hero-sub');
+    assert.ok(hero.includes(`${lakh(cash)} your cash`), `hero shows your cash ${lakh(cash)}: "${hero}"`);
+    assert.match(hero, /from spare margin/);
+    await shot(p, 'positions-phone');
+    // Tapping a holding opens its detail card, which explains how it was paid for.
+    await p.click('.hr[data-open-pos="NUVAMA"]');
+    await p.waitForSelector('.sheet .pr');
+    const card = await text(p, '.sheet .pr');
     assert.match(card, /bought with spare margin/);
     assert.match(card, /from spare margin/);
-    const top = await text(p, '.ps-top');
-    const cash = Math.round(margin(MANUAL[0]) + margin(MANUAL[1]) + ana.cash);
-    assert.ok(top.includes(cash.toLocaleString('en-IN')), `summary shows your cash ₹${cash}: "${top}"`);
+    await p.keyboard.press('Escape');
     await noOverflow(p);
-    await shot(p, 'positions-phone');
     assert.deepEqual(errorsOf.get(p), []);
     await p.context().close();
   });
@@ -243,18 +252,20 @@ async function run() {
     const gh = await seededSync();
     const p = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.psMore': true } });
     await p.goto(url);
-    await p.waitForSelector('.ps-accts');
+    await p.waitForSelector('.accts');
     await settle(p, 4000);
-    const acct = await text(p, '.ps-accts');
-    assert.match(acct, /Kotak Neo margin ₹[\d,]+ spare/);
+    const acct = await text(p, '.acct[data-acct="kotak"]');
+    assert.match(acct, /^Kotak Neo Synced .* ₹[\d,]+ spare/);
     // Spare before NUVAMA: CDSL equity (cash 97,500 + gain 60,000 - interest) - its margin on 4,50,000.
     // NUVAMA was bought with spare (no cash), so the spare falls by exactly its margin on 95,000.
-    const spare = Number(acct.match(/Kotak Neo margin ₹([\d,]+) spare/)[1].replace(/,/g, ''));
+    const spare = Number(acct.match(/₹([\d,]+) spare/)[1].replace(/,/g, ''));
     const nuvMargin = 50 * 1900 / lev('NUVAMA', 'kotak');
     const interest = (390000 - 97500) * 9.69 * 20 / 36500; // on the broker's loan at purchase
     const before = 97500 + 60000 - interest - 450000 / lev('CDSL', 'kotak');
     assert.ok(Math.abs(spare - (before - nuvMargin)) < 50, `spare ₹${spare}, expected ${Math.round(before - nuvMargin)} (${Math.round(before)} before, minus ${Math.round(nuvMargin)})`);
-    assert.match(acct, /Rupeezy reports ₹12,346 available/);
+    assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /Rupeezy reports ₹12,346 available/);
+    await p.click('.acct[data-acct="kotak"]');
+    assert.match(await text(p, '#popover'), /Kotak Neo account.*Synced.*How margin is counted/);
     await p.context().close();
   });
 
@@ -272,7 +283,7 @@ async function run() {
     };
     const p = await page({ gh, storage: { 'mtf.positions': MANUAL } });
     await p.goto(url);
-    await p.waitForSelector('.ps');
+    await p.waitForSelector('.hero');
     await settle(p, 3500);
     await p.click('#refresh');
     await p.waitForFunction(() => /Updated/.test(document.querySelector('#refresh').textContent), null, { timeout: 30000 });
@@ -302,12 +313,11 @@ async function run() {
     const p = await page({ gh, storage: { 'mtf.positions': [MANUAL[0]], 'mtf.rupeezyApp': 'APP1' } });
     await p.route('https://flow.rupeezy.in/**', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: 'rupeezy' }));
     await p.goto(url);
-    await p.waitForSelector('.dot-btn');
+    await p.waitForSelector('.acct[data-acct="rupeezy"]');
     await settle(p, 2500);
-    assert.match(await p.$eval('.dot-btn[data-broker="rupeezy"] .dot', (e) => e.className), /stale/, 'header dot flags Rupeezy');
-    await p.click('.dot-btn[data-broker="rupeezy"]');
-    assert.match(await text(p, '#popover'), /Latest sync failed.*Connect Rupeezy/);
-    await Promise.all([p.waitForURL(/flow\.rupeezy\.in/), p.click('#popover [data-connect-rupeezy]')]);
+    // No Rupeezy holdings and a failed sync: Portfolio still shows the account, with Connect on it.
+    assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /Rupeezy Sync failed .*not signed in.*Connect Rupeezy/);
+    await Promise.all([p.waitForURL(/flow\.rupeezy\.in/), p.click('.acct[data-acct="rupeezy"] [data-connect-rupeezy]')]);
     assert.match(p.url(), /applicationId=APP1/);
     await p.goto(`${url}?auth=CODE9`);
     await p.waitForTimeout(2500);
@@ -348,7 +358,8 @@ async function run() {
     const gh = new FakeGitHub();
     const p = await page({ gh, storage: { 'mtf.positions': MANUAL } });
     await p.goto(url);
-    await p.waitForSelector('#pos-clear');
+    await p.waitForSelector('.manage');
+    await p.click('.manage > summary');
     await p.click('#pos-clear');
     await p.waitForSelector('.clear-sheet');
     const [dl] = await Promise.all([p.waitForEvent('download'), p.click('[data-clear="export"]')]);
@@ -384,7 +395,7 @@ async function run() {
       for (const view of ['positions', 'pinned', 'all']) {
         const p = await page({ gh, width: w, height: h, storage: { 'mtf.positions': MANUAL, 'mtf.view': view } });
         await p.goto(url);
-        await p.waitForSelector(view === 'positions' ? '.ps' : '.row');
+        await p.waitForSelector(view === 'positions' ? '.hero' : '.row');
         await settle(p, 2500);
         await noOverflow(p);
         await shot(p, `${view}-${tag}`);
