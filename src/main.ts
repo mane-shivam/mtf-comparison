@@ -1445,18 +1445,35 @@ function emptyAccountCardHTML(b: BrokerKey): string {
 
 function holdingRowHTML(h: Holding): string {
   const pct = h.gross != null ? pctStr(h.gross, h.invested) : '';
-  const flags = flagsHTML(h.sym, 2);
+  const flags = flagsHTML(h.sym, 4);
   // No per-row warning: margin is an account matter (a buy from spare margin is normal), shown on the account cards.
+  // Three lines: symbol and P&L; position and price today; the stock's flags (wrapping, never cut off).
   return `<button class="hr" data-open-pos="${esc(h.sym)}">
-      <span class="hr-l">
-        <span class="hr-sym">${esc(h.sym)}${flags ? `<span class="hr-flags">${flags}</span>` : ''}</span>
-        <span class="hr-sub">${BROKER_SHORT[h.broker]} ${round1(h.lev)}×, ${h.qty.toLocaleString('en-IN')} at ${rupee(Math.round(h.avg * 100) / 100)}${h.lots.length > 1 ? `, ${h.lots.length} lots` : ''}</span>
-      </span>
-      <span class="hr-r">
+      <span class="hr-line">
+        <span class="hr-sym">${esc(h.sym)}</span>
         <span class="hr-pnl ${tone(h.gross)}">${h.gross != null ? signed(h.gross) : '—'}<small>${pct}</small></span>
-        <span class="hr-sub">${h.ltp != null ? rupee(h.ltp) : '—'}${h.day != null ? ` <span class="${tone(h.day)}">${signed(h.day)} today</span>` : ''}</span>
       </span>
+      <span class="hr-line">
+        <span class="hr-sub">${BROKER_SHORT[h.broker]} ${round1(h.lev)}×, ${h.qty.toLocaleString('en-IN')} at ${rupee(Math.round(h.avg * 100) / 100)}${h.lots.length > 1 ? `, ${h.lots.length} lots` : ''}</span>
+        <span class="hr-sub hr-px">${h.ltp != null ? rupee(h.ltp) : '—'}${h.day != null ? ` <span class="${tone(h.day)}">${signed(h.day)} today</span>` : ''}</span>
+      </span>
+      ${flags ? `<span class="hr-flags">${flags}</span>` : ''}
     </button>`;
+}
+
+// Charges on open positions and realised P&L, one compact card.
+function chargesRealisedHTML(list: Position[]): string {
+  const ms = list.map(posMetrics);
+  const buy = ms.reduce((t, m) => t + m.costs.buySide, 0);
+  const sell = ms.reduce((t, m) => t + m.costs.sellSide, 0);
+  const start = store<number>(START_KEY) ?? 0;
+  const booked = loadClosed().reduce((t, x) => t + x.pnl, 0);
+  const total = start + booked;
+  return `<div class="kvc">
+      <div class="kvc-row"><span>Charges paid when buying<small>brokerage, stamp duty, exchange fees, pledge, GST</small></span><b>${inr(buy)}</b></div>
+      <div class="kvc-row"><span>Charges due when you sell<small>STT, brokerage, DP, unpledge, GST</small></span><b>${inr(sell)}</b></div>
+      <div class="kvc-row"><span>Realised P&amp;L<small>${signed(booked)} booked here, ${signed(start)} earlier <button class="link-btn" data-pnl-start>edit</button></small></span><b class="${tone(total)}">${signed(total)}</b></div>
+    </div>`;
 }
 
 /* Details: what holding costs and what you'd keep. Interest is charged by the brokers on the funded part
@@ -1492,6 +1509,7 @@ function detailsViewHTML(list: Position[]): string {
       </div>
     </section>
     <section class="dt">
+      ${chargesRealisedHTML(list)}
       <h2>Interest by broker</h2>
       <div class="dt-cards">${per.map((x) => `<div class="dt-card"><b>${BROKER_NAME[x.b]}</b><span>${rates[x.b].interest}% a year on ${lakh(x.funded)}</span><span><strong>${inr2(x.perDay)}</strong> a day, ${inr(x.interest)} so far</span><small>Paying back ₹1 L saves ${saving(x.b)} a month.</small></div>`).join('')}</div>
       <h2>Interest by position</h2>
@@ -1505,13 +1523,6 @@ function detailsViewHTML(list: Position[]): string {
           return `<button class="dt-row" role="row" data-open-pos="${esc(h.sym)}"><span><b>${esc(h.sym)}</b><small>${days ? `${days} day${days === 1 ? '' : 's'}` : 'Starts tomorrow'}, ${BROKER_SHORT[h.broker]} ${rates[h.broker].interest}%</small></span><span>${lakh(f)}</span><span>${inr2(d)}</span><span>${inr(so)}</span></button>`;
         }).join('')}
       </div>
-      <h2>Charges</h2>
-      <div class="pf-stats">
-        <div><span>Paid when buying</span><b>${inr(sum((m) => m.costs.buySide))}</b><small>brokerage, stamp duty, exchange fees, pledge and their GST</small></div>
-        <div><span>Due when you sell</span><b>${inr(sum((m) => m.costs.sellSide))}</b><small>STT, brokerage, DP and unpledge charges and their GST</small></div>
-      </div>
-      <h2>Realised</h2>
-      <div class="pf-more">${overallHTML(signed)}</div>
       ${ledgerSectionHTML(list)}
       <p class="dt-note">Interest runs on the broker's money (value at purchase minus the initial margin, whether that margin came from cash or spare margin), from the day after you buy, every calendar day including weekends, up to the day you sell. Kotak keeps it in your MTF ledger and moves it to your main ledger when you close the whole MTF position; it's counted against your equity here as it builds up.</p>
     </section>`;
@@ -1667,24 +1678,6 @@ function brokerFundsLine(b: BrokerKey): string {
   return '';
 }
 
-// Realised P&L so far, after every charge and interest: earlier P&L + sales recorded here. Open positions are not in it.
-function overallHTML(amount: (n: number) => string): string {
-  const start = store<number>(START_KEY) ?? 0;
-  const booked = loadClosed().reduce((t, x) => t + x.pnl, 0);
-  const total = start + booked;
-  const part = (label: string, n: number) => `<span><i>${label}</i><b class="${n >= 0 ? 'up' : 'down'}">${amount(n)}</b></span>`;
-  // Collapsed by default: the total shows in the header; the split opens on tap.
-  return `<details class="ps-overall"${store<boolean>(OV_OPEN_KEY) ? ' open' : ''}>
-      <summary class="ps-ov-top">
-        <span class="ps-label">Realised P&amp;L as of now<small>after every charge and interest</small></span>
-        <b class="ps-ov-amt ${total >= 0 ? 'up' : 'down'}">${amount(total)}</b>
-      </summary>
-      <div class="ps-ov-parts">
-        ${part('Booked here', booked)}
-        <button class="ps-ov-start" data-pnl-start><i>Earlier</i><b class="${start >= 0 ? 'up' : 'down'}">${start ? amount(start) : 'Add'}</b></button>
-      </div>
-    </details>`;
-}
 
 const OV_OPEN_KEY = 'mtf.realisedOpen';
 

@@ -358,6 +358,14 @@ async function run() {
     assert.ok(cdsl.endsWith(`₹${cdslSoFar.toLocaleString('en-IN')}`), `CDSL so far ₹${cdslSoFar}: "${cdsl}"`);
     assert.match(await text(p, '.dt-row[data-open-pos="NUVAMA"]'), /Starts tomorrow/);
     assert.match(await text(p, '.dt'), /Interest by broker Kotak Neo 9.69% a year/);
+    // Charges and realised come first, as one compact card.
+    const dt = await text(p, '.dt');
+    assert.ok(dt.indexOf('Charges paid when buying') < dt.indexOf('Interest by broker'), 'charges before interest');
+    assert.match(dt, /^Charges paid when buying .*₹[\d,]+ Charges due when you sell .*₹[\d,]+ Realised P&L \+₹0 booked here, \+₹0 earlier edit \+₹0/);
+    p.nextPrompt = '105000';
+    await p.click('.kvc [data-pnl-start]');
+    await p.waitForTimeout(300);
+    assert.match(await text(p, '.kvc'), /Realised P&L \+₹0 booked here, \+₹1,05,000 earlier edit \+₹1,05,000/);
     await noOverflow(p);
     await shot(p, 'details-phone');
     assert.deepEqual(errorsOf.get(p), []);
@@ -491,6 +499,17 @@ async function run() {
         await p.waitForSelector(view === 'positions' || view === 'details' ? '.hero' : view === 'closed' ? '.pr-modes' : '.row');
         await settle(p, 2500);
         await noOverflow(p);
+        if (view === 'positions') {
+          // Flags on holding rows wrap onto their own line: none may be cut off.
+          const clipped = await p.$$eval('.hr', (rows) => rows.flatMap((r) => {
+            const box = r.getBoundingClientRect();
+            return [...r.querySelectorAll('.flag')].filter((f) => {
+              const b = f.getBoundingClientRect();
+              return f.scrollWidth > f.clientWidth + 1 || b.right > box.right + 1 || b.left < box.left - 1;
+            }).map((f) => `${r.dataset.openPos}: ${f.textContent}`);
+          }));
+          assert.deepEqual(clipped, [], `clipped flags: ${clipped}`);
+        }
         await shot(p, `${view}-${tag}`);
         assert.deepEqual(errorsOf.get(p), []);
         await p.context().close();
