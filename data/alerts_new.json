@@ -2,73 +2,209 @@
  {
   "symbol": "ETERNAL",
   "name": "ETERNAL LIMITED",
-  "level": "good",
-  "text": "At a 52-week high (₹372.00)",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 4.0×). Convert or close an existing position.",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "ANANDRATHI",
-  "name": "Anand Rathi Wealth Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹2,378.60)",
+  "symbol": "SAREGAMA",
+  "name": "Saregama India Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.9×). Convert or close an existing position.",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "ATHERENERG",
-  "name": "Ather Energy Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,882.00)",
+  "symbol": "PTCIL",
+  "name": "PTC Industries Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.0×). Convert or close an existing position.",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "STLTECH",
-  "name": "STLTECH",
+  "symbol": "CRISIL",
+  "name": "Crisil Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "AARTIIND",
+  "name": "Aarti Industries Limited",
   "level": "info",
-  "text": "At or near the upper circuit (5% band)",
+  "text": "Up 5.3% today at ₹484.40",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "SONACOMS",
-  "name": "Sona BLW Precision Forgings Limited",
+  "symbol": "GVT&D",
+  "name": "GE Vernova T&D India Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "MCX",
+  "name": "Multi Commodity Exchange of India Limited",
   "level": "good",
-  "text": "At a 52-week high (₹928.55)",
+  "text": "At a 52-week high (₹3,593.00)",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "TIMETECHNO",
-  "name": "Time Technoplast Limited",
-  "level": "info",
-  "text": "Up 6.3% today at ₹199.80",
+  "symbol": "NAVINFLUOR",
+  "name": "Navin Fluorine International Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 4.0×). Convert or close an existing position.",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "MOTILALOFS",
-  "name": "Motilal Oswal Financial Services Limited",
+  "symbol": "NAVINFLUOR",
+  "name": "Navin Fluorine International Limited",
   "level": "good",
-  "text": "At a 52-week high (₹1,181.25)",
+  "text": "At a 52-week high (₹9,267.50)",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
  },
  {
-  "symbol": "ENTERO",
-  "name": "Entero Healthcare Solutions Limited",
-  "level": "watch",
-  "text": "Down 5.4% today at ₹2,000.40",
+  "symbol": "NSE",
+  "name": "NSE",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "PRIVISCL",
+  "name": "Privi Speciality Chemicals Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.2×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "RATEGAIN",
+  "name": "Rategain Travel Technologies Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.8×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "SAILIFE",
+  "name": "Sai Life Sciences Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.1×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "SKIPPER",
+  "name": "Skipper Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.8×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "WOCKPHARMA",
+  "name": "Wockhardt Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.7×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "QPOWER",
+  "name": "Quality Power Electrical Equipments Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.0×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "INOXINDIA",
+  "name": "INOX India Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.9×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "COFORGE",
+  "name": "Coforge Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.9×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "CUMMINSIND",
+  "name": "Cummins India Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 4.2×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "GRAPHITE",
+  "name": "Graphite India Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.8×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "INDOMIM",
+  "name": "INDO-MIM Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.0×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "SANSERA",
+  "name": "Sansera Engineering Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.9×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "MON100",
+  "name": "MOTILAL OS NASDAQ100 ETF",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 4.0×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
  },
  {
   "symbol": "UNOMINDA",
   "name": "UNO Minda Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,395.60)",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
   "link": null,
-  "at": "2026-11-11T04:32:50Z"
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "SJS",
+  "name": "S.J.S. Enterprises Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 3.0×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
+ },
+ {
+  "symbol": "GRWRHITECH",
+  "name": "Garware Hi-Tech Films Limited",
+  "level": "alert",
+  "text": "Dropped from Kotak Neo MTF (was 2.5×). Convert or close an existing position.",
+  "link": null,
+  "at": "2026-11-11T05:32:52Z"
  }
 ]

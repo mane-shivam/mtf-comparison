@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T04:32:20Z",
+"fetchedAt": "2026-11-11T05:32:21Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T04:32:16Z",
+"fetchedAt": "2026-11-11T05:32:15Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T04:32:16Z",
+"fetchedAt": "2026-11-11T05:32:16Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T04:32:20Z",
-"count": 822,
+"fetchedAt": "2026-11-11T05:32:21Z",
+"count": 825,
 "error": null
 }
 },
@@ -3680,6 +3680,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_550_20261104_112117307_WEB.html"
 },
 {
+"symbol": "DEEDEV",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "To consider and approve the financial results for the period ended September 30, 2026",
+"link": "https://nsearchives.nseindia.com/corporate/DDEL_11112026105821_NSEBSE_Intimation_to_Stock_Exchange.pdf"
+},
+{
 "symbol": "DEEPAKFERT",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6560,6 +6568,14 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PASHUPATI"
 },
 {
+"symbol": "PATANJALI",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "Patanjali Foods Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17681_20261111_104903998_WEB.html"
+},
+{
 "symbol": "PAVNAIND",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -8648,6 +8664,14 @@
 "title": "Results",
 "detail": "VLS FINANCE LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_313_20261105_172258651_WEB.html"
+},
+{
+"symbol": "VNL",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "Vishal Nirmiti Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27047_20261111_104407838_WEB.html"
 },
 {
 "symbol": "VPRPL",
