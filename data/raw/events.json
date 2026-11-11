@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-10T21:54:42Z",
+"fetchedAt": "2026-11-11T00:32:28Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-10T21:54:36Z",
+"fetchedAt": "2026-11-11T00:32:23Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-10T21:54:36Z",
+"fetchedAt": "2026-11-11T00:32:24Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-10T21:54:42Z",
-"count": 818,
+"fetchedAt": "2026-11-11T00:32:28Z",
+"count": 822,
 "error": null
 }
 },
@@ -2240,6 +2240,14 @@
 },
 "events": [
 {
+"symbol": "679GS2027",
+"date": "2026-11-13",
+"kind": "action",
+"title": "Interest payment",
+"detail": "Interest Payment",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=679GS2027"
+},
+{
 "symbol": "694GS2036",
 "date": "2026-11-09",
 "kind": "action",
@@ -4355,6 +4363,14 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 3 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=GPPL"
+},
+{
+"symbol": "GPTHEALTH",
+"date": "2026-11-12",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 1 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=GPTHEALTH"
 },
 {
 "symbol": "GPTINFRA",
@@ -6536,6 +6552,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17673_20261109_224754305_WEB.html"
 },
 {
+"symbol": "PASHUPATI",
+"date": "2026-11-13",
+"kind": "action",
+"title": "Bonus",
+"detail": "Bonus 3:2",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=PASHUPATI"
+},
+{
 "symbol": "PAVNAIND",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -6743,6 +6767,14 @@
 "title": "Results",
 "detail": "PRECOT LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_360_20261027_120911448_WEB.html"
+},
+{
+"symbol": "PRECWIRE",
+"date": "2026-11-13",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 0.35 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=PRECWIRE"
 },
 {
 "symbol": "PREMEXPLN",
