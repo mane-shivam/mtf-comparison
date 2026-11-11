@@ -241,6 +241,17 @@ async function run() {
     const entInt = (200000 - 200000 / 2.89) * 10.99 * 10 / 36500;
     const cash = margin(MANUAL[0]) + (need - 5000 - 10000 + entInt);
     const lakh = (x) => `₹${(x / 1e5).toFixed(2)}L`;
+    // Today and Total P&L: % on total and % on your money, each on its own line.
+    const lines = await p.$$eval('.hero-stat', (els) => els.map((el) => {
+      const sm = [...el.querySelectorAll('small')];
+      return { text: sm.map((x) => x.textContent), stacked: sm.length === 2 && sm[1].getBoundingClientRect().top >= sm[0].getBoundingClientRect().bottom - 1 };
+    }));
+    assert.equal(lines.length, 2);
+    for (const l of lines) {
+      assert.ok(l.stacked, `stacked: ${l.text}`);
+      assert.match(l.text[0], /on total$/);
+      assert.match(l.text[1], /on your money$/);
+    }
     const hero = await text(p, '.hero-sub');
     assert.ok(hero.includes(`${lakh(cash)} your money in the accounts`), `hero shows your money ${lakh(cash)}: "${hero}"`);
     await shot(p, 'positions-phone');

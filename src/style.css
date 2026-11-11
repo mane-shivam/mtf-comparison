@@ -5597,3 +5597,10 @@ body.positions-view .status .dots {
   margin: 0;
   text-align: left;
 }
+
+/* Returns: on total and on your own money always sit on separate lines */
+.hero-stat small,
+.hero-ret,
+small.ret-line {
+  display: block;
+}

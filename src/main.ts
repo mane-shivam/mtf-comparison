@@ -1510,7 +1510,7 @@ function detailsViewHTML(list: Position[]): string {
       <div class="hero-main">
         <span class="hero-label">Net P&amp;L if you sold everything now</span>
         <span class="hero-val ${tone(net)}">${signed(net)}</span>
-        <span class="hero-sub">${pctStr(net, invested, 2)} on total, ${pctStr(net, own)} on your money. Price gain <span class="nw">${signed(gross)}</span>, minus every charge and the interest up to today.</span>
+        <span class="hero-sub"><span class="hero-ret">${pctStr(net, invested, 2)} on total</span><span class="hero-ret">${pctStr(net, own, 2)} on your money</span>Price gain <span class="nw">${signed(gross)}</span>, minus every charge and the interest up to today.</span>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><span>Interest per day</span><b>${inr2(perDay)}</b><small>${inr(perDay * 30)} a month</small></div>
@@ -1646,8 +1646,8 @@ function portfolioHTML(list: Position[]): string {
         <span class="hero-sub">${lakh(invested)} invested, ${lakh(own)} your money in the accounts</span>
       </div>
       <div class="hero-stats is-two">
-        <div class="hero-stat"><span>Today</span><b class="${tone(day)}">${signed(day)}</b><small>${pctStr(day, invested, 2)} on total</small></div>
-        <div class="hero-stat"><span>Total P&amp;L</span><b class="${tone(gross)}">${signed(gross)}</b><small>${pctStr(gross, invested, 2)} on total, ${pctStr(gross, own)} on your money</small></div>
+        <div class="hero-stat"><span>Today</span><b class="${tone(day)}">${signed(day)}</b><small>${pctStr(day, invested, 2)} on total</small><small>${pctStr(day, own, 2)} on your money</small></div>
+        <div class="hero-stat"><span>Total P&amp;L</span><b class="${tone(gross)}">${signed(gross)}</b><small>${pctStr(gross, invested, 2)} on total</small><small>${pctStr(gross, own, 2)} on your money</small></div>
       </div>
     </section>
     ${(() => {
@@ -2298,7 +2298,7 @@ function renderSellPreview() {
         <dt>Price move</dt><dd>${inr2((t.sell - t.buy) * t.qty)}</dd>
         <dt>Charges</dt><dd>−${inr2(t.charges)}</dd>
         <dt>Interest, ${Math.max(0, Math.floor((Date.parse(t.sellDate) - Date.parse(t.buyDate)) / 86_400_000))} days</dt><dd>−${inr2(t.interest)}</dd>
-        <dt>Realised P&amp;L</dt><dd><b class="${t.pnl >= 0 ? 'up' : 'down'}">${t.pnl >= 0 ? '+' : '−'}${inr2(Math.abs(t.pnl)).replace('−', '')}</b><small><span class="cl-t">${((t.pnl / (t.qty * t.buy)) * 100).toFixed(1)}% on total</span>${t.own ? `, ${((t.pnl / t.own) * 100).toFixed(1)}% on own money` : ''}</small></dd>
+        <dt>Realised P&amp;L</dt><dd><b class="${t.pnl >= 0 ? 'up' : 'down'}">${t.pnl >= 0 ? '+' : '−'}${inr2(Math.abs(t.pnl)).replace('−', '')}</b><small class="ret-line"><span class="cl-t">${((t.pnl / (t.qty * t.buy)) * 100).toFixed(1)}% on total</span></small>${t.own ? `<small class="ret-line">${((t.pnl / t.own) * 100).toFixed(1)}% on own money</small>` : ''}</dd>
       </dl>`
     : '<p class="muted small">Enter a quantity up to what you hold, a price and a date on or after the buy date.</p>';
   $<HTMLButtonElement>('#sell-save').disabled = !t;
