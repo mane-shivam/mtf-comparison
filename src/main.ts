@@ -1699,6 +1699,33 @@ async function loadBrokerSnapshot(): Promise<void> {
    syncs agree, so one empty or glitchy response can never wipe a position. */
 
 interface BrokerHolding { sym: string; qty: number; avg: number; mtf: boolean | null; close: number | null }
+// Today's fills per stock, from Kotak's trade book or Rupeezy's day positions: exact prices for new lots and sales.
+interface Fills { buyQty: number; buyVal: number; sellQty: number; sellVal: number }
+
+function todaysFills(b: BrokerKey): Map<string, Fills> {
+  const out = new Map<string, Fills>();
+  const raw = brokerSnap?.brokers[b]?.ok ? (brokerSnap.brokers[b].raw as Record<string, any>) : null;
+  const add = (sym: string, side: 'B' | 'S', qty: number, px: number) => {
+    if (!sym || !(qty > 0) || !(px > 0)) return;
+    const f = out.get(sym) ?? { buyQty: 0, buyVal: 0, sellQty: 0, sellVal: 0 };
+    if (side === 'B') { f.buyQty += qty; f.buyVal += qty * px; } else { f.sellQty += qty; f.sellVal += qty * px; }
+    out.set(sym, f);
+  };
+  if (b === 'kotak' && Array.isArray(raw?.trades?.data)) {
+    for (const t of raw.trades.data as Record<string, unknown>[]) {
+      if (!/^nse/i.test(String(t.exSeg ?? 'nse')) || /MIS|INTRADAY|BO|CO/i.test(String(t.prod ?? ''))) continue;
+      add(cleanSym(t.trdSym ?? t.sym), String(t.trnsTp).toUpperCase().startsWith('S') ? 'S' : 'B', num(t.fldQty ?? t.qty), num(t.avgPrc ?? t.prc));
+    }
+  }
+  if (b === 'rupeezy' && Array.isArray(raw?.positions?.data?.day)) {
+    for (const r of raw.positions.data.day as Record<string, unknown>[]) {
+      if (/INTRADAY|MIS/i.test(String(r.product ?? ''))) continue;
+      add(cleanSym(r.symbol), 'B', num(r.buy_quantity), num(r.buy_price));
+      add(cleanSym(r.symbol), 'S', num(r.sell_quantity), num(r.sell_price));
+    }
+  }
+  return out;
+}
 const RECON_KEY = 'mtf.recon';
 const newId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
 
@@ -1724,6 +1751,15 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
     for (const r of raw.holdings.data as Record<string, unknown>[]) {
       if (r.exchangeSegment && !String(r.exchangeSegment).toLowerCase().startsWith('nse')) continue;
       rows.push({ sym: cleanSym(r.symbol ?? r.displaySymbol), qty: num(r.quantity), avg: num(r.averagePrice), mtf: markerOf(r), close: num(r.closingPrice) || null });
+    }
+    // Kotak's holdings are settled shares only: add today's net fills so a buy shows up the day it's made.
+    if (!raw._errors?.trades) {
+      for (const [sym, f] of todaysFills('kotak')) {
+        const h = rows.find((x) => x.sym === sym);
+        const net = f.buyQty - f.sellQty;
+        if (h) h.qty += net;
+        else if (net > 0) rows.push({ sym, qty: net, avg: f.buyVal / f.buyQty, mtf: null, close: null });
+      }
     }
   } else {
     if (raw._errors?.positions) return null;
@@ -1795,6 +1831,7 @@ function reconcileFromBrokers() {
     if (!held || !at || done[b] === at) continue;
     done[b] = at;
     const anyMarker = held.some((h) => h.mtf !== null);
+    const fills = todaysFills(b);
     const want = new Map(held.map((h) => [h.sym, h]));
     const mine = list.filter((p) => p.broker === b);
     const syms = new Set([...want.keys(), ...mine.map((p) => p.sym)]);
@@ -1810,8 +1847,11 @@ function reconcileFromBrokers() {
         const cur = state.bySymbol.get(sym)?.[b];
         const lev = isMtf && isFunded(cur ?? null) ? cur!.lev : 1;
         const extra = brokerQty - have;
-        // The new shares' price: what the broker's average implies once your tracked lots are taken out.
-        const price = have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
+        // The new shares' price: today's actual fill when the broker reports it, else what the broker's
+        // average implies once your tracked lots are taken out.
+        const fill = fills.get(sym);
+        const price = fill?.buyQty ? fill.buyVal / fill.buyQty
+          : have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
         const lot: Position = { id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' };
         // Brokers pay a new buy's margin from the account's spare margin first (unrealised gains count);
         // only what that doesn't cover is new money.
@@ -1819,16 +1859,21 @@ function reconcileFromBrokers() {
         added += 1;
       } else if (brokerQty < have) {
         const prev = pending[b]?.[sym];
-        if (prev !== brokerQty) {
+        // A sell in today's trade book is the broker's own confirmation; otherwise wait for a second sync.
+        const soldToday = fills.get(sym)?.sellQty ?? 0;
+        if (prev !== brokerQty && !(soldToday && have - brokerQty <= soldToday)) {
           nextPending[sym] = brokerQty; // confirm on the next sync before booking a sale
           continue;
         }
         let toSell = have - brokerQty;
-        const px = state.market?.prices[sym]?.p ?? h?.close ?? lots[0].price;
+        // The actual sell price from today's fills when the broker reports it; the last price otherwise.
+        const sf = fills.get(sym);
+        const exact = !!sf?.sellQty;
+        const px = exact ? sf!.sellVal / sf!.sellQty : state.market?.prices[sym]?.p ?? h?.close ?? lots[0].price;
         for (const lot of lots) {
           if (!toSell) break;
           const q = Math.min(lot.qty, toSell);
-          sales.push({ ...saleResult(lot, q, px, localISO()), est: true });
+          sales.push({ ...saleResult(lot, q, px, localISO()), ...(exact ? {} : { est: true }) });
           list = q >= lot.qty ? list.filter((p) => p.id !== lot.id) : list.map((p) => (p.id === lot.id ? resizeLot(p, p.qty - q) : p));
           toSell -= q;
         }

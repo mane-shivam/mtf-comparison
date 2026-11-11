@@ -77,11 +77,14 @@ function marketFile(prices = PRICES) {
 }
 
 // Broker snapshot as scripts/brokers.py writes it (raw responses, encrypted).
-function snapshot({ kotak = [], rupeezy = [], at = new Date().toISOString(), rupeezyOk = true } = {}) {
+function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date().toISOString(), rupeezyOk = true } = {}) {
+  const trades = kotakTrades
+    ? { trades: { stat: 'Ok', stCode: 200, data: kotakTrades.map(([sym, side, qty, px]) => ({ trdSym: `${sym}-EQ`, sym, trnsTp: side, fldQty: qty, avgPrc: String(px), exSeg: 'nse_cm', prod: 'MTF', flDt: TODAY })) } }
+    : { _errors: { limits: 'bridge API error out', trades: 'no trades' } };
   return {
     at,
     brokers: {
-      kotak: { ok: true, at, raw: { holdings: { data: kotak.map(([symbol, quantity, averagePrice]) => ({ symbol, displaySymbol: `${symbol}-EQ`, quantity, averagePrice, exchangeSegment: 'nse_cm', closingPrice: PRICES[symbol] })) }, _errors: { limits: 'bridge API error out' } } },
+      kotak: { ok: true, at, raw: { holdings: { data: kotak.map(([symbol, quantity, averagePrice]) => ({ symbol, displaySymbol: `${symbol}-EQ`, quantity, averagePrice, exchangeSegment: 'nse_cm', closingPrice: PRICES[symbol] })) }, ...trades } },
       rupeezy: rupeezyOk
         ? { ok: true, at, raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: 12345.6 } } } }
         : { ok: false, at: null, error: 'Rupeezy: not signed in. Tap Connect Rupeezy on the site' },
@@ -303,6 +306,33 @@ async function run() {
     assert.equal(c[0].qty, 120);
     assert.equal(c[0].sell, 1520, 'sold at the fresh price from the quick sync');
     assert.ok(c[0].est);
+    assert.deepEqual(errorsOf.get(p), []);
+    await p.context().close();
+  });
+
+  await scenario("Kotak: today's trades count before settlement, with exact fill prices", async () => {
+    const gh = new FakeGitHub();
+    // Settled holdings still show 300 CDSL and no NUVAMA; today's trade book has a NUVAMA buy and a CDSL sell.
+    gh.put('data/broker.enc.json', await encrypt(snapshot({
+      kotak: [['CDSL', 300, 1302]],
+      kotakTrades: [['NUVAMA', 'B', 50, 1887.25], ['CDSL', 'S', 100, 1512.4]],
+      rupeezy: [['ENTERO', 100, 2000]],
+    })));
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL } });
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 4000);
+    const list = await positions(p);
+    const nuv = list.find((x) => x.sym === 'NUVAMA');
+    assert.ok(nuv, 'NUVAMA bought today shows up before settlement');
+    assert.equal(nuv.qty, 50);
+    assert.equal(nuv.price, 1887.25, 'exact fill price, not a derived average');
+    assert.equal(nuv.lev, lev('NUVAMA', 'kotak'), 'Kotak funds it: MTF at the broker rate');
+    assert.equal(list.find((x) => x.sym === 'CDSL').qty, 200, 'the sell in the trade book books at once');
+    const c = await closed(p);
+    assert.equal(c.length, 1);
+    assert.equal(c[0].sell, 1512.4, 'exact sell price');
+    assert.ok(!c[0].est, 'not marked as estimated');
     assert.deepEqual(errorsOf.get(p), []);
     await p.context().close();
   });
