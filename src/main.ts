@@ -1363,7 +1363,7 @@ function positionSectionHTML(s: Stock): string {
 }
 
 type PosSort = 'risk' | 'pnl' | 'pnlBest' | 'today' | 'ret' | 'size' | 'interest' | 'days' | 'az';
-interface PosView { mode: 'open' | 'closed'; broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
+interface PosView { mode: 'open' | 'details' | 'closed'; broker: 'all' | BrokerKey; status: 'all' | 'short' | 'close' | 'ok'; pnl: 'all' | 'up' | 'down'; results: boolean; sort: PosSort }
 const POS_VIEW_KEY = 'mtf.posView';
 const PS_MORE_KEY = 'mtf.psMore';
 const posView = (): PosView => ({ mode: 'open', broker: 'all', status: 'all', pnl: 'all', results: false, sort: 'risk', ...(store<Partial<PosView>>(POS_VIEW_KEY) ?? {}) });
@@ -1373,8 +1373,9 @@ function positionsViewHTML(): string {
   const list = loadPositions();
   const v0 = posView();
   const closedN = loadClosed().length;
-  const modes = `<div class="seg pr-modes" role="tablist"><button role="tab" data-posmode="open" aria-selected="${v0.mode === 'open'}">Open <span class="count">${list.length || ''}</span></button><button role="tab" data-posmode="closed" aria-selected="${v0.mode === 'closed'}">Closed <span class="count">${closedN || ''}</span></button></div>`;
+  const modes = `<div class="seg pr-modes" role="tablist"><button role="tab" data-posmode="open" aria-selected="${v0.mode === 'open'}">Open <span class="count">${list.length || ''}</span></button><button role="tab" data-posmode="details" aria-selected="${v0.mode === 'details'}">Details</button><button role="tab" data-posmode="closed" aria-selected="${v0.mode === 'closed'}">Closed <span class="count">${closedN || ''}</span></button></div>`;
   if (v0.mode === 'closed') return modes + closedViewHTML();
+  if (v0.mode === 'details') return modes + (list.length ? detailsViewHTML(list) : '<div class="empty"><p class="empty-title">No open positions</p></div>');
   if (!list.length) {
     return modes + `<div class="empty"><p class="empty-title">No positions yet</p><p>Paste your holdings with “Import holdings”, or open any stock and add it from its Position tab. You'll see live P&amp;L, charges, interest so far, break-even and how much cushion is left before a margin top-up. Positions stay on this device.</p></div>`;
   }
@@ -1457,6 +1458,63 @@ function holdingRowHTML(h: Holding): string {
     </button>`;
 }
 
+/* Details: what holding costs and what you'd keep. Interest is charged by the brokers on the funded part
+   (value at purchase − initial margin, whether that margin came from cash or spare margin), from T+1, every
+   calendar day including weekends, up to the day you sell. "So far" therefore includes today. */
+function detailsViewHTML(list: Position[]): string {
+  const hs = holdingsOf(list).sort((a, b) => b.ms.reduce((t, m) => t + m.perDay, 0) - a.ms.reduce((t, m) => t + m.perDay, 0));
+  const all = list.map(posMetrics);
+  const sum = (f: (m: PosMetrics) => number, ms = all) => ms.reduce((t, m) => t + f(m), 0);
+  const net = sum((m) => m.net ?? 0);
+  const gross = sum((m) => m.gross ?? 0);
+  const invested = sum((m) => m.invested);
+  const own = sum((m) => m.own);
+  const funded = sum((m) => m.funded);
+  const perDay = sum((m) => m.perDay);
+  const interest = sum((m) => m.interest);
+  const rates = brokerRates();
+  const saving = (b: BrokerKey) => inr((100000 * rates[b].interest) / 1200);
+  const per = BROKERS.map((b) => {
+    const ms = list.filter((p) => p.broker === b).map(posMetrics);
+    return ms.length ? { b, funded: sum((m) => m.funded, ms), perDay: sum((m) => m.perDay, ms), interest: sum((m) => m.interest, ms) } : null;
+  }).filter(Boolean) as { b: BrokerKey; funded: number; perDay: number; interest: number }[];
+  return `<section class="hero">
+      <div class="hero-main">
+        <span class="hero-label">Net P&amp;L if you sold everything now</span>
+        <span class="hero-val ${tone(net)}">${signed(net)}</span>
+        <span class="hero-sub">${pctStr(net, invested, 2)} on total, ${pctStr(net, own)} on your cash. Price gain <span class="nw">${signed(gross)}</span>, minus every charge and the interest up to today.</span>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span>Interest per day</span><b>${inr2(perDay)}</b><small>${inr(perDay * 30)} a month</small></div>
+        <div class="hero-stat"><span>Interest so far</span><b>${inr(interest)}</b><small>including today</small></div>
+        <div class="hero-stat"><span>Broker's money</span><b>${lakh(funded)}</b><small>what interest is charged on</small></div>
+      </div>
+    </section>
+    <section class="dt">
+      <h2>Interest by broker</h2>
+      <div class="dt-cards">${per.map((x) => `<div class="dt-card"><b>${BROKER_NAME[x.b]}</b><span>${rates[x.b].interest}% a year on ${lakh(x.funded)}</span><span><strong>${inr2(x.perDay)}</strong> a day, ${inr(x.interest)} so far</span><small>Paying back ₹1 L saves ${saving(x.b)} a month.</small></div>`).join('')}</div>
+      <h2>Interest by position</h2>
+      <div class="dt-table" role="table">
+        <div class="dt-row dt-headrow" role="row"><span>Stock</span><span>Broker's money</span><span>Per day</span><span>So far</span></div>
+        ${hs.map((h) => {
+          const f = h.ms.reduce((t, m) => t + m.funded, 0);
+          const d = h.ms.reduce((t, m) => t + m.perDay, 0);
+          const so = h.ms.reduce((t, m) => t + m.interest, 0);
+          const days = Math.max(...h.ms.map((m) => m.days));
+          return `<button class="dt-row" role="row" data-open-pos="${esc(h.sym)}"><span><b>${esc(h.sym)}</b><small>${days ? `${days} day${days === 1 ? '' : 's'}` : 'Starts tomorrow'}, ${BROKER_SHORT[h.broker]} ${rates[h.broker].interest}%</small></span><span>${lakh(f)}</span><span>${inr2(d)}</span><span>${inr(so)}</span></button>`;
+        }).join('')}
+      </div>
+      <h2>Charges</h2>
+      <div class="pf-stats">
+        <div><span>Paid when buying</span><b>${inr(sum((m) => m.costs.buySide))}</b><small>brokerage, stamp duty, exchange fees, pledge and their GST</small></div>
+        <div><span>Due when you sell</span><b>${inr(sum((m) => m.costs.sellSide))}</b><small>STT, brokerage, DP and unpledge charges and their GST</small></div>
+      </div>
+      <h2>Realised</h2>
+      <div class="pf-more">${overallHTML(signed)}</div>
+      <p class="dt-note">Interest runs on the broker's money (value at purchase minus the initial margin, whether that margin came from cash or spare margin), from the day after you buy, every calendar day including weekends, up to the day you sell. Kotak keeps it in your MTF ledger and moves it to your main ledger when you close the whole MTF position; it's counted against your equity here as it builds up.</p>
+    </section>`;
+}
+
 function portfolioHTML(list: Position[]): string {
   const v = posView();
   const all = list.map((p) => ({ p, m: posMetrics(p) }));
@@ -1467,7 +1525,6 @@ function portfolioHTML(list: Position[]): string {
   const value = sum((m) => m.value ?? m.invested);
   const gross = sum((m) => m.gross ?? 0);
   const day = sum((m) => m.day ?? 0);
-  const net = sum((m) => m.net ?? 0);
   const fromSpare = sum((m) => Math.max(0, m.marginAtBuy - m.own));
   const accts = accounts(list);
   const shown = hs.filter((h) =>
@@ -1494,19 +1551,15 @@ function portfolioHTML(list: Position[]): string {
     up: hs.filter((h) => (h.gross ?? 0) >= 0).length, down: hs.filter((h) => (h.gross ?? 0) < 0).length,
     results: hs.filter((h) => nextResult(h.sym)).length,
   };
-  const perDay = sum((m) => m.perDay);
-  const rates = brokerRates();
-  const saving = (b: BrokerKey) => inr((100000 * rates[b].interest) / 1200);
   return `<section class="hero">
       <div class="hero-main">
         <span class="hero-label">Current value</span>
         <span class="hero-val">${inr(value)}</span>
         <span class="hero-sub">${lakh(invested)} invested, ${lakh(own)} your cash${fromSpare > 0.5 ? `, ${lakh(fromSpare)} from spare margin` : ''}</span>
       </div>
-      <div class="hero-stats">
+      <div class="hero-stats is-two">
         <div class="hero-stat"><span>Today</span><b class="${tone(day)}">${signed(day)}</b><small>${pctStr(day, invested, 2)} on total</small></div>
         <div class="hero-stat"><span>Total P&amp;L</span><b class="${tone(gross)}">${signed(gross)}</b><small>${pctStr(gross, invested, 2)} on total, ${pctStr(gross, own)} on your cash</small></div>
-        <div class="hero-stat"><span>If sold now</span><b class="${tone(net)}">${signed(net)}</b><small>after charges and interest</small></div>
       </div>
     </section>
     ${(() => {
@@ -1527,13 +1580,6 @@ function portfolioHTML(list: Position[]): string {
         ['results', '1', 'Results due', v.results, counts.results]] as [string, string, string, boolean, number][])
         .filter(([, , , on, n]) => on || n).map(([k, val, l, on, n]) => `<button class="chip${on ? ' on' : ''}" data-posf="${k}:${val}" aria-pressed="${on}">${l} <span class="count">${n}</span></button>`).join('')}</div>
       <div class="hr-list">${shown.length ? shown.map(holdingRowHTML).join('') : '<p class="empty">No holdings match. Clear a filter to see all.</p>'}</div>
-    </section>
-    <section class="pf-more">
-      ${overallHTML(signed)}
-      <div class="pf-stats">
-        <div><span>Interest</span><b>${inr(perDay)} a day</b><small>${inr(perDay * 30)} a month, ${inr(sum((m) => m.interest))} so far. Paying back ₹1 L saves ${saving('kotak')} a month at Kotak, ${saving('rupeezy')} at Rupeezy.</small></div>
-        <div><span>Charges</span><b>${inr(sum((m) => m.costs.fixed))}</b><small>${inr(sum((m) => m.costs.buySide))} paid, ${inr(sum((m) => m.costs.sellSide))} more when you sell</small></div>
-      </div>
     </section>`;
 }
 

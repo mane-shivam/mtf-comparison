@@ -5329,3 +5329,104 @@ body.positions-view .status .dots {
   outline: 2px solid var(--up-soft);
   outline-offset: 2px;
 }
+
+/* Positions: Open · Details · Closed */
+.hero-stats.is-two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-stats.is-two .hero-stat:last-child {
+  grid-column: auto;
+}
+
+.hero-val.up { color: var(--up-soft); }
+.hero-val.down { color: var(--down-soft); }
+
+.dt h2 {
+  margin: 22px 2px 10px;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.dt-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.dt-card {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--surface);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.dt-card span { color: var(--muted); }
+.dt-card strong { color: var(--text); font-weight: 600; }
+.dt-card small { color: var(--faint-2); font-size: 11.5px; }
+
+.dt-table {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.dt-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.dt-row > span:first-child {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  text-align: left;
+}
+
+.dt-row small {
+  overflow: hidden;
+  color: var(--faint-2);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dt-headrow {
+  border-top: 0;
+  color: var(--faint-2);
+  font-size: 11.5px;
+  cursor: default;
+}
+
+.dt-note {
+  margin: 18px 2px 4px;
+  color: var(--faint-2);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .hero-stats.is-two .hero-stat:last-child { grid-column: auto; }
+}
+
+.nw { white-space: nowrap; }
+
+.dt-row small {
+  white-space: normal;
+}

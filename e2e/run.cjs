@@ -337,6 +337,33 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('Details tab: net if sold now, interest per day and so far, by broker and position', async () => {
+    const gh = await seededSync();
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.posView': { mode: 'details', sort: 'risk' } } });
+    await p.goto(url);
+    await p.waitForSelector('.dt');
+    await settle(p, 4000);
+    const list = await positions(p);
+    // Interest = broker's money (value at purchase - initial margin) x rate / 365, per calendar day since buying.
+    const rate = { kotak: 9.69, rupeezy: 10.99 };
+    const funded = (x) => x.qty * x.price - (x.qty * x.price) / x.lev;
+    const perDay = list.reduce((t, x) => t + (funded(x) * rate[x.broker]) / 36500, 0);
+    const hero = await text(p, '.hero');
+    assert.match(hero, /^Net P&L if you sold everything now [+−]₹[\d,]+/);
+    const shown = Number(hero.match(/Interest per day ₹([\d,.]+)/)[1].replace(/,/g, ''));
+    assert.ok(Math.abs(shown - perDay) < 1, `per day ₹${shown} vs ₹${perDay.toFixed(2)}`);
+    const cdsl = await text(p, '.dt-row[data-open-pos="CDSL"]');
+    const cdslSoFar = Math.round((funded(MANUAL[0]) * 9.69 * 20) / 36500);
+    assert.match(cdsl, /CDSL 20 days, Kotak 9.69%/);
+    assert.ok(cdsl.endsWith(`₹${cdslSoFar.toLocaleString('en-IN')}`), `CDSL so far ₹${cdslSoFar}: "${cdsl}"`);
+    assert.match(await text(p, '.dt-row[data-open-pos="NUVAMA"]'), /Starts tomorrow/);
+    assert.match(await text(p, '.dt'), /Interest by broker Kotak Neo 9.69% a year/);
+    await noOverflow(p);
+    await shot(p, 'details-phone');
+    assert.deepEqual(errorsOf.get(p), []);
+    await p.context().close();
+  });
+
   await scenario('Connect Rupeezy saves the sign-in code encrypted and starts the quick sync', async () => {
     const gh = new FakeGitHub();
     gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 100, 1302]], rupeezyOk: false })));
@@ -422,10 +449,11 @@ async function run() {
   for (const [w, h, tag] of [[360, 780, 'small-phone'], [430, 932, 'large-phone'], [1280, 900, 'desktop']]) {
     await scenario(`layout at ${w}px: no sideways scroll, no errors`, async () => {
       const gh = await seededSync();
-      for (const view of ['positions', 'pinned', 'all']) {
-        const p = await page({ gh, width: w, height: h, storage: { 'mtf.positions': MANUAL, 'mtf.view': view } });
+      for (const view of ['positions', 'details', 'closed', 'pinned', 'all']) {
+        const mode = ['details', 'closed'].includes(view) ? view : 'open';
+        const p = await page({ gh, width: w, height: h, storage: { 'mtf.positions': MANUAL, 'mtf.view': ['details', 'closed'].includes(view) ? 'positions' : view, 'mtf.posView': { mode, sort: 'risk' } } });
         await p.goto(url);
-        await p.waitForSelector(view === 'positions' ? '.hero' : '.row');
+        await p.waitForSelector(view === 'positions' || view === 'details' ? '.hero' : view === 'closed' ? '.pr-modes' : '.row');
         await settle(p, 2500);
         await noOverflow(p);
         await shot(p, `${view}-${tag}`);
