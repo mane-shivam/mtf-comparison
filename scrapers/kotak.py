@@ -6,8 +6,10 @@ the `totalPages` value embedded in the page (falls back to the pager links).
 
 from __future__ import annotations
 
+import random
 import re
 import sys
+import time
 
 from bs4 import BeautifulSoup
 
@@ -59,13 +61,35 @@ def parse_page(html: str) -> tuple[list[dict], int]:
     return rows, total
 
 
+def fetch(s: PoliteSession, page: int, want_total: int | None = None, tries: int = 8) -> tuple[list[dict], int]:
+    """One page from the wanted version of the list.
+
+    Kotak's servers can serve two versions of the list at once (seen 11 Nov 2026: 57 and 114 pages,
+    sorted differently). Pages mixed from both repeat some stocks and miss others, so a page from the
+    other version, or one without its table, is fetched again with a cache-busting query.
+    """
+    last: Exception | None = None
+    for attempt in range(tries):
+        url = BASE.format(page=page) + f"?v={random.randint(1, 10**9)}"
+        try:
+            rows, total = parse_page(s.get(url).text)
+            if want_total is None or total == want_total:
+                return rows, total
+            last = ValueError(f"page {page} came from another version of the list ({total} pages, want {want_total})")
+        except ValueError as e:
+            last = e
+        time.sleep(1 + attempt)
+    raise last or ValueError(f"page {page} failed")
+
+
 def scrape() -> list[dict]:
     s = PoliteSession(referer="https://www.kotakneo.com/")
-    rows, total = parse_page(s.get(BASE.format(page=1)).text)
-    print(f"[kotak] {total} pages")
+    # Pick the newest version: the one with the most pages among a few looks at page 1.
+    first = [fetch(s, 1) for _ in range(3)]
+    rows, total = max(first, key=lambda x: x[1])
+    print(f"[kotak] {total} pages (versions seen: {sorted({t for _, t in first})})")
     for page in range(2, total + 1):
-        page_rows, _ = parse_page(s.get(BASE.format(page=page)).text)
-        rows.extend(page_rows)
+        rows.extend(fetch(s, page, total)[0])
     # The site occasionally repeats a row across a page boundary.
     seen, out = set(), []
     for r in rows:

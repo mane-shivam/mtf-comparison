@@ -70,6 +70,9 @@ def to_float(v) -> float | None:
         return None
 
 
+MAX_FUNDED_DROP = 0.15
+
+
 def run_scraper(broker: str, scrape: Callable[[], list[dict]], min_rows: int) -> int:
     """Run a scraper and write data/raw/<broker>.json on success.
 
@@ -85,6 +88,14 @@ def run_scraper(broker: str, scrape: Callable[[], list[dict]], min_rows: int) ->
         rows = scrape()
         if len(rows) < min_rows:
             raise RuntimeError(f"only {len(rows)} rows scraped (expected at least {min_rows})")
+        # A half-loaded list (the site changing mid-scrape) can still pass the row check. Brokers don't
+        # stop funding 15% of their list in an hour, so a drop that size is treated as a failed scrape.
+        if out.exists():
+            funded = lambda rs: sum(1 for r in rs if (r.get("lev") or 0) > 1)  # noqa: E731
+            before = funded(json.loads(out.read_text()).get("rows", []))
+            now = funded(rows)
+            if before and now < before * (1 - MAX_FUNDED_DROP):
+                raise RuntimeError(f"funded stocks fell from {before} to {now}: looks like a partial list, kept the last good one")
         payload = {"broker": broker, "fetchedAt": now_iso(), "count": len(rows), "rows": rows}
         out.write_text(json.dumps(payload, indent=0, ensure_ascii=False) + "\n")
         err_file.unlink(missing_ok=True)

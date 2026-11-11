@@ -128,50 +128,10 @@
 "at": "2026-11-11T04:32:50Z"
 },
 {
-"symbol": "ETERNAL",
-"name": "ETERNAL LIMITED",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 4.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "SAREGAMA",
-"name": "Saregama India Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.9×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "PTCIL",
-"name": "PTC Industries Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "CRISIL",
-"name": "Crisil Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
 "symbol": "AARTIIND",
 "name": "Aarti Industries Limited",
 "level": "info",
 "text": "Up 5.3% today at ₹484.40",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "GVT&D",
-"name": "GE Vernova T&D India Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
 "link": null,
 "at": "2026-11-11T05:32:52Z"
 },
@@ -186,152 +146,8 @@
 {
 "symbol": "NAVINFLUOR",
 "name": "Navin Fluorine International Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 4.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "NAVINFLUOR",
-"name": "Navin Fluorine International Limited",
 "level": "good",
 "text": "At a 52-week high (₹9,267.50)",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "NSE",
-"name": "NSE",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "PRIVISCL",
-"name": "Privi Speciality Chemicals Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.2×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "RATEGAIN",
-"name": "Rategain Travel Technologies Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.8×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "SAILIFE",
-"name": "Sai Life Sciences Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.1×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "SKIPPER",
-"name": "Skipper Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.8×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "WOCKPHARMA",
-"name": "Wockhardt Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.7×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "QPOWER",
-"name": "Quality Power Electrical Equipments Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "INOXINDIA",
-"name": "INOX India Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.9×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "COFORGE",
-"name": "Coforge Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.9×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "CUMMINSIND",
-"name": "Cummins India Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 4.2×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "GRAPHITE",
-"name": "Graphite India Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.8×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "INDOMIM",
-"name": "INDO-MIM Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "SANSERA",
-"name": "Sansera Engineering Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.9×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "MON100",
-"name": "MOTILAL OS NASDAQ100 ETF",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 4.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "UNOMINDA",
-"name": "UNO Minda Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.3×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "SJS",
-"name": "S.J.S. Enterprises Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 3.0×). Convert or close an existing position.",
-"link": null,
-"at": "2026-11-11T05:32:52Z"
-},
-{
-"symbol": "GRWRHITECH",
-"name": "Garware Hi-Tech Films Limited",
-"level": "alert",
-"text": "Dropped from Kotak Neo MTF (was 2.5×). Convert or close an existing position.",
 "link": null,
 "at": "2026-11-11T05:32:52Z"
 },
@@ -382,5 +198,29 @@
 "text": "At a 52-week high (₹930.75)",
 "link": null,
 "at": "2026-11-11T07:32:21Z"
+},
+{
+"symbol": "ACUTAAS",
+"name": "Acutaas Chemicals Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 2.0× → 2.7×: you need less margin",
+"link": null,
+"at": "2026-11-11T08:07:10Z"
+},
+{
+"symbol": "ATHERENERG",
+"name": "Ather Energy Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 2.0× → 2.9×: you need less margin",
+"link": null,
+"at": "2026-11-11T08:07:10Z"
+},
+{
+"symbol": "DIVISLAB",
+"name": "Divi's Laboratories Limited",
+"level": "watch",
+"text": "Kotak Neo leverage cut 4.8× → 4.7×: you need more margin",
+"link": null,
+"at": "2026-11-11T08:07:10Z"
 }
 ]

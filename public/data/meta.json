@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T07:32:21Z",
+  "generatedAt": "2026-11-11T08:07:10Z",
   "surveillance": {
     "fetchedAt": "2026-11-11T07:31:46Z",
     "sources": {
@@ -69,11 +69,11 @@
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-11T05:31:48Z",
-      "count": 1123,
-      "status": "stale",
-      "error": "MTF table not found on Kotak page",
-      "matched": 1123
+      "fetchedAt": "2026-11-11T08:07:04Z",
+      "count": 1706,
+      "status": "ok",
+      "error": null,
+      "matched": 1706
     },
     "rupeezy": {
       "fetchedAt": "2026-11-11T07:31:43Z",
@@ -83,6 +83,6 @@
       "matched": 2210
     }
   },
-  "total": 2215,
+  "total": 2228,
   "unmatched": 0
 }

@@ -1,34 +1,26 @@
 [
  {
+  "symbol": "ACUTAAS",
+  "name": "Acutaas Chemicals Limited",
+  "level": "good",
+  "text": "Kotak Neo leverage up 2.0× → 2.7×: you need less margin",
+  "link": null,
+  "at": "2026-11-11T08:07:10Z"
+ },
+ {
   "symbol": "ATHERENERG",
   "name": "Ather Energy Limited",
   "level": "good",
-  "text": "At a 52-week high (₹1,899.60)",
+  "text": "Kotak Neo leverage up 2.0× → 2.9×: you need less margin",
   "link": null,
-  "at": "2026-11-11T07:32:21Z"
+  "at": "2026-11-11T08:07:10Z"
  },
  {
-  "symbol": "MCX",
-  "name": "Multi Commodity Exchange of India Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹3,604.90)",
+  "symbol": "DIVISLAB",
+  "name": "Divi's Laboratories Limited",
+  "level": "watch",
+  "text": "Kotak Neo leverage cut 4.8× → 4.7×: you need more margin",
   "link": null,
-  "at": "2026-11-11T07:32:21Z"
- },
- {
-  "symbol": "SAILIFE",
-  "name": "Sai Life Sciences Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,926.00)",
-  "link": null,
-  "at": "2026-11-11T07:32:21Z"
- },
- {
-  "symbol": "SONACOMS",
-  "name": "Sona BLW Precision Forgings Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹930.75)",
-  "link": null,
-  "at": "2026-11-11T07:32:21Z"
+  "at": "2026-11-11T08:07:10Z"
  }
 ]
