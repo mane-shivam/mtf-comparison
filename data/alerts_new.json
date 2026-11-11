@@ -1,42 +1,26 @@
 [
  {
-  "symbol": "CDSL",
-  "name": "Central Depository Services (India) Limited",
+  "symbol": "NAVINFLUOR",
+  "name": "Navin Fluorine International Limited",
   "level": "info",
   "text": "Volume 3.1× the 20-day average",
   "link": null,
-  "at": "2026-11-11T09:35:53Z"
+  "at": "2026-11-11T09:45:46Z"
  },
  {
-  "symbol": "MANINDS",
-  "name": "Man Industries (India) Limited",
+  "symbol": "TIMETECHNO",
+  "name": "Time Technoplast Limited",
   "level": "info",
-  "text": "Up 5.2% today at ₹836.60",
+  "text": "Volume 3.0× the 20-day average",
   "link": null,
-  "at": "2026-11-11T09:35:53Z"
+  "at": "2026-11-11T09:45:46Z"
  },
  {
-  "symbol": "FLUOROCHEM",
-  "name": "Gujarat Fluorochemicals Limited",
-  "level": "info",
-  "text": "Up 5.7% today at ₹4,835.10",
+  "symbol": "ENTERO",
+  "name": "Entero Healthcare Solutions Limited",
+  "level": "watch",
+  "text": "Down 5.2% today at ₹2,003.80",
   "link": null,
-  "at": "2026-11-11T09:35:53Z"
- },
- {
-  "symbol": "MTARTECH",
-  "name": "Mtar Technologies Limited",
-  "level": "info",
-  "text": "At or near the upper circuit (5% band)",
-  "link": null,
-  "at": "2026-11-11T09:35:53Z"
- },
- {
-  "symbol": "NAVINFLUOR",
-  "name": "Navin Fluorine International Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹9,649.00)",
-  "link": null,
-  "at": "2026-11-11T09:35:53Z"
+  "at": "2026-11-11T09:45:46Z"
  }
 ]

@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T09:35:25Z",
+"fetchedAt": "2026-11-11T09:45:18Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T09:35:19Z",
+"fetchedAt": "2026-11-11T09:45:13Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T09:35:19Z",
+"fetchedAt": "2026-11-11T09:45:14Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T09:35:25Z",
-"count": 851,
+"fetchedAt": "2026-11-11T09:45:18Z",
+"count": 852,
 "error": null
 }
 },
@@ -7149,6 +7149,15 @@
 "title": "Results",
 "detail": "RAMA STEEL TUBES LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_12986_20261106_123744916_WEB.html"
+},
+{
+"symbol": "RAMCOIND",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Ramco Industries Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.com/corporate/RAMCOIND_11112026150745_Reply_to_BSE_Query_09112026.pdf"
 },
 {
 "symbol": "RANASUG",
