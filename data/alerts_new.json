@@ -1,26 +1,18 @@
 [
  {
-  "symbol": "NAVINFLUOR",
-  "name": "Navin Fluorine International Limited",
-  "level": "info",
-  "text": "Volume 3.1× the 20-day average",
+  "symbol": "ANANDRATHI",
+  "name": "Anand Rathi Wealth Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹2,385.00)",
   "link": null,
-  "at": "2026-11-11T09:45:46Z"
+  "at": "2026-11-11T10:35:44Z"
  },
  {
-  "symbol": "TIMETECHNO",
-  "name": "Time Technoplast Limited",
+  "symbol": "BANKBEES",
+  "name": "Nippon India ETF Nifty Bank BeES",
   "level": "info",
   "text": "Volume 3.0× the 20-day average",
   "link": null,
-  "at": "2026-11-11T09:45:46Z"
- },
- {
-  "symbol": "ENTERO",
-  "name": "Entero Healthcare Solutions Limited",
-  "level": "watch",
-  "text": "Down 5.2% today at ₹2,003.80",
-  "link": null,
-  "at": "2026-11-11T09:45:46Z"
+  "at": "2026-11-11T10:35:44Z"
  }
 ]

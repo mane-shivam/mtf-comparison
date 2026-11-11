@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T09:45:18Z",
+"fetchedAt": "2026-11-11T10:35:16Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T09:45:13Z",
+"fetchedAt": "2026-11-11T10:35:09Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T09:45:14Z",
+"fetchedAt": "2026-11-11T10:35:10Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T09:45:18Z",
-"count": 852,
+"fetchedAt": "2026-11-11T10:35:16Z",
+"count": 858,
 "error": null
 }
 },
@@ -2529,6 +2529,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13899_20261029_172307538_WEB.html"
 },
 {
+"symbol": "ALGOQUANT",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "ALGOQUANT FINTECH LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27283_20261111_155821320_WEB.html"
+},
+{
 "symbol": "ALICON",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -2567,6 +2575,15 @@
 "title": "Results",
 "detail": "ALPS INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1352_20261103_171809731_WEB.html"
+},
+{
+"symbol": "AMAGI",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Amagi Media Labs Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/AMAGI_ROID_104566_KMP_Doc.zip"
 },
 {
 "symbol": "AMBER",
@@ -3753,6 +3770,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_255_20261105_183943445_WEB.html"
 },
 {
+"symbol": "DHAMPURSUG",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "DHAMPUR SUGAR MILLS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_783_20261111_155846711_WEB.html"
+},
+{
 "symbol": "DHARSUGAR",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -4287,6 +4312,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17492_20261106_181925701_WEB.html"
 },
 {
+"symbol": "GEEKAYWIRE",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Geekay Wires Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/GEEKAYWIRE_11112026154546_FORM_C_GD_HUF.PDF"
+},
+{
 "symbol": "GENCON",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -4540,8 +4574,8 @@
 "date": "2026-11-11",
 "kind": "result",
 "title": "Results out",
-"detail": "Garden Reach Shipbuilders & Engineers Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
-"link": "https://nsearchives.nseindia.com/corporate/GRSE_11112026144558_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf"
+"detail": "Unaudited Financial Results along with the Limited Review Report for the Quarter and Half Year Ended 30th September, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/GRSE_11112026153634_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf"
 },
 {
 "symbol": "GSPCROP",
@@ -4638,6 +4672,15 @@
 "title": "Results",
 "detail": "Gyftr Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28530_20261104_144319253_WEB.html"
+},
+{
+"symbol": "HAL",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Hindustan Aeronautics Limited has informed the Exchange about Credit Rating- withdrawal",
+"link": "https://nsearchives.nseindia.com/corporate/HAL_11112026153259_WithdrawalOfRating_11112026.pdf"
 },
 {
 "symbol": "HAL",
@@ -7971,6 +8014,14 @@
 "title": "Results",
 "detail": "SHANKAR LAL RAMPAL DYE-CHEM LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_23651_WebXMLFile_20261103_123639827.xml"
+},
+{
+"symbol": "SRD",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Shankar Lal Rampal Dye-Chem Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/SRD2024_11112026155914_final_pdf_signed.pdf"
 },
 {
 "symbol": "SREEL",
