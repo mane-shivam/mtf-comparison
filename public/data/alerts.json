@@ -38,5 +38,21 @@
 "text": "Exchange margin 50% → 22%",
 "link": null,
 "at": "2026-11-10T20:34:29Z"
+},
+{
+"symbol": "ACUTAAS",
+"name": "Acutaas Chemicals Limited",
+"level": "good",
+"text": "Rupeezy leverage up 1.6× → 2.7×: you need less margin",
+"link": null,
+"at": "2026-11-11T03:32:55Z"
+},
+{
+"symbol": "ATHERENERG",
+"name": "Ather Energy Limited",
+"level": "good",
+"text": "Rupeezy leverage up 1.8× → 3.4×: you need less margin",
+"link": null,
+"at": "2026-11-11T03:32:55Z"
 }
 ]
