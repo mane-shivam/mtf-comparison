@@ -5430,3 +5430,79 @@ body.positions-view .status .dots {
 .dt-row small {
   white-space: normal;
 }
+
+/* Broker ledgers (Details) */
+.lg-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.lg-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--surface);
+  font-variant-numeric: tabular-nums;
+}
+
+.lg-h {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.lg-h span {
+  color: var(--faint-2);
+  font-size: 12px;
+}
+
+.lg-gain {
+  display: grid;
+  gap: 2px;
+}
+
+.lg-gain span,
+.lg-gain small {
+  color: var(--faint-2);
+  font-size: 11.5px;
+}
+
+.lg-gain b {
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.lg-gain .up { color: var(--up-soft); }
+.lg-gain .down { color: var(--down-soft); }
+
+.lg-kv {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.lg-kv span {
+  color: var(--muted);
+}
+
+.lg-kv b {
+  font-weight: 600;
+  text-align: right;
+}
+
+.lg-kv small {
+  grid-column: 1 / -1;
+  margin: -1px 0 6px;
+  color: var(--faint-2);
+  font-size: 11px;
+}
+
+.lg-kv small:empty {
+  display: none;
+}

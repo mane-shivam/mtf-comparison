@@ -1,5 +1,6 @@
 import './style.css';
 import { computeCosts, STATUTORY, type BrokerRates, type CostBreakdown } from './calc';
+import { parseLedger, type LedgerSummary } from './ledger';
 
 type BrokerKey = 'kotak' | 'rupeezy';
 
@@ -884,7 +885,7 @@ function renderList() {
     document.body.classList.remove('searching');
     $('#list').innerHTML = positionsViewHTML();
     $('#list-head').hidden = true;
-    $('#list-foot').innerHTML = `<details class="manage"${loadPositions().length ? '' : ' open'}><summary>Manage positions</summary><div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}</details>`;
+    $('#list-foot').innerHTML = `<details class="manage"${loadPositions().length ? '' : ' open'}><summary>Manage positions</summary><div class="pin-actions"><button class="btn btn-primary" data-import-holdings>Import holdings</button><button class="btn btn-ghost" id="pos-export">Export file</button><label class="btn btn-ghost">Import file<input type="file" id="pos-import" accept="application/json,.json" hidden /></label><label class="btn btn-ghost">Import broker ledger<input type="file" class="ledger-import" accept=".csv,text/csv" multiple hidden /></label>${loadPositions().length ? '<button class="btn btn-ghost btn-danger" id="pos-clear">Remove all positions</button>' : ''}</div>${posSyncHTML()}</details>`;
     $('#pin-count').textContent = state.pins.length ? String(state.pins.length) : '';
     return;
   }
@@ -1511,8 +1512,74 @@ function detailsViewHTML(list: Position[]): string {
       </div>
       <h2>Realised</h2>
       <div class="pf-more">${overallHTML(signed)}</div>
+      ${ledgerSectionHTML(list)}
       <p class="dt-note">Interest runs on the broker's money (value at purchase minus the initial margin, whether that margin came from cash or spare margin), from the day after you buy, every calendar day including weekends, up to the day you sell. Kotak keeps it in your MTF ledger and moves it to your main ledger when you close the whole MTF position; it's counted against your equity here as it builds up.</p>
     </section>`;
+}
+
+/* ---------- broker ledgers ---------- */
+
+async function importLedgers(files: File[]) {
+  const got = store<Record<string, LedgerSummary>>(LEDGER_KEY) ?? {};
+  const done: string[] = [];
+  for (const f of files) {
+    const s = parseLedger(await f.text());
+    if (!s) { toast(`${f.name} isn't a Kotak or Rupeezy ledger CSV`); continue; }
+    got[s.broker] = s;
+    done.push(`${BROKER_SHORT[s.broker]} ${shortDate(s.from)} to ${shortDate(s.to)}`);
+  }
+  if (!done.length) return;
+  store(LEDGER_KEY, got);
+  positionsChanged();
+  store(POS_VIEW_KEY, { ...posView(), mode: 'details' });
+  toast(`Ledger imported: ${done.join(', ')}`);
+  render();
+}
+
+function ledgerSectionHTML(list: Position[]): string {
+  const led = store<Record<string, LedgerSummary>>(LEDGER_KEY) ?? {};
+  const cards = BROKERS.map((b) => {
+    const l = led[b];
+    if (!l) return '';
+    const ms = list.filter((p) => p.broker === b).map(posMetrics);
+    const unreal = ms.reduce((t, m) => t + (m.gross ?? 0), 0);
+    const accrued = ms.reduce((t, m) => t + m.interest, 0);
+    const net = l.deposits - l.withdrawals;
+    const inMargin = l.marginBlocked - l.marginReleased;
+    const fromStart = Math.abs(l.opening) < 1; // the statement starts when the account did: totals are lifetime
+    const row = (k: string, v: string, note = '') => `<span>${k}</span><b>${v}</b>${note ? `<small>${note}</small>` : '<small></small>'}`;
+    const rows = b === 'kotak'
+      ? [
+          row('Your money in the account', inr(l.closing + inMargin), 'free cash + margin in positions'),
+          row('Free cash now', inr(l.closing), `on ${shortDate(l.to)}`),
+          row('In MTF margin', inr(inMargin), `${inr(l.marginBlocked)} blocked, ${inr(l.marginReleased)} released`),
+          row('Money added', inr(net), `${inr(l.deposits)} in, ${inr(l.withdrawals)} out`),
+          row('Profit booked', signed(l.booked ?? 0), 'on positions closed'),
+          row('Interest debited', inr(l.interest), 'taken when positions close'),
+          row('Charges', inr(l.charges), 'demat, subscription'),
+        ]
+      : [
+          row('Free cash now', inr(l.closing), `on ${shortDate(l.to)}`),
+          row('Money added', inr(net), `${inr(l.deposits)} in${l.withdrawals ? `, ${inr(l.withdrawals)} out` : ''}`),
+          row('Margin and MTM', signed(l.mtmNet), 'net daily settlement with the MTF ledger'),
+          row('Excess margin returned', inr(l.marginReleased), 'released to cash the next day'),
+          row('Charges', inr(l.charges), 'DP, pledge, unpledge'),
+          row('Interest', '—', 'kept in the MTF ledger, not this one'),
+        ];
+    // Account value if everything were sold now (before sale charges): free cash + cash still in MTF margin
+    // + unrealised P&L - interest accrued and not yet debited. Margin released from gains has already moved
+    // from "in margin" to free cash, so nothing is counted twice.
+    const gain = fromStart ? l.closing + inMargin + unreal - accrued - net : null;
+    return `<div class="lg-card">
+        <div class="lg-h"><b>${BROKER_NAME[b]}</b><span>${shortDate(l.from)} to ${shortDate(l.to)}</span></div>
+        ${gain != null ? `<div class="lg-gain"><span>Total gain since ${shortDate(l.from)}</span><b class="${tone(gain)}">${signed(gain)}</b><small>booked + open now − interest − charges, on ${inr(net)} added</small></div>` : ''}
+        <div class="lg-kv">${rows.join('')}</div>
+      </div>`;
+  }).join('');
+  return `<h2>Broker ledgers</h2>
+    ${cards ? `<div class="lg-cards">${cards}</div>` : ''}
+    <p class="dt-note">${cards ? 'From the statements you imported. ' : ''}Import the ledger CSV from Kotak (Reports, Ledger) or Rupeezy (Reports, Ledger) to see money added, free cash, interest and charges actually debited, and profit booked. Only these totals are kept, synced encrypted like your positions.</p>
+    <label class="btn btn-ghost btn-sm">Import broker ledger<input type="file" class="ledger-import" accept=".csv,text/csv" multiple hidden /></label>`;
 }
 
 function portfolioHTML(list: Position[]): string {
@@ -1662,6 +1729,7 @@ interface ClosedTrade {
 }
 
 const CLOSED_KEY = 'mtf.closed';
+const LEDGER_KEY = 'mtf.ledgers'; // per-broker ledger summaries from imported statements
 // Realised P&L from before trades were recorded here (after charges and interest), entered once.
 const START_KEY = 'mtf.pnlStart';
 const loadClosed = (): ClosedTrade[] => store<ClosedTrade[]>(CLOSED_KEY) ?? [];
@@ -1687,7 +1755,7 @@ const bytesB64 = (b: Uint8Array) => btoa(String.fromCharCode(...b));
 const b64Bytes = (s: string): Uint8Array<ArrayBuffer> => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
 
 interface EncFile { v: 1; kdf: 'PBKDF2-SHA256'; iter: number; salt: string; iv: string; data: string }
-interface PosPayload { at: string; positions: Position[]; closed: ClosedTrade[]; rates: unknown; start?: number }
+interface PosPayload { at: string; positions: Position[]; closed: ClosedTrade[]; rates: unknown; start?: number; ledgers?: Record<string, LedgerSummary> }
 
 async function posKey(pass: string, salt: Uint8Array<ArrayBuffer>, iter: number): Promise<CryptoKey> {
   const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
@@ -2006,7 +2074,7 @@ async function fetchPosFile(): Promise<{ file: EncFile | null; sha: string | nul
 }
 
 const localPayload = (): PosPayload => ({
-  at: store<string>(POS_AT_KEY) || store(POS_AT_KEY, new Date().toISOString())!, positions: loadPositions(), closed: loadClosed(), rates: store(RATES_KEY) ?? {}, start: store<number>(START_KEY) ?? 0,
+  at: store<string>(POS_AT_KEY) || store(POS_AT_KEY, new Date().toISOString())!, positions: loadPositions(), closed: loadClosed(), rates: store(RATES_KEY) ?? {}, start: store<number>(START_KEY) ?? 0, ledgers: store<Record<string, LedgerSummary>>(LEDGER_KEY) ?? {},
 });
 
 function applyPayload(p: PosPayload) {
@@ -2014,6 +2082,7 @@ function applyPayload(p: PosPayload) {
   store(CLOSED_KEY, p.closed ?? []);
   store(RATES_KEY, p.rates ?? {});
   store(START_KEY, p.start ?? 0);
+  store(LEDGER_KEY, p.ledgers ?? {});
   store(POS_AT_KEY, p.at);
 }
 
@@ -3582,6 +3651,9 @@ function bind() {
       const opt = (t as HTMLSelectElement).selectedOptions[0];
       const lev = document.getElementById('pos-lev') as HTMLInputElement | null;
       if (opt && lev) lev.value = opt.dataset.lev ?? lev.value;
+    } else if (t.classList.contains('ledger-import')) {
+      const files = [...((t as HTMLInputElement).files ?? [])];
+      if (files.length) importLedgers(files);
     } else if (t.id === 'pos-import') {
       const f = (t as HTMLInputElement).files?.[0];
       if (f) importPositions(f);

@@ -364,6 +364,41 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('broker ledger import: money added, free cash, interest, charges, total gain', async () => {
+    const gh = new FakeGitHub();
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL } });
+    await p.goto(url);
+    await p.waitForSelector('.manage');
+    await settle(p, 1500);
+    await p.click('.manage > summary');
+    await p.setInputFiles('.manage .ledger-import', [path.join(__dirname, 'fixtures/kotak-ledger.csv'), path.join(__dirname, 'fixtures/rupeezy-ledger.csv')]);
+    await p.waitForSelector('.lg-card');
+    const cards = await p.$$eval('.lg-card', (e) => e.map((x) => x.innerText.replace(/\s+/g, ' ').trim()));
+    const [k, r] = cards;
+    assert.match(k, /^Kotak Neo 1 Nov to 11 Nov/);
+    // Kotak: 1,00,000 in, 5,000 out; 97,500 blocked, 3,000 released; free cash 10,276.40.
+    assert.match(k, /Your money in the account ₹1,04,776/);
+    assert.match(k, /Money added ₹95,000 ₹1,00,000 in, ₹5,000 out/);
+    assert.match(k, /Profit booked \+₹10,000/);
+    assert.match(k, /Interest debited ₹200/);
+    // Total gain = free cash + margin in positions + unrealised on open Kotak lots - interest accrued - money added.
+    const accrued = (390000 - 97500) * 9.69 * 20 / 36500;
+    const gain = Math.round(10276.4 + 94500 + 60000 - accrued - 95000);
+    assert.ok(k.includes(`Total gain since 1 Nov +₹${gain.toLocaleString('en-IN')}`), `gain ₹${gain}: "${k}"`);
+    // Rupeezy statement starts mid-history: no lifetime gain, interest isn't in this ledger.
+    assert.match(r, /^Rupeezy 10 Nov to 11 Nov/);
+    assert.ok(!r.includes('Total gain'));
+    assert.match(r, /Free cash now ₹6,852/);
+    assert.match(r, /Interest — kept in the MTF ledger/);
+    const synced = await p.evaluate(() => JSON.parse(localStorage.getItem('mtf.ledgers')));
+    assert.deepEqual(Object.keys(synced).sort(), ['kotak', 'rupeezy']);
+    assert.ok(!JSON.stringify(synced).includes('TEST USER'), 'only totals are kept');
+    await noOverflow(p);
+    await shot(p, 'ledgers-phone');
+    assert.deepEqual(errorsOf.get(p), []);
+    await p.context().close();
+  });
+
   await scenario('Connect Rupeezy saves the sign-in code encrypted and starts the quick sync', async () => {
     const gh = new FakeGitHub();
     gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 100, 1302]], rupeezyOk: false })));
