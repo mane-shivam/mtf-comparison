@@ -1,63 +1,63 @@
 {
-  "generatedAt": "2026-11-11T05:32:52Z",
+  "generatedAt": "2026-11-11T06:32:35Z",
   "surveillance": {
-    "fetchedAt": "2026-11-11T05:32:15Z",
+    "fetchedAt": "2026-11-11T06:31:59Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 472,
-        "fetchedAt": "2026-11-11T05:32:15Z",
+        "fetchedAt": "2026-11-11T06:31:59Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-11T05:32:21Z",
+    "fetchedAt": "2026-11-11T06:32:06Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:15Z",
+        "fetchedAt": "2026-11-11T06:32:00Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:16Z",
+        "fetchedAt": "2026-11-11T06:32:01Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:21Z",
-        "count": 825,
+        "fetchedAt": "2026-11-11T06:32:06Z",
+        "count": 829,
         "error": null
       }
     }
   },
   "market": {
-    "fetchedAt": "2026-11-11T05:32:52Z",
+    "fetchedAt": "2026-11-11T06:32:35Z",
     "sources": {
       "prices": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:45Z",
+        "fetchedAt": "2026-11-11T06:32:29Z",
         "error": null
       },
       "var": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:47Z",
+        "fetchedAt": "2026-11-11T06:32:31Z",
         "error": null
       },
       "mwpl": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:49Z",
+        "fetchedAt": "2026-11-11T06:32:32Z",
         "error": null
       },
       "deliv": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:49Z",
+        "fetchedAt": "2026-11-11T06:32:32Z",
         "error": null
       },
       "deals": {
         "status": "ok",
-        "fetchedAt": "2026-11-11T05:32:50Z",
+        "fetchedAt": "2026-11-11T06:32:34Z",
         "error": null
       },
       "pledge": {
@@ -71,12 +71,12 @@
     "kotak": {
       "fetchedAt": "2026-11-11T05:31:48Z",
       "count": 1123,
-      "status": "ok",
-      "error": null,
+      "status": "stale",
+      "error": "MTF table not found on Kotak page",
       "matched": 1123
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-11T05:32:11Z",
+      "fetchedAt": "2026-11-11T06:31:56Z",
       "count": 2210,
       "status": "ok",
       "error": null,
