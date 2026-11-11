@@ -1,18 +1,74 @@
 [
  {
-  "symbol": "ACUTAAS",
-  "name": "Acutaas Chemicals Limited",
+  "symbol": "ETERNAL",
+  "name": "ETERNAL LIMITED",
   "level": "good",
-  "text": "Rupeezy leverage up 1.6× → 2.7×: you need less margin",
+  "text": "At a 52-week high (₹372.00)",
   "link": null,
-  "at": "2026-11-11T03:32:55Z"
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "ANANDRATHI",
+  "name": "Anand Rathi Wealth Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹2,378.60)",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
  },
  {
   "symbol": "ATHERENERG",
   "name": "Ather Energy Limited",
   "level": "good",
-  "text": "Rupeezy leverage up 1.8× → 3.4×: you need less margin",
+  "text": "At a 52-week high (₹1,882.00)",
   "link": null,
-  "at": "2026-11-11T03:32:55Z"
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "STLTECH",
+  "name": "STLTECH",
+  "level": "info",
+  "text": "At or near the upper circuit (5% band)",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "SONACOMS",
+  "name": "Sona BLW Precision Forgings Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹928.55)",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "TIMETECHNO",
+  "name": "Time Technoplast Limited",
+  "level": "info",
+  "text": "Up 6.3% today at ₹199.80",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "MOTILALOFS",
+  "name": "Motilal Oswal Financial Services Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹1,181.25)",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "ENTERO",
+  "name": "Entero Healthcare Solutions Limited",
+  "level": "watch",
+  "text": "Down 5.4% today at ₹2,000.40",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
+ },
+ {
+  "symbol": "UNOMINDA",
+  "name": "UNO Minda Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹1,395.60)",
+  "link": null,
+  "at": "2026-11-11T04:32:50Z"
  }
 ]
