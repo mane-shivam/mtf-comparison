@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T06:59:53Z",
+"fetchedAt": "2026-11-11T07:31:52Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T06:59:45Z",
+"fetchedAt": "2026-11-11T07:31:47Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T06:59:46Z",
+"fetchedAt": "2026-11-11T07:31:48Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T06:59:53Z",
-"count": 831,
+"fetchedAt": "2026-11-11T07:31:52Z",
+"count": 835,
 "error": null
 }
 },
@@ -3736,6 +3736,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20881_20261105_172335292_WEB.html"
 },
 {
+"symbol": "DODLA",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Dodla Dairy Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/DODLA_11112026124822_Cover_Letter_tax.pdf"
+},
+{
 "symbol": "DOLATALGO",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -4434,8 +4443,8 @@
 "date": "2026-11-11",
 "kind": "result",
 "title": "Results out",
-"detail": "Orient Green Power Company Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
-"link": "https://nsearchives.nseindia.com/corporate/GREENPOWER_11112026122609_SEIntimationResults.pdf"
+"detail": "Intimation on the Outcome of the Board Meeting under Regulations 30 and 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015 - wrt Financial Results for the quarter and half year ended September 30, 2026 and rev",
+"link": "https://nsearchives.nseindia.com/corporate/GREENPOWER_11112026123315_SEIntimationResults.pdf"
 },
 {
 "symbol": "GRMOVER",
@@ -5804,6 +5813,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20855_20261104_112203643_WEB.html"
 },
 {
+"symbol": "MANORG",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "MANGALAM ORGANICS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19892_20261111_123513757_WEB.html"
+},
+{
 "symbol": "MARKOLINES",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -6197,6 +6214,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.25 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=NBCC"
+},
+{
+"symbol": "NCLIND",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "NCL Industries Limited has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI (SAST) Regulation",
+"link": "https://nsearchives.nseindia.com/corporate/team_sandeshc_28102026171152_SASp11.pdf"
 },
 {
 "symbol": "NCLIND",
@@ -7522,6 +7548,14 @@
 "title": "Results",
 "detail": "SHAH METACORP LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3662_20261105_180301231_WEB.html"
+},
+{
+"symbol": "SHAHINVEST",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "Shah Investor's Home Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27057_20261111_124433169_WEB.html"
 },
 {
 "symbol": "SHANTI",
