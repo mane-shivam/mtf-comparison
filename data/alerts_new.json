@@ -1,18 +1,42 @@
 [
  {
-  "symbol": "MEDIASSIST",
-  "name": "Medi Assist Healthcare Services Limited",
+  "symbol": "CDSL",
+  "name": "Central Depository Services (India) Limited",
   "level": "info",
-  "text": "Volume 3.0× the 20-day average",
+  "text": "Volume 3.1× the 20-day average",
   "link": null,
-  "at": "2026-11-11T08:34:48Z"
+  "at": "2026-11-11T09:35:53Z"
+ },
+ {
+  "symbol": "MANINDS",
+  "name": "Man Industries (India) Limited",
+  "level": "info",
+  "text": "Up 5.2% today at ₹836.60",
+  "link": null,
+  "at": "2026-11-11T09:35:53Z"
+ },
+ {
+  "symbol": "FLUOROCHEM",
+  "name": "Gujarat Fluorochemicals Limited",
+  "level": "info",
+  "text": "Up 5.7% today at ₹4,835.10",
+  "link": null,
+  "at": "2026-11-11T09:35:53Z"
+ },
+ {
+  "symbol": "MTARTECH",
+  "name": "Mtar Technologies Limited",
+  "level": "info",
+  "text": "At or near the upper circuit (5% band)",
+  "link": null,
+  "at": "2026-11-11T09:35:53Z"
  },
  {
   "symbol": "NAVINFLUOR",
   "name": "Navin Fluorine International Limited",
-  "level": "info",
-  "text": "Up 5.1% today at ₹9,583.50",
+  "level": "good",
+  "text": "At a 52-week high (₹9,649.00)",
   "link": null,
-  "at": "2026-11-11T08:34:48Z"
+  "at": "2026-11-11T09:35:53Z"
  }
 ]

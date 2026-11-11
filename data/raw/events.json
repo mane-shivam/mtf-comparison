@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T08:34:20Z",
+"fetchedAt": "2026-11-11T09:35:25Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T08:34:14Z",
+"fetchedAt": "2026-11-11T09:35:19Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T08:34:15Z",
+"fetchedAt": "2026-11-11T09:35:19Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T08:34:20Z",
-"count": 842,
+"fetchedAt": "2026-11-11T09:35:25Z",
+"count": 851,
 "error": null
 }
 },
@@ -2914,12 +2914,29 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2500_20261102_110732144_WEB.html"
 },
 {
+"symbol": "AVTNPL",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "AVT Natural Products Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/AVTNPL_11112026142812_AVTNPLoutcomeofBoardmeetingsigned.pdf"
+},
+{
 "symbol": "AXISCADES",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
 "detail": "AXISCADES Technologies Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1939_20261109_171805564_WEB.html"
+},
+{
+"symbol": "AYE",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Aye Finance Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.com/corporate/AYEFINANCE_11112026140314_AYE_Intimation.pdf"
 },
 {
 "symbol": "BAFNAPH",
@@ -3056,6 +3073,14 @@
 "title": "Results",
 "detail": "BANNARI AMMAN SPINNING MILLS LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2332_20261023_155828616_WEB.html"
+},
+{
+"symbol": "BAYERCROP",
+"date": "2026-11-12",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Rs 90 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=BAYERCROP"
 },
 {
 "symbol": "BBOX",
@@ -3517,6 +3542,14 @@
 "title": "Results out",
 "detail": "Cochin Shipyard Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.com/corporate/Aswi4739_10112026142305_SE_Intimation_Sgd.pdf"
+},
+{
+"symbol": "COCHINSHIP",
+"date": "2026-11-16",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Rs 3 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=COCHINSHIP"
 },
 {
 "symbol": "COMPUSOFT",
@@ -4503,6 +4536,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_16762_20261102_105350849_WEB.html"
 },
 {
+"symbol": "GRSE",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Garden Reach Shipbuilders & Engineers Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/GRSE_11112026144558_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf"
+},
+{
 "symbol": "GSPCROP",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5054,6 +5095,15 @@
 "title": "Results",
 "detail": "International Conveyors Limited has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busines",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19779_20261107_155654283_WEB.html"
+},
+{
+"symbol": "INVENTURE",
+"date": "2026-11-11",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Inventure Growth & Securities Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.com/corporate/INVENTURE_11112026144019_Disclosure_Final_KR.pdf"
 },
 {
 "symbol": "IRB",
@@ -6128,6 +6178,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/MRF_10112026122136_BRESULTFINAL.pdf"
 },
 {
+"symbol": "MRF",
+"date": "2026-11-17",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Rs 3 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=MRF"
+},
+{
 "symbol": "MSPL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6850,6 +6908,14 @@
 "title": "Results",
 "detail": "POWER MECH PROJECTS LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13016_20261104_231144808_WEB.html"
+},
+{
+"symbol": "POWERMECH",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Power Mech Projects Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/POWERMECH_11112026141500_OC.pdf"
 },
 {
 "symbol": "PPAP",
@@ -8306,6 +8372,14 @@
 "title": "Results",
 "detail": "THEJO ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 11-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_6140_20261030_171314950_WEB.html"
+},
+{
+"symbol": "THEJO",
+"date": "2026-11-11",
+"kind": "result",
+"title": "Results out",
+"detail": "Thejo Engineering Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/THEJO_11112026142330_NSE_Outcome_BM_20261111.pdf"
 },
 {
 "symbol": "THEMISMED",
