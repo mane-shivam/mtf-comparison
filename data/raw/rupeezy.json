@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-11T00:32:19Z",
+"fetchedAt": "2026-11-11T02:32:23Z",
 "count": 2210,
 "rows": [
 {
@@ -7816,15 +7816,6 @@
 "ownPct": 31.35
 },
 {
-"symbol": "JSWINFRA",
-"name": "JSW INFRASTRUCTURE LTD",
-"isin": "INE880J01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.19,
-"ownPct": 31.35
-},
-{
 "symbol": "SBFC",
 "name": "SBFC FINANCE LIMITED",
 "isin": "INE423Y01016",
@@ -7927,6 +7918,15 @@
 "symbol": "JENBURPH",
 "name": "JENBURKT PHARMACEUTICAL L",
 "isin": "INE354A01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.19,
+"ownPct": 31.35
+},
+{
+"symbol": "JSWINFRA",
+"name": "JSW INFRASTRUCTURE LTD",
+"isin": "INE880J01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.19,
