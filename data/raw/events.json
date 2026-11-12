@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T06:33:13Z",
+"fetchedAt": "2026-11-12T07:32:18Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T06:33:09Z",
+"fetchedAt": "2026-11-12T07:32:12Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T06:33:10Z",
+"fetchedAt": "2026-11-12T07:32:13Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T06:33:13Z",
-"count": 925,
+"fetchedAt": "2026-11-12T07:32:18Z",
+"count": 936,
 "error": null
 }
 },
@@ -2502,6 +2502,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3399_20261105_130529081_WEB.html"
 },
 {
+"symbol": "AHLWEST",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "Asian Hotels (West) Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3399_20261112_130124391_WEB.html"
+},
+{
 "symbol": "AIRAN",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -2691,8 +2699,8 @@
 "date": "2026-11-18",
 "kind": "meeting",
 "title": "Results",
-"detail": "To consider and approve the unaudited financial results for the quarter ended Jun 30, 2026",
-"link": "https://nsearchives.nseindia.com/corporate/ANSALAPI_12112026112438_Prior_Intimation__BM_18112026.pdf"
+"detail": "Ansal Properties & Infrastructure Limited has informed the Exchange about Board Meeting to be held on 18-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended June 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_331_20261112_120408660_WEB.html"
 },
 {
 "symbol": "ANTGRAPHIC",
@@ -2893,6 +2901,14 @@
 "title": "Results",
 "detail": "ASTRA MICROWAVE PRODUCTS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2246_20261102_151439200_WEB.html"
+},
+{
+"symbol": "ASTRAMICRO",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Astra Microwave Products Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ASTRAMICRO_12112026122358_OutcomeofBoardMeeting.pdf"
 },
 {
 "symbol": "ATALREAL",
@@ -3255,6 +3271,15 @@
 "title": "Results",
 "detail": "BGR ENERGY SYSTEMS LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2701_20261110_170627268_WEB.html"
+},
+{
+"symbol": "BHAGYANGR",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Bhagyanagar India Limited has informed the Exchange about Credit Rating- Others",
+"link": "https://nsearchives.nseindia.com/corporate/BHAGYANGR_12112026124408_BIL_Intimation_Rating_Signed.pdf"
 },
 {
 "symbol": "BHAGYANGR",
@@ -3772,6 +3797,14 @@
 "title": "Results",
 "detail": "Cura Technologies Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22660_20261105_122630123_WEB.html"
+},
+{
+"symbol": "CURAA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Cura Technologies Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/CURAA_12112026125802_Outcome_SD.pdf"
 },
 {
 "symbol": "DABUR",
@@ -5267,6 +5300,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4184_20261106_121313535_WEB.html"
 },
 {
+"symbol": "INDTERRAIN",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Indian Terrain Fashions Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/INDTERRAIN_12112026122912_BmOutcome12thNov2026.pdf"
+},
+{
 "symbol": "INDUSFILA",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -6105,6 +6146,15 @@
 },
 {
 "symbol": "MAGNUM",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Magnum Ventures Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/MAGNUM_ROID_104642_KMP_Doc.zip"
+},
+{
+"symbol": "MAGNUM",
 "date": "2026-11-14",
 "kind": "meeting",
 "title": "Results",
@@ -6627,6 +6677,23 @@
 "title": "Results",
 "detail": "NAVA LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1264_20261103_101001607_WEB.html"
+},
+{
+"symbol": "NAVA",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "NAVA LIMITED has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.com/corporate/NBVENTURES_12112026121508_Disclosure.pdf"
+},
+{
+"symbol": "NAVA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "NAVA LIMITED has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/NBVENTURES_12112026120911_Disclosure_signed.pdf"
 },
 {
 "symbol": "NAVNETEDUL",
@@ -7586,6 +7653,14 @@
 "title": "Results",
 "detail": "RANE HOLDINGS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_358_20260929_184105590_WEB.html"
+},
+{
+"symbol": "RANEHOLDIN",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "This is to inform that the Board of Directors at their meeting held today, have inter alia approved the un-audited financial results (Standalone and Consolidated) for the quarter and half year ended September 30, 2026. The meeting of the Bo",
+"link": "https://nsearchives.nseindia.com/corporate/RANEHOLDIN_12112026122804_RHLUFRQ2FY202627_SD.pdf"
 },
 {
 "symbol": "RCF",
@@ -8801,6 +8876,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1912_20261027_105523483_WEB.html"
 },
 {
+"symbol": "TAJGVK",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Taj GVK Hotels & Resorts Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/TAJGVK_12112026125342_UFR30092026.pdf"
+},
+{
 "symbol": "TAKE",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -9368,6 +9451,14 @@
 "title": "Results",
 "detail": "VICEROY HOTELS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22857_20261105_183804224_WEB.html"
+},
+{
+"symbol": "VHLTD",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Viceroy Hotels Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/VICEROYHOTELSLTD_12112026124610_outcomesigned.pdf"
 },
 {
 "symbol": "VIKASECO",
