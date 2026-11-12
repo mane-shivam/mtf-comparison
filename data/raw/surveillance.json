@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-12T03:34:38Z",
+"fetchedAt": "2026-11-12T04:36:51Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 474,
-"fetchedAt": "2026-11-12T03:34:38Z",
+"fetchedAt": "2026-11-12T04:36:51Z",
 "error": null
 }
 },
@@ -1806,8 +1806,8 @@
 "term": null,
 "stage": "II",
 "desc": "Graded Surveillance Measure - Stage II",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "BLUECOAST",
@@ -2426,8 +2426,8 @@
 "term": null,
 "stage": "IV",
 "desc": "Graded Surveillance Measure - Stage IV",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "VASA",
