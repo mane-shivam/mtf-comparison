@@ -18,8 +18,19 @@ const SHOTS = path.join(__dirname, '.shots');
 const BASE = '/mtf/';
 const PASS = 'correct horse battery staple';
 const REPO = 'test/mtf';
-const TODAY = new Date().toISOString().slice(0, 10);
-const daysAgo = (n) => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10);
+// The pages run at 11:00 IST on the latest weekday (a trading session in progress), in IST, so "today",
+// buy dates and the day's P&L come out the same whenever the suite runs.
+const NOW = (() => {
+  const d = new Date();
+  d.setUTCHours(5, 30, 0, 0); // 11:00 IST
+  if (d > Date.now()) d.setUTCDate(d.getUTCDate() - 1);
+  while ([0, 6].includes(d.getUTCDay())) d.setUTCDate(d.getUTCDate() - 1);
+  return d.getTime();
+})();
+const START = Date.now();
+const clock = () => NOW + (Date.now() - START); // the suite's time: pages and the fake GitHub share it
+const TODAY = new Date(NOW).toISOString().slice(0, 10);
+const daysAgo = (n) => new Date(NOW - n * 864e5).toISOString().slice(0, 10);
 
 /* ---------- build and serve ---------- */
 
@@ -77,7 +88,7 @@ function marketFile(prices = PRICES) {
 }
 
 // Broker snapshot as scripts/brokers.py writes it (raw responses, encrypted).
-function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date().toISOString(), rupeezyOk = true, rupeezyFree = -5000 } = {}) {
+function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date(clock()).toISOString(), rupeezyOk = true, rupeezyFree = -5000 } = {}) {
   const trades = kotakTrades
     ? { trades: { stat: 'Ok', stCode: 200, data: kotakTrades.map(([sym, side, qty, px]) => ({ trdSym: `${sym}-EQ`, sym, trnsTp: side, fldQty: qty, avgPrc: String(px), exSeg: 'nse_cm', prod: 'MTF', flDt: TODAY })) } }
     : { _errors: { limits: 'bridge API error out', trades: 'no trades' } };
@@ -130,7 +141,7 @@ class FakeGitHub {
         const wf = runs[1];
         if (runs[2] === 'runs') return json(r, 200, { workflow_runs: [...(this.runs[wf] || [])].reverse() });
         this.dispatches.push(wf);
-        const run = { status: 'in_progress', conclusion: null, created_at: new Date().toISOString(), run_started_at: new Date().toISOString(), html_url: 'https://x' };
+        const run = { status: 'in_progress', conclusion: null, created_at: new Date(clock()).toISOString(), run_started_at: new Date(clock()).toISOString(), html_url: 'https://x' };
         (this.runs[wf] ||= []).push(run);
         setTimeout(async () => { if (wf === 'brokers.yml' && this.onQuickSync) await this.onQuickSync(this); Object.assign(run, { status: 'completed', conclusion: 'success' }); }, this.syncMs);
         return r.fulfill({ status: 204, headers: H });
@@ -147,7 +158,8 @@ const results = [];
 const errorsOf = new WeakMap();
 
 async function page({ width = 390, height = 860, storage = {}, gh, market = marketFile() } = {}) {
-  const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, acceptDownloads: true });
+  const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 1, acceptDownloads: true, timezoneId: 'Asia/Kolkata' });
+  await ctx.clock.install({ time: clock() });
   await gh.attach(ctx);
   await ctx.route(`**${BASE}data/market.json`, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: market }));
   await ctx.addInitScript((s) => {
@@ -197,7 +209,8 @@ async function seededSync() {
   const gh = new FakeGitHub();
   gh.put('data/pins.json', JSON.stringify({ pins: ['CDSL', 'ENTERO'] }));
   gh.put('data/broker.enc.json', await encrypt(snapshot({
-    kotak: [['CDSL', 300, 1302], ['NUVAMA', 50, 1900]], // NUVAMA: bought today from spare margin
+    kotak: [['CDSL', 300, 1302]], // settled shares; NUVAMA was bought today (trade book), from spare margin
+    kotakTrades: [['NUVAMA', 'B', 50, 1900]],
     rupeezy: [['ENTERO', 100, 2000], ['ANANDRATHI', 20, 3000]],
   })));
   return gh;
@@ -312,7 +325,7 @@ async function run() {
       g.put('data/broker.enc.json', await encrypt(snapshot({
         kotak: [['CDSL', 180, 1302], ['NUVAMA', 50, 1900]], // 120 CDSL sold
         rupeezy: [['ENTERO', 100, 2000], ['ANANDRATHI', 20, 3000]],
-        at: new Date(Date.now() + n * 1000).toISOString(),
+        at: new Date(clock() + n * 1000).toISOString(),
       })));
       g.put('public/data/market.json', marketFile({ ...PRICES, CDSL: 1520 }));
     };
@@ -504,7 +517,7 @@ async function run() {
   await scenario('alerts sheet: level filter and Today grouping', async () => {
     const gh = new FakeGitHub();
     const p = await page({ gh, storage: { 'mtf.view': 'pinned' } });
-    const now = new Date().toISOString();
+    const now = new Date(clock()).toISOString();
     await p.route(`**${BASE}data/alerts.json`, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify([
       { symbol: 'CDSL', name: 'CDSL', level: 'alert', text: 'Entered ST-ASM II', link: null, at: now },
       { symbol: 'ENTERO', name: 'Entero', level: 'good', text: 'At a 52-week high', link: null, at: now },
@@ -521,10 +534,44 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('buy dates follow the broker session; per-stock check against the broker', async () => {
+    const prevDay = (iso) => { const d = new Date(`${iso}T00:00:00Z`); do d.setUTCDate(d.getUTCDate() - 1); while ([0, 6].includes(d.getUTCDay())); return d.toISOString().slice(0, 10); };
+    // A lot an older version added from a 3 AM sync, dated that calendar day: it belongs to the session before.
+    const made = Date.parse(`${TODAY}T03:00:00+05:30`);
+    const misdated = { id: `${made.toString(36)}abcde`, sym: 'NUVAMA', broker: 'kotak', qty: 50, price: 1900, date: TODAY, lev: 3, src: 'broker', cash: 0 };
+    // ENTERO here at ₹1,900 while Rupeezy says ₹2,000: 5% apart.
+    const ent = { ...MANUAL[1], price: 1900 };
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snapshot({
+      kotak: [['CDSL', 300, 1302], ['NUVAMA', 50, 1900]],
+      rupeezy: [['ENTERO', 100, 2000], ['ANANDRATHI', 20, 3000]],
+    })));
+    const p = await page({ gh, storage: { 'mtf.positions': [MANUAL[0], misdated, ent] } });
+    await p.goto(url);
+    await p.waitForSelector('.accts');
+    await settle(p, 4000);
+    const list = await positions(p);
+    assert.equal(list.find((x) => x.id === misdated.id).date, prevDay(TODAY), 'misdated lot moved to the session before');
+    // ANANDRATHI shows up without a fill in Rupeezy's day positions: bought before today's session.
+    assert.equal(list.find((x) => x.sym === 'ANANDRATHI').date, prevDay(TODAY));
+    // Rupeezy card flags ENTERO even while collapsed; opening it lists the difference with a fix.
+    assert.match(await text(p, '[data-acct-card="rupeezy"]'), /1 stock differ from Rupeezy/);
+    assert.doesNotMatch(await text(p, '[data-acct-card="kotak"]'), /differ/);
+    await p.click('[data-acct-toggle="rupeezy"]');
+    assert.match(await text(p, '[data-acct-card="rupeezy"] .acct-check'), /1 of 2 differ from Rupeezy ENTERO Rupeezy: 100 at ₹2,000; here: 100 at ₹1,900 Use Rupeezy's/);
+    await p.click('[data-use-avg="rupeezy:ENTERO"]');
+    await p.waitForTimeout(300);
+    assert.equal((await positions(p)).find((x) => x.sym === 'ENTERO').price, 2000);
+    assert.match(await text(p, '[data-acct-card="rupeezy"]'), /All 2 stocks match Rupeezy's quantities and averages/);
+    await p.click('[data-acct-toggle="kotak"]');
+    assert.match(await text(p, '[data-acct-card="kotak"]'), /All 2 stocks match Kotak's quantities and averages/);
+    await p.context().close();
+  });
+
   await scenario('alerts, portfolio only: a broker alert counts only where you hold the stock', async () => {
     const gh = new FakeGitHub();
     const p = await page({ gh, storage: { 'mtf.view': 'pinned', 'mtf.positions': MANUAL } }); // CDSL at Kotak, ENTERO at Rupeezy
-    const t = (min) => new Date(Date.now() - min * 60000).toISOString();
+    const t = (min) => new Date(clock() - min * 60000).toISOString();
     await p.route(`**${BASE}data/alerts.json`, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify([
       { symbol: 'CDSL', name: 'CDSL', level: 'watch', text: 'Rupeezy leverage cut 4.1× → 4.0×: you need more margin', link: null, at: t(30) },
       { symbol: 'CDSL', name: 'CDSL', level: 'watch', text: 'Kotak Neo leverage cut 4.0× → 3.5×: you need more margin', link: null, at: t(20) },

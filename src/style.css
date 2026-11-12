@@ -5698,3 +5698,42 @@ small.ret-line {
 @media (prefers-reduced-motion: reduce) {
   .acct-chev { transition: none; }
 }
+
+/* Per-stock check against the broker's own holdings */
+.acct-diff {
+  color: var(--amber-soft);
+  font-size: 11.5px;
+}
+
+.acct-check {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.acct-check.is-ok {
+  color: var(--faint-2);
+}
+
+.acct-check.is-off > b {
+  color: var(--amber-soft);
+  font-weight: 600;
+}
+
+.acct-mm {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.acct-mm b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.acct-mm .link-btn {
+  flex: none;
+  font-size: 12px;
+}

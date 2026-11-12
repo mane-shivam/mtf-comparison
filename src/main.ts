@@ -466,6 +466,7 @@ function loadExtras() {
   getJSON<MarketFile>('data/market.json')
     .then((m) => {
       state.market = m;
+      migrateLotDates();
       migrateLotCash();
       reconcileFromBrokers();
       render();
@@ -521,6 +522,22 @@ const EVENT_LOOKBACK_DAYS = 3;
 
 function localISO(d = new Date()): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+// Trading days in IST (weekends skipped; exchange holidays aren't known here).
+const istParts = (t: number) => {
+  const d = new Date(t + 330 * 60000);
+  return { iso: d.toISOString().slice(0, 10), mins: d.getUTCHours() * 60 + d.getUTCMinutes(), dow: d.getUTCDay() };
+};
+function prevTradingDay(iso: string): string {
+  const d = new Date(`${iso}T00:00:00Z`);
+  do d.setUTCDate(d.getUTCDate() - 1); while (d.getUTCDay() === 0 || d.getUTCDay() === 6);
+  return d.toISOString().slice(0, 10);
+}
+// The latest session that had opened by time t: before 09:15 IST, or on a weekend, it's an earlier day.
+function sessionDay(t: number): string {
+  const p = istParts(t);
+  return p.dow === 0 || p.dow === 6 || p.mins < 9 * 60 + 15 ? prevTradingDay(p.iso) : p.iso;
 }
 
 function daysAgoISO(n: number): string {
@@ -1457,11 +1474,13 @@ function accountCardHTML(a: Account): string {
         <span class="acct-h"><b>${BROKER_NAME[a.broker]}</b>${x && !x.ok ? `<span class="acct-sync is-bad">${sync}</span>` : ''}<svg class="acct-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
         <span class="acct-big">${head}</span>
         <span class="gauge" role="img" aria-label="Margin used ${used.toFixed(0)}%"><span style="width:${used.toFixed(1)}%"></span></span>
+        ${(() => { const n = brokerMismatches(a.broker)?.off.length ?? 0; return n ? `<span class="acct-diff">${n} stock${n === 1 ? '' : 's'} differ from ${BROKER_SHORT[a.broker]}</span>` : ''; })()}
       </button>
       <div class="acct-more">
         <span class="acct-sub">${sub}</span>
         <span class="acct-kv"><span>Margin used</span><b>${used.toFixed(0)}%</b><span>Needs</span><b>${lakh(a.needed)}</b><span>Equity</span><b>${lakh(a.equity)}</b></span>
         <span class="acct-broker">${a.reported ? brokerFundsLine(a.broker) : x ? `Estimated from your lots: ${BROKER_SHORT[a.broker]}'s own figure isn't available right now.` : 'Estimated from your lots; connect the broker for its exact figure.'}${sync && x?.ok ? ` ${sync}.` : ''}</span>
+        ${mismatchHTML(a.broker)}
         <button class="link-btn acct-how" data-acct="${a.broker}">Account and how margin is counted</button>
       </div>
       ${connect}
@@ -1915,7 +1934,10 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
       for (const [sym, f] of todaysFills('kotak')) {
         const h = rows.find((x) => x.sym === sym);
         const net = f.buyQty - f.sellQty;
-        if (h) h.qty += net;
+        if (h) {
+          if (f.buyQty) h.avg = (h.qty * h.avg + f.buyVal) / (h.qty + f.buyQty); // today's buys join the average
+          h.qty += net;
+        }
         else if (net > 0) rows.push({ sym, qty: net, avg: f.buyVal / f.buyQty, mtf: null, close: null });
       }
     }
@@ -1936,6 +1958,46 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
   return [...by.values()];
 }
 
+// Your lots against the broker's own holdings, stock by stock: the quantity must match, and the average
+// within 1% (Kotak's average includes buy charges, so it sits a little above the trade price).
+interface Mismatch { sym: string; qty: number; avg: number; bQty: number; bAvg: number }
+function brokerMismatches(b: BrokerKey): { checked: number; off: Mismatch[] } | null {
+  const held = brokerHoldings(b);
+  if (!held) return null;
+  const mine = new Map<string, { qty: number; cost: number }>();
+  for (const p of loadPositions().filter((x) => x.broker === b)) {
+    const m = mine.get(p.sym) ?? { qty: 0, cost: 0 };
+    mine.set(p.sym, { qty: m.qty + p.qty, cost: m.cost + p.qty * p.price });
+  }
+  const off: Mismatch[] = [];
+  for (const sym of new Set([...held.map((h) => h.sym), ...mine.keys()])) {
+    const h = held.find((x) => x.sym === sym);
+    const m = mine.get(sym);
+    const qty = m?.qty ?? 0;
+    const avg = qty ? m!.cost / qty : 0;
+    if (!h || !m || h.qty !== qty || Math.abs(avg - h.avg) / h.avg > 0.01) off.push({ sym, qty, avg, bQty: h?.qty ?? 0, bAvg: h?.avg ?? 0 });
+  }
+  return { checked: held.length, off };
+}
+
+// Reprice your lots of a stock so their average is the broker's (keeps quantities, dates and leverage).
+function useBrokerAverage(b: BrokerKey, sym: string) {
+  const m = brokerMismatches(b)?.off.find((x) => x.sym === sym);
+  if (!m || !m.bAvg || m.qty !== m.bQty || !m.avg) return;
+  const k = m.bAvg / m.avg;
+  savePositions(loadPositions().map((p) => (p.broker === b && p.sym === sym ? { ...p, price: Math.round(p.price * k * 100) / 100 } : p)));
+  toast(`${sym} now uses ${BROKER_SHORT[b]}'s average ${rupee(m.bAvg)}`);
+  render();
+}
+
+function mismatchHTML(b: BrokerKey): string {
+  const r = brokerMismatches(b);
+  if (!r) return '';
+  if (!r.off.length) return `<span class="acct-check is-ok">All ${r.checked} stocks match ${BROKER_SHORT[b]}'s quantities and averages.</span>`;
+  const n = (x: number) => x.toLocaleString('en-IN');
+  return `<div class="acct-check is-off"><b>${r.off.length} of ${Math.max(r.checked, r.off.length)} differ from ${BROKER_SHORT[b]}</b>${r.off.map((m) => `<span class="acct-mm"><span><b>${esc(m.sym)}</b> ${BROKER_SHORT[b]}: ${m.bQty ? `${n(m.bQty)} at ${rupee(m.bAvg)}` : 'none'}; here: ${m.qty ? `${n(m.qty)} at ${rupee(m.avg)}` : 'none'}</span>${m.qty && m.qty === m.bQty ? `<button class="link-btn" data-use-avg="${b}:${esc(m.sym)}">Use ${BROKER_SHORT[b]}'s</button>` : ''}</span>`).join('')}</div>`;
+}
+
 // Cash a new lot needs on top of the account's spare margin just before it (never below 0 or above its margin).
 function cashFromSpare(lot: Position, before: Position[]): number {
   const spare = accounts(before.filter((p) => p.id !== lot.id)).find((a) => a.broker === lot.broker)?.spare ?? 0;
@@ -1944,6 +2006,24 @@ function cashFromSpare(lot: Position, before: Position[]): number {
 
 // One-off: lots a broker sync added before cash was tracked were counted as all-new money. Price them
 // the way the broker did: spare margin first. Runs once prices are in, so spare is known.
+// One-off: before buy dates followed the broker's session, a lot first seen by a sync outside market hours
+// (say 3 AM) was dated that calendar day though it was bought in the session before. The lot's id starts
+// with its creation time, so those lots can be found and moved to the session they came from.
+function migrateLotDates() {
+  // Safe to run on every load: a lot the sync adds now is never dated a day without a session.
+  let changed = false;
+  const list = loadPositions().map((p) => {
+    const made = parseInt(p.id.slice(0, 8), 36);
+    if (p.src !== 'broker' || !(made > 1.7e12 && made < Date.now() + 1e7)) return p;
+    const madeOn = istParts(made).iso;
+    const session = sessionDay(made);
+    if (p.date !== madeOn || session === madeOn) return p;
+    changed = true;
+    return { ...p, date: session };
+  });
+  if (changed) savePositions(list);
+}
+
 function migrateLotCash() {
   if (store<boolean>('mtf.cashMigrated') || !state.market || !state.stocks.length) return;
   let list = loadPositions();
@@ -1975,6 +2055,7 @@ function editLotCash(id: string) {
 }
 
 function reconcileFromBrokers() {
+  migrateLotDates();
   // Needs prices and broker rates: spare margin decides how new buys were paid, and a sale needs a price.
   // Called again when they arrive.
   if (!brokerSnap || !state.market || !state.stocks.length) return;
@@ -2011,7 +2092,12 @@ function reconcileFromBrokers() {
         const fill = fills.get(sym);
         const price = fill?.buyQty ? fill.buyVal / fill.buyQty
           : have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
-        fresh.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: localISO(), lev, src: 'broker' });
+        // Its buy date: the session the broker's fills are from when they cover it, else bought before that
+        // session (most likely the one before). Never "today" just because this is the first sync to see it:
+        // a 3 AM sync would otherwise date yesterday's buy today, which skews today's P&L and interest.
+        const session = sessionDay(Date.parse(at));
+        const date = (fill?.buyQty ?? 0) >= extra ? session : prevTradingDay(session);
+        fresh.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date, lev, src: 'broker' });
       } else if (brokerQty < have) {
         const prev = pending[b]?.[sym];
         // A sell in today's trade book is the broker's own confirmation; otherwise wait for a second sync.
@@ -2028,7 +2114,8 @@ function reconcileFromBrokers() {
         for (const lot of lots) {
           if (!toSell) break;
           const q = Math.min(lot.qty, toSell);
-          sales.push({ ...saleResult(lot, q, px, localISO()), ...(exact ? {} : { est: true }) });
+          const session = sessionDay(Date.parse(at));
+          sales.push({ ...saleResult(lot, q, px, exact ? session : prevTradingDay(session)), ...(exact ? {} : { est: true }) });
           list = q >= lot.qty ? list.filter((p) => p.id !== lot.id) : list.map((p) => (p.id === lot.id ? resizeLot(p, p.qty - q) : p));
           toSell -= q;
         }
@@ -3554,6 +3641,11 @@ function bind() {
     }
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
+    const ua = t.closest<HTMLElement>('[data-use-avg]');
+    if (ua) {
+      const [b, sym] = ua.dataset.useAvg!.split(':');
+      return useBrokerAverage(b as BrokerKey, sym);
+    }
     const tog = t.closest<HTMLElement>('[data-acct-toggle]');
     if (tog) {
       const b = tog.dataset.acctToggle!;
