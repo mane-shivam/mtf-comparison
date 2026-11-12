@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T10:02:12Z",
+"fetchedAt": "2026-11-12T10:32:42Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T10:02:07Z",
+"fetchedAt": "2026-11-12T10:32:35Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T10:02:08Z",
+"fetchedAt": "2026-11-12T10:32:36Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T10:02:12Z",
-"count": 973,
+"fetchedAt": "2026-11-12T10:32:42Z",
+"count": 981,
 "error": null
 }
 },
@@ -3927,6 +3927,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_20812_20261111_164806333_WEB.html"
 },
 {
+"symbol": "DBSTOCKBRO",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "DB (International) Stock Brokers Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/DBSTOCKBRO_ROID_104659_KMP_Doc.zip"
+},
+{
 "symbol": "DCAL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5342,6 +5351,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/team_bbodade_11112026175801_Dis1.pdf"
 },
 {
+"symbol": "IIFLCAPS",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Open offer",
+"detail": "ICICI Securities Limited has submitted a copy of the Letter of Offer of IIFL Capital Services Limited to the Exchange.",
+"link": "https://nsearchives.nseindia.com/corporate/team_bbodade_12112026144529_Dis11.pdf"
+},
+{
 "symbol": "IIRM",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -6219,6 +6237,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/LIBERTSHOE_02112026183246_IntimationBoardMeeting12112026.pdf"
 },
 {
+"symbol": "LIBERTSHOE",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Liberty Shoes Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/LIBERTSHOE_12112026155247_OutcomeofBoardMeetingandFinancialResults30092026.pdf"
+},
+{
 "symbol": "LOKESHMACH",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -6314,6 +6340,14 @@
 "title": "Results",
 "detail": "MADRAS FERTILIZERS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1592_20261105_104003208_WEB.html"
+},
+{
+"symbol": "MADRASFERT",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "The Board of Directors approved the Unaudited Financial Results for the quarter and half year ended 30th September 2026 as recommended by the Audit Committee at its board meeting held on 12.11.2026. Unaudited Financial Results for the quart",
+"link": "https://nsearchives.nseindia.com/corporate/MADRASFERT_12112026155023_BM_Outcome_Fin_res_CFO.pdf"
 },
 {
 "symbol": "MAFATIND",
@@ -6924,6 +6958,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2568_20261106_170401897_WEB.html"
 },
 {
+"symbol": "NCLIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "NCL Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/NCLIND_12112026154847_Upload_Outcomeintiamtion.pdf"
+},
+{
 "symbol": "NDGL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7139,6 +7181,14 @@
 "title": "Results \u00b7 Dividend",
 "detail": "OIL INDIA LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2906_20261027_170408980_WEB.html"
+},
+{
+"symbol": "OIL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Oil India Limited has submitted to the Exchange, the financial results for the period Quarter and Half-year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/OIL_12112026155129_OUTCOMEOFBOARDMEETING30092026_SIGNED.pdf"
 },
 {
 "symbol": "OLAELEC",
@@ -7896,6 +7946,14 @@
 "title": "Results",
 "detail": "Rashtriya Chemicals and Fertilizers Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_532_20261105_145019475_WEB.html"
+},
+{
+"symbol": "RCF",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Rashtriya Chemicals and Fertilizers Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/RCF_12112026155731_Outcomeresults.pdf"
 },
 {
 "symbol": "RCOM",
@@ -9518,6 +9576,15 @@
 "title": "Results",
 "detail": "Uday Jewellery Industries Limited has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other busines",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_28703_20261107_150629327_WEB.html"
+},
+{
+"symbol": "UFBL",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "United Foodbrands Limited has informed the Exchange about update on Credit Rating",
+"link": "https://nsearchives.nseindia.com/corporate/BARBEQUE_12112026155657_IntimationofReaffirmationofCreditRating12112026.pdf"
 },
 {
 "symbol": "UFLEX",
