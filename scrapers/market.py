@@ -72,6 +72,7 @@ def parse_yahoo(payload: dict) -> dict | None:
     return {
         "p": round(price, 2),
         "prev": round(prev, 2) if prev else None,
+        "prevDate": past[-1][0] if past else None,
         "chg": round((price / prev - 1) * 100, 2) if prev else None,
         "dayHi": m.get("regularMarketDayHigh"),
         "dayLo": m.get("regularMarketDayLow"),
@@ -112,14 +113,47 @@ def parse_mwpl(csv_text: str) -> dict:
 
 
 def parse_bhav(text: str, symbols: set[str]) -> dict:
-    """{symbol: [delivery %, traded qty]} for EQ rows of the given symbols."""
+    """{symbol: [delivery %, traded qty, official close]} for EQ rows of the given symbols."""
     out = {}
     for r in csv.DictReader(io.StringIO(text)):
         r = {(k or "").strip(): (v or "").strip() for k, v in r.items()}
         sym = r.get("SYMBOL", "").upper()
         if sym in symbols and r.get("SERIES") in ("EQ", "BE", "BZ"):
-            out[sym] = [num(r.get("DELIV_PER")), num(r.get("TTL_TRD_QNTY"))]
+            out[sym] = [num(r.get("DELIV_PER")), num(r.get("TTL_TRD_QNTY")), num(r.get("CLOSE_PRICE"))]
     return out
+
+
+def bhav_date(text: str) -> str | None:
+    """The session a bhavcopy is for (its DATE1 column). On a market holiday NSE's file for that date
+    repeats the previous session (10 Nov 2026 held 9 Nov's data), so the name alone can't be trusted."""
+    for r in csv.DictReader(io.StringIO(text)):
+        r = {(k or "").strip(): (v or "").strip() for k, v in r.items()}
+        try:
+            return datetime.strptime(r.get("DATE1", ""), "%d-%b-%Y").date().isoformat()
+        except ValueError:
+            return None
+    return None
+
+
+def fix_prev(prices: dict, hist: dict) -> int:
+    """Use NSE's official close (bhavcopy) as the previous close. Yahoo's daily bars sometimes miss the last
+    session during market hours, and then "today's change" is measured from two sessions back: a fall from
+    yesterday shows up again as today's (ENTERO, 12 Nov 2026). Returns how many prices were corrected."""
+    fixed = 0
+    for sym, p in prices.items():
+        session = p.get("date")
+        days = {d: row[2] for d, row in ((hist.get("deliv") or {}).get(sym) or {}).items()
+                if len(row) > 2 and row[2] and session and d < session}
+        if not days:
+            continue
+        day = max(days)
+        if p.get("prevDate") and day < p["prevDate"]:
+            continue  # NSE's file for the last session isn't in yet: Yahoo's is newer
+        close = round(days[day], 2)
+        if p.get("prev") != close or p.get("prevDate") != day:
+            fixed += 1
+        p.update(prev=close, prevDate=day, chg=round((p["p"] / close - 1) * 100, 2) if p.get("p") else None)
+    return fixed
 
 
 def parse_deals(text: str, kind: str) -> list[dict]:
@@ -224,10 +258,19 @@ def main() -> int:
         for back in range(HIST_SESSIONS + 15):
             d = today - timedelta(days=back)
             key = d.isoformat()
-            if key in hist["bhavTried"] or d.weekday() >= 5:
+            if d.weekday() >= 5:
+                continue
+            # Recent sessions fetched before closes were kept are fetched again, once, for the close.
+            stale = back <= 7 and hist["bhavTried"].get(key) == "ok" and any(
+                len(v) < 3 for s_, days in hist["deliv"].items() if s_ in syms for k_, v in days.items() if k_ == key)
+            if key in hist["bhavTried"] and not stale:
                 continue
             r = ns.s.get(BHAV.format(d=d.strftime("%d%m%Y")), timeout=30)
-            if r.status_code == 200 and len(r.content) > 1000:
+            if r.status_code == 200 and len(r.content) > 1000 and bhav_date(r.text) not in (None, key):
+                hist["bhavTried"][key] = "holiday"  # the file repeats an earlier session
+                for days in hist["deliv"].values():
+                    days.pop(key, None)
+            elif r.status_code == 200 and len(r.content) > 1000:
                 for sym, row in parse_bhav(r.text, syms).items():
                     hist["deliv"].setdefault(sym, {})[key] = row
                 hist["bhavTried"][key] = "ok"
@@ -273,6 +316,10 @@ def main() -> int:
         part("deals", deals, [])
         part("pledge", pledge, [])
 
+    if out.get("prices"):
+        n = fix_prev(out["prices"], hist)
+        if n:
+            print(f"[market] previous close from NSE's bhavcopy for {n} stocks")
     HIST.write_text(json.dumps(hist, separators=(",", ":")) + "\n")
     OUT.write_text(json.dumps({"fetchedAt": now_iso(), "sources": sources, **out}, separators=(",", ":")) + "\n")
     print("[market] " + ", ".join(f"{k}: {v['status']}" for k, v in sources.items())
