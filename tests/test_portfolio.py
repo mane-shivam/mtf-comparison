@@ -155,3 +155,12 @@ def test_broker_figure_is_the_spare():
     snap["brokers"]["kotak"]["raw"]["_stale"] = {"limits": "2026-11-09T10:00:00Z"}
     assert portfolio.broker_avail(snap, now)["kotak"] == 9967.5
     assert "kotak" not in portfolio.broker_avail(snap, datetime(2026, 11, 10, 13, 0, tzinfo=timezone.utc))
+
+
+def test_broker_alert_counts_only_where_held():
+    held = {"NAVINFLUOR": {"kotak"}}
+    a = lambda t: {"symbol": "NAVINFLUOR", "text": t}  # noqa: E731
+    assert not portfolio.is_mine(a("Rupeezy leverage cut 4.1× → 4.0×: you need more margin"), held)
+    assert portfolio.is_mine(a("Kotak Neo leverage cut 4.1× → 4.0×: you need more margin"), held)
+    assert portfolio.is_mine(a("At a 52-week high (₹9,649.00)"), held)
+    assert not portfolio.is_mine({"symbol": "ENTERO", "text": "Down 5%"}, held)

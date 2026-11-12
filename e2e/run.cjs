@@ -521,6 +521,33 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('alerts, portfolio only: a broker alert counts only where you hold the stock', async () => {
+    const gh = new FakeGitHub();
+    const p = await page({ gh, storage: { 'mtf.view': 'pinned', 'mtf.positions': MANUAL } }); // CDSL at Kotak, ENTERO at Rupeezy
+    const t = (min) => new Date(Date.now() - min * 60000).toISOString();
+    await p.route(`**${BASE}data/alerts.json`, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify([
+      { symbol: 'CDSL', name: 'CDSL', level: 'watch', text: 'Rupeezy leverage cut 4.1× → 4.0×: you need more margin', link: null, at: t(30) },
+      { symbol: 'CDSL', name: 'CDSL', level: 'watch', text: 'Kotak Neo leverage cut 4.0× → 3.5×: you need more margin', link: null, at: t(20) },
+      { symbol: 'ENTERO', name: 'Entero', level: 'good', text: 'At a 52-week high', link: null, at: t(10) },
+      { symbol: 'TCS', name: 'TCS', level: 'info', text: 'Volume 3× the usual', link: null, at: t(5) },
+    ]) }));
+    await p.goto(url);
+    await p.waitForSelector('#bell');
+    await settle(p, 800);
+    await p.click('#bell');
+    await p.waitForSelector('.al');
+    assert.match(await text(p, '[data-alert-filter="portfolio"]'), /Portfolio only 2/);
+    await p.click('[data-alert-filter="portfolio"]');
+    await p.waitForTimeout(200);
+    const lines = await p.$$eval('.al-line .al-text', (els) => els.map((e) => e.textContent));
+    assert.deepEqual(lines, ['At a 52-week high', 'Kotak Neo leverage cut 4.0× → 3.5×: you need more margin']);
+    assert.match(await text(p, '.al-held'), /^Held at Rupeezy$/);
+    await p.click('[data-alert-filter="all"]');
+    await p.waitForTimeout(200);
+    assert.equal((await p.$$('.al-line')).length, 4);
+    await p.context().close();
+  });
+
   for (const [w, h, tag] of [[360, 780, 'small-phone'], [430, 932, 'large-phone'], [1280, 900, 'desktop']]) {
     await scenario(`layout at ${w}px: no sideways scroll, no errors`, async () => {
       const gh = await seededSync();

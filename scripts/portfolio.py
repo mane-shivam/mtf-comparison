@@ -21,6 +21,7 @@ import hashlib
 import hmac
 import json
 import os
+import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -179,7 +180,7 @@ def results_due(pins: list[str], events: dict, today: date, days: int = 7) -> li
 
 
 def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, alerts: list[dict],
-            now: datetime, held: set[str], mtf: dict | None = None, reported: dict | None = None) -> dict:
+            now: datetime, held: dict[str, set[str]], mtf: dict | None = None, reported: dict | None = None) -> dict:
     today = now.date()
     lines: list[str] = []
     if payload is not None:
@@ -213,14 +214,24 @@ def summary(payload: dict | None, prices: dict, pins: list[str], events: dict, a
     since = (now - timedelta(hours=24)).astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
     recent = [a for a in alerts if a["at"] >= since and a["level"] in ("alert", "watch")]
     if recent:
-        mine = [a for a in recent if a["symbol"] in held]
+        mine = [a for a in recent if is_mine(a, held)]
         serious = [a for a in recent if a["level"] == "alert"]
         lines.append(f"24h: {len(recent)} flag{'s' if len(recent) != 1 else ''}" + (f", {len(mine)} held" if held else ""))
-        for a in sorted(serious, key=lambda a: a["symbol"] not in held)[:3]:
+        for a in sorted(serious, key=lambda a: not is_mine(a, held))[:3]:
             lines.append(f"🔴 {a['symbol']}: {a['text']}")
     if not lines:
         lines.append("Nothing new on your watchlist")
     return {"title": f"Morning summary, {today.strftime('%a %-d %b')}", "lines": lines}
+
+
+def is_mine(alert: dict, held: dict[str, set[str]]) -> bool:
+    """An alert about a stock you hold; one about a single broker (a Rupeezy leverage cut) only if you hold
+    the stock at that broker. Same rule as the site."""
+    at = held.get(alert["symbol"])
+    if not at:
+        return False
+    about = [b for b, name in SHORT.items() if re.search(rf"\b{name}\b", alert["text"], re.I)]
+    return not about or any(b in at for b in about)
 
 
 def load_json(p: Path, default):
@@ -275,7 +286,9 @@ def main(now: datetime | None = None) -> int:
         pins = load_json(ROOT / "data" / "pins.json", {}).get("pins") or []
         events = load_json(PUB / "events.json", {}).get("events") or {}
         alerts = load_json(PUB / "alerts.json", [])
-        held = {p["sym"] for p in (payload or {}).get("positions") or []}
+        held: dict[str, set[str]] = {}
+        for p in (payload or {}).get("positions") or []:
+            held.setdefault(p["sym"], set()).add(p["broker"])
         SUMMARY.write_text(json.dumps(summary(payload, prices, pins, events, alerts, now, held, mtf, reported), ensure_ascii=False,
                                       indent=1) + "\n")
         seen["summary"] = today.isoformat()

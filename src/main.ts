@@ -1033,6 +1033,24 @@ function renderBell() {
 }
 
 const ALERT_FILTER_KEY = 'mtf.alertsFilter';
+
+// Which brokers you hold each stock at.
+function heldBrokers(): Map<string, Set<BrokerKey>> {
+  const m = new Map<string, Set<BrokerKey>>();
+  for (const p of loadPositions()) m.set(p.sym, (m.get(p.sym) ?? new Set<BrokerKey>()).add(p.broker));
+  return m;
+}
+
+// The brokers an alert is about ("Rupeezy leverage cut …", "Dropped from Kotak Neo MTF …"); none = the stock itself.
+const alertBrokers = (text: string): BrokerKey[] => BROKERS.filter((b) => new RegExp(`\\b${BROKER_SHORT[b]}\\b`, 'i').test(text));
+
+// Yours when you hold the stock, and, for a broker-specific alert, hold it at that broker.
+function alertIsMine(a: WatchAlert, held: Map<string, Set<BrokerKey>>): boolean {
+  const at = held.get(a.symbol);
+  if (!at) return false;
+  const about = alertBrokers(a.text);
+  return !about.length || about.some((b) => at.has(b));
+}
 const ALERT_LEVEL_KEY = 'mtf.alertsLevel';
 let freshAlerts = new Set<WatchAlert>(); // unseen when the panel was opened; kept while switching filters
 
@@ -1040,12 +1058,14 @@ function openAlerts(switching = false) {
   const sheet = $<HTMLDialogElement>('#sheet');
   if (!switching) freshAlerts = new Set(unseenAlerts());
   const fresh = freshAlerts;
-  // "Portfolio only" keeps alerts for stocks you hold (positions on this device).
-  const held = new Set(loadPositions().map((p) => p.sym));
+  // "Portfolio only" keeps alerts for stocks you hold; an alert about one broker (a leverage cut at Rupeezy)
+  // counts only if you hold the stock at that broker.
+  const held = heldBrokers();
   const portfolio = store<string>(ALERT_FILTER_KEY) === 'portfolio';
-  const shown = portfolio ? state.alerts.filter((a) => held.has(a.symbol)) : state.alerts;
-  const heldCount = state.alerts.filter((a) => held.has(a.symbol)).length;
-  const heldNew = [...fresh].filter((a) => held.has(a.symbol)).length;
+  const mine = (a: WatchAlert) => alertIsMine(a, held);
+  const shown = portfolio ? state.alerts.filter(mine) : state.alerts;
+  const heldCount = state.alerts.filter(mine).length;
+  const heldNew = [...fresh].filter(mine).length;
   // Level filter: tap a count to see only serious, watch, good or info changes.
   const LEVELS: [WatchAlert['level'], string][] = [['alert', 'Serious'], ['watch', 'Watch'], ['good', 'Good'], ['info', 'Info']];
   const lvl = store<string>(ALERT_LEVEL_KEY);
@@ -1077,7 +1097,7 @@ function openAlerts(switching = false) {
           return `<article class="al is-${top}${isNew ? ' is-new' : ''}">
             <header class="al-head">
               <div class="al-title">
-                <span class="al-symrow"><button class="al-sym" data-open="${esc(g[0].symbol)}">${esc(g[0].symbol)}</button>${held.has(g[0].symbol) ? '<span class="al-held">Held</span>' : ''}</span>
+                <span class="al-symrow"><button class="al-sym" data-open="${esc(g[0].symbol)}">${esc(g[0].symbol)}</button>${held.has(g[0].symbol) ? `<span class="al-held">Held at ${[...held.get(g[0].symbol)!].map((b) => BROKER_SHORT[b]).join(' and ')}</span>` : ''}</span>
                 ${name ? `<span class="al-name">${esc(name)}</span>` : ''}
               </div>
               <div class="al-meta">${isNew ? '<span class="al-new">New</span>' : ''}<time>${time(g[0].at)}</time></div>
