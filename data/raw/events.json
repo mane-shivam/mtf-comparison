@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T10:32:42Z",
+"fetchedAt": "2026-11-12T11:32:34Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T10:32:35Z",
+"fetchedAt": "2026-11-12T11:32:27Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T10:32:36Z",
+"fetchedAt": "2026-11-12T11:32:28Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T10:32:42Z",
-"count": 981,
+"fetchedAt": "2026-11-12T11:32:34Z",
+"count": 1008,
 "error": null
 }
 },
@@ -2364,6 +2364,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15322_20261102_163015437_WEB.html"
 },
 {
+"symbol": "ACEINTEG",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Ace Integrated Solutions Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ACEINTEG_12112026161000_STX_INTIMATION_FR.pdf"
+},
+{
 "symbol": "ADANIPOWER",
 "date": "2026-11-10",
 "kind": "news",
@@ -2580,6 +2588,14 @@
 "title": "Results",
 "detail": "ALICON CASTALLOY LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2440_20261027_180324903_WEB.html"
+},
+{
+"symbol": "ALICON",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Financial Result for quarter ended 30th September, 2026 is enclosed.",
+"link": "https://nsearchives.nseindia.com/corporate/ALICON_12112026165604_Outcome_BM_12112026.pdf"
 },
 {
 "symbol": "ALKEM",
@@ -3443,6 +3459,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/BLKASHYAP_12112026132624_Results.pdf"
 },
 {
+"symbol": "BLSPOLY",
+"date": "2026-11-18",
+"kind": "meeting",
+"title": "Results",
+"detail": "BLS Polymers Limited has informed the Exchange about Board Meeting to be held on 18-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26716_20261112_164953139_WEB.html"
+},
+{
 "symbol": "BLUECHIP",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -3473,6 +3497,14 @@
 "title": "Results",
 "detail": "Bondada Engineering Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_29267_20261106_125024825_WEB.html"
+},
+{
+"symbol": "BONDADA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Bondada Engineering Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/BONDADA_12112026164708_Outcome_of_Board_Meeting-BEL-12th_Nov_2026.pdf"
 },
 {
 "symbol": "BONFIG",
@@ -3718,6 +3750,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19050_20261104_153511681_WEB.html"
 },
 {
+"symbol": "CLSEL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Chaman Lal Setia Exports Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/CLSEL_12112026165320_Resultsfinal.pdf"
+},
+{
 "symbol": "CMLL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -3917,6 +3957,14 @@
 "title": "Results",
 "detail": "Dilip Buildcon Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_14078_20261105_115757648_WEB.html"
+},
+{
+"symbol": "DBL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Dilip Buildcon Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/DBL_12112026165428_Outcome_sd.pdf"
 },
 {
 "symbol": "DBOL",
@@ -4358,6 +4406,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21864_20261106_152900285_WEB.html"
 },
 {
+"symbol": "EMSLIMITED",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Ems Limited has submitted to the Exchange, the financial results for the Quarter and Half Year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/EMSLIMITED_12112026164649_Outcome_of_Board_Meerting.pdf"
+},
+{
 "symbol": "ENERGYDEV",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -4493,6 +4549,14 @@
 "title": "Results",
 "detail": "Fiem Industries Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2449_20261026_140046685_WEB.html"
+},
+{
+"symbol": "FIEMIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Fiem Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/FIEMIND_12112026161248_FIEMINDBMOutcome121126.pdf"
 },
 {
 "symbol": "FILATEX",
@@ -4988,6 +5052,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1545_20261109_232720902_WEB.html"
 },
 {
+"symbol": "GUJRAFFIA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Gujarat Raffia Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/GUJRAFFIA_12112026163719_Upload.pdf"
+},
+{
 "symbol": "GUJTHEM",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -5299,6 +5371,14 @@
 "title": "Results",
 "detail": "IFCI Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_673_20261026_110719309_WEB.html"
+},
+{
+"symbol": "IFCI",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "IFCI Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/IFCI_12112026164424_STX_BM_OUTCOME.pdf"
 },
 {
 "symbol": "IFGLEXPOR",
@@ -5706,6 +5786,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1198_20261103_164838988_WEB.html"
 },
 {
+"symbol": "JBFIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "JBF Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/JBFIND_12112026161039_JBFResults30092026_.pdf"
+},
+{
 "symbol": "JINDALPHOT",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5850,6 +5938,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4961_20261030_155940934_WEB.html"
 },
 {
+"symbol": "KARMAENG",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Karma Energy Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/KARMAENG_12112026164711_KELOUTCOMEBMDTD12NOV2026.pdf"
+},
+{
 "symbol": "KAUSHALYA",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -5889,6 +5985,14 @@
 "title": "Results",
 "detail": "KCP SUGAR AND INDUSTRIES CORPORATION LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1607_20261029_170552362_WEB.html"
+},
+{
+"symbol": "KCPSUGIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "KCP Sugar and Industries Corporation Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/KCPSUGIND_12112026161732_BSENSEsd.pdf"
 },
 {
 "symbol": "KDDL",
@@ -6383,6 +6487,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1654_20261107_111338724_WEB.html"
 },
 {
+"symbol": "MAHAPEXLTD",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Maha Rashtra Apex Corporation Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MAHAPEXLTD_12112026163626_Outcome_Sept_26.pdf"
+},
+{
 "symbol": "MAHASTEEL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6448,6 +6560,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_3317_20261105_220620829_WEB.html"
 },
 {
+"symbol": "MANAPPURAM",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Manappuram Finance Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MANAPPURAM_12112026164223_MAFILOUTCOMEFINAL.pdf"
+},
+{
 "symbol": "MANINDS",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -6511,6 +6631,14 @@
 "title": "Results",
 "detail": "Markolines Pavement Technologies Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26723_20261109_180802238_WEB.html"
+},
+{
+"symbol": "MARKOLINES",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Markolines Pavement Technologies Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MPTL2002_12112026164437_MPTLBMOUTCOME121126SIGNED.pdf"
 },
 {
 "symbol": "MARSONS",
@@ -6860,6 +6988,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_27402_20261105_145525829_WEB.html"
 },
 {
+"symbol": "MVELECTRO",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "MV Electrosystems Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MVELECTROSYSTEMS_12112026164446_Covering_with_financial.pdf"
+},
+{
 "symbol": "MVGJL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7094,6 +7230,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1707_20261105_164919529_WEB.html"
 },
 {
+"symbol": "NOIDATOLL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Noida Toll Bridge Company Limited has submitted to the Exchange, the Audited financial results for the qurter and half year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/NOIDATOLL_12112026165512_CorporateAnnouncement.pdf"
+},
+{
 "symbol": "NOVAAGRI",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7197,6 +7341,14 @@
 "title": "Results",
 "detail": "Ola Electric Mobility Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_22983_20261107_013312901_WEB.html"
+},
+{
+"symbol": "OLAELEC",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Ola Electric Mobility Limited has submitted to the Exchange, the unaudited financial results for the quarter and half-year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/OLAELECTRIC_12112026160156_OutcomeofBMFS12112026.pdf"
 },
 {
 "symbol": "OLECTRA",
@@ -7618,6 +7770,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21714_20261105_145812658_WEB.html"
 },
 {
+"symbol": "POCL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Pondy Oxides & Chemicals Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/POCL_12112026165000_Q2FinancialResultsFY2027sd.pdf"
+},
+{
 "symbol": "POLYPLEX",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7632,6 +7792,14 @@
 "title": "Results",
 "detail": "HITACHI ENERGY INDIA LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17850_20261102_162201723_WEB.html"
+},
+{
+"symbol": "POWERINDIA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Hitachi Energy India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/HitachiEnergy_12112026162640_outcome.pdf"
 },
 {
 "symbol": "POWERMECH",
@@ -7842,6 +8010,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2131_20261105_121907994_WEB.html"
 },
 {
+"symbol": "RADAAN",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Radaan Mediaworks India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/RADAAN_12112026162915_BM_Outcome_12112026.pdf"
+},
+{
 "symbol": "RADIANTCMS",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -7889,6 +8065,14 @@
 "title": "Results",
 "detail": "Raj Television Network Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2554_20261103_180517032_WEB.html"
+},
+{
+"symbol": "RAJTV",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Raj Television Network Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/RAJTV_12112026170019_RAJTV_BMOutcome_12112026_signed.pdf"
 },
 {
 "symbol": "RAMAPHO",
@@ -8569,6 +8753,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15799_20261030_123634628_WEB.html"
 },
 {
+"symbol": "SHIVAMILLS",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Shiva Mills Limited has submitted to the Exchange, the Unaudited Financial Results for the quarter/six months ended 30.9.2026.",
+"link": "https://nsearchives.nseindia.com/corporate/SHIVAMILLS_12112026165900_SMLUFR30926.pdf"
+},
+{
 "symbol": "SHIVATEX",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -9111,6 +9303,14 @@
 "title": "Results",
 "detail": "SURYALAKSHMI COTTON MILLS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other busin",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2292_20261027_173344921_WEB.html"
+},
+{
+"symbol": "SURYALAXMI",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Suryalakshmi Cotton Mills Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/SURYALAXMI_12112026165329_Outcome.pdf"
 },
 {
 "symbol": "SUTLEJTEX",
@@ -9715,6 +9915,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1208_20261030_164956585_WEB.html"
 },
 {
+"symbol": "VARDMNPOLY",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Vardhman Polytex Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/VARDMNPOLY_12112026160846_Outcome_12Nov2026.pdf"
+},
+{
 "symbol": "VASWANI",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -10115,6 +10323,15 @@
 "title": "Board meeting",
 "detail": "Zee Entertainment Enterprises Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_1105_WebXMLFile_20261106_181932948.xml"
+},
+{
+"symbol": "ZEEL",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Buyback",
+"detail": "Zee Entertainment Enterprises Limited has informed the Exchange about buy back of equity shares of the Company and matters incidental thereto.",
+"link": "https://nsearchives.nseindia.com/corporate/ZEEL_12112026164804_SEIntimationBMOutcome13NovBBsigned.pdf"
 },
 {
 "symbol": "ZEEMEDIA",
