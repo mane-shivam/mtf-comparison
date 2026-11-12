@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T09:33:10Z",
+"fetchedAt": "2026-11-12T10:02:12Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T09:33:05Z",
+"fetchedAt": "2026-11-12T10:02:07Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T09:33:06Z",
+"fetchedAt": "2026-11-12T10:02:08Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T09:33:10Z",
-"count": 971,
+"fetchedAt": "2026-11-12T10:02:12Z",
+"count": 973,
 "error": null
 }
 },
@@ -4357,6 +4357,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2672_20261104_173049575_WEB.html"
 },
 {
+"symbol": "ENERGYDEV",
+"date": "2026-11-14",
+"kind": "meeting",
+"title": "Results",
+"detail": "ENERGYDEV : 14-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 12, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Com",
+"link": "https://nsearchives.nseindia.com/corporate/ENERGYDEV_12112026152439_SE_Letter_Adjournment.pdf"
+},
+{
 "symbol": "ENNATURE",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -7664,6 +7672,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13935_20261104_174912316_WEB.html"
 },
 {
+"symbol": "PREMEXPLN",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Premier Explosives Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/PREMEXPLN_12112026151422_BSENSEQtr2QuickResults30092026.pdf"
+},
+{
 "symbol": "PREMIERENE",
 "date": "2026-11-11",
 "kind": "action",
@@ -8946,8 +8962,8 @@
 "date": "2026-11-20",
 "kind": "meeting",
 "title": "Buyback",
-"detail": "Sukhjit Starch & Chemicals Ltd- has informed NSE that the meeting of the Board of Directors of the Company is scheduled on 20/11/2026, inter alia, to consider and approve the proposal for Buyback of the equity shares of the Company having f",
-"link": "https://nsearchives.nseindia.com/corporate/SUKHJIT1944_12112026121157_INTIMATION_OF_BOARD_MEETING_FOR_BUYBACK.pdf"
+"detail": "SUKHJIT STARCH & CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 20-Nov-2026 to consider Buyback.",
+"link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_21098_20261112_151143414_WEB.html"
 },
 {
 "symbol": "SULA",
