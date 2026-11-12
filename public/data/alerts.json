@@ -326,5 +326,29 @@
 "text": "Exchange margin 21% → 50%: a broker leverage cut may follow",
 "link": null,
 "at": "2026-11-11T23:00:56Z"
+},
+{
+"symbol": "TIINDIA",
+"name": "Tube Investments of India Limited",
+"level": "watch",
+"text": "Rupeezy leverage cut 4.1× → 4.0×: you need more margin",
+"link": null,
+"at": "2026-11-12T03:35:19Z"
+},
+{
+"symbol": "NAVINFLUOR",
+"name": "Navin Fluorine International Limited",
+"level": "watch",
+"text": "Rupeezy leverage cut 4.1× → 4.0×: you need more margin",
+"link": null,
+"at": "2026-11-12T03:35:19Z"
+},
+{
+"symbol": "ENTERO",
+"name": "Entero Healthcare Solutions Limited",
+"level": "watch",
+"text": "Rupeezy leverage cut 2.9× → 1.6×: you need more margin",
+"link": null,
+"at": "2026-11-12T03:35:19Z"
 }
 ]

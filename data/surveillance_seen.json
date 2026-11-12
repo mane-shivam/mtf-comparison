@@ -315,9 +315,9 @@
 "exact": true,
 "since": "2026-06-30"
 },
-"BLUECHIP|GSM|None|I": {
+"BLUECHIP|GSM|None|II": {
 "exact": true,
-"since": "2026-11-08"
+"since": "2026-11-12"
 },
 "BLUECOAST|GSM|None|0": {
 "exact": true,
@@ -1731,9 +1731,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"UNIVAFOODS|GSM|None|III": {
+"UNIVAFOODS|GSM|None|IV": {
 "exact": true,
-"since": "2026-11-08"
+"since": "2026-11-12"
 },
 "UNIVASTU|ESM|None|I": {
 "exact": false,
