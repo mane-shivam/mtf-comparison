@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T07:32:18Z",
+"fetchedAt": "2026-11-12T08:31:56Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T07:32:12Z",
+"fetchedAt": "2026-11-12T08:31:51Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T07:32:13Z",
+"fetchedAt": "2026-11-12T08:31:52Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T07:32:18Z",
-"count": 936,
+"fetchedAt": "2026-11-12T08:31:56Z",
+"count": 961,
 "error": null
 }
 },
@@ -2558,6 +2558,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13899_20261029_172307538_WEB.html"
 },
 {
+"symbol": "ALBERTDAVD",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Albert David Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ALBERTDAVD_12112026131037_FR_30_signed.pdf"
+},
+{
 "symbol": "ALGOQUANT",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -2580,6 +2588,14 @@
 "title": "Results",
 "detail": "ALKEM LABORATORIES LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_13311_20261104_140743638_WEB.html"
+},
+{
+"symbol": "ALKEM",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Alkem Laboratories Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ALKEM_12112026135201_AlkemReg3312112026.pdf"
 },
 {
 "symbol": "ALPA",
@@ -2823,6 +2839,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2580_20261104_125415317_WEB.html"
 },
 {
+"symbol": "AROGRANITE",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Aro Granite Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/AROGRANITE_12112026133502_OUTCOMEFR12112026.pdf"
+},
+{
 "symbol": "ARSSINFRA",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -2845,6 +2869,14 @@
 "title": "Results",
 "detail": "ASAHI SONGWON COLORS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_5165_20261104_105109520_WEB.html"
+},
+{
+"symbol": "ASAHISONG",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Asahi Songwon Colors Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ASAHISONG_12112026133641_Asahisongwonoutcomeofboardmeeting12112026.pdf"
 },
 {
 "symbol": "ASALCBR",
@@ -3088,6 +3120,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_13244_WebXMLFile_20261027_172058692.xml"
 },
 {
+"symbol": "BALAXI",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "BALAXI PHARMACEUTICALS LIMITED has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/BALAXI_12112026135640_Signed_Balaxi_Outcome_of_BM_12112026_-_Copy.pdf"
+},
+{
 "symbol": "BALKRISIND",
 "date": "2026-11-11",
 "kind": "action",
@@ -3241,6 +3281,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15963_20261104_101115221_WEB.html"
 },
 {
+"symbol": "BDL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Bharat Dynamics Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/BDL_12112026135334_BDLQ2Sep2026SEFin.pdf"
+},
+{
 "symbol": "BEARDSELL",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -3369,6 +3417,14 @@
 "title": "Results",
 "detail": "B. L. KASHYAP AND SONS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2375_20261103_100433246_WEB.html"
+},
+{
+"symbol": "BLKASHYAP",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "B. L. Kashyap and Sons Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/BLKASHYAP_12112026132624_Results.pdf"
 },
 {
 "symbol": "BLUECHIP",
@@ -3530,6 +3586,14 @@
 "title": "Results",
 "detail": "CAPLIN POINT LABORATORIES LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_10106_20261102_180144727_WEB.html"
+},
+{
+"symbol": "CAPLIPOINT",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Caplin Point Laboratories Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/CAPLINPOINT_12112026130650_Q2-SD.pdf"
 },
 {
 "symbol": "CAPTRUST",
@@ -3912,6 +3976,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_550_20261104_112117307_WEB.html"
 },
 {
+"symbol": "DECCANCE",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Deccan Cements Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/DECCANCE_12112026132342_Outcome.PDF"
+},
+{
 "symbol": "DEEDEV",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -3966,6 +4038,14 @@
 "title": "Results",
 "detail": "DHUNSERI INVESTMENTS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_4260_20261103_160911165_WEB.html"
+},
+{
+"symbol": "DHUNINV",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Dhunseri Investments Limited has submitted to the Exchange, Outcome of the Board Meeting to consider and approve Unaudited Financial Results (Standalone & Consolidated) for the quarter and half year ended 30th September, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/DHUNINV_12112026130755_Outcome.pdf"
 },
 {
 "symbol": "DISHTV",
@@ -4267,6 +4347,14 @@
 "title": "Results",
 "detail": "ENNATURE BIO PHARMA LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_29327_20261105_164949974_WEB.html"
+},
+{
+"symbol": "ENNATURE",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Ennature Bio Pharma Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ENNATURE_12112026134235_Outcome_ResultsEnnature.pdf"
 },
 {
 "symbol": "EPACKPEB",
@@ -4778,6 +4866,24 @@
 },
 {
 "symbol": "GROBTEA",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "The Grob Tea Company Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.com/corporate/GROBTEA_12112026132036_Reg_30-_Intimation_of_disclosure.pdf"
+},
+{
+"symbol": "GROBTEA",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "The Grob Tea Company Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.com/corporate/GROBTEA_12112026131747_Reg_30-_Intimation_of_disclosure.pdf"
+},
+{
+"symbol": "GROBTEA",
 "date": "2026-11-13",
 "kind": "meeting",
 "title": "Results",
@@ -4914,6 +5020,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15998_20261027_172855195_WEB.html"
 },
 {
+"symbol": "HAL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Hindustan Aeronautics Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/HAL_12112026132915_IntegratedFinancial_30092026.pdf"
+},
+{
 "symbol": "HALEOSLABS",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -4968,6 +5082,14 @@
 "title": "Results",
 "detail": "HD Fire Protect Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26987_20261106_150755724_WEB.html"
+},
+{
+"symbol": "HDFIRE",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "HD Fire Protect Limited has submitted to the Exchange, the Unaudited Standalone and Consolidated financial results for the quarter and half-year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/HDFIRE_12112026131721_BMOutcome.pdf"
 },
 {
 "symbol": "HEALTHX",
@@ -5290,6 +5412,14 @@
 "title": "Results",
 "detail": "INDO TECH TRANSFORMERS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2373_20261106_153530454_WEB.html"
+},
+{
+"symbol": "INDOTECH",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Indo Tech Transformers Limited has submitted to the Exchange, the unaudited financial results for the quarter and half yearly ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/INDOTECH_12112026132654_UploadNew.pdf"
 },
 {
 "symbol": "INDTERRAIN",
@@ -6056,6 +6186,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/xbrl/PRIOR_INTIMATION_2401_WebXMLFile_20261105_172959825.xml"
 },
 {
+"symbol": "LOKESHMACH",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Lokesh Machines Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/LOKESHMACH_12112026132833_sdfinal.pdf"
+},
+{
 "symbol": "LOTUSEYE",
 "date": "2026-11-11",
 "kind": "meeting",
@@ -6241,6 +6379,14 @@
 "title": "Results",
 "detail": "MAN INDUSTRIES (INDIA) LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_897_20261102_122924945_WEB.html"
+},
+{
+"symbol": "MANINDS",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Man Industries (India) Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MANINDS_12112026135740_MIIL_Outcome_of_the_Board_Meeting_12112026.pdf"
 },
 {
 "symbol": "MANIPALHOS",
@@ -6597,6 +6743,14 @@
 "title": "Results",
 "detail": "MUKAND LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2173_20261015_121134286_WEB.html"
+},
+{
+"symbol": "MUKANDLTD",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Mukand Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/MUKANDLTD_12112026134406_Outcome.pdf"
 },
 {
 "symbol": "MUNJALAU",
@@ -7268,6 +7422,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1062_20260925_173526904_WEB.html"
 },
 {
+"symbol": "PGHH",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Procter & Gamble Hygiene and Health Care Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/PGHH_12112026133742_PGHH_OutcomeofBM.pdf"
+},
+{
 "symbol": "PGIL",
 "date": "2026-11-13",
 "kind": "action",
@@ -7919,6 +8081,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19047_20261103_170453036_WEB.html"
 },
 {
+"symbol": "RUBFILA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Rubfila International Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/RUBFILA_12112026131252_Outcome.pdf"
+},
+{
 "symbol": "RUBYMILLS",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -8086,6 +8256,15 @@
 "title": "Results",
 "detail": "SANWARIA CONSUMER LIMITED has informed the Exchange about Board Meeting to be held on 14-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2380_20261107_174106969_WEB.html"
+},
+{
+"symbol": "SAPPHIRE",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Sapphire Foods India Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.com/corporate/SAPPHIRE_12112026131744_NSE.pdf"
 },
 {
 "symbol": "SARVESHWAR",
@@ -8273,6 +8452,14 @@
 "title": "Results",
 "detail": "SHIVA TEXYARN LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15657_20261028_114939984_WEB.html"
+},
+{
+"symbol": "SHIVATEX",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Shiva Texyarn Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/SHIVATEX_12112026133540_Outcomeofboardmeeting12112026.pdf"
 },
 {
 "symbol": "SHIVAUM",
@@ -8706,6 +8893,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/SUDARSHAN_ROID_104637_KMP_Doc.zip"
 },
 {
+"symbol": "SUKHJITS",
+"date": "2026-11-20",
+"kind": "meeting",
+"title": "Buyback",
+"detail": "Sukhjit Starch & Chemicals Ltd- has informed NSE that the meeting of the Board of Directors of the Company is scheduled on 20/11/2026, inter alia, to consider and approve the proposal for Buyback of the equity shares of the Company having f",
+"link": "https://nsearchives.nseindia.com/corporate/SUKHJIT1944_12112026121157_INTIMATION_OF_BOARD_MEETING_FOR_BUYBACK.pdf"
+},
+{
 "symbol": "SULA",
 "date": "2026-11-09",
 "kind": "news",
@@ -8930,6 +9125,14 @@
 "title": "Results",
 "detail": "TARSONS PRODUCTS LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_19886_20261104_172523681_WEB.html"
+},
+{
+"symbol": "TARSONS",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Tarsons Products Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/TARSONS_12112026135043_Outcome_Board_Q2FY27.pdf"
 },
 {
 "symbol": "TATAPOWER",
