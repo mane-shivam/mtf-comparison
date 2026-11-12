@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T05:37:46Z",
+"fetchedAt": "2026-11-12T06:33:13Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T05:37:39Z",
+"fetchedAt": "2026-11-12T06:33:09Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T05:37:40Z",
+"fetchedAt": "2026-11-12T06:33:10Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T05:37:46Z",
-"count": 918,
+"fetchedAt": "2026-11-12T06:33:13Z",
+"count": 925,
 "error": null
 }
 },
@@ -2679,6 +2679,22 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26427_20261109_140525531_WEB.html"
 },
 {
+"symbol": "ANSALAPI",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Ansal Properties & Infrastructure Limited has informed the Exchange about Delay in declaration of Un-Audited Financial Results for the 02nd Quarter/Half Year ended on the 30th September, 2026 of Financial year 2026-27 beyond the time frame ",
+"link": "https://nsearchives.nseindia.com/corporate/ANSALAPI_12112026111612_DelayFinancialResults_30092026.pdf"
+},
+{
+"symbol": "ANSALAPI",
+"date": "2026-11-18",
+"kind": "meeting",
+"title": "Results",
+"detail": "To consider and approve the unaudited financial results for the quarter ended Jun 30, 2026",
+"link": "https://nsearchives.nseindia.com/corporate/ANSALAPI_12112026112438_Prior_Intimation__BM_18112026.pdf"
+},
+{
 "symbol": "ANTGRAPHIC",
 "date": "2026-11-12",
 "kind": "meeting",
@@ -4089,6 +4105,15 @@
 "title": "Results out",
 "detail": "EAAA India Alternatives Limited has submitted to the Exchange, the financial result for the quarter & half year ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.com/corporate/EAAA_11112026133647_EAAAOutcome.pdf"
+},
+{
+"symbol": "EDELWEISS",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Edelweiss Financial Services Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/EDELWEISS_ROID_104639_KMP_Doc.zip"
 },
 {
 "symbol": "EDELWEISS",
@@ -6071,6 +6096,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1592_20261105_104003208_WEB.html"
 },
 {
+"symbol": "MAFATIND",
+"date": "2026-11-13",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 1 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=MAFATIND"
+},
+{
 "symbol": "MAGNUM",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -7335,6 +7368,14 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.35 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PRECWIRE"
+},
+{
+"symbol": "PREMCO",
+"date": "2026-11-13",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Rs 10 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=PREMCO"
 },
 {
 "symbol": "PREMEXPLN",
@@ -8719,6 +8760,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2403_20261106_200308427_WEB.html"
 },
 {
+"symbol": "SWSOLAR",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Sterling and Wilson Renewable Energy Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.com/corporate/SWSOLAR_12112026115503_TSGF.pdf"
+},
+{
 "symbol": "SYNCOMF",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -8733,6 +8783,14 @@
 "title": "Results",
 "detail": "SYSTEMATIX CORPORATE SERVICES LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_26599_20261104_183941887_WEB.html"
+},
+{
+"symbol": "TAALTECH",
+"date": "2026-11-13",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Rs 5 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=TAALTECH"
 },
 {
 "symbol": "TAJGVK",

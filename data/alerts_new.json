@@ -1,42 +1,10 @@
 [
  {
-  "symbol": "SENCO",
-  "name": "Senco Gold Limited",
-  "level": "info",
-  "text": "Up 5.4% today at ₹339.30",
-  "link": null,
-  "at": "2026-11-12T05:38:09Z"
- },
- {
-  "symbol": "AARTIPHARM",
-  "name": "Aarti Pharmalabs Limited",
-  "level": "info",
-  "text": "Up 5.0% today at ₹969.75",
-  "link": null,
-  "at": "2026-11-12T05:38:09Z"
- },
- {
-  "symbol": "ATHERENERG",
-  "name": "Ather Energy Limited",
+  "symbol": "NAVINFLUOR",
+  "name": "Navin Fluorine International Limited",
   "level": "good",
-  "text": "At a 52-week high (₹1,899.20)",
+  "text": "At a 52-week high (₹9,830.00)",
   "link": null,
-  "at": "2026-11-12T05:38:09Z"
- },
- {
-  "symbol": "MCX",
-  "name": "Multi Commodity Exchange of India Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹3,622.80)",
-  "link": null,
-  "at": "2026-11-12T05:38:09Z"
- },
- {
-  "symbol": "MEDIASSIST",
-  "name": "Medi Assist Healthcare Services Limited",
-  "level": "watch",
-  "text": "At a 52-week low (₹276.20)",
-  "link": null,
-  "at": "2026-11-12T05:38:09Z"
+  "at": "2026-11-12T06:33:35Z"
  }
 ]
