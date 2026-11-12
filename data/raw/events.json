@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T08:31:56Z",
+"fetchedAt": "2026-11-12T09:33:10Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T08:31:51Z",
+"fetchedAt": "2026-11-12T09:33:05Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T08:31:52Z",
+"fetchedAt": "2026-11-12T09:33:06Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T08:31:56Z",
-"count": 961,
+"fetchedAt": "2026-11-12T09:33:10Z",
+"count": 971,
 "error": null
 }
 },
@@ -2614,6 +2614,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2590_20261104_161056030_WEB.html"
 },
 {
+"symbol": "ALPHAGEO",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Alphageo (India) Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/ALPHAGEO_12112026143727_Outcome_of_Board_Meeting_alongwith_Results-12112026.pdf"
+},
+{
 "symbol": "ALPSINDUS",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -3206,6 +3214,14 @@
 "title": "Results",
 "detail": "BANKA BIOLOO LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_15813_20261109_111401027_WEB.html"
+},
+{
+"symbol": "BANKA",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Banka BioLoo Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/BANKA_12112026144632_BMOutcome12112026.pdf"
 },
 {
 "symbol": "BASML",
@@ -5889,6 +5905,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1267_20261106_145959097_WEB.html"
 },
 {
+"symbol": "KESORAMIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Kesoram Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/KESORAMIND_12112026144142_Outcome12112026.pdf"
+},
+{
 "symbol": "KEYFINSERV",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -6120,6 +6144,15 @@
 "title": "Results",
 "detail": "LAXMI INDIA FINANCE LIMITED has informed the Exchange about Board Meeting to be held on 13-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_25031_20261105_130036260_WEB.html"
+},
+{
+"symbol": "LCCINFOTEC",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "LCC Infotech Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/LCCINFOTEC_ROID_104651_KMP_Doc.zip"
 },
 {
 "symbol": "LEEL",
@@ -6947,6 +6980,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1820_20261102_170118048_WEB.html"
 },
 {
+"symbol": "NIPPOBATRY",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Indo-National Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/NIPPOBATRY_12112026145421_Outcome.pdf"
+},
+{
 "symbol": "NIRAJ",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -7268,6 +7309,14 @@
 "title": "Results \u00b7 Dividend",
 "detail": "PAGE INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_2552_20261030_155000674_WEB.html"
+},
+{
+"symbol": "PAGEIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Page Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/PAGEIND_12112026142702_RESULTS30092026.pdf"
 },
 {
 "symbol": "PALASHSECU",
@@ -9503,6 +9552,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_343_20261106_135842287_WEB.html"
 },
 {
+"symbol": "UNITECH",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Unitech Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/UNITECH_12112026144741_Outcome_Financial_Results_30092026.pdf"
+},
+{
 "symbol": "UNITEDTEA",
 "date": "2026-11-10",
 "kind": "meeting",
@@ -9744,6 +9801,14 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_1388_20261027_103308092_WEB.html"
 },
 {
+"symbol": "VISAKAIND",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Visaka Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/VISAKAIND_12112026144202_Outcome_of_Borad_Meeting-DSC.pdf"
+},
+{
 "symbol": "VISHWARAJ",
 "date": "2026-11-14",
 "kind": "meeting",
@@ -9800,6 +9865,15 @@
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_23019_20261106_164135527_WEB.html"
 },
 {
+"symbol": "VRLLOG",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Buyback",
+"detail": "VRL Logistics Limited has informed the Exchange about post Buyback Public Announcement",
+"link": "https://nsearchives.nseindia.com/corporate/VRLLOGI_12112026144319_PostBuyback_PublicAdvertisement12112026FINAL.pdf"
+},
+{
 "symbol": "VSTL",
 "date": "2026-11-13",
 "kind": "meeting",
@@ -9838,6 +9912,14 @@
 "title": "Results",
 "detail": "Wonder Electricals Limited has informed the Exchange about Board Meeting to be held on 12-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.com/corporate/ixbrl/PRIOR_INTIMATION_17563_20261103_152932927_WEB.html"
+},
+{
+"symbol": "WEL",
+"date": "2026-11-12",
+"kind": "result",
+"title": "Results out",
+"detail": "Wonder Electricals Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.com/corporate/WFL_12112026140229_ouctcomeboardmeeting12112026.pdf"
 },
 {
 "symbol": "WHIRLPOOL",

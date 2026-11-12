@@ -1,42 +1,34 @@
 [
  {
+  "symbol": "CDSL",
+  "name": "Central Depository Services (India) Limited",
+  "level": "info",
+  "text": "Volume 3.1× the 20-day average",
+  "link": null,
+  "at": "2026-11-12T09:33:32Z"
+ },
+ {
   "symbol": "MANINDS",
   "name": "Man Industries (India) Limited",
   "level": "info",
-  "text": "Results out (12 Nov): read the filing",
-  "link": "https://nsearchives.nseindia.com/corporate/MANINDS_12112026135740_MIIL_Outcome_of_the_Board_Meeting_12112026.pdf",
-  "at": "2026-11-12T08:32:18Z"
- },
- {
-  "symbol": "MEDIASSIST",
-  "name": "Medi Assist Healthcare Services Limited",
-  "level": "info",
-  "text": "Volume 3.3× the 20-day average",
+  "text": "Volume 5.7× the 20-day average",
   "link": null,
-  "at": "2026-11-12T08:32:18Z"
- },
- {
-  "symbol": "ICICIBANK",
-  "name": "ICICI Bank Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,586.40)",
-  "link": null,
-  "at": "2026-11-12T08:32:18Z"
+  "at": "2026-11-12T09:33:32Z"
  },
  {
   "symbol": "CAPLIPOINT",
   "name": "Caplin Point Laboratories Limited",
-  "level": "info",
-  "text": "Results out (12 Nov): read the filing",
-  "link": "https://nsearchives.nseindia.com/corporate/CAPLINPOINT_12112026130650_Q2-SD.pdf",
-  "at": "2026-11-12T08:32:18Z"
+  "level": "watch",
+  "text": "Down 5.0% today at ₹2,393.00",
+  "link": null,
+  "at": "2026-11-12T09:33:32Z"
  },
  {
-  "symbol": "CAPLIPOINT",
-  "name": "Caplin Point Laboratories Limited",
-  "level": "info",
-  "text": "Volume 3.5× the 20-day average",
+  "symbol": "ENTERO",
+  "name": "Entero Healthcare Solutions Limited",
+  "level": "watch",
+  "text": "Kotak Neo leverage cut 2.9× → 2.0×: you need more margin",
   "link": null,
-  "at": "2026-11-12T08:32:18Z"
+  "at": "2026-11-12T09:33:32Z"
  }
 ]

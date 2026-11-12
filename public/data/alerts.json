@@ -534,5 +534,37 @@
 "text": "Volume 3.5× the 20-day average",
 "link": null,
 "at": "2026-11-12T08:32:18Z"
+},
+{
+"symbol": "CDSL",
+"name": "Central Depository Services (India) Limited",
+"level": "info",
+"text": "Volume 3.1× the 20-day average",
+"link": null,
+"at": "2026-11-12T09:33:32Z"
+},
+{
+"symbol": "MANINDS",
+"name": "Man Industries (India) Limited",
+"level": "info",
+"text": "Volume 5.7× the 20-day average",
+"link": null,
+"at": "2026-11-12T09:33:32Z"
+},
+{
+"symbol": "CAPLIPOINT",
+"name": "Caplin Point Laboratories Limited",
+"level": "watch",
+"text": "Down 5.0% today at ₹2,393.00",
+"link": null,
+"at": "2026-11-12T09:33:32Z"
+},
+{
+"symbol": "ENTERO",
+"name": "Entero Healthcare Solutions Limited",
+"level": "watch",
+"text": "Kotak Neo leverage cut 2.9× → 2.0×: you need more margin",
+"link": null,
+"at": "2026-11-12T09:33:32Z"
 }
 ]
