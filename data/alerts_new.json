@@ -1,90 +1,42 @@
 [
  {
-  "symbol": "ETERNAL",
-  "name": "ETERNAL LIMITED",
+  "symbol": "SENCO",
+  "name": "Senco Gold Limited",
+  "level": "info",
+  "text": "Up 5.4% today at ₹339.30",
+  "link": null,
+  "at": "2026-11-12T05:38:09Z"
+ },
+ {
+  "symbol": "AARTIPHARM",
+  "name": "Aarti Pharmalabs Limited",
+  "level": "info",
+  "text": "Up 5.0% today at ₹969.75",
+  "link": null,
+  "at": "2026-11-12T05:38:09Z"
+ },
+ {
+  "symbol": "ATHERENERG",
+  "name": "Ather Energy Limited",
   "level": "good",
-  "text": "At a 52-week high (₹366.70)",
+  "text": "At a 52-week high (₹1,899.20)",
   "link": null,
-  "at": "2026-11-12T04:37:26Z"
+  "at": "2026-11-12T05:38:09Z"
  },
  {
-  "symbol": "MONEYVIEW",
-  "name": "Moneyview Limited",
-  "level": "info",
-  "text": "Up 5.8% today at ₹54.50",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "ACUTAAS",
-  "name": "Acutaas Chemicals Limited",
+  "symbol": "MCX",
+  "name": "Multi Commodity Exchange of India Limited",
   "level": "good",
-  "text": "At a 52-week high (₹4,067.70)",
+  "text": "At a 52-week high (₹3,622.80)",
   "link": null,
-  "at": "2026-11-12T04:37:26Z"
+  "at": "2026-11-12T05:38:09Z"
  },
  {
-  "symbol": "ANANDRATHI",
-  "name": "Anand Rathi Wealth Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹2,385.40)",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "KRN",
-  "name": "KRN Heat Exchanger and Refrigeration Limited",
-  "level": "info",
-  "text": "At or near the upper circuit (5% band)",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "VENUSPIPES",
-  "name": "Venus Pipes & Tubes Limited",
-  "level": "info",
-  "text": "Up 8.7% today at ₹1,917.90",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "STLTECH",
-  "name": "STLTECH",
-  "level": "info",
-  "text": "At or near the upper circuit (5% band)",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "QPOWER",
-  "name": "Quality Power Electrical Equipments Limited",
-  "level": "info",
-  "text": "Up 6.2% today at ₹1,522.70",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "360ONE",
-  "name": "360 ONE WAM LIMITED",
-  "level": "info",
-  "text": "Up 5.0% today at ₹1,194.95",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "ENTERO",
-  "name": "Entero Healthcare Solutions Limited",
+  "symbol": "MEDIASSIST",
+  "name": "Medi Assist Healthcare Services Limited",
   "level": "watch",
-  "text": "Down 5.6% today at ₹1,996.30",
+  "text": "At a 52-week low (₹276.20)",
   "link": null,
-  "at": "2026-11-12T04:37:26Z"
- },
- {
-  "symbol": "ICICIBANK",
-  "name": "ICICI Bank Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,587.40)",
-  "link": null,
-  "at": "2026-11-12T04:37:26Z"
+  "at": "2026-11-12T05:38:09Z"
  }
 ]

@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-12T04:36:56Z",
+"fetchedAt": "2026-11-12T05:37:46Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-12T04:36:51Z",
+"fetchedAt": "2026-11-12T05:37:39Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-12T04:36:52Z",
+"fetchedAt": "2026-11-12T05:37:40Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-12T04:36:56Z",
-"count": 917,
+"fetchedAt": "2026-11-12T05:37:46Z",
+"count": 918,
 "error": null
 }
 },
@@ -8579,6 +8579,15 @@
 "title": "Director/KMP resigned",
 "detail": "Sudarshan Pharma Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.com/corporate/SUDARSHAN_ROID_104419_KMP_Doc.zip"
+},
+{
+"symbol": "SUDARSHAN",
+"date": "2026-11-12",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Sudarshan Pharma Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.com/corporate/SUDARSHAN_ROID_104637_KMP_Doc.zip"
 },
 {
 "symbol": "SULA",
