@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-11T23:00:21Z",
+"fetchedAt": "2026-11-12T02:34:07Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 474,
-"fetchedAt": "2026-11-11T23:00:21Z",
+"fetchedAt": "2026-11-12T02:34:07Z",
 "error": null
 }
 },
@@ -916,8 +916,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "RUBICON",
@@ -1386,8 +1386,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "DHARIWAL",
@@ -1436,8 +1436,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "KALAMANDIR",
@@ -1586,8 +1586,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "SMT",
@@ -1666,8 +1666,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "VEDPOWER",
@@ -1706,8 +1706,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "AGSTRA",
@@ -3566,8 +3566,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "KLL",
@@ -3686,8 +3686,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "MAL",
@@ -3996,8 +3996,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "PRESSTONIC",
@@ -4286,8 +4286,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-12",
-"exact": true
+"exact": true,
+"since": "2026-11-12"
 },
 {
 "symbol": "SIMCA",

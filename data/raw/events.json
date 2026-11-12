@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-11T23:00:26Z",
+"fetchedAt": "2026-11-12T02:34:14Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-11T23:00:21Z",
+"fetchedAt": "2026-11-12T02:34:08Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-11T23:00:22Z",
+"fetchedAt": "2026-11-12T02:34:08Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-11T23:00:26Z",
-"count": 916,
+"fetchedAt": "2026-11-12T02:34:14Z",
+"count": 917,
 "error": null
 }
 },
@@ -3585,7 +3585,7 @@
 "date": "2026-11-12",
 "kind": "action",
 "title": "Ex-dividend",
-"detail": "Distribution - Rs 5.0185 Per Unit Consists Of Rs 2.4686 Per Unit As Interest/ Re 0.0213 Per Unit As Repayment Of Debt/ Rs 0.6943 Per Unit As Dividend/ Rs 1.8343 Per Unit As Other Income",
+"detail": "Distribution - Rs 2.9585 Per Unit Consists Of Rs 1.7560 Per Unit As Interest/ Re 0.4885 Per Unit As Repayment Of Debt/ Rs 0.6943 Per Unit As Dividend/ Rs 0.0197 Per Unit As Other Income",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=CITIUSINVT"
 },
 {
@@ -7085,6 +7085,14 @@
 "kind": "action",
 "title": "Bonus",
 "detail": "Bonus 3:2",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=PASHUPATI"
+},
+{
+"symbol": "PASHUPATI",
+"date": "2026-11-23",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 0.02 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PASHUPATI"
 },
 {
