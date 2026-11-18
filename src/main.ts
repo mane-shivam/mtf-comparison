@@ -2108,6 +2108,7 @@ function brokerMismatches(b: BrokerKey): { checked: number; off: Mismatch[] } | 
     const bQty = h?.qty ?? 0;
     const recent = lotsOf(sym).filter((x) => x.date >= settleFrom).reduce((t, x) => t + x.qty, 0);
     if (bQty < qty && qty - bQty <= recent) continue;
+    if (bQty > qty && bQty - qty <= unsettledSold(b, sym)) continue;
     if (!h || !m || h.qty !== qty || Math.abs(avg - h.avg) / h.avg > 0.01) off.push({ sym, qty, avg, bQty, bAvg: h?.avg ?? 0, lot: lotsOf(sym).at(-1)?.id });
   }
   return { checked: held.length, off };
@@ -2198,14 +2199,25 @@ function repairFalseSales(): number {
   const made = (id: string) => parseInt(id.slice(0, 8), 36);
   const keep: ClosedTrade[] = [];
   let n = 0;
-  for (const c of closed) {
-    const t = made(c.id);
-    const l = c.est && !c.fills?.length ? list.find((p) => p.src === 'broker' && !p.fills?.length && p.sym === c.sym && p.broker === c.broker
-      && p.qty === c.qty && made(p.id) > t && made(p.id) - t < 4 * 86_400_000 && Math.abs(p.price - c.buy) / c.buy < 0.03) : undefined;
-    if (!l) { keep.push(c); continue; }
-    list = list.map((p) => (p.id === l.id ? { ...p, price: c.buy, date: c.buyDate, lev: c.lev, cash: c.own } : p));
-    n += 1;
+  const undone = new Set<string>();
+  for (const l of list.filter((p) => p.src === 'broker' && !p.fills?.length)) {
+    // The estimated sales of this stock that the lot came back after: one sale, or a sale split across lots
+    // (same sell day) whose quantities add up to the lot's.
+    const group = closed.filter((c) => c.est && !c.fills?.length && !undone.has(c.id) && c.sym === l.sym && c.broker === l.broker
+      && made(l.id) > made(c.id) && made(l.id) - made(c.id) < 4 * 86_400_000);
+    const days = [...new Set(group.map((c) => c.sellDate))];
+    for (const d of days) {
+      const g = group.filter((c) => c.sellDate === d);
+      const qty = g.reduce((t, c) => t + c.qty, 0);
+      const avg = g.reduce((t, c) => t + c.qty * c.buy, 0) / qty;
+      if (qty !== l.qty || Math.abs(l.price - avg) / avg >= 0.03) continue;
+      list = [...list.filter((p) => p.id !== l.id), ...g.map((c, i) => ({ ...l, id: i ? `${l.id}${i}` : l.id, qty: c.qty, price: c.buy, date: c.buyDate, lev: c.lev, cash: c.own }))];
+      g.forEach((c) => undone.add(c.id));
+      n += g.length;
+      break;
+    }
   }
+  keep.push(...closed.filter((c) => !undone.has(c.id)));
   if (n) {
     saveClosed(keep);
     savePositions(list);
@@ -2233,9 +2245,44 @@ function dropDerivativeLots(): number {
   return gone.length;
 }
 
+// The same sale recorded more than once (shares from a sale not yet settled were added back, priced at the
+// broker's average and dated later, and sold again): one record per sale. Same stock, broker, quantity, sell
+// day and sell price to the rupee = the same sale. The record kept: one booked from a fill, else the earliest
+// buy date, then the lowest buy price (your trade price; Kotak's average includes charges).
+function dedupeClosed(): number {
+  const all = loadClosed();
+  const best = new Map<string, ClosedTrade>();
+  const rank = (c: ClosedTrade) => [c.fills?.length ? 0 : 1, c.est ? 1 : 0, c.buyDate, c.buy] as const;
+  const better = (a: ClosedTrade, b: ClosedTrade) => {
+    const [x, y] = [rank(a), rank(b)];
+    for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] < y[i];
+    return false;
+  };
+  for (const c of all) {
+    const k = [c.sym, c.broker, c.qty, Math.round(c.sell), c.sellDate].join('|');
+    const o = best.get(k);
+    if (!o || better(c, o)) best.set(k, c);
+  }
+  const winners = new Set(best.values());
+  const keep = all.filter((c) => winners.has(c));
+  if (keep.length === all.length) return 0;
+  saveClosed(keep);
+  const n = all.length - keep.length;
+  toast(`Removed ${n} duplicate closed trade${n === 1 ? '' : 's'}.`);
+  return n;
+}
+
+// Shares sold in the last two sessions that the broker may still list (Kotak lists settled shares, and a
+// sale settles the next day): not shares to add back.
+function unsettledSold(b: BrokerKey, sym: string): number {
+  const from = prevTradingDay(sessionDay(Date.now()));
+  // Only sales the broker confirmed (a fill, or its trade book): an estimated one may not have happened at all.
+  return loadClosed().filter((c) => c.broker === b && c.sym === sym && c.sellDate >= from && !c.est).reduce((t, c) => t + c.qty, 0);
+}
+
 function reconcileFromBrokers() {
   migrateLotDates();
-  if (repairFalseSales() + dropDerivativeLots()) render();
+  if (dedupeClosed() + repairFalseSales() + dropDerivativeLots()) render();
   // Needs prices and broker rates: spare margin decides how new buys were paid, and a sale needs a price.
   // Called again when they arrive.
   if (!brokerSnap || !state.market || !state.stocks.length) return;
@@ -2276,6 +2323,9 @@ function reconcileFromBrokers() {
           f.left -= q;
           extra -= q;
         }
+        // The rest, if it's no more than what was sold in the last two sessions, is those sold shares still
+        // listed until the sale settles: nothing to add.
+        if (extra > 0 && extra <= unsettledSold(b, sym)) extra = 0;
         if (extra > 0) {
           // No fill for the rest (bought before the log began, or a fill the sync missed): the price the broker's
           // average implies once your tracked lots are taken out, dated the session before this sync's.
@@ -2655,7 +2705,7 @@ function closedViewHTML(): string {
       <div class="pr-line"><span class="pr-sym">${esc(x.sym)}</span><span class="pr-pnl ${x.pnl >= 0 ? 'up' : 'down'}">${sign(x.pnl)}${inr(Math.abs(x.pnl)).replace('−', '')}</span></div>
       <div class="pr-line pr-meta"><span>${BROKER_SHORT[x.broker]} ${round1(x.lev)}×, ${x.qty.toLocaleString('en-IN')} bought ${rupeeShort(x.buy)}, sold ${rupeeShort(x.sell)}${x.est ? ' (last price; broker sync)' : ''}</span><span class="cl-ret"><b>${sign(x.pnl)}${Math.abs((x.pnl / (x.qty * x.buy)) * 100).toFixed(1)}% on total</b>${x.own ? `<small>${sign(x.pnl)}${Math.abs((x.pnl / x.own) * 100).toFixed(1)}% on own money</small>` : ''}</span></div>
       <div class="pr-day">${shortDate(x.buyDate)} to ${shortDate(x.sellDate)}, ${days} day${days === 1 ? '' : 's'}. Charges ${inr(x.charges)}, interest ${inr(x.interest)}</div>
-      <div class="pr-actions"><button class="pr-remove" data-closed-del="${esc(x.id)}">Delete record</button></div>
+      <div class="pr-actions">${x.est ? `<button class="pr-remove" data-closed-undo="${esc(x.id)}" title="Booked at the last price without a sell from the broker. If you still hold it, put it back in Open">Undo sale, still held</button>` : ''}<button class="pr-remove" data-closed-del="${esc(x.id)}">Delete record</button></div>
     </article>`;
   });
   const days = (a: string, b: string) => Math.max(0, Math.round((Date.parse(b) - Date.parse(a)) / 86_400_000));
@@ -3888,6 +3938,15 @@ function bind() {
       if (!pop.hidden && pop.dataset.for === `acct-${b}`) return void (pop.hidden = true);
       pop.dataset.for = `acct-${b}`;
       return showPanel(acct, `<div class="pop-title">${BROKER_NAME[b]} account</div>${accountPopHTML(b) || '<p class="muted small">Turn on private sync in Manage positions to connect your broker accounts.</p>'}<p class="pop-sec">How margin is counted</p><p class="muted small">Spare is the broker's own free-margin figure from the last sync. It already counts charges and interest taken from cash, withdrawals, idle cash and the broker's exact margin per stock. Needs: each holding's value × the broker's margin % today. Equity: needs + spare. Without a broker figure, spare is estimated from your lots: cash in + unrealised P&amp;L − interest − needs.</p>`);
+    }
+    const cu = t.closest<HTMLElement>('[data-closed-undo]');
+    if (cu) {
+      const c = loadClosed().find((x) => x.id === cu.dataset.closedUndo);
+      if (!c || !confirm(`Put ${c.qty} ${c.sym} back in Open at ${rupee(c.buy)} from ${shortDate(c.buyDate)}, and remove this sale?`)) return;
+      saveClosed(loadClosed().filter((x) => x.id !== c.id));
+      savePositions([...loadPositions(), { id: newId(), sym: c.sym, broker: c.broker, qty: c.qty, price: c.buy, date: c.buyDate, lev: c.lev, cash: c.own }]);
+      toast(`${c.sym} is back in Open`);
+      return render();
     }
     const ce = t.closest<HTMLElement>('[data-cash-edit]');
     if (ce) return editLotCash(ce.dataset.cashEdit!);

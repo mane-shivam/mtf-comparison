@@ -407,6 +407,44 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('a sale is recorded once: duplicates removed, and sold shares still listed until settlement are not added back', async () => {
+    const sale = { id: 'c1', sym: 'NAVINFLUOR', broker: 'kotak', qty: 51, buy: 9122.45, sell: 10010, buyDate: daysAgo(4), sellDate: daysAgo(1), lev: 4, charges: 2522, interest: 278, pnl: 42466, own: 116000, fills: [{ id: 'k:x', qty: 51 }] };
+    const gh = new FakeGitHub();
+    // The morning after the sale: Kotak's settled list still shows the 51 shares, and the trade book is empty.
+    gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302], ['NAVINFLUOR', 51, 9122.45]], rupeezy: [['ENTERO', 100, 2000]] })));
+    // The same sale three times: once from your lot, twice from re-added shares at Kotak's average, a day later.
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.closed': [{ ...sale, id: 'c0', buy: 9128.1, buyDate: daysAgo(3), fills: undefined }, sale, { ...sale, id: 'c2', buy: 9128.1, buyDate: daysAgo(3), fills: undefined }] } });
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 3500);
+    assert.deepEqual((await closed(p)).map((x) => x.id), ['c1'], 'one record per sale: the one booked from a fill');
+    assert.ok(!(await positions(p)).some((x) => x.sym === 'NAVINFLUOR'), 'sold shares not added back');
+    assert.doesNotMatch(await text(p, '[data-acct-card="kotak"]'), /differ/);
+    await p.context().close();
+  });
+
+  await scenario('estimated sales split across lots are repaired; Undo sale puts one back by hand', async () => {
+    const t0 = Date.parse(`${daysAgo(1)}T15:00:00+05:30`);
+    const est = (id, qty, buy, buyDate) => ({ id: `${t0.toString(36)}${id}`, sym: 'NUVAMA', broker: 'kotak', qty, buy, sell: 1886, buyDate, sellDate: daysAgo(1), lev: 3, charges: 100, interest: 20, pnl: -100, own: 1000, est: true });
+    const back = { id: `${(t0 + 3_600_000).toString(36)}zz`, sym: 'NUVAMA', broker: 'kotak', qty: 113, price: 1918, date: daysAgo(1), lev: 3, src: 'broker', cash: 0 };
+    const tata = { id: 't1', sym: 'TATACOMM', broker: 'rupeezy', qty: 135, buy: 1762, sell: 1762, buyDate: daysAgo(5), sellDate: daysAgo(1), lev: 1, charges: 665, interest: 0, pnl: -665, own: 237870, est: true };
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302], ['NUVAMA', 113, 1918]], rupeezy: [['ENTERO', 100, 2000]] })));
+    const p = await page({ gh, storage: { 'mtf.positions': [...MANUAL, back], 'mtf.closed': [est('a', 101, 1921, daysAgo(9)), est('b', 12, 1876, daysAgo(7)), tata], 'mtf.posView': { mode: 'closed', sort: 'risk' } } });
+    await p.goto(url);
+    await p.waitForSelector('.pr-modes');
+    await settle(p, 3500);
+    const nuv = (await positions(p)).filter((x) => x.sym === 'NUVAMA').map((x) => [x.qty, x.price, x.date]).sort((x, y) => y[0] - x[0]);
+    assert.deepEqual(nuv, [[101, 1921, daysAgo(9)], [12, 1876, daysAgo(7)]], 'both lots back as they were');
+    assert.deepEqual((await closed(p)).map((x) => x.sym), ['TATACOMM']);
+    // TATACOMM: estimated, nothing came back yet. Undo sale puts it back in Open.
+    await p.click('[data-closed-undo="t1"]');
+    await p.waitForTimeout(300);
+    assert.equal((await closed(p)).length, 0);
+    assert.deepEqual((await positions(p)).filter((x) => x.sym === 'TATACOMM').map((x) => [x.qty, x.price, x.broker]), [[135, 1762, 'rupeezy']]);
+    await p.context().close();
+  });
+
   await scenario("a buy that isn't settled yet isn't a sale or a difference the next day", async () => {
     const gh = new FakeGitHub();
     // NUVAMA bought yesterday (in the fill log); Kotak's settled list doesn't have it yet.
