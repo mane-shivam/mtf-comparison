@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-18T15:33:01Z",
+"fetchedAt": "2026-11-18T16:32:53Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-18T15:32:56Z",
+"fetchedAt": "2026-11-18T16:32:48Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-18T15:32:57Z",
+"fetchedAt": "2026-11-18T16:32:49Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-18T15:33:01Z",
-"count": 175,
+"fetchedAt": "2026-11-18T16:32:53Z",
+"count": 177,
 "error": null
 }
 },
@@ -2658,6 +2658,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/EDELWEISS_17112026202430_Exchange_Intimation_-_EFSL.pdf"
 },
 {
+"symbol": "EMBDL",
+"date": "2026-11-21",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "Embassy Developments Limited has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2560_20261118_213944868_WEB.html"
+},
+{
 "symbol": "ESCORTS",
 "date": "2026-11-18",
 "kind": "news",
@@ -3269,6 +3277,15 @@
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.in/corporate/RBDENIMS_27102026182444_Intimation_of_Board_Meeting.pdf"
+},
+{
+"symbol": "RSL",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Bhavika Samir Chudasama has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI (SAST) Regulatio",
+"link": "https://nsearchives.nseindia.in/corporate/team_bbodade_18112026171430_RSL101.PDF"
 },
 {
 "symbol": "SANDHAR",
