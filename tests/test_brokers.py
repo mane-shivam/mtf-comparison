@@ -167,3 +167,23 @@ def test_failed_report_keeps_its_last_reading_with_its_time(tmp_path, monkeypatc
         k = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))["brokers"]["kotak"]
         assert k["raw"]["limits"] == first["raw"]["limits"] and k["raw"]["_stale"]["limits"] == first["at"]
         assert "limits" in k["raw"]["_errors"]
+
+
+def test_rupeezy_signed_out_notifies_once_a_day(tmp_path, monkeypatch):
+    from datetime import datetime, timezone
+
+    monkeypatch.setattr(brokers, "SIGNIN", tmp_path / "signin.json")
+    monkeypatch.setattr(brokers, "SIGNIN_SEEN", tmp_path / "seen.json")
+    out = {"brokers": {"rupeezy": {"ok": False, "error": "Rupeezy session expired. Tap Connect Rupeezy on the site"}}}
+    morning = datetime(2026, 11, 18, 1, 31, tzinfo=timezone.utc)  # 07:01 IST
+    assert not brokers.signin_notice(out, {}, morning)  # the site's own quick sync: no notification
+    assert brokers.signin_notice(out, {"NOTIFY_SIGNIN": "1"}, morning)
+    assert (tmp_path / "signin.json").exists()
+    assert json.loads((tmp_path / "seen.json").read_text()) == {"rupeezy": "2026-11-18"}
+    assert not brokers.signin_notice(out, {"NOTIFY_SIGNIN": "1"}, morning.replace(hour=5))  # same day: once
+    assert not (tmp_path / "signin.json").exists()
+    assert brokers.signin_notice(out, {"NOTIFY_SIGNIN": "1"}, morning.replace(day=19))  # next day again
+    ok = {"brokers": {"rupeezy": {"ok": True}}}
+    assert not brokers.signin_notice(ok, {"NOTIFY_SIGNIN": "1"}, morning.replace(day=20))
+    other = {"brokers": {"rupeezy": {"ok": False, "error": "Rupeezy funds: HTTP 500"}}}  # not a sign-in problem
+    assert not brokers.signin_notice(other, {"NOTIFY_SIGNIN": "1"}, morning.replace(day=21))

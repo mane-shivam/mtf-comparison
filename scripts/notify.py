@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 NEW = ROOT / "data" / "alerts_new.json"
 PRIVATE = ROOT / "data" / "private_alerts.json"  # top-up warnings, from scripts/portfolio.py
 SUMMARY = ROOT / "data" / "summary.json"  # morning summary, from scripts/portfolio.py
+SIGNIN = ROOT / "data" / "signin.json"  # "sign in to Rupeezy", from scripts/brokers.py
 ICON = {"alert": "🔴", "watch": "🟠", "info": "🔵", "good": "🟢"}
 ORDER = {"alert": 0, "watch": 1, "good": 2, "info": 3}
 MAX_LINES = 40
@@ -69,9 +70,13 @@ def send_ntfy(topic: str, title: str, body: str, site: str | None, serious: bool
     r.raise_for_status()
 
 
-def messages(site: str | None = None) -> list[tuple[str, str, bool]]:
-    """(title, body, serious) for each message this run sends: top-up warnings, watchlist changes, summary."""
-    out = []
+def messages(site: str | None = None) -> list[tuple]:
+    """(title, body, serious[, link]) for each message this run sends: Rupeezy sign-in, top-up warnings,
+    watchlist changes, summary. A link replaces the site link (the sign-in one opens Rupeezy's page)."""
+    out: list[tuple] = []
+    if SIGNIN.exists():
+        out.append(("Sign in to Rupeezy for today", "Tap to sign in; its sync then starts. Kotak syncs on its own.", False,
+                    f"{site}#rupeezy-login" if site else None))
     private = json.loads(PRIVATE.read_text()) if PRIVATE.exists() else []
     if private:
         private = sorted(private, key=lambda a: ORDER.get(a["level"], 9))
@@ -98,16 +103,17 @@ def main() -> int:
         return 0
     sent, failed = [], []
     token, chat, topic = (os.environ.get(k, "").strip() for k in ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID", "NTFY_TOPIC"))
-    for title, body, serious in msgs:
+    for title, body, serious, *link in msgs:
+        url = (link[0] if link else None) or site
         if token and chat:
             try:
-                send_telegram(token, chat, title, body, site)
+                send_telegram(token, chat, title, body, url)
                 sent.append("Telegram")
             except Exception as e:  # noqa: BLE001
                 failed.append(f"Telegram: {e}")
         if topic:
             try:
-                send_ntfy(topic, title, body, site, serious)
+                send_ntfy(topic, title, body, url, serious)
                 sent.append("ntfy")
             except Exception as e:  # noqa: BLE001
                 failed.append(f"ntfy: {e}")

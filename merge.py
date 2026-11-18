@@ -197,7 +197,7 @@ def build_market(matcher: "Matcher", universe: set[str], pins: list[str]) -> tup
             continue
         last_day = max(days)
         cur = series[-1][0]
-        base = [d for d, _ in series[-21:-1] if d is not None]
+        base = [row[0] for row in series[-21:-1] if row[0] is not None]  # rows: [delivery %, qty, close]
         deliv[sym] = {"d": cur, "avg": round(sum(base) / len(base), 1) if base else None, "date": last_day}
     pledge = {}
     for r in raw.get("pledge") or []:

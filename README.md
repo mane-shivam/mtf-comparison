@@ -12,12 +12,12 @@ A personal dashboard for margin trading (MTF) on NSE. It compares Kotak Neo and 
   - Interest per day and per month.
   - Margin checked per broker account using each broker's current rate for the stock.
   - Recorded sales, and realised P&L as of now.
-- **Alerts.** Each refresh compares pinned stocks with the last refresh. Changes appear under the bell and go to the phone, along with margin top-up warnings and an 08:00 IST summary.
+- **Alerts.** Each refresh compares pinned stocks with the last refresh. Changes appear under the bell and go to the phone, along with margin top-up warnings, an 08:00 IST summary and, when Rupeezy has signed out, a one-tap link to sign in again (its API allows no other login).
 
 ## How it runs
 
 ```
-keeper.yml        starts each refresh on time (hourly 08:00-18:00 IST, then 22:00, 02:00, 06:00)
+keeper.yml        starts each refresh on time (hourly 07:00-22:00 IST, none overnight)
 refresh.yml       scrapers/*.py → merge.py → alerts.py → scripts/portfolio.py → commit → notify → deploy
 pages.yml         builds the Vite site and publishes it to GitHub Pages
 ```

@@ -22,3 +22,11 @@ def test_compose_orders_by_severity_and_adds_link():
 def test_no_alerts_sends_nothing(tmp_path, monkeypatch):
     monkeypatch.setattr(notify, "NEW", tmp_path / "none.json")
     assert notify.main() == 0
+
+
+def test_rupeezy_sign_in_message_opens_the_sign_in(tmp_path, monkeypatch):
+    for name in ("NEW", "PRIVATE", "SUMMARY", "SIGNIN"):
+        monkeypatch.setattr(notify, name, tmp_path / name)
+    (tmp_path / "SIGNIN").write_text('{"broker": "rupeezy"}')
+    msgs = notify.messages("https://x.github.io/mtf/")
+    assert msgs[0][0] == "Sign in to Rupeezy for today" and msgs[0][3] == "https://x.github.io/mtf/#rupeezy-login"

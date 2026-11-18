@@ -24,13 +24,16 @@ import os
 import struct
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "broker.enc.json"
+SIGNIN = ROOT / "data" / "signin.json"  # gitignored: "sign in to Rupeezy" for scripts/notify.py
+SIGNIN_SEEN = ROOT / "data" / "signin_seen.json"  # committed: the last day that notice went out (a date only)
+SIGNIN_RE = ("not signed in", "expired", "sign-in", "sign in", "connect rupeezy")
 TIMEOUT = 30
 KOTAK_LOGIN = "https://mis.kotaksecurities.com/login/1.0/tradeApiLogin"
 KOTAK_VALIDATE = "https://mis.kotaksecurities.com/login/1.0/tradeApiValidate"
@@ -236,6 +239,23 @@ BROKERS = {
 }
 
 
+def signin_notice(snapshot: dict, env: dict, now: datetime | None = None) -> bool:
+    """Rupeezy's sessions end overnight and only its own sign-in page makes a new one. When the sync finds
+    it signed out, leave a notice for scripts/notify.py, once a day (the hourly refresh sets NOTIFY_SIGNIN;
+    the site's own quick sync doesn't, since you're on the site then)."""
+    SIGNIN.unlink(missing_ok=True)
+    r = (snapshot.get("brokers") or {}).get("rupeezy") or {}
+    if not env.get("NOTIFY_SIGNIN") or r.get("ok") is not False or not any(k in (r.get("error") or "").lower() for k in SIGNIN_RE):
+        return False
+    day = (now or datetime.now(timezone.utc)).astimezone(timezone(timedelta(hours=5, minutes=30))).date().isoformat()
+    seen = json.loads(SIGNIN_SEEN.read_text()) if SIGNIN_SEEN.exists() else {}
+    if seen.get("rupeezy") == day:
+        return False
+    SIGNIN.write_text(json.dumps({"broker": "rupeezy"}) + "\n")
+    SIGNIN_SEEN.write_text(json.dumps({"rupeezy": day}) + "\n")
+    return True
+
+
 def encrypt(passphrase: str, payload: dict) -> dict:
     from cryptography.hazmat.primitives import hashes
     from cryptography.hazmat.primitives.ciphers.aead import AESGCM
@@ -293,6 +313,7 @@ def main(env: dict | None = None) -> int:
                                          **({"raw": last["raw"]} if last.get("raw") else {})}
             print(f"[brokers] {name}: failed: {msg}")
     OUT.write_text(json.dumps(encrypt(passphrase, snapshot)) + "\n")
+    signin_notice(snapshot, env)
     return 0 if any(b["ok"] for b in snapshot["brokers"].values()) else 1
 
 

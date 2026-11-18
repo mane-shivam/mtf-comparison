@@ -473,6 +473,39 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('Rupeezy signed out: the site asks for the sign-in first (banner, Refresh, notification link)', async () => {
+    const gh = new FakeGitHub();
+    const snap = snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]] });
+    snap.brokers.rupeezy = { ...snap.brokers.rupeezy, ok: false, error: 'Rupeezy session expired. Tap Connect Rupeezy on the site' };
+    gh.put('data/broker.enc.json', await encrypt(snap));
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.rupeezyApp': 'APP1' } });
+    await p.route('https://flow.rupeezy.in/**', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: 'rupeezy' }));
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 3000);
+    // First thing on Portfolio: the sign-in.
+    assert.match(await text(p, '.rz-signin'), /^Rupeezy needs today's sign-in.*Kotak syncs on its own\. Sign in to Rupeezy$/);
+    assert.ok(await p.$eval('.rz-signin', (el) => el.nextElementSibling?.classList.contains('hero')), 'banner sits above the hero');
+    // Refresh asks for the sign-in first (the dialog is accepted) and goes to Rupeezy instead of syncing.
+    await Promise.all([p.waitForURL(/flow\.rupeezy\.in/), p.click('#refresh')]);
+    assert.equal(gh.dispatches.length, 0, 'nothing started before the sign-in');
+    await p.context().close();
+    // The morning notification's link goes straight to Rupeezy's sign-in.
+    const q = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.rupeezyApp': 'APP1' } });
+    await q.route('https://flow.rupeezy.in/**', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: 'rupeezy' }));
+    await Promise.all([q.waitForURL(/flow\.rupeezy\.in.*applicationId=APP1/), q.goto(`${url}#rupeezy-login`)]);
+    await q.context().close();
+    // Signed in: no banner.
+    const ok = new FakeGitHub();
+    ok.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]] })));
+    const r = await page({ gh: ok, storage: { 'mtf.positions': MANUAL } });
+    await r.goto(url);
+    await r.waitForSelector('.hero');
+    await settle(r, 3000);
+    assert.equal(await r.$('.rz-signin'), null);
+    await r.context().close();
+  });
+
   await scenario('manual position with "spare margin first", edit cash, record a sale', async () => {
     const gh = new FakeGitHub();
     const p = await page({ gh, storage: { 'mtf.positions': [MANUAL[0]], 'mtf.view': 'pinned' } });

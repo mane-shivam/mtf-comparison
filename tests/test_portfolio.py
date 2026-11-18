@@ -111,11 +111,12 @@ def test_keeper_slots():
     import keeper
 
     u = lambda *a: datetime(*a, tzinfo=timezone.utc)  # noqa: E731
-    assert keeper.next_slot(u(2026, 11, 10, 2, 0)) == u(2026, 11, 10, 2, 30)  # 08:00 IST
-    assert keeper.next_slot(u(2026, 11, 10, 2, 30)) == u(2026, 11, 10, 3, 30)
-    assert keeper.next_slot(u(2026, 11, 10, 12, 31)) == u(2026, 11, 10, 16, 30)  # 22:00 IST
-    assert keeper.next_slot(u(2026, 11, 10, 20, 31)) == u(2026, 11, 11, 0, 30)  # 06:00 IST next day
-    assert keeper.next_slot(u(2026, 11, 11, 0, 31)) == u(2026, 11, 11, 2, 30)
+    assert keeper.next_slot(u(2026, 11, 10, 1, 0)) == u(2026, 11, 10, 1, 30)  # 07:00 IST
+    assert keeper.next_slot(u(2026, 11, 10, 1, 30)) == u(2026, 11, 10, 2, 30)  # then every hour
+    assert keeper.next_slot(u(2026, 11, 10, 15, 31)) == u(2026, 11, 10, 16, 30)  # 22:00 IST, the last
+    assert keeper.next_slot(u(2026, 11, 10, 16, 31)) == u(2026, 11, 11, 1, 30)  # nothing overnight: 07:00 IST
+    ist = [((h * 60 + m + 330) // 60) % 24 for h, m in keeper.SLOTS]
+    assert sorted(ist) == list(range(7, 23))
 
 
 def test_lot_bought_with_spare_margin_uses_up_spare():

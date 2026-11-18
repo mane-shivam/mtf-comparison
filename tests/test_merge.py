@@ -1,3 +1,4 @@
+from pathlib import Path
 from datetime import datetime, timezone
 
 import merge
@@ -48,3 +49,38 @@ def test_broker_changes():
     got = {(e["symbol"], e["title"], e["level"]) for e in merge.broker_changes(dates, snaps)}
     assert got == {("AAA", "Dropped from Kotak Neo MTF", "alert"), ("BBB", "Added to Rupeezy MTF", "info"),
                    ("CCC", "Kotak Neo leverage cut", "watch")}
+
+
+def test_merge_runs_on_the_repository_data(tmp_path):
+    """The whole merge on a copy of the real data files: a change in what a scraper saves (say, an extra
+    column in the delivery history) must fail here, not in the hourly refresh."""
+    import shutil
+    import subprocess
+    import sys
+
+    root = Path(__file__).resolve().parent.parent
+    for f in ("merge.py", "alerts.py"):
+        shutil.copy(root / f, tmp_path / f)
+    shutil.copytree(root / "scrapers", tmp_path / "scrapers", ignore=shutil.ignore_patterns("__pycache__"))
+    shutil.copytree(root / "data", tmp_path / "data")
+    shutil.copytree(root / "public" / "data", tmp_path / "public" / "data")
+    r = subprocess.run([sys.executable, "merge.py"], cwd=tmp_path, capture_output=True, text=True, timeout=120)
+    assert r.returncode == 0, r.stderr[-2000:]
+    assert "merged" in r.stdout
+
+
+def test_market_delivery_rows_with_close(tmp_path, monkeypatch):
+    """scrapers/market.py saves [delivery %, traded qty, close] per day (the close was added on 12 Nov 2026);
+    merge must read the delivery % from any row length."""
+    import json
+
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    days = {f"2026-11-{d:02d}": [40.0 + d, 1000.0, 100.0 + d] for d in range(3, 13)}
+    days["2026-11-13"] = [80.0, 2000.0]  # an older two-value row still reads
+    (raw / "market.json").write_text(json.dumps({"deliv": {"ABB": days}}))
+    monkeypatch.setattr(merge, "RAW", raw)
+    m = merge.Matcher(MASTER, [])
+    data, _ = merge.build_market(m, {"ABB"}, ["ABB"])
+    assert data["deliv"]["ABB"]["d"] == 80.0 and data["deliv"]["ABB"]["date"] == "2026-11-13"
+    assert data["deliv"]["ABB"]["avg"] == round(sum(40.0 + d for d in range(3, 13)) / 10, 1)

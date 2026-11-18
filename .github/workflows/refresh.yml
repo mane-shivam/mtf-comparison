@@ -2,9 +2,9 @@ name: Refresh MTF data
 
 on:
   schedule:
-    # GitHub cron is UTC (IST - 5:30) and often starts a few minutes late.
-    - cron: "30 2-12 * * *"     # every hour 08:00-18:00 IST
-    - cron: "30 16,20,0 * * *"  # every 4 hours overnight: 22:00, 02:00, 06:00 IST
+    # Every hour 07:00-22:00 IST, none overnight (Kotak's funds API is down for maintenance then, and the
+    # Rupeezy session ends overnight). GitHub cron is UTC (IST - 5:30) and often starts a few minutes late.
+    - cron: "30 1-16 * * *"
   workflow_dispatch:       # Refresh button (/api/refresh) or GitHub's "Run workflow"
 
 permissions:
@@ -28,7 +28,26 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Your accounts first: nothing after this (a scraper, the tests, the merge) can keep them from syncing.
+      # Read-only pull of holdings, positions, trades and funds from the brokers' APIs, saved encrypted
+      # (data/broker.enc.json). Skipped for a broker whose secrets aren't set.
+      - name: Broker accounts (read-only)
+        continue-on-error: true
+        run: python scripts/brokers.py
+        env:
+          POSITIONS_PASSPHRASE: ${{ secrets.POSITIONS_PASSPHRASE }}
+          KOTAK_ACCESS_TOKEN: ${{ secrets.KOTAK_ACCESS_TOKEN }}
+          KOTAK_TOTP_SECRET: ${{ secrets.KOTAK_TOTP_SECRET }}
+          KOTAK_MOBILE: ${{ secrets.KOTAK_MOBILE }}
+          KOTAK_UCC: ${{ secrets.KOTAK_UCC }}
+          KOTAK_MPIN: ${{ secrets.KOTAK_MPIN }}
+          RUPEEZY_API_KEY: ${{ secrets.RUPEEZY_API_KEY }}
+          RUPEEZY_APP_ID: ${{ secrets.RUPEEZY_APP_ID }}
+          NOTIFY_SIGNIN: "1"  # signed out of Rupeezy: one "sign in" notification a day
+
       - name: Parser tests
+        id: tests
+        continue-on-error: true
         run: python -m pytest -q
 
       # Each scraper keeps the previous good file on failure, so one broken
@@ -55,23 +74,12 @@ jobs:
         run: python scrapers/market.py
         continue-on-error: true
 
+      # A failure here still lets the broker data, portfolio checks and notifications go out; the job is
+      # marked failed at the end so it shows.
       - name: Merge
-        run: python merge.py
-
-      # Read-only pull of holdings, positions, trades and funds from the brokers' APIs, saved encrypted
-      # (data/broker.enc.json). Skipped for a broker whose secrets aren't set.
-      - name: Broker accounts (read-only)
+        id: merge
         continue-on-error: true
-        run: python scripts/brokers.py
-        env:
-          POSITIONS_PASSPHRASE: ${{ secrets.POSITIONS_PASSPHRASE }}
-          KOTAK_ACCESS_TOKEN: ${{ secrets.KOTAK_ACCESS_TOKEN }}
-          KOTAK_TOTP_SECRET: ${{ secrets.KOTAK_TOTP_SECRET }}
-          KOTAK_MOBILE: ${{ secrets.KOTAK_MOBILE }}
-          KOTAK_UCC: ${{ secrets.KOTAK_UCC }}
-          KOTAK_MPIN: ${{ secrets.KOTAK_MPIN }}
-          RUPEEZY_API_KEY: ${{ secrets.RUPEEZY_API_KEY }}
-          RUPEEZY_APP_ID: ${{ secrets.RUPEEZY_APP_ID }}
+        run: python merge.py
 
       # Decrypts the synced positions for top-up warnings and builds the 08:00 IST summary.
       # Only hashes and the summary date are committed; the readable output is gitignored.
@@ -107,8 +115,15 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
+      - name: Fail if the tests or the merge failed
+        if: steps.tests.outcome == 'failure' || steps.merge.outcome == 'failure'
+        run: |
+          echo "::error::tests: ${{ steps.tests.outcome }}, merge: ${{ steps.merge.outcome }} (see those steps)"
+          exit 1
+
   deploy:
     needs: refresh
+    if: ${{ !cancelled() }}
     uses: ./.github/workflows/pages.yml
     permissions:
       contents: read

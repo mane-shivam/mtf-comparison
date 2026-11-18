@@ -19,8 +19,9 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-# Refresh slots in UTC (hour, minute): hourly 08:00-18:00 IST, then 22:00, 02:00, 06:00 IST.
-SLOTS = [(h, 30) for h in range(2, 13)] + [(16, 30), (20, 30), (0, 30)]
+# Refresh slots in UTC (hour, minute): every hour 07:00-22:00 IST, none overnight (Kotak's funds API is
+# down for maintenance and the Rupeezy session has ended by then).
+SLOTS = [(h, 30) for h in range(1, 17)]
 BUDGET = timedelta(hours=5, minutes=30)  # hand over before the 6-hour job limit
 RECENT = timedelta(minutes=25)
 

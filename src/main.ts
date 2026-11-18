@@ -1685,7 +1685,7 @@ function portfolioHTML(list: Position[]): string {
     up: hs.filter((h) => (h.gross ?? 0) >= 0).length, down: hs.filter((h) => (h.gross ?? 0) < 0).length,
     results: hs.filter((h) => nextResult(h.sym)).length,
   };
-  return `<section class="hero">
+  return `${rupeezySignInHTML()}<section class="hero">
       <div class="hero-main">
         <span class="hero-label">Current value</span>
         <span class="hero-val">${inr(value)}</span>
@@ -2156,6 +2156,18 @@ function reconcileFromBrokers() {
    (data/rupeezy_auth.enc.json) and a quick broker sync turns it into a session with the API key, which
    lives only in repository secrets. */
 const RZ_APP_KEY = 'mtf.rupeezyApp';
+
+// Rupeezy's API only accepts a session made on Rupeezy's own sign-in page (no password or TOTP login), and the
+// session ends overnight. The sync reports that; the site then asks for the sign-in before anything else.
+function rupeezyNeedsSignIn(): boolean {
+  const x = brokerSnap?.brokers.rupeezy;
+  return !!x && !x.ok && /not signed in|expired|sign-in|sign in|connect rupeezy/i.test(x.error ?? '');
+}
+
+function rupeezySignInHTML(): string {
+  if (!rupeezyNeedsSignIn() || !store<string>(POS_PASS_KEY)) return '';
+  return `<div class="rz-signin" role="status"><span><b>Rupeezy needs today's sign-in</b>Its sessions end overnight. Kotak syncs on its own.</span><button class="btn btn-primary btn-sm" data-connect-rupeezy>Sign in to Rupeezy</button></div>`;
+}
 
 function connectRupeezy() {
   if (!store<string>(POS_PASS_KEY)) return toast('Turn on private sync first: the session is saved with your passphrase.');
@@ -3443,6 +3455,10 @@ async function triggerViaGitHub(token: string): Promise<TriggerResult> {
 
 async function refresh() {
   if (state.refreshing || cooldownLeft() > 0) return;
+  // Sign in to Rupeezy first: coming back from its page starts the account sync for both brokers.
+  if (rupeezyNeedsSignIn() && store<string>(POS_PASS_KEY) && confirm("Rupeezy needs today's sign-in before it can sync. Sign in now? (Cancel refreshes Kotak and prices only.)")) {
+    return connectRupeezy();
+  }
   const github = REFRESH_MODE === 'github';
   const key = github ? GH_TOKEN_KEY : PASS_KEY;
   let pass = store<string>(key);
@@ -3905,6 +3921,11 @@ async function boot() {
   loadBrokerSnapshot();
   const rzAuth = new URLSearchParams(location.search).get('auth');
   if (rzAuth) finishRupeezyLogin(rzAuth);
+  // The morning "sign in to Rupeezy" notification opens the site with #rupeezy-login: go straight to Rupeezy.
+  else if (location.hash === '#rupeezy-login') {
+    history.replaceState(null, '', location.pathname + location.search);
+    connectRupeezy();
+  }
 
   bind();
   updateRefreshCooldown();
