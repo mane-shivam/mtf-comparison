@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-18T11:32:38Z",
+"fetchedAt": "2026-11-18T12:36:03Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 478,
-"fetchedAt": "2026-11-18T11:32:38Z",
+"fetchedAt": "2026-11-18T12:36:03Z",
 "error": null
 }
 },
@@ -66,8 +66,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "AHCL",
@@ -226,8 +226,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "BNAGROCHEM",
@@ -236,8 +236,8 @@
 "term": "long",
 "stage": "II",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage II",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "BNAGROCHEM",
@@ -246,8 +246,8 @@
 "term": "long",
 "stage": "II",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage II",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "BODALCHEM",
@@ -266,8 +266,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "CUPID",
@@ -326,8 +326,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "EBGNG",
@@ -376,8 +376,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "GANGAFORGE",
@@ -686,8 +686,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "NAMOEWASTE",
@@ -746,8 +746,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "ONIXSOLAR",
@@ -816,8 +816,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "PREMIERPOL",
@@ -1006,8 +1006,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SHANTIGOLD",
@@ -1086,8 +1086,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SPECTRUM",
@@ -1206,8 +1206,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "TURTLEMINT",
@@ -1226,8 +1226,8 @@
 "term": "long",
 "stage": "III",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage III",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "VENUSREM",
@@ -1236,8 +1236,8 @@
 "term": "long",
 "stage": "III",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage III",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "VGL",
@@ -1336,8 +1336,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "AILIMITED",
@@ -1346,8 +1346,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "ANTGRAPHIC",
@@ -1356,8 +1356,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "ANUP",
@@ -1366,8 +1366,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "DELPHIFX",
@@ -1376,8 +1376,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "DHANBANK",
@@ -1386,8 +1386,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "DHARIWAL",
@@ -1436,8 +1436,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "HINDOILEXP",
@@ -1446,8 +1446,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "HMVL",
@@ -1466,8 +1466,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "JYOTISTRUC",
@@ -1476,8 +1476,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "KALAMANDIR",
@@ -1506,8 +1506,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "KOTIC",
@@ -1546,8 +1546,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "NECCLTD",
@@ -1556,8 +1556,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "OCCLLTD",
@@ -1576,8 +1576,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "PAPADMALJI",
@@ -1586,8 +1586,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "PARASHLTH",
@@ -1596,8 +1596,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "PIONRINV",
@@ -1606,8 +1606,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "POOJALOGIS",
@@ -1626,8 +1626,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "RAMKY",
@@ -1686,8 +1686,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SPECTRAA",
@@ -1696,8 +1696,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SPENCERS",
@@ -1716,8 +1716,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "STYLEBAAZA",
@@ -1726,8 +1726,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SUPRIYA",
@@ -1736,8 +1736,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SYMBIOTEC",
@@ -1766,8 +1766,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "UNILEX",
@@ -1776,8 +1776,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "VISAMAN",
@@ -1946,8 +1946,8 @@
 "term": null,
 "stage": "IV",
 "desc": "GSM stage IV and Insolvency and Bankruptcy Code (IBC) - Receipt of Disclosure or Recommenced scrip",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "CMICABLES",
@@ -1996,8 +1996,8 @@
 "term": null,
 "stage": "II",
 "desc": "Graded Surveillance Measure - Stage II",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "DNAMEDIA",
@@ -2716,8 +2716,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "AKANKSHA",
@@ -2926,8 +2926,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "BALPHARMA",
@@ -2956,8 +2956,8 @@
 "term": null,
 "stage": "II",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage II",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "BI",
@@ -3006,8 +3006,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "BMISL",
@@ -3066,8 +3066,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "CFEL",
@@ -3326,8 +3326,8 @@
 "term": null,
 "stage": "I",
 "desc": "ESM Stage I and GSM Stage 0",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "FONEBOX",
@@ -3896,8 +3896,8 @@
 "term": null,
 "stage": "II",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage II",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "MINALIND",
@@ -3946,8 +3946,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "NIRAJISPAT",
@@ -4066,8 +4066,8 @@
 "term": null,
 "stage": "II",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage II",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "POSITRON",
@@ -4116,8 +4116,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "PULZ",
@@ -4126,8 +4126,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "QMSMEDI",
@@ -4436,8 +4436,8 @@
 "term": null,
 "stage": "II",
 "desc": "ESM Stage II and GSM Stage 0",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "SUPTANERY",
@@ -4566,8 +4566,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "UCAL",
@@ -4696,8 +4696,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-18",
-"exact": true
+"exact": true,
+"since": "2026-11-18"
 },
 {
 "symbol": "VERANDA",

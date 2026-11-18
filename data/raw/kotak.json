@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-18T11:32:12Z",
+"fetchedAt": "2026-11-18T12:35:37Z",
 "count": 1702,
 "rows": [
 {
@@ -917,7 +917,7 @@
 "symbol": "ASTRAL",
 "name": "Astral Limited",
 "exchange": "NSE",
-"lev": 4.36,
+"lev": 4.37,
 "maxExposureCr": 50.0
 },
 {
@@ -994,7 +994,7 @@
 "symbol": "AIIL",
 "name": "Authum Investment & Infrastructure Ltd",
 "exchange": "NSE",
-"lev": 2.6,
+"lev": 2.61,
 "maxExposureCr": 5.0
 },
 {
@@ -10745,7 +10745,7 @@
 "symbol": "NIACL",
 "name": "The New India Assurance Company Limited",
 "exchange": "NSE",
-"lev": 2.59,
+"lev": 2.6,
 "maxExposureCr": 2.0
 },
 {
@@ -10773,7 +10773,7 @@
 "symbol": "SOUTHBANK",
 "name": "The South Indian Bank Limited",
 "exchange": "NSE",
-"lev": 3.05,
+"lev": 3.06,
 "maxExposureCr": 10.0
 },
 {
@@ -10801,7 +10801,7 @@
 "symbol": "THERMAX",
 "name": "Thermax Limited",
 "exchange": "NSE",
-"lev": 2.89,
+"lev": 2.9,
 "maxExposureCr": 5.0
 },
 {
@@ -10871,7 +10871,7 @@
 "symbol": "TITAGARH",
 "name": "Titagarh Rail Systems Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 3.0,
 "maxExposureCr": 10.0
 },
 {
@@ -10899,7 +10899,7 @@
 "symbol": "TORNTPOWER",
 "name": "Torrent Power Limited",
 "exchange": "NSE",
-"lev": 3.31,
+"lev": 3.32,
 "maxExposureCr": 25.0
 },
 {

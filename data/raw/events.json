@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-18T11:32:44Z",
+"fetchedAt": "2026-11-18T12:36:11Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-18T11:32:38Z",
+"fetchedAt": "2026-11-18T12:36:03Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-18T11:32:39Z",
+"fetchedAt": "2026-11-18T12:36:04Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-18T11:32:44Z",
-"count": 148,
+"fetchedAt": "2026-11-18T12:36:11Z",
+"count": 154,
 "error": null
 }
 },
@@ -2262,6 +2262,14 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=AKCAPIT"
 },
 {
+"symbol": "ALUFLUOR",
+"date": "2026-11-20",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Rs 2.50 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=ALUFLUOR"
+},
+{
 "symbol": "ANNU",
 "date": "2026-11-16",
 "kind": "result",
@@ -2317,6 +2325,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 1 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=ASHOKLEY"
+},
+{
+"symbol": "ASTRAL",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Astral Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/ASTRAL_ROID_105007_KMP_Doc.zip"
 },
 {
 "symbol": "AVG",
@@ -2523,6 +2540,14 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=COCHINSHIP"
 },
 {
+"symbol": "COMSYN",
+"date": "2026-11-26",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "COMMERCIAL SYN BAGS LIMITED has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider and approve Fund raising/Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22749_20261118_171814738_WEB.html"
+},
+{
 "symbol": "DABUR",
 "date": "2026-11-17",
 "kind": "news",
@@ -2720,6 +2745,15 @@
 "link": "-"
 },
 {
+"symbol": "IFCI",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "IFCI Limited has informed the Exchange about Update under Regulation 30 of SEBI LODR.",
+"link": "https://nsearchives.nseindia.in/corporate/IFCI_18112026175503_STX_REG30_UPDATE.pdf"
+},
+{
 "symbol": "IGPL",
 "date": "2026-11-18",
 "kind": "news",
@@ -2862,6 +2896,15 @@
 "title": "Default",
 "detail": "Mangalam Drugs And Organics Limited has informed the Exchange about Fraud/Default/Arrest",
 "link": "https://nsearchives.nseindia.in/corporate/MANGALAM_16112026180354_SE44_Signed.pdf"
+},
+{
+"symbol": "MASTERTR",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Parveen Singhania has Submitted to the Exchange a copy of Disclosure under Regulation 31(1) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
+"link": "https://nsearchives.nseindia.in/corporate/team_bbodade_18112026172638_18112026155906_11112026153702_Dis2.PDF"
 },
 {
 "symbol": "MEDIASSIST",
@@ -3408,6 +3451,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "Intimation under Regulation 30 of SEBI (LODR), 2015- Order of the Supreme Court of India in response to an appeal under Section 62 of the Insolvency and Bankruptcy Code, 2016.",
 "link": "https://nsearchives.nseindia.in/corporate/VIDEOIND_17112026194550_VIL_SC_initmation_s.pdf"
+},
+{
+"symbol": "VISL",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Please refer the enclosed intimation under Regulation 30 of LODR.",
+"link": "https://nsearchives.nseindia.in/corporate/VEDANTAIRONSTEEL_18112026171028_Stock_Exchange_Intimation_signed.pdf"
 },
 {
 "symbol": "VIVIANA",
