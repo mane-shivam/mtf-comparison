@@ -1207,7 +1207,12 @@ interface Position {
   src?: 'broker'; // added by a broker sync (date = first seen, leverage = broker's rate that day)
   cash?: number; // money you actually put in for this lot; the rest of its margin came from the account's
   //              spare margin (e.g. unrealised gains). Missing = the full margin (value ÷ leverage) was new money.
+  fills?: FillUse[]; // the broker fills this lot was made from (so a fill is never used twice)
 }
+
+// A broker fill from the sync's 45-day log (scripts/brokers.py), and how much of it a lot or a sale used.
+interface Fill { id: string; d: string; sym: string; side: 'B' | 'S'; qty: number; px: number }
+interface FillUse { id: string; qty: number }
 
 // The cash a lot was bought with: by default its whole margin (value ÷ leverage).
 const lotMargin = (p: Position) => (p.qty * p.price) / Math.max(1, p.lev);
@@ -1894,6 +1899,7 @@ interface ClosedTrade {
   pnl: number; // after every charge and interest
   own: number; // your money in this part of the position
   est?: boolean; // recorded from a broker sync without the exact sell price: last price used
+  fills?: FillUse[]; // the sell fills this sale was booked from
 }
 
 const CLOSED_KEY = 'mtf.closed';
@@ -1947,7 +1953,7 @@ async function decryptPayload(pass: string, f: EncFile): Promise<PosPayload> {
 
 /* Broker accounts, read from the brokers' APIs by the refresh job (scripts/brokers.py), encrypted with the
    same passphrase. Holdings are shown as synced once their fields are mapped; for now the status shows. */
-interface BrokerSnap { at: string; brokers: Record<string, { ok: boolean; at: string | null; error?: string; failedAt?: string; raw?: Record<string, unknown> }> }
+interface BrokerSnap { at: string; brokers: Record<string, { ok: boolean; at: string | null; error?: string; failedAt?: string; raw?: Record<string, unknown>; fills?: Fill[] }> }
 let brokerSnap: BrokerSnap | null = null;
 
 async function loadBrokerSnapshot(): Promise<void> {
@@ -1977,8 +1983,9 @@ async function loadBrokerSnapshot(): Promise<void> {
 /* ---------- positions from the brokers ----------
    Broker data decides which stocks you hold and how many. Your entries keep what the brokers don't report:
    the buy date (for interest) and the leverage taken. New shares are added at once (dated the day they
-   first show up, at the broker's leverage that day). Fewer shares are recorded as a sale only after two
-   syncs agree, so one empty or glitchy response can never wipe a position. */
+   first show up, at the broker's leverage that day). A sale is recorded only against a sell fill in the sync's
+   45-day fill log, at its exact price and day; fewer shares without one (Kotak lists only settled shares)
+   is shown on the account card instead, with Record sale. */
 
 interface BrokerHolding { sym: string; qty: number; avg: number; mtf: boolean | null; close: number | null }
 // Today's fills per stock, from Kotak's trade book or Rupeezy's day positions: exact prices for new lots and sales.
@@ -2009,6 +2016,16 @@ function todaysFills(b: BrokerKey): Map<string, Fills> {
   return out;
 }
 const RECON_KEY = 'mtf.recon';
+
+// The broker's fills from the sync's log with what's left of each after the lots and sales that used them.
+function unusedFills(b: BrokerKey, list: Position[]): (Fill & { left: number })[] {
+  const used = new Map<string, number>();
+  for (const u of [...list.flatMap((p) => p.fills ?? []), ...loadClosed().flatMap((c) => c.fills ?? [])]) used.set(u.id, (used.get(u.id) ?? 0) + u.qty);
+  return (brokerSnap?.brokers[b]?.fills ?? [])
+    .map((f) => ({ ...f, left: Math.max(0, f.qty - (used.get(f.id) ?? 0)) }))
+    .filter((f) => f.left > 0)
+    .sort((x, y) => x.d.localeCompare(y.d) || x.id.localeCompare(y.id));
+}
 const newId = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`;
 
 const num = (v: unknown) => (typeof v === 'number' ? v : typeof v === 'string' && v.trim() !== '' ? Number(v) : NaN);
@@ -2053,19 +2070,24 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
     for (const r of net as Record<string, unknown>[]) {
       const prod = String(r.product ?? '').toUpperCase();
       if (/INTRADAY|MIS/.test(prod)) continue;
+      if (r.exchange && !/EQ/i.test(String(r.exchange))) continue; // futures and options rows aren't holdings
       const avg = num(r.overnight_average_price) || num(r.average_price) || num(r.buy_price);
       rows.push({ sym: cleanSym(r.symbol), qty: num(r.quantity), avg, mtf: markerOf(r), close: null });
     }
   }
-  // One row per stock (a stock can appear once per exchange); bad rows are dropped.
+  // One row per stock: rows of the same stock under different products (MTF and delivery) add up; bad rows are dropped.
   const by = new Map<string, BrokerHolding>();
-  for (const h of rows) if (h.sym && h.qty > 0 && h.avg > 0 && (by.get(h.sym)?.qty ?? 0) < h.qty) by.set(h.sym, h);
+  for (const h of rows) {
+    if (!h.sym || !(h.qty > 0) || !(h.avg > 0)) continue;
+    const o = by.get(h.sym);
+    by.set(h.sym, o ? { ...o, qty: o.qty + h.qty, avg: (o.qty * o.avg + h.qty * h.avg) / (o.qty + h.qty), mtf: o.mtf || h.mtf } : { ...h });
+  }
   return [...by.values()];
 }
 
 // Your lots against the broker's own holdings, stock by stock: the quantity must match, and the average
 // within 1% (Kotak's average includes buy charges, so it sits a little above the trade price).
-interface Mismatch { sym: string; qty: number; avg: number; bQty: number; bAvg: number }
+interface Mismatch { sym: string; qty: number; avg: number; bQty: number; bAvg: number; lot?: string }
 function brokerMismatches(b: BrokerKey): { checked: number; off: Mismatch[] } | null {
   const held = brokerHoldings(b);
   if (!held) return null;
@@ -2075,12 +2097,18 @@ function brokerMismatches(b: BrokerKey): { checked: number; off: Mismatch[] } | 
     mine.set(p.sym, { qty: m.qty + p.qty, cost: m.cost + p.qty * p.price });
   }
   const off: Mismatch[] = [];
+  const lotsOf = (sym: string) => loadPositions().filter((x) => x.broker === b && x.sym === sym).sort((x, y) => x.date.localeCompare(y.date));
+  // Shares bought in the last two sessions may not be in Kotak's (settled) list yet: not a difference.
+  const settleFrom = prevTradingDay(sessionDay(Date.now()));
   for (const sym of new Set([...held.map((h) => h.sym), ...mine.keys()])) {
     const h = held.find((x) => x.sym === sym);
     const m = mine.get(sym);
     const qty = m?.qty ?? 0;
     const avg = qty ? m!.cost / qty : 0;
-    if (!h || !m || h.qty !== qty || Math.abs(avg - h.avg) / h.avg > 0.01) off.push({ sym, qty, avg, bQty: h?.qty ?? 0, bAvg: h?.avg ?? 0 });
+    const bQty = h?.qty ?? 0;
+    const recent = lotsOf(sym).filter((x) => x.date >= settleFrom).reduce((t, x) => t + x.qty, 0);
+    if (bQty < qty && qty - bQty <= recent) continue;
+    if (!h || !m || h.qty !== qty || Math.abs(avg - h.avg) / h.avg > 0.01) off.push({ sym, qty, avg, bQty, bAvg: h?.avg ?? 0, lot: lotsOf(sym).at(-1)?.id });
   }
   return { checked: held.length, off };
 }
@@ -2100,7 +2128,7 @@ function mismatchHTML(b: BrokerKey): string {
   if (!r) return '';
   if (!r.off.length) return `<span class="acct-check is-ok">All ${r.checked} stocks match ${BROKER_SHORT[b]}'s quantities and averages.</span>`;
   const n = (x: number) => x.toLocaleString('en-IN');
-  return `<div class="acct-check is-off"><b>${r.off.length} of ${Math.max(r.checked, r.off.length)} differ from ${BROKER_SHORT[b]}</b>${r.off.map((m) => `<span class="acct-mm"><span><b>${esc(m.sym)}</b> ${BROKER_SHORT[b]}: ${m.bQty ? `${n(m.bQty)} at ${rupee(m.bAvg)}` : 'none'}; here: ${m.qty ? `${n(m.qty)} at ${rupee(m.avg)}` : 'none'}</span>${m.qty && m.qty === m.bQty ? `<button class="link-btn" data-use-avg="${b}:${esc(m.sym)}">Use ${BROKER_SHORT[b]}'s</button>` : ''}</span>`).join('')}</div>`;
+  return `<div class="acct-check is-off"><b>${r.off.length} of ${Math.max(r.checked, r.off.length)} differ from ${BROKER_SHORT[b]}</b>${r.off.map((m) => `<span class="acct-mm"><span><b>${esc(m.sym)}</b> ${BROKER_SHORT[b]}: ${m.bQty ? `${n(m.bQty)} at ${rupee(m.bAvg)}` : 'none'}; here: ${m.qty ? `${n(m.qty)} at ${rupee(m.avg)}` : 'none'}</span>${m.qty && m.qty === m.bQty ? `<button class="link-btn" data-use-avg="${b}:${esc(m.sym)}">Use ${BROKER_SHORT[b]}'s</button>` : ''}${m.lot && m.bQty < m.qty ? `<button class="link-btn" data-sell="${esc(m.lot)}" title="No sell fill from ${BROKER_SHORT[b]} for this; record it if you did sell">Record sale</button>` : ''}</span>`).join('')}</div>`;
 }
 
 // Cash a new lot needs on top of the account's spare margin just before it (never below 0 or above its margin).
@@ -2159,13 +2187,40 @@ function editLotCash(id: string) {
   render();
 }
 
+// Before sales needed a sell fill, a stock that dropped out of Kotak's list for a day (shares not yet settled)
+// was booked as sold at the last price (an estimated sale) and added back as a new buy when it reappeared.
+// Each such pair is undone: the estimated sale goes, and the re-added lot becomes the original lot again.
+// A pair: same stock, broker and quantity; the lot added by a sync without a fill within 4 days after the
+// sale was recorded, at a price within 3% of the original buy (the broker's average for the same shares).
+function repairFalseSales(): number {
+  const closed = loadClosed();
+  let list = loadPositions();
+  const made = (id: string) => parseInt(id.slice(0, 8), 36);
+  const keep: ClosedTrade[] = [];
+  let n = 0;
+  for (const c of closed) {
+    const t = made(c.id);
+    const l = c.est && !c.fills?.length ? list.find((p) => p.src === 'broker' && !p.fills?.length && p.sym === c.sym && p.broker === c.broker
+      && p.qty === c.qty && made(p.id) > t && made(p.id) - t < 4 * 86_400_000 && Math.abs(p.price - c.buy) / c.buy < 0.03) : undefined;
+    if (!l) { keep.push(c); continue; }
+    list = list.map((p) => (p.id === l.id ? { ...p, price: c.buy, date: c.buyDate, lev: c.lev, cash: c.own } : p));
+    n += 1;
+  }
+  if (n) {
+    saveClosed(keep);
+    savePositions(list);
+    toast(`Removed ${n} sale${n === 1 ? '' : 's'} that never happened (a stock missing from the broker's list for a day); the positions are restored.`);
+  }
+  return n;
+}
+
 function reconcileFromBrokers() {
   migrateLotDates();
+  if (repairFalseSales()) render();
   // Needs prices and broker rates: spare margin decides how new buys were paid, and a sale needs a price.
   // Called again when they arrive.
   if (!brokerSnap || !state.market || !state.stocks.length) return;
   const done = store<Record<string, string>>(RECON_KEY) ?? {};
-  const pending = (store<Record<string, Record<string, number>>>(`${RECON_KEY}.pending`) ?? {});
   let list = loadPositions();
   const sales: ClosedTrade[] = [];
   const notes: string[] = [];
@@ -2176,11 +2231,12 @@ function reconcileFromBrokers() {
     done[b] = at;
     const anyMarker = held.some((h) => h.mtf !== null);
     const fills = todaysFills(b);
+    const log = unusedFills(b, list);
     const want = new Map(held.map((h) => [h.sym, h]));
     const mine = list.filter((p) => p.broker === b);
     const syms = new Set([...want.keys(), ...mine.map((p) => p.sym)]);
-    const nextPending: Record<string, number> = {};
     const fresh: Position[] = [];
+    const session = sessionDay(Date.parse(at));
     let added = 0, sold = 0;
     for (const sym of syms) {
       const h = want.get(sym);
@@ -2191,40 +2247,50 @@ function reconcileFromBrokers() {
         const isMtf = h.mtf ?? (anyMarker ? false : true);
         const cur = state.bySymbol.get(sym)?.[b];
         const lev = isMtf && isFunded(cur ?? null) ? cur!.lev : 1;
-        const extra = brokerQty - have;
-        // The new shares' price: today's actual fill when the broker reports it, else what the broker's
-        // average implies once your tracked lots are taken out.
-        const fill = fills.get(sym);
-        const price = fill?.buyQty ? fill.buyVal / fill.buyQty
-          : have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
-        // Its buy date: the session the broker's fills are from when they cover it, else bought before that
-        // session (most likely the one before). Never "today" just because this is the first sync to see it:
-        // a 3 AM sync would otherwise date yesterday's buy today, which skews today's P&L and interest.
-        const session = sessionDay(Date.parse(at));
-        const date = (fill?.buyQty ?? 0) >= extra ? session : prevTradingDay(session);
-        fresh.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date, lev, src: 'broker' });
+        let extra = brokerQty - have;
+        // New shares come from the broker's buy fills first: their exact price and day.
+        for (const f of log.filter((x) => x.sym === sym && x.side === 'B')) {
+          if (!extra) break;
+          const q = Math.min(extra, f.left);
+          if (q <= 0) continue;
+          fresh.push({ id: newId(), sym, broker: b, qty: q, price: Math.round(f.px * 100) / 100, date: f.d, lev, src: 'broker', fills: [{ id: f.id, qty: q }] });
+          f.left -= q;
+          extra -= q;
+        }
+        if (extra > 0) {
+          // No fill for the rest (bought before the log began, or a fill the sync missed): the price the broker's
+          // average implies once your tracked lots are taken out, dated the session before this sync's.
+          const fill = fills.get(sym);
+          const price = fill?.buyQty ? fill.buyVal / fill.buyQty
+            : have ? Math.max(0.01, (brokerQty * h.avg - lots.reduce((t, p) => t + p.qty * p.price, 0) - fresh.filter((x) => x.sym === sym).reduce((t, p) => t + p.qty * p.price, 0)) / extra) : h.avg;
+          fresh.push({ id: newId(), sym, broker: b, qty: extra, price: Math.round(price * 100) / 100, date: (fill?.buyQty ?? 0) >= extra ? session : prevTradingDay(session), lev, src: 'broker' });
+        }
       } else if (brokerQty < have) {
-        const prev = pending[b]?.[sym];
-        // A sell in today's trade book is the broker's own confirmation; otherwise wait for a second sync.
-        const soldToday = fills.get(sym)?.sellQty ?? 0;
-        if (prev !== brokerQty && !(soldToday && have - brokerQty <= soldToday)) {
-          nextPending[sym] = brokerQty; // confirm on the next sync before booking a sale
-          continue;
-        }
+        // A sale is booked only against the broker's sell fills: exact price, exact day. Fewer shares without a
+        // sell fill (Kotak lists only settled shares, so a fresh buy can drop out for a day) isn't a sale; the
+        // account card lists the difference with a button to record it by hand if it really was one.
         let toSell = have - brokerQty;
-        // The actual sell price from today's fills when the broker reports it; the last price otherwise.
-        const sf = fills.get(sym);
-        const exact = !!sf?.sellQty;
-        const px = exact ? sf!.sellVal / sf!.sellQty : state.market?.prices[sym]?.p ?? h?.close ?? lots[0].price;
-        for (const lot of lots) {
+        const sells = log.filter((x) => x.sym === sym && x.side === 'S' && x.left > 0 && x.d >= lots[0].date);
+        if (!sells.length) continue;
+        let booked = false;
+        for (const f of sells) {
+          let q = Math.min(toSell, f.left);
+          for (const lot of lots) {
+            if (q <= 0) break;
+            const cur = list.find((p) => p.id === lot.id);
+            if (!cur) continue;
+            const part = Math.min(cur.qty, q);
+            // The sale keeps the sell fill and the lot's buy fills it used, so neither is used again.
+            sales.push({ ...saleResult(cur, part, f.px, f.d), fills: [{ id: f.id, qty: part }, ...(cur.fills ?? []).map((u) => ({ id: u.id, qty: Math.min(u.qty, part) }))] });
+            list = part >= cur.qty ? list.filter((p) => p.id !== cur.id) : list.map((p) => (p.id === cur.id ? resizeLot(p, p.qty - part) : p));
+            q -= part;
+            f.left -= part;
+            toSell -= part;
+            booked = true;
+          }
           if (!toSell) break;
-          const q = Math.min(lot.qty, toSell);
-          const session = sessionDay(Date.parse(at));
-          sales.push({ ...saleResult(lot, q, px, exact ? session : prevTradingDay(session)), ...(exact ? {} : { est: true }) });
-          list = q >= lot.qty ? list.filter((p) => p.id !== lot.id) : list.map((p) => (p.id === lot.id ? resizeLot(p, p.qty - q) : p));
-          toSell -= q;
         }
-        sold += 1;
+        if (booked) sold += 1;
       }
     }
     // Brokers pay a new buy's margin from the account's spare margin first (unrealised gains count); only what
@@ -2244,11 +2310,9 @@ function reconcileFromBrokers() {
       list.push({ ...lot, cash });
       added += 1;
     }
-    pending[b] = nextPending;
     if (added || sold) notes.push(`${BROKER_SHORT[b]}: ${[added && `${added} added`, sold && `${sold} sold`].filter(Boolean).join(', ')}`);
   }
   store(RECON_KEY, done);
-  store(`${RECON_KEY}.pending`, pending);
   if (!notes.length) return;
   if (sales.length) saveClosed([...loadClosed(), ...sales]);
   savePositions(list);

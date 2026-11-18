@@ -24,7 +24,8 @@ import os
 import struct
 import sys
 import time
-from datetime import datetime, timedelta, timezone
+import re
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -176,6 +177,96 @@ def kotak(env: dict) -> dict:
     })
 
 
+# ---------- fills log ----------
+# Each broker's trade book only covers today, and the snapshot only keeps the latest sync. So every sync adds
+# the day's fills to a log kept in the snapshot for FILL_DAYS: the site books a sale only against a sell fill
+# from this log (exact price and date), never because the holdings list shrank for a while (Kotak lists only
+# settled shares, so a stock can drop out the day after it's bought).
+
+IST = timezone(timedelta(hours=5, minutes=30))
+FILL_DAYS = 45
+_SFX = re.compile(r"-(EQ|BE|BZ|SM|ST)$")
+
+
+def clean_sym(v) -> str:
+    return _SFX.sub("", str(v or "").upper()).strip()
+
+
+def _num(v) -> float:
+    try:
+        return float(str(v).replace(",", "").strip())
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def _prev_trading(d: date) -> date:
+    d -= timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= timedelta(days=1)
+    return d
+
+
+def session_day(t: datetime) -> str:
+    """The latest session that had opened by t (IST): before 09:15 or at a weekend, an earlier day."""
+    i = t.astimezone(IST)
+    d = i.date()
+    if d.weekday() >= 5 or i.hour * 60 + i.minute < 9 * 60 + 15:
+        d = _prev_trading(d)
+        while d.weekday() >= 5:
+            d = _prev_trading(d)
+    return d.isoformat()
+
+
+def _fill_date(v) -> str | None:
+    text = str(v or "").strip().split(" ")[0]
+    for fmt in ("%d-%b-%Y", "%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%Y/%m/%d", "%d %b %Y"):
+        try:
+            return datetime.strptime(text, fmt).date().isoformat()
+        except ValueError:
+            pass
+    return None
+
+
+def fills_of(name: str, raw: dict, day: str) -> list[dict]:
+    """Today's delivery/MTF fills on NSE cash: {id, d, sym, side, qty, px}."""
+    out: list[dict] = []
+    if name == "kotak":
+        for t in ((raw.get("trades") or {}).get("data") or []) if isinstance(raw.get("trades"), dict) else []:
+            seg = str(t.get("exSeg") or "nse_cm").lower()
+            if not (seg.startswith("nse_cm") or seg == "nse"):  # NSE cash only: not BSE, not F&O
+                continue
+            if re.search(r"MIS|INTRADAY|^BO$|^CO$", str(t.get("prod") or ""), re.I):
+                continue
+            sym, qty, px = clean_sym(t.get("trdSym") or t.get("sym")), _num(t.get("fldQty") or t.get("qty")), _num(t.get("avgPrc") or t.get("prc"))
+            if not sym or qty <= 0 or px <= 0:
+                continue
+            side = "S" if str(t.get("trnsTp") or "").upper().startswith("S") else "B"
+            d = _fill_date(t.get("flDt")) or day
+            key = ":".join(str(t.get(k) or "") for k in ("nOrdNo", "flId", "flLeg"))
+            fid = f"k:{key}" if key.strip(":") else f"k:{d}:{sym}:{side}:{qty:g}:{px:g}:{t.get('flTm') or ''}"
+            out.append({"id": fid, "d": d, "sym": sym, "side": side, "qty": qty, "px": round(px, 4)})
+    else:
+        day_rows = (((raw.get("positions") or {}).get("data") or {}).get("day") or []) if isinstance(raw.get("positions"), dict) else []
+        for r in day_rows:
+            if "EQ" not in str(r.get("exchange") or "NSE_EQ").upper() or re.search(r"INTRADAY|MIS", str(r.get("product") or ""), re.I):
+                continue
+            sym = clean_sym(r.get("symbol"))
+            for side, q, p in (("B", "buy_quantity", "buy_price"), ("S", "sell_quantity", "sell_price")):
+                qty, px = _num(r.get(q)), _num(r.get(p))
+                if sym and qty > 0 and px > 0:
+                    # The day's running total per stock, product and side: a later sync replaces it.
+                    out.append({"id": f"r:{day}:{sym}:{r.get('product') or ''}:{side}", "d": day, "sym": sym,
+                                "side": side, "qty": qty, "px": round(px, 4)})
+    return out
+
+
+def merge_fills(prev: list[dict], new: list[dict], day: str) -> list[dict]:
+    by = {f["id"]: f for f in prev or []}
+    by.update({f["id"]: f for f in new})
+    cutoff = (date.fromisoformat(day) - timedelta(days=FILL_DAYS)).isoformat()
+    return sorted((f for f in by.values() if f["d"] >= cutoff), key=lambda f: (f["d"], f["id"]))
+
+
 # ---------- Rupeezy (Vortex API) ----------
 
 AUTH_FILE = ROOT / "data" / "rupeezy_auth.enc.json"  # one-time code from Sign in with Rupeezy (the site writes it)
@@ -299,7 +390,9 @@ def main(env: dict | None = None) -> int:
                 if part in last:
                     raw[part] = last[part]
                     raw.setdefault("_stale", {})[part] = (last.get("_stale") or {}).get(part) or prev[name].get("at")
-            snapshot["brokers"][name] = {"ok": True, "at": now, "raw": raw}
+            day = session_day(datetime.now(timezone.utc))
+            fills = merge_fills((prev.get(name) or {}).get("fills") or [], fills_of(name, raw, day), day)
+            snapshot["brokers"][name] = {"ok": True, "at": now, "raw": raw, "fills": fills}
             for part, err in raw.get("_errors", {}).items():
                 print(f"[brokers] {name} {part}: failed: {err}")
             print(f"[brokers] {name}: ok; response shape (names and types only):")
@@ -310,7 +403,8 @@ def main(env: dict | None = None) -> int:
             last = prev.get(name) or {}
             # Keep the last good data, marked stale, so one failed login doesn't blank the site.
             snapshot["brokers"][name] = {"ok": False, "at": last.get("at"), "error": msg, "failedAt": now,
-                                         **({"raw": last["raw"]} if last.get("raw") else {})}
+                                         **({"raw": last["raw"]} if last.get("raw") else {}),
+                                         **({"fills": last["fills"]} if last.get("fills") else {})}
             print(f"[brokers] {name}: failed: {msg}")
     OUT.write_text(json.dumps(encrypt(passphrase, snapshot)) + "\n")
     signin_notice(snapshot, env)

@@ -187,3 +187,41 @@ def test_rupeezy_signed_out_notifies_once_a_day(tmp_path, monkeypatch):
     assert not brokers.signin_notice(ok, {"NOTIFY_SIGNIN": "1"}, morning.replace(day=20))
     other = {"brokers": {"rupeezy": {"ok": False, "error": "Rupeezy funds: HTTP 500"}}}  # not a sign-in problem
     assert not brokers.signin_notice(other, {"NOTIFY_SIGNIN": "1"}, morning.replace(day=21))
+
+
+def test_fills_log_keeps_each_days_fills_across_syncs():
+    from datetime import datetime, timezone
+
+    k = {"trades": {"data": [
+        {"trdSym": "CDSL-EQ", "trnsTp": "S", "fldQty": 50, "avgPrc": "1450.5", "exSeg": "nse_cm", "prod": "MTF",
+         "flDt": "17-Nov-2026", "nOrdNo": "1", "flId": "9", "flLeg": 1},
+        {"trdSym": "NUVAMA-EQ", "trnsTp": "B", "fldQty": 10, "avgPrc": "1880", "exSeg": "nse_cm", "prod": "MIS"},  # intraday
+        {"trdSym": "CDSL", "trnsTp": "B", "fldQty": 5, "avgPrc": "10", "exSeg": "nse_fo", "prod": "NRML"},  # F&O
+    ]}}
+    got = brokers.fills_of("kotak", k, "2026-11-17")
+    assert got == [{"id": "k:1:9:1", "d": "2026-11-17", "sym": "CDSL", "side": "S", "qty": 50.0, "px": 1450.5}]
+    r = {"positions": {"data": {"day": [
+        {"symbol": "ENTERO", "exchange": "NSE_EQ", "product": "MTF", "buy_quantity": 0, "sell_quantity": 30, "sell_price": 1990.0},
+        {"symbol": "NIFTY26NOVFUT", "exchange": "NSE_FO", "product": "DELIVERY", "buy_quantity": 75, "buy_price": 25000},
+    ]}}}
+    day1 = brokers.fills_of("rupeezy", r, "2026-11-17")
+    assert [(f["sym"], f["side"], f["qty"]) for f in day1] == [("ENTERO", "S", 30.0)]
+    # Later the same day the running total grows: it replaces the earlier entry, it isn't added twice.
+    r["positions"]["data"]["day"][0]["sell_quantity"] = 45
+    log = brokers.merge_fills(day1, brokers.fills_of("rupeezy", r, "2026-11-17"), "2026-11-17")
+    assert [f["qty"] for f in log] == [45.0]
+    # Older than 45 days drops out.
+    old = [{**log[0], "id": "x", "d": "2026-09-01"}]
+    assert brokers.merge_fills(old, [], "2026-11-17") == []
+    assert brokers.session_day(datetime(2026, 11, 18, 1, 30, tzinfo=timezone.utc)) == "2026-11-17"  # 07:00 IST
+    assert brokers.session_day(datetime(2026, 11, 16, 1, 30, tzinfo=timezone.utc)) == "2026-11-13"  # Monday 07:00: Friday
+    assert brokers.session_day(datetime(2026, 11, 18, 5, 0, tzinfo=timezone.utc)) == "2026-11-18"
+
+
+def test_sync_keeps_the_fills_log_in_the_snapshot(tmp_path, monkeypatch):
+    monkeypatch.setattr(brokers, "OUT", tmp_path / "broker.enc.json")
+    monkeypatch.setattr(brokers, "SIGNIN", tmp_path / "s.json")
+    monkeypatch.setattr(brokers.requests, "Session", FakeSession)
+    brokers.main(KOTAK)
+    snap = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))
+    assert "fills" in snap["brokers"]["kotak"]

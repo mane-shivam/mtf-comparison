@@ -88,16 +88,19 @@ function marketFile(prices = PRICES) {
 }
 
 // Broker snapshot as scripts/brokers.py writes it (raw responses, encrypted).
-function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date(clock()).toISOString(), rupeezyOk = true, rupeezyFree = -5000 } = {}) {
+// fills: the sync's 45-day fill log per broker, as [sym, side, qty, price, day]; today's Kotak trades join it.
+function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date(clock()).toISOString(), rupeezyOk = true, rupeezyFree = -5000, fills = {} } = {}) {
+  const log = (b, rows) => rows.map(([sym, side, qty, px, d = TODAY], i) => ({ id: `${b[0]}:${sym}:${side}:${d}:${i}`, d, sym, side, qty, px }));
+  const kFills = [...log('kotak', fills.kotak || []), ...log('kotakToday', (kotakTrades || []).map(([sym, side, qty, px]) => [sym, side, qty, px]))];
   const trades = kotakTrades
     ? { trades: { stat: 'Ok', stCode: 200, data: kotakTrades.map(([sym, side, qty, px]) => ({ trdSym: `${sym}-EQ`, sym, trnsTp: side, fldQty: qty, avgPrc: String(px), exSeg: 'nse_cm', prod: 'MTF', flDt: TODAY })) } }
     : { _errors: { limits: 'bridge API error out', trades: 'no trades' } };
   return {
     at,
     brokers: {
-      kotak: { ok: true, at, raw: { holdings: { data: kotak.map(([symbol, quantity, averagePrice]) => ({ symbol, displaySymbol: `${symbol}-EQ`, quantity, averagePrice, exchangeSegment: 'nse_cm', closingPrice: PRICES[symbol] })) }, ...trades } },
+      kotak: { ok: true, at, fills: kFills, raw: { holdings: { data: kotak.map(([symbol, quantity, averagePrice]) => ({ symbol, displaySymbol: `${symbol}-EQ`, quantity, averagePrice, exchangeSegment: 'nse_cm', closingPrice: PRICES[symbol] })) }, ...trades } },
       rupeezy: rupeezyOk
-        ? { ok: true, at, raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: rupeezyFree, funds_transferred: 0 } } } }
+        ? { ok: true, at, fills: log('rupeezy', fills.rupeezy || []), raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: rupeezyFree, funds_transferred: 0 } } } }
         : { ok: false, at: null, error: 'Rupeezy: not signed in. Tap Connect Rupeezy on the site' },
     },
   };
@@ -321,14 +324,16 @@ async function run() {
     await p.context().close();
   });
 
-  await scenario('Refresh runs the quick sync and applies a sale only after two syncs agree', async () => {
+  await scenario('a sale is booked only from the broker sell fill, never because the holdings list shrank', async () => {
     const gh = await seededSync();
     let n = 0;
     gh.onQuickSync = async (g) => {
       n += 1;
       g.put('data/broker.enc.json', await encrypt(snapshot({
-        kotak: [['CDSL', 180, 1302], ['NUVAMA', 50, 1900]], // 120 CDSL sold
+        kotak: [['CDSL', 180, 1302]], kotakTrades: [['NUVAMA', 'B', 50, 1900]], // 120 CDSL fewer
         rupeezy: [['ENTERO', 100, 2000], ['ANANDRATHI', 20, 3000]],
+        // Second sync: the fill log now has yesterday's CDSL sell.
+        fills: n >= 2 ? { kotak: [['CDSL', 'S', 120, 1515.5, daysAgo(1)]] } : {},
         at: new Date(clock() + n * 1000).toISOString(),
       })));
       g.put('public/data/market.json', marketFile({ ...PRICES, CDSL: 1520 }));
@@ -339,23 +344,64 @@ async function run() {
     await settle(p, 3500);
     await p.click('#refresh');
     await p.waitForFunction(() => /Updated/.test(document.querySelector('#refresh').textContent), null, { timeout: 30000 });
-    assert.equal(gh.dispatches.filter((w) => w === 'brokers.yml').length, 1, 'Refresh starts the quick sync, not the full refresh');
-    assert.equal((await positions(p)).find((x) => x.sym === 'CDSL').qty, 300, 'first sync: sale held back');
+    assert.equal(gh.dispatches.filter((w) => w === 'brokers.yml').length, 1, 'Refresh starts the quick sync');
+    // Fewer shares and no sell fill: not a sale. The card lists the difference and offers Record sale.
+    assert.equal((await positions(p)).find((x) => x.sym === 'CDSL').qty, 300, 'no sell fill: no sale');
     assert.equal((await closed(p)).length, 0);
-    // The button allows a new sync a minute after the last one: move the clock instead of waiting.
+    assert.match(await text(p, '[data-acct-card="kotak"]'), /1 stock differ from Kotak/);
+    await p.click('[data-acct-toggle="kotak"]');
+    assert.match(await text(p, '[data-acct-card="kotak"] .acct-check'), /CDSL Kotak: 180 at ₹1,302; here: 300 at ₹1,300 Record sale/);
     for (const r of gh.runs['brokers.yml']) r.created_at = new Date(Date.parse(r.created_at) - 70000).toISOString();
     await p.evaluate(() => localStorage.setItem('mtf.lastRefresh', String(Date.now() - 70000)));
     await p.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
     await p.waitForTimeout(1500);
     await p.click('#refresh');
     await p.waitForFunction(() => /Updated/.test(document.querySelector('#refresh').textContent), null, { timeout: 30000 });
-    assert.equal((await positions(p)).find((x) => x.sym === 'CDSL').qty, 180, 'second sync agrees: sale booked');
+    // The sell fill arrives: booked at its exact price and day.
+    assert.equal((await positions(p)).find((x) => x.sym === 'CDSL').qty, 180, 'sell fill: sale booked');
     const c = await closed(p);
     assert.equal(c.length, 1);
-    assert.equal(c[0].qty, 120);
-    assert.equal(c[0].sell, 1520, 'sold at the fresh price from the quick sync');
-    assert.ok(c[0].est);
+    assert.deepEqual([c[0].qty, c[0].sell, c[0].sellDate, !!c[0].est], [120, 1515.5, daysAgo(1), false]);
+    // A third sync with the same log books nothing twice.
+    for (const r of gh.runs['brokers.yml']) r.created_at = new Date(Date.parse(r.created_at) - 70000).toISOString();
+    await p.evaluate(() => localStorage.setItem('mtf.lastRefresh', String(Date.now() - 70000)));
+    await p.click('#refresh');
+    await p.waitForFunction(() => /Updated/.test(document.querySelector('#refresh').textContent), null, { timeout: 30000 });
+    assert.equal((await closed(p)).length, 1, 'a fill is never used twice');
     assert.deepEqual(errorsOf.get(p), []);
+    await p.context().close();
+  });
+
+  await scenario('closed trades repaired: a stock missing for a day was booked as sold and re-added', async () => {
+    const t0 = Date.parse(`${daysAgo(3)}T15:00:00+05:30`);
+    const sale = { id: `${t0.toString(36)}aaaa`, sym: 'CDSL', broker: 'kotak', qty: 300, buy: 1300, sell: 1480, buyDate: daysAgo(20), sellDate: daysAgo(4), lev: 4, charges: 900, interest: 1500, pnl: 51600, own: 97500, est: true };
+    const real = { ...sale, id: `${(t0 - 864e5).toString(36)}bbbb`, sym: 'BSE', qty: 10, buy: 3000, sell: 3100, pnl: 900, own: 7500 };
+    const readded = { id: `${(t0 + 864e5).toString(36)}cccc`, sym: 'CDSL', broker: 'kotak', qty: 300, price: 1302, date: daysAgo(2), lev: 4, src: 'broker', cash: 0 };
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]] })));
+    const p = await page({ gh, storage: { 'mtf.positions': [readded, MANUAL[1]], 'mtf.closed': [sale, real] } });
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 3500);
+    const cdsl = (await positions(p)).filter((x) => x.sym === 'CDSL');
+    assert.equal(cdsl.length, 1);
+    assert.deepEqual([cdsl[0].price, cdsl[0].date, cdsl[0].cash], [1300, daysAgo(20), 97500], 'original lot restored');
+    assert.deepEqual((await closed(p)).map((x) => x.sym), ['BSE'], 'only the fake sale removed');
+    await p.context().close();
+  });
+
+  await scenario("a buy that isn't settled yet isn't a sale or a difference the next day", async () => {
+    const gh = new FakeGitHub();
+    // NUVAMA bought yesterday (in the fill log); Kotak's settled list doesn't have it yet.
+    gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]], fills: { kotak: [['NUVAMA', 'B', 50, 1880, daysAgo(1)]] } })));
+    const nuv = { id: 'n1', sym: 'NUVAMA', broker: 'kotak', qty: 50, price: 1880, date: daysAgo(1), lev: 3, src: 'broker', cash: 0, fills: [{ id: 'k:NUVAMA:B:x:0', qty: 50 }] };
+    const p = await page({ gh, storage: { 'mtf.positions': [...MANUAL, nuv] } });
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 3500);
+    assert.equal((await positions(p)).find((x) => x.sym === 'NUVAMA')?.qty, 50, 'kept');
+    assert.equal((await closed(p)).length, 0);
+    assert.doesNotMatch(await text(p, '[data-acct-card="kotak"]'), /differ/);
     await p.context().close();
   });
 
