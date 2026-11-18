@@ -1,25 +1,25 @@
 {
-"fetchedAt": "2026-11-18T12:36:11Z",
+"fetchedAt": "2026-11-18T13:33:23Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-18T12:36:03Z",
+"fetchedAt": "2026-11-18T13:33:15Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-18T12:36:04Z",
+"fetchedAt": "2026-11-18T13:33:17Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-18T12:36:11Z",
-"count": 154,
+"fetchedAt": "2026-11-18T13:33:23Z",
+"count": 167,
 "error": null
 }
 },
 "ban": {
-"date": "2026-11-18",
+"date": "2026-11-19",
 "symbols": [
 "KAYNES"
 ]
@@ -385,6 +385,10 @@
 "band": 5,
 "series": "EQ"
 },
+"BRAHMVIRAT": {
+"band": 5,
+"series": "BE"
+},
 "BURNPUR": {
 "band": 5,
 "series": "BE"
@@ -533,10 +537,6 @@
 "band": 5,
 "series": "EQ"
 },
-"ENNATURE": {
-"band": 5,
-"series": "BE"
-},
 "EQUIPPP": {
 "band": 5,
 "series": "BE"
@@ -559,7 +559,7 @@
 },
 "FLEXITUFF": {
 "band": 5,
-"series": "EQ"
+"series": "BE"
 },
 "FLFL": {
 "band": 5,
@@ -668,10 +668,6 @@
 "HMT": {
 "band": 5,
 "series": "BZ"
-},
-"IGLSPIRITS": {
-"band": 5,
-"series": "BE"
 },
 "IL&FSENGG": {
 "band": 5,
@@ -1465,10 +1461,6 @@
 "band": 5,
 "series": "EQ"
 },
-"VIRAT": {
-"band": 5,
-"series": "BE"
-},
 "VIRTUALG": {
 "band": 5,
 "series": "EQ"
@@ -1646,6 +1638,10 @@
 "series": "EQ"
 },
 "DBREALTY": {
+"band": 10,
+"series": "EQ"
+},
+"DCAL": {
 "band": 10,
 "series": "EQ"
 },
@@ -2220,6 +2216,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=771GS2066"
 },
 {
+"symbol": "ABDL",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Intimation of Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+"link": "https://nsearchives.nseindia.in/corporate/ABDINDIA_18112026185015_SE_Intimation_-__Seizure_sd.pdf"
+},
+{
 "symbol": "ADANIENT",
 "date": "2026-11-17",
 "kind": "news",
@@ -2244,6 +2249,15 @@
 "title": "Board meeting",
 "detail": "ADROIT INFOTECH LIMITED has informed the Exchange about Board Meeting to be held on 17-Nov-2026 to consider Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_1631_20261109_174211764_WEB.html"
+},
+{
+"symbol": "AGIIL",
+"date": "2026-11-18",
+"kind": "news",
+"level": "alert",
+"title": "Licence suspended",
+"detail": "Agi Infra Limited has informed the Exchange about Granting/withdrawal/surrender/cancellation/suspension of key licenses/ regulatory approvals",
+"link": "https://nsearchives.nseindia.in/corporate/AGIINFRA_18112026183621_IntimationUnderRegualtion30ofSEBILODRRegulations2015.pdf"
 },
 {
 "symbol": "AIFL",
@@ -2439,6 +2453,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26716_20261112_164953139_WEB.html"
 },
 {
+"symbol": "BLSPOLY",
+"date": "2026-11-18",
+"kind": "result",
+"title": "Results out",
+"detail": "BLS Polymers Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/BLSPOLYMERS_18112026181634_Outcome.pdf"
+},
+{
 "symbol": "BNAGROCHEM",
 "date": "2026-11-16",
 "kind": "action",
@@ -2540,12 +2562,30 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=COCHINSHIP"
 },
 {
+"symbol": "COMPINFO",
+"date": "2026-11-18",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Compuage Infocom Limited has informed the Exchange about the intimation of 29th COC meeting",
+"link": "https://nsearchives.nseindia.in/corporate/COMPINFO_18112026181505_Intimation_letter_for_outcome_of_meeting_29th_CoC_signed.pdf"
+},
+{
 "symbol": "COMSYN",
 "date": "2026-11-26",
 "kind": "meeting",
 "title": "Fund raising",
 "detail": "COMMERCIAL SYN BAGS LIMITED has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider and approve Fund raising/Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22749_20261118_171814738_WEB.html"
+},
+{
+"symbol": "CYIENT",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Cyient Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/CYIENT_ROID_105015_KMP_Doc.zip"
 },
 {
 "symbol": "DABUR",
@@ -2555,6 +2595,14 @@
 "title": "Credit rating update",
 "detail": "Dabur India Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/DABURA_17112026173458_CREDIT_RATING_Reg30.pdf"
+},
+{
+"symbol": "DALBHARAT",
+"date": "2026-11-23",
+"kind": "meeting",
+"title": "Buyback",
+"detail": "DALMIA BHARAT LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider and approve Buyback/Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17144_20261118_185709253_WEB.html"
 },
 {
 "symbol": "DYCL",
@@ -2581,6 +2629,15 @@
 "title": "Credit rating update",
 "detail": "Edelweiss Financial Services Limited has informed the Exchange about upgrade in Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/EDELWEISS_17112026202430_Exchange_Intimation_-_EFSL.pdf"
+},
+{
+"symbol": "ESCORTS",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Escorts Kubota Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.in/corporate/ESCORTS2_18112026181251_EKL_2026_11_18_DT_Update_Signed.pdf"
 },
 {
 "symbol": "EUREKAFORB",
@@ -2771,6 +2828,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2540_20261116_181643473_WEB.html"
 },
 {
+"symbol": "INDIASHLTR",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "India Shelter Finance Corporation Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ISFC2010_18112026182134_Credit_Rating_Re-affirmation__Intimation.pdf"
+},
+{
 "symbol": "INGERRAND",
 "date": "2026-11-19",
 "kind": "action",
@@ -2865,6 +2931,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/LATTEYS_29102026161027_BMintimation_LATTEYS_05082026121807_Intimation.pdf"
 },
 {
+"symbol": "LAXMICOT",
+"date": "2026-11-21",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "LAXMI COTSPIN LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/xbrl/PRIOR_INTIMATION_14767_WebXMLFile_20261118_181246773.xml"
+},
+{
 "symbol": "LIBAS",
 "date": "2026-11-17",
 "kind": "meeting",
@@ -2905,6 +2979,15 @@
 "title": "Stake/pledge disclosure",
 "detail": "Parveen Singhania has Submitted to the Exchange a copy of Disclosure under Regulation 31(1) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
 "link": "https://nsearchives.nseindia.in/corporate/team_bbodade_18112026172638_18112026155906_11112026153702_Dis2.PDF"
+},
+{
+"symbol": "MEDANTA",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Global Health Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/MEDANTA21_18112026182645_GHLCREDITRATING18Nov2026Signed.pdf"
 },
 {
 "symbol": "MEDIASSIST",
@@ -3045,6 +3128,24 @@
 "title": "Ex-dividend",
 "detail": "Distribution - Rs 3 Per Unit Consist Of Rs 1.69 Per Unit As Interest/ Re 0.62 Per Unit As Dividend/ Re 0.68 Per Unit As Repayment Of Spv Debt/ Re 0.01 Per Unit As Treasury Income",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PGINVIT"
+},
+{
+"symbol": "PNB",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Punjab National Bank has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/pnb2_18112026182108_Intimation_Penalty_GBD_18112026_DS.pdf"
+},
+{
+"symbol": "PNBHOUSING",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "PNB Housing Finance Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/PNBHOUSING_ROID_105017_KMP_Doc.zip"
 },
 {
 "symbol": "POCL",
@@ -3266,6 +3367,14 @@
 "title": "Buyback",
 "detail": "SUKHJIT STARCH & CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 20-Nov-2026 to consider Buyback.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_21098_20261112_151143414_WEB.html"
+},
+{
+"symbol": "SUKHJITS",
+"date": "2026-12-02",
+"kind": "meeting",
+"title": "Buyback",
+"detail": "SUKHJIT STARCH & CHEMICALS LIMITED has informed the Exchange about Board Meeting to be held on 02-Dec-2026 to consider Buyback.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_21098_20261118_182846765_WEB.html"
 },
 {
 "symbol": "SUPERSPIN",

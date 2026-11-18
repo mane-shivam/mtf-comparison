@@ -17950,5 +17950,11 @@
 "name": "BSE Power Index",
 "isin": "INF109K1A724",
 "type": "etf"
+},
+{
+"symbol": "IVZSILVER",
+"name": "SILVER",
+"isin": "INF205KA1CP9",
+"type": "etf"
 }
 ]
