@@ -1,19 +1,19 @@
 {
-"fetchedAt": "2026-11-18T16:32:53Z",
+"fetchedAt": "2026-11-18T19:31:23Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-18T16:32:48Z",
+"fetchedAt": "2026-11-18T19:31:18Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-18T16:32:49Z",
+"fetchedAt": "2026-11-18T19:31:19Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-18T16:32:53Z",
+"fetchedAt": "2026-11-18T19:31:23Z",
 "count": 177,
 "error": null
 }
@@ -2585,8 +2585,8 @@
 "kind": "news",
 "level": "alert",
 "title": "Insolvency (CIRP)",
-"detail": "Compuage Infocom Limited has informed the Exchange about the intimation of 29th COC meeting",
-"link": "https://nsearchives.nseindia.in/corporate/COMPINFO_18112026181505_Intimation_letter_for_outcome_of_meeting_29th_CoC_signed.pdf"
+"detail": "Compuage Infocom Limited has informed the Exchange about the NCLT Order received for the Commencement of Liquidation Process and Appointment of Liquidator",
+"link": "https://nsearchives.nseindia.in/corporate/COMPINFO_18112026221524_Covering_letter-Liquidation_order_signed.pdf"
 },
 {
 "symbol": "COMSYN",
@@ -3597,8 +3597,8 @@
 "kind": "news",
 "level": "alert",
 "title": "Insolvency (CIRP)",
-"detail": "Intimation under Regulation 30 of SEBI (LODR), 2015 Order of the Supreme Court of India in response to appeal under Section 62 of the Insolvency and Bankruptcy Code, 2016.",
-"link": "https://nsearchives.nseindia.in/corporate/VALUEIND_18112026124152_Value_Supreme_Initmation_s.pdf"
+"detail": "Pre-facto intimation of the upcoming 67th meeting of the Committee of Creditors to be held on November 20, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/VALUEIND_18112026222917_VAL_Intimation_67th_CoC_Meeting_dt_November_20_2026_s.pdf"
 },
 {
 "symbol": "VCL",
@@ -3650,6 +3650,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/VIDEOIND_17112026194550_VIL_SC_initmation_s.pdf"
 },
 {
+"symbol": "VIDEOIND",
+"date": "2026-11-18",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Pre-facto intimation of the upcoming 67th meeting of the Committee of Creditors to be held on November 20, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/VIDEOIND_18112026223726_VIL_Intimation_67th_CoC_Meeting_dt_November_202026_s.pdf"
+},
+{
 "symbol": "VISL",
 "date": "2026-11-18",
 "kind": "news",
@@ -3691,15 +3700,6 @@
 "title": "Buyback",
 "detail": "Buy Back",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=ZEEL"
-},
-{
-"symbol": "ZENSARTECH",
-"date": "2026-11-15",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Zensar Technologies Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/ZENSARTECH_ROID_104915_KMP_Doc.zip"
 }
 ]
 }
