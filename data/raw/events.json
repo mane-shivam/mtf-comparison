@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-18T13:33:23Z",
+"fetchedAt": "2026-11-18T14:33:22Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-18T13:33:15Z",
+"fetchedAt": "2026-11-18T14:33:16Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-18T13:33:17Z",
+"fetchedAt": "2026-11-18T14:33:17Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-18T13:33:23Z",
-"count": 167,
+"fetchedAt": "2026-11-18T14:33:22Z",
+"count": 171,
 "error": null
 }
 },
@@ -2350,6 +2350,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ASTRAL_ROID_105007_KMP_Doc.zip"
 },
 {
+"symbol": "AUBANK",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "AU Small Finance Bank Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/SUMIT1_18112026194108_Credit_Rating_India_Ratings_submission1.pdf"
+},
+{
 "symbol": "AVG",
 "date": "2026-11-17",
 "kind": "news",
@@ -2843,6 +2852,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 20 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=INGERRAND"
+},
+{
+"symbol": "INOXINDIA",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Shreyasi Goenka has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI (SAST) Regulations, 2011",
+"link": "https://nsearchives.nseindia.in/corporate/team_bbodade_18112026162018_INOXINDIA10.pdf"
 },
 {
 "symbol": "IOB",
@@ -3352,6 +3370,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/SPCENET_17112026180551_SEILREG30SALEOFINVESTMENT17112026.pdf"
 },
 {
+"symbol": "SPLPETRO",
+"date": "2026-11-18",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Supreme Petrochem Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/FINIAN_18112026191244_GSTInspection.pdf"
+},
+{
 "symbol": "STLNETWORK",
 "date": "2026-11-17",
 "kind": "news",
@@ -3519,6 +3546,14 @@
 "title": "Insolvency (CIRP)",
 "detail": "Intimation under Regulation 30 of SEBI (LODR), 2015 Order of the Supreme Court of India in response to appeal under Section 62 of the Insolvency and Bankruptcy Code, 2016.",
 "link": "https://nsearchives.nseindia.in/corporate/VALUEIND_18112026124152_Value_Supreme_Initmation_s.pdf"
+},
+{
+"symbol": "VCL",
+"date": "2026-11-23",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "To consider and approve the proposal for raising funds by the Company through the issuance of equity shares and/or other eligible securities or instruments, through one or more permissible modes, subject to applicable statutory and regulato",
+"link": "https://nsearchives.nseindia.in/corporate/VCL_18112026194019_Prior_Intimation_for_BM.pdf"
 },
 {
 "symbol": "VENUSPIPES",
