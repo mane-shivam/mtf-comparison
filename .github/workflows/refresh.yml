@@ -48,7 +48,13 @@ jobs:
       - name: Parser tests
         id: tests
         continue-on-error: true
-        run: python -m pytest -q
+        # The failing tests' names go into the run's error annotation, which the site shows.
+        run: |
+          set -o pipefail
+          python -m pytest -q 2>&1 | tee pytest.log || {
+            echo "::error title=Tests failed::$(grep -E '^FAILED' pytest.log | head -3 | tr '\n' ' ')"
+            exit 1
+          }
 
       # Each scraper keeps the previous good file on failure, so one broken
       # site never blanks its column; merge.py marks it stale instead.
@@ -79,7 +85,15 @@ jobs:
       - name: Merge
         id: merge
         continue-on-error: true
-        run: python merge.py
+        # The exception's last line (say, "ValueError: too many values to unpack") goes into the error
+        # annotation, which the site shows next to "Last refresh failed".
+        run: |
+          if ! python merge.py 2> merge.err; then
+            cat merge.err >&2
+            echo "::error title=Merge failed::$(tail -n 1 merge.err)"
+            exit 1
+          fi
+          cat merge.err >&2
 
       # Decrypts the synced positions for top-up warnings and builds the 08:00 IST summary.
       # Only hashes and the summary date are committed; the readable output is gitignored.
@@ -118,7 +132,8 @@ jobs:
       - name: Fail if the tests or the merge failed
         if: steps.tests.outcome == 'failure' || steps.merge.outcome == 'failure'
         run: |
-          echo "::error::tests: ${{ steps.tests.outcome }}, merge: ${{ steps.merge.outcome }} (see those steps)"
+          failed=$(echo "${{ steps.tests.outcome == 'failure' && 'tests' || '' }} ${{ steps.merge.outcome == 'failure' && 'merge' || '' }}" | xargs | sed 's/ / and /')
+          echo "::error title=Refresh incomplete::The ${failed} step failed (its error is above); the broker sync and everything else still ran."
           exit 1
 
   deploy:

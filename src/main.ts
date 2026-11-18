@@ -775,7 +775,10 @@ function renderStatus() {
    "Updated" is never mistaken for current while a run is in flight. When a run finishes, the new
    data loads by itself. Checks every 30 s while running, every 3 min otherwise, only while visible. */
 
-type RunState = { status: 'unknown' | 'idle' | 'running' | 'failed'; startedAt?: string; url?: string };
+type RunState = {
+  status: 'unknown' | 'idle' | 'running' | 'failed'; startedAt?: string; url?: string;
+  id?: number; why?: string; since?: string; streak?: number; // a failed run: its reason, and how long it's been failing
+};
 const run: RunState = { status: 'unknown' };
 let runTimer = 0;
 const RUN_ACTIVE = new Set(['queued', 'in_progress', 'waiting', 'requested', 'pending']);
@@ -786,9 +789,33 @@ function runHTML(): string {
     return `<span class="run-live" title="A refresh is running on GitHub; new data loads here when it finishes"><span class="spin" aria-hidden="true"></span>Refreshing now${mins ? ` · ${mins} min` : ''}</span>`;
   }
   if (run.status === 'failed') {
-    return `<a class="run-failed" href="${esc(run.url ?? '#')}" target="_blank" rel="noopener" title="The last refresh run failed; the page shows the data from the run before">Last refresh failed</a>`;
+    const streak = (run.streak ?? 1) > 1 ? `, ${run.streak} runs in a row since ${fmtTime(run.since ?? null)}` : '';
+    return `<span class="run-failed"><b>Last refresh failed${streak}</b>${run.why ? `<span>${esc(run.why)}</span>` : ''}<a href="${esc(run.url ?? '#')}" target="_blank" rel="noopener">Open the run on GitHub</a></span>`;
   }
   return '';
+}
+
+interface GhRun { id: number; status: string; conclusion: string | null; created_at: string; run_started_at?: string; html_url: string }
+
+// Why a run failed, in GitHub's words: the failed step and its error message.
+async function runFailureReason(id: number): Promise<string> {
+  try {
+    const j = await fetch(`https://api.github.com/repos/${GH_REPO}/actions/runs/${id}/jobs`, { headers: ghHeaders(), cache: 'no-store' });
+    if (!j.ok) return '';
+    const jobs: { id: number; conclusion: string | null; steps?: { name: string; conclusion: string | null }[] }[] = (await j.json()).jobs ?? [];
+    const job = jobs.find((x) => x.conclusion === 'failure');
+    if (!job) return '';
+    const step = job.steps?.find((x) => x.conclusion === 'failure')?.name;
+    let msg = '';
+    const a = await fetch(`https://api.github.com/repos/${GH_REPO}/check-runs/${job.id}/annotations`, { headers: ghHeaders(), cache: 'no-store' });
+    if (a.ok) {
+      const notes: { annotation_level: string; message: string }[] = await a.json();
+      msg = notes.filter((n) => n.annotation_level === 'failure' && !/exit code \d+\.?$/i.test(n.message)).map((n) => n.message).join(' ');
+    }
+    return [step && `Failed at "${step}".`, msg].filter(Boolean).join(' ').slice(0, 300);
+  } catch {
+    return '';
+  }
 }
 
 async function checkRun(): Promise<void> {
@@ -796,19 +823,25 @@ async function checkRun(): Promise<void> {
   if (!GH_REPO || document.visibilityState !== 'visible') return;
   let next = 180_000;
   try {
-    const r = await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/refresh.yml/runs?per_page=1`, {
+    const r = await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/refresh.yml/runs?per_page=20`, {
       headers: ghHeaders(),
       cache: 'no-store',
     });
     if (r.status === 403 || r.status === 429) next = 600_000; // rate limited: back off
     else if (r.ok) {
-      const last = (await r.json()).workflow_runs?.[0];
+      const runs: GhRun[] = (await r.json()).workflow_runs ?? [];
+      const last = runs[0];
       const was = run.status;
       if (last && RUN_ACTIVE.has(last.status)) {
         Object.assign(run, { status: 'running', startedAt: last.run_started_at ?? last.created_at, url: last.html_url });
         next = 30_000;
       } else if (last?.conclusion === 'failure' && state.meta && last.created_at > state.meta.generatedAt) {
-        Object.assign(run, { status: 'failed', url: last.html_url });
+        // How long it's been failing: the runs since the last one that worked.
+        const ok = runs.findIndex((x) => x.conclusion === 'success');
+        const streak = ok < 0 ? runs.length : ok;
+        const known = run.id === last.id ? run.why : undefined;
+        Object.assign(run, { status: 'failed', url: last.html_url, id: last.id, streak, since: runs[streak - 1]?.created_at, why: known });
+        if (!known) run.why = await runFailureReason(last.id);
       } else {
         run.status = 'idle';
       }
@@ -1459,19 +1492,58 @@ const signed = (n: number) => `${n >= 0 ? '+' : '−'}${inr(Math.abs(n)).replace
 const pctStr = (n: number, base: number, dp = 1) => (base ? `${n >= 0 ? '+' : '−'}${Math.abs((n / base) * 100).toFixed(dp)}%` : '');
 const tone = (n: number | null) => (n == null ? '' : n >= 0 ? 'up' : 'down');
 
+// Where a broker's sync stands, why, and what to do: shown on its card, collapsed or not.
+// Fresh: synced in the last 3 hours, or (before 08:00 IST) since 21:00 the evening before, as nothing runs overnight.
+interface SyncInfo { state: 'ok' | 'stale' | 'failed' | 'off'; label: string; reason: string; action: string }
+const SECRETS_URL = () => `https://github.com/${GH_REPO}/settings/secrets/actions`;
+function brokerSyncInfo(b: BrokerKey): SyncInfo {
+  const x = brokerSnap?.brokers[b];
+  const signIn = '<button class="btn btn-primary btn-sm" data-connect-rupeezy>Sign in to Rupeezy</button>';
+  const syncNow = '<button class="btn btn-sm" data-sync-now>Sync now</button>';
+  const secrets = `<a class="btn btn-sm" href="${esc(SECRETS_URL())}" target="_blank" rel="noopener">Kotak secrets</a>`;
+  if (!x) {
+    return b === 'rupeezy'
+      ? { state: 'off', label: 'Not connected', reason: 'Sign in once a day to sync Rupeezy.', action: signIn }
+      : { state: 'off', label: 'Not connected', reason: 'Kotak syncs with its secrets in GitHub (Settings, Secrets, Actions); none were found.', action: secrets };
+  }
+  if (!x.ok) {
+    const last = x.at ? ` Last good sync ${fmtTime(x.at)}.` : '';
+    const loginIssue = b === 'kotak' && /totp|mpin|password|401|invalid|unauthor|secret|login|validat/i.test(x.error ?? '');
+    return {
+      state: 'failed', label: 'Sync failed', reason: `${x.error ? `${x.error}.` : 'No reason given.'}${last}`.replace(/\.\./g, '.'),
+      action: b === 'rupeezy' && rupeezyNeedsSignIn() ? signIn : loginIssue ? `${secrets}${syncNow}` : syncNow,
+    };
+  }
+  const age = Date.now() - Date.parse(x.at!);
+  const now = istParts(Date.now());
+  const lastEvening = Date.parse(`${prevDayISO(now.iso)}T21:00:00+05:30`);
+  const fresh = age < 3 * 3_600_000 || (now.mins < 8 * 60 && Date.parse(x.at!) >= lastEvening);
+  if (!fresh) {
+    return { state: 'stale', label: `Last synced ${fmtTime(x.at)}`, reason: `Not synced since ${fmtTime(x.at)}: holdings and margin here may be out of date.`, action: syncNow };
+  }
+  return { state: 'ok', label: `Synced ${fmtTime(x.at, false)}`, reason: '', action: '' };
+}
+const prevDayISO = (iso: string) => { const d = new Date(`${iso}T00:00:00Z`); d.setUTCDate(d.getUTCDate() - 1); return d.toISOString().slice(0, 10); };
+
+function syncIssueHTML(info: SyncInfo): string {
+  if (info.state === 'ok' || !store<string>(POS_PASS_KEY)) return '';
+  return `<div class="acct-issue is-${info.state}"><span>${esc(info.reason)}</span><span class="acct-issue-act">${info.action}</span></div>`;
+}
+
 function accountCardHTML(a: Account): string {
   const st = accountState(a);
   const used = a.equity > 0 ? Math.min(100, (a.needed / a.equity) * 100) : 100;
   const x = brokerSnap?.brokers[a.broker];
-  const sync = !store<string>(POS_PASS_KEY) ? '' : x?.ok ? `Synced ${fmtTime(x.at, false)}` : x ? 'Sync failed' : 'Not connected';
+  const info = brokerSyncInfo(a.broker);
+  const on = !!store<string>(POS_PASS_KEY);
+  const sync = on ? info.label : '';
   const head = st === 'short' ? `${inr(-a.spare)} short` : `${inr(a.spare)} spare`;
   const sub = st === 'short' ? 'Add funds or sell to cover it' : `Holdings can fall ${(a.fall ?? 0).toFixed(1)}% together before a top-up`;
-  const connect = a.broker === 'rupeezy' && x && !x.ok ? '<button class="btn btn-primary btn-sm acct-connect" data-connect-rupeezy>Connect Rupeezy</button>' : '';
   // Collapsed by default: name, spare or shortfall, and the margin gauge. Tap to see the rest.
   const open = !!(store<Record<string, boolean>>(ACCT_OPEN_KEY) ?? {})[a.broker];
   return `<div class="acct is-${st}${open ? ' is-open' : ''}" data-acct-card="${a.broker}">
       <button class="acct-top" data-acct-toggle="${a.broker}" aria-expanded="${open}" aria-label="${BROKER_NAME[a.broker]}: ${head}">
-        <span class="acct-h"><b>${BROKER_NAME[a.broker]}</b>${x && !x.ok ? `<span class="acct-sync is-bad">${sync}</span>` : ''}<svg class="acct-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+        <span class="acct-h"><b>${BROKER_NAME[a.broker]}</b>${on && info.state !== 'ok' ? `<span class="acct-sync is-bad">${info.state === 'stale' ? 'Out of date' : sync}</span>` : ''}<svg class="acct-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
         <span class="acct-big">${head}</span>
         <span class="gauge" role="img" aria-label="Margin used ${used.toFixed(0)}%"><span style="width:${used.toFixed(1)}%"></span></span>
         ${(() => { const n = brokerMismatches(a.broker)?.off.length ?? 0; return n ? `<span class="acct-diff">${n} stock${n === 1 ? '' : 's'} differ from ${BROKER_SHORT[a.broker]}</span>` : ''; })()}
@@ -1479,23 +1551,20 @@ function accountCardHTML(a: Account): string {
       <div class="acct-more">
         <span class="acct-sub">${sub}</span>
         <span class="acct-kv"><span>Margin used</span><b>${used.toFixed(0)}%</b><span>Needs</span><b>${lakh(a.needed)}</b><span>Equity</span><b>${lakh(a.equity)}</b></span>
-        <span class="acct-broker">${a.reported ? brokerFundsLine(a.broker) : x ? `Estimated from your lots: ${BROKER_SHORT[a.broker]}'s own figure isn't available right now.` : 'Estimated from your lots; connect the broker for its exact figure.'}${sync && x?.ok ? ` ${sync}.` : ''}</span>
+        <span class="acct-broker">${a.reported ? brokerFundsLine(a.broker) : x ? `Estimated from your lots: ${BROKER_SHORT[a.broker]}'s own figure isn't available right now.` : 'Estimated from your lots; connect the broker for its exact figure.'}${sync && info.state === 'ok' ? ` ${sync}.` : ''}</span>
         ${mismatchHTML(a.broker)}
         <button class="link-btn acct-how" data-acct="${a.broker}">Account and how margin is counted</button>
       </div>
-      ${connect}
+      ${syncIssueHTML(info)}
     </div>`;
 }
 
 // A broker with no holdings still gets a card while account sync is on: its status and, for Rupeezy, Connect.
 function emptyAccountCardHTML(b: BrokerKey): string {
-  const x = brokerSnap?.brokers[b];
-  const status = x?.ok ? `Synced ${fmtTime(x.at, false)}` : x ? 'Sync failed' : 'Not connected';
-  const connect = b === 'rupeezy' && (!x || !x.ok) ? '<button class="btn btn-primary btn-sm acct-connect" data-connect-rupeezy>Connect Rupeezy</button>' : '';
+  const info = brokerSyncInfo(b);
   return `<div class="acct is-empty" data-acct="${b}" role="button" tabindex="0" aria-label="${BROKER_NAME[b]} account">
-      <span class="acct-h"><b>${BROKER_NAME[b]}</b><span class="acct-sync${x && !x.ok ? ' is-bad' : ''}">${status}</span></span>
-      <span class="acct-sub">${x?.ok ? 'No MTF holdings here right now.' : x?.error ? esc(x.error) : 'Connect to sync this account.'}</span>
-      ${connect}
+      <span class="acct-h"><b>${BROKER_NAME[b]}</b><span class="acct-sync${info.state !== 'ok' ? ' is-bad' : ''}">${info.label}</span></span>
+      ${info.state === 'ok' ? '<span class="acct-sub">No MTF holdings here right now.</span>' : syncIssueHTML(info)}
     </div>`;
 }
 
@@ -3657,6 +3726,7 @@ function bind() {
     }
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
+    if (t.closest('[data-sync-now]')) return void refresh();
     const ua = t.closest<HTMLElement>('[data-use-avg]');
     if (ua) {
       const [b, sym] = ua.dataset.useAvg!.split(':');
@@ -3671,7 +3741,7 @@ function bind() {
       tog.setAttribute('aria-expanded', String(open[b]));
       return;
     }
-    const acct = t.closest('[data-connect-rupeezy]') ? null : t.closest<HTMLElement>('[data-acct]');
+    const acct = t.closest('[data-connect-rupeezy], a') ? null : t.closest<HTMLElement>('[data-acct]');
     if (acct) {
       const b = acct.dataset.acct as BrokerKey;
       if (!pop.hidden && pop.dataset.for === `acct-${b}`) return void (pop.hidden = true);

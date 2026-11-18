@@ -106,7 +106,7 @@ function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date(
 /* ---------- fake GitHub ---------- */
 
 class FakeGitHub {
-  constructor() { this.files = {}; this.sha = 0; this.runs = { 'brokers.yml': [], 'refresh.yml': [] }; this.dispatches = []; this.onQuickSync = null; this.syncMs = 2500; }
+  constructor() { this.files = {}; this.sha = 0; this.runs = { 'brokers.yml': [], 'refresh.yml': [] }; this.dispatches = []; this.onQuickSync = null; this.syncMs = 2500; this.jobs = {}; this.annotations = {}; }
   put(p, text) { this.files[p] = { text, sha: `s${++this.sha}` }; }
   async attach(ctx) {
     const H = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'GET,PUT,POST,DELETE' };
@@ -136,6 +136,10 @@ class FakeGitHub {
           return json(r, 200, { content: { sha: this.files[p].sha } });
         }
       }
+      const jobs = u.pathname.match(/\/actions\/runs\/(\d+)\/jobs$/);
+      if (jobs) return json(r, 200, { jobs: this.jobs[jobs[1]] || [] });
+      const notes = u.pathname.match(/\/check-runs\/(\d+)\/annotations$/);
+      if (notes) return json(r, 200, this.annotations[notes[1]] || []);
       const runs = u.pathname.match(/workflows\/([\w.]+)\/(runs|dispatches)$/);
       if (runs) {
         const wf = runs[1];
@@ -504,6 +508,61 @@ async function run() {
     await settle(r, 3000);
     assert.equal(await r.$('.rz-signin'), null);
     await r.context().close();
+  });
+
+  await scenario('failures say why: refresh run reason in the header, broker problems on the cards', async () => {
+    const gh = new FakeGitHub();
+    const t = (h) => new Date(clock() - h * 3_600_000).toISOString();
+    // Three failed hourly runs after one that worked; the newest failed in "Merge" with a Python error.
+    gh.runs['refresh.yml'] = [
+      { id: 10, status: 'completed', conclusion: 'success', created_at: t(4), html_url: 'https://x/10' },
+      { id: 11, status: 'completed', conclusion: 'failure', created_at: t(3), html_url: 'https://x/11' },
+      { id: 12, status: 'completed', conclusion: 'failure', created_at: t(2), html_url: 'https://x/12' },
+      { id: 13, status: 'completed', conclusion: 'failure', created_at: t(1), html_url: 'https://x/13' },
+    ];
+    gh.jobs['13'] = [{ id: 99, conclusion: 'failure', steps: [{ name: 'Broker accounts (read-only)', conclusion: 'success' }, { name: 'Merge', conclusion: 'failure' }] }];
+    gh.annotations['99'] = [
+      { annotation_level: 'failure', message: 'ValueError: too many values to unpack (expected 2)' },
+      { annotation_level: 'failure', message: 'Process completed with exit code 1.' },
+      { annotation_level: 'warning', message: 'Node.js 20 is deprecated.' },
+    ];
+    // Kotak: login rejected (last good data two days old); Rupeezy: never connected.
+    const snap = snapshot({ kotak: [['CDSL', 300, 1302]], at: t(50) });
+    snap.brokers.kotak = { ...snap.brokers.kotak, ok: false, error: 'Kotak login: HTTP 401 (Invalid TOTP)', failedAt: t(1) };
+    delete snap.brokers.rupeezy;
+    gh.put('data/broker.enc.json', await encrypt(snap));
+    const p = await page({ gh, storage: { 'mtf.positions': [MANUAL[0]] } });
+    await p.route(`**${BASE}data/meta.json`, async (r) => {
+      const meta = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/meta.json'), 'utf8'));
+      return r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ...meta, generatedAt: t(4) }) });
+    });
+    await p.goto(url);
+    await p.waitForSelector('.run-failed');
+    const head = await text(p, '.run-failed');
+    assert.match(head, /^Last refresh failed, 3 runs in a row since .*Failed at "Merge"\. ValueError: too many values to unpack \(expected 2\) Open the run on GitHub$/);
+    assert.equal(await p.getAttribute('.run-failed a', 'href'), 'https://x/13');
+    await settle(p, 2500);
+    // Kotak's card, collapsed, says what failed and offers the fix.
+    const k = await text(p, '[data-acct-card="kotak"]');
+    assert.match(k, /^Kotak Neo Sync failed .*Kotak login: HTTP 401 \(Invalid TOTP\)\. Last good sync .*Kotak secrets Sync now$/);
+    assert.match(await p.getAttribute('[data-acct-card="kotak"] a.btn', 'href'), /\/settings\/secrets\/actions$/);
+    // Rupeezy, not connected: an empty card with Sign in.
+    assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /^Rupeezy Not connected Sign in once a day to sync Rupeezy\. Sign in to Rupeezy$/);
+    await p.context().close();
+  });
+
+  await scenario('a broker not synced for hours is shown as out of date, with Sync now', async () => {
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]], at: new Date(clock() - 6 * 3_600_000).toISOString() })));
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL } });
+    await p.goto(url);
+    await p.waitForSelector('.accts');
+    await settle(p, 3000);
+    assert.match(await text(p, '[data-acct-card="kotak"]'), /^Kotak Neo Out of date .*Not synced since .*: holdings and margin here may be out of date\. Sync now$/);
+    await p.click('[data-acct-card="kotak"] [data-sync-now]');
+    await p.waitForTimeout(500);
+    assert.ok(gh.dispatches.includes('brokers.yml'), 'Sync now starts the quick sync');
+    await p.context().close();
   });
 
   await scenario('manual position with "spare margin first", edit cash, record a sale', async () => {

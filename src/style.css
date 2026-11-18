@@ -5764,3 +5764,57 @@ small.ret-line {
 .rz-signin .btn {
   flex: none;
 }
+
+/* A broker that isn't syncing: why, and what to do, visible on the collapsed card */
+.acct-issue {
+  display: grid;
+  gap: 8px;
+  padding: 0 14px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.acct.is-empty .acct-issue {
+  padding: 0;
+}
+
+.acct-issue.is-failed > span:first-child,
+.acct-issue.is-stale > span:first-child {
+  color: var(--amber-soft);
+}
+
+.acct-issue-act {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.acct-issue-act:empty {
+  display: none;
+}
+
+/* "Last refresh failed": why, since when, and a link to the run */
+span.run-failed {
+  display: grid;
+  gap: 2px;
+  flex-basis: 100%;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+span.run-failed b {
+  font-weight: 600;
+}
+
+span.run-failed > span {
+  color: var(--muted);
+  word-break: break-word;
+}
+
+span.run-failed a {
+  justify-self: start;
+  color: var(--warn);
+}
