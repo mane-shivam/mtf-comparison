@@ -445,6 +445,43 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario("Rupeezy's own reports: interest charged in Details, its P&L next to the trades here", async () => {
+    const snap = snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]] });
+    const month = TODAY.slice(0, 7);
+    snap.brokers.rupeezy.raw.reports = {
+      interest: { status: 'success', data: [{ date: `${month}-01`, interest_amount: 60.5 }, { date: `${month}-02`, interest_amount: 60.5 }, { date: '2026-04-10', interest_amount: 100 }] },
+      pnl: { status: 'success', data: [{ symbol: 'TATACOMM', pnl: 3600 }, { symbol: 'ENTERO', pnl: -600 }] },
+    };
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snap));
+    const sold = { id: 's1', sym: 'TATACOMM', broker: 'rupeezy', qty: 135, buy: 1762, sell: 1790, buyDate: daysAgo(5), sellDate: TODAY, lev: 1, charges: 600, interest: 0, pnl: 3180, own: 237870, fills: [{ id: 'rt:T1', qty: 135 }] };
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.closed': [sold], 'mtf.posView': { mode: 'details', sort: 'risk' } } });
+    await p.goto(url);
+    await p.waitForSelector('.dt');
+    await settle(p, 3000);
+    assert.match(await text(p, '.dt-cards'), /Rupeezy's own report: ₹121 charged this month, ₹221 since 1 April\./);
+    await p.click('[data-posmode="closed"]');
+    await p.click('[data-period="fy"]');
+    await p.waitForTimeout(300);
+    // Here: 3,180 + 600 charges = 3,780 before charges vs Rupeezy's 3,000: flagged.
+    assert.match(await text(p, '.ps-check'), /Rupeezy's own P&L report, this FY: \+₹3,000\. Rupeezy trades here, before charges and interest: \+₹3,780\. They differ/);
+    await p.context().close();
+  });
+
+  await scenario("an estimated sale gets the broker's real sell price and day from its tradebook", async () => {
+    const est = { id: 'e1', sym: 'TATACOMM', broker: 'rupeezy', qty: 135, buy: 1762, sell: 1762, buyDate: daysAgo(6), sellDate: daysAgo(1), lev: 1, charges: 665, interest: 0, pnl: -665, own: 237870, est: true };
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]], fills: { rupeezy: [['TATACOMM', 'S', 135, 1790.5, daysAgo(2)]] } })));
+    const p = await page({ gh, storage: { 'mtf.positions': MANUAL, 'mtf.closed': [est] } });
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 3000);
+    const [c] = await closed(p);
+    assert.deepEqual([c.id, c.sell, c.sellDate, !!c.est, c.fills?.length], ['e1', 1790.5, daysAgo(2), false, 1]);
+    assert.ok(c.pnl > 0, `real P&L ${c.pnl}`);
+    await p.context().close();
+  });
+
   await scenario("a buy that isn't settled yet isn't a sale or a difference the next day", async () => {
     const gh = new FakeGitHub();
     // NUVAMA bought yesterday (in the fill log); Kotak's settled list doesn't have it yet.

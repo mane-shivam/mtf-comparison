@@ -4,6 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import brokers  # noqa: E402
+brokers.REPORT_PAUSE = 0  # no pause between report calls in tests
 import portfolio  # noqa: E402
 
 PASS = "correct horse battery"
@@ -226,3 +227,42 @@ def test_sync_keeps_the_fills_log_in_the_snapshot(tmp_path, monkeypatch):
     brokers.main(KOTAK)
     snap = portfolio.decrypt(PASS, json.loads((tmp_path / "broker.enc.json").read_text()))
     assert "fills" in snap["brokers"]["kotak"]
+
+
+def test_rupeezy_tradebook_report_fills_the_days_the_log_missed(monkeypatch):
+    monkeypatch.setattr(brokers, "REPORT_PAUSE", 0)
+    reports = {"tradesMtf": {"status": "success", "data": [
+        {"symbol": "TATACOMM", "instrument_type": "EQ", "side": "SELL", "quantity": 135, "price": 1790.5,
+         "trade_id": "T1", "traded_at": "2026-11-17 14:02:11"},
+        {"symbol": "SUNPHARMA", "instrument_type": "FUTSTK", "expiry_date": "2026-11-24", "side": "BUY", "quantity": 350,
+         "price": 1918, "trade_id": "T2", "traded_at": "2026-11-17 10:00:00"},
+        {"symbol": "ENTERO", "side": "BUY", "quantity": 10, "price": 1990, "trade_id": "T3", "traded_at": "2026-11-18T10:00:00"},
+    ]}, "tradesEquity": {"data": [
+        {"symbol": "TATACOMM", "side": "SELL", "quantity": 135, "price": 1790.5, "trade_id": "T1", "traded_at": "2026-11-17 14:02:11"},
+    ]}}
+    got = brokers.report_fills(reports)
+    assert [(f["id"], f["d"], f["sym"], f["side"]) for f in got] == [
+        ("rt:T1", "2026-11-17", "TATACOMM", "S"), ("rt:T3", "2026-11-18", "ENTERO", "B")]  # no futures, no double
+    # 18 Nov is already in the log from the day's positions: the report's copy of it is left out.
+    log = [{"id": "r:2026-11-18:ENTERO:MTF:B", "d": "2026-11-18", "sym": "ENTERO", "side": "B", "qty": 10.0, "px": 1990.0}]
+    merged = brokers.merge_report_fills(log, got, "2026-11-18")
+    assert sorted(f["id"] for f in merged) == ["r:2026-11-18:ENTERO:MTF:B", "rt:T1"]
+
+
+def test_rupeezy_reports_are_optional(monkeypatch):
+    from datetime import datetime, timezone
+
+    monkeypatch.setattr(brokers, "REPORT_PAUSE", 0)
+    seen = []
+
+    class S:
+        def get(self, url, **kw):
+            seen.append(url.split("/v2", 1)[1])
+            if "/trading/reports" in url:
+                return Resp({"status": "error", "message": "not enabled"}, 400)
+            return Resp({}, 404) if "mtf_interest" in url or "pnl" in url else Resp({"status": "success", "data": []})
+
+    out, errors = brokers.rupeezy_reports(S(), {}, datetime(2026, 11, 18, 6, 0, tzinfo=timezone.utc))
+    assert out["fy"] == "2026-04-01" and out["tradesMtf"] == {"status": "success", "data": []}
+    assert set(errors) == {"report.pnl", "report.interest"} and "not enabled" in errors["report.pnl"]
+    assert "/reports/trades/MTF?from_date=2026-09-19&to_date=2026-11-18" in seen

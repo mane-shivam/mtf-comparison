@@ -1642,6 +1642,42 @@ function chargesRealisedHTML(list: Position[]): string {
     </div>`;
 }
 
+/* Rupeezy's back-office reports (synced by scripts/brokers.py): the MTF interest it actually charged and its
+   own P&L. Field names vary by report; the first one present is used. */
+const pickNum = (r: Record<string, unknown>, ...keys: string[]) => { for (const k of keys) { const v = num(r[k]); if (Number.isFinite(v)) return v; } return NaN; };
+const reportRows = (v: unknown): Record<string, unknown>[] => {
+  if (Array.isArray(v)) return v.filter((x) => x && typeof x === 'object') as Record<string, unknown>[];
+  if (v && typeof v === 'object') for (const k of ['data', 'result', 'records', 'trades']) { const r = reportRows((v as Record<string, unknown>)[k]); if (r.length) return r; }
+  return [];
+};
+function rupeezyReports(): Record<string, unknown> | null {
+  const raw = brokerSnap?.brokers.rupeezy?.raw as Record<string, any> | undefined;
+  return raw?.reports ?? null;
+}
+// Interest Rupeezy charged: this month and this financial year, from its daily MTF interest report.
+function chargedInterestHTML(b: BrokerKey): string {
+  const rep = b === 'rupeezy' ? rupeezyReports() : null;
+  const rows = reportRows(rep?.interest);
+  if (!rows.length) return '';
+  const month = localISO().slice(0, 7);
+  let fy = 0, mo = 0;
+  for (const r of rows) {
+    const amt = pickNum(r, 'interest_amount', 'interest', 'amount');
+    if (!Number.isFinite(amt)) continue;
+    const d = String(r.date ?? r.interest_date ?? r.trade_date ?? '').slice(0, 10);
+    fy += amt;
+    if (d.startsWith(month)) mo += amt;
+  }
+  return `<small class="dt-charged">Rupeezy's own report: ${inr(Math.abs(mo))} charged this month, ${inr(Math.abs(fy))} since 1 April.</small>`;
+}
+// Rupeezy's P&L for this financial year, all stocks, from its P&L report: to compare with the trades here.
+function rupeezyPnl(): number | null {
+  const rows = reportRows(rupeezyReports()?.pnl);
+  if (!rows.length) return null;
+  const v = rows.reduce((t, r) => t + (Number.isFinite(pickNum(r, 'pnl', 'realised_pnl', 'realized_pnl', 'profit_loss', 'net_pnl')) ? pickNum(r, 'pnl', 'realised_pnl', 'realized_pnl', 'profit_loss', 'net_pnl') : 0), 0);
+  return Number.isFinite(v) ? v : null;
+}
+
 /* Details: what holding costs and what you'd keep. Interest is charged by the brokers on the funded part
    (value at purchase − initial margin, whether that margin came from cash or spare margin), from T+1, every
    calendar day including weekends, up to the day you sell. "So far" therefore includes today. */
@@ -1677,7 +1713,7 @@ function detailsViewHTML(list: Position[]): string {
     <section class="dt">
       ${chargesRealisedHTML(list)}
       <h2>Interest by broker</h2>
-      <div class="dt-cards">${per.map((x) => `<div class="dt-card"><b>${BROKER_NAME[x.b]}</b><span>${rates[x.b].interest}% a year on ${lakh(x.funded)}</span><span><strong>${inr2(x.perDay)}</strong> a day, ${inr(x.interest)} so far</span><small>Paying back ₹1 L saves ${saving(x.b)} a month.</small></div>`).join('')}</div>
+      <div class="dt-cards">${per.map((x) => `<div class="dt-card"><b>${BROKER_NAME[x.b]}</b><span>${rates[x.b].interest}% a year on ${lakh(x.funded)}</span><span><strong>${inr2(x.perDay)}</strong> a day, ${inr(x.interest)} so far</span><small>Paying back ₹1 L saves ${saving(x.b)} a month.</small>${chargedInterestHTML(x.b)}</div>`).join('')}</div>
       <h2>Interest by position</h2>
       <div class="dt-table" role="table">
         <div class="dt-row dt-headrow" role="row"><span>Stock</span><span>Broker's money</span><span>Per day</span><span>So far</span></div>
@@ -2280,9 +2316,34 @@ function unsettledSold(b: BrokerKey, sym: string): number {
   return loadClosed().filter((c) => c.broker === b && c.sym === sym && c.sellDate >= from && !c.est).reduce((t, c) => t + c.qty, 0);
 }
 
+// An estimated sale (last price, guessed day) whose real sell turns up in the broker's fills (Rupeezy's
+// tradebook report fills in past days): rewritten with the real price and day. Same stock and quantity,
+// sold within 3 days of the guessed day.
+function upgradeEstimatedSales(): number {
+  const list = loadPositions();
+  let n = 0;
+  const closed = loadClosed();
+  const pool = Object.fromEntries(BROKERS.map((b) => [b, unusedFills(b, list)])) as Record<BrokerKey, (Fill & { left: number })[]>;
+  const next = closed.map((c) => {
+    if (!c.est || c.fills?.length) return c;
+    const near = (d: string) => Math.abs(Date.parse(d) - Date.parse(c.sellDate)) <= 3 * 86_400_000;
+    const f = pool[c.broker].find((x) => x.side === 'S' && x.sym === c.sym && x.left >= c.qty && near(x.d));
+    if (!f) return c;
+    f.left -= c.qty; // not for another sale
+    const lot: Position = { id: c.id, sym: c.sym, broker: c.broker, qty: c.qty, price: c.buy, date: c.buyDate, lev: c.lev, cash: c.own };
+    n += 1;
+    return { ...saleResult(lot, c.qty, f.px, f.d), id: c.id, fills: [{ id: f.id, qty: c.qty }] };
+  });
+  if (n) {
+    saveClosed(next);
+    toast(`${n} sale${n === 1 ? '' : 's'} updated with the broker's actual sell price and day.`);
+  }
+  return n;
+}
+
 function reconcileFromBrokers() {
   migrateLotDates();
-  if (dedupeClosed() + repairFalseSales() + dropDerivativeLots()) render();
+  if (dedupeClosed() + repairFalseSales() + dropDerivativeLots() + upgradeEstimatedSales()) render();
   // Needs prices and broker rates: spare margin decides how new buys were paid, and a sale needs a price.
   // Called again when they arrive.
   if (!brokerSnap || !state.market || !state.stocks.length) return;
@@ -2720,6 +2781,12 @@ function closedViewHTML(): string {
         <div><i>Charges paid</i><b>${inr(charges)}</b></div>
         <div><i>Interest paid</i><b>${inr(interest)}</b></div>
       </div>
+      ${(() => {
+        const rz = rupeezyPnl();
+        if (rz == null || period !== 'fy') return '';
+        const here = list.filter((x) => x.broker === 'rupeezy').reduce((t, x) => t + x.pnl + x.charges + x.interest, 0);
+        return `<p class="ps-check">Rupeezy's own P&amp;L report, this FY: <b class="${tone(rz)}">${signed(rz)}</b>. Rupeezy trades here, before charges and interest: <b class="${tone(here)}">${signed(here)}</b>.${Math.abs(rz - here) > Math.max(500, Math.abs(rz) * 0.02) ? ' They differ: a sale may be missing or recorded twice here.' : ''}</p>`;
+      })()}
     </section>
     <div class="pr-list">${rows.join('')}</div>`;
 }

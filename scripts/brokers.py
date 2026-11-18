@@ -218,7 +218,7 @@ def session_day(t: datetime) -> str:
 
 
 def _fill_date(v) -> str | None:
-    text = str(v or "").strip().split(" ")[0]
+    text = str(v or "").strip().replace("T", " ").split(" ")[0]
     for fmt in ("%d-%b-%Y", "%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%Y/%m/%d", "%d %b %Y"):
         try:
             return datetime.strptime(text, fmt).date().isoformat()
@@ -266,6 +266,14 @@ def merge_fills(prev: list[dict], new: list[dict], day: str) -> list[dict]:
     by.update({f["id"]: f for f in new})
     cutoff = (date.fromisoformat(day) - timedelta(days=FILL_DAYS)).isoformat()
     return sorted((f for f in by.values() if f["d"] >= cutoff), key=lambda f: (f["d"], f["id"]))
+
+
+def merge_report_fills(log: list[dict], report: list[dict], day: str) -> list[dict]:
+    """Add Rupeezy's tradebook fills for the days and stocks the log has nothing for (days the sync missed).
+    A day the log already covers keeps its own entries, so the site never sees one trade under two ids."""
+    covered = {(f["d"], f["sym"], f["side"]) for f in log if not f["id"].startswith("rt:")}
+    extra = [f for f in report if (f["d"], f["sym"], f["side"]) not in covered]
+    return merge_fills(log, extra, day)
 
 
 # ---------- Rupeezy (Vortex API) ----------
@@ -317,12 +325,107 @@ def rupeezy(env: dict) -> dict:
             raise SyncError("Rupeezy session expired. Tap Connect Rupeezy on the site")
         return _json(r, what)
 
-    return parts({
+    out = parts({
         "holdings": lambda: get("/trading/portfolio/holdings", "Rupeezy holdings"),
         "positions": lambda: get("/trading/portfolio/positions", "Rupeezy positions"),
         "trades": lambda: get("/trading/trades", "Rupeezy trades"),
         "funds": lambda: get("/user/funds", "Rupeezy funds"),
     })
+    out["reports"], errors = rupeezy_reports(s, h, datetime.now(timezone.utc))
+    if errors:
+        out.setdefault("_errors", {}).update(errors)
+    return out
+
+
+# Rupeezy's back-office reports (Vortex "Backoffice Reports"): the tradebook for any dates, P&L per stock and
+# the MTF interest actually charged. Limited to one request a second. Each report is optional: one that fails
+# is listed in _errors and the rest of the sync carries on.
+REPORT_DAYS = 60  # tradebook window: fills the fill log back over any days the sync missed
+REPORT_PREFIXES = ("/reports", "/trading/reports")
+REPORT_PAUSE = 1.1  # seconds between report calls
+
+
+def fy_start(day: date) -> date:
+    return date(day.year if day.month >= 4 else day.year - 1, 4, 1)
+
+
+def rupeezy_reports(s: requests.Session, h: dict, now: datetime) -> tuple[dict, dict]:
+    today = now.astimezone(IST).date()
+    fy = fy_start(today).isoformat()
+    since = (today - timedelta(days=REPORT_DAYS)).isoformat()
+    to = today.isoformat()
+    calls = {
+        "tradesMtf": f"/trades/MTF?from_date={since}&to_date={to}",
+        "tradesEquity": f"/trades/EQUITY?from_date={since}&to_date={to}",
+        "pnl": f"/pnl/EQUITY?from_date={fy}&to_date={to}",
+        "interest": f"/mtf_interest?from_date={fy}&to_date={to}",
+    }
+    out: dict = {"from": since, "fy": fy, "to": to}
+    errors: dict = {}
+    for name, path in calls.items():
+        last = ""
+        for prefix in REPORT_PREFIXES:
+            time.sleep(REPORT_PAUSE)  # one request a second
+            try:
+                r = s.get(VORTEX + prefix + path, headers=h, timeout=TIMEOUT)
+            except requests.RequestException as e:
+                last = type(e).__name__
+                break
+            if r.status_code == 404:
+                last = "HTTP 404"
+                continue  # try the other prefix
+            try:
+                out[name] = _json(r, f"Rupeezy {name} report")
+                last = ""
+            except SyncError as e:
+                last = str(e)
+            break
+        if last:
+            errors[f"report.{name}"] = last
+    return out, errors
+
+
+def _pick(row: dict, *keys):
+    for k in keys:
+        if row.get(k) not in (None, ""):
+            return row[k]
+    return None
+
+
+def _rows(payload) -> list[dict]:
+    """The list of rows in a report response, wherever the API put it."""
+    if isinstance(payload, list):
+        return [r for r in payload if isinstance(r, dict)]
+    if isinstance(payload, dict):
+        for k in ("data", "trades", "result", "records"):
+            v = payload.get(k)
+            if isinstance(v, (list, dict)) and v:
+                return _rows(v)
+    return []
+
+
+def report_fills(reports: dict) -> list[dict]:
+    """Stock fills from Rupeezy's tradebook report (MTF and delivery): {id, d, sym, side, qty, px}."""
+    out, seen = [], set()
+    for name in ("tradesMtf", "tradesEquity"):
+        for r in _rows(reports.get(name)):
+            if str(_pick(r, "expiry_date", "expiry") or "").strip() or re.search(
+                    r"FUT|OPT|CE|PE", str(_pick(r, "instrument_type", "instrument_name", "instrument") or ""), re.I):
+                continue
+            sym = clean_sym(_pick(r, "symbol", "trading_symbol", "scrip"))
+            qty = _num(_pick(r, "quantity", "traded_quantity", "trade_quantity", "qty"))
+            px = _num(_pick(r, "price", "trade_price", "traded_price", "rate"))
+            side_raw = str(_pick(r, "side", "transaction_type", "buy_sell", "trade_type") or "").upper()
+            d = _fill_date(_pick(r, "traded_at", "trade_time", "trade_date", "traded_time", "date"))
+            tid = _pick(r, "trade_id", "trade_no", "tradeId", "id")
+            if not (sym and qty > 0 and px > 0 and d and side_raw[:1] in ("B", "S")):
+                continue
+            fid = f"rt:{tid}" if tid else f"rt:{d}:{sym}:{side_raw[:1]}:{qty:g}:{px:g}"
+            if fid in seen:
+                continue  # the MTF and equity reports can both list an MTF trade
+            seen.add(fid)
+            out.append({"id": fid, "d": d, "sym": sym, "side": side_raw[:1], "qty": qty, "px": round(px, 4)})
+    return out
 
 
 BROKERS = {
@@ -393,6 +496,8 @@ def main(env: dict | None = None) -> int:
                     raw.setdefault("_stale", {})[part] = (last.get("_stale") or {}).get(part) or prev[name].get("at")
             day = session_day(datetime.now(timezone.utc))
             fills = merge_fills((prev.get(name) or {}).get("fills") or [], fills_of(name, raw, day), day)
+            if name == "rupeezy":
+                fills = merge_report_fills(fills, report_fills(raw.get("reports") or {}), day)
             snapshot["brokers"][name] = {"ok": True, "at": now, "raw": raw, "fills": fills}
             for part, err in raw.get("_errors", {}).items():
                 print(f"[brokers] {name} {part}: failed: {err}")
