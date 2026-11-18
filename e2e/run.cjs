@@ -539,7 +539,7 @@ async function run() {
     await p.goto(url);
     await p.waitForSelector('.run-failed');
     const head = await text(p, '.run-failed');
-    assert.match(head, /^Last refresh failed, 3 runs in a row since .*Failed at "Merge"\. ValueError: too many values to unpack \(expected 2\) Open the run on GitHub$/);
+    assert.match(head, /^Hourly data refresh failed, 3 runs in a row since .*Failed at "Merge"\. ValueError: too many values to unpack \(expected 2\) Open the run on GitHub$/);
     assert.equal(await p.getAttribute('.run-failed a', 'href'), 'https://x/13');
     await settle(p, 2500);
     // Kotak's card, collapsed, says what failed and offers the fix.
@@ -548,6 +548,11 @@ async function run() {
     assert.match(await p.getAttribute('[data-acct-card="kotak"] a.btn', 'href'), /\/settings\/secrets\/actions$/);
     // Rupeezy, not connected: an empty card with Sign in.
     assert.match(await text(p, '.acct[data-acct="rupeezy"]'), /^Rupeezy Not connected Sign in once a day to sync Rupeezy\. Sign in to Rupeezy$/);
+    // Refresh runs the quick sync and, since the full refresh last failed, that one too.
+    await p.click('#refresh');
+    await p.waitForTimeout(1500);
+    assert.deepEqual([...gh.dispatches].sort(), ['brokers.yml', 'refresh.yml']);
+    assert.match(await text(p, '#status'), /Full refresh running/);
     await p.context().close();
   });
 

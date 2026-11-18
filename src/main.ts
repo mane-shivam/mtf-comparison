@@ -786,11 +786,11 @@ const RUN_ACTIVE = new Set(['queued', 'in_progress', 'waiting', 'requested', 'pe
 function runHTML(): string {
   if (run.status === 'running') {
     const mins = run.startedAt ? Math.max(0, Math.round((Date.now() - new Date(run.startedAt).getTime()) / 60000)) : 0;
-    return `<span class="run-live" title="A refresh is running on GitHub; new data loads here when it finishes"><span class="spin" aria-hidden="true"></span>Refreshing now${mins ? ` · ${mins} min` : ''}</span>`;
+    return `<span class="run-live" title="A refresh is running on GitHub; new data loads here when it finishes"><span class="spin" aria-hidden="true"></span>Full refresh running${mins ? ` · ${mins} min` : ''}</span>`;
   }
   if (run.status === 'failed') {
     const streak = (run.streak ?? 1) > 1 ? `, ${run.streak} runs in a row since ${fmtTime(run.since ?? null)}` : '';
-    return `<span class="run-failed"><b>Last refresh failed${streak}</b>${run.why ? `<span>${esc(run.why)}</span>` : ''}<a href="${esc(run.url ?? '#')}" target="_blank" rel="noopener">Open the run on GitHub</a></span>`;
+    return `<span class="run-failed"><b>Hourly data refresh failed${streak}</b>${run.why ? `<span>${esc(run.why)}</span>` : ''}<a href="${esc(run.url ?? '#')}" target="_blank" rel="noopener">Open the run on GitHub</a></span>`;
   }
   return '';
 }
@@ -3519,6 +3519,15 @@ async function triggerViaGitHub(token: string): Promise<TriggerResult> {
   }
   const d = await fetch(`${base}/dispatches`, { method: 'POST', headers, body: JSON.stringify({ ref: GH_REF }) });
   if (d.status === 401 || d.status === 403) return { status: 401, body: {} };
+  // The button's quick sync covers accounts and prices only. If the full hourly refresh (stock lists,
+  // margins, alerts, "Updated") last failed, run it again too, so the page doesn't stay on old data.
+  if (d.status === 204 && run.status === 'failed') {
+    await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/refresh.yml/dispatches`, { method: 'POST', headers, body: JSON.stringify({ ref: GH_REF }) }).catch(() => {});
+    run.status = 'running';
+    run.startedAt = new Date().toISOString();
+    renderStatus();
+    window.setTimeout(checkRun, 15_000);
+  }
   return d.status === 204 ? { status: 202, body: {} } : { status: 502, body: { error: `GitHub dispatch failed: ${d.status}` } };
 }
 
