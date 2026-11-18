@@ -5818,3 +5818,20 @@ span.run-failed a {
   justify-self: start;
   color: var(--warn);
 }
+
+/* Booked returns over a period: chips, and the dates the total covers */
+.ps-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cl-periods {
+  margin: 0 0 10px;
+}
+
+.ps-span {
+  display: block;
+  margin-top: 2px;
+  color: var(--faint-2);
+  font-size: 11.5px;
+  font-weight: 400;
+}

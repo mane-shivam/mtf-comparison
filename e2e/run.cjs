@@ -410,11 +410,11 @@ async function run() {
     // Charges and realised come first, as one compact card.
     const dt = await text(p, '.dt');
     assert.ok(dt.indexOf('Charges paid when buying') < dt.indexOf('Interest by broker'), 'charges before interest');
-    assert.match(dt, /^Charges paid when buying .*₹[\d,]+ Charges due when you sell .*₹[\d,]+ Realised P&L \+₹0 booked here, \+₹0 earlier edit \+₹0/);
+    assert.match(dt, /^This week This month Last month This FY All time Charges paid when buying .*₹[\d,]+ Charges due when you sell .*₹[\d,]+ Realised P&L, all time \+₹0 booked here, \+₹0 earlier edit \+₹0/);
     p.nextPrompt = '105000';
     await p.click('.kvc [data-pnl-start]');
     await p.waitForTimeout(300);
-    assert.match(await text(p, '.kvc'), /Realised P&L \+₹0 booked here, \+₹1,05,000 earlier edit \+₹1,05,000/);
+    assert.match(await text(p, '.kvc'), /Realised P&L, all time \+₹0 booked here, \+₹1,05,000 earlier edit \+₹1,05,000/);
     await noOverflow(p);
     await shot(p, 'details-phone');
     assert.deepEqual(errorsOf.get(p), []);
@@ -567,6 +567,35 @@ async function run() {
     await p.click('[data-acct-card="kotak"] [data-sync-now]');
     await p.waitForTimeout(500);
     assert.ok(gh.dispatches.includes('brokers.yml'), 'Sync now starts the quick sync');
+    await p.context().close();
+  });
+
+  await scenario('booked returns by period: Closed tab and Details', async () => {
+    const trade = (id, sym, buyDate, sellDate, pnl) => ({ id, sym, broker: 'kotak', qty: 10, buy: 1000, sell: 1000 + pnl / 10, buyDate, sellDate, lev: 4, charges: 50, interest: 20, pnl, own: 2500 });
+    const closedList = [
+      trade('a', 'CDSL', daysAgo(5), TODAY, 1000), // this week
+      trade('b', 'BSE', daysAgo(420), daysAgo(400), -300), // over a year ago: an earlier financial year
+    ];
+    const gh = new FakeGitHub();
+    const p = await page({ gh, storage: { 'mtf.positions': [MANUAL[0]], 'mtf.closed': closedList, 'mtf.pnlStart': 5000, 'mtf.posView': { mode: 'closed', sort: 'risk' } } });
+    await p.goto(url);
+    await p.waitForSelector('.cl-periods');
+    // All time by default: both trades, with the dates they span.
+    assert.match(await text(p, '.ps'), /^Realised P&L, all time\s*\d+ \w+ to \d+ \w+\s*\+₹700 .*2 trades .*Won 1 of 2 Held on average 13 days/);
+    await p.click('[data-period="week"]');
+    await p.waitForTimeout(200);
+    assert.match(await text(p, '.ps'), /^Realised P&L, this week\s*\d+ \w+ to \d+ \w+\s*\+₹1,000 .*1 trade\b/);
+    assert.equal((await p.$$('.cl')).length, 1);
+    await p.click('[data-period="fy"]');
+    await p.waitForTimeout(200);
+    assert.equal((await p.$$('.cl')).length, 1, 'a sale 400 days ago is in an earlier financial year');
+    // Details uses the same period; the undated "earlier" P&L counts only in All time.
+    await p.click('[data-posmode="details"]');
+    await p.waitForSelector('.kvc');
+    assert.match(await text(p, '.kvc'), /Realised P&L, this fy 1 trade sold \d+ \w+ to \d+ \w+ \+₹1,000$/);
+    await p.click('.dt [data-period="all"]');
+    await p.waitForTimeout(200);
+    assert.match(await text(p, '.kvc'), /Realised P&L, all time \+₹700 booked here, \+₹5,000 earlier edit, \d+ \w+ to \d+ \w+ \+₹5,700$/);
     await p.context().close();
   });
 

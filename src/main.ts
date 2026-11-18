@@ -1587,17 +1587,53 @@ function holdingRowHTML(h: Holding): string {
 }
 
 // Charges on open positions and realised P&L, one compact card.
+/* Booked returns over a period, by sale date (IST): shared by the Closed tab and Details. "Earlier" P&L you
+   typed in has no dates, so it only counts in All time. Financial year: 1 April to 31 March. */
+type Period = 'week' | 'month' | 'lastMonth' | 'fy' | 'all';
+const PERIOD_KEY = 'mtf.closedPeriod';
+const PERIODS: [Period, string][] = [['week', 'This week'], ['month', 'This month'], ['lastMonth', 'Last month'], ['fy', 'This FY'], ['all', 'All time']];
+const curPeriod = (): Period => { const v = store<Period>(PERIOD_KEY); return PERIODS.some(([k]) => k === v) ? v! : 'all'; };
+function periodRange(p: Period, today = localISO()): [string, string] | null {
+  const [y, m, d] = today.split('-').map(Number);
+  const iso = (dt: Date) => localISO(dt);
+  if (p === 'all') return null;
+  if (p === 'week') { const dt = new Date(y, m - 1, d); dt.setDate(d - ((dt.getDay() + 6) % 7)); return [iso(dt), today]; } // since Monday
+  if (p === 'month') return [`${today.slice(0, 7)}-01`, today];
+  if (p === 'lastMonth') return [iso(new Date(y, m - 2, 1)), iso(new Date(y, m - 1, 0))];
+  const fy = m >= 4 ? y : y - 1;
+  return [`${fy}-04-01`, today];
+}
+const inPeriod = (x: ClosedTrade, p: Period) => { const r = periodRange(p); return !r || (x.sellDate >= r[0] && x.sellDate <= r[1]); };
+// "1 Nov to 18 Nov": the dates a period covers (All time: first buy to last sale of the trades in it).
+function periodLabel(p: Period, list: ClosedTrade[]): string {
+  const r = periodRange(p);
+  if (r) return `${shortDate(r[0])} to ${shortDate(r[1])}`;
+  if (!list.length) return '';
+  const from = list.reduce((t, x) => (x.buyDate < t ? x.buyDate : t), list[0].buyDate);
+  const to = list.reduce((t, x) => (x.sellDate > t ? x.sellDate : t), list[0].sellDate);
+  return `${shortDate(from)} to ${shortDate(to)}`;
+}
+const periodChipsHTML = (p: Period) => `<div class="chips cl-periods" role="group" aria-label="Period">${PERIODS
+  .map(([k, l]) => `<button class="chip${p === k ? ' on' : ''}" data-period="${k}" aria-pressed="${p === k}">${l}</button>`).join('')}</div>`;
+
 function chargesRealisedHTML(list: Position[]): string {
   const ms = list.map(posMetrics);
   const buy = ms.reduce((t, m) => t + m.costs.buySide, 0);
   const sell = ms.reduce((t, m) => t + m.costs.sellSide, 0);
-  const start = store<number>(START_KEY) ?? 0;
-  const booked = loadClosed().reduce((t, x) => t + x.pnl, 0);
+  const p = curPeriod();
+  const start = p === 'all' ? store<number>(START_KEY) ?? 0 : 0;
+  const closed = loadClosed().filter((x) => inPeriod(x, p));
+  const booked = closed.reduce((t, x) => t + x.pnl, 0);
   const total = start + booked;
-  return `<div class="kvc">
+  const label = PERIODS.find(([k]) => k === p)![1];
+  const span = periodLabel(p, closed);
+  const detail = p === 'all'
+    ? `${signed(booked)} booked here, ${signed(start)} earlier <button class="link-btn" data-pnl-start>edit</button>`
+    : `${closed.length} trade${closed.length === 1 ? '' : 's'} sold ${span}`;
+  return `${periodChipsHTML(p)}<div class="kvc">
       <div class="kvc-row"><span>Charges paid when buying<small>brokerage, stamp duty, exchange fees, pledge, GST</small></span><b>${inr(buy)}</b></div>
       <div class="kvc-row"><span>Charges due when you sell<small>STT, brokerage, DP, unpledge, GST</small></span><b>${inr(sell)}</b></div>
-      <div class="kvc-row"><span>Realised P&amp;L<small>${signed(booked)} booked here, ${signed(start)} earlier <button class="link-btn" data-pnl-start>edit</button></small></span><b class="${tone(total)}">${signed(total)}</b></div>
+      <div class="kvc-row"><span>Realised P&amp;L, ${label.toLowerCase()}<small>${detail}${p === 'all' && span ? `, ${span}` : ''}</small></span><b class="${tone(total)}">${signed(total)}</b></div>
     </div>`;
 }
 
@@ -2516,8 +2552,13 @@ function saveSale() {
 }
 
 function closedViewHTML(): string {
-  const list = loadClosed().sort((a, b) => b.sellDate.localeCompare(a.sellDate));
-  if (!list.length) return '<div class="empty"><p class="empty-title">No closed trades yet</p><p>Use “Record sale” on a position to keep its result here, after every charge and interest.</p></div>';
+  const all = loadClosed().sort((a, b) => b.sellDate.localeCompare(a.sellDate));
+  if (!all.length) return '<div class="empty"><p class="empty-title">No closed trades yet</p><p>Use “Record sale” on a position to keep its result here, after every charge and interest.</p></div>';
+  const period = curPeriod();
+  const list = all.filter((x) => inPeriod(x, period));
+  const chips = periodChipsHTML(period);
+  const span = periodLabel(period, list);
+  if (!list.length) return `${chips}<div class="empty"><p class="empty-title">Nothing sold ${PERIODS.find(([k]) => k === period)![1].toLowerCase()}</p><p>${span ? `No sales between ${span}. ` : ''}Pick another period to see earlier trades.</p></div>`;
   const total = list.reduce((t, x) => t + x.pnl, 0);
   const invested = list.reduce((t, x) => t + x.qty * x.buy, 0);
   const own = list.reduce((t, x) => t + x.own, 0);
@@ -2534,12 +2575,15 @@ function closedViewHTML(): string {
       <div class="pr-actions"><button class="pr-remove" data-closed-del="${esc(x.id)}">Delete record</button></div>
     </article>`;
   });
-  return `<section class="ps">
-      <div class="ps-top"><div><div class="ps-label">Realised P&amp;L</div><div class="ps-value ${total >= 0 ? 'up' : 'down'}">${sign(total)}${inr(Math.abs(total)).replace('−', '')}</div>
+  const days = (a: string, b: string) => Math.max(0, Math.round((Date.parse(b) - Date.parse(a)) / 86_400_000));
+  const avgHeld = Math.round(list.reduce((t, x) => t + days(x.buyDate, x.sellDate), 0) / list.length);
+  return `${chips}<section class="ps">
+      <div class="ps-top"><div><div class="ps-label">Realised P&amp;L, ${PERIODS.find(([k]) => k === period)![1].toLowerCase()}<span class="ps-span">${span}</span></div><div class="ps-value ${total >= 0 ? 'up' : 'down'}">${sign(total)}${inr(Math.abs(total)).replace('−', '')}</div>
         <div class="ps-sub">${invested ? `<b class="cl-t">${sign(total)}${Math.abs((total / invested) * 100).toFixed(1)}% on ${inr(invested)} invested</b>${own ? `<br />${sign(total)}${Math.abs((total / own) * 100).toFixed(1)}% on ${inr(own)} own money` : ''}<br />After every charge and interest` : ''}</div></div>
         <div class="ps-count">${list.length} trade${list.length === 1 ? '' : 's'}</div></div>
       <div class="ps-grid">
         <div><i>Won</i><b>${wins} of ${list.length}</b></div>
+        <div><i>Held on average</i><b>${avgHeld} day${avgHeld === 1 ? '' : 's'}</b></div>
         <div><i>Charges paid</i><b>${inr(charges)}</b></div>
         <div><i>Interest paid</i><b>${inr(interest)}</b></div>
       </div>
@@ -3736,6 +3780,11 @@ function bind() {
     if (t.closest('#pos-export')) return exportPositions();
     if (t.closest('#pos-clear')) return openClearSheet();
     if (t.closest('[data-sync-now]')) return void refresh();
+    const per = t.closest<HTMLElement>('[data-period]');
+    if (per) {
+      store(PERIOD_KEY, per.dataset.period);
+      return renderList();
+    }
     const ua = t.closest<HTMLElement>('[data-use-avg]');
     if (ua) {
       const [b, sym] = ua.dataset.useAvg!.split(':');
