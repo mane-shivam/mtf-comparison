@@ -2076,6 +2076,10 @@ function markerOf(row: Record<string, unknown>): boolean | null {
   return null;
 }
 
+// A futures or options row. Rupeezy sends expiry_date on stock rows too, so that alone says nothing.
+const isDerivative = (r: Record<string, unknown>) =>
+  /FUT|OPT/i.test(String(r.instrument_type ?? '')) || /^(CE|PE)$/i.test(String(r.option_type ?? '')) || /_FO|DERIV/i.test(String(r.exchange ?? r.segment ?? ''));
+
 function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
   const x = brokerSnap?.brokers[b];
   const raw = x?.ok ? (x.raw as Record<string, any> | undefined) : undefined;
@@ -2106,7 +2110,7 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
     for (const r of net as Record<string, unknown>[]) {
       const prod = String(r.product ?? '').toUpperCase();
       if (/INTRADAY|MIS/.test(prod)) continue;
-      if ((r.exchange && !/EQ/i.test(String(r.exchange))) || String(r.expiry_date ?? '').trim()) continue; // futures and options rows aren't holdings
+      if ((r.exchange && !/EQ/i.test(String(r.exchange))) || isDerivative(r)) continue; // futures and options rows aren't holdings
       const avg = num(r.overnight_average_price) || num(r.average_price) || num(r.buy_price);
       rows.push({ sym: cleanSym(r.symbol), qty: num(r.quantity), avg, mtf: markerOf(r), close: null });
     }
@@ -2271,7 +2275,7 @@ function dropDerivativeLots(): number {
   const held = brokerHoldings('rupeezy');
   if (!Array.isArray(net) || !held) return 0;
   const fno = new Set((net as Record<string, unknown>[])
-    .filter((r) => /FO|CDS|MCX/i.test(String(r.exchange ?? '')) || !!String(r.expiry_date ?? '').trim())
+    .filter((r) => /FO|CDS|MCX/i.test(String(r.exchange ?? '')) || isDerivative(r))
     .map((r) => cleanSym(r.symbol)));
   const list = loadPositions();
   const gone = list.filter((p) => p.broker === 'rupeezy' && p.src === 'broker' && !p.fills?.length && fno.has(p.sym) && !held.some((h) => h.sym === p.sym));

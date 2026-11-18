@@ -100,7 +100,7 @@ function snapshot({ kotak = [], rupeezy = [], kotakTrades = null, at = new Date(
     brokers: {
       kotak: { ok: true, at, fills: kFills, raw: { holdings: { data: kotak.map(([symbol, quantity, averagePrice]) => ({ symbol, displaySymbol: `${symbol}-EQ`, quantity, averagePrice, exchangeSegment: 'nse_cm', closingPrice: PRICES[symbol] })) }, ...trades } },
       rupeezy: rupeezyOk
-        ? { ok: true, at, fills: log('rupeezy', fills.rupeezy || []), raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: rupeezyFree, funds_transferred: 0 } } } }
+        ? { ok: true, at, fills: log('rupeezy', fills.rupeezy || []), raw: { positions: { status: 'success', data: { net: rupeezy.map(([symbol, quantity, average_price]) => ({ symbol, exchange: 'NSE_EQ', expiry_date: '1970-01-01', option_type: 'XX', product: 'MTF', quantity, average_price, overnight_average_price: average_price })), day: [] } }, funds: { nse: { net_available: rupeezyFree, funds_transferred: 0 } } } }
         : { ok: false, at: null, error: 'Rupeezy: not signed in. Tap Connect Rupeezy on the site' },
     },
   };

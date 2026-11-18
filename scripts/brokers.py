@@ -227,6 +227,15 @@ def _fill_date(v) -> str | None:
     return None
 
 
+def is_derivative(r: dict) -> bool:
+    """A futures or options row. Rupeezy sends an expiry_date field on stock rows too, so that alone says
+    nothing: the segment, exchange, instrument type or option type decide."""
+    seg = " ".join(str(r.get(k) or "") for k in ("exchange", "segment", "exSeg")).upper()
+    inst = str(r.get("instrument_type") or r.get("instrument") or "").upper()
+    return ("FO" in seg.replace("FOR", "") or "DERIV" in seg or bool(re.search(r"FUT|OPT", inst))
+            or str(r.get("option_type") or "").upper() in ("CE", "PE"))
+
+
 def fills_of(name: str, raw: dict, day: str) -> list[dict]:
     """Today's delivery/MTF fills on NSE cash: {id, d, sym, side, qty, px}."""
     out: list[dict] = []
@@ -248,7 +257,7 @@ def fills_of(name: str, raw: dict, day: str) -> list[dict]:
     else:
         day_rows = (((raw.get("positions") or {}).get("data") or {}).get("day") or []) if isinstance(raw.get("positions"), dict) else []
         for r in day_rows:
-            if "EQ" not in str(r.get("exchange") or "NSE_EQ").upper() or str(r.get("expiry_date") or "").strip() \
+            if "EQ" not in str(r.get("exchange") or "NSE_EQ").upper() or is_derivative(r) \
                     or re.search(r"INTRADAY|MIS", str(r.get("product") or ""), re.I):
                 continue  # stocks only: futures and options carry the stock's name too
             sym = clean_sym(r.get("symbol"))
@@ -409,14 +418,13 @@ def report_fills(reports: dict) -> list[dict]:
     out, seen = [], set()
     for name in ("tradesMtf", "tradesEquity"):
         for r in _rows(reports.get(name)):
-            if str(_pick(r, "expiry_date", "expiry") or "").strip() or re.search(
-                    r"FUT|OPT|CE|PE", str(_pick(r, "instrument_type", "instrument_name", "instrument") or ""), re.I):
+            if is_derivative(r):
                 continue
             sym = clean_sym(_pick(r, "symbol", "trading_symbol", "scrip"))
             qty = _num(_pick(r, "quantity", "traded_quantity", "trade_quantity", "qty"))
             px = _num(_pick(r, "price", "trade_price", "traded_price", "rate"))
             side_raw = str(_pick(r, "side", "transaction_type", "buy_sell", "trade_type") or "").upper()
-            d = _fill_date(_pick(r, "traded_at", "trade_time", "trade_date", "traded_time", "date"))
+            d = _fill_date(_pick(r, "traded_at_date", "traded_at", "trade_time", "trade_date", "traded_time", "date"))
             tid = _pick(r, "trade_id", "trade_no", "tradeId", "id")
             if not (sym and qty > 0 and px > 0 and d and side_raw[:1] in ("B", "S")):
                 continue

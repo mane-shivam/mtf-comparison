@@ -202,7 +202,7 @@ def test_fills_log_keeps_each_days_fills_across_syncs():
     got = brokers.fills_of("kotak", k, "2026-11-17")
     assert got == [{"id": "k:1:9:1", "d": "2026-11-17", "sym": "CDSL", "side": "S", "qty": 50.0, "px": 1450.5}]
     r = {"positions": {"data": {"day": [
-        {"symbol": "ENTERO", "exchange": "NSE_EQ", "product": "MTF", "buy_quantity": 0, "sell_quantity": 30, "sell_price": 1990.0},
+        {"symbol": "ENTERO", "exchange": "NSE_EQ", "product": "MTF", "expiry_date": "1970-01-01", "buy_quantity": 0, "sell_quantity": 30, "sell_price": 1990.0},
         {"symbol": "NIFTY26NOVFUT", "exchange": "NSE_FO", "product": "DELIVERY", "buy_quantity": 75, "buy_price": 25000},
         {"symbol": "SUNPHARMA", "exchange": "NSE_FO", "expiry_date": "2026-11-23", "product": "DELIVERY", "buy_quantity": 350, "buy_price": 1918},
     ]}}}
@@ -236,7 +236,8 @@ def test_rupeezy_tradebook_report_fills_the_days_the_log_missed(monkeypatch):
          "trade_id": "T1", "traded_at": "2026-11-17 14:02:11"},
         {"symbol": "SUNPHARMA", "instrument_type": "FUTSTK", "expiry_date": "2026-11-24", "side": "BUY", "quantity": 350,
          "price": 1918, "trade_id": "T2", "traded_at": "2026-11-17 10:00:00"},
-        {"symbol": "ENTERO", "side": "BUY", "quantity": 10, "price": 1990, "trade_id": "T3", "traded_at": "2026-11-18T10:00:00"},
+        {"symbol": "ENTERO", "instrument_type": "EQUITIES", "expiry_date": "1970-01-01", "option_type": "XX", "segment": "EQUITY",
+         "side": "BUY", "quantity": "10", "price": "1990.00", "trade_id": "T3", "traded_at_date": "2026-11-18", "traded_at": "10:00:00"},
     ]}, "tradesEquity": {"data": [
         {"symbol": "TATACOMM", "side": "SELL", "quantity": 135, "price": 1790.5, "trade_id": "T1", "traded_at": "2026-11-17 14:02:11"},
     ]}}
