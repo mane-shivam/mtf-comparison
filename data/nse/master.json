@@ -2348,7 +2348,7 @@
 {
 "symbol": "BNAGROCHEM",
 "name": "BN Agrochem Limited",
-"isin": "INE00HZ01011",
+"isin": "INE00HZ01029",
 "type": "equity"
 },
 {
@@ -3828,12 +3828,6 @@
 "type": "equity"
 },
 {
-"symbol": "DRAGARWQ",
-"name": "Dr Agarwals Eye Hospital Limited",
-"isin": "INE934C01018",
-"type": "equity"
-},
-{
 "symbol": "DRCSYSTEMS",
 "name": "DRC Systems India Limited",
 "isin": "INE03RS01027",
@@ -4113,12 +4107,6 @@
 "symbol": "ELLEN",
 "name": "Ellenbarrie Industrial Gases Limited",
 "isin": "INE236E01022",
-"type": "equity"
-},
-{
-"symbol": "ELPROINTL",
-"name": "Elpro International Limited",
-"isin": "INE579B01039",
 "type": "equity"
 },
 {
@@ -6975,6 +6963,12 @@
 "symbol": "JKPAPER",
 "name": "JK Paper Limited",
 "isin": "INE789E01012",
+"type": "equity"
+},
+{
+"symbol": "JKSHAH",
+"name": "J.K.Shah Commerce Education Limited",
+"isin": "INE2OD001016",
 "type": "equity"
 },
 {
@@ -12558,12 +12552,6 @@
 "type": "equity"
 },
 {
-"symbol": "SHIVAM-RE1",
-"name": "Shivam Autotech Ltd-RE",
-"isin": "INE637H20024",
-"type": "equity"
-},
-{
 "symbol": "SHIVAMAUTO",
 "name": "Shivam Autotech Limited",
 "isin": "INE637H01024",
@@ -13641,12 +13629,6 @@
 "symbol": "SUVEN",
 "name": "Suven Life Sciences Limited",
 "isin": "INE495B01038",
-"type": "equity"
-},
-{
-"symbol": "SUVID-RE",
-"name": "Suvidhaa Infoserve Limited-RE",
-"isin": "INE018420013",
 "type": "equity"
 },
 {
