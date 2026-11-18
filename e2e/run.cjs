@@ -390,6 +390,23 @@ async function run() {
     await p.context().close();
   });
 
+  await scenario('Rupeezy futures are not holdings: a SUNPHARMA futures lot added by the old sync is removed', async () => {
+    const snap = snapshot({ kotak: [['CDSL', 300, 1302]], rupeezy: [['ENTERO', 100, 2000]] });
+    // Rupeezy lists the future under the stock's name, with an expiry and the F&O exchange.
+    snap.brokers.rupeezy.raw.positions.data.net.push({ symbol: 'SUNPHARMA', exchange: 'NSE_FO', expiry_date: '2026-11-23', product: 'DELIVERY', quantity: 350, average_price: 1918 });
+    const gh = new FakeGitHub();
+    gh.put('data/broker.enc.json', await encrypt(snap));
+    const bogus = { id: 'f1', sym: 'SUNPHARMA', broker: 'rupeezy', qty: 350, price: 1918, date: daysAgo(1), lev: 1, src: 'broker' };
+    const p = await page({ gh, storage: { 'mtf.positions': [...MANUAL, bogus] } });
+    await p.goto(url);
+    await p.waitForSelector('.hero');
+    await settle(p, 3500);
+    assert.deepEqual((await positions(p)).map((x) => x.sym).sort(), ['CDSL', 'ENTERO'], 'futures lot removed, not re-added');
+    assert.equal((await closed(p)).length, 0, 'removed, not booked as a sale');
+    assert.doesNotMatch(await text(p, '[data-acct-card="rupeezy"]'), /differ/);
+    await p.context().close();
+  });
+
   await scenario("a buy that isn't settled yet isn't a sale or a difference the next day", async () => {
     const gh = new FakeGitHub();
     // NUVAMA bought yesterday (in the fill log); Kotak's settled list doesn't have it yet.

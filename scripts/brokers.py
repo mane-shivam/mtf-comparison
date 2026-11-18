@@ -248,8 +248,9 @@ def fills_of(name: str, raw: dict, day: str) -> list[dict]:
     else:
         day_rows = (((raw.get("positions") or {}).get("data") or {}).get("day") or []) if isinstance(raw.get("positions"), dict) else []
         for r in day_rows:
-            if "EQ" not in str(r.get("exchange") or "NSE_EQ").upper() or re.search(r"INTRADAY|MIS", str(r.get("product") or ""), re.I):
-                continue
+            if "EQ" not in str(r.get("exchange") or "NSE_EQ").upper() or str(r.get("expiry_date") or "").strip() \
+                    or re.search(r"INTRADAY|MIS", str(r.get("product") or ""), re.I):
+                continue  # stocks only: futures and options carry the stock's name too
             sym = clean_sym(r.get("symbol"))
             for side, q, p in (("B", "buy_quantity", "buy_price"), ("S", "sell_quantity", "sell_price")):
                 qty, px = _num(r.get(q)), _num(r.get(p))

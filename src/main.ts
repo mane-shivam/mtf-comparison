@@ -2070,7 +2070,7 @@ function brokerHoldings(b: BrokerKey): BrokerHolding[] | null {
     for (const r of net as Record<string, unknown>[]) {
       const prod = String(r.product ?? '').toUpperCase();
       if (/INTRADAY|MIS/.test(prod)) continue;
-      if (r.exchange && !/EQ/i.test(String(r.exchange))) continue; // futures and options rows aren't holdings
+      if ((r.exchange && !/EQ/i.test(String(r.exchange))) || String(r.expiry_date ?? '').trim()) continue; // futures and options rows aren't holdings
       const avg = num(r.overnight_average_price) || num(r.average_price) || num(r.buy_price);
       rows.push({ sym: cleanSym(r.symbol), qty: num(r.quantity), avg, mtf: markerOf(r), close: null });
     }
@@ -2214,9 +2214,28 @@ function repairFalseSales(): number {
   return n;
 }
 
+// Rupeezy lists futures and options with the stock's name (symbol "SUNPHARMA", plus an expiry). Before those
+// rows were ignored, a futures position could be added as a holding. Such a lot goes: added by a sync with no
+// fill behind it, and the broker now has that name only as a futures or options row, not as a stock.
+function dropDerivativeLots(): number {
+  const raw = brokerSnap?.brokers.rupeezy?.ok ? (brokerSnap.brokers.rupeezy.raw as Record<string, any>) : null;
+  const net = raw?.positions?.data?.net;
+  const held = brokerHoldings('rupeezy');
+  if (!Array.isArray(net) || !held) return 0;
+  const fno = new Set((net as Record<string, unknown>[])
+    .filter((r) => /FO|CDS|MCX/i.test(String(r.exchange ?? '')) || !!String(r.expiry_date ?? '').trim())
+    .map((r) => cleanSym(r.symbol)));
+  const list = loadPositions();
+  const gone = list.filter((p) => p.broker === 'rupeezy' && p.src === 'broker' && !p.fills?.length && fno.has(p.sym) && !held.some((h) => h.sym === p.sym));
+  if (!gone.length) return 0;
+  savePositions(list.filter((p) => !gone.includes(p)));
+  toast(`Removed ${[...new Set(gone.map((p) => p.sym))].join(', ')} from Rupeezy holdings: it's a futures or options position, not a stock.`);
+  return gone.length;
+}
+
 function reconcileFromBrokers() {
   migrateLotDates();
-  if (repairFalseSales()) render();
+  if (repairFalseSales() + dropDerivativeLots()) render();
   // Needs prices and broker rates: spare margin decides how new buys were paid, and a sale needs a price.
   // Called again when they arrive.
   if (!brokerSnap || !state.market || !state.stocks.length) return;

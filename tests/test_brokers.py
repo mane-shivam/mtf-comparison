@@ -203,6 +203,7 @@ def test_fills_log_keeps_each_days_fills_across_syncs():
     r = {"positions": {"data": {"day": [
         {"symbol": "ENTERO", "exchange": "NSE_EQ", "product": "MTF", "buy_quantity": 0, "sell_quantity": 30, "sell_price": 1990.0},
         {"symbol": "NIFTY26NOVFUT", "exchange": "NSE_FO", "product": "DELIVERY", "buy_quantity": 75, "buy_price": 25000},
+        {"symbol": "SUNPHARMA", "exchange": "NSE_FO", "expiry_date": "2026-11-23", "product": "DELIVERY", "buy_quantity": 350, "buy_price": 1918},
     ]}}}
     day1 = brokers.fills_of("rupeezy", r, "2026-11-17")
     assert [(f["sym"], f["side"], f["qty"]) for f in day1] == [("ENTERO", "S", 30.0)]
