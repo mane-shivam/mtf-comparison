@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T05:32:45Z",
+"fetchedAt": "2026-11-19T06:32:48Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T05:32:40Z",
+"fetchedAt": "2026-11-19T06:32:43Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T05:32:41Z",
+"fetchedAt": "2026-11-19T06:32:44Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T05:32:45Z",
-"count": 177,
+"fetchedAt": "2026-11-19T06:32:48Z",
+"count": 183,
 "error": null
 }
 },
@@ -2216,6 +2216,14 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=771GS2066"
 },
 {
+"symbol": "815GS2026",
+"date": "2026-11-23",
+"kind": "action",
+"title": "Interest payment",
+"detail": "Interest Payment",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=815GS2026"
+},
+{
 "symbol": "ABDL",
 "date": "2026-11-18",
 "kind": "news",
@@ -2959,6 +2967,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/KANSAINER_18112026132500_Reg30_Disclosure_18-11-26.pdf"
 },
 {
+"symbol": "KOKUYOCMLN",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Announcement under Regulation 30 of SEBI (LODR) Regulations, 2015",
+"link": "https://nsearchives.nseindia.in/corporate/RAVIDAMLE_19112026112257_Disclosure_under_regulation_30_-_Jammu_case.pdf"
+},
+{
 "symbol": "KPIL",
 "date": "2026-11-18",
 "kind": "news",
@@ -3023,6 +3040,14 @@
 "title": "Default",
 "detail": "Mangalam Drugs And Organics Limited has informed the Exchange about Fraud/Default/Arrest",
 "link": "https://nsearchives.nseindia.in/corporate/MANGALAM_16112026180354_SE44_Signed.pdf"
+},
+{
+"symbol": "MARSONS",
+"date": "2026-11-20",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 0.05 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=MARSONS"
 },
 {
 "symbol": "MASTERTR",
@@ -3262,6 +3287,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/RADAAN_17112026142634_SE_Intimation_on_IT_Demand_Order.pdf"
 },
 {
+"symbol": "RAMAPHO",
+"date": "2026-11-20",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 0.50 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=RAMAPHO"
+},
+{
 "symbol": "RAMCOIND",
 "date": "2026-11-17",
 "kind": "news",
@@ -3430,6 +3463,14 @@
 "title": "Regulatory/tax order",
 "detail": "Supreme Petrochem Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/FINIAN_18112026191244_GSTInspection.pdf"
+},
+{
+"symbol": "STEELCAS",
+"date": "2026-11-20",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 0.45 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=STEELCAS"
 },
 {
 "symbol": "STLNETWORK",
@@ -3674,6 +3715,14 @@
 "title": "Fund raising",
 "detail": "VIVIANA POWER TECH LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20783_20261118_154013320_WEB.html"
+},
+{
+"symbol": "VRAJ",
+"date": "2026-11-25",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Interim Dividend - Re 0.60 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=VRAJ"
 },
 {
 "symbol": "WSI",
