@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-19T12:32:18Z",
+"fetchedAt": "2026-11-19T13:32:01Z",
 "count": 1702,
 "rows": [
 {
@@ -714,7 +714,7 @@
 "symbol": "APOLLO",
 "name": "Apollo Micro Systems Limited",
 "exchange": "NSE",
-"lev": 2.4,
+"lev": 2.41,
 "maxExposureCr": 5.0
 },
 {
@@ -735,7 +735,7 @@
 "symbol": "APTUS",
 "name": "Aptus Value Housing Finance India Limited",
 "exchange": "NSE",
-"lev": 3.09,
+"lev": 3.1,
 "maxExposureCr": 5.0
 },
 {
@@ -1274,7 +1274,7 @@
 "symbol": "BANCOINDIA",
 "name": "Banco Products (I) Limited",
 "exchange": "NSE",
-"lev": 2.72,
+"lev": 2.73,
 "maxExposureCr": 2.0
 },
 {
@@ -1330,7 +1330,7 @@
 "symbol": "BASF",
 "name": "Basf India Limited",
 "exchange": "NSE",
-"lev": 3.28,
+"lev": 3.29,
 "maxExposureCr": 5.0
 },
 {
@@ -1365,7 +1365,7 @@
 "symbol": "BELRISE",
 "name": "Belrise Industries Limited",
 "exchange": "NSE",
-"lev": 3.14,
+"lev": 3.15,
 "maxExposureCr": 10.0
 },
 {
@@ -1470,7 +1470,7 @@
 "symbol": "BEL",
 "name": "Bharat Electronics Limited",
 "exchange": "NSE",
-"lev": 4.75,
+"lev": 4.76,
 "maxExposureCr": 50.0
 },
 {
@@ -2177,7 +2177,7 @@
 "symbol": "COHANCE",
 "name": "Cohance Lifesciences Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.79,
 "maxExposureCr": 5.0
 },
 {
@@ -2205,7 +2205,7 @@
 "symbol": "CONCORDBIO",
 "name": "Concord Biotech Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.81,
+"lev": 2.82,
 "maxExposureCr": 2.0
 },
 {
@@ -2282,7 +2282,7 @@
 "symbol": "CREDITACC",
 "name": "Creditaccess Grameen Limited",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.96,
 "maxExposureCr": 10.0
 },
 {

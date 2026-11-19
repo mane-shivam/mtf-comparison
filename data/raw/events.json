@@ -1,25 +1,25 @@
 {
-"fetchedAt": "2026-11-19T12:32:50Z",
+"fetchedAt": "2026-11-19T13:32:36Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T12:32:44Z",
+"fetchedAt": "2026-11-19T13:32:29Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T12:32:46Z",
+"fetchedAt": "2026-11-19T13:32:30Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T12:32:50Z",
-"count": 208,
+"fetchedAt": "2026-11-19T13:32:36Z",
+"count": 215,
 "error": null
 }
 },
 "ban": {
-"date": "2026-11-19",
+"date": "2026-11-20",
 "symbols": [
 "KAYNES"
 ]
@@ -341,10 +341,6 @@
 "band": 5,
 "series": "BE"
 },
-"BCSSL": {
-"band": 5,
-"series": "BE"
-},
 "BGRENERGY": {
 "band": 5,
 "series": "BE"
@@ -412,10 +408,6 @@
 "COMFINTE": {
 "band": 5,
 "series": "BE"
-},
-"COMPINFO": {
-"band": 5,
-"series": "BZ"
 },
 "CONSOFINVT": {
 "band": 5,
@@ -1205,6 +1197,10 @@
 "band": 5,
 "series": "BZ"
 },
+"SHRINGARMS": {
+"band": 5,
+"series": "EQ"
+},
 "SICALLOG": {
 "band": 5,
 "series": "EQ"
@@ -1222,10 +1218,6 @@
 "series": "BE"
 },
 "SIKKO": {
-"band": 5,
-"series": "BE"
-},
-"SILINV": {
 "band": 5,
 "series": "BE"
 },
@@ -1586,6 +1578,10 @@
 "series": "EQ"
 },
 "BAJAJHFL": {
+"band": 10,
+"series": "EQ"
+},
+"BALAXI": {
 "band": 10,
 "series": "EQ"
 },
@@ -2069,10 +2065,6 @@
 "band": 10,
 "series": "EQ"
 },
-"SHRINGARMS": {
-"band": 10,
-"series": "EQ"
-},
 "SHYAMCENT": {
 "band": 10,
 "series": "EQ"
@@ -2231,6 +2223,15 @@
 "title": "Regulatory/tax order",
 "detail": "Intimation of Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015",
 "link": "https://nsearchives.nseindia.in/corporate/ABDINDIA_18112026185015_SE_Intimation_-__Seizure_sd.pdf"
+},
+{
+"symbol": "ABDL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Update on Arbitration Proceedings.",
+"link": "https://nsearchives.nseindia.in/corporate/ABDINDIA_19112026183541_SE_Intimation_-_Update_on_CSD-_Appeal_sd.pdf"
 },
 {
 "symbol": "ADANIENT",
@@ -2521,6 +2522,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_27190_20261113_172414751_WEB.html"
 },
 {
+"symbol": "BRITANNIA",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Britannia Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/BRITANNIA_ROID_105050_KMP_Doc.zip"
+},
+{
 "symbol": "BRNL",
 "date": "2026-11-28",
 "kind": "meeting",
@@ -2674,6 +2684,24 @@
 "title": "Buyback",
 "detail": "DALMIA BHARAT LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider and approve Buyback/Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17144_20261118_185709253_WEB.html"
+},
+{
+"symbol": "DECCANCE",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Deccan Cements Limited has informed the Exchange about Credit Rating- New",
+"link": "https://nsearchives.nseindia.in/corporate/DECCANCE_19112026183517_CreditRating.pdf"
+},
+{
+"symbol": "DSKULKARNI",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "D S Kulkarni Developers Limited has informed the Exchange about fine imposed by Stock Exchanges",
+"link": "https://nsearchives.nseindia.in/corporate/DSKULKARNI_19112026182328_DSK_Intimation.pdf"
 },
 {
 "symbol": "DYCL",
@@ -2889,6 +2917,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24797_20261118_124821642_WEB.html"
 },
 {
+"symbol": "HEADSUP",
+"date": "2026-11-24",
+"kind": "meeting",
+"title": "Results",
+"detail": "Heads UP Ventures Limited has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Quarterly ended September 2026 .",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14408_20261119_182635887_WEB.html"
+},
+{
 "symbol": "HEROMOTOCO",
 "date": "2026-11-17",
 "kind": "news",
@@ -2976,6 +3012,15 @@
 "title": "Credit rating update",
 "detail": "IIFL Finance Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/IIFL_19112026125309_SEInti_ICRA.pdf"
+},
+{
+"symbol": "INDIACEM",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "The India Cements Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.in/corporate/INDIACEM_19112026185843_LettertoStockExchangesPendinglitigation19112026sd.pdf"
 },
 {
 "symbol": "INDIANB",
@@ -3521,6 +3566,14 @@
 "title": "Regulatory/tax order",
 "detail": "Sanofi India Limited has informed the Exchange about Update on Show Cause Notice received from GST Authorities dated 25th September 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/COSECSANOFI_17112026184453_Disclosure_under_Regulation_30_for_Show_Cause_Notice-Signed.pdf"
+},
+{
+"symbol": "SATIN",
+"date": "2026-11-25",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "SATIN CREDITCARE NETWORK LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13014_20261119_181827001_WEB.html"
 },
 {
 "symbol": "SBICARD",
