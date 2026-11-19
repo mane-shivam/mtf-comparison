@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T13:32:36Z",
+"fetchedAt": "2026-11-19T14:32:18Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T13:32:29Z",
+"fetchedAt": "2026-11-19T14:32:11Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T13:32:30Z",
+"fetchedAt": "2026-11-19T14:32:12Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T13:32:36Z",
-"count": 215,
+"fetchedAt": "2026-11-19T14:32:18Z",
+"count": 221,
 "error": null
 }
 },
@@ -2260,6 +2260,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_1631_20261109_174211764_WEB.html"
 },
 {
+"symbol": "AGARWALEYE",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "Allotment of 1,51,90,373 Equity Shares of Dr. Agarwal s Health Care Limited pursuant to the Scheme of Amalgamation between Dr. Agarwal s Eye Hospital Limited and Dr. Agarwal s Health Care Limited and their respective shareholders and credit",
+"link": "https://nsearchives.nseindia.in/corporate/DRAGARWALS_19112026193810_AHCL_Allotment_19112026_sd.pdf"
+},
+{
 "symbol": "AGIIL",
 "date": "2026-11-18",
 "kind": "news",
@@ -2317,6 +2326,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_1650_20261112_214455435_WEB.html"
 },
 {
+"symbol": "ANTGRAPHIC",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Antarctica Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/ANTGRAPHIC_ROID_105056_KMP_Doc.zip"
+},
+{
 "symbol": "AONESTEELS",
 "date": "2026-11-17",
 "kind": "news",
@@ -2368,6 +2386,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ASTRON_19112026164339_Letter-_E_Voting_Commencement_7th_meeting_signed.pdf"
 },
 {
+"symbol": "ATGL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Adani Total Gas Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ATGL2024_19112026192641_ATGL_SE_Crisil_Credit_Rating_19112026.pdf"
+},
+{
 "symbol": "ATUL",
 "date": "2026-11-19",
 "kind": "news",
@@ -2410,6 +2437,15 @@
 "title": "Merger",
 "detail": "AYM Syntex Limited has informed the Exchange about Updates on Scheme of Amalgamation",
 "link": "https://nsearchives.nseindia.in/corporate/AYMSYNTEX_18112026162041_Intimationonpronouncement181126.pdf"
+},
+{
+"symbol": "BANKBARODA",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Bank Of Baroda has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/BANKBARODA_19112026191020_SERATING.pdf"
 },
 {
 "symbol": "BCSSL",
@@ -2537,6 +2573,15 @@
 "title": "Results",
 "detail": "BRNL : 28-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 14, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Company ",
 "link": "https://nsearchives.nseindia.in/corporate/BRNL_13112026204656_Postponement_of_meeting-Signed.pdf"
+},
+{
+"symbol": "BSHSL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Bombay Super Hybrid Seeds Limited has informed the Exchange about Credit Rating- Others as Intimation of Withdrawal of Credit Rating by CARE",
+"link": "https://nsearchives.nseindia.in/corporate/BSHSL_19112026192624_BSHSL19112026_.pdf"
 },
 {
 "symbol": "BURNPUR",
@@ -3287,6 +3332,15 @@
 "title": "Director/KMP resigned",
 "detail": "MMP Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.in/corporate/MMP_ROID_104998_KMP_Doc.zip"
+},
+{
+"symbol": "MOTHERSON",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Samvardhana Motherson International Limited has informed the Exchange about update on Credit Rating.",
+"link": "https://nsearchives.nseindia.in/corporate/MOTHERSON_19112026194831_Disclosure_CRISIL.pdf"
 },
 {
 "symbol": "MRF",
