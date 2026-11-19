@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T06:32:48Z",
+"fetchedAt": "2026-11-19T07:32:47Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T06:32:43Z",
+"fetchedAt": "2026-11-19T07:32:41Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T06:32:44Z",
+"fetchedAt": "2026-11-19T07:32:43Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T06:32:48Z",
-"count": 183,
+"fetchedAt": "2026-11-19T07:32:47Z",
+"count": 185,
 "error": null
 }
 },
@@ -2845,6 +2845,15 @@
 "link": "-"
 },
 {
+"symbol": "ICIL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Indo Count Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/ICIL_ROID_105026_KMP_Doc.zip"
+},
+{
 "symbol": "IFCI",
 "date": "2026-11-18",
 "kind": "news",
@@ -2861,6 +2870,15 @@
 "title": "Regulatory/tax order",
 "detail": "IG Petrochemicals Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/IGPL_18112026102819_IntimationtoSE_IGPL_18112026.pdf"
+},
+{
+"symbol": "IIFL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "IIFL Finance Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/IIFL_19112026125309_SEInti_ICRA.pdf"
 },
 {
 "symbol": "INDIANB",

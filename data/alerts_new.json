@@ -2,17 +2,33 @@
  {
   "symbol": "RATEGAIN",
   "name": "Rategain Travel Technologies Limited",
-  "level": "watch",
-  "text": "Kotak Neo leverage cut 2.9× → 2.8×: you need more margin",
+  "level": "good",
+  "text": "Kotak Neo leverage up 2.8× → 2.9×: you need less margin",
   "link": null,
-  "at": "2026-11-19T06:33:11Z"
+  "at": "2026-11-19T07:33:09Z"
+ },
+ {
+  "symbol": "WOCKPHARMA",
+  "name": "Wockhardt Limited",
+  "level": "info",
+  "text": "Up 6.5% today at ₹2,159.20",
+  "link": null,
+  "at": "2026-11-19T07:33:09Z"
  },
  {
   "symbol": "CAPLIPOINT",
   "name": "Caplin Point Laboratories Limited",
-  "level": "watch",
-  "text": "Kotak Neo leverage cut 3.1× → 3.0×: you need more margin",
+  "level": "good",
+  "text": "Kotak Neo leverage up 3.0× → 3.1×: you need less margin",
   "link": null,
-  "at": "2026-11-19T06:33:11Z"
+  "at": "2026-11-19T07:33:09Z"
+ },
+ {
+  "symbol": "NEOGEN",
+  "name": "Neogen Chemicals Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹2,887.10)",
+  "link": null,
+  "at": "2026-11-19T07:33:09Z"
  }
 ]
