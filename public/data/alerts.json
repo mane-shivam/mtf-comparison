@@ -1446,5 +1446,37 @@
 "text": "Volume 3.3× the 20-day average",
 "link": null,
 "at": "2026-11-19T09:33:16Z"
+},
+{
+"symbol": "AMBER",
+"name": "Amber Enterprises India Limited",
+"level": "info",
+"text": "Volume 3.1× the 20-day average",
+"link": null,
+"at": "2026-11-19T10:33:04Z"
+},
+{
+"symbol": "KRN",
+"name": "KRN Heat Exchanger and Refrigeration Limited",
+"level": "info",
+"text": "At or near the upper circuit (5% band)",
+"link": null,
+"at": "2026-11-19T10:33:04Z"
+},
+{
+"symbol": "MEDIASSIST",
+"name": "Medi Assist Healthcare Services Limited",
+"level": "info",
+"text": "Volume 3.6× the 20-day average",
+"link": null,
+"at": "2026-11-19T10:33:04Z"
+},
+{
+"symbol": "ICICIBANK",
+"name": "ICICI Bank Limited",
+"level": "good",
+"text": "At a 52-week high (₹1,608.90)",
+"link": null,
+"at": "2026-11-19T10:33:04Z"
 }
 ]

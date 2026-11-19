@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T09:32:53Z",
+"fetchedAt": "2026-11-19T10:32:43Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T09:32:47Z",
+"fetchedAt": "2026-11-19T10:32:38Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T09:32:48Z",
+"fetchedAt": "2026-11-19T10:32:39Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T09:32:53Z",
-"count": 193,
+"fetchedAt": "2026-11-19T10:32:43Z",
+"count": 195,
 "error": null
 }
 },
@@ -2462,6 +2462,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/HexacomApril20_18112026121039_Reg-30.pdf"
 },
 {
+"symbol": "BIRLAMONEY",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Aditya Birla Money Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/BIRLAMONEY_19112026155238_Regulation_30_Credit_Rating_19112026_Ind_Ra_Sgd.pdf"
+},
+{
 "symbol": "BLSPOLY",
 "date": "2026-11-18",
 "kind": "meeting",
@@ -2851,6 +2860,15 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from HFCL Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is requir",
 "link": "-"
+},
+{
+"symbol": "ICICILIFE",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "ICICI Life Insurance Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ICICIPRULI_19112026155450_Disclosure_under_Regulation_30_and_51_Credit_Rating_CRISIL.pdf"
 },
 {
 "symbol": "ICIL",
@@ -3489,8 +3507,8 @@
 "date": "2026-11-25",
 "kind": "meeting",
 "title": "Results",
-"detail": "Simbhaoli Sugars Limited has informed the Exchange about IRP Convened Meeting scheduled to be held on 25 November 2026 inter-alia to consider, Review and Take Note of the Unaudited financial results for the quarter ended September 30, 2026",
-"link": "https://nsearchives.nseindia.in/corporate/SIMBHALS_19112026145130_Prior_Intimation.pdf"
+"detail": "SIMBHAOLI SUGARS LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13570_20261119_150850681_WEB.html"
 },
 {
 "symbol": "SKYWAYS",
