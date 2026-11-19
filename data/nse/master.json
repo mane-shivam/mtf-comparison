@@ -2454,6 +2454,12 @@
 "type": "equity"
 },
 {
+"symbol": "BRAHMVIRAT",
+"name": "BRAHM VIRAT INDUSTRIES CORPORATION LIMITED",
+"isin": "INE467D01017",
+"type": "equity"
+},
+{
 "symbol": "BRIGADE",
 "name": "Brigade Enterprises Limited",
 "isin": "INE791I01019",
@@ -15171,12 +15177,6 @@
 "symbol": "VIPULLTD",
 "name": "Vipul Limited",
 "isin": "INE946H01037",
-"type": "equity"
-},
-{
-"symbol": "VIRAT",
-"name": "Virat Industries Limited",
-"isin": "INE467D01017",
 "type": "equity"
 },
 {
