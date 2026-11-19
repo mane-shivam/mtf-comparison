@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T09:06:13Z",
+"fetchedAt": "2026-11-19T09:32:53Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T09:06:06Z",
+"fetchedAt": "2026-11-19T09:32:47Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T09:06:07Z",
+"fetchedAt": "2026-11-19T09:32:48Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T09:06:13Z",
-"count": 190,
+"fetchedAt": "2026-11-19T09:32:53Z",
+"count": 193,
 "error": null
 }
 },
@@ -3129,6 +3129,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_16112026111011_DISCLOSURE.pdf"
 },
 {
+"symbol": "MGEL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Vipin Prakash Mangal has Submitted to the Exchange a copy of Disclosure under Regulation 31(1) and 31 (2) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
+"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_19112026133636_Disclosure2.pdf"
+},
+{
 "symbol": "MMP",
 "date": "2026-11-18",
 "kind": "news",
@@ -3374,6 +3383,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/team_bbodade_18112026171430_RSL101.PDF"
 },
 {
+"symbol": "RSL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Jayesh Natvarlal Pithva has Submitted to the Exchange a copy of Disclosure under Regulation 29 (2) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
+"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_19112026123614_Jayesh.PDF"
+},
+{
 "symbol": "SANDHAR",
 "date": "2026-11-16",
 "kind": "meeting",
@@ -3465,6 +3483,14 @@
 "title": "Insolvency (CIRP)",
 "detail": "Post facto of the Thirty- Second (32nd) Committee of Creditors meeting held on Monday, November 16, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/SHIRPUR-G_17112026190000_Shirpur_32nd_COC__Outcome.pdf"
+},
+{
+"symbol": "SIMBHALS",
+"date": "2026-11-25",
+"kind": "meeting",
+"title": "Results",
+"detail": "Simbhaoli Sugars Limited has informed the Exchange about IRP Convened Meeting scheduled to be held on 25 November 2026 inter-alia to consider, Review and Take Note of the Unaudited financial results for the quarter ended September 30, 2026",
+"link": "https://nsearchives.nseindia.in/corporate/SIMBHALS_19112026145130_Prior_Intimation.pdf"
 },
 {
 "symbol": "SKYWAYS",

@@ -1,1 +1,18 @@
-[]
+[
+ {
+  "symbol": "FLUOROCHEM",
+  "name": "Gujarat Fluorochemicals Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹4,990.00)",
+  "link": null,
+  "at": "2026-11-19T09:33:16Z"
+ },
+ {
+  "symbol": "WOCKPHARMA",
+  "name": "Wockhardt Limited",
+  "level": "info",
+  "text": "Volume 3.3× the 20-day average",
+  "link": null,
+  "at": "2026-11-19T09:33:16Z"
+ }
+]
