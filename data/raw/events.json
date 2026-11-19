@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T11:32:57Z",
+"fetchedAt": "2026-11-19T12:32:50Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T11:32:52Z",
+"fetchedAt": "2026-11-19T12:32:44Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T11:32:53Z",
+"fetchedAt": "2026-11-19T12:32:46Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T11:32:57Z",
-"count": 204,
+"fetchedAt": "2026-11-19T12:32:50Z",
+"count": 208,
 "error": null
 }
 },
@@ -2898,6 +2898,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_17112026171114_STXIntimationESICupdate.pdf"
 },
 {
+"symbol": "HEXATRADEX",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Hexa Tradex Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.in/corporate/HEXATRADEX_19112026174530_ChangeinmanagementSE.pdf"
+},
+{
 "symbol": "HFCL",
 "date": "2026-11-16",
 "kind": "result",
@@ -2913,6 +2922,15 @@
 "title": "Regulatory/tax order",
 "detail": "Hindware Home Innovation Limited has informed the Exchange about receipt of Demand Order",
 "link": "https://nsearchives.nseindia.in/corporate/SHIL_19112026164155_HHIL_SE_DemandOrder.pdf"
+},
+{
+"symbol": "ICICIBANK",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "ICICI Bank Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ICICI2022_19112026172914_NSEBSE19112026.pdf"
 },
 {
 "symbol": "ICICILIFE",
@@ -3259,6 +3277,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/NEOGEN_19112026133515_GSTNoticedisclosure18112026_dropped_proceedings_clean.pdf"
 },
 {
+"symbol": "NHPC",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "In continuation to our earlier letter dated 14.08.2023 and in compliance to Reg 30 of SEBI LODR, it is to inform that settlement agreement has been entered with M/s Patel - L&T Consortium (PLNT) and settlement amount has been released. The ",
+"link": "https://nsearchives.nseindia.in/corporate/NHPC_19112026173028_STX_Letter_Parbati-III_Settlement.pdf"
+},
+{
 "symbol": "NILE",
 "date": "2026-11-17",
 "kind": "action",
@@ -3503,6 +3530,15 @@
 "title": "Credit rating update",
 "detail": "Sbi Cards And Payment Services Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/SBICARDS_16112026172147_SEFilingCRISILRating.pdf"
+},
+{
+"symbol": "SCHNEIDER",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/SCHNEIDER_19112026173556_IntimationReg_30GST_MatterNov192026.pdf"
 },
 {
 "symbol": "SCI",
@@ -3821,8 +3857,8 @@
 "date": "2026-11-23",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "To consider and approve the proposal for raising funds by the Company through the issuance of equity shares and/or other eligible securities or instruments, through one or more permissible modes, subject to applicable statutory and regulato",
-"link": "https://nsearchives.nseindia.in/corporate/VCL_18112026194019_Prior_Intimation_for_BM.pdf"
+"detail": "Vaxtex Cotfab Limited has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17495_20261119_175251919_WEB.html"
 },
 {
 "symbol": "VENUSPIPES",
