@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-19T01:32:20Z",
+"fetchedAt": "2026-11-19T02:32:14Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 477,
-"fetchedAt": "2026-11-19T01:32:20Z",
+"fetchedAt": "2026-11-19T02:32:14Z",
 "error": null
 }
 },
@@ -56,8 +56,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "AEPL",
@@ -1356,8 +1356,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "AILIMITED",
@@ -1376,8 +1376,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "ANTGRAPHIC",
@@ -1406,8 +1406,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "DELPHIFX",
@@ -1436,8 +1436,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "EMUDHRA",
@@ -1636,8 +1636,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "SHETHJI",
@@ -3006,8 +3006,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "BULKCORP",
@@ -3896,8 +3896,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "MPDL",
@@ -4306,8 +4306,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "SHREERAMA",
@@ -4616,8 +4616,8 @@
 "term": null,
 "stage": "II",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage II",
-"since": "2026-11-19",
-"exact": true
+"exact": true,
+"since": "2026-11-19"
 },
 {
 "symbol": "UNIVASTU",
