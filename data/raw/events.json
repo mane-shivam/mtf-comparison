@@ -1,19 +1,19 @@
 {
-"fetchedAt": "2026-11-19T04:32:17Z",
+"fetchedAt": "2026-11-19T05:32:45Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T04:32:11Z",
+"fetchedAt": "2026-11-19T05:32:40Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T04:32:12Z",
+"fetchedAt": "2026-11-19T05:32:41Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T04:32:17Z",
+"fetchedAt": "2026-11-19T05:32:45Z",
 "count": 177,
 "error": null
 }
@@ -3335,8 +3335,8 @@
 "date": "2026-11-24",
 "kind": "meeting",
 "title": "Results",
-"detail": "To consider and approve the financial results for the period ended September 30, 2026 and other business matters",
-"link": "https://nsearchives.nseindia.in/corporate/SETCO_17112026181842_IntimationofBoardmeeting24112026.pdf"
+"detail": "SETCO AUTOMOTIVE LIMITED has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to consider and approve the Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13961_20261119_100834702_WEB.html"
 },
 {
 "symbol": "SEYAIND",

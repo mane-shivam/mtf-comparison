@@ -1318,5 +1318,37 @@
 "text": "Kotak Neo leverage cut 2.9× → 2.0×: you need more margin",
 "link": null,
 "at": "2026-11-19T04:32:40Z"
+},
+{
+"symbol": "AMBER",
+"name": "Amber Enterprises India Limited",
+"level": "info",
+"text": "Up 5.7% today at ₹6,590.00",
+"link": null,
+"at": "2026-11-19T05:33:08Z"
+},
+{
+"symbol": "RATEGAIN",
+"name": "Rategain Travel Technologies Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 2.8× → 2.9×: you need less margin",
+"link": null,
+"at": "2026-11-19T05:33:08Z"
+},
+{
+"symbol": "CAPLIPOINT",
+"name": "Caplin Point Laboratories Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 3.0× → 3.1×: you need less margin",
+"link": null,
+"at": "2026-11-19T05:33:08Z"
+},
+{
+"symbol": "ENTERO",
+"name": "Entero Healthcare Solutions Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 2.0× → 2.9×: you need less margin",
+"link": null,
+"at": "2026-11-19T05:33:08Z"
 }
 ]
