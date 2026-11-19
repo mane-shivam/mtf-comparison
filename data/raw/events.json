@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T07:32:47Z",
+"fetchedAt": "2026-11-19T08:32:23Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T07:32:41Z",
+"fetchedAt": "2026-11-19T08:32:18Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T07:32:43Z",
+"fetchedAt": "2026-11-19T08:32:19Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T07:32:47Z",
-"count": 185,
+"fetchedAt": "2026-11-19T08:32:23Z",
+"count": 190,
 "error": null
 }
 },
@@ -2743,6 +2743,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/GENCON_16112026110907_Outcome_of_Board_meeting.pdf"
 },
 {
+"symbol": "GENSOL",
+"date": "2026-11-19",
+"kind": "result",
+"title": "Results out",
+"detail": "Gensol Engineering Limited has informed the Exchange about reasons for Delayed/Non-submission of Financial Results",
+"link": "https://nsearchives.nseindia.in/corporate/GENSOLRP_19112026130749_NSE_Reply_for_12112026_Regulation_33.pdf"
+},
+{
 "symbol": "GENUSPOWER",
 "date": "2026-11-18",
 "kind": "news",
@@ -2933,6 +2941,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/IONEXCHANGE_17112026165936_Intimation_Revision_in_Ratings.pdf"
 },
 {
+"symbol": "IRB",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "IRB Infrastructure Developers Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/IRB_19112026130900_IRBIDL-Credit_Rating_-_CRISIL.pdf"
+},
+{
 "symbol": "JAMNAAUTO",
 "date": "2026-11-20",
 "kind": "action",
@@ -2974,6 +2991,15 @@
 "title": "Credit rating update",
 "detail": "Juniper Green Energy Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/JGEL2025_18112026204031_2026_11_18-_Reg_30-_Final_Credit_Rating-_Three.pdf"
+},
+{
+"symbol": "JUBLINGREA",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Jubilant Ingrevia Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/JUBLINGREA_ROID_105030_KMP_Doc.zip"
 },
 {
 "symbol": "KANSAINER",
@@ -3134,6 +3160,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 1.25 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=NATCOPHARM"
+},
+{
+"symbol": "NEOGEN",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Neogen Chemicals Limited has informed the Exchange about Disclosure under Regulation 30 and 51(2) read with Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+"link": "https://nsearchives.nseindia.in/corporate/NEOGEN_19112026133515_GSTNoticedisclosure18112026_dropped_proceedings_clean.pdf"
 },
 {
 "symbol": "NILE",
@@ -3498,6 +3533,15 @@
 "title": "Credit rating update",
 "detail": "STL Networks Limited has informed the Exchange about Credit Rating- Revision",
 "link": "https://nsearchives.nseindia.in/corporate/STLNETWORKS_17112026151636_BSENSE.pdf"
+},
+{
+"symbol": "SUKHJITS",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Sukhjit Starch & Chemicals Limited has informed the Exchange about the receipt of the order of The Hon'ble Income Tax Appleate Tribumal (ITAT), substantially reducing thedemand for AY 2024-25 from Rs. 3.75 crores to Rs. 67 lacs (both exclud",
+"link": "https://nsearchives.nseindia.in/corporate/SUKHJIT1944_19112026132432_DISCLOSURE_UNDER_REG_30_LODR_2015.pdf"
 },
 {
 "symbol": "SUKHJITS",
