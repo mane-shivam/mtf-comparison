@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-19T10:32:10Z",
+"fetchedAt": "2026-11-19T11:32:25Z",
 "count": 1702,
 "rows": [
 {
@@ -2177,7 +2177,7 @@
 "symbol": "COHANCE",
 "name": "Cohance Lifesciences Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.79,
 "maxExposureCr": 5.0
 },
 {
@@ -2205,7 +2205,7 @@
 "symbol": "CONCORDBIO",
 "name": "Concord Biotech Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.81,
+"lev": 2.82,
 "maxExposureCr": 2.0
 },
 {
@@ -2282,7 +2282,7 @@
 "symbol": "CREDITACC",
 "name": "Creditaccess Grameen Limited",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.96,
 "maxExposureCr": 10.0
 },
 {

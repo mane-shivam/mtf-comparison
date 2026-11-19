@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T10:32:43Z",
+"fetchedAt": "2026-11-19T11:32:57Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T10:32:38Z",
+"fetchedAt": "2026-11-19T11:32:52Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T10:32:39Z",
+"fetchedAt": "2026-11-19T11:32:53Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T10:32:43Z",
-"count": 195,
+"fetchedAt": "2026-11-19T11:32:57Z",
+"count": 204,
 "error": null
 }
 },
@@ -2358,6 +2358,24 @@
 "link": "https://nsearchives.nseindia.in/corporate/ASTRAL_ROID_105007_KMP_Doc.zip"
 },
 {
+"symbol": "ASTRON",
+"date": "2026-11-19",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.in/corporate/ASTRON_19112026164339_Letter-_E_Voting_Commencement_7th_meeting_signed.pdf"
+},
+{
+"symbol": "ATUL",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Atul Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/ATUL1_19112026163819_Intimation.pdf"
+},
+{
 "symbol": "AUBANK",
 "date": "2026-11-18",
 "kind": "news",
@@ -2509,6 +2527,15 @@
 "title": "Results",
 "detail": "BRNL : 28-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 14, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Company ",
 "link": "https://nsearchives.nseindia.in/corporate/BRNL_13112026204656_Postponement_of_meeting-Signed.pdf"
+},
+{
+"symbol": "BURNPUR",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Burnpur Cement Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.in/corporate/BURNPURCEMENT_19112026161729_INTIMATION_UNDER_REG_30.pdf"
 },
 {
 "symbol": "CAPINVIT",
@@ -2683,6 +2710,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2560_20261118_213944868_WEB.html"
 },
 {
+"symbol": "ENRIN",
+"date": "2026-11-25",
+"kind": "meeting",
+"title": "Results \u00b7 Dividend",
+"detail": "SIEMENS ENERGY INDIA LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to consider and approve the Yearly Audited Financial results of the Company for the period ended September 2026 and Dividend.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_25774_20261119_161357026_WEB.html"
+},
+{
 "symbol": "ESCORTS",
 "date": "2026-11-18",
 "kind": "news",
@@ -2794,6 +2829,15 @@
 "link": "-"
 },
 {
+"symbol": "GODIGIT",
+"date": "2026-11-19",
+"kind": "news",
+"level": "alert",
+"title": "Licence suspended",
+"detail": "Go Digit General Insurance Limited has informed the Exchange about regarding grant of registration as IFSC Insurance Office (IIO) in branch form",
+"link": "https://nsearchives.nseindia.in/corporate/GODIGITGI_19112026160841_Intimation_Reg_30_Gift_City.pdf"
+},
+{
 "symbol": "GODREJPROP",
 "date": "2026-11-17",
 "kind": "news",
@@ -2860,6 +2904,15 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from HFCL Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Company is requir",
 "link": "-"
+},
+{
+"symbol": "HINDWAREAP",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Hindware Home Innovation Limited has informed the Exchange about receipt of Demand Order",
+"link": "https://nsearchives.nseindia.in/corporate/SHIL_19112026164155_HHIL_SE_DemandOrder.pdf"
 },
 {
 "symbol": "ICICILIFE",
@@ -3071,6 +3124,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/xbrl/PRIOR_INTIMATION_14767_WebXMLFile_20261118_181246773.xml"
 },
 {
+"symbol": "LEXUS",
+"date": "2026-11-24",
+"kind": "meeting",
+"title": "Results",
+"detail": "Lexus Granito (India) Limited has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_15427_20261119_164132617_WEB.html"
+},
+{
 "symbol": "LIBAS",
 "date": "2026-11-17",
 "kind": "meeting",
@@ -3271,6 +3332,14 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from Paramount Communications Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above t",
 "link": "-"
+},
+{
+"symbol": "PARSVNATH",
+"date": "2026-11-19",
+"kind": "result",
+"title": "Results out",
+"detail": "Parsvnath Developers Limited has informed the Exchange about reasons for Delayed/Non-submission of Financial Results",
+"link": "https://nsearchives.nseindia.in/corporate/PARSVNATH_19112026162940_Delay_disclosure_financial_results.pdf"
 },
 {
 "symbol": "PASHUPATI",
@@ -3821,6 +3890,15 @@
 "title": "Fund raising",
 "detail": "VIVIANA POWER TECH LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20783_20261118_154013320_WEB.html"
+},
+{
+"symbol": "VMSTMT",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "VMS TMT Limited has informed the Exchange about Amalgamation/Merger Intimation of receipt of No Objection letters from BSE Limited and National Stock Exchange of India Limited in relation to proposed scheme of Amalgamation of Aditya Ultra S",
+"link": "https://nsearchives.nseindia.in/corporate/VMSTMTLTD_19112026160805_Intimation_under_Regulation_30__LODR_-Scheme_of_Arrangement.pdf"
 },
 {
 "symbol": "VRAJ",
