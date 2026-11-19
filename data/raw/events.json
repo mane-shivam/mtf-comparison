@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-19T14:32:18Z",
+"fetchedAt": "2026-11-19T15:32:34Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T14:32:11Z",
+"fetchedAt": "2026-11-19T15:32:28Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T14:32:12Z",
+"fetchedAt": "2026-11-19T15:32:29Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T14:32:18Z",
-"count": 221,
+"fetchedAt": "2026-11-19T15:32:34Z",
+"count": 224,
 "error": null
 }
 },
@@ -2332,7 +2332,7 @@
 "level": "watch",
 "title": "Director/KMP resigned",
 "detail": "Antarctica Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/ANTGRAPHIC_ROID_105056_KMP_Doc.zip"
+"link": "https://nsearchives.nseindia.in/corporate/ANTGRAPHIC_ROID_105057_KMP_Doc.zip"
 },
 {
 "symbol": "AONESTEELS",
@@ -3419,6 +3419,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/OMFRIEGHT_18112026204007_Disclosure_Final_Signed.pdf"
 },
 {
+"symbol": "ONELIFECAP",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Onelife Capital Advisors Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/ONELIFECAP_ROID_105059_KMP_Doc.zip"
+},
+{
 "symbol": "ONESOURCE",
 "date": "2026-11-17",
 "kind": "news",
@@ -3434,6 +3443,15 @@
 "title": "Ex-dividend",
 "detail": "Distribution - Rs 3.4596 Per Unit Consists Of Rs 1.8659 Per Unit As Interest/ Rs 1.2797 Per Unit As Dividend/ Re 0.3140 Per Unit As Return Of Capital",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=OSEINTRUST"
+},
+{
+"symbol": "OSIAHYPER",
+"date": "2026-11-19",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Prior Intimation of 9th COC Meeting of OSIA Hyper Retail Limited (in CIRP) Scheduled to be held on 20th November, 2026 at 3:00 PM",
+"link": "https://nsearchives.nseindia.in/corporate/OSIAHYPER_19112026203152_Intimation_of_9th_CoC_Meeting.pdf"
 },
 {
 "symbol": "PAGEIND",
@@ -3499,6 +3517,15 @@
 "title": "Regulatory/tax order",
 "detail": "Punjab National Bank has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/pnb2_18112026182108_Intimation_Penalty_GBD_18112026_DS.pdf"
+},
+{
+"symbol": "PNB",
+"date": "2026-11-19",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Punjab National Bank has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/pnb2_19112026200419_Intimation_Rating_Moody_19112026_DS.pdf"
 },
 {
 "symbol": "PNBHOUSING",
