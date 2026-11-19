@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-19T08:31:52Z",
+"fetchedAt": "2026-11-19T09:05:39Z",
 "count": 1702,
 "rows": [
 {
@@ -910,7 +910,7 @@
 "symbol": "ASTRAMICRO",
 "name": "Astra Microwave Products Limited",
 "exchange": "NSE",
-"lev": 2.9,
+"lev": 2.91,
 "maxExposureCr": 10.0
 },
 {
@@ -980,7 +980,7 @@
 "symbol": "AUROPHARMA",
 "name": "Aurobindo Pharma Limited",
 "exchange": "NSE",
-"lev": 4.72,
+"lev": 4.73,
 "maxExposureCr": 50.0
 },
 {
@@ -1022,7 +1022,7 @@
 "symbol": "AVALON",
 "name": "Avalon Technologies Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.38,
+"lev": 2.39,
 "maxExposureCr": 2.0
 },
 {
@@ -1043,7 +1043,7 @@
 "symbol": "DMART",
 "name": "Avenue Supermarts Limited",
 "exchange": "NSE",
-"lev": 4.8,
+"lev": 4.81,
 "maxExposureCr": 50.0
 },
 {
@@ -1064,7 +1064,7 @@
 "symbol": "AXISBANK",
 "name": "Axis Bank Limited",
 "exchange": "NSE",
-"lev": 4.99,
+"lev": 4.98,
 "maxExposureCr": 75.0
 },
 {
@@ -1183,14 +1183,14 @@
 "symbol": "BAJFINANCE",
 "name": "Bajaj Finance Limited",
 "exchange": "NSE",
-"lev": 4.4,
+"lev": 4.41,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "BAJAJFINSV",
 "name": "Bajaj Finserv Limited",
 "exchange": "NSE",
-"lev": 4.97,
+"lev": 4.96,
 "maxExposureCr": 50.0
 },
 {
@@ -1484,14 +1484,14 @@
 "symbol": "BHEL",
 "name": "Bharat Heavy Electricals Limited",
 "exchange": "NSE",
-"lev": 3.85,
+"lev": 3.86,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "BPCL",
 "name": "Bharat Petroleum Corporation Limited",
 "exchange": "NSE",
-"lev": 4.54,
+"lev": 4.55,
 "maxExposureCr": 50.0
 },
 {
@@ -1554,7 +1554,7 @@
 "symbol": "BIOCON",
 "name": "Biocon Limited",
 "exchange": "NSE",
-"lev": 4.62,
+"lev": 4.63,
 "maxExposureCr": 50.0
 },
 {
@@ -1638,7 +1638,7 @@
 "symbol": "BLS",
 "name": "Bls International Services Limited",
 "exchange": "NSE",
-"lev": 2.86,
+"lev": 2.87,
 "maxExposureCr": 5.0
 },
 {
@@ -2352,7 +2352,7 @@
 "symbol": "CYIENT",
 "name": "Cyient Limited",
 "exchange": "NSE",
-"lev": 3.1,
+"lev": 3.11,
 "maxExposureCr": 10.0
 },
 {
@@ -2520,7 +2520,7 @@
 "symbol": "DEVYANI",
 "name": "Devyani International Limited",
 "exchange": "NSE",
-"lev": 3.07,
+"lev": 3.06,
 "maxExposureCr": 5.0
 },
 {
@@ -5355,7 +5355,7 @@
 "symbol": "JAMNAAUTO",
 "name": "Jamna Auto Industries Limited",
 "exchange": "NSE",
-"lev": 2.84,
+"lev": 2.85,
 "maxExposureCr": 5.0
 },
 {
@@ -5460,7 +5460,7 @@
 "symbol": "JINDALSTEL",
 "name": "Jindal Steel & Power Limited",
 "exchange": "NSE",
-"lev": 4.58,
+"lev": 4.59,
 "maxExposureCr": 50.0
 },
 {
@@ -5712,7 +5712,7 @@
 "symbol": "KALYANKJIL",
 "name": "Kalyan Jewellers India Limited",
 "exchange": "NSE",
-"lev": 3.29,
+"lev": 3.28,
 "maxExposureCr": 5.0
 },
 {
@@ -5775,7 +5775,7 @@
 "symbol": "KEC",
 "name": "Kec International Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 2.98,
 "maxExposureCr": 10.0
 },
 {
@@ -5852,7 +5852,7 @@
 "symbol": "KIRIINDUS",
 "name": "Kiri Industries Limited",
 "exchange": "NSE",
-"lev": 2.7,
+"lev": 2.71,
 "maxExposureCr": 2.0
 },
 {
@@ -6363,7 +6363,7 @@
 "symbol": "LTM",
 "name": "Ltimindtree Limited",
 "exchange": "NSE",
-"lev": 4.27,
+"lev": 4.28,
 "maxExposureCr": 50.0
 },
 {
@@ -6377,7 +6377,7 @@
 "symbol": "LUMAXIND",
 "name": "Lumax Industries Limited",
 "exchange": "NSE",
-"lev": 2.85,
+"lev": 2.86,
 "maxExposureCr": 2.0
 },
 {
@@ -6489,7 +6489,7 @@
 "symbol": "M&M",
 "name": "Mahindra & Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.58,
+"lev": 4.59,
 "maxExposureCr": 50.0
 },
 {
@@ -7245,7 +7245,7 @@
 "symbol": "MUTHOOTFIN",
 "name": "Muthoot Finance Limited",
 "exchange": "NSE",
-"lev": 3.97,
+"lev": 3.99,
 "maxExposureCr": 50.0
 },
 {
@@ -7273,21 +7273,21 @@
 "symbol": "NH",
 "name": "Narayana Hrudayalaya Ltd.",
 "exchange": "NSE",
-"lev": 3.41,
+"lev": 3.4,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "NATCOPHARM",
 "name": "Natco Pharma Limited",
 "exchange": "NSE",
-"lev": 3.21,
+"lev": 3.2,
 "maxExposureCr": 10.0
 },
 {
 "symbol": "NATIONALUM",
 "name": "National Aluminium Company Limited",
 "exchange": "NSE",
-"lev": 3.67,
+"lev": 3.68,
 "maxExposureCr": 25.0
 },
 {
@@ -9884,7 +9884,7 @@
 "symbol": "SOLARINDS",
 "name": "Solar Industries India Limited",
 "exchange": "NSE",
-"lev": 3.95,
+"lev": 3.94,
 "maxExposureCr": 25.0
 },
 {
@@ -10031,7 +10031,7 @@
 "symbol": "SAIL",
 "name": "Steel Authority Of India Limited",
 "exchange": "NSE",
-"lev": 3.94,
+"lev": 3.95,
 "maxExposureCr": 25.0
 },
 {
@@ -10507,14 +10507,14 @@
 "symbol": "TATASTEEL",
 "name": "Tata Steel Limited",
 "exchange": "NSE",
-"lev": 4.74,
+"lev": 4.73,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TATATECH",
 "name": "Tata Technologies Limited",
 "exchange": "NSE",
-"lev": 3.3,
+"lev": 3.29,
 "maxExposureCr": 50.0
 },
 {
@@ -10556,7 +10556,7 @@
 "symbol": "TATVA",
 "name": "Tatva Chintan Pharma Chem Limited",
 "exchange": "NSE",
-"lev": 2.61,
+"lev": 2.6,
 "maxExposureCr": 2.0
 },
 {
@@ -10584,7 +10584,7 @@
 "symbol": "TDPOWERSYS",
 "name": "Td Power Systems Limited",
 "exchange": "NSE",
-"lev": 2.4,
+"lev": 2.39,
 "maxExposureCr": 5.0
 },
 {
@@ -10598,14 +10598,14 @@
 "symbol": "TECHM",
 "name": "Tech Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.59,
+"lev": 4.58,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TECHNOE",
 "name": "Techno Elec & Eng Co. Ltd",
 "exchange": "NSE",
-"lev": 2.86,
+"lev": 2.85,
 "maxExposureCr": 2.0
 },
 {
@@ -10633,7 +10633,7 @@
 "symbol": "TEJASNET",
 "name": "Tejas Networks Limited",
 "exchange": "NSE",
-"lev": 2.57,
+"lev": 2.56,
 "maxExposureCr": 5.0
 },
 {
@@ -11144,14 +11144,14 @@
 "symbol": "UNITDSPR",
 "name": "United Spirits Limited",
 "exchange": "NSE",
-"lev": 4.81,
+"lev": 4.82,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "UNIVCABLES",
 "name": "Universal Cables Limited",
 "exchange": "NSE",
-"lev": 2.36,
+"lev": 2.37,
 "maxExposureCr": 1.0
 },
 {
@@ -11179,7 +11179,7 @@
 "symbol": "URBANCO",
 "name": "Urban Company Limited",
 "exchange": "NSE",
-"lev": 2.89,
+"lev": 2.87,
 "maxExposureCr": 10.0
 },
 {
