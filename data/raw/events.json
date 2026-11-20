@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T11:32:51Z",
+"fetchedAt": "2026-11-20T12:34:51Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T11:32:46Z",
+"fetchedAt": "2026-11-20T12:34:46Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T11:32:47Z",
+"fetchedAt": "2026-11-20T12:34:47Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T11:32:51Z",
-"count": 215,
+"fetchedAt": "2026-11-20T12:34:51Z",
+"count": 223,
 "error": null
 }
 },
@@ -2511,6 +2511,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BIRLAMONEY_19112026155238_Regulation_30_Credit_Rating_19112026_Ind_Ra_Sgd.pdf"
 },
 {
+"symbol": "BIRLAMONEY",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Aditya Birla Money Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/BIRLAMONEY_20112026180032_Regulation_30_CRISIL_Credit_Rating_20112026_Sgd.pdf"
+},
+{
 "symbol": "BLSPOLY",
 "date": "2026-11-18",
 "kind": "meeting",
@@ -2780,6 +2789,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/SHILPAJAIN_17112026210601_IntimationCreditRating.pdf"
 },
 {
+"symbol": "FUSIONCX",
+"date": "2026-11-27",
+"kind": "action",
+"title": "Ex-dividend",
+"detail": "Dividend - Re 0.75 Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=FUSIONCX"
+},
+{
 "symbol": "GAJA",
 "date": "2026-11-18",
 "kind": "news",
@@ -2821,6 +2838,15 @@
 "title": "Buyback",
 "detail": "Genus Power Infrastructures Limited has informed the Exchange about post Buyback Public Announcement",
 "link": "https://nsearchives.nseindia.in/corporate/GENUSPOWER_18112026110759_Genus_Power_Post_Buy_Back_Public_Announcement.pdf"
+},
+{
+"symbol": "GENUSPOWER",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Genus Power Infrastructures Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/GENUSPOWER_20112026173804_Letter_to_stx_merged_signed.pdf"
 },
 {
 "symbol": "GINNIFILA",
@@ -2865,6 +2891,15 @@
 "title": "Regulatory/tax order",
 "detail": "Godrej Properties Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/GODREJPROP_17112026202919_SEIntimation17112026.pdf"
+},
+{
+"symbol": "GRMOVER",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "GRM Overseas Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/GRMOVER_ROID_105098_KMP_Doc.zip"
 },
 {
 "symbol": "GRPLTD",
@@ -3007,6 +3042,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/IFCI_18112026175503_STX_REG30_UPDATE.pdf"
 },
 {
+"symbol": "IGLSPIRITS",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "IGL Spirits Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/IGLSPIRITS_20112026175707_Credit_Rating_Upload.pdf"
+},
+{
 "symbol": "IGPL",
 "date": "2026-11-18",
 "kind": "news",
@@ -3144,6 +3188,15 @@
 "title": "Buyback",
 "detail": "Buy Back",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=JMA"
+},
+{
+"symbol": "JMA",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Buyback",
+"detail": "Jullundur Motor Agency (Delhi) Limited has informed the Exchange about Submission of Letter of Offer for Buyback through tender offer route",
+"link": "https://nsearchives.nseindia.in/corporate/JMA_20112026174223_JMA_BuyBack_LetterOfOffer.pdf"
 },
 {
 "symbol": "JNPR",
@@ -3494,6 +3547,14 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.02 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PASHUPATI"
+},
+{
+"symbol": "PATANJALI",
+"date": "2026-11-26",
+"kind": "meeting",
+"title": "Dividend",
+"detail": "Patanjali Foods Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Dividend.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
 },
 {
 "symbol": "PFC",
@@ -3897,6 +3958,15 @@
 "title": "Results out",
 "detail": "United Drilling Tools Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/UNIDT_18112026104942_Outcome.pdf"
+},
+{
+"symbol": "UTLSOLAR",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Fujiyama Power Systems Limited has informed the Exchange about the order passed.",
+"link": "https://nsearchives.nseindia.in/corporate/UTLSOLAR2024_20112026170615_BSE_NSEGSTOrderIntimation.pdf"
 },
 {
 "symbol": "VALECHAENG",
