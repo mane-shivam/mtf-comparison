@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-20T02:32:30Z",
+"fetchedAt": "2026-11-20T03:32:41Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 482,
-"fetchedAt": "2026-11-20T02:32:30Z",
+"fetchedAt": "2026-11-20T03:32:41Z",
 "error": null
 }
 },
@@ -1965,7 +1965,7 @@
 "list": "GSM",
 "term": null,
 "stage": "0",
-"desc": "Insolvency and Bankruptcy Code (IBC) - Receipt of Disclosure or Recommenced scrip and GSM stage 0",
+"desc": "Shortlisted under Graded Surveillance Measure",
 "exact": true,
 "since": "2024-12-13"
 },
