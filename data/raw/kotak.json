@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-20T08:32:01Z",
+"fetchedAt": "2026-11-20T08:52:12Z",
 "count": 1702,
 "rows": [
 {
@@ -1064,7 +1064,7 @@
 "symbol": "AXISBANK",
 "name": "Axis Bank Limited",
 "exchange": "NSE",
-"lev": 4.98,
+"lev": 4.99,
 "maxExposureCr": 75.0
 },
 {
@@ -1162,7 +1162,7 @@
 "symbol": "BAJAJ-AUTO",
 "name": "Bajaj Auto Limited",
 "exchange": "NSE",
-"lev": 4.9,
+"lev": 4.91,
 "maxExposureCr": 75.0
 },
 {
@@ -1183,7 +1183,7 @@
 "symbol": "BAJFINANCE",
 "name": "Bajaj Finance Limited",
 "exchange": "NSE",
-"lev": 4.41,
+"lev": 4.4,
 "maxExposureCr": 50.0
 },
 {
@@ -1232,7 +1232,7 @@
 "symbol": "BALAMINES",
 "name": "Balaji Amines Limited",
 "exchange": "NSE",
-"lev": 2.53,
+"lev": 2.52,
 "maxExposureCr": 2.0
 },
 {
@@ -1484,14 +1484,14 @@
 "symbol": "BHEL",
 "name": "Bharat Heavy Electricals Limited",
 "exchange": "NSE",
-"lev": 3.86,
+"lev": 3.85,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "BPCL",
 "name": "Bharat Petroleum Corporation Limited",
 "exchange": "NSE",
-"lev": 4.55,
+"lev": 4.56,
 "maxExposureCr": 50.0
 },
 {
@@ -1911,7 +1911,7 @@
 "symbol": "CARTRADE",
 "name": "Cartrade Tech Limited",
 "exchange": "NSE",
-"lev": 2.48,
+"lev": 2.47,
 "maxExposureCr": 5.0
 },
 {
@@ -1932,7 +1932,7 @@
 "symbol": "CCL",
 "name": "Ccl Products (India) Limited",
 "exchange": "NSE",
-"lev": 3.27,
+"lev": 3.26,
 "maxExposureCr": 5.0
 },
 {
@@ -1960,7 +1960,7 @@
 "symbol": "CELLO",
 "name": "Cello World Ltd",
 "exchange": "NSE",
-"lev": 3.14,
+"lev": 3.13,
 "maxExposureCr": 5.0
 },
 {
@@ -2023,7 +2023,7 @@
 "symbol": "ABREL",
 "name": "Century Textiles & Industries Limited",
 "exchange": "NSE",
-"lev": 2.96,
+"lev": 2.95,
 "maxExposureCr": 10.0
 },
 {
@@ -2093,14 +2093,14 @@
 "symbol": "CHOLAHLDNG",
 "name": "Cholamandalam Financial Holdings Limited",
 "exchange": "NSE",
-"lev": 3.17,
+"lev": 3.16,
 "maxExposureCr": 10.0
 },
 {
 "symbol": "CHOLAFIN",
 "name": "Cholamandalam Investment And Finance Company Limited",
 "exchange": "NSE",
-"lev": 4.17,
+"lev": 4.16,
 "maxExposureCr": 50.0
 },
 {
@@ -2170,7 +2170,7 @@
 "symbol": "COFORGE",
 "name": "Coforge Limited",
 "exchange": "NSE",
-"lev": 3.9,
+"lev": 3.91,
 "maxExposureCr": 25.0
 },
 {
@@ -2184,7 +2184,7 @@
 "symbol": "COLPAL",
 "name": "Colgate Palmolive (India) Limited",
 "exchange": "NSE",
-"lev": 4.8,
+"lev": 4.74,
 "maxExposureCr": 50.0
 },
 {
@@ -2268,7 +2268,7 @@
 "symbol": "CRAFTSMAN",
 "name": "Craftsman Automation Limited",
 "exchange": "NSE",
-"lev": 3.12,
+"lev": 3.1,
 "maxExposureCr": 5.0
 },
 {
@@ -2282,7 +2282,7 @@
 "symbol": "CREDITACC",
 "name": "Creditaccess Grameen Limited",
 "exchange": "NSE",
-"lev": 2.96,
+"lev": 2.93,
 "maxExposureCr": 10.0
 },
 {
@@ -2317,7 +2317,7 @@
 "symbol": "CROMPTON",
 "name": "Crompton Greaves Consumer Electricals Limited",
 "exchange": "NSE",
-"lev": 4.38,
+"lev": 4.33,
 "maxExposureCr": 50.0
 },
 {
@@ -3696,7 +3696,7 @@
 "symbol": "GODREJCP",
 "name": "Godrej Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.76,
+"lev": 4.78,
 "maxExposureCr": 50.0
 },
 {
@@ -3773,7 +3773,7 @@
 "symbol": "GRANULES",
 "name": "Granules India Limited",
 "exchange": "NSE",
-"lev": 3.32,
+"lev": 3.31,
 "maxExposureCr": 5.0
 },
 {
@@ -4963,7 +4963,7 @@
 "symbol": "IOC",
 "name": "Indian Oil Corporation Limited",
 "exchange": "NSE",
-"lev": 4.8,
+"lev": 4.81,
 "maxExposureCr": 50.0
 },
 {
@@ -5019,7 +5019,7 @@
 "symbol": "ICIL",
 "name": "Indo Count Industries Limited",
 "exchange": "NSE",
-"lev": 2.41,
+"lev": 2.4,
 "maxExposureCr": 1.0
 },
 {
@@ -5138,7 +5138,7 @@
 "symbol": "INOXINDIA",
 "name": "Inox India Ltd",
 "exchange": "NSE",
-"lev": 2.86,
+"lev": 2.85,
 "maxExposureCr": 2.0
 },
 {
@@ -5180,7 +5180,7 @@
 "symbol": "INDIGO",
 "name": "Interglobe Aviation Limited",
 "exchange": "NSE",
-"lev": 4.29,
+"lev": 4.28,
 "maxExposureCr": 50.0
 },
 {
@@ -5208,7 +5208,7 @@
 "symbol": "IOLCP",
 "name": "Iol Chemicals And Pharmaceuticals Limited",
 "exchange": "NSE",
-"lev": 2.53,
+"lev": 2.52,
 "maxExposureCr": 2.0
 },
 {
@@ -5229,7 +5229,7 @@
 "symbol": "IRB",
 "name": "Irb Infrastructure Developers Limited",
 "exchange": "NSE",
-"lev": 3.32,
+"lev": 3.31,
 "maxExposureCr": 5.0
 },
 {
@@ -5684,7 +5684,7 @@
 "symbol": "KPRMILL",
 "name": "K.P.R. Mill Limited",
 "exchange": "NSE",
-"lev": 3.01,
+"lev": 3.0,
 "maxExposureCr": 5.0
 },
 {
@@ -5712,7 +5712,7 @@
 "symbol": "KALYANKJIL",
 "name": "Kalyan Jewellers India Limited",
 "exchange": "NSE",
-"lev": 3.29,
+"lev": 3.28,
 "maxExposureCr": 5.0
 },
 {
@@ -5775,7 +5775,7 @@
 "symbol": "KEC",
 "name": "Kec International Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 2.98,
 "maxExposureCr": 10.0
 },
 {
@@ -6608,7 +6608,7 @@
 "symbol": "MANKIND",
 "name": "Mankind Pharma Limited",
 "exchange": "NSE",
-"lev": 4.53,
+"lev": 4.54,
 "maxExposureCr": 50.0
 },
 {
@@ -6622,7 +6622,7 @@
 "symbol": "MANORAMA",
 "name": "Manorama Industries Ltd",
 "exchange": "NSE",
-"lev": 2.74,
+"lev": 2.75,
 "maxExposureCr": 2.0
 },
 {
@@ -6650,7 +6650,7 @@
 "symbol": "MARKSANS",
 "name": "Marksans Pharma Limited",
 "exchange": "NSE",
-"lev": 2.77,
+"lev": 2.78,
 "maxExposureCr": 5.0
 },
 {
@@ -6664,7 +6664,7 @@
 "symbol": "MARUTI",
 "name": "Maruti Suzuki India Limited",
 "exchange": "NSE",
-"lev": 5.0,
+"lev": 4.87,
 "maxExposureCr": 75.0
 },
 {
@@ -6706,7 +6706,7 @@
 "symbol": "MFSL",
 "name": "Max Financial Services Limited",
 "exchange": "NSE",
-"lev": 4.42,
+"lev": 4.43,
 "maxExposureCr": 50.0
 },
 {
@@ -7245,7 +7245,7 @@
 "symbol": "MUTHOOTFIN",
 "name": "Muthoot Finance Limited",
 "exchange": "NSE",
-"lev": 3.98,
+"lev": 3.97,
 "maxExposureCr": 50.0
 },
 {
@@ -7287,7 +7287,7 @@
 "symbol": "NATIONALUM",
 "name": "National Aluminium Company Limited",
 "exchange": "NSE",
-"lev": 3.68,
+"lev": 3.67,
 "maxExposureCr": 25.0
 },
 {
@@ -7784,7 +7784,7 @@
 "symbol": "OLECTRA",
 "name": "Olectra Greentech Limited",
 "exchange": "NSE",
-"lev": 2.89,
+"lev": 2.88,
 "maxExposureCr": 10.0
 },
 {
@@ -7812,7 +7812,7 @@
 "symbol": "MOBIKWIK",
 "name": "One Mobikwik Systems Ltd",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.61,
 "maxExposureCr": 2.0
 },
 {
@@ -7945,7 +7945,7 @@
 "symbol": "PACEDIGITK",
 "name": "Pace Digitek Limited",
 "exchange": "NSE",
-"lev": 3.01,
+"lev": 3.02,
 "maxExposureCr": 5.0
 },
 {
@@ -8428,7 +8428,7 @@
 "symbol": "PROTEAN",
 "name": "Protean Egov Technologies Ltd",
 "exchange": "NSE",
-"lev": 2.62,
+"lev": 2.63,
 "maxExposureCr": 5.0
 },
 {
@@ -10136,7 +10136,7 @@
 "symbol": "SUMICHEM",
 "name": "Sumitomo Chemical India Limited",
 "exchange": "NSE",
-"lev": 3.09,
+"lev": 3.1,
 "maxExposureCr": 5.0
 },
 {
@@ -10514,7 +10514,7 @@
 "symbol": "TATATECH",
 "name": "Tata Technologies Limited",
 "exchange": "NSE",
-"lev": 3.26,
+"lev": 3.3,
 "maxExposureCr": 50.0
 },
 {
@@ -11179,7 +11179,7 @@
 "symbol": "URBANCO",
 "name": "Urban Company Limited",
 "exchange": "NSE",
-"lev": 2.88,
+"lev": 2.87,
 "maxExposureCr": 10.0
 },
 {
@@ -11298,7 +11298,7 @@
 "symbol": "V2RETAIL",
 "name": "V2 Retail Limited",
 "exchange": "NSE",
-"lev": 2.45,
+"lev": 2.48,
 "maxExposureCr": 1.0
 },
 {
@@ -11809,7 +11809,7 @@
 "symbol": "ZAGGLE",
 "name": "Zaggle Prepaid Ocean Services Ltd",
 "exchange": "NSE",
-"lev": 2.45,
+"lev": 2.46,
 "maxExposureCr": 5.0
 },
 {
@@ -11823,7 +11823,7 @@
 "symbol": "ZENTEC",
 "name": "Zen Technologies Limited",
 "exchange": "NSE",
-"lev": 2.88,
+"lev": 2.89,
 "maxExposureCr": 5.0
 },
 {
@@ -11907,7 +11907,7 @@
 "symbol": "ZYDUSLIFE",
 "name": "Zydus Lifesciences Limited",
 "exchange": "NSE",
-"lev": 4.91,
+"lev": 4.92,
 "maxExposureCr": 50.0
 },
 {
