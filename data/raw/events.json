@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T07:32:46Z",
+"fetchedAt": "2026-11-20T08:32:34Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T07:32:41Z",
+"fetchedAt": "2026-11-20T08:32:28Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T07:32:42Z",
+"fetchedAt": "2026-11-20T08:32:30Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T07:32:46Z",
-"count": 196,
+"fetchedAt": "2026-11-20T08:32:34Z",
+"count": 198,
 "error": null
 }
 },
@@ -2708,6 +2708,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_25774_20261119_161357026_WEB.html"
 },
 {
+"symbol": "EQUITASBNK",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Equitas Small Finance Bank Limited has informed the Exchanges about order passed by GST Authority",
+"link": "https://nsearchives.nseindia.in/corporate/EQUITASBNK_20112026130532_GSTorderforupload.pdf"
+},
+{
 "symbol": "ESCORTS",
 "date": "2026-11-18",
 "kind": "news",
@@ -2860,7 +2869,7 @@
 "kind": "meeting",
 "title": "Results",
 "detail": "Heads UP Ventures Limited has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14408_20261119_182635887_WEB.html"
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14408_20261120_135248225_WEB.html"
 },
 {
 "symbol": "HEROMOTOCO",
@@ -3574,6 +3583,15 @@
 "title": "Results",
 "detail": "SFC ENVIRNMENTAL TECHNOLOGIES LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24939_20261118_164247745_WEB.html"
+},
+{
+"symbol": "SHAREINDIA",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Share India Securities Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/SISL_20112026132223_Reg30Penalty_19112026signed.pdf"
 },
 {
 "symbol": "SHIRPUR-G",

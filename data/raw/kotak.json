@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-20T07:32:14Z",
+"fetchedAt": "2026-11-20T08:32:01Z",
 "count": 1702,
 "rows": [
 {
@@ -252,7 +252,7 @@
 "symbol": "ABSLAMC",
 "name": "Aditya Birla Sun Life Amc Limited",
 "exchange": "NSE",
-"lev": 3.08,
+"lev": 3.09,
 "maxExposureCr": 5.0
 },
 {
@@ -322,7 +322,7 @@
 "symbol": "AEGISLOG",
 "name": "Aegis Logistics Limited",
 "exchange": "NSE",
-"lev": 2.57,
+"lev": 2.58,
 "maxExposureCr": 5.0
 },
 {
@@ -336,7 +336,7 @@
 "symbol": "AEQUS",
 "name": "Aequs Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.79,
 "maxExposureCr": 5.0
 },
 {
@@ -371,7 +371,7 @@
 "symbol": "AFFLE",
 "name": "Affle (India) Limited",
 "exchange": "NSE",
-"lev": 3.11,
+"lev": 3.12,
 "maxExposureCr": 10.0
 },
 {
@@ -539,7 +539,7 @@
 "symbol": "ARE&M",
 "name": "Amara Raja Energy & Mobility Limited",
 "exchange": "NSE",
-"lev": 3.32,
+"lev": 3.33,
 "maxExposureCr": 5.0
 },
 {
@@ -560,7 +560,7 @@
 "symbol": "AMBUJACEM",
 "name": "Ambuja Cements Limited",
 "exchange": "NSE",
-"lev": 4.54,
+"lev": 4.53,
 "maxExposureCr": 50.0
 },
 {
@@ -700,7 +700,7 @@
 "symbol": "APLAPOLLO",
 "name": "Apl Apollo Tubes Limited",
 "exchange": "NSE",
-"lev": 4.48,
+"lev": 4.49,
 "maxExposureCr": 50.0
 },
 {
@@ -812,7 +812,7 @@
 "symbol": "ARVINDFASN",
 "name": "Arvind Fashions Limited",
 "exchange": "NSE",
-"lev": 3.15,
+"lev": 3.14,
 "maxExposureCr": 5.0
 },
 {
@@ -840,7 +840,7 @@
 "symbol": "ASHAPURMIN",
 "name": "Ashapura Minechem Limited",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.57,
 "maxExposureCr": 5.0
 },
 {
@@ -1484,14 +1484,14 @@
 "symbol": "BHEL",
 "name": "Bharat Heavy Electricals Limited",
 "exchange": "NSE",
-"lev": 3.85,
+"lev": 3.86,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "BPCL",
 "name": "Bharat Petroleum Corporation Limited",
 "exchange": "NSE",
-"lev": 4.56,
+"lev": 4.55,
 "maxExposureCr": 50.0
 },
 {
@@ -1911,7 +1911,7 @@
 "symbol": "CARTRADE",
 "name": "Cartrade Tech Limited",
 "exchange": "NSE",
-"lev": 2.47,
+"lev": 2.48,
 "maxExposureCr": 5.0
 },
 {
@@ -1932,7 +1932,7 @@
 "symbol": "CCL",
 "name": "Ccl Products (India) Limited",
 "exchange": "NSE",
-"lev": 3.26,
+"lev": 3.27,
 "maxExposureCr": 5.0
 },
 {
@@ -1960,7 +1960,7 @@
 "symbol": "CELLO",
 "name": "Cello World Ltd",
 "exchange": "NSE",
-"lev": 3.13,
+"lev": 3.14,
 "maxExposureCr": 5.0
 },
 {
@@ -2023,7 +2023,7 @@
 "symbol": "ABREL",
 "name": "Century Textiles & Industries Limited",
 "exchange": "NSE",
-"lev": 2.95,
+"lev": 2.96,
 "maxExposureCr": 10.0
 },
 {
@@ -2093,14 +2093,14 @@
 "symbol": "CHOLAHLDNG",
 "name": "Cholamandalam Financial Holdings Limited",
 "exchange": "NSE",
-"lev": 3.16,
+"lev": 3.17,
 "maxExposureCr": 10.0
 },
 {
 "symbol": "CHOLAFIN",
 "name": "Cholamandalam Investment And Finance Company Limited",
 "exchange": "NSE",
-"lev": 4.16,
+"lev": 4.17,
 "maxExposureCr": 50.0
 },
 {
@@ -2317,7 +2317,7 @@
 "symbol": "CROMPTON",
 "name": "Crompton Greaves Consumer Electricals Limited",
 "exchange": "NSE",
-"lev": 4.33,
+"lev": 4.38,
 "maxExposureCr": 50.0
 },
 {
@@ -3045,7 +3045,7 @@
 "symbol": "EPACK",
 "name": "Epack Durable Limited",
 "exchange": "NSE",
-"lev": 2.7,
+"lev": 2.66,
 "maxExposureCr": 2.0
 },
 {
@@ -3227,7 +3227,7 @@
 "symbol": "FACT",
 "name": "Fertilizers And Chemicals Travancore Limited",
 "exchange": "NSE",
-"lev": 2.84,
+"lev": 2.85,
 "maxExposureCr": 2.0
 },
 {
@@ -3262,7 +3262,7 @@
 "symbol": "FINOPB",
 "name": "Fino Payments Bank Limited",
 "exchange": "NSE",
-"lev": 2.45,
+"lev": 2.46,
 "maxExposureCr": 1.0
 },
 {
@@ -3283,7 +3283,7 @@
 "symbol": "FSL",
 "name": "Firstsource Solutions Limited",
 "exchange": "NSE",
-"lev": 2.71,
+"lev": 2.72,
 "maxExposureCr": 5.0
 },
 {
@@ -3696,7 +3696,7 @@
 "symbol": "GODREJCP",
 "name": "Godrej Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.78,
+"lev": 4.76,
 "maxExposureCr": 50.0
 },
 {
@@ -3773,7 +3773,7 @@
 "symbol": "GRANULES",
 "name": "Granules India Limited",
 "exchange": "NSE",
-"lev": 3.31,
+"lev": 3.32,
 "maxExposureCr": 5.0
 },
 {
@@ -4095,7 +4095,7 @@
 "symbol": "HAVELLS",
 "name": "Havells India Limited",
 "exchange": "NSE",
-"lev": 4.8,
+"lev": 4.74,
 "maxExposureCr": 50.0
 },
 {
@@ -4144,7 +4144,7 @@
 "symbol": "HDFCLIFE",
 "name": "Hdfc Life Insurance Company Limited",
 "exchange": "NSE",
-"lev": 4.88,
+"lev": 4.89,
 "maxExposureCr": 75.0
 },
 {
@@ -4319,7 +4319,7 @@
 "symbol": "HEROMOTOCO",
 "name": "Hero Motocorp Limited",
 "exchange": "NSE",
-"lev": 4.78,
+"lev": 4.72,
 "maxExposureCr": 50.0
 },
 {
@@ -4333,7 +4333,7 @@
 "symbol": "HEXT",
 "name": "Hexaware Technologies Ltd",
 "exchange": "NSE",
-"lev": 3.1,
+"lev": 3.11,
 "maxExposureCr": 10.0
 },
 {
@@ -4347,7 +4347,7 @@
 "symbol": "HIKAL",
 "name": "Hikal Limited",
 "exchange": "NSE",
-"lev": 2.67,
+"lev": 2.68,
 "maxExposureCr": 2.0
 },
 {
@@ -4403,7 +4403,7 @@
 "symbol": "HINDCOPPER",
 "name": "Hindustan Copper Limited",
 "exchange": "NSE",
-"lev": 2.68,
+"lev": 2.69,
 "maxExposureCr": 5.0
 },
 {
@@ -5264,7 +5264,7 @@
 "symbol": "ITCHOTELS",
 "name": "Itc Hotels Limited",
 "exchange": "NSE",
-"lev": 3.42,
+"lev": 3.41,
 "maxExposureCr": 25.0
 },
 {
@@ -5418,7 +5418,7 @@
 "symbol": "JINDRILL",
 "name": "Jindal Drilling And Industries Limited",
 "exchange": "NSE",
-"lev": 2.67,
+"lev": 2.68,
 "maxExposureCr": 2.0
 },
 {
@@ -5474,7 +5474,7 @@
 "symbol": "JIOFIN",
 "name": "Jio Financial Services Limited",
 "exchange": "NSE",
-"lev": 4.57,
+"lev": 4.58,
 "maxExposureCr": 50.0
 },
 {
@@ -5516,7 +5516,7 @@
 "symbol": "JMFINANCIL",
 "name": "Jm Financial Limited",
 "exchange": "NSE",
-"lev": 2.92,
+"lev": 2.93,
 "maxExposureCr": 10.0
 },
 {
@@ -5586,7 +5586,7 @@
 "symbol": "JTLIND",
 "name": "Jtl Industries Limited",
 "exchange": "NSE",
-"lev": 2.47,
+"lev": 2.48,
 "maxExposureCr": 2.0
 },
 {
@@ -6041,7 +6041,7 @@
 "symbol": "KPITTECH",
 "name": "Kpit Technologies Limited",
 "exchange": "NSE",
-"lev": 3.75,
+"lev": 3.76,
 "maxExposureCr": 25.0
 },
 {
@@ -6608,7 +6608,7 @@
 "symbol": "MANKIND",
 "name": "Mankind Pharma Limited",
 "exchange": "NSE",
-"lev": 4.54,
+"lev": 4.53,
 "maxExposureCr": 50.0
 },
 {
@@ -6622,7 +6622,7 @@
 "symbol": "MANORAMA",
 "name": "Manorama Industries Ltd",
 "exchange": "NSE",
-"lev": 2.75,
+"lev": 2.74,
 "maxExposureCr": 2.0
 },
 {
@@ -6650,7 +6650,7 @@
 "symbol": "MARKSANS",
 "name": "Marksans Pharma Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.77,
 "maxExposureCr": 5.0
 },
 {
@@ -6664,7 +6664,7 @@
 "symbol": "MARUTI",
 "name": "Maruti Suzuki India Limited",
 "exchange": "NSE",
-"lev": 4.87,
+"lev": 5.0,
 "maxExposureCr": 75.0
 },
 {
@@ -6706,7 +6706,7 @@
 "symbol": "MFSL",
 "name": "Max Financial Services Limited",
 "exchange": "NSE",
-"lev": 4.43,
+"lev": 4.42,
 "maxExposureCr": 50.0
 },
 {
@@ -8673,7 +8673,7 @@
 "symbol": "RKFORGE",
 "name": "Ramkrishna Forgings Limited",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.99,
 "maxExposureCr": 5.0
 },
 {
@@ -8764,7 +8764,7 @@
 "symbol": "RAYMOND",
 "name": "Raymond Ltd(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.54,
+"lev": 2.55,
 "maxExposureCr": 5.0
 },
 {
@@ -10514,7 +10514,7 @@
 "symbol": "TATATECH",
 "name": "Tata Technologies Limited",
 "exchange": "NSE",
-"lev": 3.3,
+"lev": 3.26,
 "maxExposureCr": 50.0
 },
 {
@@ -10731,7 +10731,7 @@
 "symbol": "J&KBANK",
 "name": "The Jammu & Kashmir Bank Limited",
 "exchange": "NSE",
-"lev": 2.79,
+"lev": 2.78,
 "maxExposureCr": 2.0
 },
 {
@@ -10808,7 +10808,7 @@
 "symbol": "TIRUMALCHM",
 "name": "Thirumalai Chemicals Limited",
 "exchange": "NSE",
-"lev": 2.8,
+"lev": 2.81,
 "maxExposureCr": 2.0
 },
 {
@@ -10836,7 +10836,7 @@
 "symbol": "TIMETECHNO",
 "name": "Time Technoplast Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 3.0,
 "maxExposureCr": 10.0
 },
 {
@@ -10920,7 +10920,7 @@
 "symbol": "TARIL",
 "name": "Transformers & Rectifiers India Ltd",
 "exchange": "NSE",
-"lev": 2.5,
+"lev": 2.51,
 "maxExposureCr": 2.0
 },
 {
@@ -11809,7 +11809,7 @@
 "symbol": "ZAGGLE",
 "name": "Zaggle Prepaid Ocean Services Ltd",
 "exchange": "NSE",
-"lev": 2.46,
+"lev": 2.45,
 "maxExposureCr": 5.0
 },
 {
@@ -11823,7 +11823,7 @@
 "symbol": "ZENTEC",
 "name": "Zen Technologies Limited",
 "exchange": "NSE",
-"lev": 2.89,
+"lev": 2.88,
 "maxExposureCr": 5.0
 },
 {
@@ -11907,7 +11907,7 @@
 "symbol": "ZYDUSLIFE",
 "name": "Zydus Lifesciences Limited",
 "exchange": "NSE",
-"lev": 4.92,
+"lev": 4.91,
 "maxExposureCr": 50.0
 },
 {
