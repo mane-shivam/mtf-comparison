@@ -1,27 +1,27 @@
 {
-"fetchedAt": "2026-11-20T13:33:47Z",
+"fetchedAt": "2026-11-20T14:34:07Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T13:33:42Z",
+"fetchedAt": "2026-11-20T14:34:00Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T13:33:43Z",
+"fetchedAt": "2026-11-20T14:34:01Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T13:33:47Z",
-"count": 229,
+"fetchedAt": "2026-11-20T14:34:07Z",
+"count": 233,
 "error": null
 }
 },
 "ban": {
-"date": "2026-11-20",
+"date": "2026-11-23",
 "symbols": [
-"KAYNES"
+"MANAPPURAM"
 ]
 },
 "bands": {
@@ -44,10 +44,6 @@
 "ANSALAPI": {
 "band": 2,
 "series": "BZ"
-},
-"BAFNAPH": {
-"band": 2,
-"series": "BE"
 },
 "BHAGYANGR": {
 "band": 2,
@@ -77,11 +73,11 @@
 "band": 2,
 "series": "BE"
 },
-"KAYA": {
+"IMPEXFERRO": {
 "band": 2,
-"series": "BE"
+"series": "BZ"
 },
-"LYKALABS": {
+"KAYA": {
 "band": 2,
 "series": "BE"
 },
@@ -165,10 +161,6 @@
 "band": 2,
 "series": "BE"
 },
-"VIJIFIN": {
-"band": 2,
-"series": "BE"
-},
 "VIVIMEDLAB": {
 "band": 2,
 "series": "BZ"
@@ -185,10 +177,6 @@
 "band": 5,
 "series": "EQ"
 },
-"AARNAV": {
-"band": 5,
-"series": "BE"
-},
 "AASTHA": {
 "band": 5,
 "series": "EQ"
@@ -196,10 +184,6 @@
 "ABANSENT": {
 "band": 5,
 "series": "EQ"
-},
-"ABINFRA": {
-"band": 5,
-"series": "BE"
 },
 "ABSLLIQUID": {
 "band": 5,
@@ -253,15 +237,7 @@
 "band": 5,
 "series": "BE"
 },
-"ALPHAGEO": {
-"band": 5,
-"series": "BE"
-},
 "ALUFLUOR": {
-"band": 5,
-"series": "BE"
-},
-"AMBALALSA": {
 "band": 5,
 "series": "BE"
 },
@@ -333,6 +309,10 @@
 "band": 5,
 "series": "EQ"
 },
+"BAFNAPH": {
+"band": 5,
+"series": "BE"
+},
 "BALPHARMA": {
 "band": 5,
 "series": "BE"
@@ -341,13 +321,17 @@
 "band": 5,
 "series": "BE"
 },
+"BGLOBAL": {
+"band": 5,
+"series": "BZ"
+},
 "BGRENERGY": {
 "band": 5,
 "series": "BE"
 },
 "BI": {
 "band": 5,
-"series": "BE"
+"series": "EQ"
 },
 "BILVYAPAR": {
 "band": 5,
@@ -401,9 +385,21 @@
 "band": 5,
 "series": "EQ"
 },
+"CEREBRAINT": {
+"band": 5,
+"series": "BZ"
+},
 "CFEL": {
 "band": 5,
 "series": "BE"
+},
+"CLCIND": {
+"band": 5,
+"series": "BE"
+},
+"CMICABLES": {
+"band": 5,
+"series": "BZ"
 },
 "COMFINTE": {
 "band": 5,
@@ -461,10 +457,6 @@
 "band": 5,
 "series": "BE"
 },
-"DHABRIYA": {
-"band": 5,
-"series": "BE"
-},
 "DHARAN": {
 "band": 5,
 "series": "BZ"
@@ -508,6 +500,10 @@
 "EBIX": {
 "band": 5,
 "series": "EQ"
+},
+"EDUCOMP": {
+"band": 5,
+"series": "BZ"
 },
 "EKI": {
 "band": 5,
@@ -777,6 +773,10 @@
 "band": 5,
 "series": "BE"
 },
+"LASA": {
+"band": 5,
+"series": "BE"
+},
 "LCCINFOTEC": {
 "band": 5,
 "series": "EQ"
@@ -849,6 +849,10 @@
 "band": 5,
 "series": "EQ"
 },
+"LYKALABS": {
+"band": 5,
+"series": "BE"
+},
 "MAHASTEEL": {
 "band": 5,
 "series": "BE"
@@ -891,7 +895,7 @@
 },
 "MHLXMIRU": {
 "band": 5,
-"series": "BE"
+"series": "EQ"
 },
 "MIDWESTLTD": {
 "band": 5,
@@ -899,7 +903,7 @@
 },
 "MILKYMIST": {
 "band": 5,
-"series": "BE"
+"series": "EQ"
 },
 "MINALIND": {
 "band": 5,
@@ -944,6 +948,10 @@
 "MYSORPETRO": {
 "band": 5,
 "series": "BE"
+},
+"NAGAFERT": {
+"band": 5,
+"series": "BZ"
 },
 "NATCAPSUQ": {
 "band": 5,
@@ -1081,6 +1089,10 @@
 "band": 5,
 "series": "EQ"
 },
+"RAJVIR": {
+"band": 5,
+"series": "BZ"
+},
 "RAMASTEEL": {
 "band": 5,
 "series": "EQ"
@@ -1129,6 +1141,10 @@
 "band": 5,
 "series": "EQ"
 },
+"RUSHIL": {
+"band": 5,
+"series": "BE"
+},
 "SAB": {
 "band": 5,
 "series": "EQ"
@@ -1157,7 +1173,7 @@
 "band": 5,
 "series": "EQ"
 },
-"SCPL": {
+"SELMC": {
 "band": 5,
 "series": "BE"
 },
@@ -1183,7 +1199,7 @@
 },
 "SHARDUL": {
 "band": 5,
-"series": "BE"
+"series": "EQ"
 },
 "SHEKHAWATI": {
 "band": 5,
@@ -1224,6 +1240,10 @@
 "SIMPLXREA": {
 "band": 5,
 "series": "EQ"
+},
+"SKIL": {
+"band": 5,
+"series": "BZ"
 },
 "SMLMAH": {
 "band": 5,
@@ -1381,10 +1401,6 @@
 "band": 5,
 "series": "EQ"
 },
-"TPHQ": {
-"band": 5,
-"series": "BE"
-},
 "TRANSPEK": {
 "band": 5,
 "series": "EQ"
@@ -1413,6 +1429,10 @@
 "band": 5,
 "series": "BE"
 },
+"UNIVAFOODS": {
+"band": 5,
+"series": "BE"
+},
 "UNIVASTU": {
 "band": 5,
 "series": "BE"
@@ -1431,7 +1451,7 @@
 },
 "VCL": {
 "band": 5,
-"series": "BE"
+"series": "EQ"
 },
 "VELJAN": {
 "band": 5,
@@ -1446,6 +1466,10 @@
 "series": "BE"
 },
 "VHLTD": {
+"band": 5,
+"series": "BE"
+},
+"VIJIFIN": {
 "band": 5,
 "series": "BE"
 },
@@ -1480,10 +1504,6 @@
 "WAAREEINDO": {
 "band": 5,
 "series": "EQ"
-},
-"WARDINMOBI": {
-"band": 5,
-"series": "BZ"
 },
 "WEBELSOLAR": {
 "band": 5,
@@ -1546,6 +1566,10 @@
 "series": "EQ"
 },
 "ALLCARGO": {
+"band": 10,
+"series": "EQ"
+},
+"ALPHAGEO": {
 "band": 10,
 "series": "EQ"
 },
@@ -1893,10 +1917,6 @@
 "band": 10,
 "series": "EQ"
 },
-"MENONBE": {
-"band": 10,
-"series": "EQ"
-},
 "MICEL": {
 "band": 10,
 "series": "EQ"
@@ -2129,6 +2149,10 @@
 "band": 10,
 "series": "EQ"
 },
+"TPHQ": {
+"band": 10,
+"series": "EQ"
+},
 "TRAVELFOOD": {
 "band": 10,
 "series": "EQ"
@@ -2309,6 +2333,15 @@
 "title": "Director/KMP resigned",
 "detail": "Antarctica Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.in/corporate/ANTGRAPHIC_ROID_105057_KMP_Doc.zip"
+},
+{
+"symbol": "ANUHPHR",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Anuh Pharma Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/ANUHPHR_ROID_105110_KMP_Doc.zip"
 },
 {
 "symbol": "AONESTEELS",
@@ -2981,6 +3014,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19976_20261117_185422554_WEB.html"
 },
 {
+"symbol": "GVPTECH",
+"date": "2026-11-20",
+"kind": "result",
+"title": "Results out",
+"detail": "GVP Infotech Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/4THDIM_20112026191220_Financial_Results-Sep-26_Signed.pdf"
+},
+{
 "symbol": "HCC",
 "date": "2026-11-17",
 "kind": "news",
@@ -3251,6 +3292,15 @@
 "title": "Credit rating update",
 "detail": "Juniper Green Energy Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/JGEL2025_18112026204031_2026_11_18-_Reg_30-_Final_Credit_Rating-_Three.pdf"
+},
+{
+"symbol": "JSWCEMENT",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Disclosure Under Regulation 30 Of The Securities And Exchange Board Of India (Listing Obligations And Disclosure Requirements) Regulations, 2015.",
+"link": "https://nsearchives.nseindia.in/corporate/JSWCL_20112026192216_SEIntimation20112026upload.pdf"
 },
 {
 "symbol": "JUBLINGREA",
@@ -4020,6 +4070,14 @@
 "title": "Results",
 "detail": "VALECHA ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 20-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2424_20261113_165644472_WEB.html"
+},
+{
+"symbol": "VALECHAENG",
+"date": "2026-11-20",
+"kind": "result",
+"title": "Results out",
+"detail": "Unaudited Standalone and Consolidated Financial Results for the quarter and half-year ended 30.09.2026",
+"link": "https://nsearchives.nseindia.in/corporate/VALECHAENG_20112026191013_Outcome_of_Board_Meeting.pdf"
 },
 {
 "symbol": "VALUEIND",
