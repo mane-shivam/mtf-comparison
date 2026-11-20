@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T15:33:08Z",
+"fetchedAt": "2026-11-20T16:33:00Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T15:33:03Z",
+"fetchedAt": "2026-11-20T16:32:56Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T15:33:04Z",
+"fetchedAt": "2026-11-20T16:32:56Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T15:33:08Z",
-"count": 235,
+"fetchedAt": "2026-11-20T16:33:00Z",
+"count": 236,
 "error": null
 }
 },
@@ -2830,6 +2830,15 @@
 "title": "Fund raising",
 "detail": "Embassy Developments Limited has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2560_20261118_213944868_WEB.html"
+},
+{
+"symbol": "ENNATURE",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Ennature Bio Pharma Limited has informed the Exchange about Credit Rating- New",
+"link": "https://nsearchives.nseindia.in/corporate/ENNATURE_20112026220017_Regulation_30-credit_rating.pdf"
 },
 {
 "symbol": "ENRIN",
