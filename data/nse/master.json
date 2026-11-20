@@ -3048,12 +3048,6 @@
 "type": "equity"
 },
 {
-"symbol": "COMPINFO",
-"name": "Compuage Infocom Limited",
-"isin": "INE070C01037",
-"type": "equity"
-},
-{
 "symbol": "COMPUSOFT",
 "name": "Compucom Software Limited",
 "isin": "INE453B01029",
@@ -12684,8 +12678,8 @@
 "type": "equity"
 },
 {
-"symbol": "SHUKRAPHAR",
-"name": "Shukra Pharmaceuticals Limited",
+"symbol": "SHUKRAMED",
+"name": "Shukra Medtech Limited",
 "isin": "INE551C01044",
 "type": "equity"
 },

@@ -183,9 +183,9 @@
 "exact": true,
 "since": "2026-11-18"
 },
-"APRAMEYA|ASM|long|I": {
+"APRAMEYA|ESM|None|I": {
 "exact": true,
-"since": "2026-11-06"
+"since": "2026-11-20"
 },
 "APSISAERO|ESM|None|II": {
 "exact": false,
@@ -206,6 +206,10 @@
 "ARIES|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
+},
+"ARISTO|ASM|short|I": {
+"exact": true,
+"since": "2026-11-20"
 },
 "ARVEE|ESM|None|I": {
 "exact": true,
@@ -262,6 +266,10 @@
 "BALAJIPHOS|ESM|None|I": {
 "exact": true,
 "since": "2026-11-18"
+},
+"BALAXI|ASM|long|I": {
+"exact": true,
+"since": "2026-11-20"
 },
 "BALKRISHNA|GSM|None|0": {
 "exact": true,
@@ -346,6 +354,10 @@
 "BOSS|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
+},
+"BPLPHARMA|ASM|short|I": {
+"exact": true,
+"since": "2026-11-20"
 },
 "BRACEPORT|ASM|short|I": {
 "exact": true,
@@ -466,6 +478,10 @@
 "DAVANGERE|ASM|long|I": {
 "exact": true,
 "since": "2026-10-12"
+},
+"DCAL|ASM|short|I": {
+"exact": true,
+"since": "2026-11-20"
 },
 "DCG|ESM|None|I": {
 "exact": false,
@@ -747,10 +763,6 @@
 "exact": true,
 "since": "2026-09-11"
 },
-"HMVL|ASM|short|I": {
-"exact": true,
-"since": "2026-11-12"
-},
 "HPTL|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -883,9 +895,9 @@
 "exact": true,
 "since": "2026-11-10"
 },
-"KDL|ASM|short|II": {
-"exact": false,
-"since": "2026-11-04"
+"KDL|ASM|short|I": {
+"exact": true,
+"since": "2026-11-20"
 },
 "KEEPLEARN|GSM|None|0": {
 "exact": true,
@@ -1171,6 +1183,10 @@
 "exact": true,
 "since": "2026-11-18"
 },
+"ORIANA|ASM|short|I": {
+"exact": true,
+"since": "2026-11-20"
+},
 "ORTEL|GSM|None|II": {
 "exact": true,
 "since": "2026-11-08"
@@ -1395,6 +1411,10 @@
 "exact": true,
 "since": "2026-10-15"
 },
+"RUSHIL|ESM|None|I": {
+"exact": true,
+"since": "2026-11-20"
+},
 "SABAR|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -1466,10 +1486,6 @@
 "SHEKHAWATI|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
-},
-"SHETHJI|ASM|short|I": {
-"exact": true,
-"since": "2026-11-12"
 },
 "SHILPAMED|ASM|long|I": {
 "exact": true,
@@ -1831,10 +1847,6 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"VISAMAN|ASM|short|I": {
-"exact": false,
-"since": "2026-11-04"
-},
 "VISHWARAJ|ASM|long|I": {
 "exact": true,
 "since": "2026-08-25"
@@ -1894,6 +1906,10 @@
 "YUDIZ|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
+},
+"ZEAL|ASM|short|I": {
+"exact": true,
+"since": "2026-11-20"
 },
 "ZEEMEDIA|ESM|None|I": {
 "exact": false,

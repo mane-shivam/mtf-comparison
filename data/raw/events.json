@@ -1,19 +1,19 @@
 {
-"fetchedAt": "2026-11-19T18:30:27Z",
+"fetchedAt": "2026-11-20T01:32:39Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-19T18:30:22Z",
+"fetchedAt": "2026-11-20T01:32:34Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-19T18:30:23Z",
+"fetchedAt": "2026-11-20T01:32:34Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-19T18:30:27Z",
+"fetchedAt": "2026-11-20T01:32:39Z",
 "count": 191,
 "error": null
 }
@@ -3180,7 +3180,7 @@
 "kind": "meeting",
 "title": "Results",
 "detail": "M. K. Sons Fine Jewels Ltd has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_28582_20261119_235513280_WEB.html"
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_28582_20261120_000035315_WEB.html"
 },
 {
 "symbol": "MMP",
