@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T03:32:46Z",
+"fetchedAt": "2026-11-20T04:32:49Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T03:32:41Z",
+"fetchedAt": "2026-11-20T04:32:42Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T03:32:43Z",
+"fetchedAt": "2026-11-20T04:32:43Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T03:32:46Z",
-"count": 191,
+"fetchedAt": "2026-11-20T04:32:49Z",
+"count": 192,
 "error": null
 }
 },
@@ -3497,6 +3497,15 @@
 "title": "Regulatory/tax order",
 "detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/SCHNEIDER_19112026173556_IntimationReg_30GST_MatterNov192026.pdf"
+},
+{
+"symbol": "SCHNEIDER",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/SCHNEIDER_ROID_105070_KMP_Doc.zip"
 },
 {
 "symbol": "SELMC",

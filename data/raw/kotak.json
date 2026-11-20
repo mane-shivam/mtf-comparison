@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-20T03:32:15Z",
+"fetchedAt": "2026-11-20T04:32:16Z",
 "count": 1702,
 "rows": [
 {
@@ -3045,7 +3045,7 @@
 "symbol": "EPACK",
 "name": "Epack Durable Limited",
 "exchange": "NSE",
-"lev": 2.7,
+"lev": 2.66,
 "maxExposureCr": 2.0
 },
 {
@@ -3381,7 +3381,7 @@
 "symbol": "GABRIEL",
 "name": "Gabriel India Limited",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.57,
 "maxExposureCr": 2.0
 },
 {
@@ -3416,7 +3416,7 @@
 "symbol": "GALLANTT",
 "name": "Gallantt Ispat Ltd.",
 "exchange": "NSE",
-"lev": 2.49,
+"lev": 2.5,
 "maxExposureCr": 2.0
 },
 {
@@ -5684,7 +5684,7 @@
 "symbol": "KPRMILL",
 "name": "K.P.R. Mill Limited",
 "exchange": "NSE",
-"lev": 3.0,
+"lev": 3.01,
 "maxExposureCr": 5.0
 },
 {
@@ -5712,7 +5712,7 @@
 "symbol": "KALYANKJIL",
 "name": "Kalyan Jewellers India Limited",
 "exchange": "NSE",
-"lev": 3.28,
+"lev": 3.29,
 "maxExposureCr": 5.0
 },
 {
@@ -5775,7 +5775,7 @@
 "symbol": "KEC",
 "name": "Kec International Limited",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.99,
 "maxExposureCr": 10.0
 },
 {
@@ -9282,7 +9282,7 @@
 "symbol": "SBICARD",
 "name": "Sbi Cards And Payment Services Limited",
 "exchange": "NSE",
-"lev": 4.59,
+"lev": 4.58,
 "maxExposureCr": 50.0
 },
 {
@@ -9429,7 +9429,7 @@
 "symbol": "SENCO",
 "name": "Senco Gold Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.79,
 "maxExposureCr": 2.0
 },
 {
@@ -10514,7 +10514,7 @@
 "symbol": "TATATECH",
 "name": "Tata Technologies Limited",
 "exchange": "NSE",
-"lev": 3.3,
+"lev": 3.26,
 "maxExposureCr": 50.0
 },
 {
@@ -10969,7 +10969,7 @@
 "symbol": "TRITURBINE",
 "name": "Triveni Turbine Limited",
 "exchange": "NSE",
-"lev": 2.95,
+"lev": 2.96,
 "maxExposureCr": 5.0
 },
 {
@@ -11032,7 +11032,7 @@
 "symbol": "TVSMOTOR",
 "name": "Tvs Motor Company Limited",
 "exchange": "NSE",
-"lev": 4.72,
+"lev": 4.67,
 "maxExposureCr": 50.0
 },
 {
