@@ -1,1 +1,18 @@
-[]
+[
+ {
+  "symbol": "MTARTECH",
+  "name": "Mtar Technologies Limited",
+  "level": "watch",
+  "text": "Down 5.8% today at ₹5,611.00",
+  "link": null,
+  "at": "2026-11-20T07:33:11Z"
+ },
+ {
+  "symbol": "INDUSINDBK",
+  "name": "IndusInd Bank Limited",
+  "level": "info",
+  "text": "Volume 4.1× the 20-day average",
+  "link": null,
+  "at": "2026-11-20T07:33:11Z"
+ }
+]

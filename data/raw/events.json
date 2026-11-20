@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T06:32:48Z",
+"fetchedAt": "2026-11-20T07:32:46Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T06:32:32Z",
+"fetchedAt": "2026-11-20T07:32:41Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T06:32:33Z",
+"fetchedAt": "2026-11-20T07:32:42Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T06:32:48Z",
-"count": 195,
+"fetchedAt": "2026-11-20T07:32:46Z",
+"count": 196,
 "error": null
 }
 },
@@ -2802,6 +2802,15 @@
 "title": "Regulatory/tax order",
 "detail": "Godrej Properties Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/GODREJPROP_17112026202919_SEIntimation17112026.pdf"
+},
+{
+"symbol": "GRPLTD",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "GRP Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/GRPLTD_20112026124039_Covering_letter_Signed.pdf"
 },
 {
 "symbol": "GTECJAINX",
