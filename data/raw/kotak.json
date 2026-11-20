@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-20T09:32:21Z",
+"fetchedAt": "2026-11-20T10:31:56Z",
 "count": 1702,
 "rows": [
 {
@@ -4809,7 +4809,7 @@
 "symbol": "IDFCFIRSTB",
 "name": "Idfc First Bank Limited",
 "exchange": "NSE",
-"lev": 4.38,
+"lev": 4.4,
 "maxExposureCr": 50.0
 },
 {
@@ -4963,7 +4963,7 @@
 "symbol": "IOC",
 "name": "Indian Oil Corporation Limited",
 "exchange": "NSE",
-"lev": 4.81,
+"lev": 4.8,
 "maxExposureCr": 50.0
 },
 {
@@ -5019,7 +5019,7 @@
 "symbol": "ICIL",
 "name": "Indo Count Industries Limited",
 "exchange": "NSE",
-"lev": 2.4,
+"lev": 2.41,
 "maxExposureCr": 1.0
 },
 {
@@ -6153,7 +6153,7 @@
 "symbol": "LTF",
 "name": "L&T Finance Limited",
 "exchange": "NSE",
-"lev": 4.04,
+"lev": 4.05,
 "maxExposureCr": 50.0
 },
 {
@@ -6237,7 +6237,7 @@
 "symbol": "IXIGO",
 "name": "Le Travenues Technology Limited",
 "exchange": "NSE",
-"lev": 2.57,
+"lev": 2.58,
 "maxExposureCr": 5.0
 },
 {
@@ -6279,7 +6279,7 @@
 "symbol": "LICHSGFIN",
 "name": "Lic Housing Finance Limited",
 "exchange": "NSE",
-"lev": 4.51,
+"lev": 4.52,
 "maxExposureCr": 50.0
 },
 {
@@ -6790,7 +6790,7 @@
 "symbol": "MINDACORP",
 "name": "Minda Corporation Limited",
 "exchange": "NSE",
-"lev": 3.22,
+"lev": 3.24,
 "maxExposureCr": 5.0
 },
 {
@@ -8428,7 +8428,7 @@
 "symbol": "PROTEAN",
 "name": "Protean Egov Technologies Ltd",
 "exchange": "NSE",
-"lev": 2.63,
+"lev": 2.62,
 "maxExposureCr": 5.0
 },
 {
@@ -9037,7 +9037,7 @@
 "symbol": "SJS",
 "name": "S.J.S. Enterprises Limited",
 "exchange": "NSE",
-"lev": 3.02,
+"lev": 2.97,
 "maxExposureCr": 5.0
 },
 {
@@ -9121,7 +9121,7 @@
 "symbol": "SAMBHV",
 "name": "Sambhv Steel Tubes Ltd",
 "exchange": "NSE",
-"lev": 2.85,
+"lev": 2.86,
 "maxExposureCr": 2.0
 },
 {
@@ -9177,7 +9177,7 @@
 "symbol": "SANGHVIMOV",
 "name": "Sanghvi Movers Limited",
 "exchange": "NSE",
-"lev": 2.47,
+"lev": 2.48,
 "maxExposureCr": 2.0
 },
 {
@@ -9198,7 +9198,7 @@
 "symbol": "SANSERA",
 "name": "Sansera Engineering Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.94,
+"lev": 2.93,
 "maxExposureCr": 5.0
 },
 {
@@ -10451,7 +10451,7 @@
 "symbol": "TATACOMM",
 "name": "Tata Communications Limited",
 "exchange": "NSE",
-"lev": 3.33,
+"lev": 3.34,
 "maxExposureCr": 25.0
 },
 {
@@ -10465,7 +10465,7 @@
 "symbol": "TATACONSUM",
 "name": "Tata Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.97,
+"lev": 4.98,
 "maxExposureCr": 50.0
 },
 {
@@ -10493,7 +10493,7 @@
 "symbol": "TMPV",
 "name": "Tata Motors Passenger Vehicles Limited",
 "exchange": "NSE",
-"lev": 4.26,
+"lev": 4.24,
 "maxExposureCr": 50.0
 },
 {
