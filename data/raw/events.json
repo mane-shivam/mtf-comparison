@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T12:34:51Z",
+"fetchedAt": "2026-11-20T13:33:47Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T12:34:46Z",
+"fetchedAt": "2026-11-20T13:33:42Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T12:34:47Z",
+"fetchedAt": "2026-11-20T13:33:43Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T12:34:51Z",
-"count": 223,
+"fetchedAt": "2026-11-20T13:33:47Z",
+"count": 229,
 "error": null
 }
 },
@@ -2354,6 +2354,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19150_20261111_182021942_WEB.html"
 },
 {
+"symbol": "ARMANFIN",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Arman Financial Services Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ARMANFIN_20112026181453_Arman_Credit_Rating_Intimation_CARE.pdf"
+},
+{
 "symbol": "ASHOKLEY",
 "date": "2026-11-20",
 "kind": "action",
@@ -2676,6 +2685,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/COSMOFILMS_18112026200912_Intimation_Search.pdf"
 },
 {
+"symbol": "CROMPTON",
+"date": "2026-11-20",
+"kind": "news",
+"level": "alert",
+"title": "Licence suspended",
+"detail": "Crompton Greaves Consumer Electricals Limited has informed the Exchange about Granting/withdrawal/surrender/cancellation/suspension of key licenses/ regulatory approvals",
+"link": "https://nsearchives.nseindia.in/corporate/Crompton123_20112026185803_Intimationofgrantofpatent.pdf"
+},
+{
 "symbol": "CYIENT",
 "date": "2026-11-18",
 "kind": "news",
@@ -2700,6 +2718,15 @@
 "title": "Buyback",
 "detail": "DALMIA BHARAT LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider and approve Buyback/Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17144_20261118_185709253_WEB.html"
+},
+{
+"symbol": "DBOL",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Dhampur Bio Organics Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/DBOL_ROID_105106_KMP_Doc.zip"
 },
 {
 "symbol": "DECCANCE",
@@ -2787,6 +2814,15 @@
 "title": "Credit rating update",
 "detail": "Eureka Forbes Limited has informed the Exchange about Reaffirmation of Credit Rating(s)",
 "link": "https://nsearchives.nseindia.in/corporate/SHILPAJAIN_17112026210601_IntimationCreditRating.pdf"
+},
+{
+"symbol": "FUSION",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Fusion Finance Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/FUSIONHO_20112026182427_Reg30_Penalty_20Nov26SIGN.pdf"
 },
 {
 "symbol": "FUSIONCX",
@@ -3171,6 +3207,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 1 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=JAMNAAUTO"
+},
+{
+"symbol": "JETFREIGHT",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Jet Freight Logistics Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/JETFREIGHT_ROID_105100_KMP_Doc.zip"
 },
 {
 "symbol": "JITFINFRA",
@@ -4094,6 +4139,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.60 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=VRAJ"
+},
+{
+"symbol": "WELENT",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Welspun Enterprises Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/WELENT_ROID_105108_KMP_Doc.zip"
 },
 {
 "symbol": "WSI",

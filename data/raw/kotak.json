@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-20T11:32:19Z",
+"fetchedAt": "2026-11-20T13:33:15Z",
 "count": 1702,
 "rows": [
 {
@@ -7784,7 +7784,7 @@
 "symbol": "OLECTRA",
 "name": "Olectra Greentech Limited",
 "exchange": "NSE",
-"lev": 2.88,
+"lev": 2.89,
 "maxExposureCr": 10.0
 },
 {
@@ -7812,7 +7812,7 @@
 "symbol": "MOBIKWIK",
 "name": "One Mobikwik Systems Ltd",
 "exchange": "NSE",
-"lev": 2.61,
+"lev": 2.58,
 "maxExposureCr": 2.0
 },
 {
@@ -7945,7 +7945,7 @@
 "symbol": "PACEDIGITK",
 "name": "Pace Digitek Limited",
 "exchange": "NSE",
-"lev": 3.02,
+"lev": 3.01,
 "maxExposureCr": 5.0
 },
 {
@@ -9674,7 +9674,7 @@
 "symbol": "SHRIRAMFIN",
 "name": "Shriram Finance Limited",
 "exchange": "NSE",
-"lev": 3.97,
+"lev": 3.98,
 "maxExposureCr": 25.0
 },
 {
@@ -9692,8 +9692,8 @@
 "maxExposureCr": 1.0
 },
 {
-"symbol": "SHUKRAPHAR",
-"name": "Shukra Pharmaceuticals Ltd",
+"symbol": "SHUKRAMED",
+"name": "Shukra Medtech Limited",
 "exchange": "NSE",
 "lev": 1.0,
 "maxExposureCr": 0.1
@@ -9716,7 +9716,7 @@
 "symbol": "SIEMENS",
 "name": "Siemens Limited",
 "exchange": "NSE",
-"lev": 4.25,
+"lev": 4.24,
 "maxExposureCr": 50.0
 },
 {
@@ -9828,7 +9828,7 @@
 "symbol": "SKYGOLD",
 "name": "Sky Gold And Diamonds Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.54,
+"lev": 2.55,
 "maxExposureCr": 2.0
 },
 {
