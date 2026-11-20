@@ -1518,5 +1518,21 @@
 "text": "At a 52-week high (₹1,609.90)",
 "link": null,
 "at": "2026-11-20T04:33:13Z"
+},
+{
+"symbol": "SHILPAMED",
+"name": "Shilpa Medicare Limited",
+"level": "watch",
+"text": "Down 5.8% today at ₹848.00",
+"link": null,
+"at": "2026-11-20T05:33:47Z"
+},
+{
+"symbol": "INDUSINDBK",
+"name": "IndusInd Bank Limited",
+"level": "info",
+"text": "Up 5.1% today at ₹970.65",
+"link": null,
+"at": "2026-11-20T05:33:47Z"
 }
 ]

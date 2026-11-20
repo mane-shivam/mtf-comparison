@@ -1,18 +1,18 @@
 [
  {
-  "symbol": "NAVINFLUOR",
-  "name": "Navin Fluorine International Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹10,264.00)",
+  "symbol": "SHILPAMED",
+  "name": "Shilpa Medicare Limited",
+  "level": "watch",
+  "text": "Down 5.8% today at ₹848.00",
   "link": null,
-  "at": "2026-11-20T04:33:13Z"
+  "at": "2026-11-20T05:33:47Z"
  },
  {
-  "symbol": "ICICIBANK",
-  "name": "ICICI Bank Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,609.90)",
+  "symbol": "INDUSINDBK",
+  "name": "IndusInd Bank Limited",
+  "level": "info",
+  "text": "Up 5.1% today at ₹970.65",
   "link": null,
-  "at": "2026-11-20T04:33:13Z"
+  "at": "2026-11-20T05:33:47Z"
  }
 ]
