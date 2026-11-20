@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T14:34:07Z",
+"fetchedAt": "2026-11-20T15:33:08Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T14:34:00Z",
+"fetchedAt": "2026-11-20T15:33:03Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T14:34:01Z",
+"fetchedAt": "2026-11-20T15:33:04Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T14:34:07Z",
-"count": 233,
+"fetchedAt": "2026-11-20T15:33:08Z",
+"count": 235,
 "error": null
 }
 },
@@ -2248,6 +2248,24 @@
 "title": "Litigation",
 "detail": "Update on Arbitration Proceedings.",
 "link": "https://nsearchives.nseindia.in/corporate/ABDINDIA_19112026183541_SE_Intimation_-_Update_on_CSD-_Appeal_sd.pdf"
+},
+{
+"symbol": "ACCELYA",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Accelya Solutions India Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/ACCELYA_20112026204342_StockExchangeIntimationAppealagainstOrderofRegionalPFCommissionerII.pdf"
+},
+{
+"symbol": "ACEVECTOR",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "AceVector Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.in/corporate/SNAPDEAL_20112026210152_AceVector_Limited_Income_Tax_Reg_30_Outcome_Signed.pdf"
 },
 {
 "symbol": "ADANIENT",
