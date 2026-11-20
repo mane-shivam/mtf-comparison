@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T08:52:44Z",
+"fetchedAt": "2026-11-20T09:32:53Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T08:52:38Z",
+"fetchedAt": "2026-11-20T09:32:47Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T08:52:40Z",
+"fetchedAt": "2026-11-20T09:32:49Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T08:52:44Z",
-"count": 198,
+"fetchedAt": "2026-11-20T09:32:53Z",
+"count": 206,
 "error": null
 }
 },
@@ -2328,6 +2328,24 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=ARCL"
 },
 {
+"symbol": "ARHAM",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Arham Technologies Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.in/corporate/ARHAM_20112026142655_Outcome_for_Arham_Signed.pdf"
+},
+{
+"symbol": "ARHAM",
+"date": "2026-11-20",
+"kind": "news",
+"level": "alert",
+"title": "Auditor resigned",
+"detail": "Arham Technologies Limited has informed the Exchange about Resignation of Statutory Auditor",
+"link": "https://nsearchives.nseindia.in/corporate/ARHAM_ROSA_105078_KMP_Doc.zip"
+},
+{
 "symbol": "ARIHANTCAP",
 "date": "2026-11-18",
 "kind": "meeting",
@@ -2515,6 +2533,15 @@
 "title": "Fund raising",
 "detail": "BONLON INDUSTRIES LIMITED has informed the Exchange about Board Meeting to be held on 18-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_27190_20261113_172414751_WEB.html"
+},
+{
+"symbol": "BOSCH-HCIL",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "BOSCH HOME COMFORT INDIA LIMITED has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/JCHAC_20112026143903_20261120Penalty.pdf"
 },
 {
 "symbol": "BRITANNIA",
@@ -2795,6 +2822,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=GLOBAL"
 },
 {
+"symbol": "GLOBAL",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Buyback",
+"detail": "Global Education Limited has informed the Exchange about Submission of Letter of Offer for Buy-back of Equity Shares of Global Education Limited through the Tender Offer route",
+"link": "https://nsearchives.nseindia.in/corporate/GLOBAL_20112026150020_GELLetterofoffer20112026.pdf"
+},
+{
 "symbol": "GODIGIT",
 "date": "2026-11-19",
 "kind": "news",
@@ -2960,6 +2996,15 @@
 "title": "Merger",
 "detail": "Inventurus Knowledge Solutions Limited has informed the Exchange about Merger of Turbo Health Holdings, LLC (step-down wholly owned subsidiary) with Inventurus Knowledge Solutions, Inc. (wholly owned subsidiary).",
 "link": "https://nsearchives.nseindia.in/corporate/IKS2006_19112026232418_MergerSEDisclosure_Nov2026_FINALSEUpload.pdf"
+},
+{
+"symbol": "IKS",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "Inventurus Knowledge Solutions Limited has informed the Exchange about update on Merger of Turbo Health Holdings, LLC with Inventurus Knowledge Solutions, Inc.",
+"link": "https://nsearchives.nseindia.in/corporate/IKS2006_20112026145237_MergerCompletionSEDisclosure_20Nov2026_Final.pdf"
 },
 {
 "symbol": "INDIACEM",
@@ -3547,6 +3592,15 @@
 "date": "2026-11-20",
 "kind": "news",
 "level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/SCHNEIDER_20112026145921_IntimationReg_30GST_MatterNov202026.pdf"
+},
+{
+"symbol": "SCHNEIDER",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
 "title": "Director/KMP resigned",
 "detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.in/corporate/SCHNEIDER_ROID_105070_KMP_Doc.zip"
@@ -3696,6 +3750,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_21098_20261118_182846765_WEB.html"
 },
 {
+"symbol": "SUNDRMFAST",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Sundram Fasteners Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/SUNDRMFAST_20112026143658_SFLSELetterCrisilRating20112026.pdf"
+},
+{
 "symbol": "SWSOLAR",
 "date": "2026-11-17",
 "kind": "news",
@@ -3779,6 +3842,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "Pre-facto intimation of the upcoming 67th meeting of the Committee of Creditors to be held on November 20, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/VALUEIND_18112026222917_VAL_Intimation_67th_CoC_Meeting_dt_November_20_2026_s.pdf"
+},
+{
+"symbol": "VALUEIND",
+"date": "2026-11-20",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Intimation regarding postponement of the 67th (Sixty Seventh) meeting of the Committee of Creditors (CoC).",
+"link": "https://nsearchives.nseindia.in/corporate/VALUEIND_20112026145957_VAL_postpone_meeting_s.pdf"
 },
 {
 "symbol": "VCL",
