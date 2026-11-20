@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-20T16:33:00Z",
+"fetchedAt": "2026-11-20T17:59:32Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-20T16:32:56Z",
+"fetchedAt": "2026-11-20T17:59:22Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-20T16:32:56Z",
+"fetchedAt": "2026-11-20T17:59:23Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-20T16:33:00Z",
-"count": 236,
+"fetchedAt": "2026-11-20T17:59:32Z",
+"count": 239,
 "error": null
 }
 },
@@ -2722,6 +2722,15 @@
 "date": "2026-11-20",
 "kind": "news",
 "level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Waterways Leisure Tourism Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/CORDELIA_ROID_105113_KMP_Doc.zip"
+},
+{
+"symbol": "CORDELIA",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
 "title": "Regulatory/tax order",
 "detail": "Waterways Leisure Tourism Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/CORDELIA_20112026152900_Intimation_of_GST_Official_Visit.pdf"
@@ -3613,6 +3622,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ONESOURCE_ROID_104991_KMP_Doc.zip"
 },
 {
+"symbol": "ORTINGLOBE",
+"date": "2026-11-28",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "Ortin Global Ltd has informed the Exchange about Board Meeting to be held on 28-Nov-2026 to consider and approve Fund raising/Increase in authorised capital.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19310_20261120_230257475_WEB.html"
+},
+{
 "symbol": "OSEINTRUST",
 "date": "2026-11-17",
 "kind": "action",
@@ -3961,6 +3978,15 @@
 "title": "Regulatory/tax order",
 "detail": "Supreme Petrochem Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/FINIAN_18112026191244_GSTInspection.pdf"
+},
+{
+"symbol": "SRF",
+"date": "2026-11-20",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "SRF Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/ekta_maheshwari_20112026230138_PenaltyIntimationRodtepNov2026.pdf"
 },
 {
 "symbol": "STEELCAS",
