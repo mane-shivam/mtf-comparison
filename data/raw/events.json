@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T09:31:13Z",
+"fetchedAt": "2026-11-21T10:32:18Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T09:31:06Z",
+"fetchedAt": "2026-11-21T10:32:13Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T09:31:07Z",
+"fetchedAt": "2026-11-21T10:32:14Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T09:31:13Z",
-"count": 197,
+"fetchedAt": "2026-11-21T10:32:18Z",
+"count": 200,
 "error": null
 }
 },
@@ -2302,6 +2302,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_331_20261112_120408660_WEB.html"
 },
 {
+"symbol": "ANSALAPI",
+"date": "2026-11-21",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Ansal Properties & Infrastructure Limited has informed the Exchange regarding Hon'ble NCLT order dated 19th November 2026",
+"link": "https://nsearchives.nseindia.in/corporate/ANSALAPI_21112026154705_Intimation.pdf"
+},
+{
 "symbol": "ANTGRAPHIC",
 "date": "2026-11-19",
 "kind": "meeting",
@@ -2483,6 +2492,15 @@
 "title": "Results",
 "detail": "BOMBAY COATED AND SPECIAL STEELS LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_27023_20261116_185223560_WEB.html"
+},
+{
+"symbol": "BELRISE",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Belrise Industries Limited has informed the Exchange that the Company is in receipt of Order-in-Appeal passed by the Commissioner of Customs (Appeals), Mumbai Zone-III",
+"link": "https://nsearchives.nseindia.in/corporate/BELRISE_21112026155839_BELRISE_Intimation_of_Customs_Order-in-Appeal_21112026.pdf"
 },
 {
 "symbol": "BETA",
@@ -2856,6 +2874,15 @@
 "title": "Buyback",
 "detail": "Global Education Limited has informed the Exchange about Submission of Letter of Offer for Buy-back of Equity Shares of Global Education Limited through the Tender Offer route",
 "link": "https://nsearchives.nseindia.in/corporate/GLOBAL_20112026150020_GELLetterofoffer20112026.pdf"
+},
+{
+"symbol": "GLOBE",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Demerger",
+"detail": "GLOBE ENTERPRISES (INDIA) LIMITED has informed the Exchange about Order of the Hon ble National Company Law Tribunal,",
+"link": "https://nsearchives.nseindia.in/corporate/GLOBE_21112026150201_IntimationunderReg30NCLTorderofdemergerSigned.pdf"
 },
 {
 "symbol": "GODIGIT",
@@ -3739,8 +3766,8 @@
 "date": "2026-11-26",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "To consider Fund Raising and other business matters",
-"link": "https://nsearchives.nseindia.in/corporate/TIMESGTY_21112026143548_Intimation_of_BMsigned.pdf"
+"detail": "TEAM INDIA GUARANTY LIMITED has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/xbrl/PRIOR_INTIMATION_2018_WebXMLFile_20261121_151043119.xml"
 },
 {
 "symbol": "TTKHLTCARE",
