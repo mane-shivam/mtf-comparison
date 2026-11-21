@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T11:32:35Z",
+"fetchedAt": "2026-11-21T12:32:50Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T11:32:30Z",
+"fetchedAt": "2026-11-21T12:32:44Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T11:32:31Z",
+"fetchedAt": "2026-11-21T12:32:45Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T11:32:35Z",
-"count": 203,
+"fetchedAt": "2026-11-21T12:32:50Z",
+"count": 206,
 "error": null
 }
 },
@@ -2224,6 +2224,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=815GS2026"
 },
 {
+"symbol": "AARTISURF",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Aarti Surfactants Limited has informed the Exchange about Action(s) initiated / orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/AARTISURF_21112026173347_AARTISURF.pdf"
+},
+{
 "symbol": "ABDL",
 "date": "2026-11-18",
 "kind": "news",
@@ -2484,6 +2493,15 @@
 "title": "Credit rating update",
 "detail": "Bank Of Baroda has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/BANKBARODA_19112026191020_SERATING.pdf"
+},
+{
+"symbol": "BANSWRAS",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Banswara Syntex Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/BANSWRAS_21112026174818_Reg_30_Imposition_of_Fines_and_Penalties_under_Reg_6.pdf"
 },
 {
 "symbol": "BCSSL",
@@ -3566,6 +3584,14 @@
 "title": "Rights",
 "detail": "Rights 5:9",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=PRAXIS"
+},
+{
+"symbol": "RAJRATAN",
+"date": "2026-11-25",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "RAJRATAN GLOBAL WIRE LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17984_20261121_170254736_WEB.html"
 },
 {
 "symbol": "RAMAPHO",
