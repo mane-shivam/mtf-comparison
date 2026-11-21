@@ -1,69 +1,69 @@
 {
-  "generatedAt": "2026-11-21T08:31:34Z",
+  "generatedAt": "2026-11-21T08:33:27Z",
   "surveillance": {
     "fetchedAt": "2026-11-21T08:31:02Z",
     "sources": {
       "NSE": {
-        "status": "ok",
+        "status": "stale",
         "count": 482,
         "fetchedAt": "2026-11-21T08:31:02Z",
-        "error": null
+        "error": "403 Client Error: Forbidden for url: https://www.nseindia.com/reports/asm"
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-21T08:31:11Z",
+    "fetchedAt": "2026-11-21T08:33:08Z",
     "sources": {
       "ban": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:02Z",
-        "error": null
+        "error": "403 Client Error: Forbidden for url: https://nsearchives.nseindia.com/content/fo/fo_secban.csv"
       },
       "bands": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:05Z",
-        "error": null
+        "error": "403 Client Error: Forbidden for url: https://nsearchives.nseindia.com/content/equities/sec_list.csv"
       },
       "events": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:11Z",
         "count": 194,
-        "error": null
+        "error": "403 Client Error: Forbidden for url: https://www.nseindia.com/companies-listing/corporate-filings-event-calendar"
       }
     }
   },
   "market": {
-    "fetchedAt": "2026-11-21T08:31:34Z",
+    "fetchedAt": "2026-11-21T08:33:27Z",
     "sources": {
       "prices": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T08:31:27Z",
+        "fetchedAt": "2026-11-21T08:33:25Z",
         "error": null
       },
       "var": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:29Z",
-        "error": null
+        "error": "no file in the last 6 days"
       },
       "mwpl": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:30Z",
-        "error": null
+        "error": "no file in the last 6 days"
       },
       "deliv": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T08:31:30Z",
+        "fetchedAt": "2026-11-21T08:33:26Z",
         "error": null
       },
       "deals": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:31Z",
-        "error": null
+        "error": "403 Client Error: Forbidden for url: https://nsearchives.nseindia.com/content/equities/bulk.csv"
       },
       "pledge": {
-        "status": "ok",
+        "status": "stale",
         "fetchedAt": "2026-11-21T08:31:34Z",
-        "error": null
+        "error": "403 Client Error: Forbidden for url: https://www.nseindia.com/companies-listing/corporate-filings-pledged-data"
       }
     }
   },
@@ -72,11 +72,11 @@
       "fetchedAt": "2026-11-21T04:32:25Z",
       "count": 1702,
       "status": "stale",
-      "error": "502 for https://www.kotakneo.com/margin-requirement/margin-trading/1/?v=642315138",
+      "error": "502 for https://www.kotakneo.com/margin-requirement/margin-trading/1/?v=678481009",
       "matched": 1702
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-21T08:30:58Z",
+      "fetchedAt": "2026-11-21T08:33:06Z",
       "count": 2224,
       "status": "ok",
       "error": null,

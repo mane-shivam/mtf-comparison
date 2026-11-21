@@ -1,21 +1,21 @@
 {
-"fetchedAt": "2026-11-21T08:31:11Z",
+"fetchedAt": "2026-11-21T08:33:08Z",
 "sources": {
 "ban": {
-"status": "ok",
+"status": "stale",
 "fetchedAt": "2026-11-21T08:31:02Z",
-"error": null
+"error": "403 Client Error: Forbidden for url: https://nsearchives.nseindia.com/content/fo/fo_secban.csv"
 },
 "bands": {
-"status": "ok",
+"status": "stale",
 "fetchedAt": "2026-11-21T08:31:05Z",
-"error": null
+"error": "403 Client Error: Forbidden for url: https://nsearchives.nseindia.com/content/equities/sec_list.csv"
 },
 "events": {
-"status": "ok",
+"status": "stale",
 "fetchedAt": "2026-11-21T08:31:11Z",
 "count": 194,
-"error": null
+"error": "403 Client Error: Forbidden for url: https://www.nseindia.com/companies-listing/corporate-filings-event-calendar"
 }
 },
 "ban": {

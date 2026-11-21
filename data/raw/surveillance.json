@@ -2,10 +2,10 @@
 "fetchedAt": "2026-11-21T08:31:02Z",
 "sources": {
 "NSE": {
-"status": "ok",
+"status": "stale",
 "count": 482,
 "fetchedAt": "2026-11-21T08:31:02Z",
-"error": null
+"error": "403 Client Error: Forbidden for url: https://www.nseindia.com/reports/asm"
 }
 },
 "entries": [
