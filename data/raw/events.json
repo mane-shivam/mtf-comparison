@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T05:31:15Z",
+"fetchedAt": "2026-11-21T06:31:09Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T05:31:11Z",
+"fetchedAt": "2026-11-21T06:31:04Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T05:31:11Z",
+"fetchedAt": "2026-11-21T06:31:05Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T05:31:15Z",
-"count": 189,
+"fetchedAt": "2026-11-21T06:31:09Z",
+"count": 190,
 "error": null
 }
 },
@@ -2395,6 +2395,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
 "link": "https://nsearchives.nseindia.in/corporate/ASTRON_19112026164339_Letter-_E_Voting_Commencement_7th_meeting_signed.pdf"
+},
+{
+"symbol": "ASTRON",
+"date": "2026-11-21",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.in/corporate/ASTRON_21112026113221_Letter-_Extension_Order.pdf"
 },
 {
 "symbol": "ATGL",
