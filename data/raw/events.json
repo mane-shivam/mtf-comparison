@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T13:32:45Z",
+"fetchedAt": "2026-11-21T14:32:25Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T13:32:38Z",
+"fetchedAt": "2026-11-21T14:32:21Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T13:32:39Z",
+"fetchedAt": "2026-11-21T14:32:22Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T13:32:45Z",
-"count": 208,
+"fetchedAt": "2026-11-21T14:32:25Z",
+"count": 210,
 "error": null
 }
 },
@@ -2929,6 +2929,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/GODIGITGI_19112026160841_Intimation_Reg_30_Gift_City.pdf"
 },
 {
+"symbol": "GREAVESCOT",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Greaves Cotton Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.in/corporate/GREAVESCOT_21112026195818_GCL_Update_on_litigation_DGSS_sd.pdf"
+},
+{
 "symbol": "GRMOVER",
 "date": "2026-11-20",
 "kind": "news",
@@ -3634,6 +3643,15 @@
 "title": "Stake/pledge disclosure",
 "detail": "Jayesh Natvarlal Pithva has Submitted to the Exchange a copy of Disclosure under Regulation 29 (2) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
 "link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_19112026123614_Jayesh.PDF"
+},
+{
+"symbol": "SANDESH",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "The Sandesh Limited has informed the Exchange about Amalgamation/Merger",
+"link": "https://nsearchives.nseindia.in/corporate/SANDESH_21112026190924_Letter_to_SE_21-11-2026.pdf"
 },
 {
 "symbol": "SANGHVIMOV",
