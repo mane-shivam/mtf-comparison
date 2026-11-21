@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T12:32:50Z",
+"fetchedAt": "2026-11-21T13:32:45Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T12:32:44Z",
+"fetchedAt": "2026-11-21T13:32:38Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T12:32:45Z",
+"fetchedAt": "2026-11-21T13:32:39Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T12:32:50Z",
-"count": 206,
+"fetchedAt": "2026-11-21T13:32:45Z",
+"count": 208,
 "error": null
 }
 },
@@ -2737,6 +2737,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17144_20261118_185709253_WEB.html"
 },
 {
+"symbol": "DAVANGERE",
+"date": "2026-11-26",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "Davangere Sugar Company Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22819_20261121_182916968_WEB.html"
+},
+{
 "symbol": "DBOL",
 "date": "2026-11-20",
 "kind": "news",
@@ -3695,6 +3703,15 @@
 "title": "Regulatory/tax order",
 "detail": "Share India Securities Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/SISL_20112026132223_Reg30Penalty_19112026signed.pdf"
+},
+{
+"symbol": "SHRENIK",
+"date": "2026-11-21",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Shrenik Limited has informed the Exchange about Prior Intimation of the 4th (Fourth) Meeting of the Committee of Creditors (CoC) of Shrenik Limited (In CIRP).",
+"link": "https://nsearchives.nseindia.in/corporate/SHRENIK_21112026184215_4th_COC_Intimation-signed.pdf"
 },
 {
 "symbol": "SIMBHALS",
