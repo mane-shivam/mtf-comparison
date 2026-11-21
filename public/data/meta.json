@@ -1,68 +1,68 @@
 {
-  "generatedAt": "2026-11-21T07:31:28Z",
+  "generatedAt": "2026-11-21T08:31:34Z",
   "surveillance": {
-    "fetchedAt": "2026-11-21T07:30:59Z",
+    "fetchedAt": "2026-11-21T08:31:02Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 482,
-        "fetchedAt": "2026-11-21T07:30:59Z",
+        "fetchedAt": "2026-11-21T08:31:02Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-21T07:31:05Z",
+    "fetchedAt": "2026-11-21T08:31:11Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:00Z",
+        "fetchedAt": "2026-11-21T08:31:02Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:02Z",
+        "fetchedAt": "2026-11-21T08:31:05Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:05Z",
-        "count": 193,
+        "fetchedAt": "2026-11-21T08:31:11Z",
+        "count": 194,
         "error": null
       }
     }
   },
   "market": {
-    "fetchedAt": "2026-11-21T07:31:28Z",
+    "fetchedAt": "2026-11-21T08:31:34Z",
     "sources": {
       "prices": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:22Z",
+        "fetchedAt": "2026-11-21T08:31:27Z",
         "error": null
       },
       "var": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:24Z",
+        "fetchedAt": "2026-11-21T08:31:29Z",
         "error": null
       },
       "mwpl": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:24Z",
+        "fetchedAt": "2026-11-21T08:31:30Z",
         "error": null
       },
       "deliv": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:24Z",
+        "fetchedAt": "2026-11-21T08:31:30Z",
         "error": null
       },
       "deals": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:26Z",
+        "fetchedAt": "2026-11-21T08:31:31Z",
         "error": null
       },
       "pledge": {
         "status": "ok",
-        "fetchedAt": "2026-11-21T07:31:28Z",
+        "fetchedAt": "2026-11-21T08:31:34Z",
         "error": null
       }
     }
@@ -72,11 +72,11 @@
       "fetchedAt": "2026-11-21T04:32:25Z",
       "count": 1702,
       "status": "stale",
-      "error": "502 for https://www.kotakneo.com/margin-requirement/margin-trading/1/?v=124959874",
+      "error": "502 for https://www.kotakneo.com/margin-requirement/margin-trading/1/?v=642315138",
       "matched": 1702
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-21T07:30:56Z",
+      "fetchedAt": "2026-11-21T08:30:58Z",
       "count": 2224,
       "status": "ok",
       "error": null,
