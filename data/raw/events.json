@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T06:31:09Z",
+"fetchedAt": "2026-11-21T07:31:05Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T06:31:04Z",
+"fetchedAt": "2026-11-21T07:31:00Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T06:31:05Z",
+"fetchedAt": "2026-11-21T07:31:02Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T06:31:09Z",
-"count": 190,
+"fetchedAt": "2026-11-21T07:31:05Z",
+"count": 193,
 "error": null
 }
 },
@@ -2328,6 +2328,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ANUHPHR_ROID_105110_KMP_Doc.zip"
 },
 {
+"symbol": "AONESTEELS",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "A-One Steels India Limited has informed the Exchange about the NCLT order approving the Scheme of Amalgamation",
+"link": "https://nsearchives.nseindia.in/corporate/AONESTEELS_21112026122938_SE_Intimations_Signed.pdf"
+},
+{
 "symbol": "ARCL",
 "date": "2026-11-18",
 "kind": "action",
@@ -2753,6 +2762,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ESCORTS2_18112026181251_EKL_2026_11_18_DT_Update_Signed.pdf"
 },
 {
+"symbol": "ETHOSLTD",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Ethos Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/ETHOS_21112026121656_Ethos.pdf"
+},
+{
 "symbol": "FUSION",
 "date": "2026-11-20",
 "kind": "news",
@@ -2777,6 +2795,15 @@
 "title": "Regulatory/tax order",
 "detail": "Gaja Alternative Asset Management Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/GAAML2025_18112026131547_GAJA_CS_40_2026-27_Final_Signed.pdf"
+},
+{
+"symbol": "GAYAHWS",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Gayatri Highways Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/GAYAHWS_ROID_105117_KMP_Doc.zip"
 },
 {
 "symbol": "GENSOL",
