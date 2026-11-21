@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-21T10:32:18Z",
+"fetchedAt": "2026-11-21T11:32:35Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-21T10:32:13Z",
+"fetchedAt": "2026-11-21T11:32:30Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-21T10:32:14Z",
+"fetchedAt": "2026-11-21T11:32:31Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-21T10:32:18Z",
-"count": 200,
+"fetchedAt": "2026-11-21T11:32:35Z",
+"count": 203,
 "error": null
 }
 },
@@ -2693,6 +2693,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/Crompton123_20112026185803_Intimationofgrantofpatent.pdf"
 },
 {
+"symbol": "CROMPTON",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Crompton Greaves Consumer Electricals Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/Crompton123_21112026160804_LODR-ITAT-Order_AY2020-21.pdf"
+},
+{
 "symbol": "CYIENT",
 "date": "2026-11-18",
 "kind": "news",
@@ -2968,6 +2977,15 @@
 "title": "Results",
 "detail": "Heads UP Ventures Limited has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14408_20261120_135248225_WEB.html"
+},
+{
+"symbol": "HEROMOTOCO",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Pursuant to Regulation 30 of the SEBI Listing Regulations, please refer to disclosure document regarding an update on the Income Tax Matter.",
+"link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_21112026164008_Intimationtostockexchanges.pdf"
 },
 {
 "symbol": "HEXATRADEX",
@@ -3659,6 +3677,15 @@
 "title": "Results",
 "detail": "SIMBHAOLI SUGARS LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13570_20261119_150850681_WEB.html"
+},
+{
+"symbol": "SJS",
+"date": "2026-11-21",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "S.J.S. Enterprises Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/SJS_ROID_105129_KMP_Doc.zip"
 },
 {
 "symbol": "SKYWAYS",
