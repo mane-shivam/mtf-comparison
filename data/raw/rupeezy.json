@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-21T16:56:17Z",
+"fetchedAt": "2026-11-22T01:32:07Z",
 "count": 2224,
 "rows": [
 {
@@ -9067,6 +9067,15 @@
 "ownPct": 32.36
 },
 {
+"symbol": "HAPPSTMNDS",
+"name": "HAPPIEST MINDS TECHNO LTD",
+"isin": "INE419U01012",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.09,
+"ownPct": 32.36
+},
+{
 "symbol": "JKTYRE",
 "name": "JK TYRE & INDUSTRIES LTD",
 "isin": "INE573A01042",
@@ -9169,15 +9178,6 @@
 "symbol": "JSWHL",
 "name": "JSW HOLDINGS LIMITED",
 "isin": "INE824G01012",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.09,
-"ownPct": 32.36
-},
-{
-"symbol": "HAPPSTMNDS",
-"name": "HAPPIEST MINDS TECHNO LTD",
-"isin": "INE419U01012",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.09,
@@ -19966,18 +19966,18 @@
 "ownPct": 100.0
 },
 {
-"symbol": "MILKYMIST",
-"name": "MILKY MIST DAIRY FOOD L",
-"isin": "INE00IT01020",
+"symbol": "SCPL",
+"name": "SHEETAL COOL PRODUCTS LTD",
+"isin": "INE501Y01019",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
 "ownPct": 100.0
 },
 {
-"symbol": "DHABRIYA",
-"name": "DHABRIYA POLYWOOD LTD.",
-"isin": "INE260R01016",
+"symbol": "AMBALALSA",
+"name": "AMBALAL SARABHAI ENT L",
+"isin": "INE432A01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
@@ -19993,9 +19993,18 @@
 "ownPct": 100.0
 },
 {
-"symbol": "SCPL",
-"name": "SHEETAL COOL PRODUCTS LTD",
-"isin": "INE501Y01019",
+"symbol": "DHABRIYA",
+"name": "DHABRIYA POLYWOOD LTD.",
+"isin": "INE260R01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 1.0,
+"ownPct": 100.0
+},
+{
+"symbol": "MILKYMIST",
+"name": "MILKY MIST DAIRY FOOD L",
+"isin": "INE00IT01020",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
@@ -20005,15 +20014,6 @@
 "symbol": "ALPHAGEO",
 "name": "ALPHAGEO (INDIA) LIMITED",
 "isin": "INE137C01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 1.0,
-"ownPct": 100.0
-},
-{
-"symbol": "AMBALALSA",
-"name": "AMBALAL SARABHAI ENT L",
-"isin": "INE432A01017",
 "exchange": "NSE",
 "type": "equity",
 "lev": 1.0,
