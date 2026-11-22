@@ -1,19 +1,19 @@
 {
-"fetchedAt": "2026-11-22T07:32:36Z",
+"fetchedAt": "2026-11-22T08:28:44Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-22T07:32:31Z",
+"fetchedAt": "2026-11-22T08:28:39Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-22T07:32:32Z",
+"fetchedAt": "2026-11-22T08:28:40Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-22T07:32:36Z",
+"fetchedAt": "2026-11-22T08:28:44Z",
 "count": 160,
 "error": null
 }
