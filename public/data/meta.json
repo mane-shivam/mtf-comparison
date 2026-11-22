@@ -1,63 +1,63 @@
 {
-  "generatedAt": "2026-11-22T16:33:06Z",
+  "generatedAt": "2026-11-22T16:37:00Z",
   "surveillance": {
-    "fetchedAt": "2026-11-22T16:32:35Z",
+    "fetchedAt": "2026-11-22T16:36:27Z",
     "sources": {
       "NSE": {
         "status": "ok",
         "count": 482,
-        "fetchedAt": "2026-11-22T16:32:35Z",
+        "fetchedAt": "2026-11-22T16:36:27Z",
         "error": null
       }
     }
   },
   "events": {
-    "fetchedAt": "2026-11-22T16:32:41Z",
+    "fetchedAt": "2026-11-22T16:36:34Z",
     "sources": {
       "ban": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:32:36Z",
+        "fetchedAt": "2026-11-22T16:36:28Z",
         "error": null
       },
       "bands": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:32:37Z",
+        "fetchedAt": "2026-11-22T16:36:29Z",
         "error": null
       },
       "events": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:32:41Z",
+        "fetchedAt": "2026-11-22T16:36:34Z",
         "count": 160,
         "error": null
       }
     }
   },
   "market": {
-    "fetchedAt": "2026-11-22T16:33:06Z",
+    "fetchedAt": "2026-11-22T16:37:00Z",
     "sources": {
       "prices": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:32:57Z",
+        "fetchedAt": "2026-11-22T16:36:51Z",
         "error": null
       },
       "var": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:33:02Z",
+        "fetchedAt": "2026-11-22T16:36:56Z",
         "error": null
       },
       "mwpl": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:33:03Z",
+        "fetchedAt": "2026-11-22T16:36:57Z",
         "error": null
       },
       "deliv": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:33:03Z",
+        "fetchedAt": "2026-11-22T16:36:57Z",
         "error": null
       },
       "deals": {
         "status": "ok",
-        "fetchedAt": "2026-11-22T16:33:04Z",
+        "fetchedAt": "2026-11-22T16:36:58Z",
         "error": null
       },
       "pledge": {
@@ -69,14 +69,14 @@
   },
   "brokers": {
     "kotak": {
-      "fetchedAt": "2026-11-22T16:32:09Z",
+      "fetchedAt": "2026-11-22T16:36:01Z",
       "count": 1702,
       "status": "ok",
       "error": null,
       "matched": 1702
     },
     "rupeezy": {
-      "fetchedAt": "2026-11-22T16:32:31Z",
+      "fetchedAt": "2026-11-22T16:36:24Z",
       "count": 2224,
       "status": "ok",
       "error": null,
