@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-23T09:29:17Z",
+"fetchedAt": "2026-11-23T21:39:35Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 463,
-"fetchedAt": "2026-11-23T09:29:17Z",
+"fetchedAt": "2026-11-23T21:39:35Z",
 "error": null
 }
 },
@@ -606,8 +606,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "MILKYMIST",
@@ -616,8 +616,8 @@
 "term": "long",
 "stage": "III",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage III",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "MODISONLTD",
@@ -816,8 +816,8 @@
 "term": "long",
 "stage": "II",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage II",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "RAJSREESUG",
@@ -1026,8 +1026,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "SMVD",
@@ -1156,8 +1156,8 @@
 "term": "long",
 "stage": "IV",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage IV",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "VENUSREM",
@@ -1326,8 +1326,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "ARISTO",
@@ -1366,8 +1366,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "DCAL",
@@ -1576,8 +1576,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "RAMKY",
@@ -2606,8 +2606,8 @@
 "term": null,
 "stage": "II",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage II",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "AKI",
@@ -2716,8 +2716,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "ARABIAN",
@@ -2786,8 +2786,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "BALAJIPHOS",
@@ -2806,8 +2806,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "BALAXI",
@@ -2816,8 +2816,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "BALPHARMA",
@@ -3636,8 +3636,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "MAKERSL",
@@ -4586,8 +4586,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "VISAKAIND",
@@ -4626,8 +4626,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-23",
-"exact": true
+"exact": true,
+"since": "2026-11-23"
 },
 {
 "symbol": "ZEEMEDIA",

@@ -18022,5 +18022,11 @@
 "name": "SILVER",
 "isin": "INF205KA1CP9",
 "type": "etf"
+},
+{
+"symbol": "EENERGY",
+"name": "Nifty Energy",
+"isin": "INF754K01XZ1",
+"type": "etf"
 }
 ]

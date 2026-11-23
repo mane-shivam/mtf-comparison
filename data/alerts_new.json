@@ -1,26 +1,34 @@
 [
  {
+  "symbol": "MEDIASSIST",
+  "name": "Medi Assist Healthcare Services Limited",
+  "level": "watch",
+  "text": "Buyback (23 Nov)",
+  "link": "https://nsearchives.nseindia.in/corporate/MEDIASSIST_23112026174239_MAHSSEIntimationLetterOfOffersd.pdf",
+  "at": "2026-11-23T21:40:06Z"
+ },
+ {
   "symbol": "POLICYBZR",
   "name": "PB Fintech Limited",
   "level": "info",
-  "text": "Up 7.2% today at ₹1,096.40",
+  "text": "Volume 3.1× the 20-day average",
   "link": null,
-  "at": "2026-11-23T09:29:44Z"
+  "at": "2026-11-23T21:40:06Z"
  },
  {
-  "symbol": "SUDEEPPHRM",
-  "name": "Sudeep Pharma Limited",
-  "level": "info",
-  "text": "Up 5.0% today at ₹1,251.70",
+  "symbol": "CENTUM",
+  "name": "Centum Electronics Limited",
+  "level": "watch",
+  "text": "Down 5.2% today at ₹4,147.00",
   "link": null,
-  "at": "2026-11-23T09:29:44Z"
+  "at": "2026-11-23T21:40:06Z"
  },
  {
-  "symbol": "SMT",
-  "name": "SMT",
-  "level": "info",
-  "text": "Up 5.4% today at ₹556.10",
-  "link": null,
-  "at": "2026-11-23T09:29:44Z"
+  "symbol": "SUNPHARMA",
+  "name": "Sun Pharmaceutical Industries Limited",
+  "level": "watch",
+  "text": "Credit rating update (23 Nov)",
+  "link": "https://nsearchives.nseindia.in/corporate/SUNSEC_23112026203508_Intimation_to_SE_-_GTC_SP_Credit_Rating.pdf",
+  "at": "2026-11-23T21:40:06Z"
  }
 ]
