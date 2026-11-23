@@ -15,10 +15,6 @@
 "exact": true,
 "since": "2026-09-23"
 },
-"AARNAV|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
 "AASTHA|ASM|long|I": {
 "exact": true,
 "since": "2026-10-12"
@@ -26,10 +22,6 @@
 "AATMAJ|ASM|long|I": {
 "exact": true,
 "since": "2026-11-19"
-},
-"ABINFRA|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
 },
 "ABMINTLLTD|ESM|None|II": {
 "exact": false,
@@ -103,9 +95,9 @@
 "exact": true,
 "since": "2026-11-18"
 },
-"AKANKSHA|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
+"AKANKSHA|ESM|None|II": {
+"exact": true,
+"since": "2026-11-23"
 },
 "AKG|ASM|long|I": {
 "exact": false,
@@ -131,10 +123,6 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"ALPHAGEO|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
 "ALPINETEX|ASM|long|I": {
 "exact": true,
 "since": "2026-10-14"
@@ -146,10 +134,6 @@
 "AMANTA|ASM|short|I": {
 "exact": true,
 "since": "2026-11-19"
-},
-"AMBALALSA|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
 },
 "AMBANIORGO|ESM|None|I": {
 "exact": false,
@@ -183,13 +167,17 @@
 "exact": true,
 "since": "2026-11-18"
 },
+"APEXECO|ASM|short|I": {
+"exact": true,
+"since": "2026-11-23"
+},
 "APRAMEYA|ESM|None|I": {
 "exact": true,
 "since": "2026-11-20"
 },
-"APSISAERO|ESM|None|II": {
-"exact": false,
-"since": "2026-11-08"
+"APSISAERO|ESM|None|I": {
+"exact": true,
+"since": "2026-11-23"
 },
 "AQYLON|GSM|None|0": {
 "exact": true,
@@ -223,10 +211,6 @@
 "exact": true,
 "since": "2019-06-06"
 },
-"ASSAMENT|ASM|long|I": {
-"exact": true,
-"since": "2026-08-18"
-},
 "ATALREAL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-15"
@@ -259,27 +243,23 @@
 "exact": false,
 "since": "2026-11-04"
 },
-"BAFNAPH|ESM|None|II": {
-"exact": false,
-"since": "2026-11-08"
+"BAFNAPH|ESM|None|I": {
+"exact": true,
+"since": "2026-11-23"
 },
 "BALAJIPHOS|ESM|None|I": {
 "exact": true,
 "since": "2026-11-18"
 },
-"BALAXI|ASM|long|I": {
+"BALAXI|ESM|None|I": {
 "exact": true,
-"since": "2026-11-20"
+"since": "2026-11-23"
 },
 "BALKRISHNA|GSM|None|0": {
 "exact": true,
 "since": "2026-06-25"
 },
 "BALPHARMA|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
-"BHADORA|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
 },
@@ -304,10 +284,6 @@
 "since": "2026-10-01"
 },
 "BIRLAPREC|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
-"BI|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
 },
@@ -374,6 +350,10 @@
 "BURNPUR|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
+},
+"CADSYS|ASM|short|I": {
+"exact": true,
+"since": "2026-11-23"
 },
 "CALSOFT|ESM|None|I": {
 "exact": false,
@@ -515,10 +495,6 @@
 "exact": true,
 "since": "2026-10-13"
 },
-"DHABRIYA|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
 "DHANBANK|ASM|short|I": {
 "exact": true,
 "since": "2026-11-18"
@@ -638,10 +614,6 @@
 "FWSTC|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
-},
-"GANGAFORGE|ASM|long|I": {
-"exact": false,
-"since": "2026-11-04"
 },
 "GAYAHWS|GSM|None|0": {
 "exact": true,
@@ -791,10 +763,6 @@
 "exact": true,
 "since": "2026-09-23"
 },
-"INDOTHAI|ASM|long|I": {
-"exact": true,
-"since": "2026-10-16"
-},
 "INDSWFTLAB|ASM|long|I": {
 "exact": true,
 "since": "2026-08-12"
@@ -870,10 +838,6 @@
 "KALYANIFRG|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
-},
-"KAMANWALA|ASM|long|I": {
-"exact": true,
-"since": "2026-08-20"
 },
 "KANORICHEM|ESM|None|I": {
 "exact": false,
@@ -967,9 +931,9 @@
 "exact": false,
 "since": "2026-11-04"
 },
-"LYKALABS|ESM|None|II": {
-"exact": false,
-"since": "2026-11-08"
+"LYKALABS|ESM|None|I": {
+"exact": true,
+"since": "2026-11-23"
 },
 "MACPOWER|ASM|long|I": {
 "exact": false,
@@ -1035,9 +999,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"MENONBE|ASM|long|II": {
+"MENONBE|ASM|long|I": {
 "exact": true,
-"since": "2026-11-08"
+"since": "2026-11-23"
 },
 "MEP|GSM|None|0": {
 "exact": true,
@@ -1047,13 +1011,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"MHLXMIRU|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
-"MILKYMIST|ASM|long|IV": {
+"MILKYMIST|ASM|long|III": {
 "exact": true,
-"since": "2026-09-23"
+"since": "2026-11-23"
 },
 "MILTON|ESM|None|II": {
 "exact": true,
@@ -1239,10 +1199,6 @@
 "exact": false,
 "since": "2026-11-04"
 },
-"PIONRINV|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
-},
 "PKTEA|ESM|None|II": {
 "exact": true,
 "since": "2026-11-18"
@@ -1303,6 +1259,10 @@
 "exact": true,
 "since": "2026-08-28"
 },
+"QLINE|ASM|short|I": {
+"exact": true,
+"since": "2026-11-23"
+},
 "QMSMEDI|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -1311,9 +1271,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"QUICKTOUCH|ASM|long|I": {
-"exact": false,
-"since": "2026-11-04"
+"QUICKTOUCH|ASM|long|II": {
+"exact": true,
+"since": "2026-11-23"
 },
 "QUINTEGRA|ESM|None|II": {
 "exact": false,
@@ -1439,10 +1399,6 @@
 "exact": true,
 "since": "2026-08-24"
 },
-"SANSERA|ASM|long|I": {
-"exact": true,
-"since": "2026-08-17"
-},
 "SANWARIA|GSM|None|0": {
 "exact": true,
 "since": "2026-03-18"
@@ -1450,10 +1406,6 @@
 "SBCL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-07"
-},
-"SCPL|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
 },
 "SECMARK|ASM|long|I": {
 "exact": true,
@@ -1478,10 +1430,6 @@
 "SHANTI|GSM|None|0": {
 "exact": false,
 "since": "2026-11-04"
-},
-"SHARDUL|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
 },
 "SHEKHAWATI|ESM|None|I": {
 "exact": false,
@@ -1519,10 +1467,6 @@
 "exact": true,
 "since": "2022-09-13"
 },
-"SIEL|ASM|long|I": {
-"exact": true,
-"since": "2026-08-20"
-},
 "SIGIND|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -1546,6 +1490,10 @@
 "SKYGOLD|ASM|long|I": {
 "exact": true,
 "since": "2026-08-14"
+},
+"SKYTECH|ASM|long|I": {
+"exact": true,
+"since": "2026-11-23"
 },
 "SMARTEN|ESM|None|I": {
 "exact": true,
@@ -1623,10 +1571,6 @@
 "exact": true,
 "since": "2026-11-18"
 },
-"SUMEETINDS|ASM|long|I": {
-"exact": true,
-"since": "2026-10-09"
-},
 "SUPREMEENG|ESM|None|II": {
 "exact": true,
 "since": "2026-11-18"
@@ -1634,10 +1578,6 @@
 "SUPREMEENG|GSM|None|0": {
 "exact": false,
 "since": "2026-11-04"
-},
-"SUPRIYA|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
 },
 "SUPTANERY|ESM|None|I": {
 "exact": false,
@@ -1699,10 +1639,6 @@
 "exact": true,
 "since": "2026-11-03"
 },
-"TICL|ASM|long|I": {
-"exact": true,
-"since": "2026-11-08"
-},
 "TIJARIA|ESM|None|II": {
 "exact": false,
 "since": "2026-11-08"
@@ -1730,10 +1666,6 @@
 "TOYAMSL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-23"
-},
-"TPHQ|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
 },
 "TRANSWORLD|ESM|None|I": {
 "exact": true,
@@ -1763,9 +1695,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"UFBL|ASM|long|III": {
+"UFBL|ASM|long|IV": {
 "exact": true,
-"since": "2026-11-18"
+"since": "2026-11-23"
 },
 "UGARSUGAR|ESM|None|I": {
 "exact": false,
@@ -1774,10 +1706,6 @@
 "UHTL|ESM|None|II": {
 "exact": true,
 "since": "2026-11-19"
-},
-"UNILEX|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
 },
 "UNIVAFOODS|GSM|None|IV": {
 "exact": true,
@@ -1811,10 +1739,6 @@
 "exact": false,
 "since": "2026-11-04"
 },
-"VCL|ESM|None|I": {
-"exact": false,
-"since": "2026-11-08"
-},
 "VELJAN|ESM|None|I": {
 "exact": true,
 "since": "2026-11-18"
@@ -1839,9 +1763,9 @@
 "exact": true,
 "since": "2026-11-10"
 },
-"VIJIFIN|ESM|None|II": {
-"exact": false,
-"since": "2026-11-08"
+"VIJIFIN|ESM|None|I": {
+"exact": true,
+"since": "2026-11-23"
 },
 "VISAKAIND|ESM|None|I": {
 "exact": false,
@@ -1907,9 +1831,9 @@
 "exact": false,
 "since": "2026-11-04"
 },
-"ZEAL|ASM|short|I": {
+"ZEAL|ESM|None|I": {
 "exact": true,
-"since": "2026-11-20"
+"since": "2026-11-23"
 },
 "ZEEMEDIA|ESM|None|I": {
 "exact": false,

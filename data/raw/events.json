@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-22T16:36:34Z",
+"fetchedAt": "2026-11-23T09:29:22Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-22T16:36:28Z",
+"fetchedAt": "2026-11-23T09:29:17Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-22T16:36:29Z",
+"fetchedAt": "2026-11-23T09:29:18Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-22T16:36:34Z",
-"count": 160,
+"fetchedAt": "2026-11-23T09:29:22Z",
+"count": 124,
 "error": null
 }
 },
@@ -2216,6 +2216,14 @@
 },
 "events": [
 {
+"symbol": "662GS2051",
+"date": "2026-11-27",
+"kind": "action",
+"title": "Interest payment",
+"detail": "Interest Payment",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=662GS2051"
+},
+{
 "symbol": "815GS2026",
 "date": "2026-11-23",
 "kind": "action",
@@ -2231,15 +2239,6 @@
 "title": "Regulatory/tax order",
 "detail": "Aarti Surfactants Limited has informed the Exchange about Action(s) initiated / orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/AARTISURF_21112026173347_AARTISURF.pdf"
-},
-{
-"symbol": "ABDL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "Update on Arbitration Proceedings.",
-"link": "https://nsearchives.nseindia.in/corporate/ABDINDIA_19112026183541_SE_Intimation_-_Update_on_CSD-_Appeal_sd.pdf"
 },
 {
 "symbol": "ACCELYA",
@@ -2260,15 +2259,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/SNAPDEAL_20112026210152_AceVector_Limited_Income_Tax_Reg_30_Outcome_Signed.pdf"
 },
 {
-"symbol": "AGARWALEYE",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Merger",
-"detail": "Allotment of 1,51,90,373 Equity Shares of Dr. Agarwal s Health Care Limited pursuant to the Scheme of Amalgamation between Dr. Agarwal s Eye Hospital Limited and Dr. Agarwal s Health Care Limited and their respective shareholders and credit",
-"link": "https://nsearchives.nseindia.in/corporate/DRAGARWALS_19112026193810_AHCL_Allotment_19112026_sd.pdf"
-},
-{
 "symbol": "ALUFLUOR",
 "date": "2026-11-20",
 "kind": "action",
@@ -2284,23 +2274,6 @@
 "title": "Insolvency (CIRP)",
 "detail": "Ansal Properties & Infrastructure Limited has informed the Exchange regarding Hon'ble NCLT order dated 19th November 2026",
 "link": "https://nsearchives.nseindia.in/corporate/ANSALAPI_21112026154705_Intimation.pdf"
-},
-{
-"symbol": "ANTGRAPHIC",
-"date": "2026-11-19",
-"kind": "meeting",
-"title": "Results",
-"detail": "Antarctica Limited has informed the Exchange about Board Meeting to be held on 19-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_1650_20261112_214455435_WEB.html"
-},
-{
-"symbol": "ANTGRAPHIC",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Antarctica Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/ANTGRAPHIC_ROID_105057_KMP_Doc.zip"
 },
 {
 "symbol": "ANUHPHR",
@@ -2319,6 +2292,15 @@
 "title": "Merger",
 "detail": "A-One Steels India Limited has informed the Exchange about the NCLT order approving the Scheme of Amalgamation",
 "link": "https://nsearchives.nseindia.in/corporate/AONESTEELS_21112026122938_SE_Intimations_Signed.pdf"
+},
+{
+"symbol": "APLAPOLLO",
+"date": "2026-11-23",
+"kind": "news",
+"level": "watch",
+"title": "Open offer",
+"detail": "Kotak Mahindra Capital Company Limited has Submitted to the Exchange a copy of public announcement for the attention of the public shareholders of APL APOLLO TUBES LIMITED under Regulation 3(1) and Regulation 4 read with Regulations 13, 14 ",
+"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_23112026125413_APL.zip"
 },
 {
 "symbol": "ARHAM",
@@ -2366,15 +2348,6 @@
 },
 {
 "symbol": "ASTRON",
-"date": "2026-11-19",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
-"link": "https://nsearchives.nseindia.in/corporate/ASTRON_19112026164339_Letter-_E_Voting_Commencement_7th_meeting_signed.pdf"
-},
-{
-"symbol": "ASTRON",
 "date": "2026-11-21",
 "kind": "news",
 "level": "alert",
@@ -2383,31 +2356,13 @@
 "link": "https://nsearchives.nseindia.in/corporate/ASTRON_21112026113221_Letter-_Extension_Order.pdf"
 },
 {
-"symbol": "ATGL",
-"date": "2026-11-19",
+"symbol": "BAIDFIN",
+"date": "2026-11-23",
 "kind": "news",
 "level": "watch",
-"title": "Credit rating update",
-"detail": "Adani Total Gas Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/ATGL2024_19112026192641_ATGL_SE_Crisil_Credit_Rating_19112026.pdf"
-},
-{
-"symbol": "ATUL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Atul Limited has informed the Exchange about Action(s) initiated or orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/ATUL1_19112026163819_Intimation.pdf"
-},
-{
-"symbol": "BANKBARODA",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Bank Of Baroda has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/BANKBARODA_19112026191020_SERATING.pdf"
+"title": "Director/KMP resigned",
+"detail": "Baid Finserv Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/BAIDFIN_ROID_105144_KMP_Doc.zip"
 },
 {
 "symbol": "BANSWRAS",
@@ -2436,29 +2391,12 @@
 "link": "https://nsearchives.nseindia.in/corporate/BELRISE_21112026155839_BELRISE_Intimation_of_Customs_Order-in-Appeal_21112026.pdf"
 },
 {
-"symbol": "BETA",
-"date": "2026-11-19",
-"kind": "meeting",
-"title": "Board meeting",
-"detail": "BETA DRUGS LIMITED has informed the Exchange about Board Meeting to be held on 19-Nov-2026 to consider Other business.",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_15527_20261116_090108010_WEB.html"
-},
-{
 "symbol": "BFINVEST",
 "date": "2026-11-20",
 "kind": "action",
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Rs 20 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=BFINVEST"
-},
-{
-"symbol": "BIRLAMONEY",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Aditya Birla Money Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/BIRLAMONEY_19112026155238_Regulation_30_Credit_Rating_19112026_Ind_Ra_Sgd.pdf"
 },
 {
 "symbol": "BIRLAMONEY",
@@ -2470,6 +2408,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/BIRLAMONEY_20112026180032_Regulation_30_CRISIL_Credit_Rating_20112026_Sgd.pdf"
 },
 {
+"symbol": "BONLON",
+"date": "2026-11-25",
+"kind": "action",
+"title": "Rights",
+"detail": "Rights 1:1 @ Premium Rs 20/-",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=BONLON"
+},
+{
 "symbol": "BOSCH-HCIL",
 "date": "2026-11-20",
 "kind": "news",
@@ -2479,39 +2425,12 @@
 "link": "https://nsearchives.nseindia.in/corporate/JCHAC_20112026143903_20261120Penalty.pdf"
 },
 {
-"symbol": "BRITANNIA",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Britannia Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/BRITANNIA_ROID_105050_KMP_Doc.zip"
-},
-{
 "symbol": "BRNL",
 "date": "2026-11-28",
 "kind": "meeting",
 "title": "Results",
 "detail": "BRNL : 28-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 14, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Company ",
 "link": "https://nsearchives.nseindia.in/corporate/BRNL_13112026204656_Postponement_of_meeting-Signed.pdf"
-},
-{
-"symbol": "BSHSL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Bombay Super Hybrid Seeds Limited has informed the Exchange about Credit Rating- Others as Intimation of Withdrawal of Credit Rating by CARE",
-"link": "https://nsearchives.nseindia.in/corporate/BSHSL_19112026192624_BSHSL19112026_.pdf"
-},
-{
-"symbol": "BURNPUR",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Material issue",
-"detail": "Burnpur Cement Limited has informed regarding Disclosure of material issue",
-"link": "https://nsearchives.nseindia.in/corporate/BURNPURCEMENT_19112026161729_INTIMATION_UNDER_REG_30.pdf"
 },
 {
 "symbol": "CANFINHOME",
@@ -2592,33 +2511,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/DBOL_ROID_105106_KMP_Doc.zip"
 },
 {
-"symbol": "DECCANCE",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Deccan Cements Limited has informed the Exchange about Credit Rating- New",
-"link": "https://nsearchives.nseindia.in/corporate/DECCANCE_19112026183517_CreditRating.pdf"
-},
-{
-"symbol": "DIACABS",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Diamond Power Infrastructure Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/DIACABS_19112026224823_RatingDicabs.pdf"
-},
-{
-"symbol": "DSKULKARNI",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "D S Kulkarni Developers Limited has informed the Exchange about fine imposed by Stock Exchanges",
-"link": "https://nsearchives.nseindia.in/corporate/DSKULKARNI_19112026182328_DSK_Intimation.pdf"
-},
-{
 "symbol": "EMBDL",
 "date": "2026-11-21",
 "kind": "meeting",
@@ -2688,14 +2580,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/GAYAHWS_ROID_105117_KMP_Doc.zip"
 },
 {
-"symbol": "GENSOL",
-"date": "2026-11-19",
-"kind": "result",
-"title": "Results out",
-"detail": "Gensol Engineering Limited has informed the Exchange about reasons for Delayed/Non-submission of Financial Results",
-"link": "https://nsearchives.nseindia.in/corporate/GENSOLRP_19112026130749_NSE_Reply_for_12112026_Regulation_33.pdf"
-},
-{
 "symbol": "GENUSPOWER",
 "date": "2026-11-20",
 "kind": "news",
@@ -2714,6 +2598,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/GLOBAL_20112026150020_GELLetterofoffer20112026.pdf"
 },
 {
+"symbol": "GLOBAL",
+"date": "2026-11-23",
+"kind": "news",
+"level": "watch",
+"title": "Buyback",
+"detail": "Global Education Limited has given Intimation regarding opening of the Buy-back Offer of Equity Shares of Global Education Limited through the Tender Offer route with effect from November 23, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/GLOBAL_23112026122738_Intimation_of_Buy_Back.pdf"
+},
+{
 "symbol": "GLOBE",
 "date": "2026-11-21",
 "kind": "news",
@@ -2721,15 +2614,6 @@
 "title": "Demerger",
 "detail": "GLOBE ENTERPRISES (INDIA) LIMITED has informed the Exchange about Order of the Hon ble National Company Law Tribunal,",
 "link": "https://nsearchives.nseindia.in/corporate/GLOBE_21112026150201_IntimationunderReg30NCLTorderofdemergerSigned.pdf"
-},
-{
-"symbol": "GODIGIT",
-"date": "2026-11-19",
-"kind": "news",
-"level": "alert",
-"title": "Licence suspended",
-"detail": "Go Digit General Insurance Limited has informed the Exchange about regarding grant of registration as IFSC Insurance Office (IIO) in branch form",
-"link": "https://nsearchives.nseindia.in/corporate/GODIGITGI_19112026160841_Intimation_Reg_30_Gift_City.pdf"
 },
 {
 "symbol": "GREAVESCOT",
@@ -2809,51 +2693,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_21112026164008_Intimationtostockexchanges.pdf"
 },
 {
-"symbol": "HEXATRADEX",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Auditor change",
-"detail": "Hexa Tradex Limited has informed the Exchange regarding Change in Auditors of the company.",
-"link": "https://nsearchives.nseindia.in/corporate/HEXATRADEX_19112026174530_ChangeinmanagementSE.pdf"
-},
-{
-"symbol": "HINDWAREAP",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Hindware Home Innovation Limited has informed the Exchange about receipt of Demand Order",
-"link": "https://nsearchives.nseindia.in/corporate/SHIL_19112026164155_HHIL_SE_DemandOrder.pdf"
-},
-{
-"symbol": "ICICIBANK",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "ICICI Bank Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/ICICI2022_19112026172914_NSEBSE19112026.pdf"
-},
-{
-"symbol": "ICICILIFE",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "ICICI Life Insurance Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/ICICIPRULI_19112026155450_Disclosure_under_Regulation_30_and_51_Credit_Rating_CRISIL.pdf"
-},
-{
-"symbol": "ICIL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Indo Count Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/ICIL_ROID_105026_KMP_Doc.zip"
-},
-{
 "symbol": "ICIL",
 "date": "2026-11-20",
 "kind": "news",
@@ -2872,24 +2711,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/IGLSPIRITS_20112026175707_Credit_Rating_Upload.pdf"
 },
 {
-"symbol": "IIFL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "IIFL Finance Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/IIFL_19112026125309_SEInti_ICRA.pdf"
-},
-{
-"symbol": "IKS",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Merger",
-"detail": "Inventurus Knowledge Solutions Limited has informed the Exchange about Merger of Turbo Health Holdings, LLC (step-down wholly owned subsidiary) with Inventurus Knowledge Solutions, Inc. (wholly owned subsidiary).",
-"link": "https://nsearchives.nseindia.in/corporate/IKS2006_19112026232418_MergerSEDisclosure_Nov2026_FINALSEUpload.pdf"
-},
-{
 "symbol": "IKS",
 "date": "2026-11-20",
 "kind": "news",
@@ -2899,29 +2720,12 @@
 "link": "https://nsearchives.nseindia.in/corporate/IKS2006_20112026145237_MergerCompletionSEDisclosure_20Nov2026_Final.pdf"
 },
 {
-"symbol": "INDIACEM",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "The India Cements Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
-"link": "https://nsearchives.nseindia.in/corporate/INDIACEM_19112026185843_LettertoStockExchangesPendinglitigation19112026sd.pdf"
-},
-{
 "symbol": "INDIANB",
 "date": "2026-11-20",
 "kind": "meeting",
 "title": "Fund raising",
 "detail": "Indian Bank has informed the Exchange about Board Meeting to be held on 20-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2540_20261116_181643473_WEB.html"
-},
-{
-"symbol": "INGERRAND",
-"date": "2026-11-19",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 20 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=INGERRAND"
 },
 {
 "symbol": "INTERARCH",
@@ -2939,15 +2743,6 @@
 "title": "Split",
 "detail": "Face Value Split (Sub-Division) - From Rs 10/- Per Share To Rs 2/- Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=INTERARCH"
-},
-{
-"symbol": "IRB",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "IRB Infrastructure Developers Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/IRB_19112026130900_IRBIDL-Credit_Rating_-_CRISIL.pdf"
 },
 {
 "symbol": "JAMNAAUTO",
@@ -2985,15 +2780,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/JSWCL_20112026192216_SEIntimation20112026upload.pdf"
 },
 {
-"symbol": "JUBLINGREA",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Jubilant Ingrevia Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/JUBLINGREA_ROID_105030_KMP_Doc.zip"
-},
-{
 "symbol": "KANORICHEM",
 "date": "2026-11-20",
 "kind": "news",
@@ -3021,15 +2807,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/KNRCON_20112026151652_IntimationCR.pdf"
 },
 {
-"symbol": "KOKUYOCMLN",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Announcement under Regulation 30 of SEBI (LODR) Regulations, 2015",
-"link": "https://nsearchives.nseindia.in/corporate/RAVIDAMLE_19112026112257_Disclosure_under_regulation_30_-_Jammu_case.pdf"
-},
-{
 "symbol": "LATTEYS",
 "date": "2026-12-05",
 "kind": "meeting",
@@ -3052,6 +2829,15 @@
 "title": "Results",
 "detail": "Lexus Granito (India) Limited has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to consider and approve the Quarterly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_15427_20261119_164132617_WEB.html"
+},
+{
+"symbol": "LOTUSEYE",
+"date": "2026-11-23",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Lotus Eye Hospital and Institute Limited has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI",
+"link": "https://nsearchives.nseindia.in/corporate/team_jfutak_23112026101450_Dis3.pdf"
 },
 {
 "symbol": "MAHEPC",
@@ -3079,64 +2865,12 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=MEDIASSIST"
 },
 {
-"symbol": "MGEL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Stake/pledge disclosure",
-"detail": "Vipin Prakash Mangal has Submitted to the Exchange a copy of Disclosure under Regulation 31(1) and 31 (2) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
-"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_19112026133636_Disclosure2.pdf"
-},
-{
 "symbol": "MKJEWELS",
 "date": "2026-11-24",
 "kind": "meeting",
 "title": "Results",
 "detail": "M. K. Sons Fine Jewels Ltd has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_28582_20261120_000035315_WEB.html"
-},
-{
-"symbol": "MOTHERSON",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Samvardhana Motherson International Limited has informed the Exchange about update on Credit Rating.",
-"link": "https://nsearchives.nseindia.in/corporate/MOTHERSON_19112026194831_Disclosure_CRISIL.pdf"
-},
-{
-"symbol": "MUTHOOTMF",
-"date": "2026-11-19",
-"kind": "meeting",
-"title": "Results",
-"detail": "MUTHOOT MICROFIN LIMITED has informed the Exchange about Board Meeting to be held on 19-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Half Yearly ended September 2026 .",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22265_20261113_183424252_WEB.html"
-},
-{
-"symbol": "NATCOPHARM",
-"date": "2026-11-19",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Rs 1.25 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=NATCOPHARM"
-},
-{
-"symbol": "NEOGEN",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Neogen Chemicals Limited has informed the Exchange about Disclosure under Regulation 30 and 51(2) read with Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
-"link": "https://nsearchives.nseindia.in/corporate/NEOGEN_19112026133515_GSTNoticedisclosure18112026_dropped_proceedings_clean.pdf"
-},
-{
-"symbol": "NHPC",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "In continuation to our earlier letter dated 14.08.2023 and in compliance to Reg 30 of SEBI LODR, it is to inform that settlement agreement has been entered with M/s Patel - L&T Consortium (PLNT) and settlement amount has been released. The ",
-"link": "https://nsearchives.nseindia.in/corporate/NHPC_19112026173028_STX_Letter_Parbati-III_Settlement.pdf"
 },
 {
 "symbol": "NIBL",
@@ -3156,30 +2890,12 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=OIL"
 },
 {
-"symbol": "ONELIFECAP",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Onelife Capital Advisors Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/ONELIFECAP_ROID_105059_KMP_Doc.zip"
-},
-{
 "symbol": "ORTINGLOBE",
 "date": "2026-11-28",
 "kind": "meeting",
 "title": "Fund raising",
 "detail": "Ortin Global Ltd has informed the Exchange about Board Meeting to be held on 28-Nov-2026 to consider and approve Fund raising/Increase in authorised capital.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19310_20261120_230257475_WEB.html"
-},
-{
-"symbol": "OSIAHYPER",
-"date": "2026-11-19",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Prior Intimation of 9th COC Meeting of OSIA Hyper Retail Limited (in CIRP) Scheduled to be held on 20th November, 2026 at 3:00 PM",
-"link": "https://nsearchives.nseindia.in/corporate/OSIAHYPER_19112026203152_Intimation_of_9th_CoC_Meeting.pdf"
 },
 {
 "symbol": "OSIAHYPER",
@@ -3200,22 +2916,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/PACE_20112026165647_Intimation_of_Credit_Rating_.pdf"
 },
 {
-"symbol": "PAISALO",
-"date": "2026-11-19",
-"kind": "meeting",
-"title": "Board meeting",
-"detail": "Paisalo Digital Limited has informed the Exchange about Board Meeting to be held on 19-Nov-2026 to consider Other business.",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_5294_20261116_141239887_WEB.html"
-},
-{
-"symbol": "PARSVNATH",
-"date": "2026-11-19",
-"kind": "result",
-"title": "Results out",
-"detail": "Parsvnath Developers Limited has informed the Exchange about reasons for Delayed/Non-submission of Financial Results",
-"link": "https://nsearchives.nseindia.in/corporate/PARSVNATH_19112026162940_Delay_disclosure_financial_results.pdf"
-},
-{
 "symbol": "PASHUPATI",
 "date": "2026-11-23",
 "kind": "action",
@@ -3230,15 +2930,6 @@
 "title": "Dividend",
 "detail": "Patanjali Foods Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Dividend.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
-},
-{
-"symbol": "PNB",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Punjab National Bank has informed the Exchange about Credit Rating- Revision",
-"link": "https://nsearchives.nseindia.in/corporate/pnb2_19112026200419_Intimation_Rating_Moody_19112026_DS.pdf"
 },
 {
 "symbol": "POLYPLEX",
@@ -3273,15 +2964,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/RBDENIMS_27102026182444_Intimation_of_Board_Meeting.pdf"
 },
 {
-"symbol": "RSL",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Stake/pledge disclosure",
-"detail": "Jayesh Natvarlal Pithva has Submitted to the Exchange a copy of Disclosure under Regulation 29 (2) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
-"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_19112026123614_Jayesh.PDF"
-},
-{
 "symbol": "SANDESH",
 "date": "2026-11-21",
 "kind": "news",
@@ -3306,15 +2988,6 @@
 "title": "Fund raising",
 "detail": "SATIN CREDITCARE NETWORK LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13014_20261119_181827001_WEB.html"
-},
-{
-"symbol": "SCHNEIDER",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Schneider Electric Infrastructure Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/SCHNEIDER_19112026173556_IntimationReg_30GST_MatterNov192026.pdf"
 },
 {
 "symbol": "SCHNEIDER",
@@ -3343,12 +3016,28 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13961_20261119_100834702_WEB.html"
 },
 {
+"symbol": "SETCO",
+"date": "2026-11-27",
+"kind": "meeting",
+"title": "Results",
+"detail": "SETCO : 27-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 24, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Company",
+"link": "https://nsearchives.nseindia.in/corporate/SETCO_23112026125212_PostponeBM27112026.pdf"
+},
+{
 "symbol": "SFCTECH",
 "date": "2026-11-23",
 "kind": "meeting",
 "title": "Results",
 "detail": "SFC ENVIRNMENTAL TECHNOLOGIES LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24939_20261118_164247745_WEB.html"
+},
+{
+"symbol": "SGMART",
+"date": "2026-11-26",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "SG Mart Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26114_20261123_095103900_WEB.html"
 },
 {
 "symbol": "SHAREINDIA",
@@ -3367,6 +3056,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "Shrenik Limited has informed the Exchange about Prior Intimation of the 4th (Fourth) Meeting of the Committee of Creditors (CoC) of Shrenik Limited (In CIRP).",
 "link": "https://nsearchives.nseindia.in/corporate/SHRENIK_21112026184215_4th_COC_Intimation-signed.pdf"
+},
+{
+"symbol": "SIMBHALS",
+"date": "2026-11-23",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Extension of last date for submission of Resolution Plan.",
+"link": "https://nsearchives.nseindia.in/corporate/SIMBHALS_23112026141436_CIRP_Updates_-_Extension_of_Last_day_for_resolution_plan.pdf"
 },
 {
 "symbol": "SIMBHALS",
@@ -3402,6 +3100,14 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=SMLMAH"
 },
 {
+"symbol": "SPAL",
+"date": "2026-12-10",
+"kind": "action",
+"title": "Split",
+"detail": "Face Value Split (Sub-Division) - From Rs 10/- Per Share To Rs 2/- Per Share",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=SPAL"
+},
+{
 "symbol": "SRF",
 "date": "2026-11-20",
 "kind": "news",
@@ -3417,15 +3123,6 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.45 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=STEELCAS"
-},
-{
-"symbol": "SUKHJITS",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Sukhjit Starch & Chemicals Limited has informed the Exchange about the receipt of the order of The Hon'ble Income Tax Appleate Tribumal (ITAT), substantially reducing thedemand for AY 2024-25 from Rs. 3.75 crores to Rs. 67 lacs (both exclud",
-"link": "https://nsearchives.nseindia.in/corporate/SUKHJIT1944_19112026132432_DISCLOSURE_UNDER_REG_30_LODR_2015.pdf"
 },
 {
 "symbol": "SUKHJITS",
@@ -3527,14 +3224,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=VENUSPIPES"
 },
 {
-"symbol": "VGCL",
-"date": "2026-11-19",
-"kind": "action",
-"title": "Ex-dividend",
-"detail": "Interim Dividend - Re 1 Per Share",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=VGCL"
-},
-{
 "symbol": "VGL",
 "date": "2026-11-27",
 "kind": "action",
@@ -3558,15 +3247,6 @@
 "title": "Fund raising",
 "detail": "VIVIANA POWER TECH LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20783_20261118_154013320_WEB.html"
-},
-{
-"symbol": "VMSTMT",
-"date": "2026-11-19",
-"kind": "news",
-"level": "watch",
-"title": "Merger",
-"detail": "VMS TMT Limited has informed the Exchange about Amalgamation/Merger Intimation of receipt of No Objection letters from BSE Limited and National Stock Exchange of India Limited in relation to proposed scheme of Amalgamation of Aditya Ultra S",
-"link": "https://nsearchives.nseindia.in/corporate/VMSTMTLTD_19112026160805_Intimation_under_Regulation_30__LODR_-Scheme_of_Arrangement.pdf"
 },
 {
 "symbol": "VRAJ",
