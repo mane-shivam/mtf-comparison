@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T16:32:51Z",
+"fetchedAt": "2026-11-24T21:28:40Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T16:32:46Z",
+"fetchedAt": "2026-11-24T21:28:34Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T16:32:47Z",
+"fetchedAt": "2026-11-24T21:28:35Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T16:32:51Z",
-"count": 125,
+"fetchedAt": "2026-11-24T21:28:40Z",
+"count": 103,
 "error": null
 }
 },
@@ -2188,15 +2188,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=815GS2026"
 },
 {
-"symbol": "AARTISURF",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Aarti Surfactants Limited has informed the Exchange about Action(s) initiated / orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/AARTISURF_21112026173347_AARTISURF.pdf"
-},
-{
 "symbol": "ADANIPOWER",
 "date": "2026-11-24",
 "kind": "news",
@@ -2204,24 +2195,6 @@
 "title": "Credit rating update",
 "detail": "Adani Power Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/ADANIPOWER_24112026190235_APLCreditRatingenhancementCRISIL24112026.pdf"
-},
-{
-"symbol": "ANSALAPI",
-"date": "2026-11-21",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Ansal Properties & Infrastructure Limited has informed the Exchange regarding Hon'ble NCLT order dated 19th November 2026",
-"link": "https://nsearchives.nseindia.in/corporate/ANSALAPI_21112026154705_Intimation.pdf"
-},
-{
-"symbol": "AONESTEELS",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Merger",
-"detail": "A-One Steels India Limited has informed the Exchange about the NCLT order approving the Scheme of Amalgamation",
-"link": "https://nsearchives.nseindia.in/corporate/AONESTEELS_21112026122938_SE_Intimations_Signed.pdf"
 },
 {
 "symbol": "APLAPOLLO",
@@ -2239,24 +2212,6 @@
 "title": "Results out",
 "detail": "Arshiya Limited has submitted to the Exchange, the financial results for the period ended March 31, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/ARSHIYA_23112026164019_11.pdf"
-},
-{
-"symbol": "ASHIANA",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Ashiana Housing Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/ASHIANA_ROID_105124_KMP_Doc.zip"
-},
-{
-"symbol": "ASTRON",
-"date": "2026-11-21",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
-"link": "https://nsearchives.nseindia.in/corporate/ASTRON_21112026113221_Letter-_Extension_Order.pdf"
 },
 {
 "symbol": "ASTRON",
@@ -2286,15 +2241,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/BAIDFIN_ROID_105144_KMP_Doc.zip"
 },
 {
-"symbol": "BANSWRAS",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Banswara Syntex Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/BANSWRAS_21112026174818_Reg_30_Imposition_of_Fines_and_Penalties_under_Reg_6.pdf"
-},
-{
 "symbol": "BBOX",
 "date": "2026-11-23",
 "kind": "news",
@@ -2318,15 +2264,6 @@
 "title": "Results out",
 "detail": "Bombay Coated and Special Steels Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/BCSSL_23112026191706_BoardMeetingOutcome.pdf"
-},
-{
-"symbol": "BELRISE",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Belrise Industries Limited has informed the Exchange that the Company is in receipt of Order-in-Appeal passed by the Commissioner of Customs (Appeals), Mumbai Zone-III",
-"link": "https://nsearchives.nseindia.in/corporate/BELRISE_21112026155839_BELRISE_Intimation_of_Customs_Order-in-Appeal_21112026.pdf"
 },
 {
 "symbol": "BELRISE",
@@ -2441,15 +2378,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/CORDELIA_24112026210124_Conclusion_of_GST_Official_Visit.pdf"
 },
 {
-"symbol": "CROMPTON",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Crompton Greaves Consumer Electricals Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/Crompton123_21112026160804_LODR-ITAT-Order_AY2020-21.pdf"
-},
-{
 "symbol": "DALBHARAT",
 "date": "2026-11-23",
 "kind": "meeting",
@@ -2493,29 +2421,12 @@
 "link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_24112026195853_Intimationof10thCoCMeetingunderReg30ofLODR24112026.pdf"
 },
 {
-"symbol": "EMBDL",
-"date": "2026-11-21",
-"kind": "meeting",
-"title": "Fund raising",
-"detail": "Embassy Developments Limited has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2560_20261118_213944868_WEB.html"
-},
-{
 "symbol": "ENRIN",
 "date": "2026-11-25",
 "kind": "meeting",
 "title": "Results \u00b7 Dividend",
 "detail": "SIEMENS ENERGY INDIA LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to consider and approve the Yearly Audited Financial results of the Company for the period ended September 2026 and Dividend.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_25774_20261119_161357026_WEB.html"
-},
-{
-"symbol": "ETHOSLTD",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Ethos Limited has informed the Exchange about Action(s) taken or orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/ETHOS_21112026121656_Ethos.pdf"
 },
 {
 "symbol": "FUSION",
@@ -2535,15 +2446,6 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=FUSIONCX"
 },
 {
-"symbol": "GAYAHWS",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "Gayatri Highways Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/GAYAHWS_ROID_105117_KMP_Doc.zip"
-},
-{
 "symbol": "GLOBAL",
 "date": "2026-11-23",
 "kind": "news",
@@ -2551,24 +2453,6 @@
 "title": "Buyback",
 "detail": "Global Education Limited has given Intimation regarding opening of the Buy-back Offer of Equity Shares of Global Education Limited through the Tender Offer route with effect from November 23, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/GLOBAL_23112026122738_Intimation_of_Buy_Back.pdf"
-},
-{
-"symbol": "GLOBE",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Demerger",
-"detail": "GLOBE ENTERPRISES (INDIA) LIMITED has informed the Exchange about Order of the Hon ble National Company Law Tribunal,",
-"link": "https://nsearchives.nseindia.in/corporate/GLOBE_21112026150201_IntimationunderReg30NCLTorderofdemergerSigned.pdf"
-},
-{
-"symbol": "GREAVESCOT",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "Greaves Cotton Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
-"link": "https://nsearchives.nseindia.in/corporate/GREAVESCOT_21112026195818_GCL_Update_on_litigation_DGSS_sd.pdf"
 },
 {
 "symbol": "GREENPLY",
@@ -2611,15 +2495,6 @@
 "title": "Results",
 "detail": "Heads UP Ventures Limited has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Audited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14408_20261120_135248225_WEB.html"
-},
-{
-"symbol": "HEROMOTOCO",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Litigation",
-"detail": "Pursuant to Regulation 30 of the SEBI Listing Regulations, please refer to disclosure document regarding an update on the Income Tax Matter.",
-"link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_21112026164008_Intimationtostockexchanges.pdf"
 },
 {
 "symbol": "HEROMOTOCO",
@@ -2667,15 +2542,6 @@
 },
 {
 "symbol": "INTERARCH",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Regulatory/tax order",
-"detail": "Interarch Building Solutions Limited has informed the Exchange about Action(s) initiated or orders passed",
-"link": "https://nsearchives.nseindia.in/corporate/INTERARCH1983_21112026222926_Intimation_SCN_21112026.pdf"
-},
-{
-"symbol": "INTERARCH",
 "date": "2026-11-30",
 "kind": "action",
 "title": "Split",
@@ -2710,15 +2576,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/JSWCL_23112026182053_ReplyUpload.pdf"
 },
 {
-"symbol": "KANORICHEM",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Credit rating update",
-"detail": "Kanoria Chemicals & Industries Limited has informed the Exchange about Credit Rating",
-"link": "https://nsearchives.nseindia.in/corporate/KANORICHEM_21112026144725_Letter.pdf"
-},
-{
 "symbol": "KANSAINER",
 "date": "2026-11-24",
 "kind": "news",
@@ -2751,14 +2608,6 @@
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.in/corporate/LATTEYS_29102026161027_BMintimation_LATTEYS_05082026121807_Intimation.pdf"
-},
-{
-"symbol": "LAXMICOT",
-"date": "2026-11-21",
-"kind": "meeting",
-"title": "Board meeting",
-"detail": "LAXMI COTSPIN LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Other business.",
-"link": "https://nsearchives.nseindia.in/corporate/xbrl/PRIOR_INTIMATION_14767_WebXMLFile_20261118_181246773.xml"
 },
 {
 "symbol": "LEXUS",
@@ -2880,15 +2729,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19310_20261120_230257475_WEB.html"
 },
 {
-"symbol": "OSIAHYPER",
-"date": "2026-11-21",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Post facto Intimation that Osia Hyper Retail Limited has convened 9th CoC meeting on 20th November 2026, 3:00 p.m. as per the provisions of the Insolvency and Bankruptcy Code, 2016",
-"link": "https://nsearchives.nseindia.in/corporate/OSIAHYPER_21112026134856_Post_Facto_Intimation_of_9th_CoC.pdf"
-},
-{
 "symbol": "OSWALPUMPS",
 "date": "2026-11-23",
 "kind": "news",
@@ -2965,15 +2805,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19047_20261124_161415168_WEB.html"
 },
 {
-"symbol": "SANDESH",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Merger",
-"detail": "The Sandesh Limited has informed the Exchange about Amalgamation/Merger",
-"link": "https://nsearchives.nseindia.in/corporate/SANDESH_21112026190924_Letter_to_SE_21-11-2026.pdf"
-},
-{
 "symbol": "SATIN",
 "date": "2026-11-25",
 "kind": "meeting",
@@ -2994,8 +2825,8 @@
 "date": "2026-11-27",
 "kind": "meeting",
 "title": "Results",
-"detail": "SETCO : 27-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 24, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Company",
-"link": "https://nsearchives.nseindia.in/corporate/SETCO_23112026125212_PostponeBM27112026.pdf"
+"detail": "SETCO AUTOMOTIVE LIMITED has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13961_20261125_005945259_WEB.html"
 },
 {
 "symbol": "SFCTECH",
@@ -3022,15 +2853,6 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26114_20261123_095103900_WEB.html"
 },
 {
-"symbol": "SHRENIK",
-"date": "2026-11-21",
-"kind": "news",
-"level": "alert",
-"title": "Insolvency (CIRP)",
-"detail": "Shrenik Limited has informed the Exchange about Prior Intimation of the 4th (Fourth) Meeting of the Committee of Creditors (CoC) of Shrenik Limited (In CIRP).",
-"link": "https://nsearchives.nseindia.in/corporate/SHRENIK_21112026184215_4th_COC_Intimation-signed.pdf"
-},
-{
 "symbol": "SIMBHALS",
 "date": "2026-11-23",
 "kind": "news",
@@ -3046,15 +2868,6 @@
 "title": "Results",
 "detail": "SIMBHAOLI SUGARS LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13570_20261119_150850681_WEB.html"
-},
-{
-"symbol": "SJS",
-"date": "2026-11-21",
-"kind": "news",
-"level": "watch",
-"title": "Director/KMP resigned",
-"detail": "S.J.S. Enterprises Limited has informed the Exchange about Resignation of Director/KMP/SMP",
-"link": "https://nsearchives.nseindia.in/corporate/SJS_ROID_105129_KMP_Doc.zip"
 },
 {
 "symbol": "SPAL",
@@ -3200,14 +3013,6 @@
 "title": "Insolvency (CIRP)",
 "detail": "Intimation regarding bankruptcy of Mr. Venugopal Dhoot.",
 "link": "https://nsearchives.nseindia.in/corporate/VIDEOIND_24112026213515_VIL_VGD_initmation_S.pdf"
-},
-{
-"symbol": "VIVIANA",
-"date": "2026-11-21",
-"kind": "meeting",
-"title": "Fund raising",
-"detail": "VIVIANA POWER TECH LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
-"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20783_20261118_154013320_WEB.html"
 },
 {
 "symbol": "VPRPL",
