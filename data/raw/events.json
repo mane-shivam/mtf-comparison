@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T06:32:31Z",
+"fetchedAt": "2026-11-24T07:32:48Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T06:32:25Z",
+"fetchedAt": "2026-11-24T07:32:43Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T06:32:26Z",
+"fetchedAt": "2026-11-24T07:32:44Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T06:32:31Z",
-"count": 96,
+"fetchedAt": "2026-11-24T07:32:48Z",
+"count": 97,
 "error": null
 }
 },
@@ -2895,6 +2895,14 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from The State Trading Corporation of India Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On ba",
 "link": "-"
+},
+{
+"symbol": "STEELCITY",
+"date": "2026-11-27",
+"kind": "meeting",
+"title": "Dividend",
+"detail": "STEEL CITY SECURITIES LIMITED has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider Dividend.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14558_20261124_120949713_WEB.html"
 },
 {
 "symbol": "SUKHJITS",
