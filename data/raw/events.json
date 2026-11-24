@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T15:32:40Z",
+"fetchedAt": "2026-11-24T16:32:51Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T15:32:31Z",
+"fetchedAt": "2026-11-24T16:32:46Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T15:32:32Z",
+"fetchedAt": "2026-11-24T16:32:47Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T15:32:40Z",
-"count": 123,
+"fetchedAt": "2026-11-24T16:32:51Z",
+"count": 125,
 "error": null
 }
 },
@@ -2820,6 +2820,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_28582_20261120_000035315_WEB.html"
 },
 {
+"symbol": "MKJEWELS",
+"date": "2026-11-24",
+"kind": "result",
+"title": "Results out",
+"detail": "M. K. Sons Fine Jewels Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/MK123_24112026214754_MK_Results_300926_S.pdf"
+},
+{
 "symbol": "MSUMI",
 "date": "2026-11-24",
 "kind": "news",
@@ -3183,6 +3191,15 @@
 "title": "Split",
 "detail": "Face Value Split (Sub-Division) - From Rs 5/- Per Share To Rs 2/- Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=VGL"
+},
+{
+"symbol": "VIDEOIND",
+"date": "2026-11-24",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Intimation regarding bankruptcy of Mr. Venugopal Dhoot.",
+"link": "https://nsearchives.nseindia.in/corporate/VIDEOIND_24112026213515_VIL_VGD_initmation_S.pdf"
 },
 {
 "symbol": "VIVIANA",
