@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T13:32:46Z",
+"fetchedAt": "2026-11-24T14:32:56Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T13:32:40Z",
+"fetchedAt": "2026-11-24T14:32:49Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T13:32:41Z",
+"fetchedAt": "2026-11-24T14:32:51Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T13:32:46Z",
-"count": 118,
+"fetchedAt": "2026-11-24T14:32:56Z",
+"count": 121,
 "error": null
 }
 },
@@ -2197,6 +2197,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/AARTISURF_21112026173347_AARTISURF.pdf"
 },
 {
+"symbol": "ADANIPOWER",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Adani Power Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ADANIPOWER_24112026190235_APLCreditRatingenhancementCRISIL24112026.pdf"
+},
+{
 "symbol": "ANSALAPI",
 "date": "2026-11-21",
 "kind": "news",
@@ -2455,6 +2464,15 @@
 "title": "Credit rating update",
 "detail": "Avenue Supermarts Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/DMART_24112026153252_CRISLRevisioninCreditRating24112026.pdf"
+},
+{
+"symbol": "DPSCLTD",
+"date": "2026-11-24",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-prior Intimation of the 10th (Tenth) Meeting of the Committee of Creditors (CoC) of India Power Corporation Limited (IPCL)",
+"link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_24112026195853_Intimationof10thCoCMeetingunderReg30ofLODR24112026.pdf"
 },
 {
 "symbol": "EMBDL",
@@ -3107,6 +3125,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/TVVISION_24112026183814_Intimation_of_4th_CoC_Meeting.pdf"
 },
 {
+"symbol": "VAISHALI",
+"date": "2026-11-27",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "Vaishali Pharma Limited has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider and approve Fund raising/Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_15422_20261124_195017809_WEB.html"
+},
+{
 "symbol": "VALECHAENG",
 "date": "2026-11-24",
 "kind": "news",
@@ -3121,8 +3147,8 @@
 "kind": "news",
 "level": "alert",
 "title": "Insolvency (CIRP)",
-"detail": "Intimation regarding bankruptcy of Mr. Venugopal Dhoot.",
-"link": "https://nsearchives.nseindia.in/corporate/VALUEIND_24112026171419_Value_VGD_Intimation_S.pdf"
+"detail": "Pre-facto intimation of the upcoming 67th (Sixty- Seventh) meeting of the Committee of Creditors (CoC).",
+"link": "https://nsearchives.nseindia.in/corporate/VALUEIND_24112026192718_VAL_67th_meeting.pdf"
 },
 {
 "symbol": "VCL",
