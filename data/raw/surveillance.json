@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-23T21:39:35Z",
+"fetchedAt": "2026-11-24T01:32:40Z",
 "sources": {
 "NSE": {
 "status": "ok",
-"count": 463,
-"fetchedAt": "2026-11-23T21:39:35Z",
+"count": 465,
+"fetchedAt": "2026-11-24T01:32:40Z",
 "error": null
 }
 },
@@ -338,6 +338,16 @@
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
 "exact": true,
 "since": "2026-07-15"
+},
+{
+"symbol": "EMPOWER",
+"ex": "NSE",
+"list": "ASM",
+"term": "long",
+"stage": "I",
+"desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
+"since": "2026-11-24",
+"exact": true
 },
 {
 "symbol": "ESDS",
@@ -1340,6 +1350,16 @@
 "since": "2026-11-20"
 },
 {
+"symbol": "ASPIRE",
+"ex": "NSE",
+"list": "ASM",
+"term": "short",
+"stage": "I",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"since": "2026-11-24",
+"exact": true
+},
+{
 "symbol": "BPLPHARMA",
 "ex": "NSE",
 "list": "ASM",
@@ -1440,6 +1460,16 @@
 "since": "2026-11-18"
 },
 {
+"symbol": "HINDADH",
+"ex": "NSE",
+"list": "ASM",
+"term": "short",
+"stage": "I",
+"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
+"since": "2026-11-24",
+"exact": true
+},
+{
 "symbol": "HINDOILEXP",
 "ex": "NSE",
 "list": "ASM",
@@ -1451,16 +1481,6 @@
 },
 {
 "symbol": "INNOVISION",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-11-18"
-},
-{
-"symbol": "JYOTISTRUC",
 "ex": "NSE",
 "list": "ASM",
 "term": "short",
@@ -1518,16 +1538,6 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage II",
 "exact": true,
 "since": "2026-11-05"
-},
-{
-"symbol": "ORCHASP",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-11-18"
 },
 {
 "symbol": "ORIANA",
@@ -1618,26 +1628,6 @@
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
 "exact": true,
 "since": "2026-11-10"
-},
-{
-"symbol": "SOTAC",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": false,
-"since": "2026-11-04"
-},
-{
-"symbol": "SPCENET",
-"ex": "NSE",
-"list": "ASM",
-"term": "short",
-"stage": "I",
-"desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"exact": true,
-"since": "2026-11-18"
 },
 {
 "symbol": "SPECTRAA",
@@ -3100,6 +3090,16 @@
 "since": "2026-11-08"
 },
 {
+"symbol": "DCI",
+"ex": "NSE",
+"list": "ESM",
+"term": null,
+"stage": "I",
+"desc": "Enhanced Surveillance Measure (ESM) - Stage I",
+"since": "2026-11-24",
+"exact": true
+},
+{
 "symbol": "DCMNVL",
 "ex": "NSE",
 "list": "ESM",
@@ -3800,6 +3800,16 @@
 "since": "2026-11-08"
 },
 {
+"symbol": "MVKAGRO",
+"ex": "NSE",
+"list": "ESM",
+"term": null,
+"stage": "I",
+"desc": "Enhanced Surveillance Measure (ESM) - Stage I",
+"since": "2026-11-24",
+"exact": true
+},
+{
 "symbol": "MYSORPETRO",
 "ex": "NSE",
 "list": "ESM",
@@ -4238,6 +4248,16 @@
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
 "exact": true,
 "since": "2026-11-10"
+},
+{
+"symbol": "SOTAC",
+"ex": "NSE",
+"list": "ESM",
+"term": null,
+"stage": "I",
+"desc": "Enhanced Surveillance Measure (ESM) - Stage I",
+"since": "2026-11-24",
+"exact": true
 },
 {
 "symbol": "SPCON",

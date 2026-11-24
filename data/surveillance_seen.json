@@ -211,6 +211,10 @@
 "exact": true,
 "since": "2019-06-06"
 },
+"ASPIRE|ASM|short|I": {
+"exact": true,
+"since": "2026-11-24"
+},
 "ATALREAL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-15"
@@ -467,6 +471,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"DCI|ESM|None|I": {
+"exact": true,
+"since": "2026-11-24"
+},
 "DCMFINSERV|GSM|None|0": {
 "exact": true,
 "since": "2022-11-11"
@@ -542,6 +550,10 @@
 "EMAMIREAL|GSM|None|0": {
 "exact": true,
 "since": "2025-10-10"
+},
+"EMPOWER|ASM|long|I": {
+"exact": true,
+"since": "2026-11-24"
 },
 "EMUDHRA|ASM|short|I": {
 "exact": true,
@@ -719,6 +731,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"HINDADH|ASM|short|I": {
+"exact": true,
+"since": "2026-11-24"
+},
 "HINDCON|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -826,10 +842,6 @@
 "JSIPL|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
-},
-"JYOTISTRUC|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
 },
 "KABRAEXTRU|ASM|long|IV": {
 "exact": true,
@@ -1059,6 +1071,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"MVKAGRO|ESM|None|I": {
+"exact": true,
+"since": "2026-11-24"
+},
 "MYSORPETRO|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -1138,10 +1154,6 @@
 "OPTIVALUE|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
-},
-"ORCHASP|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
 },
 "ORIANA|ASM|short|I": {
 "exact": true,
@@ -1507,13 +1519,9 @@
 "exact": true,
 "since": "2026-11-18"
 },
-"SOTAC|ASM|short|I": {
-"exact": false,
-"since": "2026-11-04"
-},
-"SPCENET|ASM|short|I": {
+"SOTAC|ESM|None|I": {
 "exact": true,
-"since": "2026-11-18"
+"since": "2026-11-24"
 },
 "SPCON|ESM|None|I": {
 "exact": false,
