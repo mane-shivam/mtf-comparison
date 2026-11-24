@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T05:32:50Z",
+"fetchedAt": "2026-11-24T06:32:31Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T05:32:44Z",
+"fetchedAt": "2026-11-24T06:32:25Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T05:32:45Z",
+"fetchedAt": "2026-11-24T06:32:26Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T05:32:50Z",
-"count": 95,
+"fetchedAt": "2026-11-24T06:32:31Z",
+"count": 96,
 "error": null
 }
 },
@@ -2495,8 +2495,8 @@
 "date": "2026-11-27",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "Intimation for Board Meeting pursuant to the SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015.",
-"link": "https://nsearchives.nseindia.in/corporate/GUJARATTHEMIS_24112026104416_GTBLBMIntimation24112026.pdf"
+"detail": "Gujarat Themis Bioysn Limited has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24436_20261124_110303934_WEB.html"
 },
 {
 "symbol": "HDBFS",
@@ -2505,6 +2505,15 @@
 "title": "Fund raising",
 "detail": "HDB FINANCIAL SERVICES LTD has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24797_20261118_124821642_WEB.html"
+},
+{
+"symbol": "HDFIRE",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "HD Fire Protect Limited has informed the Exchange about Action(s) initiated",
+"link": "https://nsearchives.nseindia.in/corporate/HDFIRE_24112026114831_Draft_Reg30_Intimation_Search_by_DRI.pdf"
 },
 {
 "symbol": "HEADSUP",
