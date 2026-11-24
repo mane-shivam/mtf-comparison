@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T14:32:56Z",
+"fetchedAt": "2026-11-24T15:32:40Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T14:32:49Z",
+"fetchedAt": "2026-11-24T15:32:31Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T14:32:51Z",
+"fetchedAt": "2026-11-24T15:32:32Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T14:32:56Z",
-"count": 121,
+"fetchedAt": "2026-11-24T15:32:40Z",
+"count": 123,
 "error": null
 }
 },
@@ -2364,6 +2364,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BIRLACORP1_23112026192535_SE_intimation_23112026.pdf"
 },
 {
+"symbol": "BLISSGVS",
+"date": "2026-11-24",
+"kind": "news",
+"level": "alert",
+"title": "Licence suspended",
+"detail": "Bliss GVS Pharma Limited has informed the Exchange about Granting/withdrawal/surrender/cancellation/suspension of key licenses/ regulatory approvals",
+"link": "https://nsearchives.nseindia.in/corporate/BLISSGVS_24112026200258_Intimation_Apporval_of_EUGMP_sd.pdf"
+},
+{
 "symbol": "BONLON",
 "date": "2026-11-25",
 "kind": "action",
@@ -2421,6 +2430,15 @@
 "title": "Credit rating update",
 "detail": "Container Corporation Of India Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/CONCOR_23112026173454_CONCOR_SE_23112026.pdf"
+},
+{
+"symbol": "CORDELIA",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Waterways Leisure Tourism Limited has informed about the conclusion of GST inspection/search.",
+"link": "https://nsearchives.nseindia.in/corporate/CORDELIA_24112026210124_Conclusion_of_GST_Official_Visit.pdf"
 },
 {
 "symbol": "CROMPTON",
