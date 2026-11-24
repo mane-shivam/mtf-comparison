@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T11:23:56Z",
+"fetchedAt": "2026-11-24T12:32:28Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T11:23:50Z",
+"fetchedAt": "2026-11-24T12:32:23Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T11:23:51Z",
+"fetchedAt": "2026-11-24T12:32:24Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T11:23:56Z",
-"count": 108,
+"fetchedAt": "2026-11-24T12:32:28Z",
+"count": 116,
 "error": null
 }
 },
@@ -2371,6 +2371,23 @@
 "link": "https://nsearchives.nseindia.in/corporate/BRNL_13112026204656_Postponement_of_meeting-Signed.pdf"
 },
 {
+"symbol": "BURNPUR",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Burnpur Cement Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.in/corporate/BURNPURCEMENT_24112026171301_Intimation_under_Reg_30-decision_of_NSE.pdf"
+},
+{
+"symbol": "CCCL",
+"date": "2026-11-27",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "Consolidated Construction Consortium Limited has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2662_20261124_172629561_WEB.html"
+},
+{
 "symbol": "CENTURYPLY",
 "date": "2026-11-23",
 "kind": "news",
@@ -2420,6 +2437,15 @@
 "title": "Board meeting",
 "detail": "Davangere Sugar Company Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22819_20261121_182916968_WEB.html"
+},
+{
+"symbol": "DICIND",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "DIC India Limited has informed the Exchange about Action(s) initiated or orders passed regarding Receipt of Final Assessment Order for AY 2023-24 Incorporating Transfer Pricing Adjustment, Demand Notice and Show Cause Notice for Penalty und",
+"link": "https://nsearchives.nseindia.in/corporate/DICIND_24112026165733_Sd_Disclosure_TPO_Order_23112026.pdf"
 },
 {
 "symbol": "DMART",
@@ -2569,6 +2595,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/SHIL_24112026145937_HHIL_SE_CustomsPenalty.pdf"
 },
 {
+"symbol": "IGPL",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "IG Petrochemicals Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/IGPL_24112026165844_IGPLSE24112027.pdf"
+},
+{
 "symbol": "IIFL",
 "date": "2026-11-23",
 "kind": "news",
@@ -2689,6 +2724,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_15427_20261119_164132617_WEB.html"
 },
 {
+"symbol": "LEXUS",
+"date": "2026-11-24",
+"kind": "result",
+"title": "Results out",
+"detail": "Integrated Filing (Financial) for the Quarter and Half Year ended on 30th September, 2026",
+"link": "https://nsearchives.nseindia.in/corporate/LEXUS_24112026172025_Integrated_Filing_Lexus.pdf"
+},
+{
 "symbol": "LOTUSEYE",
 "date": "2026-11-23",
 "kind": "news",
@@ -2747,6 +2790,24 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from Mangalam Worldwide Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Com",
 "link": "-"
+},
+{
+"symbol": "NECCLTD",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "North Eastern Carrying Corporation Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/NECCLTD_24112026173953_CreditRating24112026.pdf"
+},
+{
+"symbol": "NELCO",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "NELCO Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/NELCO_24112026171013_Credit_Rating_SE_intimation.pdf"
 },
 {
 "symbol": "OAL",
@@ -3035,6 +3096,15 @@
 "title": "Regulatory/tax order",
 "detail": "Valecha Engineering Limited has informed the Exchange about Intimation under Regulation 30 of the SEBI (LODR) Regulations, 2015",
 "link": "https://nsearchives.nseindia.in/corporate/VALECHAENG_24112026150621_Intimation_Regulation_30_SEBI.pdf"
+},
+{
+"symbol": "VALUEIND",
+"date": "2026-11-24",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Intimation regarding bankruptcy of Mr. Venugopal Dhoot.",
+"link": "https://nsearchives.nseindia.in/corporate/VALUEIND_24112026171419_Value_VGD_Intimation_S.pdf"
 },
 {
 "symbol": "VCL",
