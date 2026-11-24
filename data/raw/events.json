@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T10:32:56Z",
+"fetchedAt": "2026-11-24T11:23:56Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T10:32:50Z",
+"fetchedAt": "2026-11-24T11:23:50Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T10:32:51Z",
+"fetchedAt": "2026-11-24T11:23:51Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T10:32:56Z",
-"count": 103,
+"fetchedAt": "2026-11-24T11:23:56Z",
+"count": 108,
 "error": null
 }
 },
@@ -2250,6 +2250,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ASTRON_21112026113221_Letter-_Extension_Order.pdf"
 },
 {
+"symbol": "ASTRON",
+"date": "2026-11-24",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.in/corporate/ASTRON_24112026164957_Letter-_8th_meeting_Adjourned.pdf"
+},
+{
 "symbol": "AVROIND",
 "date": "2026-11-23",
 "kind": "news",
@@ -2825,6 +2834,23 @@
 "link": "https://nsearchives.nseindia.in/corporate/ROSSARI_23112026201039_IntimationLetter_Regulation30.pdf"
 },
 {
+"symbol": "RPTECH",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Rashi Peripherals Limited has informed the Exchange that the Company has received communication of order on November 24, 2026, from the office of Commissioner of customs (NS-V), Jawaharlal Nehru Custom House, Nhava Sheva, District Raigad, M",
+"link": "https://nsearchives.nseindia.in/corporate/RASHI2024_24112026162734_Customs_Order_Intimation.pdf"
+},
+{
+"symbol": "RUBFILA",
+"date": "2026-12-01",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "RUBFILA INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 01-Dec-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19047_20261124_161415168_WEB.html"
+},
+{
 "symbol": "SANDESH",
 "date": "2026-11-21",
 "kind": "news",
@@ -2966,6 +2992,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/xbrl/PRIOR_INTIMATION_2018_WebXMLFile_20261121_151043119.xml"
 },
 {
+"symbol": "TEAMLEASE",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "TeamLease - Update on ongoing contest with the Employees Provident Fund Organisation (EPFO)",
+"link": "https://nsearchives.nseindia.in/corporate/TEAMLEASE_24112026162853_TeamLeaseIntimationonDemandbyEPFO.pdf"
+},
+{
 "symbol": "TITAN",
 "date": "2026-11-23",
 "kind": "news",
@@ -3024,6 +3059,15 @@
 "title": "Fund raising",
 "detail": "VIVIANA POWER TECH LIMITED has informed the Exchange about Board Meeting to be held on 21-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20783_20261118_154013320_WEB.html"
+},
+{
+"symbol": "VPRPL",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Vishnu Prakash R Punglia Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/VPRPL_24112026160820_Intimation.pdf"
 },
 {
 "symbol": "VRAJ",
