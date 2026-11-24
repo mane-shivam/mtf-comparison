@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T12:32:28Z",
+"fetchedAt": "2026-11-24T13:32:46Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T12:32:23Z",
+"fetchedAt": "2026-11-24T13:32:40Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T12:32:24Z",
+"fetchedAt": "2026-11-24T13:32:41Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T12:32:28Z",
-"count": 116,
+"fetchedAt": "2026-11-24T13:32:46Z",
+"count": 118,
 "error": null
 }
 },
@@ -2586,6 +2586,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_21112026164008_Intimationtostockexchanges.pdf"
 },
 {
+"symbol": "HEROMOTOCO",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Pursuant to Regulation 30 of the SEBI Listing Regulations, please refer to the disclosure document regarding the update on Trade Registration Certificate matter.",
+"link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_24112026180157_StockExchangeDisclosure.pdf"
+},
+{
 "symbol": "HINDWAREAP",
 "date": "2026-11-24",
 "kind": "news",
@@ -3087,6 +3096,15 @@
 "title": "Regulatory/tax order",
 "detail": "Pursuant to Regulation 30 read with Para A of Part A of Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( SEBI LODR Regulations ), we hereby inform you that the officers of the Goods and Services",
 "link": "https://nsearchives.nseindia.in/corporate/TURTLEMINT_24112026145541_TFS_GST_Notice_Intimation.pdf"
+},
+{
+"symbol": "TVVISION",
+"date": "2026-11-24",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "TV Vision Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.in/corporate/TVVISION_24112026183814_Intimation_of_4th_CoC_Meeting.pdf"
 },
 {
 "symbol": "VALECHAENG",
