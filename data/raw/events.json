@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T09:32:41Z",
+"fetchedAt": "2026-11-24T10:32:56Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T09:32:34Z",
+"fetchedAt": "2026-11-24T10:32:50Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T09:32:35Z",
+"fetchedAt": "2026-11-24T10:32:51Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T09:32:41Z",
-"count": 100,
+"fetchedAt": "2026-11-24T10:32:56Z",
+"count": 103,
 "error": null
 }
 },
@@ -2413,6 +2413,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22819_20261121_182916968_WEB.html"
 },
 {
+"symbol": "DMART",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Avenue Supermarts Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/DMART_24112026153252_CRISLRevisioninCreditRating24112026.pdf"
+},
+{
 "symbol": "EMBDL",
 "date": "2026-11-21",
 "kind": "meeting",
@@ -2619,6 +2628,15 @@
 "title": "Credit rating update",
 "detail": "Kanoria Chemicals & Industries Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/KANORICHEM_21112026144725_Letter.pdf"
+},
+{
+"symbol": "KANSAINER",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 and relevant SEBI Circulars is enclosed herewith.",
+"link": "https://nsearchives.nseindia.in/corporate/KANSAINER_24112026150401_Reg30_Disclosure_24-11-26_signed.pdf"
 },
 {
 "symbol": "KRSNAA",
@@ -2973,6 +2991,15 @@
 "title": "Regulatory/tax order",
 "detail": "Pursuant to Regulation 30 read with Para A of Part A of Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( SEBI LODR Regulations ), we hereby inform you that the officers of the Goods and Services",
 "link": "https://nsearchives.nseindia.in/corporate/TURTLEMINT_24112026145541_TFS_GST_Notice_Intimation.pdf"
+},
+{
+"symbol": "VALECHAENG",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Valecha Engineering Limited has informed the Exchange about Intimation under Regulation 30 of the SEBI (LODR) Regulations, 2015",
+"link": "https://nsearchives.nseindia.in/corporate/VALECHAENG_24112026150621_Intimation_Regulation_30_SEBI.pdf"
 },
 {
 "symbol": "VCL",
