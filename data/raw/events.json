@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T08:32:35Z",
+"fetchedAt": "2026-11-24T09:32:41Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T08:32:30Z",
+"fetchedAt": "2026-11-24T09:32:34Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T08:32:30Z",
+"fetchedAt": "2026-11-24T09:32:35Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T08:32:35Z",
-"count": 98,
+"fetchedAt": "2026-11-24T09:32:41Z",
+"count": 100,
 "error": null
 }
 },
@@ -2542,6 +2542,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_21112026164008_Intimationtostockexchanges.pdf"
 },
 {
+"symbol": "HINDWAREAP",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Hindware Home Innovation Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/SHIL_24112026145937_HHIL_SE_CustomsPenalty.pdf"
+},
+{
 "symbol": "IIFL",
 "date": "2026-11-23",
 "kind": "news",
@@ -2955,6 +2964,15 @@
 "title": "Stake/pledge disclosure",
 "detail": "Sundae Capital Advisors Private Limited has Submitted to the Exchange a copy of Update on the Open Offer given by Marwadi Chandarana Intermediaires Brokers Private Limited (Acquirer) to the shareholders of Trucap Finance Limited (Target Com",
 "link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_23112026174949_Dis2.pdf"
+},
+{
+"symbol": "TURTLEMINT",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Pursuant to Regulation 30 read with Para A of Part A of Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( SEBI LODR Regulations ), we hereby inform you that the officers of the Goods and Services",
+"link": "https://nsearchives.nseindia.in/corporate/TURTLEMINT_24112026145541_TFS_GST_Notice_Intimation.pdf"
 },
 {
 "symbol": "VCL",
