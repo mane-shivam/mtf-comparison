@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-24T01:32:40Z",
+"fetchedAt": "2026-11-24T02:32:20Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 465,
-"fetchedAt": "2026-11-24T01:32:40Z",
+"fetchedAt": "2026-11-24T02:32:20Z",
 "error": null
 }
 },
@@ -346,8 +346,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-24",
-"exact": true
+"exact": true,
+"since": "2026-11-24"
 },
 {
 "symbol": "ESDS",
@@ -1356,8 +1356,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-24",
-"exact": true
+"exact": true,
+"since": "2026-11-24"
 },
 {
 "symbol": "BPLPHARMA",
@@ -1466,8 +1466,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-24",
-"exact": true
+"exact": true,
+"since": "2026-11-24"
 },
 {
 "symbol": "HINDOILEXP",
@@ -3096,8 +3096,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-24",
-"exact": true
+"exact": true,
+"since": "2026-11-24"
 },
 {
 "symbol": "DCMNVL",
@@ -3806,8 +3806,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-24",
-"exact": true
+"exact": true,
+"since": "2026-11-24"
 },
 {
 "symbol": "MYSORPETRO",
@@ -4256,8 +4256,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-24",
-"exact": true
+"exact": true,
+"since": "2026-11-24"
 },
 {
 "symbol": "SPCON",
