@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T07:32:48Z",
+"fetchedAt": "2026-11-24T08:32:35Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T07:32:43Z",
+"fetchedAt": "2026-11-24T08:32:30Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T07:32:44Z",
+"fetchedAt": "2026-11-24T08:32:30Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T07:32:48Z",
-"count": 97,
+"fetchedAt": "2026-11-24T08:32:35Z",
+"count": 98,
 "error": null
 }
 },
@@ -2326,6 +2326,15 @@
 "title": "Credit rating update",
 "detail": "Best Agrolife Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/BESTAGRO_23112026161302_intimationcreditrating.pdf"
+},
+{
+"symbol": "BHARTIARTL",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Bharti Airtel Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/BHARTIARTL_24112026131238_BhartiAirtelSTXdisclosure.pdf"
 },
 {
 "symbol": "BIRLACORPN",

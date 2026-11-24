@@ -1694,5 +1694,21 @@
 "text": "Rupeezy leverage up 2.9× → 3.0×: you need less margin",
 "link": null,
 "at": "2026-11-24T05:33:11Z"
+},
+{
+"symbol": "ACUTAAS",
+"name": "Acutaas Chemicals Limited",
+"level": "watch",
+"text": "Rupeezy leverage cut 3.2× → 3.0×: you need more margin",
+"link": null,
+"at": "2026-11-24T08:32:57Z"
+},
+{
+"symbol": "BHARTIARTL",
+"name": "Bharti Airtel Limited",
+"level": "watch",
+"text": "Regulatory/tax order (24 Nov)",
+"link": "https://nsearchives.nseindia.in/corporate/BHARTIARTL_24112026131238_BhartiAirtelSTXdisclosure.pdf",
+"at": "2026-11-24T08:32:57Z"
 }
 ]
