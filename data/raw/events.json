@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-24T04:32:48Z",
+"fetchedAt": "2026-11-24T05:32:50Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-24T04:32:42Z",
+"fetchedAt": "2026-11-24T05:32:44Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-24T04:32:43Z",
+"fetchedAt": "2026-11-24T05:32:45Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-24T04:32:48Z",
-"count": 93,
+"fetchedAt": "2026-11-24T05:32:50Z",
+"count": 95,
 "error": null
 }
 },
@@ -2491,6 +2491,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/GREEN_23112026180806_Intimation_Award_23112026.pdf"
 },
 {
+"symbol": "GUJTHEM",
+"date": "2026-11-27",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "Intimation for Board Meeting pursuant to the SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015.",
+"link": "https://nsearchives.nseindia.in/corporate/GUJARATTHEMIS_24112026104416_GTBLBMIntimation24112026.pdf"
+},
+{
 "symbol": "HDBFS",
 "date": "2026-11-23",
 "kind": "meeting",
@@ -2668,6 +2676,15 @@
 "title": "Results",
 "detail": "M. K. Sons Fine Jewels Ltd has informed the Exchange about Board Meeting to be held on 24-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_28582_20261120_000035315_WEB.html"
+},
+{
+"symbol": "MSUMI",
+"date": "2026-11-24",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Motherson Sumi Wiring India Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/MSWIL_24112026100646_CreditRating.pdf"
 },
 {
 "symbol": "MWL",
