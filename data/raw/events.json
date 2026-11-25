@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T13:32:19Z",
+"fetchedAt": "2026-11-25T14:32:38Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T13:32:13Z",
+"fetchedAt": "2026-11-25T14:32:33Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T13:32:14Z",
+"fetchedAt": "2026-11-25T14:32:33Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T13:32:19Z",
-"count": 132,
+"fetchedAt": "2026-11-25T14:32:38Z",
+"count": 137,
 "error": null
 }
 },
@@ -2219,6 +2219,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ADANIPOWER_24112026190235_APLCreditRatingenhancementCRISIL24112026.pdf"
 },
 {
+"symbol": "AIFL",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Ashapura Intimates Fashion Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.in/corporate/AIFL2020_25112026192301_Intimation_of_Resignation_of_Auditor_BSE.pdf"
+},
+{
 "symbol": "APLAPOLLO",
 "date": "2026-11-23",
 "kind": "news",
@@ -2410,6 +2419,24 @@
 "link": "https://nsearchives.nseindia.in/corporate/CENTURYPLY_23112026183242_Credit_Rating_November_2026.pdf"
 },
 {
+"symbol": "CGCL",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Capri Global Capital Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/CGCL_25112026193427_Intimation_for_Credit_Rating.pdf"
+},
+{
+"symbol": "CMPDI",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Central Mine Planning & Design Institute Limited has informed the Exchange about orders passed by the open court of the Hon'ble Customs, Excise and Service Tax Appellate Tribunal (CESTAT), Kolkata to set aside the Service Tax demand of &#83",
+"link": "https://nsearchives.nseindia.in/corporate/CMPDI_25112026192331_Letter_to_Stock_exchange_for_Service_Tax_demand_set_aside_Signed.pdf"
+},
+{
 "symbol": "COMSYN",
 "date": "2026-11-26",
 "kind": "meeting",
@@ -2552,8 +2579,8 @@
 "date": "2026-11-28",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "1. To consider Fund Raising To consider raising of funds, in one or more tranches, by issue of equity shares and/or any other instruments or eligible securities representing either equity shares and/or convertible securities linked to equit",
-"link": "https://nsearchives.nseindia.in/corporate/GARUDACONSTRUCTION2010_25112026175220_Intimation_signed.pdf"
+"detail": "GARUDA CONSTRUCTION AND ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 28-Nov-2026 to consider and approve Fund raising/Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_23196_20261125_192556244_WEB.html"
 },
 {
 "symbol": "GLOBAL",
@@ -2926,6 +2953,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
 },
 {
+"symbol": "RACE",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Race Eco Chain Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.in/corporate/RACEECOCHAIN_25112026200123_Intimation_Step_Down_Nigeria.pdf"
+},
+{
 "symbol": "RAJOOENG",
 "date": "2026-11-23",
 "kind": "news",
@@ -2941,6 +2977,14 @@
 "title": "Board meeting",
 "detail": "RAJRATAN GLOBAL WIRE LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to consider Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17984_20261121_170254736_WEB.html"
+},
+{
+"symbol": "RIIT",
+"date": "2026-11-28",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "To consider Fund Raising",
+"link": "https://nsearchives.nseindia.in/corporate/RIIT_25112026191649_SE_Intimation_Board_Meeting.pdf"
 },
 {
 "symbol": "RNBDENIMS",
