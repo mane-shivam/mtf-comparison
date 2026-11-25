@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T07:32:56Z",
+"fetchedAt": "2026-11-25T08:33:13Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T07:32:51Z",
+"fetchedAt": "2026-11-25T08:33:06Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T07:32:52Z",
+"fetchedAt": "2026-11-25T08:33:09Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T07:32:56Z",
-"count": 108,
+"fetchedAt": "2026-11-25T08:33:13Z",
+"count": 109,
 "error": null
 }
 },
@@ -2919,6 +2919,14 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from The State Trading Corporation of India Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On ba",
 "link": "-"
+},
+{
+"symbol": "STEAMHOUSE",
+"date": "2026-12-05",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "Steamhouse India Ltd has informed that the meeting of the Board of Directors of the Company is scheduled on 05/12/2026, inter alia, to consider and approve the ratification and amendment of ESOP 2024, alteration of the Object Clause of the ",
+"link": "https://nsearchives.nseindia.in/corporate/CAVAIBHAVGATTANI_25112026140207_Prior_Intimation.pdf"
 },
 {
 "symbol": "STEELCITY",
