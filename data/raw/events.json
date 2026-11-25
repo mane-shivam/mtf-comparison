@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T04:42:58Z",
+"fetchedAt": "2026-11-25T05:32:04Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T04:42:52Z",
+"fetchedAt": "2026-11-25T05:31:59Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T04:42:53Z",
+"fetchedAt": "2026-11-25T05:31:59Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T04:42:58Z",
-"count": 104,
+"fetchedAt": "2026-11-25T05:32:04Z",
+"count": 105,
 "error": null
 }
 },
@@ -2333,6 +2333,15 @@
 "title": "Material issue",
 "detail": "Burnpur Cement Limited has informed regarding Disclosure of material issue",
 "link": "https://nsearchives.nseindia.in/corporate/BURNPURCEMENT_24112026171301_Intimation_under_Reg_30-decision_of_NSE.pdf"
+},
+{
+"symbol": "CANHLIFE",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Canara HSBC Life Insurance Company Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/CANHLIFE_ROID_105199_KMP_Doc.zip"
 },
 {
 "symbol": "CCCL",
