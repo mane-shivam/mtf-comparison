@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T08:33:13Z",
+"fetchedAt": "2026-11-25T09:32:37Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T08:33:06Z",
+"fetchedAt": "2026-11-25T09:32:32Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T08:33:09Z",
+"fetchedAt": "2026-11-25T09:32:32Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T08:33:13Z",
-"count": 109,
+"fetchedAt": "2026-11-25T09:32:37Z",
+"count": 110,
 "error": null
 }
 },
@@ -2396,6 +2396,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/CORDELIA_24112026210124_Conclusion_of_GST_Official_Visit.pdf"
 },
 {
+"symbol": "COSMOFIRST",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "COSMO FIRST LIMITED has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/COSMOFILMS_25112026143512_Intimation_GSTSearch_II.pdf"
+},
+{
 "symbol": "DALBHARAT",
 "date": "2026-11-23",
 "kind": "meeting",
@@ -2925,8 +2934,8 @@
 "date": "2026-12-05",
 "kind": "meeting",
 "title": "Board meeting",
-"detail": "Steamhouse India Ltd has informed that the meeting of the Board of Directors of the Company is scheduled on 05/12/2026, inter alia, to consider and approve the ratification and amendment of ESOP 2024, alteration of the Object Clause of the ",
-"link": "https://nsearchives.nseindia.in/corporate/CAVAIBHAVGATTANI_25112026140207_Prior_Intimation.pdf"
+"detail": "Steamhouse India Limited has informed the Exchange about Board Meeting to be held on 05-Dec-2026 to consider and approve ESOP/Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26443_20261125_140335869_WEB.html"
 },
 {
 "symbol": "STEELCITY",
