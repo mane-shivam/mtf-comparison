@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T16:32:54Z",
+"fetchedAt": "2026-11-25T20:04:29Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T16:32:48Z",
+"fetchedAt": "2026-11-25T20:04:24Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T16:32:49Z",
+"fetchedAt": "2026-11-25T20:04:25Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T16:32:54Z",
-"count": 141,
+"fetchedAt": "2026-11-25T20:04:29Z",
+"count": 144,
 "error": null
 }
 },
@@ -2756,6 +2756,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/KAYNESTECH_25112026175640_Creditrating.pdf"
 },
 {
+"symbol": "KFINTECH",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "KFin Technologies Limited has informed the Exchange about Intimation of Disclosure under sub-para 20 of Para A of Part A of Schedule III of Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requ",
+"link": "https://nsearchives.nseindia.in/corporate/KFINTECHNSE_25112026230044_Intimation.pdf"
+},
+{
 "symbol": "KRSNAA",
 "date": "2026-11-23",
 "kind": "news",
@@ -2771,6 +2780,15 @@
 "title": "Results out",
 "detail": "KSS Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/KSERASERA_23112026200705_OutcomeandUnauditedFinancialResults.pdf"
+},
+{
+"symbol": "KSERASERA",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "KSS Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.in/corporate/KSERASERA_25112026222136_Appointment_Intimation_KSS_Signed.pdf"
 },
 {
 "symbol": "LAGNAM",
@@ -2968,6 +2986,14 @@
 "title": "Dividend",
 "detail": "Patanjali Foods Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Dividend.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
+},
+{
+"symbol": "POWERGRID",
+"date": "2026-11-30",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "To consider Fund Raising",
+"link": "https://nsearchives.nseindia.in/corporate/POWERGRID1_25112026225535_BSENSE_PIdt251126_Final.pdf"
 },
 {
 "symbol": "PVSL",
