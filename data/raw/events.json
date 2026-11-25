@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T05:32:04Z",
+"fetchedAt": "2026-11-25T06:35:00Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T05:31:59Z",
+"fetchedAt": "2026-11-25T06:34:55Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T05:31:59Z",
+"fetchedAt": "2026-11-25T06:34:56Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T05:32:04Z",
-"count": 105,
+"fetchedAt": "2026-11-25T06:35:00Z",
+"count": 107,
 "error": null
 }
 },
@@ -2232,6 +2232,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/AVROIND_ROID_105147_KMP_Doc.zip"
 },
 {
+"symbol": "AXITA",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Gitaben Nitinbhai Patel has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI (SAST) Regulatio",
+"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_25112026111457_Reg.pdf"
+},
+{
 "symbol": "BAIDFIN",
 "date": "2026-11-23",
 "kind": "news",
@@ -2428,6 +2437,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-prior Intimation of the 10th (Tenth) Meeting of the Committee of Creditors (CoC) of India Power Corporation Limited (IPCL)",
 "link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_24112026195853_Intimationof10thCoCMeetingunderReg30ofLODR24112026.pdf"
+},
+{
+"symbol": "DPSCLTD",
+"date": "2026-11-25",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-Newspaper advertisements pertaining to the 106th Annual General Meeting of the Company",
+"link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_25112026120055_Pre_106thAGMNewspaperAdvertisement25112026.pdf"
 },
 {
 "symbol": "ENRIN",
