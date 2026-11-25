@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "symbol": "SAREGAMA",
+  "name": "Saregama India Limited",
+  "level": "watch",
+  "text": "Down 6.9% today at ₹611.95",
+  "link": null,
+  "at": "2026-11-25T04:43:22Z"
+ },
+ {
+  "symbol": "BAJAJHCARE",
+  "name": "Bajaj Healthcare Limited",
+  "level": "info",
+  "text": "Up 6.3% today at ₹339.90",
+  "link": null,
+  "at": "2026-11-25T04:43:22Z"
+ },
+ {
+  "symbol": "BAJAJHCARE",
+  "name": "Bajaj Healthcare Limited",
+  "level": "info",
+  "text": "Volume 4.6× the 20-day average",
+  "link": null,
+  "at": "2026-11-25T04:43:22Z"
+ },
+ {
+  "symbol": "NEULANDLAB",
+  "name": "Neuland Laboratories Limited",
+  "level": "good",
+  "text": "Kotak Neo leverage up 2.9× → 3.0×: you need less margin",
+  "link": null,
+  "at": "2026-11-25T04:43:22Z"
+ },
+ {
+  "symbol": "CENTUM",
+  "name": "Centum Electronics Limited",
+  "level": "watch",
+  "text": "Down 5.1% today at ₹3,934.60",
+  "link": null,
+  "at": "2026-11-25T04:43:22Z"
+ },
+ {
+  "symbol": "PTC",
+  "name": "PTC India Limited",
+  "level": "good",
+  "text": "Kotak Neo leverage up 3.2× → 3.3×: you need less margin",
+  "link": null,
+  "at": "2026-11-25T04:43:22Z"
+ }
+]
