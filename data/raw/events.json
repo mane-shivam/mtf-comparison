@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T06:35:00Z",
+"fetchedAt": "2026-11-25T07:32:56Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T06:34:55Z",
+"fetchedAt": "2026-11-25T07:32:51Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T06:34:56Z",
+"fetchedAt": "2026-11-25T07:32:52Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T06:35:00Z",
-"count": 107,
+"fetchedAt": "2026-11-25T07:32:56Z",
+"count": 108,
 "error": null
 }
 },
@@ -3031,6 +3031,15 @@
 "title": "Fund raising",
 "detail": "Vaxtex Cotfab Limited has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17495_20261119_175251919_WEB.html"
+},
+{
+"symbol": "VCL",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Open offer",
+"detail": "Sobhagya Capital Options Private Limited has Submitted to the Exchange a copy of public announcement (PA) under Regulation 3(1) and Regulation 4 read with Regulation 13 (2) (G), Regulation 14 and Regulation 15(1) of the Securities and Excha",
+"link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_25112026113908_VCL.zip"
 },
 {
 "symbol": "VGL",
