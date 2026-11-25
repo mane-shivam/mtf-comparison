@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-25T02:32:45Z",
+"fetchedAt": "2026-11-25T03:32:31Z",
 "count": 2225,
 "rows": [
 {
@@ -7609,6 +7609,15 @@
 "ownPct": 31.06
 },
 {
+"symbol": "JSWINFRA",
+"name": "JSW INFRASTRUCTURE LTD",
+"isin": "INE880J01026",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.21,
+"ownPct": 31.15
+},
+{
 "symbol": "SJVN",
 "name": "SJVN LTD",
 "isin": "INE002L01015",
@@ -7765,15 +7774,6 @@
 "symbol": "JENBURPH",
 "name": "JENBURKT PHARMACEUTICAL L",
 "isin": "INE354A01013",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.21,
-"ownPct": 31.15
-},
-{
-"symbol": "JSWINFRA",
-"name": "JSW INFRASTRUCTURE LTD",
-"isin": "INE880J01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.21,
@@ -9301,6 +9301,15 @@
 "ownPct": 32.47
 },
 {
+"symbol": "KICL",
+"name": "KALYANI INVEST CO LTD",
+"isin": "INE029L01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.08,
+"ownPct": 32.47
+},
+{
 "symbol": "EQUITASBNK",
 "name": "EQUITAS SMALL FIN BNK LTD",
 "isin": "INE063P01018",
@@ -9976,15 +9985,6 @@
 "ownPct": 33.0
 },
 {
-"symbol": "KICL",
-"name": "KALYANI INVEST CO LTD",
-"isin": "INE029L01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.03,
-"ownPct": 33.0
-},
-{
 "symbol": "PPLPHARMA",
 "name": "PIRAMAL PHARMA LIMITED",
 "isin": "INE0DK501011",
@@ -10399,15 +10399,6 @@
 "ownPct": 33.33
 },
 {
-"symbol": "NAVA",
-"name": "NAVA LIMITED",
-"isin": "INE725A01030",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.0,
-"ownPct": 33.33
-},
-{
 "symbol": "OMPOWER",
 "name": "OM POWER TRANSMISSION LTD",
 "isin": "INE25E901019",
@@ -10618,6 +10609,15 @@
 "symbol": "PRINCEPIPE",
 "name": "PRINCE PIPES FITTINGS LTD",
 "isin": "INE689W01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.99,
+"ownPct": 33.44
+},
+{
+"symbol": "NAVA",
+"name": "NAVA LIMITED",
+"isin": "INE725A01030",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.99,
@@ -13072,18 +13072,18 @@
 "ownPct": 35.21
 },
 {
-"symbol": "SPECIALITY",
-"name": "SPECIALITY REST LTD",
-"isin": "INE247M01014",
+"symbol": "JAYAGROGN",
+"name": "JAYANT AGRO ORGANICS LTD",
+"isin": "INE785A01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
 "ownPct": 35.21
 },
 {
-"symbol": "JAYAGROGN",
-"name": "JAYANT AGRO ORGANICS LTD",
-"isin": "INE785A01026",
+"symbol": "SPECIALITY",
+"name": "SPECIALITY REST LTD",
+"isin": "INE247M01014",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.84,
@@ -16825,6 +16825,15 @@
 "ownPct": 38.76
 },
 {
+"symbol": "AEGISLOG",
+"name": "AEGIS LOGISTICS LIMITED",
+"isin": "INE208C01025",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.58,
+"ownPct": 38.76
+},
+{
 "symbol": "PARAS",
 "name": "PARAS DEF AND SPCE TECH L",
 "isin": "INE045601023",
@@ -16882,15 +16891,6 @@
 "symbol": "3BBLACKBIO",
 "name": "3B BLACKBIO DX LTD.",
 "isin": "INE994E01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.58,
-"ownPct": 38.76
-},
-{
-"symbol": "AEGISLOG",
-"name": "AEGIS LOGISTICS LIMITED",
-"isin": "INE208C01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.58,
@@ -18607,6 +18607,15 @@
 "ownPct": 42.02
 },
 {
+"symbol": "JYOTISTRUC",
+"name": "JYOTI STRUCTURES LTD",
+"isin": "INE197A01024",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.38,
+"ownPct": 42.02
+},
+{
 "symbol": "PARACABLES",
 "name": "PARAMOUNT COMM LTD",
 "isin": "INE074B01023",
@@ -19163,15 +19172,6 @@
 "type": "equity",
 "lev": 1.82,
 "ownPct": 54.95
-},
-{
-"symbol": "JYOTISTRUC",
-"name": "JYOTI STRUCTURES LTD",
-"isin": "INE197A01024",
-"exchange": "NSE",
-"type": "equity",
-"lev": 1.56,
-"ownPct": 64.1
 },
 {
 "symbol": "AGL",

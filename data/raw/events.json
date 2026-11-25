@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T02:32:54Z",
+"fetchedAt": "2026-11-25T03:32:40Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T02:32:49Z",
+"fetchedAt": "2026-11-25T03:32:36Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T02:32:50Z",
+"fetchedAt": "2026-11-25T03:32:37Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T02:32:54Z",
-"count": 103,
+"fetchedAt": "2026-11-25T03:32:40Z",
+"count": 104,
 "error": null
 }
 },
@@ -2851,6 +2851,14 @@
 "title": "Fund raising",
 "detail": "SG Mart Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26114_20261123_095103900_WEB.html"
+},
+{
+"symbol": "SHUKRAMED",
+"date": "2026-12-02",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "To consider Fund Raising",
+"link": "https://nsearchives.nseindia.in/corporate/SHUKRA_25112026085028_BM_Notice_Shukra_sw.pdf"
 },
 {
 "symbol": "SIMBHALS",
