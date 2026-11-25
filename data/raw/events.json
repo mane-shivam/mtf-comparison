@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T11:32:49Z",
+"fetchedAt": "2026-11-25T12:32:51Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T11:32:44Z",
+"fetchedAt": "2026-11-25T12:32:46Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T11:32:45Z",
+"fetchedAt": "2026-11-25T12:32:47Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T11:32:49Z",
-"count": 113,
+"fetchedAt": "2026-11-25T12:32:51Z",
+"count": 125,
 "error": null
 }
 },
@@ -426,6 +426,10 @@
 "series": "BE"
 },
 "DAICHI": {
+"band": 5,
+"series": "BE"
+},
+"DCI": {
 "band": 5,
 "series": "BE"
 },
@@ -1379,7 +1383,7 @@
 },
 "UFBL": {
 "band": 5,
-"series": "EQ"
+"series": "BE"
 },
 "UGARSUGAR": {
 "band": 5,
@@ -1602,6 +1606,10 @@
 "series": "EQ"
 },
 "CRIZAC": {
+"band": 10,
+"series": "EQ"
+},
+"CRYSTALCP": {
 "band": 10,
 "series": "EQ"
 },
@@ -2097,6 +2105,10 @@
 "band": 10,
 "series": "EQ"
 },
+"THOMASCOOK": {
+"band": 10,
+"series": "EQ"
+},
 "TIRUPATIFL": {
 "band": 10,
 "series": "EQ"
@@ -2171,6 +2183,15 @@
 }
 },
 "events": [
+{
+"symbol": "5PAISA",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "5Paisa Capital Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/5PAISA_ROID_105225_KMP_Doc.zip"
+},
 {
 "symbol": "662GS2051",
 "date": "2026-11-27",
@@ -2290,6 +2311,15 @@
 "title": "Credit rating update",
 "detail": "Best Agrolife Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/BESTAGRO_23112026161302_intimationcreditrating.pdf"
+},
+{
+"symbol": "BGRENERGY",
+"date": "2026-11-25",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "BGR Energy Systems Limited has informed the Exchange about Corporate Insolvency Resolution Process - Receipt of NCLAT Order dated 16.11.2026",
+"link": "https://nsearchives.nseindia.in/corporate/BGRENERGY_25112026172009_BGRReceiptofOrder25112026.pdf"
 },
 {
 "symbol": "BHARTIARTL",
@@ -2430,6 +2460,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22819_20261121_182916968_WEB.html"
 },
 {
+"symbol": "DAVANGERE",
+"date": "2026-12-02",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "DAVANGERE : 02-Dec-2026 : The Company has informed the Exchange that a Board meeting to be held on November 26, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Com",
+"link": "https://nsearchives.nseindia.in/corporate/DAVANGERESUGAR_25112026173812_DSCL_Regln_29_Prior_Intimation_of_Rescheduled_BM.pdf"
+},
+{
 "symbol": "DICIND",
 "date": "2026-11-24",
 "kind": "news",
@@ -2466,6 +2504,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_25112026120055_Pre_106thAGMNewspaperAdvertisement25112026.pdf"
 },
 {
+"symbol": "EASEMYTRIP",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Easy Trip Planners Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/EASEMYTRIP_25112026174347_esg_.pdf"
+},
+{
 "symbol": "ENRIN",
 "date": "2026-11-25",
 "kind": "meeting",
@@ -2489,6 +2536,14 @@
 "title": "Ex-dividend",
 "detail": "Dividend - Re 0.75 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=FUSIONCX"
+},
+{
+"symbol": "GARUDA",
+"date": "2026-11-28",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "1. To consider Fund Raising To consider raising of funds, in one or more tranches, by issue of equity shares and/or any other instruments or eligible securities representing either equity shares and/or convertible securities linked to equit",
+"link": "https://nsearchives.nseindia.in/corporate/GARUDACONSTRUCTION2010_25112026175220_Intimation_signed.pdf"
 },
 {
 "symbol": "GLOBAL",
@@ -2549,6 +2604,15 @@
 "title": "Litigation",
 "detail": "Pursuant to Regulation 30 of the SEBI Listing Regulations, please refer to the disclosure document regarding the update on Trade Registration Certificate matter.",
 "link": "https://nsearchives.nseindia.in/corporate/HEROMOTO_24112026180157_StockExchangeDisclosure.pdf"
+},
+{
+"symbol": "HIMATSEIDE",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Himatsingka Seide Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/HIMATSEIDE_25112026171611_SE_IntimationCreditRatings.pdf"
 },
 {
 "symbol": "HINDWAREAP",
@@ -2628,6 +2692,15 @@
 "title": "Regulatory/tax order",
 "detail": "Intimation under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 and relevant SEBI Circulars is enclosed herewith.",
 "link": "https://nsearchives.nseindia.in/corporate/KANSAINER_24112026150401_Reg30_Disclosure_24-11-26_signed.pdf"
+},
+{
+"symbol": "KAYNES",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Kaynes Technology India Limited has informed the Exchange about Credit Rating- withdrawal",
+"link": "https://nsearchives.nseindia.in/corporate/KAYNESTECH_25112026175640_Creditrating.pdf"
 },
 {
 "symbol": "KRSNAA",
@@ -2738,6 +2811,24 @@
 "title": "Credit rating update",
 "detail": "Motherson Sumi Wiring India Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/MSWIL_24112026100646_CreditRating.pdf"
+},
+{
+"symbol": "MUNJALAU",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Munjal Auto Industries Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/MUNJALAU_25112026170557_signednewCredit_Rating_2026.pdf"
+},
+{
+"symbol": "MUNJALSHOW",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Munjal Showa Limited has informed the Exchange about Credit Rating- New",
+"link": "https://nsearchives.nseindia.in/corporate/MUNJALSHOW_25112026175327_Intimation_Credit_Rating_25112026_sd.pdf"
 },
 {
 "symbol": "MWL",
@@ -2857,6 +2948,14 @@
 "title": "Board meeting",
 "detail": "RUBFILA INTERNATIONAL LIMITED has informed the Exchange about Board Meeting to be held on 01-Dec-2026 to consider Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19047_20261124_161415168_WEB.html"
+},
+{
+"symbol": "SADHNANIQ",
+"date": "2026-11-30",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "SADHANA NITROCHEM LIMITED has informed the Exchange about Board Meeting to be held on 30-Nov-2026 to consider Consolidation of shares.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20524_20261125_173601633_WEB.html"
 },
 {
 "symbol": "SATIN",
@@ -3043,6 +3142,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/TVVISION_24112026183814_Intimation_of_4th_CoC_Meeting.pdf"
 },
 {
+"symbol": "UDS",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Updater Services Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/COMPLIANCEOFFICERUDS_25112026173714_UDS-Tamil_Nadu_-Order_Intimation_F_Sd.pdf"
+},
+{
 "symbol": "VAISHALI",
 "date": "2026-11-27",
 "kind": "meeting",
@@ -3118,6 +3226,15 @@
 "title": "Ex-dividend",
 "detail": "Interim Dividend - Re 0.60 Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=VRAJ"
+},
+{
+"symbol": "WAAREERTL",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Waaree Renewable Technologies Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/WAAREERTL_25112026173747_Intimation-s.pdf"
 },
 {
 "symbol": "ZEEL",
