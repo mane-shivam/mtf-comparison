@@ -17962,5 +17962,35 @@
 "name": "Nifty Energy",
 "isin": "INF754K01XZ1",
 "type": "etf"
+},
+{
+"symbol": "MOPSUBANK",
+"name": "NIFTY PSU BANK",
+"isin": "INF247L01IA8",
+"type": "etf"
+},
+{
+"symbol": "MOGROWTH",
+"name": "Nifty500 Growth 50",
+"isin": "INF247L01HZ7",
+"type": "etf"
+},
+{
+"symbol": "MOPVTBANK",
+"name": "NIFTY PRIVATE BANK",
+"isin": "INF247L01IB6",
+"type": "etf"
+},
+{
+"symbol": "MOREIT",
+"name": "Nifty REITs & Realty",
+"isin": "INF247L01IC4",
+"type": "etf"
+},
+{
+"symbol": "MO10YGSEC",
+"name": "Nifty 10 yr Benchmark G-Sec",
+"isin": "INF247L01HY0",
+"type": "etf"
 }
 ]

@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-25T14:32:38Z",
+"fetchedAt": "2026-11-25T15:32:29Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T14:32:33Z",
+"fetchedAt": "2026-11-25T15:32:22Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T14:32:33Z",
+"fetchedAt": "2026-11-25T15:32:23Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T14:32:38Z",
-"count": 137,
+"fetchedAt": "2026-11-25T15:32:29Z",
+"count": 141,
 "error": null
 }
 },
@@ -2558,6 +2558,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_25774_20261119_161357026_WEB.html"
 },
 {
+"symbol": "ENRIN",
+"date": "2026-11-25",
+"kind": "result",
+"title": "Results out",
+"detail": "Siemens Energy India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/ENRIN_25112026201025_BoardMeetingOutcome25112026signed.pdf"
+},
+{
 "symbol": "FUSION",
 "date": "2026-11-23",
 "kind": "news",
@@ -2920,6 +2928,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/OAL_ROID_105151_KMP_Doc.zip"
 },
 {
+"symbol": "OMFREIGHT",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Om Freight Forwarders Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/OMFRIEGHT_25112026210209_Disclosure_final-Signed_s.pdf"
+},
+{
 "symbol": "ORTINGLOBE",
 "date": "2026-11-28",
 "kind": "meeting",
@@ -2951,6 +2968,24 @@
 "title": "Dividend",
 "detail": "Patanjali Foods Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Dividend.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
+},
+{
+"symbol": "PVSL",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Popular Vehicles and Services Limited has informed the Exchange about Action(s) taken or orders passed by the State Tax Officer, Goods and Services Tax Act, 2017 confirming a demand of Rs. 81.25 lakh including a penalty of Rs. 28.61 lakh.",
+"link": "https://nsearchives.nseindia.in/corporate/9072530155_25112026203329_GST_Intimation_SD.pdf"
+},
+{
+"symbol": "PVSL",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Popular Vehicles and Services Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.in/corporate/9072530155_25112026200115_Intimation_Auditor_SD.pdf"
 },
 {
 "symbol": "RACE",
