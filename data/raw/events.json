@@ -1,26 +1,27 @@
 {
-"fetchedAt": "2026-11-25T12:32:51Z",
+"fetchedAt": "2026-11-25T13:32:19Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-25T12:32:46Z",
+"fetchedAt": "2026-11-25T13:32:13Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-25T12:32:47Z",
+"fetchedAt": "2026-11-25T13:32:14Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-25T12:32:51Z",
-"count": 125,
+"fetchedAt": "2026-11-25T13:32:19Z",
+"count": 132,
 "error": null
 }
 },
 "ban": {
-"date": "2026-11-25",
+"date": "2026-11-26",
 "symbols": [
+"APLAPOLLO",
 "MANAPPURAM"
 ]
 },
@@ -2444,6 +2445,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/COSMOFILMS_25112026143512_Intimation_GSTSearch_II.pdf"
 },
 {
+"symbol": "CREDITACC",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "CREDITACCESS GRAMEEN LIMITED has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/CREDITACC_ROID_105231_KMP_Doc.zip"
+},
+{
 "symbol": "DALBHARAT",
 "date": "2026-11-23",
 "kind": "meeting",
@@ -2578,6 +2588,14 @@
 "title": "Fund raising",
 "detail": "HDB FINANCIAL SERVICES LTD has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24797_20261118_124821642_WEB.html"
+},
+{
+"symbol": "HDBFS",
+"date": "2026-11-30",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "HDB FINANCIAL SERVICES LTD has informed the Exchange about Board Meeting to be held on 30-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24797_20261125_182332552_WEB.html"
 },
 {
 "symbol": "HDFIRE",
@@ -2718,6 +2736,15 @@
 "title": "Results out",
 "detail": "KSS Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/KSERASERA_23112026200705_OutcomeandUnauditedFinancialResults.pdf"
+},
+{
+"symbol": "LAGNAM",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Lagnam Spintex Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/LAGNAM_25112026180618_Rating_Intimation_251126.pdf"
 },
 {
 "symbol": "LATTEYS",
@@ -3006,6 +3033,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26114_20261123_095103900_WEB.html"
 },
 {
+"symbol": "SHAREINDIA",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Share India Securities Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/SISL_25112026182045_Reg30Penalty_25112026signed.pdf"
+},
+{
 "symbol": "SHUKRAMED",
 "date": "2026-12-02",
 "kind": "meeting",
@@ -3029,6 +3065,14 @@
 "title": "Results",
 "detail": "SIMBHAOLI SUGARS LIMITED has informed the Exchange about Board Meeting to be held on 25-Nov-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Quarterly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13570_20261119_150850681_WEB.html"
+},
+{
+"symbol": "SIMBHALS",
+"date": "2026-11-25",
+"kind": "result",
+"title": "Results out",
+"detail": "Simbhaoli Sugars Limited has submitted to the Exchange, Unaudited financial results (Standalone and Consolidated) for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/SIMBHALS_25112026183853_Finaloutcome25Nov2026forupload.pdf"
 },
 {
 "symbol": "SKIL",
@@ -3142,6 +3186,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/TVVISION_24112026183814_Intimation_of_4th_CoC_Meeting.pdf"
 },
 {
+"symbol": "TVVISION",
+"date": "2026-11-25",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "TV Vision Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.in/corporate/TVVISION_25112026181118_Intimation_of_4th_CoC_Meeting_Postponed_sd.pdf"
+},
+{
 "symbol": "UDS",
 "date": "2026-11-25",
 "kind": "news",
@@ -3209,6 +3262,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "Intimation regarding bankruptcy of Mr. Venugopal Dhoot.",
 "link": "https://nsearchives.nseindia.in/corporate/VIDEOIND_24112026213515_VIL_VGD_initmation_S.pdf"
+},
+{
+"symbol": "VIKRAN",
+"date": "2026-11-25",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Vikran Engineering Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.in/corporate/VIKRAN123_25112026181116_REPLY_TO_SEBI_06_11_2026.pdf"
 },
 {
 "symbol": "VPRPL",
