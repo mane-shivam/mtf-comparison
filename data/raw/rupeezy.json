@@ -1,6 +1,6 @@
 {
 "broker": "rupeezy",
-"fetchedAt": "2026-11-26T05:32:41Z",
+"fetchedAt": "2026-11-26T06:32:46Z",
 "count": 2222,
 "rows": [
 {
@@ -6556,15 +6556,6 @@
 "ownPct": 29.85
 },
 {
-"symbol": "PATANJALI",
-"name": "PATANJALI FOODS LIMITED",
-"isin": "INE619A01035",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.34,
-"ownPct": 29.94
-},
-{
 "symbol": "ASTERDM",
 "name": "ASTER DM QUALITY CARE LTD",
 "isin": "INE914M01019",
@@ -6649,6 +6640,15 @@
 "symbol": "SWIGGY",
 "name": "SWIGGY LIMITED",
 "isin": "INE00H001014",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.33,
+"ownPct": 30.03
+},
+{
+"symbol": "PATANJALI",
+"name": "PATANJALI FOODS LIMITED",
+"isin": "INE619A01035",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.33,
@@ -7618,15 +7618,6 @@
 "ownPct": 31.06
 },
 {
-"symbol": "JSWINFRA",
-"name": "JSW INFRASTRUCTURE LTD",
-"isin": "INE880J01026",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.21,
-"ownPct": 31.15
-},
-{
 "symbol": "SJVN",
 "name": "SJVN LTD",
 "isin": "INE002L01015",
@@ -7729,6 +7720,15 @@
 "symbol": "JENBURPH",
 "name": "JENBURKT PHARMACEUTICAL L",
 "isin": "INE354A01013",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.21,
+"ownPct": 31.15
+},
+{
+"symbol": "JSWINFRA",
+"name": "JSW INFRASTRUCTURE LTD",
+"isin": "INE880J01026",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.21,
@@ -9310,15 +9310,6 @@
 "ownPct": 32.47
 },
 {
-"symbol": "KICL",
-"name": "KALYANI INVEST CO LTD",
-"isin": "INE029L01018",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.08,
-"ownPct": 32.47
-},
-{
 "symbol": "SOUTHBANK",
 "name": "THE SOUTH INDIAN BANK LTD",
 "isin": "INE683A01023",
@@ -9841,6 +9832,15 @@
 "ownPct": 33.0
 },
 {
+"symbol": "SARDAEN",
+"name": "SARDA ENERGY & MIN LTD",
+"isin": "INE385C01021",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.03,
+"ownPct": 33.0
+},
+{
 "symbol": "ACUTAAS",
 "name": "ACUTAAS CHEMICALS LIMITED",
 "isin": "INE00FF01025",
@@ -9958,6 +9958,15 @@
 "ownPct": 33.0
 },
 {
+"symbol": "KICL",
+"name": "KALYANI INVEST CO LTD",
+"isin": "INE029L01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 3.03,
+"ownPct": 33.0
+},
+{
 "symbol": "PPLPHARMA",
 "name": "PIRAMAL PHARMA LIMITED",
 "isin": "INE0DK501011",
@@ -9997,15 +10006,6 @@
 "symbol": "NLCINDIA",
 "name": "NLC INDIA LIMITED",
 "isin": "INE589A01014",
-"exchange": "NSE",
-"type": "equity",
-"lev": 3.02,
-"ownPct": 33.11
-},
-{
-"symbol": "SARDAEN",
-"name": "SARDA ENERGY & MIN LTD",
-"isin": "INE385C01021",
 "exchange": "NSE",
 "type": "equity",
 "lev": 3.02,
@@ -16798,15 +16798,6 @@
 "ownPct": 38.76
 },
 {
-"symbol": "AEGISLOG",
-"name": "AEGIS LOGISTICS LIMITED",
-"isin": "INE208C01025",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.58,
-"ownPct": 38.76
-},
-{
 "symbol": "TEJASNET",
 "name": "TEJAS NETWORKS LIMITED",
 "isin": "INE010J01012",
@@ -16927,6 +16918,15 @@
 "symbol": "3BBLACKBIO",
 "name": "3B BLACKBIO DX LTD.",
 "isin": "INE994E01018",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.58,
+"ownPct": 38.76
+},
+{
+"symbol": "AEGISLOG",
+"name": "AEGIS LOGISTICS LIMITED",
+"isin": "INE208C01025",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.58,
@@ -17635,6 +17635,15 @@
 "ownPct": 39.84
 },
 {
+"symbol": "ZEEL",
+"name": "ZEE ENTERTAINMENT ENT LTD",
+"isin": "INE256A01028",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.5,
+"ownPct": 40.0
+},
+{
 "symbol": "EASEMYTRIP",
 "name": "EASY TRIP PLANNERS LTD",
 "isin": "INE07O001026",
@@ -17674,6 +17683,15 @@
 "symbol": "WEBELSOLAR",
 "name": "WEBSOL ENERGY SYSTEM LTD",
 "isin": "INE855C01023",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.5,
+"ownPct": 40.0
+},
+{
+"symbol": "CENTRUM",
+"name": "CENTRUM CAPITAL LIMITED",
+"isin": "INE660C01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.5,
@@ -17905,27 +17923,9 @@
 "ownPct": 40.0
 },
 {
-"symbol": "ZEEL",
-"name": "ZEE ENTERTAINMENT ENT LTD",
-"isin": "INE256A01028",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.49,
-"ownPct": 40.16
-},
-{
 "symbol": "JTLIND",
 "name": "JTL INDUSTRIES LIMITED",
 "isin": "INE391J01032",
-"exchange": "NSE",
-"type": "equity",
-"lev": 2.49,
-"ownPct": 40.16
-},
-{
-"symbol": "CENTRUM",
-"name": "CENTRUM CAPITAL LIMITED",
-"isin": "INE660C01027",
 "exchange": "NSE",
 "type": "equity",
 "lev": 2.49,
@@ -19039,6 +19039,33 @@
 "ownPct": 49.02
 },
 {
+"symbol": "HUBTOWN",
+"name": "HUBTOWN LIMITED",
+"isin": "INE703H01016",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.0,
+"ownPct": 50.0
+},
+{
+"symbol": "FISCHER",
+"name": "FISCHER MEDICAL VENTURE L",
+"isin": "INE771F01041",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.0,
+"ownPct": 50.0
+},
+{
+"symbol": "JISLJALEQS",
+"name": "JAIN IRRIGATION SYSTEMS",
+"isin": "INE175A01038",
+"exchange": "NSE",
+"type": "equity",
+"lev": 2.0,
+"ownPct": 50.0
+},
+{
 "symbol": "RATNAVEER",
 "name": "RATNAVEER PRECISION ENG L",
 "isin": "INE05CZ01011",
@@ -19145,33 +19172,6 @@
 "type": "equity",
 "lev": 2.0,
 "ownPct": 50.0
-},
-{
-"symbol": "JISLJALEQS",
-"name": "JAIN IRRIGATION SYSTEMS",
-"isin": "INE175A01038",
-"exchange": "NSE",
-"type": "equity",
-"lev": 1.99,
-"ownPct": 50.25
-},
-{
-"symbol": "HUBTOWN",
-"name": "HUBTOWN LIMITED",
-"isin": "INE703H01016",
-"exchange": "NSE",
-"type": "equity",
-"lev": 1.98,
-"ownPct": 50.51
-},
-{
-"symbol": "FISCHER",
-"name": "FISCHER MEDICAL VENTURE L",
-"isin": "INE771F01041",
-"exchange": "NSE",
-"type": "equity",
-"lev": 1.97,
-"ownPct": 50.76
 },
 {
 "symbol": "CCCL",
