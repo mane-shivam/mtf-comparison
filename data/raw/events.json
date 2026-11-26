@@ -1,25 +1,25 @@
 {
-"fetchedAt": "2026-11-26T13:32:46Z",
+"fetchedAt": "2026-11-26T14:32:30Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T13:32:40Z",
+"fetchedAt": "2026-11-26T14:32:23Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T13:32:41Z",
+"fetchedAt": "2026-11-26T14:32:24Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T13:32:46Z",
-"count": 186,
+"fetchedAt": "2026-11-26T14:32:30Z",
+"count": 190,
 "error": null
 }
 },
 "ban": {
-"date": "2026-11-26",
+"date": "2026-11-27",
 "symbols": [
 "APLAPOLLO",
 "MANAPPURAM"
@@ -2438,6 +2438,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=BONLON"
 },
 {
+"symbol": "BRIGADE",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Brigade Enterprises Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/BRIGADE_26112026190503_37IntimationonCreditRatingCRISIL26062026.pdf"
+},
+{
 "symbol": "BRNL",
 "date": "2026-11-28",
 "kind": "meeting",
@@ -2644,6 +2653,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-Newspaper advertisements pertaining to the 106th Annual General Meeting of the Company",
 "link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_25112026120055_Pre_106thAGMNewspaperAdvertisement25112026.pdf"
+},
+{
+"symbol": "DPSCLTD",
+"date": "2026-11-26",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-Notice of Postponement of 10th (Tenth) Meeting of the Committee of Creditors (CoC) of India Power Corporation Limited (IPCL)",
+"link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_26112026192823_IntimationofPostponmentof10thCoCMeeting.pdf"
 },
 {
 "symbol": "EASEMYTRIP",
@@ -3244,12 +3262,20 @@
 "link": "https://nsearchives.nseindia.in/corporate/POKARNA_26112026153614_Credit_Rating_Intimation_Final.pdf"
 },
 {
+"symbol": "POONAWALLA",
+"date": "2026-12-01",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "To consider Fund Raising",
+"link": "https://nsearchives.nseindia.in/corporate/POONAWALLA_26112026191938_Project_Marvel__Pre_PFL_BM_Draft_SE_Intimationfinal.pdf"
+},
+{
 "symbol": "POWERGRID",
 "date": "2026-11-30",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "To consider Fund Raising",
-"link": "https://nsearchives.nseindia.in/corporate/POWERGRID1_25112026225535_BSENSE_PIdt251126_Final.pdf"
+"detail": "Power Grid Corporation of India Limited has informed the Exchange about Board Meeting to be held on 30-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2660_20261126_192925557_WEB.html"
 },
 {
 "symbol": "PRITIKAUTO",
@@ -3564,6 +3590,14 @@
 "title": "Credit rating update",
 "detail": "Sun Pharmaceutical Industries Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/SUNSEC_23112026203508_Intimation_to_SE_-_GTC_SP_Credit_Rating.pdf"
+},
+{
+"symbol": "SUPRIYA",
+"date": "2026-12-02",
+"kind": "meeting",
+"title": "Buyback",
+"detail": "SUPRIYA LIFESCIENCE LIMITED has informed the Exchange about Board Meeting to be held on 02-Dec-2026 to consider Buyback.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19482_20261126_193403310_WEB.html"
 },
 {
 "symbol": "TEAMGTY",
