@@ -1910,5 +1910,29 @@
 "text": "Up 5.7% today at ₹1,319.90",
 "link": null,
 "at": "2026-11-26T06:33:17Z"
+},
+{
+"symbol": "MANINDS",
+"name": "Man Industries (India) Limited",
+"level": "watch",
+"text": "Kotak Neo leverage cut 2.4× → 2.3×: you need more margin",
+"link": null,
+"at": "2026-11-26T07:33:17Z"
+},
+{
+"symbol": "BSE",
+"name": "BSE Limited",
+"level": "info",
+"text": "Up 5.3% today at ₹3,974.00",
+"link": null,
+"at": "2026-11-26T07:33:17Z"
+},
+{
+"symbol": "TDPOWERSYS",
+"name": "TD Power Systems Limited",
+"level": "info",
+"text": "Up 5.6% today at ₹620.15",
+"link": null,
+"at": "2026-11-26T07:33:17Z"
 }
 ]

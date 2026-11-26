@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T06:32:55Z",
+"fetchedAt": "2026-11-26T07:32:54Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T06:32:49Z",
+"fetchedAt": "2026-11-26T07:32:48Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T06:32:51Z",
+"fetchedAt": "2026-11-26T07:32:50Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T06:32:55Z",
-"count": 152,
+"fetchedAt": "2026-11-26T07:32:54Z",
+"count": 154,
 "error": null
 }
 },
@@ -2618,6 +2618,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_23196_20261125_192556244_WEB.html"
 },
 {
+"symbol": "GINNIFILA",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Ginni Filaments Limited has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI (SAST) Regulatio",
+"link": "https://nsearchives.nseindia.in/corporate/team_jfutak_25112026111050_Dis11.pdf"
+},
+{
 "symbol": "GLOBAL",
 "date": "2026-11-23",
 "kind": "news",
@@ -3058,6 +3067,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/9072530155_25112026200115_Intimation_Auditor_SD.pdf"
 },
 {
+"symbol": "PVSL",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Popular Vehicles and Services Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/PVSL_ROID_105253_KMP_Doc.zip"
+},
+{
 "symbol": "RACE",
 "date": "2026-11-25",
 "kind": "news",
@@ -3203,8 +3221,8 @@
 "date": "2026-12-02",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "To consider Fund Raising",
-"link": "https://nsearchives.nseindia.in/corporate/SHUKRA_25112026085028_BM_Notice_Shukra_sw.pdf"
+"detail": "SHUKRA MEDTECH LIMITED has informed the Exchange about Board Meeting to be held on 02-Dec-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_28577_20261126_121236687_WEB.html"
 },
 {
 "symbol": "SIMBHALS",
