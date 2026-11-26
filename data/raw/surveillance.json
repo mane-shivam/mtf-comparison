@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-26T01:32:15Z",
+"fetchedAt": "2026-11-26T02:32:46Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 463,
-"fetchedAt": "2026-11-26T01:32:15Z",
+"fetchedAt": "2026-11-26T02:32:46Z",
 "error": null
 }
 },
@@ -1136,8 +1136,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "TOYAMSL",
@@ -1336,8 +1336,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "ARISTO",
@@ -1466,8 +1466,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "INNOVISION",
@@ -1586,8 +1586,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "SYNOPTICS",
@@ -1616,8 +1616,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "VNL",
@@ -2496,8 +2496,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "AGASTYAEN",
@@ -2706,8 +2706,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "ATLANTAA",
@@ -4526,8 +4526,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "VEEKAYEM",
@@ -4536,8 +4536,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-26",
-"exact": true
+"exact": true,
+"since": "2026-11-26"
 },
 {
 "symbol": "VELJAN",
