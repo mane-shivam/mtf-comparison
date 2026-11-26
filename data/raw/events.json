@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T15:32:36Z",
+"fetchedAt": "2026-11-26T16:32:40Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T15:32:31Z",
+"fetchedAt": "2026-11-26T16:32:34Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T15:32:32Z",
+"fetchedAt": "2026-11-26T16:32:36Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T15:32:36Z",
-"count": 192,
+"fetchedAt": "2026-11-26T16:32:40Z",
+"count": 194,
 "error": null
 }
 },
@@ -3434,6 +3434,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/SAILIFE_26112026181006_Stx_Credit_Rating_26112026_Signed.pdf"
 },
 {
+"symbol": "SANDUMA",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Sandur Manganese & Iron Ores Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/SANDUR_26112026212938_LtrSEsICRACreditRatingSigned.pdf"
+},
+{
 "symbol": "SATIN",
 "date": "2026-11-25",
 "kind": "meeting",
@@ -3850,6 +3859,15 @@
 "title": "Stake/pledge disclosure",
 "detail": "Ruchi Ajitsaria has Submitted to the Exchange a copy of Disclosure under Regulation 10 (5) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
 "link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_23112026174633_Dis1.PDF"
+},
+{
+"symbol": "ZFCVINDIA",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "ZF Commercial Vehicle Control Systems India Limited has informed the Exchange about favourable orders passed by CESTAT, Chennai",
+"link": "https://nsearchives.nseindia.in/corporate/WABCOINDIA_26112026212930_sdSEIntimation_order-edit.pdf"
 }
 ]
 }

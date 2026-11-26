@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-26T15:32:05Z",
+"fetchedAt": "2026-11-26T16:32:08Z",
 "count": 1714,
 "rows": [
 {
@@ -2527,7 +2527,7 @@
 "symbol": "DEVYANI",
 "name": "Devyani International Limited",
 "exchange": "NSE",
-"lev": 3.07,
+"lev": 3.06,
 "maxExposureCr": 5.0
 },
 {
@@ -2611,7 +2611,7 @@
 "symbol": "DIVISLAB",
 "name": "Divi'S Laboratories Limited",
 "exchange": "NSE",
-"lev": 4.74,
+"lev": 4.7,
 "maxExposureCr": 50.0
 },
 {
