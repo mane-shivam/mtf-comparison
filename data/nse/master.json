@@ -3228,6 +3228,12 @@
 "type": "equity"
 },
 {
+"symbol": "CRYSTALCP",
+"name": "Crystal Crop Protection Limited",
+"isin": "INE101P01016",
+"type": "equity"
+},
+{
 "symbol": "CSBBANK",
 "name": "CSB Bank Limited",
 "isin": "INE679A01013",
@@ -9162,6 +9168,12 @@
 "type": "equity"
 },
 {
+"symbol": "MROTEK",
+"name": "MRO-TEK Networks Limited",
+"isin": "INE398B01018",
+"type": "equity"
+},
+{
 "symbol": "MRPL",
 "name": "Mangalore Refinery and Petrochemicals Limited",
 "isin": "INE103A01014",
@@ -10833,6 +10845,12 @@
 "symbol": "PRAXIS",
 "name": "Praxis Home Retail Limited",
 "isin": "INE546Y01022",
+"type": "equity"
+},
+{
+"symbol": "PRAXIS-RE3",
+"name": "Praxis Home Retail Limited-RE",
+"isin": "INE546Y20048",
 "type": "equity"
 },
 {
@@ -14667,12 +14685,6 @@
 "symbol": "UMESLTD",
 "name": "Usha Martin Education & Solutions Limited",
 "isin": "INE240C01028",
-"type": "equity"
-},
-{
-"symbol": "UMIYA-MRO",
-"name": "UMIYA BUILDCON LIMITED",
-"isin": "INE398B01018",
 "type": "equity"
 },
 {
