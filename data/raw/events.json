@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T04:32:33Z",
+"fetchedAt": "2026-11-26T05:32:50Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T04:32:27Z",
+"fetchedAt": "2026-11-26T05:32:44Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T04:32:28Z",
+"fetchedAt": "2026-11-26T05:32:46Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T04:32:33Z",
-"count": 146,
+"fetchedAt": "2026-11-26T05:32:50Z",
+"count": 147,
 "error": null
 }
 },
@@ -3366,6 +3366,15 @@
 "title": "Open offer",
 "detail": "Sobhagya Capital Options Private Limited has Submitted to the Exchange a copy of public announcement (PA) under Regulation 3(1) and Regulation 4 read with Regulation 13 (2) (G), Regulation 14 and Regulation 15(1) of the Securities and Excha",
 "link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_25112026113908_VCL.zip"
+},
+{
+"symbol": "VERANDA",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Veranda Learning Solutions Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/Verandaipo_26112026104943_Reg30GST.pdf"
 },
 {
 "symbol": "VGL",
