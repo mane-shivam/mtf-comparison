@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T08:32:50Z",
+"fetchedAt": "2026-11-26T09:32:48Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T08:32:45Z",
+"fetchedAt": "2026-11-26T09:32:41Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T08:32:46Z",
+"fetchedAt": "2026-11-26T09:32:42Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T08:32:50Z",
-"count": 157,
+"fetchedAt": "2026-11-26T09:32:48Z",
+"count": 158,
 "error": null
 }
 },
@@ -2315,6 +2315,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BCSSL_23112026191706_BoardMeetingOutcome.pdf"
 },
 {
+"symbol": "BELLACASA",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Bella Casa Fashion & Retail Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/BELLACASA_26112026143801_Disclosure_Regulation_30_ROC_checked.pdf"
+},
+{
 "symbol": "BELRISE",
 "date": "2026-11-23",
 "kind": "result",
@@ -2643,14 +2652,6 @@
 "title": "Litigation",
 "detail": "Greenply Industries Limited has informed the Exchange about an Arbitral Award has been passed by the West Bengal Micro Small Enterprises Facilitation Council, Kolkata, West Bengal, (Constituted under Section 20 of Micro, Small and Medium En",
 "link": "https://nsearchives.nseindia.in/corporate/GREEN_23112026180806_Intimation_Award_23112026.pdf"
-},
-{
-"symbol": "GS151226C",
-"date": "2026-12-11",
-"kind": "action",
-"title": "Redemption",
-"detail": "Redemption",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=GS151226C"
 },
 {
 "symbol": "GUJTHEM",
@@ -3111,6 +3112,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/RACEECOCHAIN_25112026200123_Intimation_Step_Down_Nigeria.pdf"
 },
 {
+"symbol": "RACLGEAR",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "RACL Geartech Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/RACL1983_26112026142211_Credit_Rating_Intimation.pdf"
+},
+{
 "symbol": "RAJOOENG",
 "date": "2026-11-23",
 "kind": "news",
@@ -3216,14 +3226,6 @@
 "title": "Results out",
 "detail": "SFC Environmental Technologies Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/COMPLIANCE_SFC_23112026234018_sfcoutcom.pdf"
-},
-{
-"symbol": "SGBDEC26",
-"date": "2026-12-29",
-"kind": "action",
-"title": "Redemption",
-"detail": "Redemption",
-"link": "https://www.nseindia.com/get-quotes/equity?symbol=SGBDEC26"
 },
 {
 "symbol": "SGMART",
@@ -3349,6 +3351,14 @@
 "title": "Litigation",
 "detail": "TeamLease - Update on ongoing contest with the Employees Provident Fund Organisation (EPFO)",
 "link": "https://nsearchives.nseindia.in/corporate/TEAMLEASE_24112026162853_TeamLeaseIntimationonDemandbyEPFO.pdf"
+},
+{
+"symbol": "TECHM",
+"date": "2026-11-30",
+"kind": "action",
+"title": "Bonus",
+"detail": "Bonus 1:1",
+"link": "https://www.nseindia.com/get-quotes/equity?symbol=TECHM"
 },
 {
 "symbol": "TITAN",
