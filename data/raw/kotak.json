@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-26T14:31:56Z",
+"fetchedAt": "2026-11-26T15:32:05Z",
 "count": 1714,
 "rows": [
 {
@@ -2527,7 +2527,7 @@
 "symbol": "DEVYANI",
 "name": "Devyani International Limited",
 "exchange": "NSE",
-"lev": 3.06,
+"lev": 3.07,
 "maxExposureCr": 5.0
 },
 {
@@ -2611,7 +2611,7 @@
 "symbol": "DIVISLAB",
 "name": "Divi'S Laboratories Limited",
 "exchange": "NSE",
-"lev": 4.7,
+"lev": 4.74,
 "maxExposureCr": 50.0
 },
 {
@@ -6146,7 +6146,7 @@
 "symbol": "KSB",
 "name": "Ksb Limited",
 "exchange": "NSE",
-"lev": 3.28,
+"lev": 3.29,
 "maxExposureCr": 5.0
 },
 {
@@ -6195,7 +6195,7 @@
 "symbol": "LTF",
 "name": "L&T Finance Limited",
 "exchange": "NSE",
-"lev": 4.06,
+"lev": 4.05,
 "maxExposureCr": 50.0
 },
 {
@@ -6279,7 +6279,7 @@
 "symbol": "IXIGO",
 "name": "Le Travenues Technology Limited",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.57,
 "maxExposureCr": 5.0
 },
 {
@@ -9247,7 +9247,7 @@
 "symbol": "SANGHVIMOV",
 "name": "Sanghvi Movers Limited",
 "exchange": "NSE",
-"lev": 2.48,
+"lev": 2.49,
 "maxExposureCr": 2.0
 },
 {
@@ -9296,7 +9296,7 @@
 "symbol": "SAREGAMA",
 "name": "Saregama India Limited",
 "exchange": "NSE",
-"lev": 2.88,
+"lev": 2.86,
 "maxExposureCr": 5.0
 },
 {
@@ -9429,7 +9429,7 @@
 "symbol": "SBIIT",
 "name": "Sbi Nifty It Etf",
 "exchange": "NSE",
-"lev": 3.7,
+"lev": 3.71,
 "maxExposureCr": 1.0
 },
 {

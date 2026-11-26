@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T14:32:30Z",
+"fetchedAt": "2026-11-26T15:32:36Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T14:32:23Z",
+"fetchedAt": "2026-11-26T15:32:31Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T14:32:24Z",
+"fetchedAt": "2026-11-26T15:32:32Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T14:32:30Z",
-"count": 190,
+"fetchedAt": "2026-11-26T15:32:36Z",
+"count": 192,
 "error": null
 }
 },
@@ -2941,6 +2941,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/JGEL2025_23112026215542_2026_11_23_Regulation_30_JGEL_Credit_Rating.pdf"
 },
 {
+"symbol": "JPPOWER",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Jaiprakash Power Ventures Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/JPPOWER_26112026201943_Intimation.pdf"
+},
+{
 "symbol": "JSWCEMENT",
 "date": "2026-11-23",
 "kind": "news",
@@ -3175,6 +3184,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/NCL1993_26112026131900_Reg_30_Credit_Rating_Intimation.pdf"
 },
 {
+"symbol": "NDRINVIT",
+"date": "2026-11-28",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "To consider and approve the Audited Standalone and Consolidated Financial Results of the Trust for the quarter ended June 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/NDRINVIT_26112026201209_Intimation_of_BM_26112026__1_-signed.pdf"
+},
+{
 "symbol": "NECCLTD",
 "date": "2026-11-24",
 "kind": "news",
@@ -3266,8 +3283,8 @@
 "date": "2026-12-01",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "To consider Fund Raising",
-"link": "https://nsearchives.nseindia.in/corporate/POONAWALLA_26112026191938_Project_Marvel__Pre_PFL_BM_Draft_SE_Intimationfinal.pdf"
+"detail": "Poonawalla Fincorp Limited has informed the Exchange about Board Meeting to be held on 01-Dec-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2184_20261126_200255901_WEB.html"
 },
 {
 "symbol": "POWERGRID",
