@@ -1,50 +1,18 @@
 [
  {
-  "symbol": "ACE",
-  "name": "Action Construction Equipment Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹1,293.95)",
-  "link": null,
-  "at": "2026-11-26T09:33:10Z"
- },
- {
-  "symbol": "ANANDRATHI",
-  "name": "Anand Rathi Wealth Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹2,419.60)",
-  "link": null,
-  "at": "2026-11-26T09:33:10Z"
- },
- {
-  "symbol": "KFINTECH",
-  "name": "Kfin Technologies Limited",
+  "symbol": "IKS",
+  "name": "Inventurus Knowledge Solutions Limited",
   "level": "info",
-  "text": "Up 6.6% today at ₹995.95",
+  "text": "Volume 3.2× the 20-day average",
   "link": null,
-  "at": "2026-11-26T09:33:10Z"
+  "at": "2026-11-26T09:51:57Z"
  },
  {
-  "symbol": "KFINTECH",
-  "name": "Kfin Technologies Limited",
-  "level": "info",
-  "text": "Volume 3.5× the 20-day average",
+  "symbol": "MANINDS",
+  "name": "Man Industries (India) Limited",
+  "level": "watch",
+  "text": "Kotak Neo leverage cut 2.4× → 2.3×: you need more margin",
   "link": null,
-  "at": "2026-11-26T09:33:10Z"
- },
- {
-  "symbol": "LAURUSLABS",
-  "name": "Laurus Labs Limited",
-  "level": "good",
-  "text": "At a 52-week high (₹2,508.30)",
-  "link": null,
-  "at": "2026-11-26T09:33:10Z"
- },
- {
-  "symbol": "TDPOWERSYS",
-  "name": "TD Power Systems Limited",
-  "level": "info",
-  "text": "Up 5.2% today at ₹617.45",
-  "link": null,
-  "at": "2026-11-26T09:33:10Z"
+  "at": "2026-11-26T09:51:57Z"
  }
 ]

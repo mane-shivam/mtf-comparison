@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T09:32:48Z",
+"fetchedAt": "2026-11-26T09:51:35Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T09:32:41Z",
+"fetchedAt": "2026-11-26T09:51:29Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T09:32:42Z",
+"fetchedAt": "2026-11-26T09:51:30Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T09:32:48Z",
-"count": 158,
+"fetchedAt": "2026-11-26T09:51:35Z",
+"count": 159,
 "error": null
 }
 },
@@ -3359,6 +3359,15 @@
 "title": "Bonus",
 "detail": "Bonus 1:1",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=TECHM"
+},
+{
+"symbol": "TI",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Tilaknagar Industries Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/gthakur_26112026151755_TI_Revcreditrating_Nov2026.pdf"
 },
 {
 "symbol": "TITAN",
