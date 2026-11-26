@@ -1,10 +1,18 @@
 [
  {
-  "symbol": "CENTUM",
-  "name": "Centum Electronics Limited",
-  "level": "watch",
-  "text": "Rupeezy leverage cut 2.6× → 2.5×: you need more margin",
+  "symbol": "ACE",
+  "name": "Action Construction Equipment Limited",
+  "level": "info",
+  "text": "Up 5.4% today at ₹1,254.35",
   "link": null,
-  "at": "2026-11-26T03:32:55Z"
+  "at": "2026-11-26T04:32:58Z"
+ },
+ {
+  "symbol": "LAURUSLABS",
+  "name": "Laurus Labs Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹2,494.00)",
+  "link": null,
+  "at": "2026-11-26T04:32:58Z"
  }
 ]
