@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-26T11:32:23Z",
+"fetchedAt": "2026-11-26T12:32:11Z",
 "count": 1714,
 "rows": [
 {
@@ -672,7 +672,7 @@
 "symbol": "APARINDS",
 "name": "Apar Industries Limited",
 "exchange": "NSE",
-"lev": 2.7,
+"lev": 3.33,
 "maxExposureCr": 10.0
 },
 {
@@ -700,8 +700,8 @@
 "symbol": "APLAPOLLO",
 "name": "Apl Apollo Tubes Limited",
 "exchange": "NSE",
-"lev": 3.74,
-"maxExposureCr": 50.0
+"lev": 2.8,
+"maxExposureCr": 5.0
 },
 {
 "symbol": "APOLLOHOSP",
@@ -728,7 +728,7 @@
 "symbol": "APOLLOTYRE",
 "name": "Apollo Tyres Limited",
 "exchange": "NSE",
-"lev": 3.52,
+"lev": 3.51,
 "maxExposureCr": 10.0
 },
 {
@@ -4018,7 +4018,7 @@
 "symbol": "GNFC",
 "name": "Gujarat Narmada Valley Fertilizers And Chemicals Limited",
 "exchange": "NSE",
-"lev": 3.18,
+"lev": 3.17,
 "maxExposureCr": 5.0
 },
 {
@@ -4123,7 +4123,7 @@
 "symbol": "HAVELLS",
 "name": "Havells India Limited",
 "exchange": "NSE",
-"lev": 4.75,
+"lev": 4.74,
 "maxExposureCr": 50.0
 },
 {
@@ -4172,7 +4172,7 @@
 "symbol": "HDFCLIFE",
 "name": "Hdfc Life Insurance Company Limited",
 "exchange": "NSE",
-"lev": 4.84,
+"lev": 4.88,
 "maxExposureCr": 75.0
 },
 {

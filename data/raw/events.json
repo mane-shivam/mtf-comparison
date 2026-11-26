@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T11:32:55Z",
+"fetchedAt": "2026-11-26T12:32:43Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T11:32:50Z",
+"fetchedAt": "2026-11-26T12:32:38Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T11:32:51Z",
+"fetchedAt": "2026-11-26T12:32:38Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T11:32:55Z",
-"count": 169,
+"fetchedAt": "2026-11-26T12:32:43Z",
+"count": 175,
 "error": null
 }
 },
@@ -2228,6 +2228,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/AIFL2020_25112026192301_Intimation_of_Resignation_of_Auditor_BSE.pdf"
 },
 {
+"symbol": "ALLDIGI",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Alldigi Tech Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/ALLDIGI_ROID_105259_KMP_Doc.zip"
+},
+{
 "symbol": "ALMONDZ",
 "date": "2026-11-26",
 "kind": "news",
@@ -2244,6 +2253,15 @@
 "title": "Director/KMP resigned",
 "detail": "Angel One Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.in/corporate/ANGELONE_ROID_105249_KMP_Doc.zip"
+},
+{
+"symbol": "ANUHPHR",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Anuh Pharma Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/ANUHNSE_26112026173954_Search_under_Section_67_of_GST.pdf"
 },
 {
 "symbol": "APLAPOLLO",
@@ -2785,6 +2803,24 @@
 "link": "https://nsearchives.nseindia.in/corporate/IIFL_ROID_105176_KMP_Doc.zip"
 },
 {
+"symbol": "IIFL",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "IIFL Finance Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/IIFL_26112026170359_SEIntimationfinal.pdf"
+},
+{
+"symbol": "INDIAGLYCO",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "India Glycols Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/INDIAGLYCO_26112026171531_CreditRating.pdf"
+},
+{
 "symbol": "INDIANB",
 "date": "2026-11-27",
 "kind": "meeting",
@@ -3139,6 +3175,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/POWERGRID1_25112026225535_BSENSE_PIdt251126_Final.pdf"
 },
 {
+"symbol": "PRITIKAUTO",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Pritika Auto Industries Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
+"link": "https://nsearchives.nseindia.in/corporate/PRITIKAUTO_26112026172504_IntimationPAILorderReg3026nov2026.pdf"
+},
+{
 "symbol": "PVSL",
 "date": "2026-11-25",
 "kind": "news",
@@ -3441,6 +3486,15 @@
 "title": "Litigation",
 "detail": "TeamLease - Update on ongoing contest with the Employees Provident Fund Organisation (EPFO)",
 "link": "https://nsearchives.nseindia.in/corporate/TEAMLEASE_24112026162853_TeamLeaseIntimationonDemandbyEPFO.pdf"
+},
+{
+"symbol": "TEAMLEASE",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "TeamLease Update pertaining to hearing date in respect of Writ Petition filed on June 12, 2026, before the Hon ble High Court of Karnataka",
+"link": "https://nsearchives.nseindia.in/corporate/TEAMLEASE_26112026175516_TeamLeaseIntimationonhearingwithrespecttoWritPetition.pdf"
 },
 {
 "symbol": "TECHM",
