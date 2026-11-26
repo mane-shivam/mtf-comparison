@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T07:32:54Z",
+"fetchedAt": "2026-11-26T08:32:50Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T07:32:48Z",
+"fetchedAt": "2026-11-26T08:32:45Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T07:32:50Z",
+"fetchedAt": "2026-11-26T08:32:46Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T07:32:54Z",
-"count": 154,
+"fetchedAt": "2026-11-26T08:32:50Z",
+"count": 157,
 "error": null
 }
 },
@@ -2877,6 +2877,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/team_jfutak_23112026101450_Dis3.pdf"
 },
 {
+"symbol": "MANCREDIT",
+"date": "2026-12-01",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "Mangal Credit and Fincorp Limited has informed the Exchange about Board Meeting to be held on 01-Dec-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19071_20261126_134500739_WEB.html"
+},
+{
 "symbol": "MARSONS",
 "date": "2026-11-26",
 "kind": "news",
@@ -2972,6 +2980,15 @@
 "link": "-"
 },
 {
+"symbol": "NATCAPSUQ",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Natural Capsules Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/NCL1993_26112026131900_Reg_30_Credit_Rating_Intimation.pdf"
+},
+{
 "symbol": "NECCLTD",
 "date": "2026-11-24",
 "kind": "news",
@@ -3023,6 +3040,15 @@
 "title": "Credit rating update",
 "detail": "Oswal Pumps Limited has informed the Exchange about Credit Rating- Revision",
 "link": "https://nsearchives.nseindia.in/corporate/OSWALPUMPS_23112026170557_SELetterICRACreditRatingOPL23112026.pdf"
+},
+{
+"symbol": "PANACEABIO",
+"date": "2026-11-26",
+"kind": "news",
+"level": "alert",
+"title": "Licence suspended",
+"detail": "Panacea Biotec Limited has informed the Exchange about Intimation regarding withdrawal of non-compliance report previously issued by National Centre for Public Health and Pharmacy, Hungary for manufacturing facility of the Company's wholly ",
+"link": "https://nsearchives.nseindia.in/corporate/PANACEABIO_26112026130307_IntimationforwithdrawalofnoncompliancereportbyNCPHP.pdf"
 },
 {
 "symbol": "PASHUPATI",

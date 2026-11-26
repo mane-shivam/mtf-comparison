@@ -2,25 +2,25 @@
  {
   "symbol": "MANINDS",
   "name": "Man Industries (India) Limited",
-  "level": "watch",
-  "text": "Kotak Neo leverage cut 2.4× → 2.3×: you need more margin",
+  "level": "good",
+  "text": "Kotak Neo leverage up 2.3× → 2.4×: you need less margin",
   "link": null,
-  "at": "2026-11-26T07:33:17Z"
+  "at": "2026-11-26T08:33:12Z"
  },
  {
-  "symbol": "BSE",
-  "name": "BSE Limited",
-  "level": "info",
-  "text": "Up 5.3% today at ₹3,974.00",
+  "symbol": "MCX",
+  "name": "Multi Commodity Exchange of India Limited",
+  "level": "good",
+  "text": "At a 52-week high (₹3,829.20)",
   "link": null,
-  "at": "2026-11-26T07:33:17Z"
+  "at": "2026-11-26T08:33:12Z"
  },
  {
-  "symbol": "TDPOWERSYS",
-  "name": "TD Power Systems Limited",
+  "symbol": "WOCKPHARMA",
+  "name": "Wockhardt Limited",
   "level": "info",
-  "text": "Up 5.6% today at ₹620.15",
+  "text": "Up 5.1% today at ₹2,183.40",
   "link": null,
-  "at": "2026-11-26T07:33:17Z"
+  "at": "2026-11-26T08:33:12Z"
  }
 ]
