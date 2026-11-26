@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T10:32:30Z",
+"fetchedAt": "2026-11-26T11:32:55Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T10:32:24Z",
+"fetchedAt": "2026-11-26T11:32:50Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T10:32:25Z",
+"fetchedAt": "2026-11-26T11:32:51Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T10:32:30Z",
-"count": 165,
+"fetchedAt": "2026-11-26T11:32:55Z",
+"count": 169,
 "error": null
 }
 },
@@ -2299,6 +2299,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BAIDFIN_ROID_105144_KMP_Doc.zip"
 },
 {
+"symbol": "BALMLAWRIE",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Disclosure under Regulation 30 of Securities and Exchange Board of India ( SEBI ) (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( Listing Regulations ) Update on earlier Intimations dated 18th August, 2026 and 6th Octo",
+"link": "https://nsearchives.nseindia.in/corporate/BALMLAWRIE_26112026162635_SignedReg30GSTUpdate.pdf"
+},
+{
 "symbol": "BBOX",
 "date": "2026-11-23",
 "kind": "news",
@@ -2514,6 +2523,15 @@
 "title": "Buyback",
 "detail": "DALMIA BHARAT LIMITED has informed the Exchange about Board Meeting to be held on 23-Nov-2026 to consider and approve Buyback/Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17144_20261118_185709253_WEB.html"
+},
+{
+"symbol": "DALBHARAT",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Buyback",
+"detail": "Dalmia Bharat Limited has informed the Exchange about Buyback. Board Resolution & Public Announcement pertaining to Buyback",
+"link": "https://nsearchives.nseindia.in/corporate/DALBHARAT_26112026164701_SEfilingPA26112026.pdf"
 },
 {
 "symbol": "DAVANGERE",
@@ -2973,6 +2991,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/MK123_24112026214754_MK_Results_300926_S.pdf"
 },
 {
+"symbol": "MOTILALOFS",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "We wish to inform the Exchanges that the Securities and Exchange Board of India haspassed an Adjudication Order dated November 25, 2026",
+"link": "https://nsearchives.nseindia.in/corporate/MOTILALOFS_26112026162819_Intimation_SEBIOrder_26112026_Final_signed.pdf"
+},
+{
 "symbol": "MSUMI",
 "date": "2026-11-24",
 "kind": "news",
@@ -3371,6 +3398,15 @@
 "title": "Dividend",
 "detail": "STEEL CITY SECURITIES LIMITED has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider Dividend.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_14558_20261124_120949713_WEB.html"
+},
+{
+"symbol": "SUDARCOLOR",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Stake/pledge disclosure",
+"detail": "Sudarshan Colorants India Limited has Submitted to the Exchange a copy of Disclosure under Regulation 10 (5) of the Securities and Exchange Board of India (Substantial Acquisition of Shares and Takeovers) Regulations, 2011.",
+"link": "https://nsearchives.nseindia.in/corporate/team_jfutak_26112026160259_Dis312.pdf"
 },
 {
 "symbol": "SUKHJITS",
