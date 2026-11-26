@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-26T09:50:58Z",
+"fetchedAt": "2026-11-26T10:31:58Z",
 "count": 1714,
 "rows": [
 {
@@ -4417,7 +4417,7 @@
 "symbol": "HAL",
 "name": "Hindustan Aeronautics Limited",
 "exchange": "NSE",
-"lev": 4.56,
+"lev": 4.55,
 "maxExposureCr": 50.0
 },
 {
@@ -4515,7 +4515,7 @@
 "symbol": "HONASA",
 "name": "Honasa Consumer Ltd",
 "exchange": "NSE",
-"lev": 3.12,
+"lev": 3.13,
 "maxExposureCr": 5.0
 },
 {
@@ -4592,7 +4592,7 @@
 "symbol": "ICICILIFE",
 "name": "Icici Life Insurance Limited",
 "exchange": "NSE",
-"lev": 4.72,
+"lev": 4.71,
 "maxExposureCr": 50.0
 },
 {
@@ -5537,14 +5537,14 @@
 "symbol": "JKTYRE",
 "name": "Jk Tyre & Industries Limited",
 "exchange": "NSE",
-"lev": 3.09,
+"lev": 3.1,
 "maxExposureCr": 5.0
 },
 {
 "symbol": "JMFINANCIL",
 "name": "Jm Financial Limited",
 "exchange": "NSE",
-"lev": 2.93,
+"lev": 2.94,
 "maxExposureCr": 10.0
 },
 {
@@ -5600,7 +5600,7 @@
 "symbol": "JSWSTEEL",
 "name": "Jsw Steel Limited",
 "exchange": "NSE",
-"lev": 4.9,
+"lev": 4.91,
 "maxExposureCr": 75.0
 },
 {
@@ -5614,7 +5614,7 @@
 "symbol": "JTLIND",
 "name": "Jtl Industries Limited",
 "exchange": "NSE",
-"lev": 2.48,
+"lev": 2.49,
 "maxExposureCr": 2.0
 },
 {
@@ -5670,7 +5670,7 @@
 "symbol": "JWL",
 "name": "Jupiter Wagons Ltd",
 "exchange": "NSE",
-"lev": 2.83,
+"lev": 2.68,
 "maxExposureCr": 5.0
 },
 {
@@ -6580,7 +6580,7 @@
 "symbol": "MANINDS",
 "name": "Man Industries (India) Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.34,
+"lev": 2.35,
 "maxExposureCr": 5.0
 },
 {
@@ -6636,7 +6636,7 @@
 "symbol": "MRPL",
 "name": "Mangalore Refinery And Petrochemicals Limited",
 "exchange": "NSE",
-"lev": 2.62,
+"lev": 2.61,
 "maxExposureCr": 10.0
 },
 {
@@ -6657,7 +6657,7 @@
 "symbol": "MANKIND",
 "name": "Mankind Pharma Limited",
 "exchange": "NSE",
-"lev": 4.54,
+"lev": 4.53,
 "maxExposureCr": 50.0
 },
 {
@@ -8197,7 +8197,7 @@
 "symbol": "PIIND",
 "name": "Pi Industries Limited",
 "exchange": "NSE",
-"lev": 3.9,
+"lev": 3.89,
 "maxExposureCr": 50.0
 },
 {
@@ -8218,7 +8218,7 @@
 "symbol": "PINELABS",
 "name": "Pine Labs Limited",
 "exchange": "NSE",
-"lev": 2.86,
+"lev": 2.85,
 "maxExposureCr": 10.0
 },
 {
@@ -8288,7 +8288,7 @@
 "symbol": "POKARNA",
 "name": "Pokarna Limited",
 "exchange": "NSE",
-"lev": 2.5,
+"lev": 2.49,
 "maxExposureCr": 1.0
 },
 {
@@ -8316,14 +8316,14 @@
 "symbol": "POCL",
 "name": "Pondy Oxides & Chemicals Ltd",
 "exchange": "NSE",
-"lev": 2.69,
+"lev": 2.68,
 "maxExposureCr": 5.0
 },
 {
 "symbol": "POONAWALLA",
 "name": "Poonawalla Fincorp Limited",
 "exchange": "NSE",
-"lev": 3.07,
+"lev": 3.06,
 "maxExposureCr": 25.0
 },
 {
@@ -8785,7 +8785,7 @@
 "symbol": "RATEGAIN",
 "name": "Rategain Travel Technologies Limited",
 "exchange": "NSE",
-"lev": 2.85,
+"lev": 2.86,
 "maxExposureCr": 2.0
 },
 {
@@ -10731,7 +10731,7 @@
 "symbol": "TENNIND",
 "name": "Tenneco Clean Air India Limited",
 "exchange": "NSE",
-"lev": 3.3,
+"lev": 3.31,
 "maxExposureCr": 5.0
 },
 {
@@ -10773,7 +10773,7 @@
 "symbol": "ANUP",
 "name": "The Anup Engineering Limited",
 "exchange": "NSE",
-"lev": 2.0,
+"lev": 2.69,
 "maxExposureCr": 2.0
 },
 {
@@ -10801,14 +10801,14 @@
 "symbol": "INDHOTEL",
 "name": "The Indian Hotels Company Limited",
 "exchange": "NSE",
-"lev": 4.74,
+"lev": 4.75,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "J&KBANK",
 "name": "The Jammu & Kashmir Bank Limited",
 "exchange": "NSE",
-"lev": 2.79,
+"lev": 2.78,
 "maxExposureCr": 2.0
 },
 {
@@ -10822,7 +10822,7 @@
 "symbol": "NIACL",
 "name": "The New India Assurance Company Limited",
 "exchange": "NSE",
-"lev": 2.6,
+"lev": 2.61,
 "maxExposureCr": 2.0
 },
 {
@@ -10850,7 +10850,7 @@
 "symbol": "SOUTHBANK",
 "name": "The South Indian Bank Limited",
 "exchange": "NSE",
-"lev": 3.06,
+"lev": 3.07,
 "maxExposureCr": 10.0
 },
 {
@@ -10885,14 +10885,14 @@
 "symbol": "TIRUMALCHM",
 "name": "Thirumalai Chemicals Limited",
 "exchange": "NSE",
-"lev": 2.81,
+"lev": 2.82,
 "maxExposureCr": 2.0
 },
 {
 "symbol": "THOMASCOOK",
 "name": "Thomas Cook  (India)  Limited",
 "exchange": "NSE",
-"lev": 2.71,
+"lev": 2.63,
 "maxExposureCr": 5.0
 },
 {
