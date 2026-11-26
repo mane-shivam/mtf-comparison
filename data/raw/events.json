@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-26T12:32:43Z",
+"fetchedAt": "2026-11-26T13:32:46Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-26T12:32:38Z",
+"fetchedAt": "2026-11-26T13:32:40Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-26T12:32:38Z",
+"fetchedAt": "2026-11-26T13:32:41Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-26T12:32:43Z",
-"count": 175,
+"fetchedAt": "2026-11-26T13:32:46Z",
+"count": 186,
 "error": null
 }
 },
@@ -442,6 +442,10 @@
 "band": 5,
 "series": "BE"
 },
+"DEEDEV": {
+"band": 5,
+"series": "EQ"
+},
 "DEEP": {
 "band": 5,
 "series": "BE"
@@ -610,6 +614,10 @@
 "band": 5,
 "series": "BZ"
 },
+"HEGRAPHITE": {
+"band": 5,
+"series": "BE"
+},
 "HEROMOTORS": {
 "band": 5,
 "series": "EQ"
@@ -737,10 +745,6 @@
 "LAKPRE": {
 "band": 5,
 "series": "BZ"
-},
-"LAL": {
-"band": 5,
-"series": "BE"
 },
 "LALITHAA": {
 "band": 5,
@@ -898,6 +902,10 @@
 "band": 5,
 "series": "EQ"
 },
+"MONTEIL": {
+"band": 5,
+"series": "BE"
+},
 "MORARJEE": {
 "band": 5,
 "series": "BZ"
@@ -993,6 +1001,10 @@
 "ORTEL": {
 "band": 5,
 "series": "BZ"
+},
+"ORTINGLOBE": {
+"band": 5,
+"series": "EQ"
 },
 "PALREDTEC": {
 "band": 5,
@@ -1398,6 +1410,10 @@
 "band": 5,
 "series": "EQ"
 },
+"UTLSOLAR": {
+"band": 5,
+"series": "EQ"
+},
 "UYFINCORP": {
 "band": 5,
 "series": "BE"
@@ -1619,10 +1635,6 @@
 "series": "EQ"
 },
 "DCAL": {
-"band": 10,
-"series": "EQ"
-},
-"DEEDEV": {
 "band": 10,
 "series": "EQ"
 },
@@ -1930,10 +1942,6 @@
 "band": 10,
 "series": "EQ"
 },
-"ORTINGLOBE": {
-"band": 10,
-"series": "EQ"
-},
 "OSWALPUMPS": {
 "band": 10,
 "series": "EQ"
@@ -2146,10 +2154,6 @@
 "band": 10,
 "series": "EQ"
 },
-"UTLSOLAR": {
-"band": 10,
-"series": "EQ"
-},
 "VENTIVE": {
 "band": 10,
 "series": "EQ"
@@ -2181,6 +2185,10 @@
 "WHEELS": {
 "band": 10,
 "series": "EQ"
+},
+"PRAXIS-RE3": {
+"band": 40,
+"series": "BE"
 }
 },
 "events": [
@@ -2262,6 +2270,15 @@
 "title": "Regulatory/tax order",
 "detail": "Anuh Pharma Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/ANUHNSE_26112026173954_Search_under_Section_67_of_GST.pdf"
+},
+{
+"symbol": "APARINDS",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Apar Industries Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/APARINDS_26112026183743_Intimation_-_GST.pdf"
 },
 {
 "symbol": "APLAPOLLO",
@@ -2499,6 +2516,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22749_20261118_171814738_WEB.html"
 },
 {
+"symbol": "COMSYN",
+"date": "2026-12-01",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "COMMERCIAL SYN BAGS LIMITED has informed the Exchange about Board Meeting to be held on 01-Dec-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_22749_20261126_182751909_WEB.html"
+},
+{
 "symbol": "CONCOR",
 "date": "2026-11-23",
 "kind": "news",
@@ -2595,6 +2620,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/DOLATALGO_26112026114329_26-11-26-disc-signed.pdf"
 },
 {
+"symbol": "DOLLEX",
+"date": "2026-12-01",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "DOLLEX AGROTECH LIMITED has informed the Exchange about Board Meeting to be held on 01-Dec-2026 to consider and approve Fund raising/Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_21085_20261126_180700276_WEB.html"
+},
+{
 "symbol": "DPSCLTD",
 "date": "2026-11-24",
 "kind": "news",
@@ -2645,6 +2678,15 @@
 "title": "Results out",
 "detail": "Siemens Energy India Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/ENRIN_25112026201025_BoardMeetingOutcome25112026signed.pdf"
+},
+{
+"symbol": "EUREKAFORB",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Eureka Forbes Limited has informed the Exchange about the Update on Karnataka High Court GST Matter",
+"link": "https://nsearchives.nseindia.in/corporate/SHILPAJAIN_26112026184637_Regulation30signed.pdf"
 },
 {
 "symbol": "FUSION",
@@ -2837,6 +2879,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=INTERARCH"
 },
 {
+"symbol": "ISGEC",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Isgec Heavy Engineering Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/ISGEC_26112026182045_Revised_intimation.pdf"
+},
+{
 "symbol": "JETFREIGHT",
 "date": "2026-11-23",
 "kind": "news",
@@ -2844,6 +2895,23 @@
 "title": "Director/KMP resigned",
 "detail": "Jet Freight Logistics Limited has informed the Exchange about Resignation of Director/KMP/SMP",
 "link": "https://nsearchives.nseindia.in/corporate/JETFREIGHT_ROID_105160_KMP_Doc.zip"
+},
+{
+"symbol": "JETFREIGHT",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Jet Freight Logistics Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/JETFREIGHT_26112026181456_Reg_30_Intimation_SEBI_Summon_Signed.pdf"
+},
+{
+"symbol": "JKSHAH",
+"date": "2026-12-03",
+"kind": "meeting",
+"title": "Results",
+"detail": "J.K.Shah Commerce Education Limited has informed the Exchange about Board Meeting to be held on 03-Dec-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_29540_20261126_183259340_WEB.html"
 },
 {
 "symbol": "JNPR",
@@ -3025,6 +3093,15 @@
 "title": "Results out",
 "detail": "M. K. Sons Fine Jewels Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/MK123_24112026214754_MK_Results_300926_S.pdf"
+},
+{
+"symbol": "MONEYBOXX",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Moneyboxx Finance Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/MONEYBOXX_ROID_105265_KMP_Doc.zip"
 },
 {
 "symbol": "MOTILALOFS",
@@ -3305,6 +3382,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_20524_20261125_173601633_WEB.html"
 },
 {
+"symbol": "SAILIFE",
+"date": "2026-11-26",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Sai Life Sciences Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/SAILIFE_26112026181006_Stx_Credit_Rating_26112026_Signed.pdf"
+},
+{
 "symbol": "SATIN",
 "date": "2026-11-25",
 "kind": "meeting",
@@ -3402,6 +3488,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "SKIL Infrastructure Limited has informed the Exchange regarding the Sixteen (16th) Committee of Creditors meeting to be held on Friday, November 27, 2026",
 "link": "https://nsearchives.nseindia.in/corporate/Skilinfra_25112026165637_SKIL_Letter_-_BSE_NSE.pdf"
+},
+{
+"symbol": "SKIL",
+"date": "2026-11-26",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "SKIL Infrastructure Limited has informed the Exchange regarding the postponement of the Sixteen (16th) Committee of Creditors meeting to be held on Friday, November 27, 2026",
+"link": "https://nsearchives.nseindia.in/corporate/Skilinfra_26112026180756_SKIL_Letter_Postponement_16th_COC.pdf"
 },
 {
 "symbol": "SMARTLINK",
@@ -3566,6 +3661,14 @@
 "title": "Regulatory/tax order",
 "detail": "Updater Services Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/COMPLIANCEOFFICERUDS_25112026173714_UDS-Tamil_Nadu_-Order_Intimation_F_Sd.pdf"
+},
+{
+"symbol": "UNITEDPOLY",
+"date": "2026-11-30",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "United Polyfab Gujarat Limited has informed the Exchange about Board Meeting to be held on 30-Nov-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13877_20261126_183524810_WEB.html"
 },
 {
 "symbol": "VAISHALI",

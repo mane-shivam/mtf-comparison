@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-26T12:32:11Z",
+"fetchedAt": "2026-11-26T13:32:14Z",
 "count": 1714,
 "rows": [
 {
@@ -4018,7 +4018,7 @@
 "symbol": "GNFC",
 "name": "Gujarat Narmada Valley Fertilizers And Chemicals Limited",
 "exchange": "NSE",
-"lev": 3.17,
+"lev": 3.18,
 "maxExposureCr": 5.0
 },
 {
@@ -4123,7 +4123,7 @@
 "symbol": "HAVELLS",
 "name": "Havells India Limited",
 "exchange": "NSE",
-"lev": 4.74,
+"lev": 4.75,
 "maxExposureCr": 50.0
 },
 {
@@ -4172,7 +4172,7 @@
 "symbol": "HDFCLIFE",
 "name": "Hdfc Life Insurance Company Limited",
 "exchange": "NSE",
-"lev": 4.88,
+"lev": 4.84,
 "maxExposureCr": 75.0
 },
 {
@@ -5019,7 +5019,7 @@
 "symbol": "IREDA",
 "name": "Indian Renewable Energy Development Agency Ltd",
 "exchange": "NSE",
-"lev": 3.12,
+"lev": 3.14,
 "maxExposureCr": 10.0
 },
 {
