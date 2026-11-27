@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T06:32:38Z",
+"fetchedAt": "2026-11-27T07:32:32Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T06:32:32Z",
+"fetchedAt": "2026-11-27T07:32:26Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T06:32:33Z",
+"fetchedAt": "2026-11-27T07:32:26Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T06:32:38Z",
-"count": 156,
+"fetchedAt": "2026-11-27T07:32:32Z",
+"count": 159,
 "error": null
 }
 },
@@ -2596,6 +2596,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ENRIN_25112026201025_BoardMeetingOutcome25112026signed.pdf"
 },
 {
+"symbol": "EPIGRAL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Epigral Limited has informed the Exchange about update on CRISIL Ratings on the Bank Facilities of Epigral Limited.",
+"link": "https://nsearchives.nseindia.in/corporate/MFL_27112026123443_RatingUpdate26112026.pdf"
+},
+{
 "symbol": "EUREKAFORB",
 "date": "2026-11-26",
 "kind": "news",
@@ -2619,6 +2628,15 @@
 "title": "Fund raising",
 "detail": "GARUDA CONSTRUCTION AND ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 28-Nov-2026 to consider and approve Fund raising/Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_23196_20261125_192556244_WEB.html"
+},
+{
+"symbol": "GEEKAYWIRE",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Geekay Wires Limited has informed regarding Disclosure of material issue",
+"link": "https://nsearchives.nseindia.in/corporate/GEEKAYWIRE_27112026125904_ANKUSH_AGARWAL_FORM_C.PDF"
 },
 {
 "symbol": "GINNIFILA",
@@ -3488,6 +3506,15 @@
 "title": "Litigation",
 "detail": "Vikran Engineering Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s) or the outcome impacting the Company",
 "link": "https://nsearchives.nseindia.in/corporate/VIKRAN123_25112026181116_REPLY_TO_SEBI_06_11_2026.pdf"
+},
+{
+"symbol": "VOGL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Vedanta Oil and Gas Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/VOGL1_27112026121658_VOGLSEIntimation_PenaltyOrderCustom.pdf"
 },
 {
 "symbol": "VPRPL",
