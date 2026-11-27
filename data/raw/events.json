@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T03:32:22Z",
+"fetchedAt": "2026-11-27T04:32:31Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T03:32:17Z",
+"fetchedAt": "2026-11-27T04:32:26Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T03:32:18Z",
+"fetchedAt": "2026-11-27T04:32:27Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T03:32:22Z",
-"count": 152,
+"fetchedAt": "2026-11-27T04:32:31Z",
+"count": 153,
 "error": null
 }
 },
@@ -2480,6 +2480,15 @@
 "title": "Board meeting",
 "detail": "DAVANGERE : 02-Dec-2026 : The Company has informed the Exchange that a Board meeting to be held on November 26, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Com",
 "link": "https://nsearchives.nseindia.in/corporate/DAVANGERESUGAR_25112026173812_DSCL_Regln_29_Prior_Intimation_of_Rescheduled_BM.pdf"
+},
+{
+"symbol": "DHARAN",
+"date": "2026-11-27",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "DHARAN INFRA-EPC LIMITED has informed the Exchange about Corporate Insolvency Resolution Process - Intimation of 2nd CoC Meeting to be held on 3rd December 2026",
+"link": "https://nsearchives.nseindia.in/corporate/KBCGLOBAL_27112026093334_Intimation_2nd_CoC_Meeting.pdf"
 },
 {
 "symbol": "DICIND",
