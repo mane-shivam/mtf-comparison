@@ -5712,6 +5712,12 @@
 "type": "equity"
 },
 {
+"symbol": "HEGRAPHITE",
+"name": "HEG Limited",
+"isin": "INE0Y9J01020",
+"type": "equity"
+},
+{
 "symbol": "HEIDELBERG",
 "name": "HeidelbergCement India Limited",
 "isin": "INE578A01017",
@@ -7884,12 +7890,6 @@
 "type": "equity"
 },
 {
-"symbol": "LAL",
-"name": "Lorenzini Apparels Limited",
-"isin": "INE740X01023",
-"type": "equity"
-},
-{
 "symbol": "LALITHAA",
 "name": "Lalithaa Jewellery Mart Limited",
 "isin": "INE0K9O01026",
@@ -8331,6 +8331,12 @@
 "symbol": "MAHABANK",
 "name": "Bank of Maharashtra",
 "isin": "INE457A01014",
+"type": "equity"
+},
+{
+"symbol": "MAHACOAL",
+"name": "Mahanadi Coalfields Limited",
+"isin": "INE03K401026",
 "type": "equity"
 },
 {
@@ -9093,6 +9099,12 @@
 "symbol": "MONTECARLO",
 "name": "Monte Carlo Fashions Limited",
 "isin": "INE950M01013",
+"type": "equity"
+},
+{
+"symbol": "MONTEIL",
+"name": "MONTEIL LIMITED",
+"isin": "INE740X01023",
 "type": "equity"
 },
 {
@@ -15062,7 +15074,7 @@
 {
 "symbol": "VGL",
 "name": "VARVEE GLOBAL LIMITED",
-"isin": "INE273D01027",
+"isin": "INE273D01035",
 "type": "equity"
 },
 {

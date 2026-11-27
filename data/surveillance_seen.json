@@ -91,10 +91,6 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"AILIMITED|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
-},
 "AISL|ESM|None|I": {
 "exact": true,
 "since": "2026-11-18"
@@ -339,9 +335,9 @@
 "exact": true,
 "since": "2026-11-20"
 },
-"BRACEPORT|ASM|short|I": {
+"BRACEPORT|ESM|None|I": {
 "exact": true,
-"since": "2026-11-19"
+"since": "2026-11-27"
 },
 "BRAHMVIRAT|ESM|None|I": {
 "exact": true,
@@ -495,17 +491,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"DELPHIFX|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
-},
 "DEVX|ASM|long|I": {
 "exact": true,
 "since": "2026-10-13"
-},
-"DHANBANK|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
 },
 "DHANSA|ESM|None|I": {
 "exact": false,
@@ -570,10 +558,6 @@
 "EUROTEXIND|GSM|None|0": {
 "exact": true,
 "since": "2026-06-25"
-},
-"EVENTIONS|ASM|short|I": {
-"exact": false,
-"since": "2026-11-04"
 },
 "EXCELLENT|ESM|None|I": {
 "exact": false,
@@ -683,6 +667,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"GREAVESCOT|ASM|short|I": {
+"exact": true,
+"since": "2026-11-27"
+},
 "GREENCHEF|ASM|long|I": {
 "exact": false,
 "since": "2026-11-04"
@@ -743,9 +731,9 @@
 "exact": false,
 "since": "2026-11-08"
 },
-"HMAAGRO|ASM|short|I": {
+"HMAAGRO|ASM|long|I": {
 "exact": true,
-"since": "2026-11-26"
+"since": "2026-11-27"
 },
 "HMT|GSM|None|0": {
 "exact": true,
@@ -1083,6 +1071,14 @@
 "exact": true,
 "since": "2026-11-18"
 },
+"NATIONSTD|ESM|None|I": {
+"exact": true,
+"since": "2026-11-27"
+},
+"NECCLTD|ASM|short|I": {
+"exact": true,
+"since": "2026-11-27"
+},
 "NECLIFE|ASM|long|I": {
 "exact": true,
 "since": "2026-08-28"
@@ -1163,6 +1159,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"PARAMATRIX|ASM|short|I": {
+"exact": true,
+"since": "2026-11-27"
+},
 "PAR|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -1240,10 +1240,6 @@
 "since": "2026-11-18"
 },
 "PULZ|ESM|None|I": {
-"exact": true,
-"since": "2026-11-18"
-},
-"PUSHPA|ASM|short|I": {
 "exact": true,
 "since": "2026-11-18"
 },
@@ -1547,10 +1543,6 @@
 "exact": true,
 "since": "2026-05-11"
 },
-"STYLEBAAZA|ASM|short|I": {
-"exact": true,
-"since": "2026-11-18"
-},
 "SUNLITE|ASM|short|I": {
 "exact": true,
 "since": "2026-11-26"
@@ -1615,9 +1607,9 @@
 "exact": true,
 "since": "2025-07-14"
 },
-"TERASOFT|ASM|short|I": {
+"TERASOFT|ESM|None|I": {
 "exact": true,
-"since": "2026-11-18"
+"since": "2026-11-27"
 },
 "TFCILTD|ASM|long|I": {
 "exact": true,
@@ -1626,6 +1618,10 @@
 "THESL|ASM|long|I": {
 "exact": true,
 "since": "2026-11-26"
+},
+"THOMASCOOK|ASM|short|I": {
+"exact": true,
+"since": "2026-11-27"
 },
 "TIJARIA|ESM|None|II": {
 "exact": false,
@@ -1707,6 +1703,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"URBAN|ASM|short|I": {
+"exact": true,
+"since": "2026-11-27"
+},
 "USHAFIN|ESM|None|I": {
 "exact": false,
 "since": "2026-11-08"
@@ -1755,6 +1755,10 @@
 "exact": false,
 "since": "2026-11-08"
 },
+"VERTOZ|ASM|short|I": {
+"exact": true,
+"since": "2026-11-27"
+},
 "VGL|ASM|long|I": {
 "exact": true,
 "since": "2026-09-24"
@@ -1787,9 +1791,9 @@
 "exact": true,
 "since": "2024-06-28"
 },
-"VNL|ASM|short|I": {
+"VPFL|ASM|short|I": {
 "exact": true,
-"since": "2026-10-26"
+"since": "2026-11-27"
 },
 "VTMLTD|ESM|None|I": {
 "exact": false,
