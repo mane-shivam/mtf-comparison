@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T05:32:56Z",
+"fetchedAt": "2026-11-27T06:32:38Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T05:32:50Z",
+"fetchedAt": "2026-11-27T06:32:32Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T05:32:51Z",
+"fetchedAt": "2026-11-27T06:32:33Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T05:32:56Z",
-"count": 153,
+"fetchedAt": "2026-11-27T06:32:38Z",
+"count": 156,
 "error": null
 }
 },
@@ -2518,6 +2518,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/DOLATALGO_26112026114329_26-11-26-disc-signed.pdf"
 },
 {
+"symbol": "DOLATALGO",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Dolat Algotech Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/DOLATALGO_27112026113907_27-11-26-Disc_reg_30-signed.pdf"
+},
+{
 "symbol": "DOLLEX",
 "date": "2026-12-01",
 "kind": "meeting",
@@ -3010,6 +3019,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
 },
 {
+"symbol": "PNBGILTS",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "PNB GILTS LTD. has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/PNBGILTS_27112026111624_STX_Credit_rating.pdf"
+},
+{
 "symbol": "POKARNA",
 "date": "2026-11-26",
 "kind": "news",
@@ -3347,6 +3365,15 @@
 "title": "Credit rating update",
 "detail": "Tilaknagar Industries Limited has informed the Exchange about Credit Rating- Revision",
 "link": "https://nsearchives.nseindia.in/corporate/gthakur_26112026151755_TI_Revcreditrating_Nov2026.pdf"
+},
+{
+"symbol": "TMPV",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Tata Motors Passenger Vehicles Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/TATAMOTORSSJS_27112026112024_NSEBSECreditRating.pdf"
 },
 {
 "symbol": "TURTLEMINT",
