@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T07:32:32Z",
+"fetchedAt": "2026-11-27T08:32:17Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T07:32:26Z",
+"fetchedAt": "2026-11-27T08:32:11Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T07:32:26Z",
+"fetchedAt": "2026-11-27T08:32:12Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T07:32:32Z",
-"count": 159,
+"fetchedAt": "2026-11-27T08:32:17Z",
+"count": 165,
 "error": null
 }
 },
@@ -2439,6 +2439,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/CORDELIA_24112026210124_Conclusion_of_GST_Official_Visit.pdf"
 },
 {
+"symbol": "CORDELIA",
+"date": "2026-11-27",
+"kind": "result",
+"title": "Results out",
+"detail": "The Exchange has sought clarification from Waterways Leisure Tourism Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above ",
+"link": "-"
+},
+{
 "symbol": "COSMOFIRST",
 "date": "2026-11-25",
 "kind": "news",
@@ -2605,6 +2613,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/MFL_27112026123443_RatingUpdate26112026.pdf"
 },
 {
+"symbol": "ERAINFRA",
+"date": "2026-11-27",
+"kind": "result",
+"title": "Results out",
+"detail": "The Exchange has sought clarification from Era Infra Engineering Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the ",
+"link": "-"
+},
+{
 "symbol": "EUREKAFORB",
 "date": "2026-11-26",
 "kind": "news",
@@ -2612,6 +2628,14 @@
 "title": "Litigation",
 "detail": "Eureka Forbes Limited has informed the Exchange about the Update on Karnataka High Court GST Matter",
 "link": "https://nsearchives.nseindia.in/corporate/SHILPAJAIN_26112026184637_Regulation30signed.pdf"
+},
+{
+"symbol": "FILATFASH",
+"date": "2026-11-27",
+"kind": "result",
+"title": "Results out",
+"detail": "The Exchange has sought clarification from Filatex Fashions Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the Compa",
+"link": "-"
 },
 {
 "symbol": "FUSIONCX",
@@ -2636,7 +2660,7 @@
 "level": "watch",
 "title": "Material issue",
 "detail": "Geekay Wires Limited has informed regarding Disclosure of material issue",
-"link": "https://nsearchives.nseindia.in/corporate/GEEKAYWIRE_27112026125904_ANKUSH_AGARWAL_FORM_C.PDF"
+"link": "https://nsearchives.nseindia.in/corporate/GEEKAYWIRE_27112026130710_GD_HUF_FORM_C.PDF"
 },
 {
 "symbol": "GINNIFILA",
@@ -2672,6 +2696,15 @@
 "title": "Fund raising",
 "detail": "Gujarat Themis Bioysn Limited has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_24436_20261124_110303934_WEB.html"
+},
+{
+"symbol": "HALEOSLABS",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "HALEOS LABS LIMITED has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/SMSLIFE_27112026132925_Intimation.pdf"
 },
 {
 "symbol": "HDBFS",
@@ -2802,6 +2835,15 @@
 "title": "Credit rating update",
 "detail": "Jaiprakash Power Ventures Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/JPPOWER_26112026201943_Intimation.pdf"
+},
+{
+"symbol": "JSL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Jindal Stainless Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/JSL_27112026131245_JSLCreditRating27112026sd.pdf"
 },
 {
 "symbol": "KANSAINER",
@@ -3001,6 +3043,15 @@
 "title": "Credit rating update",
 "detail": "NELCO Limited has informed the Exchange about Credit Rating- Revision",
 "link": "https://nsearchives.nseindia.in/corporate/NELCO_24112026171013_Credit_Rating_SE_intimation.pdf"
+},
+{
+"symbol": "NESTLEIND",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Nestle India Limited has informed the Exchange about the Intimation regarding receipt of an Order from the Regional Office of Employees Provident Fund Organisation, Mysuru-19",
+"link": "https://nsearchives.nseindia.in/corporate/NESTLEIND1_27112026133602_STXIntimationPFOrder27112026signed.pdf"
 },
 {
 "symbol": "OMFREIGHT",
