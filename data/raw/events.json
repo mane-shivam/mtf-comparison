@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T09:32:34Z",
+"fetchedAt": "2026-11-27T09:56:41Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T09:32:29Z",
+"fetchedAt": "2026-11-27T09:56:31Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T09:32:30Z",
+"fetchedAt": "2026-11-27T09:56:32Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T09:32:34Z",
-"count": 167,
+"fetchedAt": "2026-11-27T09:56:41Z",
+"count": 169,
 "error": null
 }
 },
@@ -2327,6 +2327,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BHARTIARTL_24112026131238_BhartiAirtelSTXdisclosure.pdf"
 },
 {
+"symbol": "BHARTIARTL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Bharti Airtel Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/BHARTIARTL_27112026151040_BhartiAirtelReg30disclosure.pdf"
+},
+{
 "symbol": "BLISSGVS",
 "date": "2026-11-24",
 "kind": "news",
@@ -2818,6 +2827,15 @@
 "title": "Regulatory/tax order",
 "detail": "Isgec Heavy Engineering Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/ISGEC_26112026182045_Revised_intimation.pdf"
+},
+{
+"symbol": "JAIBALAJI",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Jai Balaji Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/JAIBALAJI_ROID_105281_KMP_Doc.zip"
 },
 {
 "symbol": "JETFREIGHT",

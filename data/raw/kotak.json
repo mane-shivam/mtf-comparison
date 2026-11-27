@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-27T09:32:02Z",
+"fetchedAt": "2026-11-27T09:56:05Z",
 "count": 1714,
 "rows": [
 {
@@ -1736,7 +1736,7 @@
 "symbol": "BOSCHLTD",
 "name": "Bosch Limited",
 "exchange": "NSE",
-"lev": 4.64,
+"lev": 4.63,
 "maxExposureCr": 50.0
 },
 {
@@ -1750,7 +1750,7 @@
 "symbol": "BRIGADE",
 "name": "Brigade Enterprises Limited",
 "exchange": "NSE",
-"lev": 3.07,
+"lev": 3.1,
 "maxExposureCr": 10.0
 },
 {
@@ -2744,7 +2744,7 @@
 "symbol": "ITADD",
 "name": "Dspamc-Dspitetf",
 "exchange": "NSE",
-"lev": 3.65,
+"lev": 3.67,
 "maxExposureCr": 1.0
 },
 {
@@ -2814,7 +2814,7 @@
 "symbol": "EASEMYTRIP",
 "name": "Easy Trip Planners Limited",
 "exchange": "NSE",
-"lev": 2.68,
+"lev": 2.69,
 "maxExposureCr": 2.0
 },
 {
@@ -2933,7 +2933,7 @@
 "symbol": "ELECON",
 "name": "Elecon Engineering Company Limited",
 "exchange": "NSE",
-"lev": 2.71,
+"lev": 2.7,
 "maxExposureCr": 5.0
 },
 {
@@ -4242,7 +4242,7 @@
 "symbol": "HDFCNIFIT",
 "name": "Hdfcamc-Hdfcnifit",
 "exchange": "NSE",
-"lev": 3.69,
+"lev": 3.67,
 "maxExposureCr": 1.0
 },
 {
@@ -4347,7 +4347,7 @@
 "symbol": "HEROMOTOCO",
 "name": "Hero Motocorp Limited",
 "exchange": "NSE",
-"lev": 4.7,
+"lev": 4.71,
 "maxExposureCr": 50.0
 },
 {
@@ -4403,7 +4403,7 @@
 "symbol": "HINDALCO",
 "name": "Hindalco Industries Limited",
 "exchange": "NSE",
-"lev": 4.59,
+"lev": 4.58,
 "maxExposureCr": 50.0
 },
 {
@@ -4851,7 +4851,7 @@
 "symbol": "IFCI",
 "name": "Ifci Limited",
 "exchange": "NSE",
-"lev": 2.49,
+"lev": 2.48,
 "maxExposureCr": 5.0
 },
 {
@@ -4970,7 +4970,7 @@
 "symbol": "IEX",
 "name": "Indian Energy Exchange Limited",
 "exchange": "NSE",
-"lev": 3.13,
+"lev": 3.12,
 "maxExposureCr": 5.0
 },
 {
@@ -6755,7 +6755,7 @@
 "symbol": "MFSL",
 "name": "Max Financial Services Limited",
 "exchange": "NSE",
-"lev": 4.43,
+"lev": 4.44,
 "maxExposureCr": 50.0
 },
 {
@@ -6839,7 +6839,7 @@
 "symbol": "MINDACORP",
 "name": "Minda Corporation Limited",
 "exchange": "NSE",
-"lev": 3.22,
+"lev": 3.23,
 "maxExposureCr": 5.0
 },
 {
@@ -8407,7 +8407,7 @@
 "symbol": "PRECWIRE",
 "name": "Precision Wires India Limited",
 "exchange": "NSE",
-"lev": 2.46,
+"lev": 2.47,
 "maxExposureCr": 2.0
 },
 {
@@ -8428,7 +8428,7 @@
 "symbol": "PRESTIGE",
 "name": "Prestige Estates Projects Limited",
 "exchange": "NSE",
-"lev": 4.0,
+"lev": 3.94,
 "maxExposureCr": 25.0
 },
 {
@@ -8498,7 +8498,7 @@
 "symbol": "PROTEAN",
 "name": "Protean Egov Technologies Ltd",
 "exchange": "NSE",
-"lev": 2.62,
+"lev": 2.63,
 "maxExposureCr": 5.0
 },
 {
@@ -8526,14 +8526,14 @@
 "symbol": "PTC",
 "name": "Ptc India Limited",
 "exchange": "NSE",
-"lev": 3.25,
+"lev": 3.26,
 "maxExposureCr": 5.0
 },
 {
 "symbol": "PTCIL",
 "name": "Ptc Industries Ltd",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.99,
 "maxExposureCr": 10.0
 },
 {
@@ -8582,7 +8582,7 @@
 "symbol": "PVRINOX",
 "name": "Pvr Inox Limited",
 "exchange": "NSE",
-"lev": 3.25,
+"lev": 3.24,
 "maxExposureCr": 10.0
 },
 {
@@ -9072,7 +9072,7 @@
 "symbol": "RUBICON",
 "name": "Rubicon Research Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 3.03,
+"lev": 3.0,
 "maxExposureCr": 5.0
 },
 {
@@ -9107,7 +9107,7 @@
 "symbol": "SJS",
 "name": "S.J.S. Enterprises Limited",
 "exchange": "NSE",
-"lev": 2.97,
+"lev": 2.98,
 "maxExposureCr": 5.0
 },
 {
@@ -9233,7 +9233,7 @@
 "symbol": "SANDUMA",
 "name": "Sandur Manganese & Iron Ores Limited",
 "exchange": "NSE",
-"lev": 2.77,
+"lev": 2.78,
 "maxExposureCr": 5.0
 },
 {
@@ -11648,7 +11648,7 @@
 "symbol": "VOLTAS",
 "name": "Voltas Limited",
 "exchange": "NSE",
-"lev": 4.16,
+"lev": 4.15,
 "maxExposureCr": 50.0
 },
 {
@@ -11718,7 +11718,7 @@
 "symbol": "WELCORP",
 "name": "Welspun Corp Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.72,
+"lev": 2.73,
 "maxExposureCr": 5.0
 },
 {
@@ -11732,7 +11732,7 @@
 "symbol": "WELSPUNLIV",
 "name": "Welspun Living Limited",
 "exchange": "NSE",
-"lev": 2.74,
+"lev": 2.73,
 "maxExposureCr": 10.0
 },
 {
