@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-27T10:32:20Z",
+"fetchedAt": "2026-11-27T11:32:16Z",
 "count": 1714,
 "rows": [
 {
@@ -7798,7 +7798,7 @@
 "symbol": "NUVAMA",
 "name": "Nuvama Wealth Management Limited",
 "exchange": "NSE",
-"lev": 3.0,
+"lev": 3.01,
 "maxExposureCr": 5.0
 },
 {
@@ -7868,7 +7868,7 @@
 "symbol": "MOBIKWIK",
 "name": "One Mobikwik Systems Ltd",
 "exchange": "NSE",
-"lev": 2.6,
+"lev": 2.59,
 "maxExposureCr": 2.0
 },
 {
@@ -7896,14 +7896,14 @@
 "symbol": "OPTIEMUS",
 "name": "Optiemus Infracom Ltd(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 2.33,
+"lev": 2.32,
 "maxExposureCr": 1.0
 },
 {
 "symbol": "OFSS",
 "name": "Oracle Financial Services Software Limited",
 "exchange": "NSE",
-"lev": 4.19,
+"lev": 4.18,
 "maxExposureCr": 50.0
 },
 {
@@ -8225,7 +8225,7 @@
 "symbol": "PIRAMALFIN",
 "name": "Piramal Finance Limited",
 "exchange": "NSE",
-"lev": 3.38,
+"lev": 3.39,
 "maxExposureCr": 25.0
 },
 {
@@ -8274,7 +8274,7 @@
 "symbol": "PNCINFRA",
 "name": "Pnc Infratech Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.79,
 "maxExposureCr": 2.0
 },
 {
@@ -8295,7 +8295,7 @@
 "symbol": "POLYMED",
 "name": "Poly Medicure Limited",
 "exchange": "NSE",
-"lev": 2.97,
+"lev": 2.98,
 "maxExposureCr": 10.0
 },
 {
@@ -10472,7 +10472,7 @@
 "symbol": "TMB",
 "name": "Tamilnad Merca Bank Ltd",
 "exchange": "NSE",
-"lev": 3.21,
+"lev": 3.22,
 "maxExposureCr": 5.0
 },
 {
@@ -10528,35 +10528,35 @@
 "symbol": "TATACOMM",
 "name": "Tata Communications Limited",
 "exchange": "NSE",
-"lev": 3.34,
+"lev": 3.35,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "TCS",
 "name": "Tata Consultancy Services Limited",
 "exchange": "NSE",
-"lev": 4.6,
+"lev": 4.56,
 "maxExposureCr": 75.0
 },
 {
 "symbol": "TATACONSUM",
 "name": "Tata Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.93,
+"lev": 4.92,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TATAELXSI",
 "name": "Tata Elxsi Limited",
 "exchange": "NSE",
-"lev": 4.29,
+"lev": 4.3,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TATAINVEST",
 "name": "Tata Investment Corporation Limited",
 "exchange": "NSE",
-"lev": 3.05,
+"lev": 3.06,
 "maxExposureCr": 5.0
 },
 {
@@ -10570,7 +10570,7 @@
 "symbol": "TMPV",
 "name": "Tata Motors Passenger Vehicles Limited",
 "exchange": "NSE",
-"lev": 4.24,
+"lev": 4.25,
 "maxExposureCr": 50.0
 },
 {
@@ -10584,7 +10584,7 @@
 "symbol": "TATASTEEL",
 "name": "Tata Steel Limited",
 "exchange": "NSE",
-"lev": 4.58,
+"lev": 4.57,
 "maxExposureCr": 50.0
 },
 {
@@ -10661,7 +10661,7 @@
 "symbol": "TDPOWERSYS",
 "name": "Td Power Systems Limited",
 "exchange": "NSE",
-"lev": 2.41,
+"lev": 2.4,
 "maxExposureCr": 5.0
 },
 {
@@ -10675,7 +10675,7 @@
 "symbol": "TECHM",
 "name": "Tech Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.59,
+"lev": 4.58,
 "maxExposureCr": 50.0
 },
 {
@@ -10710,7 +10710,7 @@
 "symbol": "TEJASNET",
 "name": "Tejas Networks Limited",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.59,
 "maxExposureCr": 5.0
 },
 {

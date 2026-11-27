@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T10:32:53Z",
+"fetchedAt": "2026-11-27T11:32:48Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T10:32:48Z",
+"fetchedAt": "2026-11-27T11:32:42Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T10:32:49Z",
+"fetchedAt": "2026-11-27T11:32:43Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T10:32:53Z",
-"count": 174,
+"fetchedAt": "2026-11-27T11:32:48Z",
+"count": 182,
 "error": null
 }
 },
@@ -2291,6 +2291,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ASTRON_24112026164957_Letter-_8th_meeting_Adjourned.pdf"
 },
 {
+"symbol": "ATALREAL",
+"date": "2026-12-03",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "To consider Fund Raising and other business matters",
+"link": "https://nsearchives.nseindia.in/corporate/ATALREAL_27112026165736_Atal_Realtech_Intimation_of_BM_Signed.pdf"
+},
+{
 "symbol": "AXITA",
 "date": "2026-11-25",
 "kind": "news",
@@ -2501,6 +2509,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/CREDITACC_ROID_105231_KMP_Doc.zip"
 },
 {
+"symbol": "CROMPTON",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Crompton Greaves Consumer Electricals Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/Crompton123_27112026164115_LODR-GST-Order.pdf"
+},
+{
 "symbol": "DALBHARAT",
 "date": "2026-11-26",
 "kind": "news",
@@ -2604,6 +2621,15 @@
 "title": "Insolvency (CIRP)",
 "detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-Notice of Postponement of 10th (Tenth) Meeting of the Committee of Creditors (CoC) of India Power Corporation Limited (IPCL)",
 "link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_26112026192823_IntimationofPostponmentof10thCoCMeeting.pdf"
+},
+{
+"symbol": "DPSCLTD",
+"date": "2026-11-27",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "DPSC Limited has informed the Exchange about Corporate Insolvency Resolution Process-Order dated 27th November, 2026 by the Hon ble National Company Law Appellate Tribunal (NCLAT), Chennai",
+"link": "https://nsearchives.nseindia.in/corporate/DPSCLTD_27112026162505_IntimationofNCLT_OrderunderReg30ofLODR27112026.pdf"
 },
 {
 "symbol": "EASEMYTRIP",
@@ -2891,6 +2917,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/JPPOWER_26112026201943_Intimation.pdf"
 },
 {
+"symbol": "JPPOWER",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Jaiprakash Power Ventures Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/JPPOWER_27112026165526_Intimation.pdf"
+},
+{
 "symbol": "JSL",
 "date": "2026-11-27",
 "kind": "news",
@@ -2898,6 +2933,15 @@
 "title": "Credit rating update",
 "detail": "Jindal Stainless Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/JSL_27112026131245_JSLCreditRating27112026sd.pdf"
+},
+{
+"symbol": "JSLL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Auditor change",
+"detail": "Jeena Sikho Lifecare Limited has informed the Exchange regarding Change in Auditors of the company.",
+"link": "https://nsearchives.nseindia.in/corporate/JEENASIKHO_27112026165308_Intimation_Cost_Auditor_App-_Sign.pdf"
 },
 {
 "symbol": "KANSAINER",
@@ -2916,6 +2960,15 @@
 "title": "Credit rating update",
 "detail": "Kaynes Technology India Limited has informed the Exchange about Credit Rating- withdrawal",
 "link": "https://nsearchives.nseindia.in/corporate/KAYNESTECH_25112026175640_Creditrating.pdf"
+},
+{
+"symbol": "KAYNES",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Kaynes Technology India Limited has informed the Exchange about Credit Rating- Reaffirmation and withdrawal",
+"link": "https://nsearchives.nseindia.in/corporate/KAYNESTECH_27112026163717_CreditRating26112026CARE.pdf"
 },
 {
 "symbol": "KFINTECH",
@@ -2951,6 +3004,14 @@
 "title": "Results",
 "detail": "To consider and approve the financial results for the period ended September 30, 2026",
 "link": "https://nsearchives.nseindia.in/corporate/LATTEYS_29102026161027_BMintimation_LATTEYS_05082026121807_Intimation.pdf"
+},
+{
+"symbol": "LEEL",
+"date": "2026-11-30",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "LEEL ELECTRICALS LIMITED has informed the Exchange about Board Meeting to be held on 30-Nov-2026 to consider Other business.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_1580_20261127_161008703_WEB.html"
 },
 {
 "symbol": "LEXUS",
@@ -3140,6 +3201,15 @@
 "title": "Dividend",
 "detail": "Patanjali Foods Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Dividend.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
+},
+{
+"symbol": "PAVNAIND",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Pavna Industries Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/PAVNA_27112026170027_CreditRatingDisclosure27112026sd.pdf"
 },
 {
 "symbol": "PNBGILTS",

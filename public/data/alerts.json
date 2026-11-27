@@ -2214,5 +2214,29 @@
 "text": "Kotak Neo leverage cut 3.4× → 3.3×: you need more margin",
 "link": null,
 "at": "2026-11-27T10:33:15Z"
+},
+{
+"symbol": "VENUSPIPES",
+"name": "Venus Pipes & Tubes Limited",
+"level": "info",
+"text": "Delivery 76% vs 49% average",
+"link": null,
+"at": "2026-11-27T11:33:08Z"
+},
+{
+"symbol": "ENTERO",
+"name": "Entero Healthcare Solutions Limited",
+"level": "info",
+"text": "Delivery 75% vs 44% average",
+"link": null,
+"at": "2026-11-27T11:33:08Z"
+},
+{
+"symbol": "TATACOMM",
+"name": "Tata Communications Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 3.3× → 3.4×: you need less margin",
+"link": null,
+"at": "2026-11-27T11:33:08Z"
 }
 ]
