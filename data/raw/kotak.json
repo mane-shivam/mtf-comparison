@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-27T08:31:45Z",
+"fetchedAt": "2026-11-27T09:32:02Z",
 "count": 1714,
 "rows": [
 {
@@ -1736,7 +1736,7 @@
 "symbol": "BOSCHLTD",
 "name": "Bosch Limited",
 "exchange": "NSE",
-"lev": 4.63,
+"lev": 4.64,
 "maxExposureCr": 50.0
 },
 {
@@ -1750,7 +1750,7 @@
 "symbol": "BRIGADE",
 "name": "Brigade Enterprises Limited",
 "exchange": "NSE",
-"lev": 3.1,
+"lev": 3.07,
 "maxExposureCr": 10.0
 },
 {
@@ -5600,7 +5600,7 @@
 "symbol": "JSWSTEEL",
 "name": "Jsw Steel Limited",
 "exchange": "NSE",
-"lev": 4.91,
+"lev": 4.92,
 "maxExposureCr": 75.0
 },
 {
@@ -5628,7 +5628,7 @@
 "symbol": "JUBLFOOD",
 "name": "Jubilant Foodworks Limited",
 "exchange": "NSE",
-"lev": 4.22,
+"lev": 4.23,
 "maxExposureCr": 50.0
 },
 {
@@ -5670,7 +5670,7 @@
 "symbol": "JWL",
 "name": "Jupiter Wagons Ltd",
 "exchange": "NSE",
-"lev": 2.68,
+"lev": 2.66,
 "maxExposureCr": 5.0
 },
 {
@@ -6314,14 +6314,14 @@
 "symbol": "LGEINDIA",
 "name": "Lg Electronics India Limited",
 "exchange": "NSE",
-"lev": 3.64,
+"lev": 3.63,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "LICHSGFIN",
 "name": "Lic Housing Finance Limited",
 "exchange": "NSE",
-"lev": 4.53,
+"lev": 4.54,
 "maxExposureCr": 50.0
 },
 {
@@ -6363,7 +6363,7 @@
 "symbol": "LINDEINDIA",
 "name": "Linde India Limited",
 "exchange": "NSE",
-"lev": 3.29,
+"lev": 3.3,
 "maxExposureCr": 10.0
 },
 {
@@ -6384,7 +6384,7 @@
 "symbol": "LLOYDSME",
 "name": "Lloyds Metals And Energy Limited",
 "exchange": "NSE",
-"lev": 3.14,
+"lev": 3.13,
 "maxExposureCr": 10.0
 },
 {
@@ -6405,7 +6405,7 @@
 "symbol": "LTM",
 "name": "Ltimindtree Limited",
 "exchange": "NSE",
-"lev": 4.29,
+"lev": 4.28,
 "maxExposureCr": 50.0
 },
 {
@@ -6755,7 +6755,7 @@
 "symbol": "MFSL",
 "name": "Max Financial Services Limited",
 "exchange": "NSE",
-"lev": 4.44,
+"lev": 4.43,
 "maxExposureCr": 50.0
 },
 {
@@ -6839,7 +6839,7 @@
 "symbol": "MINDACORP",
 "name": "Minda Corporation Limited",
 "exchange": "NSE",
-"lev": 3.23,
+"lev": 3.22,
 "maxExposureCr": 5.0
 },
 {
@@ -6951,7 +6951,7 @@
 "symbol": "ITETF",
 "name": "Miraeamc-Itetf",
 "exchange": "NSE",
-"lev": 3.67,
+"lev": 3.66,
 "maxExposureCr": 1.0
 },
 {
@@ -7140,14 +7140,14 @@
 "symbol": "MOCAPITAL",
 "name": "Motilalamc - Mocapital",
 "exchange": "NSE",
-"lev": 3.75,
+"lev": 3.73,
 "maxExposureCr": 1.0
 },
 {
 "symbol": "MODEFENCE",
 "name": "Motilalamc - Modefence",
 "exchange": "NSE",
-"lev": 3.69,
+"lev": 3.7,
 "maxExposureCr": 1.0
 },
 {
@@ -7168,7 +7168,7 @@
 "symbol": "MOREALTY",
 "name": "Motilalamc - Morealty",
 "exchange": "NSE",
-"lev": 3.59,
+"lev": 3.58,
 "maxExposureCr": 1.0
 },
 {
@@ -7231,7 +7231,7 @@
 "symbol": "MPHASIS",
 "name": "Mphasis Limited",
 "exchange": "NSE",
-"lev": 4.37,
+"lev": 4.38,
 "maxExposureCr": 50.0
 },
 {
@@ -7301,7 +7301,7 @@
 "symbol": "MUTHOOTFIN",
 "name": "Muthoot Finance Limited",
 "exchange": "NSE",
-"lev": 3.99,
+"lev": 4.0,
 "maxExposureCr": 50.0
 },
 {
@@ -7630,7 +7630,7 @@
 "symbol": "ITBEES",
 "name": "Nipindetfit",
 "exchange": "NSE",
-"lev": 3.68,
+"lev": 3.67,
 "maxExposureCr": 1.0
 },
 {
@@ -8407,7 +8407,7 @@
 "symbol": "PRECWIRE",
 "name": "Precision Wires India Limited",
 "exchange": "NSE",
-"lev": 2.47,
+"lev": 2.46,
 "maxExposureCr": 2.0
 },
 {
@@ -8428,7 +8428,7 @@
 "symbol": "PRESTIGE",
 "name": "Prestige Estates Projects Limited",
 "exchange": "NSE",
-"lev": 3.94,
+"lev": 4.0,
 "maxExposureCr": 25.0
 },
 {
@@ -8498,7 +8498,7 @@
 "symbol": "PROTEAN",
 "name": "Protean Egov Technologies Ltd",
 "exchange": "NSE",
-"lev": 2.63,
+"lev": 2.62,
 "maxExposureCr": 5.0
 },
 {
@@ -8526,14 +8526,14 @@
 "symbol": "PTC",
 "name": "Ptc India Limited",
 "exchange": "NSE",
-"lev": 3.26,
+"lev": 3.25,
 "maxExposureCr": 5.0
 },
 {
 "symbol": "PTCIL",
 "name": "Ptc Industries Ltd",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 2.98,
 "maxExposureCr": 10.0
 },
 {
@@ -8582,7 +8582,7 @@
 "symbol": "PVRINOX",
 "name": "Pvr Inox Limited",
 "exchange": "NSE",
-"lev": 3.24,
+"lev": 3.25,
 "maxExposureCr": 10.0
 },
 {
@@ -8631,7 +8631,7 @@
 "symbol": "RRKABEL",
 "name": "R R Kabel Limited",
 "exchange": "NSE",
-"lev": 2.85,
+"lev": 2.86,
 "maxExposureCr": 5.0
 },
 {
@@ -8687,7 +8687,7 @@
 "symbol": "RAIN",
 "name": "Rain Industries Limited",
 "exchange": "NSE",
-"lev": 2.59,
+"lev": 2.6,
 "maxExposureCr": 5.0
 },
 {
@@ -8743,7 +8743,7 @@
 "symbol": "RKFORGE",
 "name": "Ramkrishna Forgings Limited",
 "exchange": "NSE",
-"lev": 2.99,
+"lev": 2.98,
 "maxExposureCr": 5.0
 },
 {
@@ -9072,7 +9072,7 @@
 "symbol": "RUBICON",
 "name": "Rubicon Research Limited(Fresh Mtf Buying Is Not Allowed)",
 "exchange": "NSE",
-"lev": 3.0,
+"lev": 3.03,
 "maxExposureCr": 5.0
 },
 {
@@ -9107,7 +9107,7 @@
 "symbol": "SJS",
 "name": "S.J.S. Enterprises Limited",
 "exchange": "NSE",
-"lev": 2.98,
+"lev": 2.97,
 "maxExposureCr": 5.0
 },
 {
@@ -9233,7 +9233,7 @@
 "symbol": "SANDUMA",
 "name": "Sandur Manganese & Iron Ores Limited",
 "exchange": "NSE",
-"lev": 2.78,
+"lev": 2.77,
 "maxExposureCr": 5.0
 },
 {
@@ -9247,7 +9247,7 @@
 "symbol": "SANGHVIMOV",
 "name": "Sanghvi Movers Limited",
 "exchange": "NSE",
-"lev": 2.49,
+"lev": 2.48,
 "maxExposureCr": 2.0
 },
 {
@@ -9345,7 +9345,7 @@
 "symbol": "SBFC",
 "name": "Sbfc Finance Limited",
 "exchange": "NSE",
-"lev": 3.21,
+"lev": 3.22,
 "maxExposureCr": 5.0
 },
 {
@@ -9429,7 +9429,7 @@
 "symbol": "SBIIT",
 "name": "Sbi Nifty It Etf",
 "exchange": "NSE",
-"lev": 3.71,
+"lev": 3.69,
 "maxExposureCr": 1.0
 },
 {
@@ -9506,7 +9506,7 @@
 "symbol": "SENORES",
 "name": "Senores Pharmaceuticals Ltd",
 "exchange": "NSE",
-"lev": 2.86,
+"lev": 2.87,
 "maxExposureCr": 5.0
 },
 {
@@ -9562,7 +9562,7 @@
 "symbol": "SHAILY",
 "name": "Shaily Engineering Plastics Ltd",
 "exchange": "NSE",
-"lev": 2.73,
+"lev": 2.63,
 "maxExposureCr": 2.0
 },
 {
@@ -9632,7 +9632,7 @@
 "symbol": "SHAREINDIA",
 "name": "Share India Securities Limited",
 "exchange": "NSE",
-"lev": 2.67,
+"lev": 2.68,
 "maxExposureCr": 2.0
 },
 {
@@ -9646,7 +9646,7 @@
 "symbol": "SHILCTECH",
 "name": "Shilchar Technologies Limited",
 "exchange": "NSE",
-"lev": 2.59,
+"lev": 2.6,
 "maxExposureCr": 2.0
 },
 {
@@ -10108,7 +10108,7 @@
 "symbol": "SAIL",
 "name": "Steel Authority Of India Limited",
 "exchange": "NSE",
-"lev": 3.96,
+"lev": 3.97,
 "maxExposureCr": 25.0
 },
 {
@@ -10241,7 +10241,7 @@
 "symbol": "SUNTV",
 "name": "Sun Tv Network Limited",
 "exchange": "NSE",
-"lev": 3.02,
+"lev": 3.01,
 "maxExposureCr": 5.0
 },
 {
@@ -10528,35 +10528,35 @@
 "symbol": "TATACOMM",
 "name": "Tata Communications Limited",
 "exchange": "NSE",
-"lev": 3.34,
+"lev": 3.35,
 "maxExposureCr": 25.0
 },
 {
 "symbol": "TCS",
 "name": "Tata Consultancy Services Limited",
 "exchange": "NSE",
-"lev": 4.6,
+"lev": 4.56,
 "maxExposureCr": 75.0
 },
 {
 "symbol": "TATACONSUM",
 "name": "Tata Consumer Products Limited",
 "exchange": "NSE",
-"lev": 4.93,
+"lev": 4.92,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TATAELXSI",
 "name": "Tata Elxsi Limited",
 "exchange": "NSE",
-"lev": 4.29,
+"lev": 4.3,
 "maxExposureCr": 50.0
 },
 {
 "symbol": "TATAINVEST",
 "name": "Tata Investment Corporation Limited",
 "exchange": "NSE",
-"lev": 3.05,
+"lev": 3.06,
 "maxExposureCr": 5.0
 },
 {
@@ -10570,7 +10570,7 @@
 "symbol": "TMPV",
 "name": "Tata Motors Passenger Vehicles Limited",
 "exchange": "NSE",
-"lev": 4.24,
+"lev": 4.25,
 "maxExposureCr": 50.0
 },
 {
@@ -10584,7 +10584,7 @@
 "symbol": "TATASTEEL",
 "name": "Tata Steel Limited",
 "exchange": "NSE",
-"lev": 4.58,
+"lev": 4.57,
 "maxExposureCr": 50.0
 },
 {
@@ -10661,7 +10661,7 @@
 "symbol": "TDPOWERSYS",
 "name": "Td Power Systems Limited",
 "exchange": "NSE",
-"lev": 2.41,
+"lev": 2.4,
 "maxExposureCr": 5.0
 },
 {
@@ -10675,7 +10675,7 @@
 "symbol": "TECHM",
 "name": "Tech Mahindra Limited",
 "exchange": "NSE",
-"lev": 4.59,
+"lev": 4.58,
 "maxExposureCr": 50.0
 },
 {
@@ -10710,7 +10710,7 @@
 "symbol": "TEJASNET",
 "name": "Tejas Networks Limited",
 "exchange": "NSE",
-"lev": 2.58,
+"lev": 2.59,
 "maxExposureCr": 5.0
 },
 {
@@ -10948,7 +10948,7 @@
 "symbol": "TITAGARH",
 "name": "Titagarh Rail Systems Limited",
 "exchange": "NSE",
-"lev": 3.0,
+"lev": 3.01,
 "maxExposureCr": 10.0
 },
 {
@@ -10997,7 +10997,7 @@
 "symbol": "TARIL",
 "name": "Transformers & Rectifiers India Ltd",
 "exchange": "NSE",
-"lev": 2.51,
+"lev": 2.52,
 "maxExposureCr": 2.0
 },
 {

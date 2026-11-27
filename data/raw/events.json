@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T08:32:17Z",
+"fetchedAt": "2026-11-27T09:32:34Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T08:32:11Z",
+"fetchedAt": "2026-11-27T09:32:29Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T08:32:12Z",
+"fetchedAt": "2026-11-27T09:32:30Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T08:32:17Z",
-"count": 165,
+"fetchedAt": "2026-11-27T09:32:34Z",
+"count": 167,
 "error": null
 }
 },
@@ -2344,6 +2344,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=BONLON"
 },
 {
+"symbol": "BPCL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Bharat Petroleum Corporation Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/BPCL26_27112026145806_seintimationcreditrating27112026.pdf"
+},
+{
 "symbol": "BRIGADE",
 "date": "2026-11-26",
 "kind": "news",
@@ -3282,6 +3291,15 @@
 "title": "Fund raising",
 "detail": "SG Mart Limited has informed the Exchange about Board Meeting to be held on 26-Nov-2026 to consider Fund raising.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_26114_20261123_095103900_WEB.html"
+},
+{
+"symbol": "SHALPAINTS",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Shalimar Paints Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/SHALPAINTS_27112026142221_BSENSEReg30CreditRating.pdf"
 },
 {
 "symbol": "SHAREINDIA",

@@ -2182,5 +2182,21 @@
 "text": "Kotak Neo leverage cut 3.4× → 3.3×: you need more margin",
 "link": null,
 "at": "2026-11-27T08:32:37Z"
+},
+{
+"symbol": "TATACOMM",
+"name": "Tata Communications Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 3.3× → 3.4×: you need less margin",
+"link": null,
+"at": "2026-11-27T09:33:03Z"
+},
+{
+"symbol": "SMT",
+"name": "SMT",
+"level": "watch",
+"text": "Down 5.2% today at ₹524.65",
+"link": null,
+"at": "2026-11-27T09:33:03Z"
 }
 ]
