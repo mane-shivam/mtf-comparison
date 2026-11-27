@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T09:56:41Z",
+"fetchedAt": "2026-11-27T10:32:53Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T09:56:31Z",
+"fetchedAt": "2026-11-27T10:32:48Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T09:56:32Z",
+"fetchedAt": "2026-11-27T10:32:49Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T09:56:41Z",
-"count": 169,
+"fetchedAt": "2026-11-27T10:32:53Z",
+"count": 174,
 "error": null
 }
 },
@@ -2219,6 +2219,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ADANIPOWER_24112026190235_APLCreditRatingenhancementCRISIL24112026.pdf"
 },
 {
+"symbol": "AFIL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "This is to inform you that pursuant to Regulation 30 read with sub-para 19 of Para A of Part A of Schedule III of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, the Central Bureau of Investigation (CBI) conduc",
+"link": "https://nsearchives.nseindia.in/corporate/AKMEFINTRADE_27112026160216_intimation.pdf"
+},
+{
 "symbol": "AIFL",
 "date": "2026-11-25",
 "kind": "news",
@@ -2289,6 +2298,15 @@
 "title": "Stake/pledge disclosure",
 "detail": "Gitaben Nitinbhai Patel has submitted to the Exchange a copy of Disclosures under Regulation 10(6)-Report to stock Exchange in respect of any acquisition made in reliance upon exemption provided for in regulation 10 of SEBI (SAST) Regulatio",
 "link": "https://nsearchives.nseindia.in/corporate/team_sandeshc_25112026111457_Reg.pdf"
+},
+{
+"symbol": "BALLARPUR",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Ballarpur Industries Limited has informed the Exchange about Credit Rating- New",
+"link": "https://nsearchives.nseindia.in/corporate/BALLARPUR_27112026154740_Dis_under_Reg_30_Withdrawal_of_CreditRating_26112026.pdf"
 },
 {
 "symbol": "BALMLAWRIE",
@@ -2637,6 +2655,15 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from Era Infra Engineering Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the ",
 "link": "-"
+},
+{
+"symbol": "ESFL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Essen Speciality Films Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/ESSEN_27112026154017_Intimation_of_Credit_Ratings.pdf"
 },
 {
 "symbol": "EUREKAFORB",
@@ -3287,6 +3314,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13014_20261119_181827001_WEB.html"
 },
 {
+"symbol": "SEPC",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "SEPC Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/SEPC_ROID_105283_KMP_Doc.zip"
+},
+{
 "symbol": "SETCO",
 "date": "2026-11-24",
 "kind": "meeting",
@@ -3301,6 +3337,14 @@
 "title": "Results",
 "detail": "SETCO AUTOMOTIVE LIMITED has informed the Exchange about Board Meeting to be held on 27-Nov-2026 to consider and approve the Half Yearly Unaudited Financial results of the Company for the period ended September 2026 and Other business.",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_13961_20261125_005945259_WEB.html"
+},
+{
+"symbol": "SETCO",
+"date": "2026-11-27",
+"kind": "result",
+"title": "Results out",
+"detail": "Setco Automotive Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/SETCO_27112026160110_FINAL_SIGNED_OUTCOME_27112026.pdf"
 },
 {
 "symbol": "SGMART",
