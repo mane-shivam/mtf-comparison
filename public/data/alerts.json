@@ -2110,5 +2110,21 @@
 "text": "Kotak Neo leverage up 3.3× → 3.4×: you need less margin",
 "link": null,
 "at": "2026-11-27T04:32:53Z"
+},
+{
+"symbol": "WOCKPHARMA",
+"name": "Wockhardt Limited",
+"level": "good",
+"text": "Kotak Neo leverage up 2.6× → 2.7×: you need less margin",
+"link": null,
+"at": "2026-11-27T05:33:19Z"
+},
+{
+"symbol": "TATACOMM",
+"name": "Tata Communications Limited",
+"level": "watch",
+"text": "Kotak Neo leverage cut 3.4× → 3.3×: you need more margin",
+"link": null,
+"at": "2026-11-27T05:33:19Z"
 }
 ]
