@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T11:32:48Z",
+"fetchedAt": "2026-11-27T12:34:11Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T11:32:42Z",
+"fetchedAt": "2026-11-27T12:34:04Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T11:32:43Z",
+"fetchedAt": "2026-11-27T12:34:05Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T11:32:48Z",
-"count": 182,
+"fetchedAt": "2026-11-27T12:34:11Z",
+"count": 191,
 "error": null
 }
 },
@@ -2210,6 +2210,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=662GS2051"
 },
 {
+"symbol": "ACUTAAS",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Acutaas Chemicals Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/AMIORG_27112026175605_CoveringwithRatingletterSigned.pdf"
+},
+{
 "symbol": "ADANIPOWER",
 "date": "2026-11-24",
 "kind": "news",
@@ -2295,8 +2304,8 @@
 "date": "2026-12-03",
 "kind": "meeting",
 "title": "Fund raising",
-"detail": "To consider Fund Raising and other business matters",
-"link": "https://nsearchives.nseindia.in/corporate/ATALREAL_27112026165736_Atal_Realtech_Intimation_of_BM_Signed.pdf"
+"detail": "ATAL REALTECH LIMITED has informed the Exchange about Board Meeting to be held on 03-Dec-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17690_20261127_171305362_WEB.html"
 },
 {
 "symbol": "AXITA",
@@ -2699,6 +2708,15 @@
 "title": "Litigation",
 "detail": "Eureka Forbes Limited has informed the Exchange about the Update on Karnataka High Court GST Matter",
 "link": "https://nsearchives.nseindia.in/corporate/SHILPAJAIN_26112026184637_Regulation30signed.pdf"
+},
+{
+"symbol": "FEDERALBNK",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "The Federal Bank Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/FEDERALBNK_27112026170344_SE_Intimation_Credit_ratings_SP_27112026-S.pdf"
 },
 {
 "symbol": "FILATFASH",
@@ -3203,6 +3221,14 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17681_20261120_172605866_WEB.html"
 },
 {
+"symbol": "PATELENG",
+"date": "2026-12-02",
+"kind": "meeting",
+"title": "Fund raising",
+"detail": "PATEL ENGINEERING LIMITED has informed the Exchange about Board Meeting to be held on 02-Dec-2026 to consider Fund raising.",
+"link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2262_20261127_174809268_WEB.html"
+},
+{
 "symbol": "PAVNAIND",
 "date": "2026-11-27",
 "kind": "news",
@@ -3365,6 +3391,15 @@
 "title": "Credit rating update",
 "detail": "Sai Life Sciences Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/SAILIFE_26112026181006_Stx_Credit_Rating_26112026_Signed.pdf"
+},
+{
+"symbol": "SALASAR",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Salasar Techno Engineering Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/SALASAR_27112026171830_Intimation_Revision_CreditRating.pdf"
 },
 {
 "symbol": "SANDUMA",
@@ -3543,6 +3578,24 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_19482_20261126_193403310_WEB.html"
 },
 {
+"symbol": "SUYOG",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Suyog Telematics Limited has informed the Exchange about Credit Rating- Revision",
+"link": "https://nsearchives.nseindia.in/corporate/SUYOG_27112026175032_Reg30Intimation.pdf"
+},
+{
+"symbol": "TATACAP",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Tata Capital Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/TATACAPITAL_27112026174142_SEIntimationCreditRatingNovember272026Signed.pdf"
+},
+{
 "symbol": "TEAMGTY",
 "date": "2026-11-26",
 "kind": "meeting",
@@ -3593,6 +3646,15 @@
 "title": "Credit rating update",
 "detail": "Tata Motors Passenger Vehicles Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/TATAMOTORSSJS_27112026112024_NSEBSECreditRating.pdf"
+},
+{
+"symbol": "TRANSRAILL",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Transrail Lighting Limited has informed the Exchange about Pendency of Litigation(s)",
+"link": "https://nsearchives.nseindia.in/corporate/TRANSRAIL_27112026171708_IntimationReg30Litigationtostockexchange.pdf"
 },
 {
 "symbol": "TURTLEMINT",
@@ -3691,6 +3753,15 @@
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=VGL"
 },
 {
+"symbol": "VGUARD",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "V-Guard Industries Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/VGUARD12_27112026171309_IntimationCreditRating.pdf"
+},
+{
 "symbol": "VIDEOIND",
 "date": "2026-11-24",
 "kind": "news",
@@ -3751,6 +3822,15 @@
 "title": "Credit rating update",
 "detail": "Waaree Renewable Technologies Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/WAAREERTL_25112026173747_Intimation-s.pdf"
+},
+{
+"symbol": "WSTCSTPAPR",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "West Coast Paper Mills Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/WSTCSTPAPR_27112026175545_CreditRatingIcraTwentySevenNovTwentysix.pdf"
 },
 {
 "symbol": "ZEEL",

@@ -1,26 +1,10 @@
 [
  {
-  "symbol": "VENUSPIPES",
-  "name": "Venus Pipes & Tubes Limited",
-  "level": "info",
-  "text": "Delivery 76% vs 49% average",
-  "link": null,
-  "at": "2026-11-27T11:33:08Z"
- },
- {
-  "symbol": "ENTERO",
-  "name": "Entero Healthcare Solutions Limited",
-  "level": "info",
-  "text": "Delivery 75% vs 44% average",
-  "link": null,
-  "at": "2026-11-27T11:33:08Z"
- },
- {
-  "symbol": "TATACOMM",
-  "name": "Tata Communications Limited",
-  "level": "good",
-  "text": "Kotak Neo leverage up 3.3× → 3.4×: you need less margin",
-  "link": null,
-  "at": "2026-11-27T11:33:08Z"
+  "symbol": "ACUTAAS",
+  "name": "Acutaas Chemicals Limited",
+  "level": "watch",
+  "text": "Credit rating update (27 Nov)",
+  "link": "https://nsearchives.nseindia.in/corporate/AMIORG_27112026175605_CoveringwithRatingletterSigned.pdf",
+  "at": "2026-11-27T12:34:32Z"
  }
 ]
