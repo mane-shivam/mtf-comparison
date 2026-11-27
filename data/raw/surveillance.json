@@ -1,10 +1,10 @@
 {
-"fetchedAt": "2026-11-27T01:32:25Z",
+"fetchedAt": "2026-11-27T02:32:39Z",
 "sources": {
 "NSE": {
 "status": "ok",
 "count": 464,
-"fetchedAt": "2026-11-27T01:32:25Z",
+"fetchedAt": "2026-11-27T02:32:39Z",
 "error": null
 }
 },
@@ -446,8 +446,8 @@
 "term": "long",
 "stage": "I",
 "desc": "Long Term Additional Surveillance Measure (LTASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "INDORAMA",
@@ -1396,8 +1396,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "HALDER",
@@ -1456,8 +1456,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "OCCLLTD",
@@ -1486,8 +1486,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "QLINE",
@@ -1566,8 +1566,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "URBAN",
@@ -1576,8 +1576,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "VEEFIN",
@@ -1596,8 +1596,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "VPFL",
@@ -1606,8 +1606,8 @@
 "term": "short",
 "stage": "I",
 "desc": "Short Term Additional Surveillance Measure (STASM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "YCCL",
@@ -2836,8 +2836,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "BRAHMVIRAT",
@@ -3786,8 +3786,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "NIRAJISPAT",
@@ -4366,8 +4366,8 @@
 "term": null,
 "stage": "I",
 "desc": "Enhanced Surveillance Measure (ESM) - Stage I",
-"since": "2026-11-27",
-"exact": true
+"exact": true,
+"since": "2026-11-27"
 },
 {
 "symbol": "TIJARIA",

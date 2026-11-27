@@ -1,6 +1,6 @@
 {
 "broker": "kotak",
-"fetchedAt": "2026-11-27T01:31:59Z",
+"fetchedAt": "2026-11-27T02:32:13Z",
 "count": 1714,
 "rows": [
 {
@@ -9744,7 +9744,7 @@
 "symbol": "SHRIRAMFIN",
 "name": "Shriram Finance Limited",
 "exchange": "NSE",
-"lev": 3.98,
+"lev": 3.99,
 "maxExposureCr": 25.0
 },
 {
@@ -9779,7 +9779,7 @@
 "symbol": "ENRIN",
 "name": "Siemens Energy India Limited",
 "exchange": "NSE",
-"lev": 3.98,
+"lev": 3.99,
 "maxExposureCr": 50.0
 },
 {
