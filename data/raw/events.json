@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T13:31:46Z",
+"fetchedAt": "2026-11-27T14:31:51Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T13:31:40Z",
+"fetchedAt": "2026-11-27T14:31:44Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T13:31:41Z",
+"fetchedAt": "2026-11-27T14:31:45Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T13:31:46Z",
-"count": 196,
+"fetchedAt": "2026-11-27T14:31:51Z",
+"count": 202,
 "error": null
 }
 },
@@ -2365,6 +2365,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_17690_20261127_171305362_WEB.html"
 },
 {
+"symbol": "AXISBANK",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Axis Bank Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/AXISBANK1_27112026192512_SE_Intimation_Credit_rating_signed.pdf"
+},
+{
 "symbol": "AXITA",
 "date": "2026-11-25",
 "kind": "news",
@@ -2616,6 +2625,24 @@
 "title": "Board meeting",
 "detail": "DAVANGERE : 02-Dec-2026 : The Company has informed the Exchange that a Board meeting to be held on November 26, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Com",
 "link": "https://nsearchives.nseindia.in/corporate/DAVANGERESUGAR_25112026173812_DSCL_Regln_29_Prior_Intimation_of_Rescheduled_BM.pdf"
+},
+{
+"symbol": "DBREALTY",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Intimation under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015 -Order passed under Income-Tax Act, 1961",
+"link": "https://nsearchives.nseindia.in/corporate/DBR_27112026192944_SE_Intimation_Income_Tax_Order_against_HVPL.pdf"
+},
+{
+"symbol": "DELHIVERY",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Delhivery Limited has informed the Exchange about the filing of notice of arbitration.",
+"link": "https://nsearchives.nseindia.in/corporate/DELHIVERYLTD_27112026195029_StockExchangeIntimation_Abritration.pdf"
 },
 {
 "symbol": "DHARAN",
@@ -2912,6 +2939,15 @@
 "title": "Credit rating update",
 "detail": "Himatsingka Seide Limited has informed the Exchange about Credit Rating- Revision",
 "link": "https://nsearchives.nseindia.in/corporate/HIMATSEIDE_25112026171611_SE_IntimationCreditRatings.pdf"
+},
+{
+"symbol": "HINDCOMPOS",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Hindustan Composites Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/HINDCOMPOS_27112026195910_HCLReg30GSTSearch27112026.pdf"
 },
 {
 "symbol": "HINDWAREAP",
@@ -3313,6 +3349,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/PAVNA_27112026170027_CreditRatingDisclosure27112026sd.pdf"
 },
 {
+"symbol": "PILANIINVS",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Pilani Investment and Industries Corporation Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/PILANIINVS_27112026191924_Pilani_CreditRating_27112026.pdf"
+},
+{
 "symbol": "PNBGILTS",
 "date": "2026-11-27",
 "kind": "news",
@@ -3399,6 +3444,15 @@
 "title": "Material issue",
 "detail": "Race Eco Chain Limited has informed regarding Disclosure of material issue",
 "link": "https://nsearchives.nseindia.in/corporate/RACEECOCHAIN_25112026200123_Intimation_Step_Down_Nigeria.pdf"
+},
+{
+"symbol": "RACE",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Material issue",
+"detail": "Corrigendum to the Intimation Regarding Incorporation of Step-down Subsidiary submitted on 25th November, 2026",
+"link": "https://nsearchives.nseindia.in/corporate/RACEECOCHAIN_27112026194459_Intimation_Corrigendum.pdf"
 },
 {
 "symbol": "RACLGEAR",
