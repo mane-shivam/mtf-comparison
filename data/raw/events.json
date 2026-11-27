@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-27T15:31:43Z",
+"fetchedAt": "2026-11-27T16:32:04Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T15:31:37Z",
+"fetchedAt": "2026-11-27T16:31:59Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T15:31:38Z",
+"fetchedAt": "2026-11-27T16:32:00Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-27T15:31:43Z",
-"count": 202,
+"fetchedAt": "2026-11-27T16:32:04Z",
+"count": 208,
 "error": null
 }
 },
@@ -2410,6 +2410,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BALMLAWRIE_26112026162635_SignedReg30GSTUpdate.pdf"
 },
 {
+"symbol": "BALMLAWRIE",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Disclosure under Regulation 30 read with Point 20 (b) of Para A of Part A of Schedule III of Securities and Exchange Board of India ( SEBI ) (Listing Obligations and Disclosure Requirements) Regulations, 2015 (as amended) ( Listing Regulati",
+"link": "https://nsearchives.nseindia.in/corporate/BALMLAWRIE_27112026211302_SignedReg30.pdf"
+},
+{
 "symbol": "BELLACASA",
 "date": "2026-11-26",
 "kind": "news",
@@ -2645,6 +2654,24 @@
 "link": "https://nsearchives.nseindia.in/corporate/DELHIVERYLTD_27112026195029_StockExchangeIntimation_Abritration.pdf"
 },
 {
+"symbol": "DEVYANI",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Devyani International Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/DEVYANI_ROID_105310_KMP_Doc.zip"
+},
+{
+"symbol": "DEVYANI",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Merger",
+"detail": "Devyani International Limited has informed the Exchange about update on Scheme of Amalgamation",
+"link": "https://nsearchives.nseindia.in/corporate/DEVYANI_27112026211601_SE_Intimation_-_Order_pronouncement_DSC.pdf"
+},
+{
 "symbol": "DHARAN",
 "date": "2026-11-27",
 "kind": "news",
@@ -2783,6 +2810,15 @@
 "title": "Results out",
 "detail": "The Exchange has sought clarification from Era Infra Engineering Limited for the quarter ended 30-Sep-2026 with respect to Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. On basis of above the ",
 "link": "-"
+},
+{
+"symbol": "EROSMEDIA",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Eros International Media Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/EROSMEDIA_ROID_105312_KMP_Doc.zip"
 },
 {
 "symbol": "ESFL",
@@ -2957,6 +2993,24 @@
 "title": "Regulatory/tax order",
 "detail": "Hindware Home Innovation Limited has informed the Exchange about Action(s) taken or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/SHIL_24112026145937_HHIL_SE_CustomsPenalty.pdf"
+},
+{
+"symbol": "ICICIBANK",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "ICICI Bank Limited has informed the Exchange that S&P Global Ratings ( S&P Global ) has, vide a press release dated November 27, 2026, assigned new rating excluding government support (RXGs) BBBrxg/A-2rxg to ICICI Bank Limited (Foreign Curr",
+"link": "https://nsearchives.nseindia.in/corporate/ICICI2022_27112026213908_NSEBSE27112026.pdf"
+},
+{
+"symbol": "IDEA",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Vodafone Idea Limited has informed the exchange about withdrawal of Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/IDEA_27112026212600_SEIntimationsigned.pdf"
 },
 {
 "symbol": "IGPL",
