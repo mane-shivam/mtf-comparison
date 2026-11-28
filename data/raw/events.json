@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-28T04:31:40Z",
+"fetchedAt": "2026-11-28T05:31:41Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-28T04:31:35Z",
+"fetchedAt": "2026-11-28T05:31:36Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-28T04:31:36Z",
+"fetchedAt": "2026-11-28T05:31:37Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-28T04:31:40Z",
-"count": 182,
+"fetchedAt": "2026-11-28T05:31:41Z",
+"count": 183,
 "error": null
 }
 },
@@ -2452,6 +2452,15 @@
 "title": "Credit rating update",
 "detail": "Brigade Enterprises Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/BRIGADE_26112026190503_37IntimationonCreditRatingCRISIL26062026.pdf"
+},
+{
+"symbol": "BRITANNIA",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Britannia Industries Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/BRITANNIA_ROID_105317_KMP_Doc.zip"
 },
 {
 "symbol": "BRNL",
