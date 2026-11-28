@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-28T06:31:43Z",
+"fetchedAt": "2026-11-28T07:31:42Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-28T06:31:38Z",
+"fetchedAt": "2026-11-28T07:31:37Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-28T06:31:39Z",
+"fetchedAt": "2026-11-28T07:31:38Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-28T06:31:43Z",
-"count": 186,
+"fetchedAt": "2026-11-28T07:31:42Z",
+"count": 189,
 "error": null
 }
 },
@@ -3135,6 +3135,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_1580_20261127_161008703_WEB.html"
 },
 {
+"symbol": "LTF",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "L&T Finance Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/LTF_ROID_105322_KMP_Doc.zip"
+},
+{
 "symbol": "MANCREDIT",
 "date": "2026-12-01",
 "kind": "meeting",
@@ -3229,6 +3238,14 @@
 "title": "Board meeting",
 "detail": "To consider and approve the Audited Standalone and Consolidated Financial Results of the Trust for the quarter ended June 30, 2026.",
 "link": "https://nsearchives.nseindia.in/corporate/NDRINVIT_26112026201209_Intimation_of_BM_26112026__1_-signed.pdf"
+},
+{
+"symbol": "NDRINVIT",
+"date": "2026-11-30",
+"kind": "meeting",
+"title": "Board meeting",
+"detail": "NDRINVIT : 30-Nov-2026 : The Company has informed the Exchange that a Board meeting to be held on November 28, 2026 has been re-scheduled. Further, the Company has informed the Exchange that the meeting of the Board of Directors of the Comp",
+"link": "https://nsearchives.nseindia.in/corporate/NDRINVIT_28112026121412_Intimation_of_Board_Meeting_Revised.pdf"
 },
 {
 "symbol": "NESTLEIND",
@@ -3421,6 +3438,15 @@
 "title": "Credit rating update",
 "detail": "Rane Holdings Limited has informed the Exchange about Credit Rating",
 "link": "https://nsearchives.nseindia.in/corporate/RANEHOLDIN_26112026153144_RHL_Withdrawal_of_Credit_Rating_ICRA_Final.pdf"
+},
+{
+"symbol": "RCF",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Rashtriya Chemicals and Fertilizers Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/RCF_28112026124609_SEFineSep30.pdf"
 },
 {
 "symbol": "RIIT",
