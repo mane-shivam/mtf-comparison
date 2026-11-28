@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-28T09:09:15Z",
+"fetchedAt": "2026-11-28T10:31:46Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-28T09:09:09Z",
+"fetchedAt": "2026-11-28T10:31:41Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-28T09:09:10Z",
+"fetchedAt": "2026-11-28T10:31:42Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-28T09:09:15Z",
-"count": 191,
+"fetchedAt": "2026-11-28T10:31:46Z",
+"count": 194,
 "error": null
 }
 },
@@ -3110,6 +3110,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/KFINTECHNSE_25112026230044_Intimation.pdf"
 },
 {
+"symbol": "KOKUYOCMLN",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Kokuyo Camlin Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/RAVIDAMLE_28112026154738_Reg_30_Disclosure.pdf"
+},
+{
 "symbol": "KSERASERA",
 "date": "2026-11-25",
 "kind": "news",
@@ -3679,6 +3688,15 @@
 },
 {
 "symbol": "SUKHJITS",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Sukhjit Starch & Chemicals Limited has informed the Exchange about the levy of fine for non-compliance with certain provisions of the SEBI (LODR) Regulations, 2015, during thequarter ended 30 September 2026.",
+"link": "https://nsearchives.nseindia.in/corporate/SUKHJIT1944_28112026155044_DISCLOSURE_UNDER_REG_30.pdf"
+},
+{
+"symbol": "SUKHJITS",
 "date": "2026-12-02",
 "kind": "meeting",
 "title": "Buyback",
@@ -3762,6 +3780,15 @@
 "title": "Litigation",
 "detail": "Transrail Lighting Limited has informed the Exchange about Pendency of Litigation(s)",
 "link": "https://nsearchives.nseindia.in/corporate/TRANSRAIL_27112026171708_IntimationReg30Litigationtostockexchange.pdf"
+},
+{
+"symbol": "TRANSRAILL",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Transrail Lighting Limited has informed the Exchange about Pendency of Litigation(s)/dispute(s)",
+"link": "https://nsearchives.nseindia.in/corporate/TRANSRAIL_28112026152545_IntimationReg30LitigationGoodrich.pdf"
 },
 {
 "symbol": "TVVISION",
