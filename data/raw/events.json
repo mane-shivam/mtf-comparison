@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-28T07:31:42Z",
+"fetchedAt": "2026-11-28T08:31:45Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-28T07:31:37Z",
+"fetchedAt": "2026-11-28T08:31:40Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-28T07:31:38Z",
+"fetchedAt": "2026-11-28T08:31:41Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-28T07:31:42Z",
-"count": 189,
+"fetchedAt": "2026-11-28T08:31:45Z",
+"count": 191,
 "error": null
 }
 },
@@ -2445,6 +2445,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/BPCL26_27112026145806_seintimationcreditrating27112026.pdf"
 },
 {
+"symbol": "BPCL",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Bharat Petroleum Corporation Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/BPCL22_28112026135805_Stexintimationoffineslevied281126sd.pdf"
+},
+{
 "symbol": "BRIGADE",
 "date": "2026-11-26",
 "kind": "news",
@@ -3108,6 +3117,15 @@
 "title": "Auditor change",
 "detail": "KSS Limited has informed the Exchange regarding Change in Auditors of the company.",
 "link": "https://nsearchives.nseindia.in/corporate/KSERASERA_25112026222136_Appointment_Intimation_KSS_Signed.pdf"
+},
+{
+"symbol": "KSL",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Disclosure under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( Listing Regulations )",
+"link": "https://nsearchives.nseindia.in/corporate/KSL_28112026133308_KSL_Regulation_30_Imposition_of_fine_28_11_2026.pdf"
 },
 {
 "symbol": "LAGNAM",
