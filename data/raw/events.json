@@ -1,20 +1,20 @@
 {
-"fetchedAt": "2026-11-28T10:31:46Z",
+"fetchedAt": "2026-11-28T11:31:48Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-28T10:31:41Z",
+"fetchedAt": "2026-11-28T11:31:42Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-28T10:31:42Z",
+"fetchedAt": "2026-11-28T11:31:43Z",
 "error": null
 },
 "events": {
 "status": "ok",
-"fetchedAt": "2026-11-28T10:31:46Z",
-"count": 194,
+"fetchedAt": "2026-11-28T11:31:48Z",
+"count": 198,
 "error": null
 }
 },
@@ -2285,6 +2285,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/AIFL2020_25112026192301_Intimation_of_Resignation_of_Auditor_BSE.pdf"
 },
 {
+"symbol": "AKUMS",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Litigation",
+"detail": "Disclosure under Regulation 30 of SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 Final Order on Writ Petition",
+"link": "https://nsearchives.nseindia.in/corporate/NSEAKUMS10_28112026160350_AKUMSSEINTIMATION.pdf"
+},
+{
 "symbol": "ALLDIGI",
 "date": "2026-11-26",
 "kind": "news",
@@ -2337,6 +2346,15 @@
 "title": "Regulatory/tax order",
 "detail": "Apar Industries Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/APARINDS_26112026183743_Intimation_-_GST.pdf"
+},
+{
+"symbol": "ASTRON",
+"date": "2026-11-28",
+"kind": "news",
+"level": "alert",
+"title": "Insolvency (CIRP)",
+"detail": "Astron Paper & Board Mill Limited has informed the Exchange about Corporate Insolvency Resolution Process",
+"link": "https://nsearchives.nseindia.in/corporate/ASTRON_28112026165940_Commencement_of_E-Voting_of_8th_CoC.pdf"
 },
 {
 "symbol": "ATALREAL",
@@ -3083,6 +3101,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/JEENASIKHO_27112026165308_Intimation_Cost_Auditor_App-_Sign.pdf"
 },
 {
+"symbol": "JSWDULUX",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "JSW Dulux Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/AKZOINDIA_28112026162310_JSWDuluxRegulation30Disclosure_28Nov2026.pdf"
+},
+{
 "symbol": "KAYNES",
 "date": "2026-11-25",
 "kind": "news",
@@ -3474,6 +3501,15 @@
 "title": "Regulatory/tax order",
 "detail": "Rashtriya Chemicals and Fertilizers Limited has informed the Exchange about Action(s) initiated or orders passed",
 "link": "https://nsearchives.nseindia.in/corporate/RCF_28112026124609_SEFineSep30.pdf"
+},
+{
+"symbol": "REGENCERAM",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Regency Ceramics Limited has informed the Exchange about Action(s) initiated or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/REGENCERAM_28112026160150_Reg_3031.pdf"
 },
 {
 "symbol": "RIIT",
