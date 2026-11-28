@@ -1,21 +1,21 @@
 {
-"fetchedAt": "2026-11-27T19:35:50Z",
+"fetchedAt": "2026-11-28T01:31:43Z",
 "sources": {
 "ban": {
 "status": "ok",
-"fetchedAt": "2026-11-27T19:35:46Z",
+"fetchedAt": "2026-11-28T01:31:39Z",
 "error": null
 },
 "bands": {
 "status": "ok",
-"fetchedAt": "2026-11-27T19:35:47Z",
+"fetchedAt": "2026-11-28T01:31:39Z",
 "error": null
 },
 "events": {
-"status": "stale",
-"fetchedAt": "2026-11-27T16:32:04Z",
-"count": 208,
-"error": "Expecting value: line 2 column 1 (char 1)"
+"status": "ok",
+"fetchedAt": "2026-11-28T01:31:43Z",
+"count": 182,
+"error": null
 }
 },
 "ban": {
@@ -2836,6 +2836,15 @@
 "link": "https://nsearchives.nseindia.in/corporate/GLOBUSSPR_26112026154510_Covering_Letter_with_Rating_Intimation.pdf"
 },
 {
+"symbol": "GODIGIT",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Director/KMP resigned",
+"detail": "Go Digit General Insurance Limited has informed the Exchange about Resignation of Director/KMP/SMP",
+"link": "https://nsearchives.nseindia.in/corporate/GODIGIT_ROID_105315_KMP_Doc.zip"
+},
+{
 "symbol": "GUJTHEM",
 "date": "2026-11-27",
 "kind": "meeting",
@@ -2923,12 +2932,30 @@
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_2540_20261123_175518380_WEB.html"
 },
 {
+"symbol": "INDUSTOWER",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Indus Towers Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/BHARTIINFRATEL_27112026225755_SEIntimationCreditRating.pdf"
+},
+{
 "symbol": "INTERARCH",
 "date": "2026-11-30",
 "kind": "action",
 "title": "Split",
 "detail": "Face Value Split (Sub-Division) - From Rs 10/- Per Share To Rs 2/- Per Share",
 "link": "https://www.nseindia.com/get-quotes/equity?symbol=INTERARCH"
+},
+{
+"symbol": "IRCON",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Regulatory/tax order",
+"detail": "Ircon International Limited has informed the Exchange about Action(s) taken or orders passed",
+"link": "https://nsearchives.nseindia.in/corporate/IRCON_28112026002816_STXINTIMATIONSigned.pdf"
 },
 {
 "symbol": "ISGEC",
@@ -2964,6 +2991,15 @@
 "title": "Results",
 "detail": "J.K.Shah Commerce Education Limited has informed the Exchange about Board Meeting to be held on 03-Dec-2026 to inter-alia consider and approve the Unaudited Financial results of the Company for the Half Yearly ended September 2026 .",
 "link": "https://nsearchives.nseindia.in/corporate/ixbrl/PRIOR_INTIMATION_29540_20261126_183259340_WEB.html"
+},
+{
+"symbol": "JNPR",
+"date": "2026-11-27",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Juniper Green Energy Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/JGEL2025_27112026224637_2026_11_27_Regulation_30_JGEL_Credit_Rating_Field.pdf"
 },
 {
 "symbol": "JPPOWER",
@@ -3113,6 +3149,15 @@
 "title": "Regulatory/tax order",
 "detail": "We wish to inform the Exchanges that the Securities and Exchange Board of India haspassed an Adjudication Order dated November 25, 2026",
 "link": "https://nsearchives.nseindia.in/corporate/MOTILALOFS_26112026162819_Intimation_SEBIOrder_26112026_Final_signed.pdf"
+},
+{
+"symbol": "MUFIN",
+"date": "2026-11-28",
+"kind": "news",
+"level": "watch",
+"title": "Credit rating update",
+"detail": "Mufin Green Finance Limited has informed the Exchange about Credit Rating",
+"link": "https://nsearchives.nseindia.in/corporate/MUFIN_28112026003502_Credit_Rating_Intimation_Signed.pdf"
 },
 {
 "symbol": "MUNJALAU",
